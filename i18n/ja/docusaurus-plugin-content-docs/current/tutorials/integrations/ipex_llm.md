@@ -29,7 +29,7 @@ Intel GPU上でIPEX-LLMによって加速されたOllamaサーバーのインス
 
 ## Sage WebUIの設定
 
-メニューの**設定 -> 接続**からOllama設定にアクセスします。デフォルトでは、**OllamaベースURL**はhttps://localhost:11434に設定されています（以下のスナップショット参照）。Ollamaサービス接続の状態を確認するには、テキストボックスの横にある**更新ボタン**をクリックします。WebUIがOllamaサーバーに接続できない場合、`WebUI could not connect to Ollama`というエラーメッセージが表示されます。
+メニューの**設定 -> 接続**からOllama設定にアクセスします。デフォルトでは、**OllamaベースURL**は https://localhost:11434 に設定されています（以下のスナップショット参照）。Ollamaサービス接続の状態を確認するには、テキストボックスの横にある**更新ボタン**をクリックします。WebUIがOllamaサーバーに接続できない場合、`WebUI could not connect to Ollama`というエラーメッセージが表示されます。
 
 ![Sage WebUI Ollama設定失敗](https://llm-assets.readthedocs.io/en/latest/_images/open_webui_settings_0.png)
 
