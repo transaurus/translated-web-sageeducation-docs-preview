@@ -47,7 +47,7 @@ _管理者設定_で、OpenAI APIタイプの新しい接続を作成し、以�
 
 ### ステップ4: Langfuseフィルターパイプラインの追加
 
-次に、_管理者設定_ -> _Pipelines_に移動し、Langfuseフィルターパイプラインを追加します。Pipelinesがhttp://host.docker.internal:9099でリッスンしていることを指定し（前述の設定通り）、[Langfuseフィルターパイプライン](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py)を_GitHub URLからインストール_オプションを使用して以下のURLでインストールします:
+次に、_管理者設定_ -> _Pipelines_に移動し、Langfuseフィルターパイプラインを追加します。Pipelinesが http://host.docker.internal:9099 でリッスンしていることを指定し（前述の設定通り）、[Langfuseフィルターパイプライン](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py)を_GitHub URLからインストール_オプションを使用して以下のURLでインストールします:
 
 ```
 https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py
