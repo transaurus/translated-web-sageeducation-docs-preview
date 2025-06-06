@@ -2,7 +2,7 @@
 
 Docker Composeを使用すると、マルチコンテナのDockerアプリケーションの管理が簡素化されます。
 
-Dockerがインストールされていない場合は、[Dockerインストールチュートリアル](docs/tutorials/docker-install.md)をご覧ください。
+Dockerがインストールされていない場合は、[Dockerインストールチュートリアル](../../../tutorials/docker-install.md)をご覧ください。
 
 Docker Composeには追加パッケージ`docker-compose-v2`が必要です。
 
