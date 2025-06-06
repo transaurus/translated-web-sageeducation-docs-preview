@@ -1,0 +1,432 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/firefox-sidebar.md",
+  "source_file_content_hash": "3124e621f74e0a32044065110631c0d9a75798c325e96e6895df0210e56e3235",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\r\nsidebar_position: 4100\r\ntitle: \"🦊 Firefox AI Chatbot Sidebar\"\r\n---",
+      "source_content_hash": "8bd3fa54061e1192495ed3305f47ef70d8b08f47072c0aff25cdf2a41a219af6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\r\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\r\n:::",
+      "source_content_hash": "f646758bfabeb687ac8ca4203150a989ae1340864608ee6414f38e8b2c437940",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage WebUIチームによるサポートはありません。特定のユースケース向けにSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したいですか？コントリビューションガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## 🦊 Firefox AI Chatbot Sidebar",
+      "source_content_hash": "5cb365bb9bd258f0050faea38e2f2dd7066f39052905d528d00b3601b7fc3b86",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🦊 Firefox AIチャットボットサイドバー"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "# Integrating Sage WebUI as a Local AI Chatbot Browser Assistant in Mozilla Firefox",
+      "source_content_hash": "60b06aa0b113165560c85e96ab2ab006df0f72d4ff1296c482803ce202b05e6c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Mozilla FirefoxでローカルAIチャットボットブラウザアシスタントとしてSage WebUIを統合する"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "Table of Contents\r\n=================",
+      "source_content_hash": "8c6908dfbb6d8f1d4ed2457cc352ed377a119c41e31c6100ccedac36f8842ee4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "目次\n================="
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "1. [Prerequisites](#prerequisites)\r\n2. [Enabling AI Chatbot in Firefox](#enabling-ai-chatbot-in-firefox)\r\n3. [Configuring about:config Settings](#configuring-aboutconfig-settings)\r\n    * [browser.ml.chat.enabled](#browsermlchatenabled)\r\n    * [browser.ml.chat.hideLocalhost](#browsermlchathidelocalhost)\r\n    * [browser.ml.chat.prompts.#](#browsermlchatsprompts)\r\n    * [browser.ml.chat.provider](#browsermlchatprovider)\r\n4. [URL Parameters for Sage WebUI](#url-parameters-for-sage-open-webui)\r\n    * [Models and Model Selection](#models-and-model-selection)\r\n    * [YouTube Transcription](#youtube-transcription)\r\n    * [Web Search](#web-search)\r\n    * [Tool Selection](#tool-selection)\r\n    * [Call Overlay](#call-overlay)\r\n    * [Initial Query Prompt](#initial-query-prompt)\r\n    * [Temporary Chat Sessions](#temporary-chat-sessions)\r\n5. [Additional about:config Settings](#additional-aboutconfig-settings)\r\n6. [Accessing the AI Chatbot Sidebar](#accessing-the-ai-chatbot-sidebar)",
+      "source_content_hash": "959a095081d95ea0551658ca4310cb67835e5c8c85645262a62ce046a21beb5c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [前提条件](#前提条件)\n2. [FirefoxでAIチャットボットを有効化](#firefoxでaiチャットボットを有効化)\n3. [about:config設定の構成](#aboutconfig設定の構成)\n    * [browser.ml.chat.enabled](#browsermlchatenabled)\n    * [browser.ml.chat.hideLocalhost](#browsermlchathidelocalhost)\n    * [browser.ml.chat.prompts.#](#browsermlchatsprompts)\n    * [browser.ml.chat.provider](#browsermlchatprovider)\n4. [Sage WebUI向けURLパラメータ](#sage-open-webui向けurlパラメータ)\n    * [モデルとモデル選択](#モデルとモデル選択)\n    * [YouTube文字起こし](#youtube文字起こし)\n    * [ウェブ検索](#ウェブ検索)\n    * [ツール選択](#ツール選択)\n    * [通話オーバーレイ](#通話オーバーレイ)\n    * [初期クエリプロンプト](#初期クエリプロンプト)\n    * [一時的なチャットセッション](#一時的なチャットセッション)\n5. [追加のabout:config設定](#追加のaboutconfig設定)\n6. [AIチャットボットサイドバーへのアクセス](#aiチャットボットサイドバーへのアクセス)"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Prerequisites",
+      "source_content_hash": "bbd3d4949a6f237efd8d4ff5c7c5f30d968e7a989ad12f3d7dcef69c98053912",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 前提条件"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Before integrating Sage WebUI as a AI chatbot browser assistant in Mozilla Firefox, ensure you have:",
+      "source_content_hash": "08d7dec843132d70135ebdfa08901d498937257e1122b309f3885d7a9c4b76be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Mozilla FirefoxでAIチャットボットブラウザアシスタントとしてSage WebUIを統合する前に、以下を確認してください："
+      }
+    },
+    {
+      "segment_id": "157151e9",
+      "source_content": "* Sage WebUI instance URL (local or domain)\r\n* Firefox browser installed",
+      "source_content_hash": "418eeac39aeb64f0f88ae08437a43ccbd681c6ec72c25d09a5f8a60ee70851eb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Sage WebUIインスタンスのURL（ローカルまたはドメイン）\n* Firefoxブラウザがインストールされていること"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "## Enabling AI Chatbot in Firefox",
+      "source_content_hash": "562e85e41c3c3bd8cf3d714b0c5d400ba72097c0fb974ed8bf0bc0802b982155",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## FirefoxでAIチャットボットを有効化"
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "1. Click on the hamburger button (three horizontal lines button at the top right corner, just below the `X` button)\r\n2. Open up Firefox settings\r\n2. Click on the `Firefox Labs` section\r\n3. Toggle on `AI Chatbot`",
+      "source_content_hash": "60c86ea2d4a4cf4e1f04e5c4349764965c41eb3424105eff0d08b8c31ff7aa5a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. ハンバーガーボタン（右上隅の「X」ボタンのすぐ下にある三本線のボタン）をクリック\n2. Firefox設定を開く\n3. `Firefox Labs`セクションをクリック\n4. `AI Chatbot`をトグルオン"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Alternatively, you can enable AI Chatbot through the `about:config` page (described in the next section).",
+      "source_content_hash": "5b6f472f5124484bac8b6c3980956161a1a99a63cbe7adac7fced15e9ed3ccb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "または、`about:config`ページからAIチャットボットを有効化することもできます（次のセクションで説明）。"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "## Configuring about:config Settings",
+      "source_content_hash": "09eed16cac978503f7ecd7309d410b53bf92d54f2571dc58236f6b280e59816b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## about:config設定の構成"
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "1. Type `about:config` in the Firefox address bar\r\n2. Click `Accept the Risk and Continue`\r\n3. Search for `browser.ml.chat.enabled` and toggle it to `true` if it's not already enabled through Firefox Labs\r\n4. Search for `browser.ml.chat.hideLocalhost` and toggle it to `false`",
+      "source_content_hash": "d778919895a331ae855017320911cb36d72dbed35b8950f812400af22853acbf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Firefoxのアドレスバーに`about:config`と入力\n2. `リスクを承諾して続行`をクリック\n3. `browser.ml.chat.enabled`を検索し、Firefox Labs経由で有効になっていない場合は`true`にトグル\n4. `browser.ml.chat.hideLocalhost`を検索し、`false`にトグル"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "### browser.ml.chat.prompts.#",
+      "source_content_hash": "1785f49fe6d736037246c17a2e26306968c535351acadcfb8a35c9a1de01b897",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### browser.ml.chat.prompts.#"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "To add custom prompts, follow these steps:",
+      "source_content_hash": "9758e22bd4bf5db1ca869577b121e1788b87e0a77c8815c5237bb6e32a326e1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "カスタムプロンプトを追加するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "3df4f066",
+      "source_content": "1. Search for `browser.ml.chat.prompts.#` (replace `#` with a number, e.g., `0`, `1`, `2`, etc.)\r\n2. Click the `+` button to add a new prompt\r\n3. Enter the prompt label, value, and ID (e.g., `{\"id\":\"My Prompt\", \"value\": \"This is my custom prompt.\", \"label\": \"My Prompt\"}`)\r\n4. Repeat the process to add more prompts as desired",
+      "source_content_hash": "62aea1537c97ca2c3d3b9dc164934d4f6c079d4af7fbe83941d794624b4ef978",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. `browser.ml.chat.prompts.#`を検索（`#`を数字に置き換え、例：`0`、`1`、`2`など）\n2. `+`ボタンをクリックして新しいプロンプトを追加\n3. プロンプトのラベル、値、IDを入力（例：`{\"id\":\"My Prompt\", \"value\": \"This is my custom prompt.\", \"label\": \"My Prompt\"}`）\n4. 必要に応じてこのプロセスを繰り返してさらにプロンプトを追加"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### browser.ml.chat.provider",
+      "source_content_hash": "17c8b71fbbef99d38ed0536066fac4b0d2fc786f33ebefbc537e0b93cc0ee766",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### browser.ml.chat.provider"
+      }
+    },
+    {
+      "segment_id": "645e08e3",
+      "source_content": "1. Search for `browser.ml.chat.provider`\r\n2. Enter your Sage WebUI instance URL, including any optional parameters (e.g., `https://my-sage-open-webui-instance.com/?model=browser-productivity-assistant&temporary-chat=true&tools=jina_web_scrape`)",
+      "source_content_hash": "ba2276a27d06efbffd5d656351be685c42c734964ce6fbf014d97678fd9dd87a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. `browser.ml.chat.provider`を検索\n2. Sage WebUIインスタンスのURLを入力（オプションパラメータを含む、例：`https://my-sage-open-webui-instance.com/?model=browser-productivity-assistant&temporary-chat=true&tools=jina_web_scrape`）"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "## URL Parameters for Sage WebUI",
+      "source_content_hash": "46a3b6be04d1800012b89a42ef33a8625dbbf0c4f3888a996fb1fa1d3057a04b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUI向けURLパラメータ"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "The following URL parameters can be used to customize your Sage WebUI instance:",
+      "source_content_hash": "f888b3595fd8b88985d46fef17d9b13a1cffc4cf7190f350d085b3ae38b4e4a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のURLパラメータを使用してSage WebUIインスタンスをカスタマイズできます："
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "### Models and Model Selection",
+      "source_content_hash": "036e60e38fb8d30efdfda65ef457ea2b904146799558f30c37e49d321d57a81e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### モデルとモデル選択"
+      }
+    },
+    {
+      "segment_id": "caffd879",
+      "source_content": "* `models`: Specify multiple models (comma-separated list) for the chat session (e.g., `/?models=model1,model2`)\r\n* `model`: Specify a single model for the chat session (e.g., `/?model=model1`)",
+      "source_content_hash": "d3806d948288cb93a1a02670ea2e1552725a7e6896e74fe7ff39e83e47508024",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `models`: チャットセッション用に複数のモデルを指定（カンマ区切りリスト、例：`/?models=model1,model2`）\n* `model`: チャットセッション用に単一のモデルを指定（例：`/?model=model1`）"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "### YouTube Transcription",
+      "source_content_hash": "e3563960d9d14e6b99be6520137675fe85bc4309b6ffa4bec7272bbe8f8d2029",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### YouTube動画の文字起こし"
+      }
+    },
+    {
+      "segment_id": "c0ea80dd",
+      "source_content": "* `youtube`: Provide a YouTube video ID to transcribe the video in the chat (e.g., `/?youtube=VIDEO_ID`)",
+      "source_content_hash": "52e302d4f5956de07ccc3da9da92cc03e27bf5bfdeea64dc317a66dbfc1fead7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `youtube`: YouTube動画のIDを指定して、チャット内で動画の文字起こしを行う（例: `/?youtube=動画ID`）"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "### Web Search",
+      "source_content_hash": "3a7fd29decf25713bdb68bd08850573c5775977201b66cf46eb0f1ce15e99348",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Web検索"
+      }
+    },
+    {
+      "segment_id": "cc9271fb",
+      "source_content": "* `web-search`: Enable web search functionality by setting this parameter to `true` (e.g., `/?web-search=true`)",
+      "source_content_hash": "5b13e6bce053ae6c29601699ad8efc407f536601ac78aea975d48b6b29b863e8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `web-search`: Web検索機能を有効にするには、このパラメータを`true`に設定（例: `/?web-search=true`）"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "### Tool Selection",
+      "source_content_hash": "5dd45e6b0670a1456a61eaabe3537596113a106d7b62ccfdf61f1dc907a4b206",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ツール選択"
+      }
+    },
+    {
+      "segment_id": "4d429946",
+      "source_content": "* `tools` or `tool-ids`: Specify a comma-separated list of tool IDs to activate in the chat (e.g., `/?tools=tool1,tool2` or `/?tool-ids=tool1,tool2`)",
+      "source_content_hash": "8bd30995fcdbce28f9c59edf4d24c89284721e3186f47ada56e3979bacabbfc2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `tools` または `tool-ids`: チャットで有効にするツールIDをカンマ区切りで指定（例: `/?tools=ツール1,ツール2` または `/?tool-ids=ツール1,ツール2`）"
+      }
+    },
+    {
+      "segment_id": "bd30d33e",
+      "source_content": "### Call Overlay",
+      "source_content_hash": "bdeecf3a3b5d429ecdf76b340e586bf38b2b8f4c393c0a1347a7baaa9e301141",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 通話オーバーレイ"
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "* `call`: Enable a video or call overlay in the chat interface by setting this parameter to `true` (e.g., `/?call=true`)",
+      "source_content_hash": "5201989e75d8347e7aeccd2e2f79bbe206a9aeac4def644fea20c91de8c2ceba",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `call`: チャットインターフェースにビデオ/通話オーバーレイを表示するには、このパラメータを`true`に設定（例: `/?call=true`）"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "### Initial Query Prompt",
+      "source_content_hash": "e6b565b4d1de1e34a551f837f8320ccdf4be6de9b969e588c983b726540cdaed",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 初期クエリプロンプト"
+      }
+    },
+    {
+      "segment_id": "cfea4c31",
+      "source_content": "* `q`: Set an initial query or prompt for the chat (e.g., `/?q=Hello%20there`)",
+      "source_content_hash": "cb8760c41348ed2fd7bbc7ecd1a6021ecb5dec7bdda75fba1a0165c49d41a4ff",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `q`: チャットの初期クエリ/プロンプトを設定（例: `/?q=こんにちは`）"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "### Temporary Chat Sessions",
+      "source_content_hash": "96a169983abaacc228bfc141b37fad57549f623b69a25a03a1f90bbac9e4d663",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 一時的なチャットセッション"
+      }
+    },
+    {
+      "segment_id": "2d15468d",
+      "source_content": "* `temporary-chat`: Mark the chat as a temporary session by setting this parameter to `true` (e.g., `/?temporary-chat=true`)",
+      "source_content_hash": "198f0dfc73df83af41d3d4d72e6a24c93767bc9e9a4d291a70ff9213813400e7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `temporary-chat`: チャットを一時セッションとしてマークするには、このパラメータを`true`に設定（例: `/?temporary-chat=true`）"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "See /features/chat-features/url-params for more info on URL parameters and how to use them.",
+      "source_content_hash": "503118e9aed8995530bd5fd35449c0a739d10e24bd8c22a019be01507416a307",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "URLパラメータの詳細な使用方法については、/features/chat-features/url-params を参照してください。"
+      }
+    },
+    {
+      "segment_id": "c7c92a79",
+      "source_content": "## Additional about:config Settings",
+      "source_content_hash": "e541b506c6f1e180174150d96c9f03858b9258a11846f5ff30c4187720d8b484",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 追加のabout:config設定"
+      }
+    },
+    {
+      "segment_id": "f0984c2a",
+      "source_content": "The following `about:config` settings can be adjusted for further customization:",
+      "source_content_hash": "1b54fa2b222aa1a09477e2d9ecda226842c129b25a580156f328468b59a7eec1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の`about:config`設定を調整することで、さらにカスタマイズ可能です:"
+      }
+    },
+    {
+      "segment_id": "2270deb6",
+      "source_content": "* `browser.ml.chat.shortcuts`: Enable custom shortcuts for the AI chatbot sidebar\r\n* `browser.ml.chat.shortcuts.custom`: Enable custom shortcut keys for the AI chatbot sidebar\r\n* `browser.ml.chat.shortcuts.longPress`: Set the long press delay for shortcut keys\r\n* `browser.ml.chat.sidebar`: Enable the AI chatbot sidebar\r\n* `browser.ml.checkForMemory`: Check for available memory before loading models\r\n* `browser.ml.defaultModelMemoryUsage`: Set the default memory usage for models\r\n* `browser.ml.enable`: Enable the machine learning features in Firefox\r\n* `browser.ml.logLevel`: Set the log level for machine learning features\r\n* `browser.ml.maximumMemoryPressure`: Set the maximum memory pressure threshold\r\n* `browser.ml.minimumPhysicalMemory`: Set the minimum physical memory required\r\n* `browser.ml.modelCacheMaxSize`: Set the maximum size of the model cache\r\n* `browser.ml.modelCacheTimeout`: Set the timeout for model cache\r\n* `browser.ml.modelHubRootUrl`: Set the root URL for the model hub\r\n* `browser.ml.modelHubUrlTemplate`: Set the URL template for the model hub\r\n* `browser.ml.queueWaitInterval`: Set the interval for queue wait\r\n* `browser.ml.queueWaitTimeout`: Set the timeout for queue wait",
+      "source_content_hash": "b7cd2e4db2068a2645d78d390742ad80cb26663df7c66d3fc8693165814abc05",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `browser.ml.chat.shortcuts`: AIチャットボットサイドバーのカスタムショートカットを有効化\n* `browser.ml.chat.shortcuts.custom`: AIチャットボットサイドバーのカスタムショートカットキーを有効化\n* `browser.ml.chat.shortcuts.longPress`: ショートカットキーの長押し遅延時間を設定\n* `browser.ml.chat.sidebar`: AIチャットボットサイドバーを有効化\n* `browser.ml.checkForMemory`: モデル読み込み前に利用可能メモリをチェック\n* `browser.ml.defaultModelMemoryUsage`: モデルのデフォルトメモリ使用量を設定\n* `browser.ml.enable`: Firefoxの機械学習機能を有効化\n* `browser.ml.logLevel`: 機械学習機能のログレベルを設定\n* `browser.ml.maximumMemoryPressure`: 最大メモリプレッシャー閾値を設定\n* `browser.ml.minimumPhysicalMemory`: 必要最小物理メモリを設定\n* `browser.ml.modelCacheMaxSize`: モデルキャッシュの最大サイズを設定\n* `browser.ml.modelCacheTimeout`: モデルキャッシュのタイムアウトを設定\n* `browser.ml.modelHubRootUrl`: モデルハブのルートURLを設定\n* `browser.ml.modelHubUrlTemplate`: モデルハブのURLテンプレートを設定\n* `browser.ml.queueWaitInterval`: キュー待機間隔を設定\n* `browser.ml.queueWaitTimeout`: キュー待機タイムアウトを設定"
+      }
+    },
+    {
+      "segment_id": "23b96cc0",
+      "source_content": "## Accessing the AI Chatbot Sidebar",
+      "source_content_hash": "33328bbd02479eb6a9de2df829a56774325d988390de0022d9b0ac233a22d0e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## AIチャットボットサイドバーの起動方法"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "To access the AI chatbot sidebar, use one of the following methods:",
+      "source_content_hash": "86fe922890b9529d08d53dc6e3ae08358065fc61ef9701088a35be72d84cc956",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "AIチャットボットサイドバーを起動するには、以下のいずれかの方法を使用します:"
+      }
+    },
+    {
+      "segment_id": "a8198b43",
+      "source_content": "* Press `CTRL+B` to open the bookmarks sidebar and switch to AI Chatbot\r\n* Press `CTRL+Alt+X` to open the AI chatbot sidebar directly",
+      "source_content_hash": "bdc3fe8a848d909286fcf57379b36b351dd382b614d76905bc68d202b6d63c33",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `CTRL+B`を押してブックマークサイドバーを開き、AIチャットボットに切り替え\n* `CTRL+Alt+X`を押して直接AIチャットボットサイドバーを開く"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/firefox-sidebar.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.806129+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "3124e621f74e0a32044065110631c0d9a75798c325e96e6895df0210e56e3235"
+  }
+}

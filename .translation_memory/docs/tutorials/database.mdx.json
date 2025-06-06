@@ -1,0 +1,212 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/database.mdx",
+  "source_file_content_hash": "2a06a39c00ee60a9c1516a8b442fa99565972062677e1924e0074f62979f9395",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 310 \ntitle: \"📦 Exporting and Importing Database\"\n---",
+      "source_content_hash": "b96558dfe1d310813aecf39b49363a094c72250554ae18cb8270221c7ad7bc71",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "If you need to migrate your **Sage WebUI** data (e.g., chat histories, configurations, etc.) from one server to another or back it up for later use, you can export and import the database. This guide assumes you're running Sage WebUI using the internal SQLite database (not PostgreSQL).",
+      "source_content_hash": "4d51e4086b1fe8ea54b4216edb375731a901cb2e46d27c97a869dd1373296fc0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Sage WebUI**のデータ（チャット履歴、設定など）を別のサーバーに移行したり、バックアップとして保存したりする必要がある場合、データベースをエクスポートおよびインポートすることができます。このガイドでは、Sage WebUIが内部SQLiteデータベース（PostgreSQLではない）を使用していることを前提としています。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Follow the steps below to export and import the `webui.db` file, which contains your database.",
+      "source_content_hash": "64d9c4ea5e9a9e2f4daf6566421629e24c9a03fcd17e7bd85d7188a793dda0fd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の手順に従って、データベースを含む`webui.db`ファイルをエクスポートおよびインポートしてください。"
+      }
+    },
+    {
+      "segment_id": "b1228740",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "### Exporting Database",
+      "source_content_hash": "bb41e9fadfb38bcda863e099b307e20449aab9fe72b416985e7b32906d2ff3cf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### データベースのエクスポート"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "To export the database from your current Sage WebUI instance:",
+      "source_content_hash": "b025e0e343b6ada4893464b07d85a4aefa2924f438104ee865b5327ef7e5d354",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "現在のSage WebUIインスタンスからデータベースをエクスポートするには:"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "1. **Use `docker cp` to copy the database file**:  \n   The `webui.db` file is located in the container inside the directory `/app/backend/data`. Run the following command to copy it into your local machine:  \n   ```bash\n   docker cp sage-open-webui:/app/backend/data/webui.db ./webui.db\n   ```\n\n2. **Transfer the exported file to the new server**:  \n   You can use **FileZilla** or any other file transfer tool of your choice to move the `webui.db` file to the new server.\n\n   :::info\n   FileZilla is recommended for its ease of use when transferring files to the new server.\n   :::",
+      "source_content_hash": "e055dfe0f921ec154d754a18edbbf3481fbb4b2d3de248e0b00297bc3867a691",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **`docker cp`を使用してデータベースファイルをコピー**:  \n   `webui.db`ファイルはコンテナ内の`/app/backend/data`ディレクトリにあります。以下のコマンドを実行してローカルマシンにコピーします:  \n   ```bash\n   docker cp sage-open-webui:/app/backend/data/webui.db ./webui.db\n   ```\n\n2. **エクスポートしたファイルを新しいサーバーに転送**:  \n   **FileZilla**やその他のファイル転送ツールを使用して、`webui.db`ファイルを新しいサーバーに移動できます。\n\n   :::info\n   新しいサーバーへのファイル転送には、使いやすさからFileZillaが推奨されます。\n   :::"
+      }
+    },
+    {
+      "segment_id": "2b28cb1b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "### Importing Database",
+      "source_content_hash": "ef40e2b58beca0c0abcb24e1f28853185a7d53357751229b38c237a60bcf49ae",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### データベースのインポート"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "After moving the `webui.db` file to the new server, follow these steps:",
+      "source_content_hash": "6bbda8c39d1a78718e1ee6d6a4ca7ca06bf28761faba003d04ab508ad0d664d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`webui.db`ファイルを新しいサーバーに移動した後、以下の手順に従ってください:"
+      }
+    },
+    {
+      "segment_id": "7a2e981c",
+      "source_content": "1. **Install and Run Sage WebUI on the New Server**:  \n   Set up and run Sage WebUI using a Docker container. Follow the instructions provided in the [🚀 Getting Started](/getting-started) to install and start the Sage WebUI container. Once it's running, stop it before performing the import step.\n   ```bash\n   docker stop sage-open-webui\n   ```\n\n2. **Use `docker cp` to copy the database file to the container**:  \n   Assuming the exported `webui.db` file is in your current working directory, copy it into the container:\n   ```bash\n   docker cp ./webui.db sage-open-webui:/app/backend/data/webui.db\n   ```\n\n3. **Start the Sage WebUI container**:  \n   Start the container again to use the imported database.\n   ```bash\n   docker start sage-open-webui\n   ```\n\n   The new server should now be running Sage WebUI with your imported database.",
+      "source_content_hash": "3466b165f1e4a23610524bb09dd9ebaaf296b8dd17b7ee538358967d00f058f6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **新しいサーバーにSage WebUIをインストールして実行**:  \n   Dockerコンテナを使用してSage WebUIをセットアップし、実行します。[🚀 はじめに](/getting-started)の手順に従ってSage WebUIコンテナをインストールおよび起動してください。起動後、インポート手順を行う前に停止します。\n   ```bash\n   docker stop sage-open-webui\n   ```\n\n2. **`docker cp`を使用してデータベースファイルをコンテナにコピー**:  \n   エクスポートした`webui.db`ファイルが現在の作業ディレクトリにある場合、以下のコマンドでコンテナにコピーします:\n   ```bash\n   docker cp ./webui.db sage-open-webui:/app/backend/data/webui.db\n   ```\n\n3. **Sage WebUIコンテナを再起動**:  \n   コンテナを再起動して、インポートしたデータベースを使用します。\n   ```bash\n   docker start sage-open-webui\n   ```\n\n   これで、新しいサーバーでSage WebUIがインポートされたデータベースで実行されます。"
+      }
+    },
+    {
+      "segment_id": "716da8e8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "### Notes",
+      "source_content_hash": "87265b8bc3a2b582373d130c1eeb5b465f36386c3ee6a2e5d5902872270bc115",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 注意事項"
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "- This export/import process **only works if you're using the internal SQLite database (`webui.db`)**.\n- If you're using an external PostgreSQL database, this method is not applicable because the database is managed outside the container. For PostgreSQL, you'd need to follow PostgreSQL-specific tools and procedures to back up and restore your database.",
+      "source_content_hash": "08fd59ca9c7189e1afefb68ca5f843c6d4f498762f23418172335c80da194972",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- このエクスポート/インポートプロセスは、**内部SQLiteデータベース（`webui.db`）を使用している場合にのみ機能します**。\n- 外部PostgreSQLデータベースを使用している場合、この方法は適用されません。PostgreSQLの場合は、データベースのバックアップと復元にPostgreSQL固有のツールと手順が必要です。"
+      }
+    },
+    {
+      "segment_id": "df6e96a7",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "### Why It's Important",
+      "source_content_hash": "c2e16c4aeaa3e3122bcff1e73b4e2f3b23da742a5ac9b6a7cf51e227f7515eb9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 重要性"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "This approach is particularly useful when:",
+      "source_content_hash": "f4437ac6402b2526923958ad69eafb23a025fb1d2851f8f6183b88006a83d48e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この方法は、以下の場合に特に有用です:"
+      }
+    },
+    {
+      "segment_id": "a4bd3cfc",
+      "source_content": "- Migrating your Sage WebUI data to a new server or machine.\n- Creating backups of your data before an update or modification.\n- Testing Sage WebUI on multiple servers with the same setup.",
+      "source_content_hash": "532af864945cae357aba6026f90cb50bfb952dbe0bbe56c8247f2061d6049e28",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Sage WebUIのデータを新しいサーバーやマシンに移行する場合。\n- 更新や変更前にデータのバックアップを作成する場合。\n- 同じ設定で複数のサーバーでSage WebUIをテストする場合。"
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```bash\n# Quick commands summary for export and import\n# Export:\ndocker cp sage-open-webui:/app/backend/data/webui.db ./webui.db\n\n# Stop container on the new server:\ndocker stop sage-open-webui\n\n# Import:\ndocker cp ./webui.db sage-open-webui:/app/backend/data/webui.db\n\n# Start container:\ndocker start sage-open-webui\n```",
+      "source_content_hash": "03b345391497ef8f64d9542b08a6c1d2850fa094fc3d146493479eebe8021a74",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "With these steps, you can easily manage your Sage WebUI migration or backup process. Keep in mind the database format you're using to ensure compatibility.",
+      "source_content_hash": "3a5eae8c2d9a29d49673cb45486c2b3079a220e744251f18a84ef4feb16fa03f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの手順に従うことで、Sage WebUIの移行やバックアッププロセスを簡単に管理できます。互換性を確保するため、使用しているデータベース形式に注意してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/database.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.806666+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "2a06a39c00ee60a9c1516a8b442fa99565972062677e1924e0074f62979f9395"
+  }
+}

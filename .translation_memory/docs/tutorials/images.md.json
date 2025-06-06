@@ -1,0 +1,522 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/images.md",
+  "source_file_content_hash": "a61c0c991728258a1741cdba32b1c85fa5d248633ee34b615469a00ea8c4cafc",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 6\ntitle: \"🎨 Image Generation\"\n---",
+      "source_content_hash": "48da1a6ec9a104c30f408263452601b7e6659d2da10afb4545e83375fafb9067",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したいですか？ コントリビュートチュートリアルをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# 🎨 Image Generation",
+      "source_content_hash": "1078b826387707838a44dcb6247d2d926e64811824b50aefcb8b06cca83a4cff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🎨 画像生成"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Sage WebUI supports image generation through three backends: **AUTOMATIC1111**, **ComfyUI**, and **OpenAI DALL·E**. This guide will help you set up and use either of these options.",
+      "source_content_hash": "a5b4154dc9b16c86eac5e920a3c7d18af46f090fd941004fda0051f90ee41ff9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、**AUTOMATIC1111**、**ComfyUI**、**OpenAI DALL·E**の3つのバックエンドによる画像生成をサポートしています。このガイドでは、これらのオプションのセットアップと使用方法を説明します。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## AUTOMATIC1111",
+      "source_content_hash": "9bf518971fb976a87c6226029f1a17cbf5e96058993383b6ea539f5f8432b0d3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## AUTOMATIC1111"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Sage WebUI supports image generation through the **AUTOMATIC1111** [API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API). Here are the steps to get started:",
+      "source_content_hash": "02282db84545e6c8d08c74903a9ae3814f534e286a4fe084e51a9653712a2b76",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、**AUTOMATIC1111**の[API](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API)を介した画像生成をサポートしています。開始するための手順は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "### Initial Setup",
+      "source_content_hash": "b773f9d650bab441ad35b5c06e79232c0c542a140b46866569d8f16d04796b70",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 初期設定"
+      }
+    },
+    {
+      "segment_id": "3b695c37",
+      "source_content": "1. Ensure that you have [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) installed.\n2. Launch AUTOMATIC1111 with additional flags to enable API access:\n\n   ```\n   ./webui.sh --api --listen\n   ```\n\n3. For Docker installation of WebUI with the environment variables preset, use the following command:\n\n   ```\n   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e AUTOMATIC1111_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n   ```",
+      "source_content_hash": "553a6192afe8d9c963423d81e285ddb872172cdba523112c535a0843aa6b6d52",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)がインストールされていることを確認してください。\n2. APIアクセスを有効にするための追加フラグを付けてAUTOMATIC1111を起動します：\n\n   ```\n   ./webui.sh --api --listen\n   ```\n\n3. 環境変数が事前設定されたWebUIのDockerインストールには、以下のコマンドを使用します：\n\n   ```\n   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e AUTOMATIC1111_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n   ```"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "### Setting Up Sage WebUI with AUTOMATIC1111",
+      "source_content_hash": "2a1643e09f8545d641d7f211d9175636f048348693bdcc577a77d70b96a6f182",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Sage WebUIとAUTOMATIC1111のセットアップ"
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "1. In Sage WebUI, navigate to the **Admin Panel** > **Settings** > **Images** menu.\n2. Set the `Image Generation Engine` field to `Default (Automatic1111)`.\n3. In the API URL field, enter the address where AUTOMATIC1111's API is accessible:\n\n   ```\n   http://<your_automatic1111_address>:7860/\n   ```\n\n   If you're running a Docker installation of Sage WebUI and AUTOMATIC1111 on the same host, use `http://host.docker.internal:7860/` as your address.",
+      "source_content_hash": "26e59fce24f2a6392989f4227b43d3bc244e24c79d8882bd256a2a99fed4ba43",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIで、**Admin Panel** > **Settings** > **Images**メニューに移動します。\n2. `Image Generation Engine`フィールドを`Default (Automatic1111)`に設定します。\n3. API URLフィールドに、AUTOMATIC1111のAPIがアクセス可能なアドレスを入力します：\n\n   ```\n   http://<your_automatic1111_address>:7860/\n   ```\n\n   Sage WebUIとAUTOMATIC1111を同じホストでDockerインストールしている場合は、`http://host.docker.internal:7860/`をアドレスとして使用します。"
+      }
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "## ComfyUI",
+      "source_content_hash": "6995ede26c5ca3cbe08aecc89dfac8aea4c5fbd7181aa81a45e0f02a6c2f869a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ComfyUI"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "ComfyUI provides an alternative interface for managing and interacting with image generation models. Learn more or download it from its [GitHub page](https://github.com/comfyanonymous/ComfyUI). Below are the setup instructions to get ComfyUI running alongside your other tools.",
+      "source_content_hash": "87ec0774c69e061929befd8e17e86f559d1ad15454d9cf25bf586d9c017aae0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ComfyUIは、画像生成モデルの管理と操作のための代替インターフェースを提供します。詳細やダウンロードは[GitHubページ](https://github.com/comfyanonymous/ComfyUI)をご覧ください。以下は、ComfyUIを他のツールと一緒に実行するためのセットアップ手順です。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "### Initial Setup",
+      "source_content_hash": "b773f9d650bab441ad35b5c06e79232c0c542a140b46866569d8f16d04796b70",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 初期設定"
+      }
+    },
+    {
+      "segment_id": "ddd2c7ae",
+      "source_content": "1. Download and extract the ComfyUI software package from [GitHub](https://github.com/comfyanonymous/ComfyUI) to your desired directory.\n2. To start ComfyUI, run the following command:\n\n   ```\n   python main.py\n   ```\n\n   For systems with low VRAM, launch ComfyUI with additional flags to reduce memory usage:\n\n   ```\n   python main.py --lowvram\n   ```\n\n3. For Docker installation of WebUI with the environment variables preset, use the following command:\n\n   ```\n   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e COMFYUI_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n   ```",
+      "source_content_hash": "66e8f3a2b7d3c5734bd894afac763849265904f9152feed8ff7c857a094e19ab",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [GitHub](https://github.com/comfyanonymous/ComfyUI)からComfyUIソフトウェアパッケージをダウンロードし、任意のディレクトリに展開します。\n2. ComfyUIを起動するには、以下のコマンドを実行します：\n\n   ```\n   python main.py\n   ```\n\n   VRAMが少ないシステムでは、メモリ使用量を減らすための追加フラグを付けてComfyUIを起動します：\n\n   ```\n   python main.py --lowvram\n   ```\n\n3. 環境変数が事前設定されたWebUIのDockerインストールには、以下のコマンドを使用します：\n\n   ```\n   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -e COMFYUI_BASE_URL=http://host.docker.internal:7860/ -e ENABLE_IMAGE_GENERATION=True -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n   ```"
+      }
+    },
+    {
+      "segment_id": "ee8401db",
+      "source_content": "### Setting Up Sage WebUI with ComfyUI",
+      "source_content_hash": "6618d19102b857ba8bc2a27fb4f8afd808444290944ccbf2c790d60c8057041a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Sage WebUIとComfyUIのセットアップ"
+      }
+    },
+    {
+      "segment_id": "047c2395",
+      "source_content": "#### Setting Up FLUX.1 Models",
+      "source_content_hash": "433068b000df4562038afaba8f4127c5918e9d8d48092e3711eb22a63ac3cbf8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### FLUX.1モデルのセットアップ"
+      }
+    },
+    {
+      "segment_id": "c7436e69",
+      "source_content": "1. **Model Checkpoints**:",
+      "source_content_hash": "3109cac6abea0007d7505e29d64f1ef88ed2fc158dcd1eed4674bf15f7d7549c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **モデルチェックポイント**:"
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "* Download either the `FLUX.1-schnell` or `FLUX.1-dev` model from the [black-forest-labs HuggingFace page](https://huggingface.co/black-forest-labs).\n* Place the model checkpoint(s) in both the `models/checkpoints` and `models/unet` directories of ComfyUI. Alternatively, you can create a symbolic link between `models/checkpoints` and `models/unet` to ensure both directories contain the same model checkpoints.",
+      "source_content_hash": "9fca2fbd2686f916197539fb4f7ebcc906d7e98125b90a3f28c1ad1b76c1081f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [black-forest-labs HuggingFaceページ](https://huggingface.co/black-forest-labs)から`FLUX.1-schnell`または`FLUX.1-dev`モデルをダウンロードします。\n* モデルチェックポイントをComfyUIの`models/checkpoints`と`models/unet`ディレクトリの両方に配置します。または、`models/checkpoints`と`models/unet`の間にシンボリックリンクを作成して、両方のディレクトリに同じモデルチェックポイントが含まれるようにすることもできます。"
+      }
+    },
+    {
+      "segment_id": "1316cb90",
+      "source_content": "2. **VAE Model**:",
+      "source_content_hash": "160c0e093e3b220b054fe0ac664f24d3c0345c55296c01defb7ffe19075d1847",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "2. **VAEモデル**:"
+      }
+    },
+    {
+      "segment_id": "5efe9dee",
+      "source_content": "* Download `ae.safetensors` VAE from [here](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors).\n* Place it in the `models/vae` ComfyUI directory.",
+      "source_content_hash": "f896e7267693f4e6113ecc5e052adba48982fd9f052b52e78a5ce736358a0624",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [こちら](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors)から`ae.safetensors` VAEをダウンロードしてください。\n* ComfyUIの`models/vae`ディレクトリに配置してください。"
+      }
+    },
+    {
+      "segment_id": "c142abbb",
+      "source_content": "3. **CLIP Model**:",
+      "source_content_hash": "09842b0e6824580172d556f3615c17c6a740d7641c1aa0a1d8195fa121499080",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "3. **CLIPモデル**:"
+      }
+    },
+    {
+      "segment_id": "cc9271fb",
+      "source_content": "* Download `clip_l.safetensors` from [here](https://huggingface.co/comfyanonymous/flux_text_encoders/tree/main).\n* Place it in the `models/clip` ComfyUI directory.",
+      "source_content_hash": "65ac5dcc6763508ca9249c55f5c646faff32118864f6f7ee2a192ab66042c0f6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [こちら](https://huggingface.co/comfyanonymous/flux_text_encoders/tree/main)から`clip_l.safetensors`をダウンロードしてください。\n* ComfyUIの`models/clip`ディレクトリに配置してください。"
+      }
+    },
+    {
+      "segment_id": "9e8f150c",
+      "source_content": "4. **T5XXL Model**:",
+      "source_content_hash": "1ac5d22f68cc6feab1e6ff2dbabd4f5bf26ad335148b684406f8bb490ba6bc8f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "4. **T5XXLモデル**:"
+      }
+    },
+    {
+      "segment_id": "49f9f337",
+      "source_content": "* Download either the `t5xxl_fp16.safetensors` or `t5xxl_fp8_e4m3fn.safetensors` model from [here](https://huggingface.co/comfyanonymous/flux_text_encoders/tree/main).\n* Place it in the `models/clip` ComfyUI directory.",
+      "source_content_hash": "bc63a89641112ba117ea770c314ec5a3904358ef2f55fe2e3d5e41e51a1bc782",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [こちら](https://huggingface.co/comfyanonymous/flux_text_encoders/tree/main)から`t5xxl_fp16.safetensors`または`t5xxl_fp8_e4m3fn.safetensors`モデルをダウンロードしてください。\n* ComfyUIの`models/clip`ディレクトリに配置してください。"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "To integrate ComfyUI into Sage WebUI, follow these steps:",
+      "source_content_hash": "8e6c857fdb08cf8ca43f9b223de4f808b2dac1a86f46f23bcff572b44b0111a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ComfyUIをSage WebUIに統合するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "#### Step 1: Configure Sage WebUI Settings",
+      "source_content_hash": "035002038032294c9c84d4833cd4698e9b93f0564ec2665dbd8fd62fa4f3d148",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ステップ1: Sage WebUIの設定を構成"
+      }
+    },
+    {
+      "segment_id": "cfea4c31",
+      "source_content": "1. Navigate to the **Admin Panel** in Sage WebUI.\n2. Click on **Settings** and then select the **Images** tab.\n3. In the `Image Generation Engine` field, choose `ComfyUI`.\n4. In the **API URL** field, enter the address where ComfyUI's API is accessible, following this format: `http://<your_comfyui_address>:8188/`.\n   * Set the environment variable `COMFYUI_BASE_URL` to this address to ensure it persists within the WebUI.",
+      "source_content_hash": "0921b09b3c8defc0605654290f612212a850f71458abde37bfcc67d251d96efc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIで**管理者パネル**に移動します。\n2. **設定**をクリックし、**画像**タブを選択します。\n3. `画像生成エンジン`フィールドで`ComfyUI`を選択します。\n4. **API URL**フィールドに、ComfyUIのAPIがアクセス可能なアドレスを次の形式で入力します：`http://<your_comfyui_address>:8188/`。\n   * このアドレスを環境変数`COMFYUI_BASE_URL`に設定して、WebUI内で永続化させます。"
+      }
+    },
+    {
+      "segment_id": "71169a2d",
+      "source_content": "#### Step 2: Verify the Connection and Enable Image Generation",
+      "source_content_hash": "d31e43da6a028986067e3d6b414c8905d1e1428f4ab6941998b52c6ddf4bee71",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ステップ2: 接続を確認し画像生成を有効化"
+      }
+    },
+    {
+      "segment_id": "cd1d0fe2",
+      "source_content": "1. Ensure ComfyUI is running and that you've successfully verified the connection to Sage WebUI. You won't be able to proceed without a successful connection.\n2. Once the connection is verified, toggle on **Image Generation (Experimental)**. More options will be presented to you.\n3. Continue to step 3 for the final configuration steps.",
+      "source_content_hash": "b1501dcebca8b1cb32135c5e53e169ad97af76d54cddccb0533b913d3565de78",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. ComfyUIが実行中であり、Sage WebUIへの接続が成功していることを確認してください。接続が成功していないと先に進めません。\n2. 接続が確認されたら、**画像生成（実験的）**をトグルオンします。さらにオプションが表示されます。\n3. 最終的な設定手順のためにステップ3に進んでください。"
+      }
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "#### Step 3: Configure ComfyUI Settings and Import Workflow",
+      "source_content_hash": "713a5911ae08cf50ec644bfd1693486bb38cc64fd6bb8c954765f337e4ed1027",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ステップ3: ComfyUIの設定を構成しワークフローをインポート"
+      }
+    },
+    {
+      "segment_id": "5cb70a3d",
+      "source_content": "1. Enable developer mode within ComfyUI. To do this, look for the gear icon above the **Queue Prompt** button within ComfyUI and enable the `Dev Mode` toggle.\n2. Export the desired workflow from ComfyUI in `API format` using the `Save (API Format)` button. The file will be downloaded as `workflow_api.json` if done correctly.\n3. Return to Sage WebUI and click the **Click here to upload a workflow.json file** button.\n4. Select the `workflow_api.json` file to import the exported workflow from ComfyUI into Sage WebUI.\n5. After importing the workflow, you must map the `ComfyUI Workflow Nodes` according to the imported workflow node IDs.\n6. Set `Set Default Model` to the name of the model file being used, such as `flux1-dev.safetensors`",
+      "source_content_hash": "e7106e814518e5dd3269df39e0a24bda6c4ecf3d591ae781f5073771e16aefcb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. ComfyUI内で開発者モードを有効にします。これを行うには、ComfyUI内の**Queue Prompt**ボタンの上にある歯車アイコンを探し、`Dev Mode`トグルを有効にします。\n2. ComfyUIから`API形式`で目的のワークフローをエクスポートします。`Save (API Format)`ボタンを使用してください。正しく行われると、ファイルは`workflow_api.json`としてダウンロードされます。\n3. Sage WebUIに戻り、**Click here to upload a workflow.json file**ボタンをクリックします。\n4. `workflow_api.json`ファイルを選択して、ComfyUIからエクスポートしたワークフローをSage WebUIにインポートします。\n5. ワークフローをインポートした後、`ComfyUI Workflow Nodes`をインポートしたワークフローのノードIDに従ってマッピングする必要があります。\n6. `Set Default Model`を使用するモデルファイルの名前に設定します（例：`flux1-dev.safetensors`）。"
+      }
+    },
+    {
+      "segment_id": "a7a2b727",
+      "source_content": ":::info\nYou may need to adjust an `Input Key` or two within Sage WebUI's `ComfyUI Workflow Nodes` section to match a node within your workflow.\nFor example, `seed` may need to be renamed to `noise_seed` to match a node ID within your imported workflow.\n:::",
+      "source_content_hash": "d91dbd55d6859db8f4b2a9811f79e73d7923fda507b4638df7825af20eeb843d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nSage WebUIの`ComfyUI Workflow Nodes`セクション内で、1つまたは2つの`Input Key`を調整する必要がある場合があります。例えば、`seed`を`noise_seed`にリネームして、インポートしたワークフロー内のノードIDと一致させる必要があるかもしれません。\n:::"
+      }
+    },
+    {
+      "segment_id": "c9cbbb2d",
+      "source_content": ":::tip\nSome workflows, such as ones that use any of the Flux models, may utilize multiple nodes IDs that is necessary to fill in for their node entry fields within Sage WebUI. If a node entry field requires multiple IDs, the node IDs should be comma separated (e.g. `1` or `1, 2`).\n:::",
+      "source_content_hash": "c876f4760399e2ec2e066834712e15a5b95de0806562d6b6faeff6779166e568",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\nFluxモデルを使用するワークフローの場合、Sage WebUI内のノードエントリフィールドに入力する必要がある複数のノードIDを使用する場合があります。ノードエントリフィールドで複数のIDが必要な場合、ノードIDはカンマ区切りで入力してください（例：`1`または`1, 2`）。\n:::"
+      }
+    },
+    {
+      "segment_id": "40a587f3",
+      "source_content": "6. Click `Save` to apply the settings and enjoy image generation with ComfyUI integrated into Sage WebUI!",
+      "source_content_hash": "f99652a79b33458639d3246619868dd0e7663e0ec9ac70f71fad2324e7b23675",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "6. `Save`をクリックして設定を適用し、ComfyUIが統合されたSage WebUIで画像生成を楽しんでください！"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "After completing these steps, your ComfyUI setup should be integrated with Sage WebUI, and you can use the Flux.1 models for image generation.",
+      "source_content_hash": "f85e55bbea3a317de4952329998d65b115799089466320dff47b24f13c2250bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの手順を完了すると、ComfyUIのセットアップがSage WebUIに統合され、Flux.1モデルを使用した画像生成が可能になります。"
+      }
+    },
+    {
+      "segment_id": "c35e5786",
+      "source_content": "### Configuring with SwarmUI",
+      "source_content_hash": "408814154241daa225f0345754f623fe99bdeac33f139372b8538eece0aca6c7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### SwarmUIでの構成"
+      }
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "SwarmUI utilizes ComfyUI as its backend. In order to get Sage WebUI to work with SwarmUI you will have to append `ComfyBackendDirect` to the `ComfyUI Base URL`. Additionally, you will want to setup SwarmUI with LAN access. After aforementioned adjustments, setting up SwarmUI to work with Sage WebUI will be the same as [Step one: Configure Sage WebUI Settings](https://github.com/Startr/docs/edit/main/docs/features/images.md#step-1-configure-sage-open-webui-settings) as outlined above.\n![Install SwarmUI with LAN Access](https://github.com/user-attachments/assets/a6567e13-1ced-4743-8d8e-be526207f9f6)",
+      "source_content_hash": "0824087d9eb3b35eebe6fc793b1dde8be149bd24908d6868d0cba709fddb0af9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "SwarmUIはバックエンドとしてComfyUIを利用しています。Sage WebUIをSwarmUIと連携させるには、`ComfyUI Base URL`に`ComfyBackendDirect`を追加する必要があります。さらに、SwarmUIをLANアクセス可能な状態でセットアップすることをお勧めします。上記の調整を行った後、SwarmUIをSage WebUIと連携させる手順は、前述の[ステップ1: Sage WebUI設定の構成](https://github.com/Startr/docs/edit/main/docs/features/images.md#step-1-configure-sage-open-webui-settings)と同様になります。\n![SwarmUIをLANアクセスでインストール](https://github.com/user-attachments/assets/a6567e13-1ced-4743-8d8e-be526207f9f6)"
+      }
+    },
+    {
+      "segment_id": "c83259bb",
+      "source_content": "#### SwarmUI API URL",
+      "source_content_hash": "cc594069d43331a2c056a9046b5e6e693c1562449a1a0f48657880ba2c506e31",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### SwarmUI API URL"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "The address you will input as the ComfyUI Base URL will look like: `http://<your_swarmui_address>:7801/ComfyBackendDirect`",
+      "source_content_hash": "fe2d5dc611af5988854e77a112edde12141c72ad90c9c8cc3c01c1c7dc014f1c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ComfyUI Base URLとして入力するアドレスは次のようになります: `http://<your_swarmui_address>:7801/ComfyBackendDirect`"
+      }
+    },
+    {
+      "segment_id": "5dba1427",
+      "source_content": "## OpenAI DALL·E",
+      "source_content_hash": "290e7c5d3b39319fd12a8b66f4421c2feb7a5d9dc076fc537dcc2fa02477131b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## OpenAI DALL·E"
+      }
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "Sage WebUI also supports image generation through the **OpenAI DALL·E APIs**. This option includes a selector for choosing between DALL·E 2 and DALL·E 3, each supporting different image sizes.",
+      "source_content_hash": "cf31d6d0b31e9c9b8eb16a750335eb92a54bf47797071c2b72d612577b46857f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは**OpenAI DALL·E API**を介した画像生成もサポートしています。このオプションでは、DALL·E 2とDALL·E 3の選択が可能で、それぞれ異なる画像サイズをサポートしています。"
+      }
+    },
+    {
+      "segment_id": "0d5321b7",
+      "source_content": "### Initial Setup",
+      "source_content_hash": "b773f9d650bab441ad35b5c06e79232c0c542a140b46866569d8f16d04796b70",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 初期設定"
+      }
+    },
+    {
+      "segment_id": "17ca27eb",
+      "source_content": "1. Obtain an [API key](https://platform.openai.com/api-keys) from OpenAI.",
+      "source_content_hash": "6d92528256ea407daa2011e79c19629b1a782344044386a5263c996f4165c987",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. OpenAIから[APIキー](https://platform.openai.com/api-keys)を取得します。"
+      }
+    },
+    {
+      "segment_id": "dd4905a4",
+      "source_content": "### Configuring Sage WebUI",
+      "source_content_hash": "4799347141fa4f69ac1c7e293dca7542b636a29bf58bbcaff4ef9cb4f0a7ef64",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Sage WebUIの設定"
+      }
+    },
+    {
+      "segment_id": "d4615819",
+      "source_content": "1. In Sage WebUI, navigate to the **Admin Panel** > **Settings** > **Images** menu.\n2. Set the `Image Generation Engine` field to `Open AI (Dall-E)`.\n3. Enter your OpenAI API key.\n4. Choose the DALL·E model you wish to use. Note that image size options will depend on the selected model:\n   * **DALL·E 2**: Supports `256x256`, `512x512`, or `1024x1024` images.\n   * **DALL·E 3**: Supports `1024x1024`, `1792x1024`, or `1024x1792` images.",
+      "source_content_hash": "8f3a675f70d90ed01de2122b0cfb08dabcdd16d3a637ca68f6a14374bc84d881",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIで**管理者パネル** > **設定** > **画像**メニューに移動します。\n2. `Image Generation Engine`フィールドを`Open AI (Dall-E)`に設定します。\n3. OpenAI APIキーを入力します。\n4. 使用するDALL·Eモデルを選択します。画像サイズのオプションは選択したモデルによって異なります:\n   * **DALL·E 2**: `256x256`、`512x512`、`1024x1024`の画像をサポート。\n   * **DALL·E 3**: `1024x1024`、`1792x1024`、`1024x1792`の画像をサポート。"
+      }
+    },
+    {
+      "segment_id": "b50cf7ff",
+      "source_content": "### Azure OpenAI",
+      "source_content_hash": "3476f5c6d215a2ad163bc976753937d3561c052790fc2667db77b0e82741c431",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Azure OpenAI"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "Using Azure OpenAI Dall-E directly is unsupported, but you can [set up a LiteLLM proxy](https://litellm.vercel.app/docs/image_generation) which is compatible with the `Open AI (Dall-E)` Image Generation Engine.",
+      "source_content_hash": "d089794626b57cfca4bed1aaba4c53823bb1ba20e8b3d55e530cd2c9886cde7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Azure OpenAI Dall-Eを直接使用することはサポートされていませんが、[LiteLLMプロキシを設定](https://litellm.vercel.app/docs/image_generation)することで、`Open AI (Dall-E)` Image Generation Engineと互換性を持たせることができます。"
+      }
+    },
+    {
+      "segment_id": "3c6dd548",
+      "source_content": "## Using Image Generation",
+      "source_content_hash": "f77186114ef9c69caefe7f4fd7ae0929e59ab670dd0d242c8254327a33cc3c0f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 画像生成の使用"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "![Image Generation Tutorial](/images/tutorial_image_generation.png)",
+      "source_content_hash": "170d28f30faea3b5f2458b8d29d955e4567439d3a22ae8c5b397f422145b37ab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![画像生成チュートリアル](/images/tutorial_image_generation.png)"
+      }
+    },
+    {
+      "segment_id": "25215977",
+      "source_content": "1. First, use a text generation model to write a prompt for image generation.\n2. After the response has finished, you can click the Picture icon to generate an image.\n3. After the image has finished generating, it will be returned automatically in chat.",
+      "source_content_hash": "47bfa1becc09d648a3cc9b0e7a4a3e06f677ba51c51c78f9a9c95e33e05c24ab",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 最初に、テキスト生成モデルを使用して画像生成用のプロンプトを作成します。\n2. 応答が完了したら、Pictureアイコンをクリックして画像を生成できます。\n3. 画像の生成が完了すると、自動的にチャットに返されます。"
+      }
+    },
+    {
+      "segment_id": "b1fb63b3",
+      "source_content": ":::tip\n    You can also edit the LLM's response and enter your image generation prompt as the message\n    to send off for image generation instead of using the actual response provided by the\n    LLM.\n:::",
+      "source_content_hash": "495f2b30f62d06f9bd106edf06decd10f08a3cace00b72f92857a653593cf0ca",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n    LLMの応答を編集し、実際の応答ではなく、画像生成プロンプトをメッセージとして送信することもできます。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/images.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.800593+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "a61c0c991728258a1741cdba32b1c85fa5d248633ee34b615469a00ea8c4cafc"
+  }
+}

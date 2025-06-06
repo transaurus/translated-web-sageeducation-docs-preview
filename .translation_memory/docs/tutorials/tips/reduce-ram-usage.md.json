@@ -1,0 +1,122 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/tips/reduce-ram-usage.md",
+  "source_file_content_hash": "48d224e4482a2de46cf371242ae83492f70519677ca1de4642778499e0cda85e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 10\ntitle: \"✂️ Reduce RAM Usage\"\n---",
+      "source_content_hash": "2111c5d609106b3e286942b0dfbd172be0c0db35a8bb5d6f065fc8ddb836f65d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Reduce RAM Usage",
+      "source_content_hash": "ac8a5a3649a0395c8c9c453e99900808a0198772941ff04ff334010216c487af",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# RAM使用量の削減"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "If you are deploying this image in a RAM-constrained environment, there are a few things you can do to slim down the image.",
+      "source_content_hash": "ef5644277d767551de8b027e635b6406a7272dba33fa09249b808b294e1c19a1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このイメージをRAMが制限された環境でデプロイする場合、イメージをスリム化するためにいくつかの方法があります。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "On a Raspberry Pi 4 (arm64) with version v0.3.10, this was able to reduce idle memory consumption from >1GB to ~200MB (as observed with `docker container stats`).",
+      "source_content_hash": "79ab230a6e5bb643fdae2ac60c548fea45e8fb7f6ce4aa7f961a405b6493ee48",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Raspberry Pi 4（arm64）でバージョンv0.3.10を使用した場合、アイドル時のメモリ消費量を>1GBから~200MBに削減できました（`docker container stats`で観測）。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## TLDR",
+      "source_content_hash": "20923b9fb79d5ff45f5691db457c4796246c5c5f1b47806da7ae8462a8457406",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Set the following environment variables (or the respective UI settings for an existing deployment): `RAG_EMBEDDING_ENGINE: ollama`, `AUDIO_STT_ENGINE: openai`.",
+      "source_content_hash": "7c9c6d1c570d31d156400d25c3f151f6e39e4e0febdd554a8a6bc8842234372e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の環境変数（または既存のデプロイメントの場合はそれぞれのUI設定）を設定します：`RAG_EMBEDDING_ENGINE: ollama`、`AUDIO_STT_ENGINE: openai`。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Longer explanation",
+      "source_content_hash": "9a56901a3dfc2c2c42e8f62af2641275397ecebac3f2fc991e1b0acb09bf796d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 詳細な説明"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Much of the memory consumption is due to loaded ML models. Even if you are using an external language model (OpenAI or unbundled ollama), many models may be loaded for additional purposes.",
+      "source_content_hash": "c7837824f35be1845a80fe26f316bc06bf4208cef2d979b49902f098d1f5c2bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "メモリ消費の大部分は、ロードされたMLモデルによるものです。外部の言語モデル（OpenAIまたはアンバンドルされたollama）を使用している場合でも、追加目的で多くのモデルがロードされる可能性があります。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "As of v0.3.10 this includes:",
+      "source_content_hash": "9a7d05f22328804e48f973e8d0ea220b01b7463f422ad4dac96bdd65cffa6d5c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "v0.3.10時点では以下が含まれます："
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "* Speech-to-text (whisper by default)\n* RAG embedding engine (defaults to local SentenceTransformers model)\n* Image generation engine (disabled by default)",
+      "source_content_hash": "99235e6063a21c6d012445598b4256b61349f7837e1d266e92dce8135158de7a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* 音声認識（デフォルトはwhisper）\n* RAG埋め込みエンジン（デフォルトはローカルのSentenceTransformersモデル）\n* 画像生成エンジン（デフォルトでは無効）"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "The first 2 are enabled and set to local models by default. You can change the models in the admin panel (RAG: Documents category, set it to Ollama or OpenAI, Speech-to-text: Audio section, work with OpenAI or WebAPI).\nIf you are deploying a fresh Docker image, you can also set them with the following environment variables: `RAG_EMBEDDING_ENGINE: ollama`, `AUDIO_STT_ENGINE: openai`. Note that these environment variables have no effect if a `config.json` already exists.",
+      "source_content_hash": "4ad777d0ab55d7e69820d8f168bdcbd6054a584d103d58f71baff85157594891",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "最初の2つはデフォルトで有効かつローカルモデルに設定されています。これらのモデルは管理パネルで変更できます（RAG: DocumentsカテゴリでOllamaまたはOpenAIに設定、音声認識: AudioセクションでOpenAIまたはWebAPIを使用）。\n新しいDockerイメージをデプロイする場合は、以下の環境変数で設定することもできます：`RAG_EMBEDDING_ENGINE: ollama`、`AUDIO_STT_ENGINE: openai`。ただし、これらの環境変数は`config.json`が既に存在する場合には効果がありません。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/tips/reduce-ram-usage.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.794369+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "48d224e4482a2de46cf371242ae83492f70519677ca1de4642778499e0cda85e"
+  }
+}

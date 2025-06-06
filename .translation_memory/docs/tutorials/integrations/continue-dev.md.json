@@ -1,0 +1,342 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/continue-dev.md",
+  "source_file_content_hash": "cac9782697383e47b208dc250ced33e853b2b32bd5ce43f5e74d7c765baa2b21",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 13\ntitle: \"⚛️ Continue.dev VSCode Extension with Sage WebUI\"\n---",
+      "source_content_hash": "0eb153e9cbbc22ba8f691ab4934c309e535e934c304817044d6eb7e3281ac6c7",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したいですか？コントリビューションのチュートリアルをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# Integrating Continue.dev VSCode Extension with Sage WebUI",
+      "source_content_hash": "2bd14899b8caf0d989555a72617a5af0df1695955e31b03d738d54753b03dc39",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Continue.dev VSCode拡張機能とSage WebUIの統合"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### Download Extension",
+      "source_content_hash": "8e78f45cba1286bf61a54367c2b642fe201f2c8c35efaaffae7e7aab540b8358",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 拡張機能のダウンロード"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "You can download the VSCode extension here on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Continue.continue)",
+      "source_content_hash": "9d04f824f6360fd7930507540ec444d5e718ed2c211f1dee1ea5ba4360c2f857",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "VSCode拡張機能は[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Continue.continue)からダウンロードできます。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Once installed you should now have a 'continue' tab in the side bar.",
+      "source_content_hash": "a11f622cdf1320d8d527b5444c3495c97c3d590ab238666b868800ad146f9e7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インストール後、サイドバーに「continue」タブが表示されます。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Open this. Down at the bottom right you should see a settings icon (looks like a cog).",
+      "source_content_hash": "abac50c5c8a0d8838fe3b2cb3747a8ea0ba1a9e2f7323fa40aa1f35465ee4309",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これを開いてください。右下に設定アイコン（歯車のようなアイコン）が表示されます。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Once you click on the settings icon a `config.json` should open up in the editor.",
+      "source_content_hash": "f8891d113b4253df4a0635f6e8578069319de1aff6f9ee6c87d8840e8950921b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "設定アイコンをクリックすると、エディタで`config.json`が開きます。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Here you'll be able to configure continue to use Sage WebUI.",
+      "source_content_hash": "af4f398f8381359595cd01e9898d59a2d8f746d2e916243136d972dd509f1e71",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ここで、ContinueをSage WebUIと連携するように設定できます。"
+      }
+    },
+    {
+      "segment_id": "1856ef44",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Currently the 'ollama' provider does not support authentication so we cannot use this provider with Sage WebUI.",
+      "source_content_hash": "4d3372a2db53af4f075fdb362280447157fc618f496110ee31b16b7c1f3e8ec7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "現在、「ollama」プロバイダは認証をサポートしていないため、Sage WebUIと一緒に使用することはできません。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "However Ollama and Sage WebUI both have compatibily with OpenAI API spec. You can see a blog post from Ollama [here](https://ollama.com/blog/openai-compatibility) on this.",
+      "source_content_hash": "661333026a794c8d646f25b9192fdf7fbae7171fd48054d12b45eee82560b796",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ただし、OllamaとSage WebUIはどちらもOpenAI API仕様との互換性があります。Ollamaのブログ記事は[こちら](https://ollama.com/blog/openai-compatibility)で確認できます。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "We can still setup Continue to use the openai provider which will allow us to use Sage WebUI's authentication token.",
+      "source_content_hash": "cd479d26e12568de5a81f91bba4e7227abab89f16a51c4507e82b6a559e4cebf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Continueをopenaiプロバイダとして設定することで、Sage WebUIの認証トークンを使用することが可能です。"
+      }
+    },
+    {
+      "segment_id": "2b88bb9d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "## Config",
+      "source_content_hash": "606c5d3b57ffd1dd5ffd6f3383b4439c23e88c8cdb347b95c6a29550e4513d5c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 設定"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "In `config.json` all you will need to do is add/change the following options.",
+      "source_content_hash": "c760e6d3b7e3e43e513735df006a658100936b97d2690231bc40b1cf0d995a28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`config.json`では、以下のオプションを追加または変更する必要があります。"
+      }
+    },
+    {
+      "segment_id": "80d9e13c",
+      "source_content": "### Change provider to openai",
+      "source_content_hash": "1690fd5cc1edb9411705d4b4aca61af38d83c66bbda000901cfd79f377616466",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### プロバイダをopenaiに変更"
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```json\n\"provider\": \"openai\"\n```",
+      "source_content_hash": "f1e46a63e3a839aad4488ecd3fabeb93665829dabb97bc34fe8a69e4947bcb89",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "### Add or update apiBase",
+      "source_content_hash": "d4b99dd99bc735d85407a029b8a8c9d04846c9c664874d5071583f7c290c932a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### apiBaseを追加または更新"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "Set this to your Open Web UI domain on the end.",
+      "source_content_hash": "875d30b7240c0b28271842a3aecc845cb8ea5583d5699d96854d5da488ec5e72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これをOpen Web UIのドメインに設定してください。"
+      }
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```json\n\"apiBase\": \"http://localhost:3000/\" #If you followed Getting Started Docker\n```",
+      "source_content_hash": "597db5e7de8dbc199fc587e5032ee0c3e4ccd93d786f4abf856bad83d665a6af",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_48ec8149"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "### Add apiKey",
+      "source_content_hash": "377c23fff508e776a41b2dfcd5d37e082b73a91f3edb7807f5848da1b618a5c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### apiKeyを追加"
+      }
+    },
+    {
+      "segment_id": "3ce8f045",
+      "source_content": "```json\n\"apiKey\": \"sk-79970662256d425eb274fc4563d4525b\" # Replace with your API key\n```",
+      "source_content_hash": "a8abd7f11471eaf8cf501a25a19e5eb45b48f303609de0ed9e25ad2f5ca63055",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3ce8f045"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "You can find and generate your api key from Sage WebUI -> Settings -> Account -> API Keys",
+      "source_content_hash": "07a198c035c39920f313cd7628aa8f83490f1f1bc8a2a2c57a07cc448cf2daf3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "APIキーは、Sage WebUI -> 設定 -> アカウント -> APIキーから確認および生成できます。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "You'll want to copy the \"API Key\" (this starts with sk-)",
+      "source_content_hash": "339c8d172c9e2759cf42c0fc7812934c812b2d01e00a8a0411828b5f73bc4662",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "「APIキー」（sk-で始まるもの）をコピーしてください。"
+      }
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "## Example Config",
+      "source_content_hash": "9433ace1d6247f2de71f4f32b97db36874d5b47d0c353775df5c2912dc0d16ff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 設定例"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Here is a base example of config.json using Sage WebUI via an openai provider. Using Granite Code as the model.\nMake sure you pull the model into your ollama instance/s beforehand.",
+      "source_content_hash": "5b9f96348bfe88d1c5434568cb533bcedcb1e013d2d09afa571aaa6278fb8883",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下は、openaiプロバイダ経由でSage WebUIを使用する`config.json`の基本例です。モデルとしてGranite Codeを使用しています。\n使用する前に、モデルをollamaインスタンスにプルしておいてください。"
+      }
+    },
+    {
+      "segment_id": "1d510af2",
+      "source_content": "```json\n{\n  \"models\": [\n    {\n      \"title\": \"Granite Code\",\n      \"provider\": \"openai\",\n      \"model\": \"granite-code:latest\",\n      \"useLegacyCompletionsEndpoint\": false,\n      \"apiBase\": \"http://YOUROPENWEBUI/ollama/v1\",\n      \"apiKey\": \"sk-YOUR-API-KEY\"\n    },\n    {\n      \"title\": \"Model ABC from pipeline\",\n      \"provider\": \"openai\",\n      \"model\": \"PIPELINE_MODEL_ID\",\n      \"useLegacyCompletionsEndpoint\": false,\n      \"apiBase\": \"http://YOUROPENWEBUI/api\",\n      \"apiKey\": \"sk-YOUR-API-KEY\"\n    }\n  ],\n  \"customCommands\": [\n    {\n      \"name\": \"test\",\n      \"prompt\": \"{{{ input }}}\\n\\nWrite a comprehensive set of unit tests for the selected code. It should setup, run tests that check for correctness including important edge cases, and teardown. Ensure that the tests are complete and sophisticated. Give the tests just as chat output, don't edit any file.\",\n      \"description\": \"Write unit tests for highlighted code\"\n    }\n  ],\n  \"tabAutocompleteModel\": {\n    \"title\": \"Granite Code\",\n    \"provider\": \"openai\",\n    \"model\": \"granite-code:latest\",\n    \"useLegacyCompletionsEndpoint\": false,\n    \"apiBase\": \"http://localhost:3000/ollama/v1\",\n    \"apiKey\": \"sk-YOUR-API-KEY\"\n  }\n}\n```",
+      "source_content_hash": "6debeebcb6e5f420084ec0766f8c230c9feae47692a2f99cfdcf990b56a1e5ca",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_1d510af2"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Save your `config.json` and thats it!",
+      "source_content_hash": "4055351c0792474b3bd4c14099b7df23ed9afb785930f435286844105ce6e9cd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`config.json`を保存すれば完了です！"
+      }
+    },
+    {
+      "segment_id": "4be28ed1",
+      "source_content": "You should now see your model in the Continue tab model selection.",
+      "source_content_hash": "c9d68eab27b2d533a73c30fcb3159991797f42648221c54e7de68e12e001fe4d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Continueタブのモデル選択にモデルが表示されるはずです。"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Select it and you should now be chatting via Sage WebUI (and or any [pipelines](/pipelines) you have setup )",
+      "source_content_hash": "fee4aa26045d3a0fc1815bd233e44585fa6baf6160bd2c3fa403f609ecba4d42",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルを選択すると、Sage WebUI（または設定した[パイプライン](/pipelines)）経由でチャットできるようになります。"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "You can do this for as many models you would like to use, altough any model should work, you should use a model that is designed for code.",
+      "source_content_hash": "5bace8b3165aa20df5c64035d25798221c9cf358f679edecc4a118572cf54ae9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この方法は、使用したいモデルごとに適用できますが、コード用に設計されたモデルを使用することをお勧めします。"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "See the continue documentation for additional continue configuration, [Continue Documentation](https://docs.continue.dev/reference/Model%20Providers/openai)",
+      "source_content_hash": "cedc6ea74f6bd514da3a9a9cdb719300a71ff5af0ccb2a78c12acac66c9b1eeb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "追加のContinue設定については、[Continueドキュメント](https://docs.continue.dev/reference/Model%20Providers/openai)を参照してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/continue-dev.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.802397+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "cac9782697383e47b208dc250ced33e853b2b32bd5ce43f5e74d7c765baa2b21"
+  }
+}

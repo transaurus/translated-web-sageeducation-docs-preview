@@ -1,0 +1,562 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/apachetika.md",
+  "source_file_content_hash": "a5545e2ae05388b94be2d0186c05a2e24af2d1385eca97d2e7d374ceb4381264",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4000\ntitle: \"🪶 Apache Tika Extraction\"\n---",
+      "source_content_hash": "41ff0ca51aa63e8339bccbf747613d8fc2b04625be293b35dea6b505ebf08e70",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage WebUIチームによるサポート対象外です。特定のユースケース向けにSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したい方は、コントリビューションガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## 🪶 Apache Tika Extraction",
+      "source_content_hash": "4c568b872084429b8108ee0a4eda85324efdd5b939bcf3f84b9908fa2aeacf6a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🪶 Apache Tika抽出機能"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "This documentation provides a step-by-step guide to integrating Apache Tika with Sage WebUI. Apache Tika is a content analysis toolkit that can be used to detect and extract metadata and text content from over a thousand different file types. All of these file types can be parsed through a single interface, making Tika useful for search engine indexing, content analysis, translation, and much more.",
+      "source_content_hash": "905ddfb5a43ee22ec66e438fc940d0f40f8529cd28c9aa39bdba33d588c65cad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このドキュメントでは、Apache TikaをSage WebUIと統合する手順を段階的に説明します。Apache Tikaは、1,000種類以上のファイル形式からメタデータとテキストコンテンツを検出・抽出できるコンテンツ分析ツールキットです。すべてのファイル形式を単一のインターフェースで解析できるため、検索エンジンのインデックス作成、コンテンツ分析、翻訳などに非常に有用です。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "Prerequisites\n------------",
+      "source_content_hash": "0167e55e5fcbd037d45748be3fe9aa50da35fb54d2406549f92c7d7b96d17fb0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "前提条件\n------------"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "* Sage WebUI instance\n* Docker installed on your system\n* Docker network set up for Sage WebUI",
+      "source_content_hash": "f3d3310ce638e7ce582089be7c51000fc513a71a9f806299db3f14162cbf2818",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Sage WebUIインスタンス\n* システムにDockerがインストール済み\n* Sage WebUI用のDockerネットワークが設定済み"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "Integration Steps\n----------------",
+      "source_content_hash": "aa49c1950d96bbf728e1a687d392580c96d70e6a812b47d1741717cebc023456",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "統合手順\n----------------"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "### Step 1: Create a Docker Compose File or Run the Docker Command for Apache Tika",
+      "source_content_hash": "0a38de54ef299f406c72d77d8c9a752acbfaaaa532d06f3bf7321274e561ee7e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ1: Docker Composeファイルの作成またはApache Tika用Dockerコマンドの実行"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "You have two options to run Apache Tika:",
+      "source_content_hash": "e853e661c6ac41cb2e0df6c6817f341cba627b68a7fcc2512b385f57c5a4c820",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Apache Tikaを実行する方法は2つあります:"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "**Option 1: Using Docker Compose**",
+      "source_content_hash": "94d21a7dcc92affb7556e05c33c408eaaef8111ba55d086da497aa8176b6b2b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**オプション1: Docker Composeを使用**"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Create a new file named `docker-compose.yml` in the same directory as your Sage WebUI instance. Add the following configuration to the file:",
+      "source_content_hash": "cfb8ccfa15171e1db3a4809e9a9435461003f3c44af0f9e77466d8058ccc1def",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIインスタンスと同じディレクトリに`docker-compose.yml`という名前の新しいファイルを作成し、以下の設定を追加します:"
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```yml\nservices:\n  tika:\n    image: apache/tika:latest-full\n    container_name: tika\n    ports:\n      - \"9998:9998\"\n    restart: unless-stopped\n```",
+      "source_content_hash": "57b5df3f07c84342614081c5db387a5abaa5cfc76a23d75940bb216f93bbc738",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Run the Docker Compose file using the following command:",
+      "source_content_hash": "7ac55e0dd7ce0c24aa50de21fcb8dd86f0102d35cc33b53d868a8c1aeed4aebd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のコマンドでDocker Composeファイルを実行します:"
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```bash\ndocker-compose up -d\n```",
+      "source_content_hash": "c006e4c270559a4d23d6af53b381187a8754316cde7f04f1c995fff192d67ed1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "**Option 2: Using Docker Run Command**",
+      "source_content_hash": "d99b245fb2a0be749ecd993eaa80c835a4cbdd0160f489fe5563e1ad17d55a3f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**オプション2: Docker Runコマンドを使用**"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Alternatively, you can run Apache Tika using the following Docker command:",
+      "source_content_hash": "0716079e161053af1f9b6bf054438bd358da29b4a7a98363506ba8b44f81d22f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "または、以下のDockerコマンドでApache Tikaを実行できます:"
+      }
+    },
+    {
+      "segment_id": "64b6f348",
+      "source_content": "```bash\ndocker run -d --name tika \\\n  -p 9998:9998 \\\n  --restart unless-stopped \\\n  apache/tika:latest-full\n```",
+      "source_content_hash": "1a43e69f09f3214d60cab47b2859411c58b21aa6c00e8c15542774e236f1d7af",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_64b6f348"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "Note that if you choose to use the Docker run command, you'll need to specify the `--network` flag if you want to run the container in the same network as your Sage WebUI instance.",
+      "source_content_hash": "c590622f7becb6770f5cb8d4fc4761a01fbe7673ace652c28cb800980934fa05",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Docker runコマンドを使用する場合、Sage WebUIインスタンスと同じネットワークでコンテナを実行したい場合は`--network`フラグを指定する必要があります。"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "### Step 2: Configure Sage WebUI to Use Apache Tika",
+      "source_content_hash": "de27f1c187e1ec6441cdc6456716a5479546e2155c9545387dc29a544c492d07",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ2: Sage WebUIでApache Tikaを使用するように設定"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "To use Apache Tika as the context extraction engine in Sage WebUI, follow these steps:",
+      "source_content_hash": "cddba78b0b662c1c43b6b66c5d62c7cf3abd5715757dae5944a0288f9382323e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでApache Tikaをコンテキスト抽出エンジンとして使用するには、以下の手順に従います:"
+      }
+    },
+    {
+      "segment_id": "35f6931b",
+      "source_content": "* Log in to your Sage WebUI instance.\n* Navigate to the `Admin Panel` settings menu.\n* Click on `Settings`.\n* Click on the `Documents` tab.\n* Change the `Default` content extraction engine dropdown to `Tika`.\n* Update the context extraction engine URL to `http://tika:9998`.\n* Save the changes.",
+      "source_content_hash": "2383b9a6ba4317a4f6f4c88b535f6de1902764fe4077f5674069f99cd7d70dcd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Sage WebUIインスタンスにログイン\n* `Admin Panel`設定メニューに移動\n* `Settings`をクリック\n* `Documents`タブをクリック\n* `Default`コンテンツ抽出エンジンのドロップダウンを`Tika`に変更\n* コンテキスト抽出エンジンのURLを`http://tika:9998`に更新\n* 変更を保存"
+      }
+    },
+    {
+      "segment_id": "d422fb13",
+      "source_content": "Verifying Apache Tika in Docker\n=====================================",
+      "source_content_hash": "3708effba5c2c2f13b9a80941d7436cce78b9bcad4759cf4e39c0e00b3087372",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "Docker環境でのApache Tika検証\n====================================="
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "To verify that Apache Tika is working correctly in a Docker environment, you can follow these steps:",
+      "source_content_hash": "484702351c273fdc39744ee1060af66fb98a9d91c88b07934306061e6054789b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Docker環境でApache Tikaが正しく動作していることを確認するには、以下の手順に従います:"
+      }
+    },
+    {
+      "segment_id": "98355e36",
+      "source_content": "### 1. Start the Apache Tika Docker Container",
+      "source_content_hash": "e28e4e15c4aa4c0965d98a56ff888dd639b637fe863887408c24bfef8567e344",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 1. Apache Tika Dockerコンテナの起動"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "First, ensure that the Apache Tika Docker container is running. You can start it using the following command:",
+      "source_content_hash": "b60cb9b3408250bf35bd4328f2552d81f3411dec29204ccaefb83b9d3af421e3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "まず、Apache Tika Dockerコンテナが実行されていることを確認します。以下のコマンドで起動できます:"
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```bash\ndocker run -p 9998:9998 apache/tika\n```",
+      "source_content_hash": "d922feb5f57deeab296ea9e987e1eb93b93dd51897df3c332e9cf0669219b72f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "This command starts the Apache Tika container and maps port 9998 from the container to port 9998 on your local machine.",
+      "source_content_hash": "a1d2a9302e5302657f73e7a7e84d70e166428101a80e935f6c88c1c1fd652e27",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このコマンドはApache Tikaコンテナを起動し、コンテナのポート9998をローカルマシンのポート9998にマッピングします。"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "### 2. Verify the Server is Running",
+      "source_content_hash": "3e89b1687dcab863c6c64f09cf20884f63eb5b9c2b339598491df96402f93414",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 2. サーバーの動作確認"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "You can verify that the Apache Tika server is running by sending a GET request:",
+      "source_content_hash": "8e4efe8f3bf7b7867ebe0028d1158c0b198a61c58c5d7db90da467f12b4e86da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "GETリクエストを送信してApache Tikaサーバーが動作していることを確認できます:"
+      }
+    },
+    {
+      "segment_id": "f8065412",
+      "source_content": "```bash\ncurl -X GET http://localhost:9998/tika\n```",
+      "source_content_hash": "09cce3d4fd59b846d31a680ce9ce41eb6ae1964eaff51900f6515e029bceb6f5",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f8065412"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "This command should return the following response:",
+      "source_content_hash": "73adabed2f271371334b1800bbff8876028a6a3a3e86a03a2289997a2be31e2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このコマンドは以下の応答を返すはずです:"
+      }
+    },
+    {
+      "segment_id": "7fa46732",
+      "source_content": "```\nThis is Tika Server. Please PUT\n```",
+      "source_content_hash": "23d7a51cdeff270ade49ece3bf8430712af484c5c697c98ab6ca4fd878bf0533",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7fa46732"
+      }
+    },
+    {
+      "segment_id": "a138e327",
+      "source_content": "### 3. Verify the Integration",
+      "source_content_hash": "9c39ffab5b334dd7b96c25be75309a38517064661485e977bc02e1cca019ad09",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 3. 統合の検証"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Alternatively, you can also try sending a file for analysis to test the integration. You can test Apache Tika by sending a file for analysis using the `curl` command:",
+      "source_content_hash": "05a781efa888b0c02795ab6d8a46d219a140e76fa1e4bd3e73386cc90b033f2a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "別の方法として、ファイルを送信して解析することで統合をテストすることもできます。`curl`コマンドを使用してファイルを送信し、Apache Tikaをテストできます:"
+      }
+    },
+    {
+      "segment_id": "d44e4104",
+      "source_content": "```bash\ncurl -T test.txt http://localhost:9998/tika\n```",
+      "source_content_hash": "9f55f7192769dc20a327bf8f4fca8df4ecd87ebe7d8e514b2f0386b671136103",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d44e4104"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "Replace `test.txt` with the path to a text file on your local machine.",
+      "source_content_hash": "d347a5f12e55f7882b0f9dd893efa53e5a1039dd51df21b36f5f69098346b31c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`test.txt`をローカルマシン上のテキストファイルのパスに置き換えてください。"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "Apache Tika will respond with the detected metadata and content type of the file.",
+      "source_content_hash": "65144f3d6e4d59cbbeff20ab879d9da6320f6a9f18fe41199fcc1ad8aaaacce2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Apache Tikaはファイルの検出されたメタデータとコンテンツタイプを応答として返します。"
+      }
+    },
+    {
+      "segment_id": "ab39e8a7",
+      "source_content": "### Using a Script to Verify Apache Tika",
+      "source_content_hash": "6db747d0ed8a7a91ea6e910289eaa824b4195a740041b7dcd462e905f0b96739",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Apache Tika検証用スクリプトの使用"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "If you want to automate the verification process, this script sends a file to Apache Tika and checks the response for the expected metadata. If the metadata is present, the script will output a success message along with the file's metadata; otherwise, it will output an error message and the response from Apache Tika.",
+      "source_content_hash": "d4d5357b140602f52f1990ec47862d0703bb596949dff749ce338dae6d1083d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "検証プロセスを自動化したい場合、このスクリプトはファイルをApache Tikaに送信し、期待されるメタデータがレスポンスに含まれているかをチェックします。メタデータが存在する場合、スクリプトは成功メッセージとファイルのメタデータを出力します。そうでない場合は、エラーメッセージとApache Tikaからのレスポンスを出力します。"
+      }
+    },
+    {
+      "segment_id": "5347a9b5",
+      "source_content": "```python\nimport requests\n\ndef verify_tika(file_path, tika_url):\n    try:\n        # Send the file to Apache Tika and verify the output\n        response = requests.put(tika_url, files={'file': open(file_path, 'rb')})\n\n        if response.status_code == 200:\n            print(\"Apache Tika successfully analyzed the file.\")\n            print(\"Response from Apache Tika:\")\n            print(response.text)\n        else:\n            print(\"Error analyzing the file:\")\n            print(f\"Status code: {response.status_code}\")\n            print(f\"Response from Apache Tika: {response.text}\")\n    except Exception as e:\n        print(f\"An error occurred: {e}\")\n\nif __name__ == \"__main__\":\n    file_path = \"test.txt\"  # Replace with the path to your file\n    tika_url = \"http://localhost:9998/tika\"\n\n    verify_tika(file_path, tika_url)\n```",
+      "source_content_hash": "e5fc94130afdc97377ad512ed74d5bcb07fa301200c538ec753738ea9b293db8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5347a9b5"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "Instructions to run the script:",
+      "source_content_hash": "d8a8eb0948ae0be245dda35a71623052846fbc6e60360c7200d5e60bbf2f0f02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "スクリプトの実行手順:"
+      }
+    },
+    {
+      "segment_id": "73776161",
+      "source_content": "### Prerequisites",
+      "source_content_hash": "06853ecee3d6e5f20a40c0d198df12313c0c9b1a182563a0014a7fb4945c7081",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 前提条件"
+      }
+    },
+    {
+      "segment_id": "6b304caa",
+      "source_content": "* Python 3.x must be installed on your system\n* `requests` library must be installed (you can install it using pip: `pip install requests`)\n* Apache Tika Docker container must be running (use `docker run -p 9998:9998 apache/tika` command)\n* Replace `\"test.txt\"` with the path to the file you want to send to Apache Tika",
+      "source_content_hash": "5d24e688a213064a58539c37f2b79ed950e0e4b7a23417127fedf3aec4d1241a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* システムにPython 3.xがインストールされていること\n* `requests`ライブラリがインストールされていること（`pip install requests`でインストール可能）\n* Apache TikaのDockerコンテナが実行されていること（`docker run -p 9998:9998 apache/tika`コマンドを使用）\n* `\"test.txt\"`をApache Tikaに送信したいファイルのパスに置き換えること"
+      }
+    },
+    {
+      "segment_id": "671cbf7c",
+      "source_content": "### Running the Script",
+      "source_content_hash": "4175ba692415dde32c397d7eb80cb5d6fa36e1b2b9d248157eaff7446c96bdd0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### スクリプトの実行"
+      }
+    },
+    {
+      "segment_id": "1852dfef",
+      "source_content": "1. Save the script as `verify_tika.py` (e.g., using a text editor like Notepad or Sublime Text)\n2. Open a terminal or command prompt\n3. Navigate to the directory where you saved the script (using the `cd` command)\n4. Run the script using the following command: `python verify_tika.py`\n5. The script will output a message indicating whether Apache Tika is working correctly",
+      "source_content_hash": "53cbc8a2a50977ed5f5f8246a32649f8b92418e5ddd3920914732faaafba26a1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. スクリプトを`verify_tika.py`として保存（NotepadやSublime Textなどのテキストエディタを使用）\n2. ターミナルまたはコマンドプロンプトを開く\n3. スクリプトを保存したディレクトリに移動（`cd`コマンドを使用）\n4. 次のコマンドでスクリプトを実行: `python verify_tika.py`\n5. スクリプトはApache Tikaが正しく動作しているかどうかを示すメッセージを出力します"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "Note: If you encounter any issues, ensure that the Apache Tika container is running correctly and that the file is being sent to the correct URL.",
+      "source_content_hash": "becdb80f43b2369564f56577f6e23e132a7e24cebc1c83bd00e1b6fce43f8306",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注意: 問題が発生した場合は、Apache Tikaコンテナが正しく実行されていること、およびファイルが正しいURLに送信されていることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "7312e69e",
+      "source_content": "### Conclusion",
+      "source_content_hash": "e405d447b86099a6a4fe827d18ae4510cbb9c8932c9e40b54204211fe19518d2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### まとめ"
+      }
+    },
+    {
+      "segment_id": "2dbfc5f7",
+      "source_content": "By following these steps, you can verify that Apache Tika is working correctly in a Docker environment. You can test the setup by sending a file for analysis, verifying the server is running with a GET request, or use a script to automate the process. If you encounter any issues, ensure that the Apache Tika container is running correctly and that the file is being sent to the correct URL.",
+      "source_content_hash": "535830e28e9921673f39f2059f1fa1365e3da982823b1915393230f5a3fde480",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの手順に従うことで、Docker環境でApache Tikaが正しく動作していることを確認できます。ファイルを送信して分析をテストしたり、GETリクエストでサーバーが実行されていることを確認したり、スクリプトを使用してプロセスを自動化したりすることができます。問題が発生した場合は、Apache Tikaコンテナが正しく実行されていること、およびファイルが正しいURLに送信されていることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "3f77c6a0",
+      "source_content": "Troubleshooting\n--------------",
+      "source_content_hash": "adc2f12ac719f61dbc6c92be7e365ebcb78faef8a9cada7de9ebaded82f428a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "トラブルシューティング\n--------------"
+      }
+    },
+    {
+      "segment_id": "67549b35",
+      "source_content": "* Make sure the Apache Tika service is running and accessible from the Sage WebUI instance.\n* Check the Docker logs for any errors or issues related to the Apache Tika service.\n* Verify that the context extraction engine URL is correctly configured in Sage WebUI.",
+      "source_content_hash": "903ed4062d7aa54b3b97090e20a18a59918cce2dd047766e67fa16f9e672f693",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Apache Tikaサービスが実行されており、Sage WebUIインスタンスからアクセス可能であることを確認してください。\n* Dockerログをチェックし、Apache Tikaサービスに関連するエラーや問題がないか確認してください。\n* Sage WebUIでコンテキスト抽出エンジンのURLが正しく設定されていることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "191265da",
+      "source_content": "Benefits of Integration\n----------------------",
+      "source_content_hash": "65c119225ac1e7f9994fd92209057cab964d13669b1967c1fbdc579d5c55f68d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "統合の利点\n----------------------"
+      }
+    },
+    {
+      "segment_id": "808b0414",
+      "source_content": "Integrating Apache Tika with Sage WebUI provides several benefits, including:",
+      "source_content_hash": "b3d38a0d168066515964043a8f44832c4fc6c46a2e701823aaa85247606a4ad9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Apache TikaとSage WebUIを統合することで、以下のような利点があります:"
+      }
+    },
+    {
+      "segment_id": "5b1ccdc9",
+      "source_content": "* **Improved Metadata Extraction**: Apache Tika's advanced metadata extraction capabilities can help you extract accurate and relevant data from your files.\n* **Support for Multiple File Formats**: Apache Tika supports a wide range of file formats, making it an ideal solution for organizations that work with diverse file types.\n* **Enhanced Content Analysis**: Apache Tika's advanced content analysis capabilities can help you extract valuable insights from your files.",
+      "source_content_hash": "3a5cbe2cb260427f35b6e9ffc8029599190037b79f55af694c1657330e32d875",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **メタデータ抽出の改善**: Apache Tikaの高度なメタデータ抽出機能により、ファイルから正確で関連性の高いデータを抽出できます。\n* **複数ファイル形式のサポート**: Apache Tikaは幅広いファイル形式をサポートしており、多様なファイルタイプを扱う組織に最適なソリューションです。\n* **コンテンツ分析の強化**: Apache Tikaの高度なコンテンツ分析機能により、ファイルから価値ある洞察を抽出できます。"
+      }
+    },
+    {
+      "segment_id": "8d279c43",
+      "source_content": "Conclusion\n----------",
+      "source_content_hash": "f89a862d0db5152375781045fbc49438ef03c81caaa30a31e165a455640cf218",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "結論\n----------"
+      }
+    },
+    {
+      "segment_id": "c8a6ab3e",
+      "source_content": "Integrating Apache Tika with Sage WebUI is a straightforward process that can improve the metadata extraction capabilities of your Sage WebUI instance. By following the steps outlined in this documentation, you can easily set up Apache Tika as a context extraction engine for Sage WebUI.",
+      "source_content_hash": "47cc86f732952471dedb19985c0f52e929e8a0de79c4feed36809825fb11050b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Apache TikaとSage WebUIの統合は簡単なプロセスであり、Sage WebUIインスタンスのメタデータ抽出機能を向上させることができます。このドキュメントで説明した手順に従うことで、Sage WebUIのコンテキスト抽出エンジンとしてApache Tikaを簡単にセットアップできます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/apachetika.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.805614+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "a5545e2ae05388b94be2d0186c05a2e24af2d1385eca97d2e7d374ceb4381264"
+  }
+}

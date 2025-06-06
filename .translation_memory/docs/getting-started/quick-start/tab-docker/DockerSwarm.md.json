@@ -1,0 +1,62 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-docker/DockerSwarm.md",
+  "source_file_content_hash": "3cbd4e88dab4bdce8774ec6e528e6774ccdb971e1fba040264318fead1883816",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "## Docker Swarm",
+      "source_content_hash": "db9ddcb9910b54ff673120e80d71c713a7ee2f8c9e6b411c2f1db4eca720dcb9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Docker Swarm"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "This installation method requires knowledge on Docker Swarms, as it utilizes a stack file to deploy 3 seperate containers as services in a Docker Swarm.",
+      "source_content_hash": "8a1f6362ff664f0de889e48ed0a5107b5bc028d28a600422e1aec1361d5189b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このインストール方法では、Docker Swarmに関する知識が必要です。スタックファイルを使用して、3つの独立したコンテナをDocker Swarm内のサービスとしてデプロイします。"
+      }
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "It includes isolated containers of ChromaDB, Ollama, and OpenWebUI.\nAdditionally, there are pre-filled [Environment Variables](/getting-started/env-configuration) to further illustrate the setup.",
+      "source_content_hash": "e88687c1dc3bf43ff74a1c66c47e5abfdea4f6652f31f577436f0045a8662e4e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これには、ChromaDB、Ollama、OpenWebUIの隔離されたコンテナが含まれます。\nさらに、セットアップをより詳細に説明するための事前設定された[環境変数](/getting-started/env-configuration)も含まれています。"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Choose the appropriate command based on your hardware setup:",
+      "source_content_hash": "f6d19a365fcb275f06d68ded8542e4eacd90e73fa698d6784d6a8c99da8c270b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ご使用のハードウェア設定に基づいて適切なコマンドを選択してください："
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "- **Before Starting**:\n\n  Directories for your volumes need to be created on the host, or you can specify a custom location or volume.\n  \n  The current example utilizes an isolated dir `data`, which is within the same dir as the `docker-stack.yaml`.\n  \n      - **For example**:\n  \n        ```bash\n        mkdir -p data/sage-open-webui data/chromadb data/ollama\n        ```\n\n- **With GPU Support**:\n\n  #### Docker-stack.yaml\n\n    ```yaml\n    version: '3.9'\n\n    services:\n      openWebUI:\n        image: ghcr.io/Startr/AI-WEB-openwebui:main\n        depends_on:\n            - chromadb\n            - ollama\n        volumes:\n          - ./data/sage-open-webui:/app/backend/data\n        environment:\n          DATA_DIR: /app/backend/data \n          OLLAMA_BASE_URLS: http://ollama:11434\n          CHROMA_HTTP_PORT: 8000\n          CHROMA_HTTP_HOST: chromadb\n          CHROMA_TENANT: default_tenant\n          VECTOR_DB: chroma\n          WEBUI_NAME: Awesome ChatBot\n          CORS_ALLOW_ORIGIN: \"*\" # This is the current Default, will need to change before going live\n          RAG_EMBEDDING_ENGINE: ollama\n          RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5\n          RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: \"True\"\n        ports:\n          - target: 8080\n            published: 8080\n            mode: overlay\n        deploy:\n          replicas: 1\n          restart_policy:\n            condition: any\n            delay: 5s\n            max_attempts: 3\n\n      chromadb:\n        hostname: chromadb\n        image: chromadb/chroma:0.5.15\n        volumes:\n          - ./data/chromadb:/chroma/chroma\n        environment:\n          - IS_PERSISTENT=TRUE\n          - ALLOW_RESET=TRUE\n          - PERSIST_DIRECTORY=/chroma/chroma\n        ports: \n          - target: 8000\n            published: 8000\n            mode: overlay\n        deploy:\n          replicas: 1\n          restart_policy:\n            condition: any\n            delay: 5s\n            max_attempts: 3\n        healthcheck: \n          test: [\"CMD-SHELL\", \"curl localhost:8000/api/v1/heartbeat || exit 1\"]\n          interval: 10s\n          retries: 2\n          start_period: 5s\n          timeout: 10s\n\n      ollama:\n        image: ollama/ollama:latest\n        hostname: ollama\n        ports:\n          - target: 11434\n            published: 11434\n            mode: overlay\n        deploy:\n          resources:\n            reservations:\n              generic_resources:\n                - discrete_resource_spec:\n                    kind: \"NVIDIA-GPU\"\n                    value: 0\n          replicas: 1\n          restart_policy:\n            condition: any\n            delay: 5s\n            max_attempts: 3\n        volumes:\n          - ./data/ollama:/root/.ollama\n\n    ```\n\n  - **Additional Requirements**:\n\n      1. Ensure CUDA is Enabled, follow your OS and GPU instructions for that.\n      2. Enable Docker GPU support, see [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html \" on Nvidia's site.\")\n      3. Follow the [Guide here on configuring Docker Swarm to with with your GPU](https://gist.github.com/tomlankhorst/33da3c4b9edbde5c83fc1244f010815c#configuring-docker-to-work-with-your-gpus)\n    - Ensure _GPU Resource_ is enabled in `/etc/nvidia-container-runtime/config.toml` and enable GPU resource advertising by uncommenting the `swarm-resource = \"DOCKER_RESOURCE_GPU\"`. The docker daemon must be restarted after updating these files on each node.\n\n- **With CPU Support**:\n  \n    Modify the Ollama Service within `docker-stack.yaml` and remove the lines for `generic_resources:`\n\n    ```yaml\n        ollama:\n      image: ollama/ollama:latest\n      hostname: ollama\n      ports:\n        - target: 11434\n          published: 11434\n          mode: overlay\n      deploy:\n        replicas: 1\n        restart_policy:\n          condition: any\n          delay: 5s\n          max_attempts: 3\n      volumes:\n        - ./data/ollama:/root/.ollama\n    ```\n\n- **Deploy Docker Stack**:\n  \n  ```bash\n  docker stack deploy -c docker-stack.yaml -d super-awesome-ai\n  ```",
+      "source_content_hash": "35cbe1d5adfb314ad2b2f2515ce34720a4c62a48edddfc69799bd7429315ddb9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **開始前に**:\n\n  ボリューム用のディレクトリをホスト上に作成するか、カスタムの場所やボリュームを指定する必要があります。\n  \n  現在の例では、`docker-stack.yaml`と同じディレクトリ内に隔離されたディレクトリ`data`を使用しています。\n  \n      - **例**:\n  \n        ```bash\n        mkdir -p data/sage-open-webui data/chromadb data/ollama\n        ```\n\n- **GPUサポートの場合**:\n\n  #### Docker-stack.yaml\n\n    ```yaml\n    version: '3.9'\n\n    services:\n      openWebUI:\n        image: ghcr.io/Startr/AI-WEB-openwebui:main\n        depends_on:\n            - chromadb\n            - ollama\n        volumes:\n          - ./data/sage-open-webui:/app/backend/data\n        environment:\n          DATA_DIR: /app/backend/data \n          OLLAMA_BASE_URLS: http://ollama:11434\n          CHROMA_HTTP_PORT: 8000\n          CHROMA_HTTP_HOST: chromadb\n          CHROMA_TENANT: default_tenant\n          VECTOR_DB: chroma\n          WEBUI_NAME: Awesome ChatBot\n          CORS_ALLOW_ORIGIN: \"*\" # これは現在のデフォルトです。本番環境では変更が必要です\n          RAG_EMBEDDING_ENGINE: ollama\n          RAG_EMBEDDING_MODEL: nomic-embed-text-v1.5\n          RAG_EMBEDDING_MODEL_TRUST_REMOTE_CODE: \"True\"\n        ports:\n          - target: 8080\n            published: 8080\n            mode: overlay\n        deploy:\n          replicas: 1\n          restart_policy:\n            condition: any\n            delay: 5s\n            max_attempts: 3\n\n      chromadb:\n        hostname: chromadb\n        image: chromadb/chroma:0.5.15\n        volumes:\n          - ./data/chromadb:/chroma/chroma\n        environment:\n          - IS_PERSISTENT=TRUE\n          - ALLOW_RESET=TRUE\n          - PERSIST_DIRECTORY=/chroma/chroma\n        ports: \n          - target: 8000\n            published: 8000\n            mode: overlay\n        deploy:\n          replicas: 1\n          restart_policy:\n            condition: any\n            delay: 5s\n            max_attempts: 3\n        healthcheck: \n          test: [\"CMD-SHELL\", \"curl localhost:8000/api/v1/heartbeat || exit 1\"]\n          interval: 10s\n          retries: 2\n          start_period: 5s\n          timeout: 10s\n\n      ollama:\n        image: ollama/ollama:latest\n        hostname: ollama\n        ports:\n          - target: 11434\n            published: 11434\n            mode: overlay\n        deploy:\n          resources:\n            reservations:\n              generic_resources:\n                - discrete_resource_spec:\n                    kind: \"NVIDIA-GPU\"\n                    value: 0\n          replicas: 1\n          restart_policy:\n            condition: any\n            delay: 5s\n            max_attempts: 3\n        volumes:\n          - ./data/ollama:/root/.ollama\n\n    ```\n\n  - **追加要件**:\n\n      1. CUDAが有効になっていることを確認してください。OSとGPUの手順に従って設定してください。\n      2. Docker GPUサポートを有効にします。[Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html \"Nvidiaのサイト\")を参照してください。\n      3. [GPUを使用したDocker Swarmの設定ガイド](https://gist.github.com/tomlankhorst/33da3c4b9edbde5c83fc1244f010815c#configuring-docker-to-work-with-your-gpus)に従ってください。\n    - `/etc/nvidia-container-runtime/config.toml`で_GPUリソース_が有効になっていることを確認し、`swarm-resource = \"DOCKER_RESOURCE_GPU\"`のコメントを解除してGPUリソースのアドバタイズを有効にします。これらのファイルを更新した後、各ノードでdockerデーモンを再起動する必要があります。\n\n- **CPUサポートの場合**:\n  \n    `docker-stack.yaml`内のOllamaサービスを修正し、`generic_resources:`の行を削除します。\n\n    ```yaml\n        ollama:\n      image: ollama/ollama:latest\n      hostname: ollama\n      ports:\n        - target: 11434\n          published: 11434\n          mode: overlay\n      deploy:\n        replicas: 1\n        restart_policy:\n          condition: any\n          delay: 5s\n          max_attempts: 3\n      volumes:\n        - ./data/ollama:/root/.ollama\n    ```\n\n- **Docker Stackのデプロイ**:\n  \n  ```bash\n  docker stack deploy -c docker-stack.yaml -d super-awesome-ai\n  ```"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-docker/DockerSwarm.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.782981+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "3cbd4e88dab4bdce8774ec6e528e6774ccdb971e1fba040264318fead1883816"
+  }
+}

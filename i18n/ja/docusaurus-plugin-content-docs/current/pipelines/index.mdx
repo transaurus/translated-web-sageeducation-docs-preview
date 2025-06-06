@@ -1,0 +1,132 @@
+---
+sidebar_position: 1000
+title: "⚡ Pipelines"
+---
+
+<p align="center">
+  <a href="#">
+    <img src="/images/pipelines/header.png" alt="Pipelines Logo" />
+  </a>
+</p>
+
+# Pipelines: UIに依存しないOpenAI APIプラグインフレームワーク
+
+:::tip
+Anthropicのような追加プロバイダーのサポートや基本的なフィルターを追加したいだけの場合、Pipelinesは必要ありません。そのようなケースでは、[Sage WebUI Functions](/features/plugin/functions)の方が適しています。これは組み込み機能で、より便利で設定も簡単です。Pipelinesは、大規模なモデルの実行や複雑なロジックなど、計算負荷の高いタスクをメインのSage WebUIインスタンスからオフロードしてパフォーマンスとスケーラビリティを向上させたい場合に役立ちます。
+:::
+
+**Pipelines**へようこそ。これは[Sage WebUI](https://github.com/Startr)のイニシアチブです。Pipelinesは、モジュール式でカスタマイズ可能なワークフローを、OpenAI API仕様をサポートする任意のUIクライアントにもたらします。さらに、わずか数行のコードで機能を拡張し、独自のロジックを統合し、動的なワークフローを作成できます。
+
+## 🚀 Pipelinesを選ぶ理由
+
+- **無限の可能性:** AIエージェントからホームオートメーションAPIまで、カスタムロジックやPythonライブラリを簡単に追加できます。
+- **シームレスな統合:** OpenAI API仕様をサポートする任意のUI/クライアントと互換性があります（pipeタイプのパイプラインのみサポート。filterタイプはPipelinesをサポートするクライアントが必要です）。
+- **カスタムフック:** カスタムパイプラインを構築して統合できます。
+
+### 実現可能な例:
+
+- [**Function Calling Pipeline**](https://github.com/Startr/pipelines/blob/main/examples/filters/function_calling_filter_pipeline.py): 関数呼び出しを簡単に処理し、カスタムロジックでアプリケーションを強化します。
+- [**Custom RAG Pipeline**](https://github.com/Startr/pipelines/blob/main/examples/pipelines/rag/llamaindex_pipeline.py): ニーズに合わせた高度なRetrieval-Augmented Generationパイプラインを実装します。
+- [**Message Monitoring Using Langfuse**](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py): Langfuseを使用してメッセージのやり取りをリアルタイムで監視・分析します。
+- [**Rate Limit Filter**](https://github.com/Startr/pipelines/blob/main/examples/filters/rate_limit_filter_pipeline.py): リクエストの流れを制御し、レートリミットを超えないようにします。
+- [**Real-Time Translation Filter with LibreTranslate**](https://github.com/Startr/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py): LLMのやり取りにリアルタイム翻訳をシームレスに統合します。
+- [**Toxic Message Filter**](https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py): 有害なメッセージを検出して効果的に処理するフィルターを実装します。
+- **その他にも多数！**: PipelinesとPythonで達成できることには限りがありません。[スキャフォールドをチェック](https://github.com/Startr/pipelines/blob/main/examples/scaffolds)してプロジェクトを迅速に開始し、開発プロセスを効率化する方法を確認してください！
+
+## 🔧 動作の仕組み
+
+<p align="center">
+  <a href="#">
+    <img src="/images/pipelines/workflow.png" alt="Pipelines Workflow" />
+  </a>
+</p>
+
+PipelinesをOpenAI API互換のUIクライアントと統合するのは簡単です。Pipelinesインスタンスを起動し、クライアントのOpenAI URLをPipelinesのURLに設定するだけです。これで、任意のPythonライブラリを活用する準備が整います。
+
+## ⚡ Dockerを使ったクイックスタート
+
+:::warning
+Pipelinesは任意のコードを実行するプラグインシステムです。**信頼できないソースからランダムなパイプラインを取得しないでください**。
+:::
+
+Dockerを使用した効率的なセットアップ:
+
+1. **Pipelinesコンテナを実行:**
+
+   ```sh
+   docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main
+   ```
+
+2. **Sage WebUIに接続:**
+
+   - Sage WebUIの**管理者パネル > 設定 > 接続**セクションに移動します。
+   - このページで`+`ボタンを押して新しい接続を追加できます。
+   - API URLを`http://localhost:9099`、APIキーを`0p3n-w3bu!`に設定します。
+   - パイプライン接続を追加して検証すると、APIベースURLフィールド内にアイコンが表示されます。ホバーすると「Pipelines」というラベルが表示され、パイプラインが有効になります。
+
+:::info
+Sage WebUIがDockerコンテナで実行されている場合、API URLの`localhost`を`host.docker.internal`に置き換えてください。
+:::
+
+3. **設定の管理:**
+
+   - 管理者パネルで**管理者パネル > 設定 > Pipelines**タブに移動します。
+   - 目的のパイプラインを選択し、WebUIから直接バルブ値を変更できます。
+
+:::tip
+接続できない場合、Dockerのネットワーク問題である可能性が高いです。自己解決を試み、ディスカッションフォーラムで解決方法を共有してください。
+:::
+
+追加の依存関係があるカスタムパイプラインをインストールする必要がある場合:
+
+- **次のコマンドを実行:**
+
+  ```sh
+  docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -e PIPELINES_URLS="https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py" -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main
+  ```
+
+または、追加の依存関係がない場合は、管理者設定からパイプラインURLをコピー＆ペーストして直接インストールできます。
+
+これで完了です！Pipelinesを使ったカスタマイズ可能なAI統合を簡単に構築できます。お楽しみください！
+
+## 📦 インストールとセットアップ
+
+簡単な手順でPipelinesを開始できます:
+
+1. **Python 3.11がインストールされていることを確認**。公式にサポートされている唯一のバージョンです。
+2. **Pipelinesリポジトリをクローン:**
+
+   ```sh
+   git clone https://github.com/Startr/pipelines.git
+   cd pipelines
+   ```
+
+3. **必要な依存関係をインストール:**
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. **Pipelinesサーバーを起動:**
+
+   ```sh
+   sh ./start.sh
+   ```
+
+サーバーが起動したら、クライアントのOpenAI URLをPipelines URLに設定します。これにより、任意のPythonライブラリを統合し、ニーズに合わせたカスタムワークフローを作成できます。
+
+## 📂 ディレクトリ構造と例
+
+`/pipelines`ディレクトリがセットアップの中心です。新しいモジュールを追加したり、既存のものをカスタマイズしたり、ワークフローを管理できます。`/pipelines`ディレクトリ内のすべてのパイプラインは、サーバー起動時に**自動的に読み込まれます**。
+
+`PIPELINES_DIR`環境変数を使用して、このディレクトリを`/pipelines`から別の場所に変更できます。
+
+### 統合例
+
+`https://github.com/Startr/pipelines/blob/main/examples`ディレクトリにさまざまな統合例があります。これらの例は、異なる機能を統合する方法を示し、独自のカスタムパイプラインを構築するための基盤を提供します。
+
+## 🎉 進行中の作業
+
+私たちは絶えず進化しています！あなたのフィードバックを聞き、どのフックや機能があなたのユースケースに最適かを理解したいと考えています。ぜひSage WebUIコミュニティの一員になってください！
+
+私たちのビジョンは、**Pipelines**をAIインターフェース**Sage WebUI**の究極のプラグインフレームワークに進化させることです。**Sage WebUI**をAIインターフェースのWordPressと想像してください。**Pipelines**はその多様なプラグイン群のような存在です。このエキサイティングな旅にぜひご参加ください！ 🌍

@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/tab-nginx/SelfSigned.md",
+  "source_file_content_hash": "85589ebcea115862e1f0c022cb9c4544a5b9b421878bd143abbac40e6eaec1b3",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "### Self-Signed Certificate",
+      "source_content_hash": "0716faee7fe27b4ba2000001283455fb3225025460b653bbaea8a15cc10161cf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 自己署名証明書"
+      }
+    },
+    {
+      "segment_id": "e9fca2db",
+      "source_content": "Using self-signed certificates is suitable for development or internal use where trust is not a critical concern.",
+      "source_content_hash": "038f1e5a1e46d39874ca6bd312522a1e86b11f1792173d0c1040233b362943fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "自己署名証明書の使用は、信頼性が重要でない開発環境や内部利用に適しています。"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "#### Steps",
+      "source_content_hash": "87b609fce6949179ad7a083ee3c9f276d741a4dfc3885550de7cb02efaf750ce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 手順"
+      }
+    },
+    {
+      "segment_id": "df80d009",
+      "source_content": "1. **Create Directories for Nginx Files:**\n\n    ```bash\n    mkdir -p conf.d ssl\n    ```\n\n2. **Create Nginx Configuration File:**\n\n    **`conf.d/sage-open-webui.conf`:**\n\n    ```nginx\n    server {\n        listen 443 ssl;\n        server_name your_domain_or_IP;\n\n        ssl_certificate /etc/nginx/ssl/nginx.crt;\n        ssl_certificate_key /etc/nginx/ssl/nginx.key;\n        ssl_protocols TLSv1.2 TLSv1.3;\n\n        location / {\n            proxy_pass http://host.docker.internal:3000;\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n\n            # (Optional) Disable proxy buffering for better streaming response from models\n            proxy_buffering off;\n        }\n    }\n    ```\n\n3. **Generate Self-Signed SSL Certificates:**\n\n    ```bash\n    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \\\n    -keyout ssl/nginx.key \\\n    -out ssl/nginx.crt \\\n    -subj \"/CN=your_domain_or_IP\"\n    ```\n\n4. **Update Docker Compose Configuration:**\n\n    Add the Nginx service to your `docker-compose.yml`:\n\n    ```yaml\n    services:\n      nginx:\n        image: nginx:alpine\n        ports:\n          - \"443:443\"\n        volumes:\n          - ./conf.d:/etc/nginx/conf.d\n          - ./ssl:/etc/nginx/ssl\n        depends_on:\n          - sage-open-webui\n    ```\n\n5. **Start Nginx Service:**\n\n    ```bash\n    docker compose up -d nginx\n    ```",
+      "source_content_hash": "944bc0416fc31d365871c336258e2767427d58f869d2443afd90796c5c0741f4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Nginx用ディレクトリの作成:**\n\n    ```bash\n    mkdir -p conf.d ssl\n    ```\n\n2. **Nginx設定ファイルの作成:**\n\n    **`conf.d/sage-open-webui.conf`:**\n\n    ```nginx\n    server {\n        listen 443 ssl;\n        server_name your_domain_or_IP;\n\n        ssl_certificate /etc/nginx/ssl/nginx.crt;\n        ssl_certificate_key /etc/nginx/ssl/nginx.key;\n        ssl_protocols TLSv1.2 TLSv1.3;\n\n        location / {\n            proxy_pass http://host.docker.internal:3000;\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n\n            # (オプション) モデルからのストリーミングレスポンスを向上させるためプロキシバッファリングを無効化\n            proxy_buffering off;\n        }\n    }\n    ```\n\n3. **自己署名SSL証明書の生成:**\n\n    ```bash\n    openssl req -x509 -nodes -days 365 -newkey rsa:2048 \\\n    -keyout ssl/nginx.key \\\n    -out ssl/nginx.crt \\\n    -subj \"/CN=your_domain_or_IP\"\n    ```\n\n4. **Docker Compose設定の更新:**\n\n    `docker-compose.yml`にNginxサービスを追加:\n\n    ```yaml\n    services:\n      nginx:\n        image: nginx:alpine\n        ports:\n          - \"443:443\"\n        volumes:\n          - ./conf.d:/etc/nginx/conf.d\n          - ./ssl:/etc/nginx/ssl\n        depends_on:\n          - sage-open-webui\n    ```\n\n5. **Nginxサービスの起動:**\n\n    ```bash\n    docker compose up -d nginx\n    ```"
+      }
+    },
+    {
+      "segment_id": "047c2395",
+      "source_content": "#### Access the WebUI",
+      "source_content_hash": "6f857a0a428623bcea96fe362ae2c527db07b23646165a135cc41427a8c0ce12",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### WebUIへのアクセス"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "Access Sage WebUI via HTTPS at:",
+      "source_content_hash": "7eb7289744caeaa2cdbcfd27de8f1a58fd09cc3d614d92e74fa7eb4d82319db8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HTTPS経由でSage WebUIにアクセス:"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "[https://your_domain_or_IP](https://your_domain_or_IP)",
+      "source_content_hash": "245225bab02948e00aa8cfe093ff45ba7dd7e0bf3afa185d4c4d37dc1f01c71f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[https://your_domain_or_IP](https://your_domain_or_IP)"
+      }
+    },
+    {
+      "segment_id": "254ea949",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/tab-nginx/SelfSigned.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.795702+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "85589ebcea115862e1f0c022cb9c4544a5b9b421878bd143abbac40e6eaec1b3"
+  }
+}

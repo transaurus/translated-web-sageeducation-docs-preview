@@ -1,0 +1,332 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/chat-features/chatshare.md",
+  "source_file_content_hash": "a016b74a979ed42e1f21761ef4a2519cfc2290bae1a36de58fcdba03ba258e08",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\ntitle: \"🗨️ Chat Sharing\"\n---",
+      "source_content_hash": "43a11e4b005e4163202bbc81df872867a18761f8254e208a98addce4826436e6",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "### Enabling Community Sharing",
+      "source_content_hash": "f6c9a087ef490b4808a095116b88e8d6743eb29c565e7b4424736d4302a90b5f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### コミュニティ共有の有効化"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "To enable community sharing, follow these steps:",
+      "source_content_hash": "50e997e969538a9077c719ac705e689d3edcf54cb6e21367729d2f669589740e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コミュニティ共有を有効にするには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "1. Navigate to the **Admin Panel** page as an **Admin**.\n2. Click on the **Settings** tab.\n3. Toggle on **Enable Community Sharing** within the **General** settings tab.",
+      "source_content_hash": "a16bfaf6291d49c66659c56e1bbe7fa374496dc2727864bdfe93b18b3981bed0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **管理者**として**管理者パネル**ページに移動します。\n2. **設定**タブをクリックします。\n3. **一般**設定タブ内の**コミュニティ共有を有効にする**をトグルオンします。"
+      }
+    },
+    {
+      "segment_id": "2a852f16",
+      "source_content": ":::note\n**Note:** Only Admins can toggle the **Enable Community Sharing** option. If this option is toggled off, users and Admins will not see the **Share to Sage WebUI Community** option for sharing their chats. Community sharing must be enabled by an Admin for users to share chats to the Sage WebUI community.\n:::",
+      "source_content_hash": "7baf1924b06a6432c25afda2e8b8bcd0c609150d5eb06b4d53f2a8655f4a59b7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n**注記:** **コミュニティ共有を有効にする**オプションは管理者のみが切り替え可能です。このオプションがオフの場合、ユーザーおよび管理者はチャットをSage WebUIコミュニティに共有するための**Share to Sage WebUI Community**オプションを表示しません。ユーザーがチャットをSage WebUIコミュニティに共有するには、管理者がコミュニティ共有を有効にする必要があります。\n:::"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "This will enable community sharing for all users on your Sage WebUI instance.",
+      "source_content_hash": "da8e70acf1341a8c7c8bcaf9e63018811025afb29430e9c09ca34820bf5396e9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これにより、Sage WebUIインスタンス上のすべてのユーザーに対してコミュニティ共有が有効になります。"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "### Sharing Chats",
+      "source_content_hash": "190201df487d7f64a6d2bc2cfc68e427e5e7948c4890e42e417e6565f29bb8c0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### チャットの共有"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "To share a chat:",
+      "source_content_hash": "9bf33129260eb22b1245565f14827039aed1f0e41dae6b80cfd1b984ee56f08d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "チャットを共有するには："
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "1. Select the chat conversation you want to share.\n2. Click on the 3-dots that appear when hovering the mouse pointer above the desired chat.\n3. Then click on the **Share** option.\n4. Select either **Share to Sage WebUI Community** (if **Enable Community Sharing** is toggled on by an **Admin**) or **Copy Link**.",
+      "source_content_hash": "4c8032069a385c23b15ebc6ca9a72c7d13b6a3e97a491ea31da29a009bccf4a2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 共有したいチャット会話を選択します。\n2. 目的のチャット上にマウスポインタをホバーさせた時に表示される3点リーダーをクリックします。\n3. 次に**共有**オプションをクリックします。\n4. **Share to Sage WebUI Community**（**管理者**によって**コミュニティ共有を有効にする**がトグルオンされている場合）または**リンクをコピー**のいずれかを選択します。"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "#### Sharing to Sage WebUI Community",
+      "source_content_hash": "0ef8294b73e55987a5151daf43a47283eeafbbd485fd835d3d4781d12722dcb2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### Sage WebUIコミュニティへの共有"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "When you select `Share to Sage WebUI Community`:",
+      "source_content_hash": "04e2c5e361d8e82f0c168da24d6fa254e9612b7d7a108824e7b6a1238e4f6867",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`Share to Sage WebUI Community`を選択すると："
+      }
+    },
+    {
+      "segment_id": "cd471e4e",
+      "source_content": "* A new tab will open, allowing you to upload your chat as a snapshot to the Sage WebUI community website (https://sage.education/chats/upload).\n* You can control who can view your uploaded chat by choosing from the following access settings:\n  * **Private**: Only you can access this chat.\n  * **Public**: Anyone on the internet can view the messages displayed in the chat snapshot.\n  * **Public, Full History**: Anyone on the internet can view the full regeneration history of your chat.",
+      "source_content_hash": "2cf3356bb00611c1f6d314b3295b695920bf1955d93f1a6d1465feead25e724b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* 新しいタブが開き、チャットをスナップショットとしてSage WebUIコミュニティウェブサイト（https://sage.education/chats/upload）にアップロードできます。\n* 以下のアクセス設定から、アップロードしたチャットを誰が閲覧できるかを制御できます：\n  * **プライベート**: 自分だけがこのチャットにアクセスできます。\n  * **公開**: インターネット上の誰もがチャットスナップショットに表示されたメッセージを閲覧できます。\n  * **公開、完全な履歴**: インターネット上の誰もがチャットの完全な再生成履歴を閲覧できます。"
+      }
+    },
+    {
+      "segment_id": "84650edb",
+      "source_content": ":::note\nNote: You can change the permission level of your shared chats on the community platform at any time from your openwebui.com account.\n\n**Currently, shared chats on the community website cannot be found through search. However, future updates are planned to allow public chats to be discoverable by the public if their permission is set to `Public` or `Public, Full History`.**\n:::",
+      "source_content_hash": "f510379195e4bc08b4a7c03bdc1e4936a78bb60880f84c1f82d1dbf74386044f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n注記: コミュニティプラットフォーム上の共有チャットの権限レベルは、openwebui.comアカウントからいつでも変更できます。\n\n**現在、コミュニティウェブサイト上の共有チャットは検索で見つけることができません。ただし、今後の更新で、権限が`公開`または`公開、完全な履歴`に設定されている公開チャットを一般ユーザーが発見できるようにする予定です。**\n:::"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Example of a shared chat to the community platform website: https://sage.education/c/iamg30/5e3c569f-905e-4d68-a96d-8a99cc65c90f",
+      "source_content_hash": "47a3f892400dd83c29a81bc7175e2a08e61a609fdd3fe4c811f832b1f06c9163",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コミュニティプラットフォームウェブサイトに共有されたチャットの例: https://sage.education/c/iamg30/5e3c569f-905e-4d68-a96d-8a99cc65c90f"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "#### Copying a Share Link",
+      "source_content_hash": "afb5743b1db5693fe99604e7fa39a3572a460afb8ba14aa81f72aa46b265b73c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 共有リンクのコピー"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "When you select `Copy Link`, a unique share link is generated that can be shared with others.",
+      "source_content_hash": "8dc234b4f817dc89eca246de86ea51b52dfa0d53c2ebd79739ddf4d92fff3f69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`リンクをコピー`を選択すると、他のユーザーと共有できる一意の共有リンクが生成されます。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "**Important Considerations:**",
+      "source_content_hash": "8d29fc42d2876eeed71166abe4a792b7a29e639958f6320bfc7a2ef2e46dfc35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**重要な考慮事項:**"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "* The shared chat will only include messages that existed at the time the link was created. Any new messages sent within the chat after the link is generated will not be included, unless the link is deleted and updated with a new link.\n* The generated share link acts as a static snapshot of the chat at the time the link was generated.\n* To view the shared chat, users must:\n  1. Have an account on the Sage WebUI instance where the link was generated.\n  2. Be signed in to their account on that instance.\n* If a user tries to access the shared link without being signed in, they will be redirected to the login page to log in before they can view the shared chat.",
+      "source_content_hash": "0be48433a5d5ed5a3488ab2f5073c733818f9529956093f3bf6d2c42294126c0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* 共有されたチャットには、リンクが作成された時点で存在していたメッセージのみが含まれます。リンク生成後にチャット内で送信された新しいメッセージは、リンクが削除されて新しいリンクで更新されない限り含まれません。\n* 生成された共有リンクは、リンクが生成された時点でのチャットの静的なスナップショットとして機能します。\n* 共有チャットを閲覧するには、ユーザーは以下を満たす必要があります：\n  1. リンクが生成されたSage WebUIインスタンスにアカウントを持っていること。\n  2. そのインスタンスでアカウントにサインインしていること。\n* ユーザーがサインインせずに共有リンクにアクセスしようとすると、共有チャットを閲覧する前にログインページにリダイレクトされます。"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "### Viewing Shared Chats",
+      "source_content_hash": "0215600b75ccd8b45eb565391cc629af15469fdd25ad68cbcf5f5f42235b0b49",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 共有チャットの閲覧"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "To view a shared chat:",
+      "source_content_hash": "b151ae328895a2770031d32f8858db7e0b26f49bb5836875a1db00126aa30fc1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "共有チャットを閲覧するには："
+      }
+    },
+    {
+      "segment_id": "158e1f5d",
+      "source_content": "1. Ensure you are signed in to an account on the Sage WebUI instance where the chat was shared.\n2. Click on the shared link provided to you.\n3. The chat will be displayed in a read-only format.\n4. If the Admin of the Sage WebUI instance from which the shared link was shared has Text-to-Speech set up, there may be an audio button for messages to be read aloud to you (situational).",
+      "source_content_hash": "ad1f8125d8f68fc01785beb6424a13832713b227838f7a26b2506f6a1baa544e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. チャットが共有されたSage WebUIインスタンスにアカウントでサインインしていることを確認します。\n2. 提供された共有リンクをクリックします。\n3. チャットが読み取り専用形式で表示されます。\n4. 共有リンクが共有されたSage WebUIインスタンスの管理者がText-to-Speechを設定している場合、メッセージを音声で読み上げるためのオーディオボタンが表示される場合があります（状況による）。"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "### Updating Shared Chats",
+      "source_content_hash": "0eac112fa8dad9a36fec4c08ead358d883ac5f88a476008d4037e99456250261",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 共有チャットの更新"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "To update a shared chat:",
+      "source_content_hash": "892eed11fb316c00705b3fd5784fa2202ec449e20b49ab59963f42189a318a3c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "共有チャットを更新するには："
+      }
+    },
+    {
+      "segment_id": "69c1f590",
+      "source_content": "1. Select the chat conversation you want to share.\n2. Click on the 3-dots that appear when hovering the mouse pointer above the desired chat.\n3. Click on the **Share** option.\n4. The **Share Chat** Modal should look different if you've shared a chat before.",
+      "source_content_hash": "b191bae7ec262bc459f28c8a584605fae6dd87f83a4e659db026f752ae033b95",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 共有したいチャット会話を選択します。\n2. 対象のチャット上にマウスポインタを置いた時に表示される3点リーダーをクリックします。\n3. **共有**オプションをクリックします。\n4. 以前にチャットを共有したことがある場合、**チャット共有**モーダルの表示が異なります。"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "The **Share Chat** Modal includes the following options:",
+      "source_content_hash": "8a7ef5c0d02ae61d5c5905d5a60b60feb2831599e716d2619e0308afb0d93d79",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**チャット共有**モーダルには以下のオプションが含まれます："
+      }
+    },
+    {
+      "segment_id": "ca1573da",
+      "source_content": "* **before**: Opens a new tab to view the previously shared chat from the share link.\n* **delete this link**: Deletes the shared link of the chat and presents the initial share chat modal.\n* **Share to Sage WebUI Community**: Opens a new tab for https://sage.education/chats/upload with the chat ready to be shared as a snapshot.\n* **Update and Copy Link**: Updates the snapshot of the chat of the previously shared chat link and copies it to your device's clipboard.",
+      "source_content_hash": "2351999da2636b06108bf30de00b9a5f61044c8f9028e8be84dd0282eafefd2d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **before**: 共有リンクから以前に共有したチャットを表示するために新しいタブを開きます。\n* **delete this link**: チャットの共有リンクを削除し、初期のチャット共有モーダルを表示します。\n* **Share to Sage WebUI Community**: https://sage.education/chats/upload を新しいタブで開き、スナップショットとしてチャットを共有する準備をします。\n* **Update and Copy Link**: 以前に共有したチャットリンクのスナップショットを更新し、デバイスのクリップボードにコピーします。"
+      }
+    },
+    {
+      "segment_id": "0a103a02",
+      "source_content": "### Deleting Shared Chats",
+      "source_content_hash": "478f07d33a5870e5959b325908c1ac3545c4a1ce1d301d10b7038a5c388e1f3a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 共有チャットの削除"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "To delete a shared chat link:",
+      "source_content_hash": "ef5c2ac8d702c4f8df54083eab155932b4db91e543ea366316d6e0f2dd1e94cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "共有チャットリンクを削除するには："
+      }
+    },
+    {
+      "segment_id": "9e8f150c",
+      "source_content": "1. Select the chat conversation you want to delete the shared link for.\n2. Click on the 3-dots that appear when hovering the mouse pointer above the desired chat.\n3. Click on the **Share** option.\n4. The **Share Chat** Modal should look different if you've shared a chat before.\n5. Click on **delete this link**.",
+      "source_content_hash": "dd97547c71fdde50957a2125d94c03a6e1084d0f718de3680361236275b51666",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 共有リンクを削除したいチャット会話を選択します。\n2. 対象のチャット上にマウスポインタを置いた時に表示される3点リーダーをクリックします。\n3. **共有**オプションをクリックします。\n4. 以前にチャットを共有したことがある場合、**チャット共有**モーダルの表示が異なります。\n5. **delete this link**をクリックします。"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Once deleted, the shared link will no longer be valid, and users will not be able to view the shared chat.",
+      "source_content_hash": "5e32716f4cc658bfd9c257eb6f3a30b213e1c1f594b38ad9efe0534874be7649",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "削除後、共有リンクは無効になり、ユーザーは共有チャットを表示できなくなります。"
+      }
+    },
+    {
+      "segment_id": "29662466",
+      "source_content": ":::note\n**Note:** Chats shared to the community platform cannot be deleted. To change the access level of a chat shared to the community platform:\n:::",
+      "source_content_hash": "2758ebc9a4a02e866d1b731c97ea0da3534ae9e06ae0efd44ea9bfa655a793cd",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n**注記:** コミュニティプラットフォームに共有されたチャットは削除できません。コミュニティプラットフォームに共有されたチャットのアクセスレベルを変更するには：\n:::"
+      }
+    },
+    {
+      "segment_id": "9f974d3d",
+      "source_content": "1. Log in to your Sage WebUI account on openwebui.com.\n2. Click on your account username at the top right of the website.\n3. Click on **Chats**.\n4. Click on the chat you wish to change permission access for.\n5. Scroll to the bottom of the chat and update its permission level.\n6. Click the **Update Chat** button.",
+      "source_content_hash": "ef1f4497ee71b9191694afc95f7a08394d04b190da9732b4f32b624bdc244df2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. openwebui.comでSage WebUIアカウントにログインします。\n2. ウェブサイトの右上にあるアカウントユーザー名をクリックします。\n3. **Chats**をクリックします。\n4. アクセス権限を変更したいチャットをクリックします。\n5. チャットの下部までスクロールし、権限レベルを更新します。\n6. **Update Chat**ボタンをクリックします。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/chat-features/chatshare.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.795907+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "a016b74a979ed42e1f21761ef4a2519cfc2290bae1a36de58fcdba03ba258e08"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/troubleshooting/compatibility.mdx",
+  "source_file_content_hash": "37ed09bca01700b8997586b2dbb31cccaef0f0f8a76845955dd2ffb70c45358f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\ntitle: \"🌐 Browser Compatibility\"\n---",
+      "source_content_hash": "209cc79ac2bf095afb209e3d0fc5e1d47011a9b048adad5f243aac8aab6fddbe",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Sage Open WebUI is designed for and tested on modern browsers. To ensure the best experience, we recommend using the following browser versions or later:",
+      "source_content_hash": "a4beaad16834405116025f136b6d151661d48b404284b887e9ecc680e83716f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIは最新のブラウザ向けに設計・テストされています。最適な体験を得るため、以下のブラウザバージョン以降の使用を推奨します："
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## 🚀 Supported Browsers",
+      "source_content_hash": "4ca9bd54389705842b35f0f6ec26c8a18458c516d8cc7fc3530f5b21d0a39ddc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🚀 対応ブラウザ"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Sage Open WebUI's core functionality specifically depends on these browser versions:",
+      "source_content_hash": "55b6e4b594bd57b70c5e1778a9f64c4e06996b15fff4cb258b123e21a1377008",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIのコア機能は特に以下のブラウザバージョンに依存しています："
+      }
+    },
+    {
+      "segment_id": "143e51c1",
+      "source_content": "- **Chrome 111** 🟢 _(Released March 2023)_\n- **Safari 16.4** 🍏 _(Released March 2023)_\n- **Firefox 128** 🔥 _(Released July 2024)_",
+      "source_content_hash": "8df9bd053be70583d5f1d55adba99ddcd28dccc72b15c29513fe15495f3230ef",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **Chrome 111** 🟢 _(2023年3月リリース)_\n- **Safari 16.4** 🍏 _(2023年3月リリース)_\n- **Firefox 128** 🔥 _(2024年7月リリース)_"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "💡 If you experience any issues, ensure your browser is up to date or try an alternative supported browser.",
+      "source_content_hash": "a999f35057309aa9100fe270b77fac4a571430f8bd63f1ae173eecbe96512c0c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💡 問題が発生した場合は、ブラウザを最新版に更新するか、他の対応ブラウザをお試しください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/troubleshooting/compatibility.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.785474+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "37ed09bca01700b8997586b2dbb31cccaef0f0f8a76845955dd2ffb70c45358f"
+  }
+}

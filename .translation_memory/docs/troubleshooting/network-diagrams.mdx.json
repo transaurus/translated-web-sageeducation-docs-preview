@@ -1,0 +1,302 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/troubleshooting/network-diagrams.mdx",
+  "source_file_content_hash": "bbb88a31dbfdbd63647dbfe17c12cd6f47254e9327a4d27898ab2c65909267c0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\ntitle: \"🕸️ Network Diagrams\"\n---",
+      "source_content_hash": "97ae27efad711283dedfbf6ff3347379ea75c16d17e23e6a1344760a2e402b59",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Here, we provide clear and structured diagrams to help you understand how various components of the network interact within different setups. This documentation is designed to assist both macOS/Windows and Linux users. Each scenario is illustrated using Mermaid diagrams to show how the interactions are set up depending on the different system configurations and deployment strategies.",
+      "source_content_hash": "21efd277ff9f3dc7ce2c63a5c6f49171b0e9342477045dd17132b75c9b421dc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ここでは、ネットワークのさまざまなコンポーネントが異なるセットアップでどのように相互作用するかを理解するための明確で構造化されたダイアグラムを提供します。このドキュメントは、macOS/WindowsおよびLinuxユーザーの両方を支援するように設計されています。各シナリオは、システム構成と展開戦略に応じて設定された相互作用を示すためにMermaidダイアグラムを使用して説明されています。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## Mac OS/Windows Setup Options 🖥️",
+      "source_content_hash": "913ee361e9b2d3b14cd0ff124e2bfdc52d94ae5afc7727af6e1c4f7529c1042b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Mac OS/Windows セットアップオプション 🖥️"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "### Ollama on Host, Sage WebUI in Container",
+      "source_content_hash": "597d6dfc4d46098ea45bd6a509391ae7230f8351d88b61a5a03804649a7f0701",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ホスト上のOllama、コンテナ内のSage WebUI"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "In this scenario, `Ollama` runs directly on the host machine while `Sage WebUI` operates within a Docker container.",
+      "source_content_hash": "92690f9be171ed5607e77916c3badcdaa5fddfecca200d7d84672e9bff1abe01",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このシナリオでは、`Ollama`がホストマシン上で直接実行され、`Sage WebUI`がDockerコンテナ内で動作します。"
+      }
+    },
+    {
+      "segment_id": "5564d81d",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Mac OS/Windows\") {\n   Person(user, \"User\")\n   Boundary(b1, \"Docker Desktop's Linux VM\") {\n      Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n   }\n   Component(ollama, \"Ollama\", \"Listening on port 11434\")\n}\nRel(openwebui, ollama, \"Makes API calls via Docker proxy\", \"http://host.docker.internal:11434\")\nRel(user, openwebui, \"Makes requests via exposed port -p 3000:8080\", \"http://localhost:3000\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "1248c8b3c626f88ae81d2ef3302a92ce78078ebbf31cfb462fe39b220e481e5b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5564d81d"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "### Ollama and Sage WebUI in Compose Stack",
+      "source_content_hash": "e0d8559042fe09729515dc4cdebfbbc6cb57f26cba457e996ccd3ca984506566",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Composeスタック内のOllamaとSage WebUI"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Both `Ollama` and `Sage WebUI` are configured within the same Docker Compose stack, simplifying network communications.",
+      "source_content_hash": "1b9903e9d9ef2895949eb57f23c1db0b80c2867ba7ffae5ac5d342bd07274f3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`Ollama`と`Sage WebUI`の両方が同じDocker Composeスタック内で構成されており、ネットワーク通信が簡素化されています。"
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Mac OS/Windows\") {\n   Person(user, \"User\")\n   Boundary(b1, \"Docker Desktop's Linux VM\") {\n      Boundary(b2, \"Compose Stack\") {\n         Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n         Component(ollama, \"Ollama\", \"Listening on port 11434\")\n      }\n   }\n}\nRel(openwebui, ollama, \"Makes API calls via inter-container networking\", \"http://ollama:11434\")\nRel(user, openwebui, \"Makes requests via exposed port -p 3000:8080\", \"http://localhost:3000\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "f2d4a21b13fff59e254e10a3bfb36ef11c924647dbe577095f4f92f6fff13b46",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "### Ollama and Sage WebUI, Separate Networks",
+      "source_content_hash": "5b307c0ac9b7cd9e2ed13494edf949cf29d04ab12530a1a280fa957e2d3ecaa8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 別々のネットワーク上のOllamaとSage WebUI"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Here, `Ollama` and `Sage WebUI` are deployed in separate Docker networks, potentially leading to connectivity issues.",
+      "source_content_hash": "f42fd03845019f6c3dce2e2b522068f3514dedb11f24f7ba626bb8fc914998de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ここでは、`Ollama`と`Sage WebUI`が別々のDockerネットワークに展開されており、接続性の問題が発生する可能性があります。"
+      }
+    },
+    {
+      "segment_id": "64b6f348",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Mac OS/Windows\") {\n   Person(user, \"User\")\n   Boundary(b1, \"Docker Desktop's Linux VM\") {\n      Boundary(b2, \"Network A\") {\n         Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n      }\n      Boundary(b3, \"Network B\") {\n         Component(ollama, \"Ollama\", \"Listening on port 11434\")\n      }\n   }\n}\nRel(openwebui, ollama, \"Unable to connect\")\nRel(user, openwebui, \"Makes requests via exposed port -p 3000:8080\", \"http://localhost:3000\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "f535dce70057de9a18e9a7a5f890b953a78424d60a1681f6668cf207cf013243",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_64b6f348"
+      }
+    },
+    {
+      "segment_id": "ee8401db",
+      "source_content": "### Sage WebUI in Host Network",
+      "source_content_hash": "2835d2618c98ed7d5881945c6214c507610692319665c51b70e6daa8501aa3a1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ホストネットワーク内のSage WebUI"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "In this configuration, `Sage WebUI` utilizes the host network, which impacts its ability to connect in certain environments.",
+      "source_content_hash": "56ca126378537f551980551d43386805dafbdaa74ba785d6eec566bb35ab2191",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この構成では、`Sage WebUI`がホストネットワークを利用しており、特定の環境での接続能力に影響を与えます。"
+      }
+    },
+    {
+      "segment_id": "af983f82",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Mac OS/Windows\") {\n   Person(user, \"User\")\n   Boundary(b1, \"Docker Desktop's Linux VM\") {\n      Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n   }\n}\nRel(user, openwebui, \"Unable to connect, host network is the VM's network\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "5dbae8a08063e07d7bb969c33e7f08eebecd5f8f2ae49d912dd55ab77c8179ee",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_af983f82"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "## Linux Setup Options 🐧",
+      "source_content_hash": "bb0b49e215d6b8a63d303e8b1ef2da214d39a85b3804454a2c11dd8806b7802a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Linux セットアップオプション 🐧"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "### Ollama on Host, Sage WebUI in Container (Linux)",
+      "source_content_hash": "e86f293ffba99cef12e0deccc20b64c57d2cdd4582bfa87bf468efca293d1702",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ホスト上のOllama、コンテナ内のSage WebUI（Linux）"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "This diagram is specific to the Linux platform, with `Ollama` running on the host and `Sage WebUI` deployed inside a Docker container.",
+      "source_content_hash": "fc25c6919da7e0a16a4188b2d7ba223cdcbae249cf55dbbf71061a0651898129",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このダイアグラムはLinuxプラットフォームに特化しており、`Ollama`がホスト上で実行され、`Sage WebUI`がDockerコンテナ内に展開されています。"
+      }
+    },
+    {
+      "segment_id": "5782e280",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Linux\") {\n   Person(user, \"User\")\n   Boundary(b1, \"Container Network\") {\n      Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n   }\n   Component(ollama, \"Ollama\", \"Listening on port 11434\")\n}\nRel(openwebui, ollama, \"Makes API calls via Docker proxy\", \"http://host.docker.internal:11434\")\nRel(user, openwebui, \"Makes requests via exposed port -p 3000:8080\", \"http://localhost:3000\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "074eab6afbfe7fbc9c5a76ffd178394aed8111ffa617ad5ce87abaa05f7037dd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5782e280"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "### Ollama and Sage WebUI in Compose Stack (Linux)",
+      "source_content_hash": "7ecf97cf4864d64455c4770c6a8e4bed50b716b98a260fa78cbd47760ddf6a65",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Composeスタック内のOllamaとSage WebUI（Linux）"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "A set-up where both `Ollama` and `Sage WebUI` reside within the same Docker Compose stack, allowing for straightforward networking on Linux.",
+      "source_content_hash": "dcc695ab8a31e6d0b7fd63f1ab760cfdbe48615bb18c431d55de5cac3fd5e851",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`Ollama`と`Sage WebUI`の両方が同じDocker Composeスタック内に存在するセットアップで、Linux上でのシンプルなネットワークを可能にします。"
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Linux\") {\n   Person(user, \"User\")\n   Boundary(b1, \"Container Network\") {\n      Boundary(b2, \"Compose Stack\") {\n         Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n         Component(ollama, \"Ollama\", \"Listening on port 11434\")\n      }\n   }\n}\nRel(openwebui, ollama, \"Makes API calls via inter-container networking\", \"http://ollama:11434\")\nRel(user, openwebui, \"Makes requests via exposed port -p 3000:8080\", \"http://localhost:3000\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "1f1a61202197bafd58d78c27d379ee2d3b40a8b694bd1a3b97f4e07f912f9864",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "23b96cc0",
+      "source_content": "### Ollama and Sage WebUI, Separate Networks (Linux)",
+      "source_content_hash": "3d6b1468ee52ddd8df763190e9ea024759639de28ce8fb485aa58f1112a880b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 別々のネットワーク上のOllamaとSage WebUI（Linux）"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "A scenario in which `Ollama` and `Sage WebUI` are in different Docker networks under a Linux environment, which could hinder connectivity.",
+      "source_content_hash": "147f4350bdda0d9feea99c277775bf3708e2306cb2adc440fe9df56c3cb38a16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Linux環境下で`Ollama`と`Sage WebUI`が異なるDockerネットワークにあるシナリオで、接続性が妨げられる可能性があります。"
+      }
+    },
+    {
+      "segment_id": "5be4f25e",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Linux\") {\n   Person(user, \"User\")\n   Boundary(b2, \"Container Network A\") {\n      Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n   }\n   Boundary(b3, \"Container Network B\") {\n      Component(ollama, \"Ollama\", \"Listening on port 11434\")\n   }\n}\nRel(openwebui, ollama, \"Unable to connect\")\nRel(user, openwebui, \"Makes requests via exposed port -p 3000:8080\", \"http://localhost:3000\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "c761481e5bc81c11b921b30e78a2230b43d825889a0d102823b3488da54d7470",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5be4f25e"
+      }
+    },
+    {
+      "segment_id": "a0d0e29e",
+      "source_content": "### Sage WebUI in Host Network, Ollama on Host (Linux)",
+      "source_content_hash": "a8721e6c06e6319f946db7db833c8a11dc1808292b915e97e94946f4cd5328be",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ホストネットワーク内のSage WebUI、ホスト上のOllama（Linux）"
+      }
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "An optimal layout where both `Sage WebUI` and `Ollama` use the host’s network, facilitating seamless interaction on Linux systems.",
+      "source_content_hash": "be1d9413aed8cd32fee0973c16f025913a257a97260b2dc79e66cec696861353",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`Sage WebUI`と`Ollama`の両方がホストのネットワークを使用する最適なレイアウトで、Linuxシステム上でのシームレスな相互作用を促進します。"
+      }
+    },
+    {
+      "segment_id": "7d56fc4b",
+      "source_content": "```mermaid\nC4Context\nBoundary(b0, \"Hosting Machine - Linux\") {\n   Person(user, \"User\")\n   Component(openwebui, \"Sage WebUI\", \"Listening on port 8080\")\n   Component(ollama, \"Ollama\", \"Listening on port 11434\")\n}\nRel(openwebui, ollama, \"Makes API calls via localhost\", \"http://localhost:11434\")\nRel(user, openwebui, \"Makes requests via listening port\", \"http://localhost:8080\")\nUpdateRelStyle(user, openwebui, $offsetX=\"-100\", $offsetY=\"-50\")\n```",
+      "source_content_hash": "4af07b952934b3b45813cbd019011c2755c6f4b7f0f019928d9040df2688912b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7d56fc4b"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "Each setup addresses different deployment strategies and networking configurations to help you choose the best layout for your requirements.",
+      "source_content_hash": "01db6b8ccc5be686aa0c80ef6ae7dc913ae0089bc9f586a0e56864a3a02fdb3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "各セットアップは、異なる展開戦略とネットワーク構成に対応しており、要件に最適なレイアウトを選択するのに役立ちます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/troubleshooting/network-diagrams.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.804350+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "bbb88a31dbfdbd63647dbfe17c12cd6f47254e9327a4d27898ab2c65909267c0"
+  }
+}

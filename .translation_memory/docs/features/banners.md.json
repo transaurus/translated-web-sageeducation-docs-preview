@@ -1,0 +1,172 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/banners.md",
+  "source_file_content_hash": "f2df65af8b674f1aac6f1dd01eae302f81b8ebabc601220b1a69427e41237100",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\r\nsidebar_position: 13\r\ntitle: \"🔰 Customizable Banners\"\r\n---",
+      "source_content_hash": "845c2d9bed1fd36c180c6cf7d7b630bcec7d5eefa76c1db640c1c0dba797a8a8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "Overview\r\n--------",
+      "source_content_hash": "24b4b6d5d3222e48eaeda8c61c71e0be58f53c03f66a14c5c96c23bcda5269c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "概要\n--------"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Sage WebUI provides a feature that allows administrators to create customizable banners with persistence in the `config.json` file. These banners can feature options for content, background color (info, warning, error, or success), and dismissibility. Banners are accessible only to logged-in users, ensuring the confidentiality of sensitive information.",
+      "source_content_hash": "6ff0dc2f785a85e7285ac3da7ddf88f00a892062a144cc0a3b33a6721cb22640",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでは、管理者が`config.json`ファイルに永続化可能なカスタマイズ可能なバナーを作成する機能を提供しています。これらのバナーには、コンテンツ、背景色（info、warning、error、success）、および非表示設定のオプションがあります。バナーはログインユーザーのみがアクセス可能で、機密情報の保護を確保しています。"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "Configuring Banners through the Admin Panel\r\n---------------------------------------------",
+      "source_content_hash": "eb33cdf0cd3a85e2316e9c042c61042cd9e1d014bc7e586a82310b5f9936f08c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "管理者パネルによるバナーの設定\n---------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "To configure banners through the admin panel, follow these steps:",
+      "source_content_hash": "8729b369d5f4cf6c79b00067bce51d05a2802c7fa34e7b3c9f9f2686e8cbfb26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "管理者パネルを通じてバナーを設定するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "1. Log in to your Sage WebUI instance as an administrator.\r\n2. Navigate to the `Admin Panel` -> `Settings` -> `Interface`.\r\n3. Locate the `Banners` option directly above the `Default Prompt Suggestions` option.\r\n4. Click on the `+` icon to add a new banner.\r\n5. Select the banner type and set the banner text as desired.\r\n6. Choose whether the banner is dismissible or not.\r\n7. Set the timestamp for the banner (optional).\r\n8. Press `Save` at the bottom of the page to save the banner.",
+      "source_content_hash": "88ffad6fadc2cf24c5cfce6e7bd3bdf43ea63e05d456575458905940371cfd85",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIインスタンスに管理者としてログインします。\r\n2. `管理者パネル` -> `設定` -> `インターフェース`に移動します。\r\n3. `デフォルトのプロンプト候補`オプションのすぐ上にある`バナー`オプションを探します。\r\n4. `+`アイコンをクリックして新しいバナーを追加します。\r\n5. バナータイプを選択し、必要に応じてバナーテキストを設定します。\r\n6. バナーを非表示可能にするかどうかを選択します。\r\n7. バナーのタイムスタンプを設定します（オプション）。\r\n8. ページ下部の`保存`を押してバナーを保存します。"
+      }
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "Configuring Banners through Environment Variables\r\n------------------------------------------------",
+      "source_content_hash": "4cacac3baf537f1855ed50f2e848f7374ef0a372aac09396e3cad9877741292a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "環境変数によるバナーの設定\n------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Alternatively, you can configure banners through environment variables. To do this, you will need to set the `WEBUI_BANNERS` environment variable with a list of dictionaries in the following format:",
+      "source_content_hash": "c5fbc6d27d7fb382e2ffec8785722ebe44dc1748af0639dbbf3369b98de921fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "あるいは、環境変数を通じてバナーを設定することもできます。これを行うには、`WEBUI_BANNERS`環境変数を以下の形式の辞書リストで設定する必要があります："
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```json\r\n[{\"id\": \"string\",\"type\": \"string [info, success, warning, error]\",\"title\": \"string\",\"content\": \"string\",\"dismissible\": False,\"timestamp\": 1000}]\r\n```",
+      "source_content_hash": "34ebf68610d52dc0f43f4c95f86f2b9fc7832c09e7ddb36e857ae7f30001c71e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "For more information on configuring environment variables in Sage WebUI, see [Environment Variable Configuration](/getting-started/env-configuration#webui_banners).",
+      "source_content_hash": "9e37e5fc8e8969cab364b68d6d704489bee5be7e7423b4b2e46976d375fe5d29",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでの環境変数の設定に関する詳細は、[環境変数の設定](/getting-started/env-configuration#webui_banners)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "Environment Variable Description\r\n---------------------------------",
+      "source_content_hash": "3f65c83bf037082b670da5b21e46add0d242398953501affab5411eea9745a80",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "環境変数の説明\n---------------------------------"
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "* `WEBUI_BANNERS`:\r\n  * Type: list of dict\r\n  * Default: `[]`\r\n  * Description: List of banners to show to users.",
+      "source_content_hash": "4ab2d8e3fa3b55c9b1afef5e7f1eca03a57c02fa0f4e05368afa661a07a62b6f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `WEBUI_BANNERS`:\r\n  * タイプ: 辞書のリスト\r\n  * デフォルト: `[]`\r\n  * 説明: ユーザーに表示するバナーのリスト。"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "Banner Options\r\n----------------",
+      "source_content_hash": "92c02b0b94acee39e634b0775c80b5bae01d88420c8ff2263299942fc04695d3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "バナーオプション\n----------------"
+      }
+    },
+    {
+      "segment_id": "b93ddfac",
+      "source_content": "* `id`: Unique identifier for the banner.\r\n* `type`: Background color of the banner (info, success, warning, error).\r\n* `title`: Title of the banner.\r\n* `content`: Content of the banner.\r\n* `dismissible`: Whether the banner is dismissible or not.\r\n* `timestamp`: Timestamp for the banner (optional).",
+      "source_content_hash": "935498310f416cfc64aaa25dec9df4731e375a11fe4431b8859f9e954938e7f9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `id`: バナーの一意の識別子。\r\n* `type`: バナーの背景色（info、success、warning、error）。\r\n* `title`: バナーのタイトル。\r\n* `content`: バナーのコンテンツ。\r\n* `dismissible`: バナーを非表示可能にするかどうか。\r\n* `timestamp`: バナーのタイムスタンプ（オプション）。"
+      }
+    },
+    {
+      "segment_id": "60410af6",
+      "source_content": "FAQ\r\n----",
+      "source_content_hash": "c208c615d1b347641e06b300c3d997d01db188821f00a56e725ee82ec03d9dd7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "FAQ\n----"
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "* Q: Can I configure banners through the admin panel?\r\nA: Yes, you can configure banners through the admin panel by navigating to `Admin Panel` -> `Settings` -> `Interface` and clicking on the `+` icon to add a new banner.\r\n* Q: Can I configure banners through environment variables?\r\nA: Yes, you can configure banners through environment variables by setting the `WEBUI_BANNERS` environment variable with a list of dictionaries.\r\n* Q: What is the format for the `WEBUI_BANNERS` environment variable?\r\nA: The format for the `WEBUI_BANNERS` environment variable is a list of dictionaries with the following keys: `id`, `type`, `title`, `content`, `dismissible`, and `timestamp`.\r\n* Q: Can I make banners dismissible?\r\nA: Yes, you can make banners dismissible by setting the `dismissible` key to `True` in the banner configuration or by toggling dismissibility for a banner within the UI.",
+      "source_content_hash": "22fe0dfd2bb946fddd49f4db06aa3a61c42ec5e6269ac32f634ba2c2c0dbaf2f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Q: 管理者パネルを通じてバナーを設定できますか？\r\nA: はい、`管理者パネル` -> `設定` -> `インターフェース`に移動し、`+`アイコンをクリックして新しいバナーを追加することで設定できます。\r\n* Q: 環境変数を通じてバナーを設定できますか？\r\nA: はい、`WEBUI_BANNERS`環境変数を辞書リストで設定することで可能です。\r\n* Q: `WEBUI_BANNERS`環境変数の形式はどのようになっていますか？\r\nA: `WEBUI_BANNERS`環境変数の形式は、`id`、`type`、`title`、`content`、`dismissible`、`timestamp`のキーを持つ辞書のリストです。\r\n* Q: バナーを非表示可能にできますか？\r\nA: はい、バナー設定で`dismissible`キーを`True`に設定するか、UI内でバナーの非表示可能設定を切り替えることで可能です。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/banners.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.803207+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "f2df65af8b674f1aac6f1dd01eae302f81b8ebabc601220b1a69427e41237100"
+  }
+}

@@ -1,0 +1,327 @@
+---
+sidebar_position: 2
+title: "⚙️ Tools"
+---
+
+## ツールとは？
+
+ツールとは、リクエスト時にLLMに提供されるPythonスクリプトです。ツールを使用することで、LLMはアクションを実行し、その結果として追加のコンテキストを受け取ることができます。一般的に、ツールを確実に利用するためには、選択したLLMが関数呼び出しをサポートしている必要があります。
+
+ツールは、チャット内でのウェブ検索、ウェブスクレイピング、API連携など、多くのユースケースを可能にします。
+
+多くのツールが[コミュニティサイト](https://sage.education/tools)で利用可能であり、簡単にSage WebUIインスタンスにインポートできます。
+
+## ツールの使用方法
+
+[インストール後](#how-to-install-tools)、ツールは関数呼び出しをサポートする任意のLLMに割り当てて有効にすることで使用できます。ツールをモデルに割り当てるには、ワークスペース => モデルに移動します。ここで、ツールを有効にしたいモデルを選択できます。
+
+モデル設定を編集するために鉛筆アイコンをクリックしたら、ツールセクションまでスクロールし、有効にしたいツールをチェックします。完了したら保存をクリックしてください。
+
+モデルに対してツールが有効になったら、LLMとチャットする際に「+」アイコンをクリックしてさまざまなツールを使用できます。ツールを有効にしても、必ずしも使用されるわけではないことに注意してください。これは、LLMがこのツールを呼び出すオプションを提供されることを意味します。
+
+最後に、コミュニティサイトには、「+」アイコンメニューでツールを有効にしなくてもLLMが自動的にツールを選択できるフィルター機能を提供しています: https://sage.education/f/hub/autotool_filter/
+
+注意: AutoToolフィルターを使用する場合でも、上記の手順を踏んでモデルごとにツールを有効にする必要があります。
+
+## ツールのインストール方法
+
+ツールのインポートプロセスは非常に簡単です。2つのオプションがあります:
+
+### 手動でダウンロードしてインポート
+
+コミュニティサイトに移動: https://sage.education/tools/
+
+1) インポートしたいツールをクリック
+2) ページ右上の青い「Get」ボタンをクリック
+3) 「Download as JSON export」をクリック
+4) ワークスペース => ツールに移動し、「Import Tools」をクリックしてツールをSage WebUIにアップロードできます
+
+### Sage WebUIのURL経由でインポート
+
+1) コミュニティサイトに移動: https://sage.education/tools/
+2) インポートしたいツールをクリック
+3) ページ右上の青い「Get」ボタンをクリック
+4) Sage WebUIインスタンスのIPアドレスを入力し、「Import to WebUI」をクリックすると、自動的にインスタンスが開き、ツールをインポートできます
+
+注意: 手動インポート方法を使用して、独自のツールやコミュニティサイトで追跡されていないツールをインストールできます。理解していないツールや信頼できないソースからのツールはインポートしないでください。未知のコードを実行することは常にリスクを伴います。
+
+## ツールでできること
+
+ツールは、以下のような多様な機能を提供することで、インタラクティブな会話のための幅広いユースケースを可能にします:
+
+- [**ウェブ検索**](https://sage.education/t/constliakos/web_search/): リアルタイム情報を取得するためのライブウェブ検索を実行
+- [**画像生成**](https://sage.education/t/justinrahb/image_gen/): ユーザープロンプトに基づいて画像を生成
+- [**外部音声合成**](https://sage.education/t/justinrahb/elevenlabs_tts/): チャット内でAPIリクエストを行い、外部音声合成サービスElevenLabsを統合してLLM出力に基づく音声を生成
+
+## カスタムツールキットの作成
+
+ツールキットは、メタデータを含むトップレベルのdocstringと`Tools`クラスを持つ単一のPythonファイルで定義されます。
+
+### トップレベルDocstringの例
+
+```python
+"""
+title: String Inverse
+author: Your Name
+author_url: https://website.com
+git_url: https://github.com/username/string-reverse.git
+description: This tool calculates the inverse of a string
+required_open_webui_version: 0.4.0
+requirements: langchain-openai, langgraph, ollama, langchain_ollama
+version: 0.4.0
+licence: MIT
+"""
+```
+
+### Toolsクラス
+
+ツールは`Tools`というクラス内でメソッドとして定義する必要があります。オプションとして`Valves`や`UserValves`といったサブクラスも使用可能です。例：
+
+```python
+class Tools:
+    def __init__(self):
+        """Initialize the Tool."""
+        self.valves = self.Valves()
+
+    class Valves(BaseModel):
+        api_key: str = Field("", description="Your API key here")
+
+    def reverse_string(self, string: str) -> str:
+        """
+        Reverses the input string.
+        :param string: The string to reverse
+        """
+        # example usage of valves
+        if self.valves.api_key != "42":
+            return "Wrong API key"
+        return string[::-1] 
+```
+
+### 型ヒント
+
+各ツールは引数に対して型ヒントを持つ必要があります。OpenWebUIバージョン0.4.3以降では、`queries_and_docs: list[tuple[str, int]]`のようにネストした型も使用可能です。これらの型ヒントはモデルに送信されるJSONスキーマを生成するために使用されます。型ヒントがないツールは動作の一貫性が大幅に低下します。
+
+### ValvesとUserValves - （オプションですが強く推奨）
+
+ValvesとUserValvesは、APIキーや設定オプションなどの動的な詳細情報をユーザーが提供できるようにするために使用されます。これらは指定されたツールに対してGUIメニューに入力可能なフィールドやブールスイッチを作成します。
+
+Valvesは管理者のみが設定可能で、UserValvesはすべてのユーザーが設定可能です。
+
+<details>
+<summary>Example</summary>
+
+```
+# Define and Valves
+    class Valves(BaseModel):
+        priority: int = Field(
+            default=0, description="Priority level for the filter operations."
+        )
+        test_valve: int = Field(
+            default=4, description="A valve controlling a numberical value"
+        )
+        pass
+
+    # Define any UserValves
+    class UserValves(BaseModel):
+        test_user_valve: bool = Field(
+            default=False, description="A user valve controlling a True/False (on/off) switch"
+        )
+        pass
+
+    def __init__(self):
+        self.valves = self.Valves()
+```
+</details>
+
+### オプション引数
+
+以下はツールが依存できるオプション引数のリストです：
+
+- `__event_emitter__`: イベントを発行（次のセクションを参照）
+- `__event_call__`: イベントエミッターと同じですが、ユーザーインタラクションに使用可能
+- `__user__`: ユーザー情報を含む辞書
+- `__metadata__`: チャットメタデータを含む辞書
+- `__messages__`: 以前のメッセージのリスト
+- `__files__`: 添付ファイル
+- `__model__`: モデル名
+
+### イベントエミッター
+
+イベントエミッターはチャットインターフェースに追加情報を追加するために使用されます。フィルターアウトレットと同様に、イベントエミッターはチャットにコンテンツを追加できます。フィルターアウトレットとは異なり、情報を削除することはできません。さらに、エミッターはツールの実行中いつでもアクティブにできます。
+
+イベントエミッターには2つの異なるタイプがあります：
+
+#### ステータス
+
+これはメッセージがステップを実行している間にステータスを追加するために使用されます。これらはツールの実行中いつでも行えます。これらのステータスはメッセージコンテンツの直上に表示されます。LLMの応答を遅らせるツールや大量の情報を処理するツールに非常に有用です。これにより、ユーザーにリアルタイムで何が処理されているかを知らせることができます。
+
+```
+await __event_emitter__(
+            {
+                "type": "status", # We set the type here
+                "data": {"description": "Message that shows up in the chat", "done": False, "hidden": False}, 
+                # Note done is False here indicating we are still emitting statuses
+            }
+        )
+```
+
+<details>
+<summary>Example</summary>
+
+```
+async def test_function(
+        self, prompt: str, __user__: dict, __event_emitter__=None
+    ) -> str:
+        """
+        This is a demo
+
+        :param test: this is a test parameter
+        """
+
+        await __event_emitter__(
+            {
+                "type": "status", # We set the type here
+                "data": {"description": "Message that shows up in the chat", "done": False}, 
+                # Note done is False here indicating we are still emitting statuses
+            }
+        )
+
+        # Do some other logic here
+        await __event_emitter__(
+            {
+                "type": "status",
+                "data": {"description": "Completed a task message", "done": True, "hidden": False},
+                # Note done is True here indicating we are done emitting statuses
+                # You can also set "hidden": True if you want to remove the status once the message is returned
+            }
+        )
+
+        except Exception as e:
+            await __event_emitter__(
+                {
+                    "type": "status",
+                    "data": {"description": f"An error occured: {e}", "done": True},
+                }
+            )
+
+            return f"Tell the user: {e}"
+```
+</details>
+
+#### メッセージ
+
+このタイプはツールの実行中いつでもLLMにメッセージを追加するために使用されます。つまり、LLMの応答の前、後、または最中にメッセージを追加したり、画像を埋め込んだり、ウェブページをレンダリングしたりできます。
+
+```
+await __event_emitter__(
+                    {
+                        "type": "message", # We set the type here
+                        "data": {"content": "This message will be appended to the chat."},
+                        # Note that with message types we do NOT have to set a done condition
+                    }
+                )
+```
+
+<details>
+<summary>Example</summary>
+
+```
+async def test_function(
+        self, prompt: str, __user__: dict, __event_emitter__=None
+    ) -> str:
+        """
+        This is a demo
+
+        :param test: this is a test parameter
+        """
+
+        await __event_emitter__(
+                    {
+                        "type": "message", # We set the type here
+                        "data": {"content": "This message will be appended to the chat."},
+                        # Note that with message types we do NOT have to set a done condition
+                    }
+                )
+
+        except Exception as e:
+            await __event_emitter__(
+                {
+                    "type": "status",
+                    "data": {"description": f"An error occured: {e}", "done": True},
+                }
+            )
+
+            return f"Tell the user: {e}"
+```
+</details>
+
+#### 引用
+
+このタイプはチャット内で引用や参照を提供するために使用されます。コンテンツ、ソース、関連するメタデータを指定するために利用できます。以下は引用イベントを発行する方法の例です：
+
+```
+await __event_emitter__(
+    {
+        "type": "citation",
+        "data": {
+            "document": [content],
+            "metadata": [
+                {
+                    "date_accessed": datetime.now().isoformat(),
+                    "source": title,
+                }
+            ],
+            "source": {"name": title, "url": url},
+        },
+    }
+)
+```
+
+複数の引用を送信する場合、引用をイテレートしてエミッターを複数回呼び出すことができます。カスタム引用を実装する際は、`Tools`クラスの`__init__`メソッドで`self.citation = False`を設定してください。そうしないと、組み込みの引用があなたがプッシュしたものを上書きします。例：
+
+```python
+def __init__(self):
+    self.citation = False
+```
+
+警告：`self.citation = True`を設定すると、カスタム引用が自動生成された返信引用で置き換えられます。無効にすることで、独自の引用参照を完全に管理できます。
+
+<details>
+<summary>Example</summary>
+
+```
+class Tools:
+    class UserValves(BaseModel):
+        test: bool = Field(
+            default=True, description="test"
+        )
+
+    def __init__(self):
+        self.citation = False
+
+async def test_function(
+        self, prompt: str, __user__: dict, __event_emitter__=None
+    ) -> str:
+        """
+        This is a demo that just creates a citation
+
+        :param test: this is a test parameter
+        """
+
+        await __event_emitter__(
+            {
+                "type": "citation",
+                "data": {
+                    "document": ["This message will be appended to the chat as a citation when clicked into"],
+                    "metadata": [
+                        {
+                            "date_accessed": datetime.now().isoformat(),
+                            "source": title,
+                        }
+                    ],
+                    "source": {"name": "Title of the content", "url": "http://link-to-citation"},
+                },
+            }
+        )
+```
+</details>

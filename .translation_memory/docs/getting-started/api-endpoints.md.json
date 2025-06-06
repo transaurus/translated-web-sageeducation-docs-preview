@@ -1,0 +1,352 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/api-endpoints.md",
+  "source_file_content_hash": "1bc8d6125268af65c8af2ba2907c4e43e36b8c1a97bdb2088409939f4c95dc01",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\r\nsidebar_position: 400\r\ntitle: \"🔗 API Endpoints\"\r\n---",
+      "source_content_hash": "1b9f886404776820af7343abae69f10d5a20750ac30c33f743181a4ddeb50608",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "This guide provides essential information on how to interact with the API endpoints effectively to achieve seamless integration and automation using our models. Please note that this is an experimental setup and may undergo future updates for enhancement.",
+      "source_content_hash": "7eb607a76bc93d72e6346189d53aaad366782a95eebfbfe5a5b38603d6c3d0ec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドでは、当社のモデルを使用してシームレスな統合と自動化を実現するためのAPIエンドポイントとの効果的な連携方法についての基本情報を提供します。これは実験的なセットアップであり、今後のアップデートで機能強化が行われる可能性があることにご注意ください。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## Authentication",
+      "source_content_hash": "df96773c8abc735dd4f21f5ff9ce623e4d544cd60d025eeba0e89dca1e0f9238",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 認証"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "To ensure secure access to the API, authentication is required 🛡️. You can authenticate your API requests using the Bearer Token mechanism. Obtain your API key from **Settings > Account** in the Sage WebUI, or alternatively, use a JWT (JSON Web Token) for authentication.",
+      "source_content_hash": "6919b2ec67624c6e528ddd13ddfdb48937e526e1dc022d5a7430fd4a41407f5d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "APIへの安全なアクセスを確保するため、認証が必要です🛡️。Bearer Tokenメカニズムを使用してAPIリクエストを認証できます。APIキーはSage WebUIの**設定 > アカウント**から取得するか、あるいはJWT（JSON Web Token）を使用して認証を行います。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Notable API Endpoints",
+      "source_content_hash": "22b0ff7ee0fe66da9f6725eb4a42a153f027b111b3d45abd667bd2adff00119a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 主要なAPIエンドポイント"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "### 📜 Retrieve All Models",
+      "source_content_hash": "177d3ee0a6579d6ec49e8391fec1ad9e3b5796d6b6430fb9b6174068f78e7537",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📜 すべてのモデルを取得"
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- **Endpoint**: `GET /api/models`\r\n- **Description**: Fetches all models created or added via Sage WebUI.\r\n- **Example**:\r\n\r\n  ```bash\r\n  curl -H \"Authorization: Bearer YOUR_API_KEY\" http://localhost:3000/api/models\r\n  ```",
+      "source_content_hash": "b6c3c1b6a876c1e3733c4d37a10142a636a908607cfa5ecd6535bb1c8bea56ad",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **エンドポイント**: `GET /api/models`\r\n- **説明**: Sage WebUIで作成または追加されたすべてのモデルを取得します。\r\n- **例**:\r\n\r\n  ```bash\r\n  curl -H \"Authorization: Bearer YOUR_API_KEY\" http://localhost:3000/api/models\r\n  ```"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "### 💬 Chat Completions",
+      "source_content_hash": "919f67f723c43027e15dfa789ab1704de7fc681933a5d36263c9d352e0039620",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 💬 チャット補完"
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "- **Endpoint**: `POST /api/chat/completions`\r\n- **Description**: Serves as an OpenAI API compatible chat completion endpoint for models on Sage WebUI including Ollama models, OpenAI models, and Sage WebUI Function models.\r\n- **Example**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/chat/completions \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"model\": \"llama3.1\",\r\n        \"messages\": [\r\n          {\r\n            \"role\": \"user\",\r\n            \"content\": \"Why is the sky blue?\"\r\n          }\r\n        ]\r\n      }'\r\n  ```",
+      "source_content_hash": "bdfc126c440e98a8b97be3492840181a8e4ea656aa51d18c6508a486381742f8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **エンドポイント**: `POST /api/chat/completions`\r\n- **説明**: Sage WebUI上のモデル（Ollamaモデル、OpenAIモデル、Sage WebUI Functionモデルを含む）に対するOpenAI API互換のチャット補完エンドポイントとして機能します。\r\n- **例**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/chat/completions \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"model\": \"llama3.1\",\r\n        \"messages\": [\r\n          {\r\n            \"role\": \"user\",\r\n            \"content\": \"Why is the sky blue?\"\r\n          }\r\n        ]\r\n      }'\r\n  ```"
+      }
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "### 🧩 Retrieval Augmented Generation (RAG)",
+      "source_content_hash": "347c333cd36a6e0fc75c3cc887bd92a0166d5c246d56996204134ecbaaf20c4e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🧩 Retrieval Augmented Generation (RAG)"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "The Retrieval Augmented Generation (RAG) feature allows you to enhance responses by incorporating data from external sources. Below, you will find the methods for managing files and knowledge collections via the API, and how to use them in chat completions effectively.",
+      "source_content_hash": "9260272f7c3c83bc82ffa679d71c0005ffa091346f14b240ceb828bc6616c60e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Retrieval Augmented Generation (RAG)機能を使用すると、外部ソースからのデータを組み込むことで応答を強化できます。以下では、APIを介してファイルとナレッジコレクションを管理する方法と、それらをチャット補完で効果的に使用する方法について説明します。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "#### Uploading Files",
+      "source_content_hash": "89556c51e6b46f8d04887bb34ea0f143512761f0fb0ca5fc0b8fbcc56129b763",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ファイルのアップロード"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "To utilize external data in RAG responses, you first need to upload the files. The content of the uploaded file is automatically extracted and stored in a vector database.",
+      "source_content_hash": "92946e3088e394d860a87e45ceadabea00c01581710fb906edbff66b1bc9776a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RAG応答で外部データを利用するには、まずファイルをアップロードする必要があります。アップロードされたファイルの内容は自動的に抽出され、ベクターデータベースに保存されます。"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "- **Endpoint**: `POST /api/v1/files/`\r\n- **Curl Example**:\r\n\r\n  ```bash\r\n  curl -X POST -H \"Authorization: Bearer YOUR_API_KEY\" -H \"Accept: application/json\" \\\r\n  -F \"file=@/path/to/your/file\" http://localhost:3000/api/v1/files/\r\n  ```\r\n\r\n- **Python Example**:\r\n\r\n  ```python\r\n  import requests\r\n  \r\n  def upload_file(token, file_path):\r\n      url = 'http://localhost:3000/api/v1/files/'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Accept': 'application/json'\r\n      }\r\n      files = {'file': open(file_path, 'rb')}\r\n      response = requests.post(url, headers=headers, files=files)\r\n      return response.json()\r\n  ```",
+      "source_content_hash": "8fbd26a09881f6c7c30bbae299751f63b812208058cb84bafdaca0fcb579b9ab",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **エンドポイント**: `POST /api/v1/files/`\r\n- **Curl例**:\r\n\r\n  ```bash\r\n  curl -X POST -H \"Authorization: Bearer YOUR_API_KEY\" -H \"Accept: application/json\" \\\r\n  -F \"file=@/path/to/your/file\" http://localhost:3000/api/v1/files/\r\n  ```\r\n\r\n- **Python例**:\r\n\r\n  ```python\r\n  import requests\r\n  \r\n  def upload_file(token, file_path):\r\n      url = 'http://localhost:3000/api/v1/files/'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Accept': 'application/json'\r\n      }\r\n      files = {'file': open(file_path, 'rb')}\r\n      response = requests.post(url, headers=headers, files=files)\r\n      return response.json()\r\n  ```"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "#### Adding Files to Knowledge Collections",
+      "source_content_hash": "cd2ac76c3fbf2e9572dbe8000bdf542639d96216363a2daa49a1e915ae4372c1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ナレッジコレクションへのファイルの追加"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "After uploading, you can group files into a knowledge collection or reference them individually in chats.",
+      "source_content_hash": "a0c55eb038d8a4526e20c8cdccf1bce3fb1b24be85270bb0e801976a173eeac5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アップロード後、ファイルをナレッジコレクションにグループ化したり、個別にチャットで参照したりできます。"
+      }
+    },
+    {
+      "segment_id": "5efe9dee",
+      "source_content": "- **Endpoint**: `POST /api/v1/knowledge/{id}/file/add`\r\n- **Curl Example**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/v1/knowledge/{knowledge_id}/file/add \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"file_id\": \"your-file-id-here\"}'\r\n  ```\r\n\r\n- **Python Example**:\r\n\r\n  ```python\r\n  import requests\r\n\r\n  def add_file_to_knowledge(token, knowledge_id, file_id):\r\n      url = f'http://localhost:3000/api/v1/knowledge/{knowledge_id}/file/add'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Content-Type': 'application/json'\r\n      }\r\n      data = {'file_id': file_id}\r\n      response = requests.post(url, headers=headers, json=data)\r\n      return response.json()\r\n  ```",
+      "source_content_hash": "464352c1c73d579864e1ae7656716d6e8e4e030045ac701013be93f50358d61a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **エンドポイント**: `POST /api/v1/knowledge/{id}/file/add`\r\n- **Curl例**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/v1/knowledge/{knowledge_id}/file/add \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"file_id\": \"your-file-id-here\"}'\r\n  ```\r\n\r\n- **Python例**:\r\n\r\n  ```python\r\n  import requests\r\n\r\n  def add_file_to_knowledge(token, knowledge_id, file_id):\r\n      url = f'http://localhost:3000/api/v1/knowledge/{knowledge_id}/file/add'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Content-Type': 'application/json'\r\n      }\r\n      data = {'file_id': file_id}\r\n      response = requests.post(url, headers=headers, json=data)\r\n      return response.json()\r\n  ```"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "#### Using Files and Collections in Chat Completions",
+      "source_content_hash": "d8bfcab65db305ff3a73415729a5858e55f210d16bfe6d3854a8c00546d35885",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ファイルとコレクションをチャット補完で使用する"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "You can reference both individual files or entire collections in your RAG queries for enriched responses.",
+      "source_content_hash": "b708b69375a253a4a596c983b998ab575f1e43edeae736782fc318faf4854848",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "個別のファイルまたはコレクション全体を参照することで、RAGクエリの応答を充実させることができます。"
+      }
+    },
+    {
+      "segment_id": "d1f76d04",
+      "source_content": "##### Using an Individual File in Chat Completions",
+      "source_content_hash": "9ed42d5f6b1d1a64ab727b63a31a9db78b008675f4ee526a7faccee25fc93cd1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 個別ファイルをチャット補完で使用する"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "This method is beneficial when you want to focus the chat model's response on the content of a specific file.",
+      "source_content_hash": "178e5c3226fd7bf18726e3a8d36f9dcb5d35535e18dd8cd6ba44852d1d4e0629",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "特定のファイルの内容に焦点を当てた応答を得たい場合に有効な方法です。"
+      }
+    },
+    {
+      "segment_id": "0422e2e2",
+      "source_content": "- **Endpoint**: `POST /api/chat/completions`\r\n- **Curl Example**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/chat/completions \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"model\": \"gpt-4-turbo\",\r\n        \"messages\": [\r\n          {\"role\": \"user\", \"content\": \"Explain the concepts in this document.\"}\r\n        ],\r\n        \"files\": [\r\n          {\"type\": \"file\", \"id\": \"your-file-id-here\"}\r\n        ]\r\n      }'\r\n  ```\r\n\r\n- **Python Example**:\r\n\r\n  ```python\r\n  import requests\r\n\r\n  def chat_with_file(token, model, query, file_id):\r\n      url = 'http://localhost:3000/api/chat/completions'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Content-Type': 'application/json'\r\n      }\r\n      payload = {\r\n          'model': model,\r\n          'messages': [{'role': 'user', 'content': query}],\r\n          'files': [{'type': 'file', 'id': file_id}]\r\n      }\r\n      response = requests.post(url, headers=headers, json=payload)\r\n      return response.json()\r\n  ```",
+      "source_content_hash": "ed6e4fb334ebb5081fd9a62751e18b9bfc4166c7a1abb7dc79980aa053852eaf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **エンドポイント**: `POST /api/chat/completions`\r\n- **Curl例**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/chat/completions \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"model\": \"gpt-4-turbo\",\r\n        \"messages\": [\r\n          {\"role\": \"user\", \"content\": \"この文書の概念を説明してください。\"}\r\n        ],\r\n        \"files\": [\r\n          {\"type\": \"file\", \"id\": \"your-file-id-here\"}\r\n        ]\r\n      }'\r\n  ```\r\n\r\n- **Python例**:\r\n\r\n  ```python\r\n  import requests\r\n\r\n  def chat_with_file(token, model, query, file_id):\r\n      url = 'http://localhost:3000/api/chat/completions'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Content-Type': 'application/json'\r\n      }\r\n      payload = {\r\n          'model': model,\r\n          'messages': [{'role': 'user', 'content': query}],\r\n          'files': [{'type': 'file', 'id': file_id}]\r\n      }\r\n      response = requests.post(url, headers=headers, json=payload)\r\n      return response.json()\r\n  ```"
+      }
+    },
+    {
+      "segment_id": "671cbf7c",
+      "source_content": "##### Using a Knowledge Collection in Chat Completions",
+      "source_content_hash": "0e6b314f8eb71ca4eea96f5afaa459acf00a519bac14f176879ac1768467ad89",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### ナレッジコレクションをチャット補完で使用する"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "Leverage a knowledge collection to enhance the response when the inquiry may benefit from a broader context or multiple documents.",
+      "source_content_hash": "68fb18506a8ea8932f55dc90fdb6e81da1ea61ca4d5e5dd77baa238a7a5c0d3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "より広範な文脈や複数のドキュメントから恩恵を得られる問い合わせの場合、ナレッジコレクションを活用して応答を強化できます。"
+      }
+    },
+    {
+      "segment_id": "e99d73d3",
+      "source_content": "- **Endpoint**: `POST /api/chat/completions`\r\n- **Curl Example**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/chat/completions \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"model\": \"gpt-4-turbo\",\r\n        \"messages\": [\r\n          {\"role\": \"user\", \"content\": \"Provide insights on the historical perspectives covered in the collection.\"}\r\n        ],\r\n        \"files\": [\r\n          {\"type\": \"collection\", \"id\": \"your-collection-id-here\"}\r\n        ]\r\n      }'\r\n  ```\r\n\r\n- **Python Example**:\r\n\r\n  ```python\r\n  import requests\r\n  \r\n  def chat_with_collection(token, model, query, collection_id):\r\n      url = 'http://localhost:3000/api/chat/completions'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Content-Type': 'application/json'\r\n      }\r\n      payload = {\r\n          'model': model,\r\n          'messages': [{'role': 'user', 'content': query}],\r\n          'files': [{'type': 'collection', 'id': collection_id}]\r\n      }\r\n      response = requests.post(url, headers=headers, json=payload)\r\n      return response.json()\r\n  ```",
+      "source_content_hash": "f6b40fc904690c5522e07cede666ebeb03ddaf9d5ab4ef119580b6308c37f9ce",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **エンドポイント**: `POST /api/chat/completions`\r\n- **Curl例**:\r\n\r\n  ```bash\r\n  curl -X POST http://localhost:3000/api/chat/completions \\\r\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"model\": \"gpt-4-turbo\",\r\n        \"messages\": [\r\n          {\"role\": \"user\", \"content\": \"このコレクションでカバーされている歴史的観点についての洞察を提供してください。\"}\r\n        ],\r\n        \"files\": [\r\n          {\"type\": \"collection\", \"id\": \"your-collection-id-here\"}\r\n        ]\r\n      }'\r\n  ```\r\n\r\n- **Python例**:\r\n\r\n  ```python\r\n  import requests\r\n  \r\n  def chat_with_collection(token, model, query, collection_id):\r\n      url = 'http://localhost:3000/api/chat/completions'\r\n      headers = {\r\n          'Authorization': f'Bearer {token}',\r\n          'Content-Type': 'application/json'\r\n      }\r\n      payload = {\r\n          'model': model,\r\n          'messages': [{'role': 'user', 'content': query}],\r\n          'files': [{'type': 'collection', 'id': collection_id}]\r\n      }\r\n      response = requests.post(url, headers=headers, json=payload)\r\n      return response.json()\r\n  ```"
+      }
+    },
+    {
+      "segment_id": "6fad5db5",
+      "source_content": "These methods enable effective utilization of external knowledge via uploaded files and curated knowledge collections, enhancing chat applications' capabilities using the Sage WebUI API. Whether using files individually or within collections, you can customize the integration based on your specific needs.",
+      "source_content_hash": "6e1a0a64ff24083d363cdaeffe0f20c9b56d31ba71cbc3e0c5609bec62384ff3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの方法により、アップロードしたファイルとキュレーションされたナレッジコレクションを活用して外部知識を効果的に利用でき、Sage WebUI APIを使用したチャットアプリケーションの機能を強化できます。ファイルを個別に使用する場合もコレクション内で使用する場合も、特定のニーズに基づいて統合をカスタマイズできます。"
+      }
+    },
+    {
+      "segment_id": "dfa23ddf",
+      "source_content": "## Advantages of Using Sage WebUI as a Unified LLM Provider",
+      "source_content_hash": "6af744ba6ea8116556d9f2e741b19462e4188310cb440b79382fe1442a799338",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIを統合LLMプロバイダーとして使用する利点"
+      }
+    },
+    {
+      "segment_id": "f2c67ca5",
+      "source_content": "Sage WebUI offers a myriad of benefits, making it an essential tool for developers and businesses alike:",
+      "source_content_hash": "9942a4466c28992fe31216c6277ea4f28278450efc526a25d1b2e137c2378d16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、開発者や企業にとって不可欠なツールとなる数多くの利点を提供します："
+      }
+    },
+    {
+      "segment_id": "3c3cd438",
+      "source_content": "- **Unified Interface**: Simplify your interactions with different LLMs through a single, integrated platform.\r\n- **Ease of Implementation**: Quick start integration with comprehensive documentation and community support.",
+      "source_content_hash": "8942818f36a3a77ad930828937b76e905fbd45ed0d23f12b9416baaa4c886def",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **統一インターフェース**: さまざまなLLMとのやり取りを単一の統合プラットフォームで簡素化。\r\n- **実装の容易さ**: 包括的なドキュメントとコミュニティサポートによる迅速なスタート。"
+      }
+    },
+    {
+      "segment_id": "e29294bd",
+      "source_content": "## Swagger Documentation Links",
+      "source_content_hash": "23ab0853f04e188105ac0d165541bd11cb96009e3b255a2e315c6dd12c013b34",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Swaggerドキュメントリンク"
+      }
+    },
+    {
+      "segment_id": "a53e2fe8",
+      "source_content": ":::important\r\nMake sure to set the `ENV` environment variable to `dev` in order to access the Swagger documentation for any of these services. Without this configuration, the documentation will not be available.\r\n:::",
+      "source_content_hash": "4396441d31d500fef7a6d5884f95ba1af1cb87af96670e21f80deb7cf7e8ece7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::important\r\nこれらのサービスのSwaggerドキュメントにアクセスするには、`ENV`環境変数を`dev`に設定してください。この設定がないと、ドキュメントは利用できません。\r\n:::"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "Access detailed API documentation for different services provided by Sage WebUI:",
+      "source_content_hash": "2c0ebaf47b3594ad8faf2c9c3fc39594ccef64cd3ef301cd259bc220ceb3c04c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIが提供するさまざまなサービスの詳細なAPIドキュメントにアクセス："
+      }
+    },
+    {
+      "segment_id": "d7ed0393",
+      "source_content": "| Application | Documentation Path      |\r\n|-------------|-------------------------|\r\n| Main        | `/docs`                 |",
+      "source_content_hash": "96e6f1b0b6469ae1e1da26d2c7e84ee35f7d5fc0428f1742ff7cfd2cf2c14abb",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d7ed0393"
+      }
+    },
+    {
+      "segment_id": "d75361e3",
+      "source_content": "By following these guidelines, you can swiftly integrate and begin utilizing the Sage WebUI API. Should you encounter any issues or have questions, feel free to reach out through our Discord Community or consult the FAQs. Happy coding! 🌟",
+      "source_content_hash": "61aa9eb3d15b36489f8c6566cf0901d923cf1a62000114c78ab712a10c64897f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらのガイドラインに従うことで、Sage WebUI APIを迅速に統合し、利用を開始できます。問題が発生した場合や質問がある場合は、Discordコミュニティまでお気軽にお問い合わせいただくか、FAQを参照してください。コーディングを楽しんでください！ 🌟"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/api-endpoints.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.779335+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "1bc8d6125268af65c8af2ba2907c4e43e36b8c1a97bdb2088409939f4c95dc01"
+  }
+}

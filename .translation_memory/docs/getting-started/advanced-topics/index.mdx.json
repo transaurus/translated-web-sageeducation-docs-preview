@@ -1,0 +1,182 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/advanced-topics/index.mdx",
+  "source_file_content_hash": "96282679a10eb5081c5f771d3c76b09e56ac2224d22bfc931aeb17914cd5a910",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\ntitle: \"📚 Advanced Topics\"\n---",
+      "source_content_hash": "39cf2ee371281641c1bc2911b3615ff3f9ef8b5b29573eae086d6ed1d8c9fd19",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 📚 Advanced Topics",
+      "source_content_hash": "2bda212199bd9b36d1942e3c2598bb1594971ec144eb8ba6d0e6f42bd257e267",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 📚 高度なトピック"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Explore deeper concepts and advanced configurations of Sage WebUI to enhance your setup.",
+      "source_content_hash": "db74c28b7141af9db9eb6627ddccbab4af7647d38605cb2ece1247c831dec623",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIのより深い概念と高度な設定を探求し、セットアップを強化しましょう。"
+      }
+    },
+    {
+      "segment_id": "279b6a65",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## 🛠️ Development",
+      "source_content_hash": "198ccc052995f1ef86dbde8431aaf577a0946cb2558c940313293e4ec2ff7388",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🛠️ 開発"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Understand the development setup and contribute to Sage Open WebUI.  \n[Development Guide](/getting-started/advanced-topics/development)",
+      "source_content_hash": "cdb5812d0789e768632acf2a0b6a305c4c6a7eb8e8029b7cb2bbf29758d522a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "開発環境のセットアップを理解し、Sage Open WebUIに貢献しましょう。  \n[開発ガイド](/getting-started/advanced-topics/development)"
+      }
+    },
+    {
+      "segment_id": "5beeb758",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## 📝 Logging",
+      "source_content_hash": "ea8b80717eab83e36db39a04d726cef02d1c70c1aaaa428f4c720f0af31c3449",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 📝 ロギング"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Learn how to configure and manage logs for troubleshooting your system.  \n[Logging Guide](/getting-started/advanced-topics/logging)",
+      "source_content_hash": "9ae7ad7235ada8ae80feca0a0e8a0d0b940cb5b6366de373e3d211860fcc59f8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "システムのトラブルシューティングのためにログを設定・管理する方法を学びましょう。  \n[ロギングガイド](/getting-started/advanced-topics/logging)"
+      }
+    },
+    {
+      "segment_id": "fb3d50cd",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## 🔒 HTTPS Encryption",
+      "source_content_hash": "d2988ec298ea5890a022b0586a8b5ecce9fb0a527af2232b86dd8ea22a72c7c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🔒 HTTPS暗号化"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Ensure secure communication by implementing HTTPS encryption in your deployment.  \n[HTTPS Encryption Guide](/getting-started/advanced-topics/https-encryption)",
+      "source_content_hash": "c308ba2d13a6c135b3a32ed83f03c96aff85ee3e84e667c6df38291e850313e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HTTPS暗号化を実装して、安全な通信を確保しましょう。  \n[HTTPS暗号化ガイド](/getting-started/advanced-topics/https-encryption)"
+      }
+    },
+    {
+      "segment_id": "a5403c6e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "## 📊 Monitoring",
+      "source_content_hash": "0b1c43841323160952d2243cc4da88891bb898391e1c101b99158b146571dbcc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 📊 モニタリング"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "Learn how to monitor your Sage Open WebUI instance, including health checks, model connectivity, and response testing.  \n[Monitoring Guide](/getting-started/advanced-topics/monitoring)",
+      "source_content_hash": "868eb3badbeea95447629abb05ece3f070de1e7bd10572c1c1bda2314966d65b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIインスタンスのモニタリング方法を学びましょう。ヘルスチェック、モデル接続性、レスポンステストなどが含まれます。  \n[モニタリングガイド](/getting-started/advanced-topics/monitoring)"
+      }
+    },
+    {
+      "segment_id": "f1a2a0d3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Looking for installation instructions? Head over to our [Quick Start Guide](/getting-started/quick-start).",
+      "source_content_hash": "a11ad88399e52a885dc8434de1335caee56f4f258ad5d2deb856e75007a7bc12",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インストール手順をお探しですか？[クイックスタートガイド](/getting-started/quick-start)をご覧ください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/advanced-topics/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.793938+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "96282679a10eb5081c5f771d3c76b09e56ac2224d22bfc931aeb17914cd5a910"
+  }
+}

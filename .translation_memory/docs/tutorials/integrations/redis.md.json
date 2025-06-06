@@ -1,0 +1,322 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/redis.md",
+  "source_file_content_hash": "74d463770e7cd74765150d6ff46e473ddca1d6ef1844e20aec03cc411cb79065",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 30\ntitle: \"🔗 Redis Websocket Support\"\n---",
+      "source_content_hash": "4b387abd25ada49f733105c74c5d46995dc685b450ecd2680c0498cb8b471b8e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによるサポート対象外です。特定のユースケース向けにSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？ 寄稿ガイドを確認してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# 🔗 Redis Websocket Support",
+      "source_content_hash": "f8f22ee86aaf2c90a30112d0b8bdbe98739e8b492ddb1c84e3b8d8b5667c616a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🔗 Redis WebSocketサポート"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Overview",
+      "source_content_hash": "7337f3d0aa29e9a82b8f1650b743a98eef90794631fa763a319686e69c546821",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "This documentation page outlines the steps required to integrate Redis with Sage WebUI for websocket support. By following these steps, you will be able to enable websocket functionality in your Sage WebUI instance, allowing for real-time communication and updates between clients and your application.",
+      "source_content_hash": "26ce0b3cc2f587569d5962615bc16f92a9405d64f1a770841687ce6f77603406",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このドキュメントでは、Sage WebUIでWebSocketサポートを有効化するためにRedisを統合する手順を説明します。これらの手順に従うことで、クライアントとアプリケーション間のリアルタイム通信と更新を可能にするWebSocket機能をSage WebUIインスタンスで利用できるようになります。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "### Prerequisites",
+      "source_content_hash": "06853ecee3d6e5f20a40c0d198df12313c0c9b1a182563a0014a7fb4945c7081",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 前提条件"
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "* A valid Sage WebUI instance (running version 1.0 or higher)\n* A Redis container (we will use `docker.io/valkey/valkey:8.0.1-alpine` in this example, which is based on the latest Redis 7.x release)\n* Docker Composer (version 2.0 or higher) installed on your system\n* A Docker network for communication between Sage WebUI and Redis\n* Basic understanding of Docker, Redis, and Sage WebUI",
+      "source_content_hash": "15e5eba6a77a2b08839083b04e4ec0322799ad0666079e8888e2344c1213b9df",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* 有効なSage WebUIインスタンス（バージョン1.0以上が動作していること）\n* Redisコンテナ（この例では`docker.io/valkey/valkey:8.0.1-alpine`を使用します。これは最新のRedis 7.xリリースに基づいています）\n* システムにDocker Compose（バージョン2.0以上）がインストールされていること\n* Sage WebUIとRedis間の通信用Dockerネットワーク\n* Docker、Redis、Sage WebUIに関する基本的な理解"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## Setting up Redis",
+      "source_content_hash": "6330fbef2b9e11ca1ffa762a272a0c5a60a01a03199644d4ea6a122b9bd10e31",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Redisのセットアップ"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "To set up Redis for websocket support, you will need to create a `docker-compose.yml` file with the following contents:",
+      "source_content_hash": "0e342be24da702bcc971c0c1cdb709c14992fe7cbcb707bc1e72d3d372939600",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "WebSocketサポートのためにRedisをセットアップするには、以下の内容で`docker-compose.yml`ファイルを作成する必要があります："
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```yml\nversion: '3.9'\nservices:\n  redis:\n    image: docker.io/valkey/valkey:8.0.1-alpine\n    container_name: redis-valkey\n    volumes:\n      - redis-data:/data\n    command: \"valkey-server --save 30 1\"\n    healthcheck:\n      test: \"[ $$(valkey-cli ping) = 'PONG' ]\"\n      start_period: 5s\n      interval: 1s\n      timeout: 3s\n      retries: 5\n    restart: unless-stopped\n    cap_drop:\n      - ALL\n    cap_add:\n      - SETGID\n      - SETUID\n      - DAC_OVERRIDE\n    logging:\n      driver: \"json-file\"\n      options:\n        max-size: \"1m\"\n        max-file: \"1\"\n    networks:\n      - openwebui-network\n\nvolumes:\n  redis-data:\n\nnetworks:\n  openwebui-network:\n    external: true\n```",
+      "source_content_hash": "99ca8572a48342256f55a3c8b7f4143bd23361c110cd5ed0b7739842f8dd6ea4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "e0724a69",
+      "source_content": ":::info[Notes]\n\nThe `ports` directive is not included in this configuration, as it is not necessary in most cases. The Redis service will still be accessible from within the Docker network by the Sage WebUI service. However, if you need to access the Redis instance from outside the Docker network (e.g., for debugging or monitoring purposes), you can add the `ports` directive to expose the Redis port (e.g., `6379:6379`).\n\nThe above configuration sets up a Redis container named `redis-valkey` and mounts a volume for data persistence. The `healthcheck` directive ensures that the container is restarted if it fails to respond to the `ping` command. The `--save 30 1` command option saves the Redis database to disk every 30 minutes if at least 1 key has changed.\n\n:::",
+      "source_content_hash": "e61a0df5705bb8501360addcf5a425e9eb5be084e007e4d03b096f5e131a50ab",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info[注記]\n\nこの設定では`ports`ディレクティブが含まれていません。ほとんどのケースでは必要ないためです。RedisサービスはDockerネットワーク内からSage WebUIサービスによってアクセス可能です。ただし、デバッグや監視目的でDockerネットワーク外部からRedisインスタンスにアクセスする必要がある場合は、Redisポート（例：`6379:6379`）を公開するために`ports`ディレクティブを追加できます。\n\n上記の設定では、`redis-valkey`という名前のRedisコンテナをセットアップし、データ永続化のためのボリュームをマウントしています。`healthcheck`ディレクティブは、`ping`コマンドに応答しない場合にコンテナを再起動することを保証します。`--save 30 1`コマンドオプションは、少なくとも1つのキーが変更された場合に30分ごとにRedisデータベースをディスクに保存します。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "To create a Docker network for communication between Sage WebUI and Redis, run the following command:",
+      "source_content_hash": "00e01396cd472389ddac8a60a94e15500f813f2bf6c36d7edf89a1c6951e4838",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIとRedis間の通信用Dockerネットワークを作成するには、次のコマンドを実行します："
+      }
+    },
+    {
+      "segment_id": "468b36ba",
+      "source_content": "```bash\ndocker network create openwebui-network\n```",
+      "source_content_hash": "8eed5bc595810e3cc35b26f89b76571bbe8f83a6286c1b07ef8ebdc159bb9331",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_468b36ba"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "## Configuring Sage WebUI",
+      "source_content_hash": "524f1a42c5bceb8a8c7bfef9a107e3a2c5e951f415b9f51dba86456a43a96967",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIの設定"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "To enable websocket support in Sage WebUI, you will need to set the following environment variables for your Sage WebUI instance:",
+      "source_content_hash": "e389d0c6851aad65e97606ea8fbb7e7d2f52836a7942b0e63d398307109ed451",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでWebSocketサポートを有効化するには、Sage WebUIインスタンスに対して以下の環境変数を設定する必要があります："
+      }
+    },
+    {
+      "segment_id": "d8159289",
+      "source_content": "```bash\nENABLE_WEBSOCKET_SUPPORT=\"true\"\nWEBSOCKET_MANAGER=\"redis\"\nWEBSOCKET_REDIS_URL=\"redis://redis:6379/1\"\n```",
+      "source_content_hash": "4945d42ad1727ba59ef3ac2210dd07c4a6b17092388e329f91e45a437ade777e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d8159289"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "These environment variables enable websocket support, specify Redis as the websocket manager, and define the Redis URL. Make sure to replace the `WEBSOCKET_REDIS_URL` value with the actual IP address of your Redis instance.",
+      "source_content_hash": "b1e0c3b8b29b4e220901407ea81c551bc6d0c2ed9e7be869caa2e5bc7b0d5a7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの環境変数はWebSocketサポートを有効にし、WebSocketマネージャーとしてRedisを指定し、Redis URLを定義します。`WEBSOCKET_REDIS_URL`の値は実際のRedisインスタンスのIPアドレスに置き換えてください。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "When running Sage WebUI using Docker, you need to connect it to the same Docker network:",
+      "source_content_hash": "fb9846beb6f3c6c6f7fa66ad0021dea5565744ba0362c18feea9238f18bdec0d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerを使用してSage WebUIを実行する場合、同じDockerネットワークに接続する必要があります："
+      }
+    },
+    {
+      "segment_id": "daa16011",
+      "source_content": "```bash\ndocker run -d \\\n  --name sage-open-webui \\\n  --network openwebui-network \\\n  -v sage-open-webui:/app/backend/data \\\n  -e ENABLE_WEBSOCKET_SUPPORT=\"true\" \\\n  -e WEBSOCKET_MANAGER=\"redis\" \\\n  -e WEBSOCKET_REDIS_URL=\"redis://127.0.0.1:6379/1\" \\\n  ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "596739e8d7f15060f65613ebd3775770487f5a2f00a4963b767e057345bfea3a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_daa16011"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "Replace `127.0.0.1` with the actual IP address of your Redis container in the Docker network.",
+      "source_content_hash": "54f817cda33038c4873a660ecea43f49bafa1f9bd4351939c536e3d7115d2a8e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerネットワーク内のRedisコンテナの実際のIPアドレスで`127.0.0.1`を置き換えてください。"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "## Verification",
+      "source_content_hash": "80937328f4f7b2400b498c2e504a90057378843e8c8870ab4738c70572fefef7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 検証"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "If you have properly set up Redis and configured Sage WebUI, you should see the following log message when starting your Sage WebUI instance:",
+      "source_content_hash": "f85929feac6e686d3d7653cd723fb6d12c34432a0a844c51c428f24d2595c726",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RedisのセットアップとSage WebUIの設定が正しく行われていれば、Sage WebUIインスタンスを起動時に以下のログメッセージが表示されるはずです："
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "`DEBUG:open_webui.socket.main:Using Redis to manage websockets.`",
+      "source_content_hash": "8a9afdd814c8b8b6bb47dfd31bd60563fe8bbac37532486a99945a9bb043dd7c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`DEBUG:open_webui.socket.main:Using Redis to manage websockets.`"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "This confirms that Sage WebUI is using Redis for websocket management. You can also use the `docker exec` command to verify that the Redis instance is running and accepting connections:",
+      "source_content_hash": "a45478535c0ed070925a6ce1bf7a23bc0835aaa66f9667674d343fff6245b29d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これはSage WebUIがWebSocket管理にRedisを使用していることを確認します。また、`docker exec`コマンドを使用してRedisインスタンスが実行中で接続を受け付けていることを確認できます："
+      }
+    },
+    {
+      "segment_id": "83537d8d",
+      "source_content": "```bash\ndocker exec -it redis-valkey redis-cli -p 6379 ping\n```",
+      "source_content_hash": "e88bfb94be2ad7a3cd467f0134b83672f893089f8cf9b1fdd4224c1c7c891667",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_83537d8d"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "This command should output `PONG` if the Redis instance is running correctly. If this command fails, you could try this command instead:",
+      "source_content_hash": "9b7df2c425a02a6ece1b8bd3344d6ea753b046e93dba8c8cc7b5920c3611eb9c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このコマンドは、Redisインスタンスが正しく実行されている場合に`PONG`を出力します。このコマンドが失敗する場合は、代わりに次のコマンドを試すことができます："
+      }
+    },
+    {
+      "segment_id": "1a63b635",
+      "source_content": "```bash\ndocker exec -it redis-valkey valkey-cli -p 6379 ping\n```",
+      "source_content_hash": "1e0c26018370730d14fdcf458e4015d1cf34969993606352e3b6932e86804c1c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_1a63b635"
+      }
+    },
+    {
+      "segment_id": "ed644f52",
+      "source_content": "## Troubleshooting",
+      "source_content_hash": "659a188b36f9c3262a28539e24c345df4edc9657f59b116b0a1d9887cf2e28e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## トラブルシューティング"
+      }
+    },
+    {
+      "segment_id": "b9331170",
+      "source_content": "If you encounter issues with Redis or websocket support in Sage WebUI, you can refer to the following resources for troubleshooting:",
+      "source_content_hash": "bcc9305313813bf306b64c9779c929c41a34799606e0684a2972d550d57cc5c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RedisまたはSage WebUIのWebSocketサポートで問題が発生した場合は、以下のリソースを参照してトラブルシューティングを行ってください："
+      }
+    },
+    {
+      "segment_id": "4b530389",
+      "source_content": "* [Redis Documentation](https://redis.io/docs)\n* [Docker Compose Documentation](https://docs.docker.com/compose/overview/)\n* [sysctl Documentation](https://man7.org/linux/man-pages/man8/sysctl.8.html)",
+      "source_content_hash": "d76b7da27155b345937e5996c200dec74fb1009dd2e14163c0b504bbdaae45d5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [Redis ドキュメント](https://redis.io/docs)\n* [Docker Compose ドキュメント](https://docs.docker.com/compose/overview/)\n* [sysctl ドキュメント](https://man7.org/linux/man-pages/man8/sysctl.8.html)"
+      }
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "By following these steps and troubleshooting tips, you should be able to set up Redis with Sage WebUI for websocket support and enable real-time communication and updates between clients and your application.",
+      "source_content_hash": "d9df429105e88c336c32edea857c58fa37ee25e6c43184261cdccd5c552d5ab7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの手順とトラブルシューティングのヒントに従うことで、Sage WebUIでRedisをセットアップし、WebSocketサポートを有効にし、クライアントとアプリケーション間のリアルタイム通信と更新を実現できるはずです。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/redis.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.783655+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "74d463770e7cd74765150d6ff46e473ddca1d6ef1844e20aec03cc411cb79065"
+  }
+}

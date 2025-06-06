@@ -1,0 +1,202 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/tips/contributing-tutorial.md",
+  "source_file_content_hash": "979a5061785ff4b0131fc57b854c8ea16243b51b7401da4a1f0c41cbd7fb8952",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"🤝 Contributing Tutorials\"\n---",
+      "source_content_hash": "04ed98f410398e0fdee79d092ab69bdaa1c03b64c4cf6fb34f6c9ce7830ec1a5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによってサポートされていません。特定のユースケース向けにSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿チュートリアルをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# Contributing Tutorials",
+      "source_content_hash": "c9786e2e88cebbd0380cc2067771d9ddf4df7ff017bc5528884322af3cc9be8a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# チュートリアル寄稿ガイド"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "We appreciate your interest in contributing tutorials to the Sage WebUI documentation. Follow the steps below to set up your environment and submit your tutorial.",
+      "source_content_hash": "28e15a15b2faf415a37fe6f86f3611fbd8230071e27e297e237b713c25302888",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIドキュメントへのチュートリアル寄稿にご興味をお持ちいただきありがとうございます。以下の手順に従って環境をセットアップし、チュートリアルを提出してください。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Steps",
+      "source_content_hash": "04e379c6932bff1c589362d6982930b2c138dcfe9fe69c56c9c028b070168dc3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 手順"
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "1. **Fork the `openwebui/docs` GitHub Repository**\n\n   - Navigate to the [Sage WebUI Docs Repository](https://github.com/Startr/docs) on GitHub.\n   - Click the **Fork** button at the top-right corner to create a copy under your GitHub account.\n\n2. **Enable GitHub Actions**\n\n   - In your forked repository, navigate to the **Actions** tab.\n   - If prompted, enable GitHub Actions by following the on-screen instructions.\n\n3. **Enable GitHub Pages**\n\n   - Go to **Settings** > **Pages** in your forked repository.\n   - Under **Source**, select the branch you want to deploy (e.g., `main`) and the folder (e.g.,`/docs`).\n   - Click **Save** to enable GitHub Pages.\n\n4. **Configure GitHub Environment Variables**\n\n   - In your forked repository, go to **Settings** > **Secrets and variables** > **Actions** > **Variables**.\n   - Add the following environment variables:\n     - `BASE_URL` set to `/docs` (or your chosen base URL for the fork).\n     - `SITE_URL` set to `https://<your-github-username>.github.io/`.",
+      "source_content_hash": "a047a430e1415b4b9b477d0872f2ea96475cb9d489676aed3a02683eda0d0ce6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **`openwebui/docs` GitHubリポジトリをフォークする**\n\n   - GitHub上の[Sage WebUI Docsリポジトリ](https://github.com/Startr/docs)にアクセス\n   - 右上隅の**Fork**ボタンをクリックして、GitHubアカウント下にコピーを作成\n\n2. **GitHub Actionsを有効化**\n\n   - フォークしたリポジトリで**Actions**タブに移動\n   - プロンプトが表示された場合は、画面の指示に従ってGitHub Actionsを有効化\n\n3. **GitHub Pagesを有効化**\n\n   - フォークしたリポジトリで**Settings** > **Pages**に移動\n   - **Source**でデプロイしたいブランチ（例：`main`）とフォルダ（例：`/docs`）を選択\n   - **Save**をクリックしてGitHub Pagesを有効化\n\n4. **GitHub環境変数を設定**\n\n   - フォークしたリポジトリで**Settings** > **Secrets and variables** > **Actions** > **Variables**に移動\n   - 以下の環境変数を追加：\n     - `BASE_URL`を`/docs`（またはフォーク用に選択したベースURL）に設定\n     - `SITE_URL`を`https://<your-github-username>.github.io/`に設定"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "### 📝 Updating the GitHub Pages Workflow and Config File",
+      "source_content_hash": "f28f18b77912f0ae0de283aae14e8194fcf62fa0fab996debd2fb6fce8a79d39",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📝 GitHub Pagesワークフローと設定ファイルの更新"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "If you need to adjust deployment settings to fit your custom setup, here’s what to do:",
+      "source_content_hash": "5f2474781ea0194b8dfc1bd51f6290c2161e4bc0493f0247057b4203ef12c5f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "カスタムセットアップに合わせてデプロイ設定を調整する必要がある場合の手順："
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "a. **Update `.github/workflows/gh-pages.yml`**",
+      "source_content_hash": "ea7ed748543d4c08dcbdd92736918abf07278e0410316c8d1e0860af8f292174",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "a. **`.github/workflows/gh-pages.yml`を更新**"
+      }
+    },
+    {
+      "segment_id": "4c077b92",
+      "source_content": "- Add environment variables for `BASE_URL` and `SITE_URL` to the build step if necessary:\n\n     ```yaml\n       - name: Build\n         env:\n           BASE_URL: ${{ vars.BASE_URL }}\n           SITE_URL: ${{ vars.SITE_URL }}\n         run: npm run build\n     ```",
+      "source_content_hash": "40c264212c967c73275f62b037fda64ce4b3c8ed79b07fab97eb548ea45c0caf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 必要に応じてビルドステップに`BASE_URL`と`SITE_URL`の環境変数を追加：\n\n     ```yaml\n       - name: Build\n         env:\n           BASE_URL: ${{ vars.BASE_URL }}\n           SITE_URL: ${{ vars.SITE_URL }}\n         run: npm run build\n     ```"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "b. **Modify `docusaurus.config.ts` to Use Environment Variables**",
+      "source_content_hash": "e68d69bce303f02b58e96e8f4310de2232d423474425bdfa1e82b489a61a54c6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "b. **`docusaurus.config.ts`を修正して環境変数を使用**"
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "- Update `docusaurus.config.ts` to use these environment variables, with default values for local or direct deployment:\n\n     ```typescript\n     const config: Config = {\n       title: \"Sage WebUI\",\n       tagline: \"ChatGPT-Style WebUI for LLMs (Formerly Ollama WebUI)\",\n       favicon: \"images/favicon.png\",\n       url: process.env.SITE_URL || \"https://sage.education\",\n       baseUrl: process.env.BASE_URL || \"/\",\n       ...\n     };\n     ```\n\n- This setup ensures consistent deployment behavior for forks and custom setups.",
+      "source_content_hash": "3df7d78a36fc4fb7f908a11923fb94b121f9b0f1aa769ec0b66f5388b4d82e42",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `docusaurus.config.ts`を更新してこれらの環境変数を使用し、ローカルまたは直接デプロイ用のデフォルト値を設定：\n\n     ```typescript\n     const config: Config = {\n       title: \"Sage WebUI\",\n       tagline: \"ChatGPT-Style WebUI for LLMs (Formerly Ollama WebUI)\",\n       favicon: \"images/favicon.png\",\n       url: process.env.SITE_URL || \"https://sage.education\",\n       baseUrl: process.env.BASE_URL || \"/\",\n       ...\n     };\n     ```\n\n- この設定により、フォークやカスタムセットアップでも一貫したデプロイ動作が保証されます"
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "5. **Run the `gh-pages` GitHub Workflow**\n\n   - In the **Actions** tab, locate the `gh-pages` workflow.\n   - Trigger the workflow manually if necessary, or it may run automatically based on your setup.\n\n6. **Browse to Your Forked Copy**\n\n   - Visit `https://<your-github-username>.github.io/<BASE_URL>` to view your forked documentation.\n\n7. **Draft Your Changes**\n\n   - In your forked repository, navigate to the appropriate directory (e.g., `docs/tutorial/`).\n   - Create a new markdown file for your tutorial or edit existing ones.\n   - Ensure that your tutorial includes the unsupported warning banner.\n\n8. **Submit a Pull Request**\n\n   - Once your tutorial is ready, commit your changes to your forked repository.\n   - Navigate to the original `sage-open-webui/docs` repository.\n   - Click **New Pull Request** and select your fork and branch as the source.\n   - Provide a descriptive title and description for your PR.\n   - Submit the pull request for review.",
+      "source_content_hash": "dd98f6136464feb694e7132264cad4e9ce6dffe0fdec07ba964c229aa95d8edb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "5. **`gh-pages` GitHubワークフローを実行**\n\n   - **Actions**タブで`gh-pages`ワークフローを特定\n   - 必要に応じて手動でワークフローをトリガー、または設定に基づいて自動実行される場合もあります\n\n6. **フォークしたコピーを閲覧**\n\n   - `https://<your-github-username>.github.io/<BASE_URL>`にアクセスしてフォークしたドキュメントを表示\n\n7. **変更を草案**\n\n   - フォークしたリポジトリで適切なディレクトリ（例：`docs/tutorial/`）に移動\n   - チュートリアル用の新しいmarkdownファイルを作成、または既存のファイルを編集\n   - チュートリアルに未サポート警告バナーを含めることを確認\n\n8. **プルリクエストを提出**\n\n   - チュートリアルが準備できたら、変更をフォークしたリポジトリにコミット\n   - 元の`sage-open-webui/docs`リポジトリに移動\n   - **New Pull Request**をクリックし、ソースとしてフォークとブランチを選択\n   - 説明的なタイトルと説明をPRに記載\n   - レビューのためにプルリクエストを提出"
+      }
+    },
+    {
+      "segment_id": "e33a2404",
+      "source_content": "## Important",
+      "source_content_hash": "ebd2b9f19bec33bfda00c53dc4a1ce5d8e51a8b923a36031b4e4f5ce9cba2e9a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 重要事項"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "Community-contributed tutorials must include the the following:",
+      "source_content_hash": "1625c12b507b15490c0e99352ce571b649e17af68b6112da0e4cea3a9289a801",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コミュニティ寄稿のチュートリアルには以下を含める必要があります："
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```\n:::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize OpenWebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::\n```",
+      "source_content_hash": "df05f94ba0a641c6568a47eb69ad1fb9f04fc0154b15ab481098ca9ddf7f4b39",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "e9ae42a9",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "467b2691",
+      "source_content": ":::tip[How to Test Docusaurus Locally  ]\nYou can test your Docusaurus site locally with the following commands:\n\n```bash\nnpm install   # Install dependencies\nnpm run build # Build the site for production\n```\n\nThis will help you catch any issues before deploying\n:::",
+      "source_content_hash": "39008c85a83571b9c69edbce33d8db3cc24c5fe81b185f196e1cf0083b91e5a5",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip[Docusaurusをローカルでテストする方法]\n以下のコマンドでDocusaurusサイトをローカルでテストできます：\n\n```bash\nnpm install   # 依存関係をインストール\nnpm run build # 本番用にサイトをビルド\n```\n\nこれにより、デプロイ前に問題を発見できます\n:::"
+      }
+    },
+    {
+      "segment_id": "55ba2007",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/tips/contributing-tutorial.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.779872+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "979a5061785ff4b0131fc57b854c8ea16243b51b7401da4a1f0c41cbd7fb8952"
+  }
+}

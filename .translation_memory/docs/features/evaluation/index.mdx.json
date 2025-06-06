@@ -1,0 +1,572 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/evaluation/index.mdx",
+  "source_file_content_hash": "e21995b740dbcb0d8c9da16af4294e5274ff6f29de72f41b59e25adbed7d33b4",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 6\ntitle: \"📝 Evaluation\"\n---",
+      "source_content_hash": "a4f8861b80a1a5e763d5150c7adeb558aa00d94044a1029141b90cee5fdfd48d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "## Why Should I Evaluate Models?",
+      "source_content_hash": "27a5766145ce5320ae7794a79cc7a75a80358a016e2f13e335f698440c6ff304",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## モデル評価が必要な理由"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Meet **Alex**, a machine learning engineer at a mid-sized company. Alex knows there are numerous AI models out there—GPTs, LLaMA, and many more—but which one works best for the job at hand? They all sound impressive on paper, but Alex can’t just rely on public leaderboards. These models perform differently depending on the context, and some models may have been trained on the evaluation dataset (sneaky!). Plus, the way these models write can sometimes feel … off.",
+      "source_content_hash": "5ccb216cda17bfe5a0d31ff63214bf371cbefdfc77684553dbd40df6c8f661d7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**アレックス**は中規模企業の機械学習エンジニアです。世の中にはGPTやLLaMAなど多くのAIモデルがありますが、どれが自分の仕事に最適か？ 公式のリーダーボードだけでは判断できません。モデルの性能は文脈によって異なり、評価データセットで訓練されたモデルもあるからです（ずるいですね）。また、モデルによって文章の「感じ」が違うこともあります。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "That's where Sage WebUI comes in. It gives Alex and their team an easy way to evaluate models based on their actual needs. No convoluted math. No heavy lifting. Just thumbs up or thumbs down while interacting with the models.",
+      "source_content_hash": "2cb1a7d6658d677894f7cd5fcec444e32335ae2588666883c90ee0ed4e2b0718",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "そこでSage WebUIの出番です。アレックスとチームは実際のニーズに基づいてモデルを簡単に評価できます。複雑な計算も不要。ただ会話しながらサムズアップ/ダウンするだけです。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "### TL;DR",
+      "source_content_hash": "216375cfd413556232ef4b112b7b069b33f020b9b60abe44f9d205111340c7b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 要約"
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "- **Why evaluations matter**: Too many models, but not all fit your specific needs. General public leaderboards can't always be trusted.\n- **How to solve it**: Sage WebUI offers a built-in evaluation system. Use a thumbs up/down to rate model responses.\n- **What happens behind the scenes**: Ratings adjust your personalized leaderboard, and snapshots from rated chats will be used for future model fine-tuning!\n- **Evaluation options**: \n  - **Arena Model**: Randomly selects models for you to compare.\n  - **Normal Interaction**: Just chat like usual and rate the responses.",
+      "source_content_hash": "2c3d5bb776da56991bde9716ea9608b7197bb42667dc1c479e0d50e448334f8a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **評価の重要性**: 多くのモデルがあるが、特定のニーズに合うとは限らない。一般のリーダーボードは必ずしも信頼できない\n- **解決策**: Sage WebUIの組み込み評価システム。レスポンスをサムズアップ/ダウンで評価\n- **内部処理**: 評価が個人用リーダーボードを更新。評価されたチャットのスナップショットは将来のモデル改善に使用\n- **評価方法**:\n  - **アリーナモード**: ランダムにモデルを選択して比較\n  - **通常インタラクション**: 普段通りチャットしつつレスポンスを評価"
+      }
+    },
+    {
+      "segment_id": "fb3d50cd",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "### Why Is Public Evaluation Not Enough?",
+      "source_content_hash": "5024d222306762f92544f782f33df7e21cd66295e87d6a2e58f806aa7f37bc9b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 公開評価だけでは不十分な理由"
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "- Public leaderboards aren’t tailored to **your** specific use case.\n- Some models are trained on evaluation datasets, affecting the fairness of the results.\n- A model may perform well overall, but its communication style or responses just don’t fit the “vibe” you want.",
+      "source_content_hash": "8a46d63906855304dfc896a5f2799a74c688afdc9c9e38e54243b194a46ac302",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 公開リーダーボードは**あなたの**特定のユースケースに最適化されていない\n- 評価データセットで訓練されたモデルがあり、結果の公平性に影響\n- 全体的に性能が良くても、コミュニケーションスタイルが求めている「雰囲気」と合わない場合がある"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "### The Solution: Personalized Evaluation with Sage WebUI",
+      "source_content_hash": "425e43c05e2cd196b9901544ee561d6626e0fdac16d2a8655bf925a85cb250a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 解決策: Sage WebUIによるパーソナライズド評価"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Sage WebUI has a built-in evaluation feature that lets you and your team discover the model best suited for your particular needs—all while interacting with the models.",
+      "source_content_hash": "480b189bc100e027bfa0b4b161b2e2935b653e82a0955cc2aba7883707a3bd23",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの評価機能を使えば、チームの特定のニーズに最適なモデルを発見できます。すべてモデルと対話しながら行えます。"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "How does it work? Simple!",
+      "source_content_hash": "5840449e2efd2d509cc8ab76cd6a97e33394e5568e8d4568b78a8d85fb19b984",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "仕組みはシンプル！"
+      }
+    },
+    {
+      "segment_id": "7a2e981c",
+      "source_content": "- **During chats**, leave a thumbs up if you like a response, or a thumbs down if you don’t. If the message has a **sibling message** (like a regenerated response or part of a side-by-side model comparison), you’re contributing to your **personal leaderboard**.\n- **Leaderboards** are easily accessible in the Admin section, helping you track which models are performing best according to your team.",
+      "source_content_hash": "47a16d05b7d0208142dbdc012c4bfbb32da47b45ac63f92ffa0db15b7980bbb8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **チャット中**、レスポンスが良ければサムズアップ、悪ければサムズダウン。**兄弟メッセージ**（再生成されたレスポンスや並列比較中のメッセージなど）がある場合、評価は**個人用リーダーボード**に反映\n- **リーダーボード**は管理セクションから簡単にアクセス可能。チームにとって性能の良いモデルを追跡"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "One cool feature? **Whenever you rate a response**, the system captures a **snapshot of that conversation**, which will later be used to refine models or even power future model training. (Do note, this is still being developed!)",
+      "source_content_hash": "31d5a2b1c9d034245a645463c434992685c65b978c6824f34f026e79f1bf1403",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注目機能：**レスポンスを評価するたび**、システムは**会話のスナップショット**を保存。これは将来のモデル改善やトレーニングに使用されます（現在開発中）"
+      }
+    },
+    {
+      "segment_id": "bd7c9323",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "### Two Ways to Evaluate an AI Model",
+      "source_content_hash": "0d98e74be25f500dae2bcf8849a50fe8f058d21ed463731e58ac75825ad34adb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### AIモデルを評価する2つの方法"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Sage WebUI provides two straightforward approaches for evaluating AI models.",
+      "source_content_hash": "7fa98ead3fafeb8e7a23ca4d578e2bf28aff6ab7679ad4137f1b56e4eba946cb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでは2つのシンプルな方法でAIモデルを評価できます。"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "### **1. Arena Model**",
+      "source_content_hash": "36d34c3ca7c277665622a01cb038f2ee9df5540d7fa7e2c5a359c4dfa2c76f81",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### **1. アリーナモード**"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "The **Arena Model** randomly selects from a pool of available models, making sure the evaluation is fair and unbiased. This helps in removing a potential flaw in manual comparison: **ecological validity** – ensuring you don’t knowingly or unknowingly favor one model.",
+      "source_content_hash": "1c399dc87b1707c6a647d88afbaf27b152435ab0fcede447fa9e354ecae34c56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**アリーナモード**は利用可能なモデルプールからランダムに選択し、公平で偏りのない評価を実現します。手動比較の潜在的問題（**生態学的妥当性** - 無意識に特定モデルを優遇してしまうこと）を防ぎます。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "How to use it:",
+      "source_content_hash": "468ef0065ba2455fcf68a869e4922479423b4974f06645f8faf6fda629a7e37e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "使用方法:"
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "- Select a model from the Arena Model selector.\n- Use it like you normally would, but now you’re in “arena mode.”",
+      "source_content_hash": "cf0cae3e89777361c00250512d87c392e089ada7936079ddb3780fcbd7f24646",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- アリーナモードセレクターからモデルを選択\n- 普段通り使用しますが、現在は「アリーナモード」中"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "For your feedback to affect the leaderboard, you need what’s called a **sibling message**. What's a sibling message? A sibling message is just any alternative response generated by the same query (think of message regenerations or having multiple models generating responses side-by-side). This way, you’re comparing responses **head-to-head**.",
+      "source_content_hash": "27574472e0a51cc8db07ebaf907608d10240c3d72fbdfaf18b6e112ce276aeda",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "リーダーボードに反映させるには**兄弟メッセージ**が必要です。兄弟メッセージとは？ 同じクエリに対する代替レスポンス（メッセージの再生成や複数モデルによる並列生成など）のこと。これにより**直接比較**が可能になります。"
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "- **Scoring tip**: When you thumbs up one response, the other will automatically get a thumbs down. So, be mindful and only upvote the message you believe is genuinely the best!\n- Once you rate the responses, you can check out the leaderboard to see how models are stacking up.",
+      "source_content_hash": "1f235ad0b9e956819a91ab3536ad6195d2da9407ccc65367e41bde2329043fb6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **評価のコツ**: 一方をサムズアップすると、他方は自動的にサムズダウンされます。本当に優れていると考えるメッセージのみをアップ投票しましょう\n- 評価後、リーダーボードでモデルの順位を確認可能"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Here’s a sneak peek at how the Arena Model interface works:",
+      "source_content_hash": "e3fc4b8a5a2a7f87d55449fa0bb36001e7b0ea38315f98e74ac244084253233d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アリーナモードのインターフェース動作イメージはこちら:"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "![Arena Model Example](/images/evaluation/arena.png)",
+      "source_content_hash": "c3846dad31f00f8a9eb3c85e081d531fabe96027aa6fa1bfe3b98665f9bcd8a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Arena Model Example](/images/evaluation/arena.png)"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Need more depth? You can even replicate a [**Chatbot Arena**](https://lmarena.ai/)-style setup!",
+      "source_content_hash": "d2c1ca52d3495530122294fef48927678474c6a0eb770f3c91c2cb05c6d104f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "さらに詳しく知りたいですか？[**Chatbot Arena**](https://lmarena.ai/)スタイルのセットアップも再現可能です！"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "![Chatbot Arena Example](/images/evaluation/arena-many.png)",
+      "source_content_hash": "f47965ef1b2b87c35fef7f0ce996878dd01f438b6df54d1fe3af02ddf6120727",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Chatbot Arena Example](/images/evaluation/arena-many.png)"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "### **2. Normal Interaction**",
+      "source_content_hash": "50e499e7353ab141c9a3c5b3a4bc18f0212b2c5b201d65917408f1e5ecf8b033",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### **2. 通常のインタラクション**"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "No need to switch to “arena mode” if you don't want to. You can use Sage WebUI normally and rate the AI model responses as you would in everyday operations. Just thumbs up/down the model responses, whenever you feel like it.  However, **if you want your feedback to be used for ranking on the leaderboard**, you'll need to **swap out the model and interact with a different one**. This ensures there's a **sibling response** to compare it with – only comparisons between two different models will influence rankings.",
+      "source_content_hash": "b9b43b94e9b1e41b4f46977cdafa08e2164c11c15fe22898298a644aa7c5ee17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "「アリーナモード」に切り替えたくない場合でも問題ありません。Sage WebUIを通常通り使用し、日常的な操作と同様にAIモデルの応答を評価できます。気が向いたときにモデルの応答に対して👍/👎を付けるだけです。ただし、**フィードバックをリーダーボードのランキングに反映させたい場合**、**モデルを切り替えて別のモデルとインタラクションする必要があります**。これにより、比較対象となる**兄弟レスポンス**が存在するようになります——異なるモデル間の比較のみがランキングに影響を与えます。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "For instance, this is how you can rate during a normal interaction:",
+      "source_content_hash": "52e3178d66a48c765646aff29ee9488ab7c9d724e6304bf6c5fd0cf5cae670d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "例えば、通常のインタラクション中に評価する方法は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "![Normal Model Rating Interface](/images/evaluation/normal.png)",
+      "source_content_hash": "5d0da27f72c724b71ad67180536dbd2afb58ac293f68990441b4ff86b91e6c0a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![通常のモデル評価インターフェース](/images/evaluation/normal.png)"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "And here's an example of setting up a multi-model comparison, similar to an arena:",
+      "source_content_hash": "ddfc862e98bd4769dd13148d97dd4373e987d8f28a948781ea2036b5411d3a24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "また、アリーナと同様のマルチモデル比較を設定する例はこちらです："
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "![Multi-Model Comparison](/images/evaluation/normal-many.png)",
+      "source_content_hash": "4b06a447518c33a0f9cbed223ac93d1f6fc8fba18ff7dfb0bdff80feb38b76e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![マルチモデル比較](/images/evaluation/normal-many.png)"
+      }
+    },
+    {
+      "segment_id": "0170c674",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "8a9b6c26",
+      "source_content": "## Leaderboard",
+      "source_content_hash": "d7a73715a130f3777921c7c671302e0364563c156ce46eb7cb43ce8960cdb0c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## リーダーボード"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "After rating, check out the **Leaderboard** under the Admin Panel. This is where you’ll visually see how models are performing, ranked using an **Elo rating system** (think chess rankings!) You’ll get a real view of which models are truly standing out during the evaluations.",
+      "source_content_hash": "61a6e90978191808c12bd65ef0db194117544e5ac082a4a73d259e2a53935b08",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "評価後、Admin Panelの**リーダーボード**を確認してください。ここでは、**Eloレーティングシステム**（チェスのランキングのようなもの！）を使用してモデルのパフォーマンスが視覚的に表示され、評価中に真に優れたモデルが一目でわかります。"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "This is a sample leaderboard layout:",
+      "source_content_hash": "928a6dcb45d5924233f551de928389b5cf922159ba0e0299a69fd183d1d02578",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "リーダーボードのレイアウト例は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "![Leaderboard Example](/images/evaluation/leaderboard.png)",
+      "source_content_hash": "d565f33c69610cb558fd4dc43825e1c3d717a478dd15c59d9c360b50fb17f2d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![リーダーボードの例](/images/evaluation/leaderboard.png)"
+      }
+    },
+    {
+      "segment_id": "90d35b51",
+      "source_content": "### Topic-Based Reranking",
+      "source_content_hash": "4b55b460435d8fffd88a544bb4fa20cb4f42963f13d5712b65d8c92bd48e708a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### トピック別再ランキング"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "When you rate chats, you can **tag them by topic** for more granular insights. This is especially useful if you’re working in different domains like **customer service, creative writing, technical support**, etc.",
+      "source_content_hash": "f614e0e1f0fe5f50a5dddfc4e764a8da2afea2c4767cdab5de639cb2c8099bb7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "チャットを評価する際、**トピックでタグ付け**してより詳細な洞察を得ることができます。これは**カスタマーサポート、クリエイティブライティング、テクニカルサポート**など、異なるドメインで作業している場合に特に有用です。"
+      }
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "#### Automatic Tagging",
+      "source_content_hash": "d95cc9e983fdbb16fb196302bc3107a5d05e5fbb1041e08281703c8f02990fa5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 自動タグ付け"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "Sage WebUI tries to **automatically tag chats** based on the conversation topic. However, depending on the model you're using, the automatic tagging feature might **sometimes fail** or misinterpret the conversation. When this happens, it’s best practice to **manually tag your chats** to ensure the feedback is accurate.",
+      "source_content_hash": "ea35ee1400c21d338a03e9acc788e0a5c88dc36b800443314269b257e523d718",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは会話のトピックに基づいて**自動的にチャットにタグを付けようとします**。ただし、使用するモデルによっては、自動タグ付け機能が**時々失敗したり**会話を誤解釈したりする可能性があります。このような場合は、フィードバックの正確性を確保するために**手動でチャットにタグを付ける**ことがベストプラクティスです。"
+      }
+    },
+    {
+      "segment_id": "b264104e",
+      "source_content": "- **How to manually tag**: When you rate a response, you'll have the option to add your own tags based on the conversation's context.",
+      "source_content_hash": "7f25530805e6d44dd9775b454763a288b7e7cf2de4840de074cdcc559ac1c8d3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **手動タグ付け方法**: 応答を評価する際、会話のコンテキストに基づいて独自のタグを追加するオプションがあります。"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "Don't skip this! Tagging is super powerful because it allows you to **re-rank models based on specific topics**. For instance, you might want to see which model performs best for answering technical support questions versus general customer inquiries.",
+      "source_content_hash": "0d508209ea3d83a2f11f7a38c6e281ed0059a45143ec7bddc3cf33d8d9139bc3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このステップを省略しないでください！タグ付けは非常に強力な機能で、**特定のトピックに基づいてモデルを再ランク付け**できます。例えば、テクニカルサポートの質問に対する回答と一般的な顧客問い合わせに対して、どのモデルが最も優れているかを確認したい場合などです。"
+      }
+    },
+    {
+      "segment_id": "25212439",
+      "source_content": "Here’s an example of how re-ranking looks:",
+      "source_content_hash": "b540bb414ba52c6d89d2f544745008f28adcb1d798568c2ca4b890bb7430bcaf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "再ランキングの例は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "![Reranking Leaderboard by Topic](/images/evaluation/leaderboard-reranked.png)",
+      "source_content_hash": "c2bd9660b04a0fabeadbfa540373679e6e5db641a47726ac778ab5f62e53655c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![トピック別再ランキングリーダーボード](/images/evaluation/leaderboard-reranked.png)"
+      }
+    },
+    {
+      "segment_id": "e9ae42a9",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "### Side Note: Chat Snapshots for Model Fine-Tuning",
+      "source_content_hash": "fe085583904ad0e302f0310a4c18467f6543ab13ab9c17459af0e8f46a236564",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 補足：モデルファインチューニングのためのチャットスナップショット"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Whenever you rate a model’s response, Sage WebUI *captures a snapshot of that chat*. These snapshots can eventually be used to **fine-tune your own models**—so your evaluations feed into the continuous improvement of the AI.",
+      "source_content_hash": "e06d393b74bf8da92760066cb6c6d90591c9080bd2603d8fdb151f07ea5123e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルの応答を評価するたびに、Sage WebUIは*そのチャットのスナップショットをキャプチャします*。これらのスナップショットは、最終的に**独自のモデルのファインチューニング**に使用できます——つまり、評価がAIの継続的な改善に貢献します。"
+      }
+    },
+    {
+      "segment_id": "7bc8bb24",
+      "source_content": "*(Stay tuned for more updates on this feature, it's actively being developed!)*",
+      "source_content_hash": "09bc2a67b04d21d2bf2130c665e328569e05bdcd2177dcdd6f9a97edf94d14cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "*(この機能に関する最新情報にご期待ください、現在積極的に開発中です！)*"
+      }
+    },
+    {
+      "segment_id": "42bfcc5d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "## Summary",
+      "source_content_hash": "30ac03ff33731529441be8fbe52a3bd0d4c5ec830e806d54692168ebb7f98ada",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## まとめ"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "**In a nutshell**, Sage WebUI’s evaluation system has two clear goals:",
+      "source_content_hash": "83e800187d1c9ad18fddc776f63fdfc485029a500e34cc7bb7789455311362fd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**要約すると**、Sage WebUIの評価システムには2つの明確な目的があります："
+      }
+    },
+    {
+      "segment_id": "2979d081",
+      "source_content": "1. Help you **easily compare models**.\n2. Ultimately, find the model that meshes best with your individual needs.",
+      "source_content_hash": "73e42a3dcb246d12cc59e802dc9ef69e242d52e7ad8987d62359a2c7843f98a6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **モデルの簡単な比較**を支援すること。\n2. 最終的に、個々のニーズに最も適したモデルを見つけること。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "At its heart, the system is all about making AI model evaluation **simple, transparent, and customizable** for every user. Whether it's through the Arena Model or Normal Chat Interaction, **you’re in full control of determining which AI model works best for your specific use case**!",
+      "source_content_hash": "c4c4022571ea1c554a337808c17a7ab44be2e41eecc1fb4c8b35abf58b2c691b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このシステムの核心は、AIモデルの評価を**シンプルで透明性があり、カスタマイズ可能**なものにすることです。アリーナモデルでも通常のチャットインタラクションでも、**特定のユースケースに最適なAIモデルを決定する完全なコントロールがあなたにあります**！"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "**As always**, all of your data stays securely on **your instance**, and nothing is shared unless you specifically **opt-in for community sharing**. Your privacy and data autonomy are always prioritized.",
+      "source_content_hash": "71f34cdaa328f2b2fc1967894a43c58b823cdfd891c62ae49251ed94630da9a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**常に**、すべてのデータは**あなたのインスタンス**上で安全に保持され、特に**コミュニティ共有を選択**しない限り、何も共有されません。あなたのプライバシーとデータの自律性は常に最優先されます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/evaluation/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.778946+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "e21995b740dbcb0d8c9da16af4294e5274ff6f29de72f41b59e25adbed7d33b4"
+  }
+}

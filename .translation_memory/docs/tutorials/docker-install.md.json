@@ -1,0 +1,172 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/docker-install.md",
+  "source_file_content_hash": "9935d68bfb8f5ffeace1d8e66b699d5be3e942cb84ffd2ff8b2cdb1262cf2733",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\ntitle: 🐳 Installing Docker\n---",
+      "source_content_hash": "087a8d052c25098825815fa6b0c289bf2f6c0642f895385d70fe3b65a48468fe",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによるサポートはありません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿ガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# Installing Docker",
+      "source_content_hash": "5f493741cc03d37a875cc0db0b5adb6c9968a64ad4c9452f6527f6ff455ed5be",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Dockerのインストール"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## For Windows and Mac Users",
+      "source_content_hash": "ecb0b44dd7a181435f4314f37c5e4c9bc9896ad63359a5f7b86d176571761d4b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## WindowsおよびMacユーザー向け"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "- Download Docker Desktop from [Docker's official website](https://www.docker.com/products/docker-desktop).  \n- Follow the installation instructions on the website.  \n- After installation, **open Docker Desktop** to ensure it's running properly.",
+      "source_content_hash": "da59ba58643d0394822afc9d53939ec4eb15c91bd33be416a5043754bb766ee0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [Docker公式サイト](https://www.docker.com/products/docker-desktop)からDocker Desktopをダウンロードします。\n- サイトの指示に従ってインストールします。\n- インストール後、**Docker Desktopを起動**して正常に動作することを確認してください。"
+      }
+    },
+    {
+      "segment_id": "7f7f1cb2",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## For Ubuntu Users",
+      "source_content_hash": "7ad40328168ae2bbb78c2c60bfb2f88e8f39736e28a1a246383bb7942537bf23",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Ubuntuユーザー向け"
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "1. **Open your terminal.**\n\n2. **Set up Docker’s apt repository:**\n\n   ```bash\n   sudo apt-get update\n   sudo apt-get install ca-certificates curl\n   sudo install -m 0755 -d /etc/apt/keyrings\n   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc\n   sudo chmod a+r /etc/apt/keyrings/docker.asc\n   echo \\\n     \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \\\n     $(. /etc/os-release && echo \"$VERSION_CODENAME\") stable\" | \\\n     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null\n   ```",
+      "source_content_hash": "0d1ec3a2e7f266de793c857dc433f83c9a242943ff614960bbc370d8cb20e701",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **ターミナルを開きます。**\n\n2. **Dockerのaptリポジトリを設定します:**\n\n   ```bash\n   sudo apt-get update\n   sudo apt-get install ca-certificates curl\n   sudo install -m 0755 -d /etc/apt/keyrings\n   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc\n   sudo chmod a+r /etc/apt/keyrings/docker.asc\n   echo \\\n     \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \\\n     $(. /etc/os-release && echo \"$VERSION_CODENAME\") stable\" | \\\n     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null\n   ```"
+      }
+    },
+    {
+      "segment_id": "214ab298",
+      "source_content": ":::note\nIf using an **Ubuntu derivative** (e.g., Linux Mint), use `UBUNTU_CODENAME` instead of `VERSION_CODENAME`.\n:::",
+      "source_content_hash": "a3e9c3ba62956f61be4a0491ed7fc1c948f8fed9d40500338a71af25195aa041",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n**Ubuntu派生ディストリビューション**（例: Linux Mint）を使用している場合は、`VERSION_CODENAME`の代わりに`UBUNTU_CODENAME`を使用してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "8612da05",
+      "source_content": "3. **Install Docker Engine:**\n\n   ```bash\n   sudo apt-get update\n   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin\n   ```\n\n4. **Verify Docker Installation:**\n\n   ```bash\n   sudo docker run hello-world\n   ```",
+      "source_content_hash": "00f9589a791bafc0bccf99483859d6749108ceceffe3c9ae33eb4bd023689cce",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "3. **Docker Engineをインストールします:**\n\n   ```bash\n   sudo apt-get update\n   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin\n   ```\n\n4. **Dockerのインストールを確認します:**\n\n   ```bash\n   sudo docker run hello-world\n   ```"
+      }
+    },
+    {
+      "segment_id": "51029da6",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "e50bebbf",
+      "source_content": "## For Other Linux Distributions",
+      "source_content_hash": "e0755d1abff6259a38868699dc6a5b623499b4084fb2280e3f0eca103f8fcf23",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## その他のLinuxディストリビューション向け"
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "For other Linux distributions, refer to the [official Docker documentation](https://docs.docker.com/engine/install/).",
+      "source_content_hash": "edd67012cecc024d4309b300314a5c126debfce90d82a0f095775af490decf27",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "その他のLinuxディストリビューションについては、[Docker公式ドキュメント](https://docs.docker.com/engine/install/)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "aa7d3f2b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9e95fc4a",
+      "source_content": "## Install and Verify Ollama",
+      "source_content_hash": "0b5a7b565a9466b8310b9c5624ac9e7ce686628b33a9a62eadd3159322b17669",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Ollamaのインストールと確認"
+      }
+    },
+    {
+      "segment_id": "35f6931b",
+      "source_content": "1. **Download Ollama** from [https://ollama.com/](https://ollama.com/).\n\n2. **Verify Ollama Installation:**\n   - Open a browser and navigate to:\n     [http://127.0.0.1:11434/](http://127.0.0.1:11434/).\n   - Note: The port may vary based on your installation.",
+      "source_content_hash": "9f296ea25de6858ca08570655ed06786c4d1e437b2db11d192ac25860fc53614",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [https://ollama.com/](https://ollama.com/)から**Ollamaをダウンロード**します。\n\n2. **Ollamaのインストールを確認します:**\n   - ブラウザを開き、次のURLにアクセスします:\n     [http://127.0.0.1:11434/](http://127.0.0.1:11434/)。\n   - 注: ポート番号はインストール環境によって異なる場合があります。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/docker-install.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.800356+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "9935d68bfb8f5ffeace1d8e66b699d5be3e942cb84ffd2ff8b2cdb1262cf2733"
+  }
+}

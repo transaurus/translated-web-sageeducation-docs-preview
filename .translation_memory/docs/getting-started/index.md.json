@@ -1,0 +1,152 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/index.md",
+  "source_file_content_hash": "1e034b4dce8b21f267a8202eb87a5028dc6976c710b7066c22d76f8721268ee6",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 200\ntitle: \"🚀 Getting Started\"\n---",
+      "source_content_hash": "6a74496287e23c6b71c9b7226773fc7b724b7579611031def4192ec4d4ce7d93",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Getting Started with Sage WebUI",
+      "source_content_hash": "d67b1083376d98b4aae90bc1e5a268e497ccaf9029b6288d95b88237b2981e28",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage WebUI 入門ガイド"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Welcome to the **Sage WebUI Documentation Hub!** Below is a list of essential guides and resources to help you get started, manage, and develop with Sage WebUI.",
+      "source_content_hash": "ddc3e8c13ce60eeb1297fe1e4b40a520685f217ec0a9a70f0ce929b271282b2a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Sage WebUI ドキュメントハブへようこそ！** 以下は、Sage WebUI の利用開始、管理、開発に役立つ基本的なガイドとリソースの一覧です。"
+      }
+    },
+    {
+      "segment_id": "279b6a65",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## ⏱️ Quick Start",
+      "source_content_hash": "8c5c6c4889ce564a19d8aa4241b32bc6a2ff8e3868d5774be5ff7ec38a42dd49",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ⏱️ クイックスタート"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Get up and running quickly with our [Quick Start Guide](/getting-started/quick-start).",
+      "source_content_hash": "533ad532bed67de22b5fe2d683ef757de8c9585ad4976a952adad7e35e1e4030",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[クイックスタートガイド](/getting-started/quick-start)で素早くセットアップを開始しましょう。"
+      }
+    },
+    {
+      "segment_id": "5beeb758",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## 🛠️ Advanced Topics",
+      "source_content_hash": "0d9c06e3fda568fb97307a3dfd67ef914a209246e9782f680252481d3e18d501",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🛠️ 上級者向けトピック"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Take a deeper dive into configurations and development tips in our [Advanced Topics Guide](/getting-started/advanced-topics).",
+      "source_content_hash": "534a9eea9dd9744fb465971eda5e631852079e7cd2f124aac3940f87ee8a0446",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "設定や開発のヒントについて詳しく知りたい方は、[上級者向けトピックガイド](/getting-started/advanced-topics)をご覧ください。"
+      }
+    },
+    {
+      "segment_id": "fb3d50cd",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## 🔄 Updating Sage WebUI",
+      "source_content_hash": "b7a59cfbd0aa8cdb4c62c9b92c38699b973d5c3cbac18bcc2f14dec3cdc3b2b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🔄 Sage WebUI の更新"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Stay current with the latest features and security patches with our [Updating Sage WebUI](./updating) guide.",
+      "source_content_hash": "4d3a65f48a0b7fae65d7c29b36d365b9c6bb7a77a871c4cf993d1933baaf329c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "最新の機能とセキュリティパッチを適用するには、[Sage WebUI 更新ガイド](./updating)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "a5403c6e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Happy exploring! 🎉 If you have questions, join our [community](https://discord.com/channels/1074411230040703046/1074411231030550632) or raise an issue on [GitHub](https://github.com/Startr/AI-WEB-openwebui).",
+      "source_content_hash": "7f61ee105cf79a97b18f5768ee58d47a293f44cf27f655728ff9ac4f3435eeee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "探索をお楽しみください！🎉 質問がある場合は、[コミュニティ](https://discord.com/channels/1074411230040703046/1074411231030550632)に参加するか、[GitHub](https://github.com/Startr/AI-WEB-openwebui)でイシューを作成してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/index.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.791394+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "1e034b4dce8b21f267a8202eb87a5028dc6976c710b7066c22d76f8721268ee6"
+  }
+}

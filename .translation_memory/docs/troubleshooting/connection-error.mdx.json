@@ -1,0 +1,252 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/troubleshooting/connection-error.mdx",
+  "source_file_content_hash": "cd4c8a2b9c08432b9818c7ef6838a2f4c070e1e11ae7d179085772953e4e4670",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\ntitle: \"🚧 Server Connectivity Issues\"\n---",
+      "source_content_hash": "22d5532ca14519d492c1361ca940f54d9b0157df8bc1b8a187dc40efc34157e8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "We're here to help you get everything set up and running smoothly. Below, you'll find step-by-step instructions tailored for different scenarios to solve common connection issues with Ollama and external servers like Hugging Face.",
+      "source_content_hash": "f4f87a51f8c3cc501844f906a3859c8aa6c98ddbde18c471379e0228fbbc3c87",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ここでは、OllamaやHugging Faceなどの外部サーバーとの接続に関する一般的な問題を解決するための、シナリオ別のステップバイステップの手順を提供します。スムーズにセットアップできるようサポートいたします。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## 🌟 Connection to Ollama Server",
+      "source_content_hash": "482338056c175e8a0ea2a3ff7b3594f771289c90d006ea794d9b7dd26461bc41",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🌟 Ollamaサーバーへの接続"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "### 🚀 Accessing Ollama from Sage WebUI",
+      "source_content_hash": "b2daee20fe271530b1c5482773eb24be7208a1d7a59d0de9b7e2f89ef98b60f2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🚀 Sage WebUIからOllamaにアクセス"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Struggling to connect to Ollama from Sage WebUI? It could be because Ollama isn’t listening on a network interface that allows external connections. Let’s sort that out:",
+      "source_content_hash": "32097daf3ba8ac6697ee55d379a280553b8f596f2a7ba3d5e9566f9ceeba64cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIからOllamaに接続できない場合、Ollamaが外部接続を許可するネットワークインターフェースでリッスンしていない可能性があります。以下の手順で解決しましょう："
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "1. **Configure Ollama to Listen Broadly** 🎧:\n   Set `OLLAMA_HOST` to `0.0.0.0` to make Ollama listen on all network interfaces.\n\n2. **Update Environment Variables**:\n   Ensure that the `OLLAMA_HOST` is accurately set within your deployment environment.\n\n3. **Restart Ollama**🔄:\n   A restart is needed for the changes to take effect.",
+      "source_content_hash": "747e17aaaf20d6546d628f9de4e70456ac550d469734ed201fca8e8f5db94b6d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Ollamaを広範囲でリッスンさせる設定** 🎧:\n   `OLLAMA_HOST`を`0.0.0.0`に設定し、すべてのネットワークインターフェースでリッスンするようにします。\n\n2. **環境変数の更新**:\n   デプロイ環境内で`OLLAMA_HOST`が正確に設定されていることを確認してください。\n\n3. **Ollamaの再起動**🔄:\n   変更を反映させるために再起動が必要です。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "💡 After setting up, verify that Ollama is accessible by visiting the WebUI interface.",
+      "source_content_hash": "66465203dc9ce1f0417cc0ddd6fc04bf71c124f2d8bc00ae8557c56f8729ca2a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💡 設定後、WebUIインターフェースにアクセスしてOllamaが利用可能か確認してください。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "For more detailed instructions on configuring Ollama, please refer to the [Ollama's Official Documentation](https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux).",
+      "source_content_hash": "5115f90bd5b452fbf1dd5eda780abfb4721750fa39747911b57ead63bd36c6c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Ollamaの設定に関する詳細な手順は、[Ollama公式ドキュメント](https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "### 🐳 Docker Connection Error",
+      "source_content_hash": "b5215a4a324fbcc10352eaf25f2004145a82a3cd93fba060bb342a0eaea413f8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🐳 Docker接続エラー"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "If you're seeing a connection error when trying to access Ollama, it might be because the WebUI docker container can't talk to the Ollama server running on your host. Let’s fix that:",
+      "source_content_hash": "110762ef05ee95c7beccd8f921cf6765d3cc1d22d7fdee344102112c54556abe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Ollamaに接続しようとした際にエラーが発生する場合、WebUI Dockerコンテナがホストで動作しているOllamaサーバーと通信できない可能性があります。以下の方法で修正できます："
+      }
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "1. **Adjust the Network Settings** 🛠️:\n   Use the `--network=host` flag in your Docker command. This links your container directly to your host’s network.\n\n2. **Change the Port**:\n   Remember that the internal port changes from 3000 to 8080.",
+      "source_content_hash": "4780ea6b8c87a1b600ec2e3098bc6ee9ef89402d002bb93fc41ba3182c464bf4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **ネットワーク設定の調整** 🛠️:\n   Dockerコマンドに`--network=host`フラグを追加します。これによりコンテナがホストのネットワークに直接接続されます。\n\n2. **ポートの変更**:\n   内部ポートが3000から8080に変更される点に注意してください。"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "**Example Docker Command**:",
+      "source_content_hash": "722fc46b9dccd276fe28a68ac7f3fd25a6af23bbb2b1a7090edbcd73bae1a5ee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Dockerコマンドの例**:"
+      }
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```bash\ndocker run -d --network=host -v sage-open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "510e6931dd46ba8c640435c1b7955645c6eb769151299081538798dee83d734b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4dd51304"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "🔗 After running the above, your WebUI should be available at `http://localhost:8080`.",
+      "source_content_hash": "e0a090ff6469d35c920e67479dfefb2ec4bafcfd0275118d1a8245613cf400b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🔗 上記の実行後、WebUIは`http://localhost:8080`で利用可能になります。"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## 🔒 SSL Connection Issue with Hugging Face",
+      "source_content_hash": "82a0efb68e4e17b921a75f3a1a711ab16e6d247f80b9344f20f87e44c38049db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🔒 Hugging FaceのSSL接続問題"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Encountered an SSL error? It could be an issue with the Hugging Face server. Here's what to do:",
+      "source_content_hash": "79fbacff6248f50193afcb2cf494e513b24bd68e5581f8dcab4bd4a5dc28a4f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "SSLエラーが発生しましたか？ Hugging Faceサーバー側の問題が原因の可能性があります。以下の手順を試してください："
+      }
+    },
+    {
+      "segment_id": "b93ddfac",
+      "source_content": "1. **Check Hugging Face Server Status**:\n   Verify if there's a known outage or issue on their end.\n\n2. **Switch Endpoint**:\n   If Hugging Face is down, switch the endpoint in your Docker command.",
+      "source_content_hash": "0d25dccf4487470345f1bd6983bee2c34eed1472e71171453cf3e74fe9b104e2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Hugging Faceサーバーの状態を確認**:\n   既知の障害や問題がないか確認します。\n\n2. **エンドポイントの切り替え**:\n   Hugging Faceがダウンしている場合、Dockerコマンド内のエンドポイントを変更します。"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "**Example Docker Command for Connected Issues**:",
+      "source_content_hash": "a103381bdee549d03999ba8dbfeb1b6bbedd81a9618a7fe3660669e14955af3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**接続問題用のDockerコマンド例**:"
+      }
+    },
+    {
+      "segment_id": "3ce8f045",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host.docker.internal:host-gateway -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "29cafe6e6fac3131fbc595f612a7a17f82d30e2486aac4fce6f69b5570011f3a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3ce8f045"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "## 🍏 Podman on MacOS",
+      "source_content_hash": "81d2eaad14a9e7d3819d0becf9863fc2bd1f5f6748beb5dca6c64c810fd5b3c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🍏 MacOS上のPodman"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Running on MacOS with Podman? Here’s how to ensure connectivity:",
+      "source_content_hash": "257bef718358a9afe93b3f9d7193a419b494bd8727a32db9a604eae83c774be3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "MacOSでPodmanを実行している場合の接続確保方法："
+      }
+    },
+    {
+      "segment_id": "24c174ca",
+      "source_content": "1. **Enable Host Loopback**:\n   Use `--network slirp4netns:allow_host_loopback=true` in your command.\n\n2. **Set OLLAMA_BASE_URL**:\n   Ensure it points to `http://host.containers.internal:11434`.",
+      "source_content_hash": "e495b521ce95340e254a7cb7c768ae04ef6a30ef056fa4f8f8f911d5a02fe31d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **ホストループバックの有効化**:\n   コマンドに`--network slirp4netns:allow_host_loopback=true`を追加します。\n\n2. **OLLAMA_BASE_URLの設定**:\n   `http://host.containers.internal:11434`を指すように設定します。"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "**Example Podman Command**:",
+      "source_content_hash": "490fd00670c6e5120ba1bbd0a3ab53c10721216b90fb7c966252cec50967ec1e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Podmanコマンドの例**:"
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```bash\npodman run -d --network slirp4netns:allow_host_loopback=true -p 3000:8080 -e OLLAMA_BASE_URL=http://host.containers.internal:11434 -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "a8e0e6ea94b1c9b5494d772e4dcf94c0df90df37486377bf9729d16dfc8a634c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/troubleshooting/connection-error.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.803793+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "cd4c8a2b9c08432b9818c7ef6838a2f4c070e1e11ae7d179085772953e4e4670"
+  }
+}

@@ -1,0 +1,1008 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/functions/filter.mdx",
+  "source_file_content_hash": "bafae3657d90c307337ffd89c2a0c3bd438543dbbe718ecdb9d418d5e8bbed55",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"🪄 Filter Function\"\n---",
+      "source_content_hash": "bcee549432e0518558f8ddc39dccb0b4b3dddd71f3b744c0b8cbcf94998cfccb",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 🪄 Filter Function: Modify Inputs and Outputs",
+      "source_content_hash": "afe5f44e64a19320ea3a6f8e831284a19212373cd634a87fc401f331f54c29a1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🪄 フィルター関数：入力と出力の変更"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Welcome to the comprehensive guide on Filter Functions in Sage WebUI! Filters are a flexible and powerful **plugin system** for modifying data *before it's sent to the Large Language Model (LLM)* (input) or *after it’s returned from the LLM* (output). Whether you’re transforming inputs for better context or cleaning up outputs for improved readability, **Filter Functions** let you do it all.",
+      "source_content_hash": "6b021f19cef475c873246635322ca0eaba8abbb15e723f48aa8053146eda6ac6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIのフィルター関数に関する包括的なガイドへようこそ！フィルターは、**大規模言語モデル（LLM）に送信される前**（入力）または**LLMから返された後**（出力）のデータを変更するための柔軟で強力な**プラグインシステム**です。入力にコンテキストを追加して最適化したり、出力をクリーンアップして読みやすくしたりする場合、**フィルター関数**を使えばすべて実現できます。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "This guide will break down **what Filters are**, how they work, their structure, and everything you need to know to build powerful and user-friendly filters of your own. Let’s dig in, and don’t worry—I’ll use metaphors, examples, and tips to make everything crystal clear! 🌟",
+      "source_content_hash": "6de25126889c25b27eb9e7cab10009eeb3e42b9ec7d88c725fe02124553ffef0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドでは、**フィルターの概要**、動作原理、構造、そして強力でユーザーフレンドリーなフィルターを構築するために必要なすべてを解説します。それでは、詳しく見ていきましょう！比喩や例、ヒントを交えて、すべてを明確に説明します！ 🌟"
+      }
+    },
+    {
+      "segment_id": "8c96d250",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## 🌊 What Are Filters in Sage WebUI?",
+      "source_content_hash": "b090abb663ab32f8e844efba7561e221462e4a6b21c41bbe6f94d20eae3560fb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🌊 Sage WebUIにおけるフィルターとは？"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Imagine Sage WebUI as a **stream of water** flowing through pipes:",
+      "source_content_hash": "1b117175a6b6981f7766f565c7705863e23106bbffd51f3afdb936648a2da237",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIを**水路**に例えてみましょう："
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "- **User inputs** and **LLM outputs** are the water.\n- **Filters** are the **water treatment stages** that clean, modify, and adapt the water before it reaches the final destination.",
+      "source_content_hash": "9a81364d3fbbcfeea80663f5b9639f7315cc36a964b0c08a62a25f6ee8682eb4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ユーザー入力**と**LLM出力**は水です。\n- **フィルター**は、最終目的地に到達する前に水を浄化・修正・適応させる**浄水処理工程**です。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Filters sit in the middle of the flow—like checkpoints—where you decide what needs to be adjusted.",
+      "source_content_hash": "1ef681347d75bb6f7403585cbafa52dea3faa2fac7468400ed55fcbeb367e2b2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "フィルターは流れの中間に位置し、何を調整する必要があるかを決定するチェックポイントのような役割を果たします。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Here’s a quick summary of what Filters do:",
+      "source_content_hash": "fa9b0b80e52fe48d9f56ea6e4fd07deabfa2b8295d29470c8f45b8a7c0e362e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "フィルターの主な機能を簡単にまとめます："
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "1. **Modify User Inputs (Inlet Function)**: Tweak the input data before it reaches the AI model. This is where you enhance clarity, add context, sanitize text, or reformat messages to match specific requirements.\n2. **Intercept Model Outputs (Stream Function)**: Capture and adjust the AI’s responses **as they’re generated** by the model. This is useful for real-time modifications, like filtering out sensitive information or formatting the output for better readability.\n3. **Modify Model Outputs (Outlet Function)**: Adjust the AI's response **after it’s processed**, before showing it to the user. This can help refine, log, or adapt the data for a cleaner user experience.",
+      "source_content_hash": "58937ce313b8744b01db03ecdaf81616fe599af180e37c9ed5c7ba6be18b5cbb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **ユーザー入力の変更（Inlet関数）**: AIモデルに到達する前に入力データを調整します。ここでは、明確さを高めたり、コンテキストを追加したり、テキストをサニタイズしたり、特定の要件に合わせてメッセージを再フォーマットしたりします。\n2. **モデル出力のインターセプト（Stream関数）**: AIの応答を**生成中に**捕捉して調整します。これは、機密情報をフィルタリングしたり、出力を読みやすくフォーマットしたりするようなリアルタイムの変更に有用です。\n3. **モデル出力の変更（Outlet関数）**: AIの応答を**処理した後**、ユーザーに表示する前に調整します。これにより、データを洗練したり、ログに記録したり、ユーザーエクスペリエンスを向上させたりできます。"
+      }
+    },
+    {
+      "segment_id": "61b5339f",
+      "source_content": "> **Key Concept:** Filters are not standalone models but tools that enhance or transform the data traveling *to* and *from* models.",
+      "source_content_hash": "99a13e6a2a24085eb337c3a6ecc1899d9e101fb19ef7eab4f914aab77c35a275",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "ja": "> **重要な概念:** フィルターは独立したモデルではなく、モデルとの間を行き来するデータを強化または変換するツールです。"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "Filters are like **translators or editors** in the AI workflow: you can intercept and change the conversation without interrupting the flow.",
+      "source_content_hash": "67c33c2f3bb93f01b9de2d750c5a9e48aab87096b42972993015e252ab2966f7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "フィルターはAIワークフローにおける**翻訳者や編集者**のような存在です：会話の流れを中断することなく、内容をインターセプトして変更できます。"
+      }
+    },
+    {
+      "segment_id": "d5420c8e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "## 🗺️ Structure of a Filter Function: The Skeleton",
+      "source_content_hash": "a2293cadabc14b903c723d1cd2057480789b00c0ff5373ec4c08d01942f91e50",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🗺️ フィルター関数の構造：基本骨格"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "Let's start with the simplest representation of a Filter Function. Don't worry if some parts feel technical at first—we’ll break it all down step by step!",
+      "source_content_hash": "0083a1b5fa6b61fb942cf29c752cf327175c6f68b22bd6945f4ad9dac74e0ef3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "まずはフィルター関数の最もシンプルな表現から始めましょう。最初は技術的に感じる部分があっても心配ありません。すべてを段階的に解説していきます！"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "### 🦴 Basic Skeleton of a Filter",
+      "source_content_hash": "c4e7ebd72452e6891f15adb1c9661cf23d9adea67a4896dab3f1f28eab31fa99",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🦴 フィルターの基本骨格"
+      }
+    },
+    {
+      "segment_id": "bca33820",
+      "source_content": "```python\nfrom pydantic import BaseModel\nfrom typing import Optional\n\nclass Filter:\n    # Valves: Configuration options for the filter\n    class Valves(BaseModel):  \n        pass\n\n    def __init__(self):\n        # Initialize valves (optional configuration for the Filter)\n        self.valves = self.Valves()\n\n    def inlet(self, body: dict) -> dict:\n        # This is where you manipulate user inputs.\n        print(f\"inlet called: {body}\")\n        return body  \n\n    def stream(self, event: dict) -> dict:\n        # This is where you modify streamed chunks of model output.\n        print(f\"stream event: {event}\")\n        return event\n\n    def outlet(self, body: dict) -> None:\n        # This is where you manipulate model outputs.\n        print(f\"outlet called: {body}\")\n```",
+      "source_content_hash": "f4ec3ca6a7f5b8d9aa00c4356a5f615feefea30cc335f226a7047b12d19655ff",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_bca33820"
+      }
+    },
+    {
+      "segment_id": "379d3a5b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "### 🎯 Key Components Explained",
+      "source_content_hash": "88005074e610b2ca761f29427b29b35af59ada7727a7c8f3a613cceeeacf4826",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🎯 主要コンポーネントの解説"
+      }
+    },
+    {
+      "segment_id": "d422fb13",
+      "source_content": "#### 1️⃣ **`Valves` Class (Optional Settings)**",
+      "source_content_hash": "55aa56036a2c43427b88edd58dd6a9aedd2382098499c1e4d9f547a6c52b4257",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 1️⃣ **`Valves`クラス（オプション設定）**"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "Think of **Valves** as the knobs and sliders for your filter. If you want to give users configurable options to adjust your Filter’s behavior, you define those here.",
+      "source_content_hash": "31805ea874eee43f9b4a643c398f21058b1596a44e40342832f71b40797f87cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Valves**はフィルターのノブやスライダーのようなものです。ユーザーがフィルターの動作を設定可能にしたい場合、ここでそれらのオプションを定義します。"
+      }
+    },
+    {
+      "segment_id": "c808e01e",
+      "source_content": "```python\nclass Valves(BaseModel):\n    OPTION_NAME: str = \"Default Value\"\n```",
+      "source_content_hash": "764a2b81e00674dd04209aa644d9cb382914698811de553a23b35d907fa398c3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_c808e01e"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "For example:  \nIf you're creating a filter that converts responses into uppercase, you might allow users to configure whether every output gets totally capitalized via a valve like `TRANSFORM_UPPERCASE: bool = True/False`.",
+      "source_content_hash": "40e6275087674a6e68ed1f6eda23a6e1751a8e76b8f82d64973bc94d8a212f98",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "例：  \n出力をすべて大文字に変換するフィルターを作成する場合、`TRANSFORM_UPPERCASE: bool = True/False`のようなバルブを設定し、ユーザーがすべての出力を大文字化するかどうかを選択できるようにします。"
+      }
+    },
+    {
+      "segment_id": "4e1804a3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "#### 2️⃣ **`inlet` Function (Input Pre-Processing)**",
+      "source_content_hash": "832c7ceec20336f846db74e4abe0074645f466dd34a2bb1f4e5b82300f1f50f9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 2️⃣ **`inlet`関数（入力前処理）**"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "The `inlet` function is like **prepping food before cooking**. Imagine you’re a chef: before the ingredients go into the recipe (the LLM in this case), you might wash vegetables, chop onions, or season the meat. Without this step, your final dish could lack flavor, have unwashed produce, or simply be inconsistent.",
+      "source_content_hash": "e4c47738dd4df165676a996113b8881ec1315f77bad106a7ede85979e0ec882e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`inlet`関数は**料理前の食材の下ごしらえ**のようなものです。シェフを想像してください：材料（この場合はLLM）がレシピに入る前に、野菜を洗ったり、玉ねぎを刻んだり、肉に味付けをしたりします。このステップがないと、最終的な料理は味気なかったり、洗っていない食材が混ざっていたり、単に一貫性がなかったりする可能性があります。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "In the world of Sage WebUI, the `inlet` function does this important prep work on the **user input** before it’s sent to the model. It ensures the input is as clean, contextual, and helpful as possible for the AI to handle.",
+      "source_content_hash": "4b83e50cb5d3dd0a208c54018e51f488a65991730f312c6c20f4614184fc21ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの世界では、`inlet`関数は、ユーザー入力がモデルに送信される前に、この重要な下準備を行います。これにより、AIが処理する入力が可能な限りクリーンで、文脈に沿った、役立つものになります。"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "📥 **Input**:",
+      "source_content_hash": "627c88bc7841eee36e501b75f9a45d3c5b5af492fddbf723becc974aa11bf822",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📥 **入力**:"
+      }
+    },
+    {
+      "segment_id": "b0dbe2f3",
+      "source_content": "- **`body`**: The raw input from Sage WebUI to the model. It is in the format of a chat-completion request (usually a dictionary that includes fields like the conversation's messages, model settings, and other metadata). Think of this as your recipe ingredients.",
+      "source_content_hash": "01167a8850cf0d851081ff0429dacb0f6a71dcc26aac4a626a9ce1e6df5ad2ef",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **`body`**: Sage WebUIからモデルへの生の入力。これは通常、会話のメッセージ、モデル設定、その他のメタデータなどのフィールドを含む辞書形式のチャット補完リクエストです。これをレシピの材料と考えてください。"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "🚀 **Your Task**:  \nModify and return the `body`. The modified version of the `body` is what the LLM works with, so this is your chance to bring clarity, structure, and context to the input.",
+      "source_content_hash": "cfc80964edd2f33961d0e740a31c1db95556545bbcd80799a025c7d615da26c5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🚀 **あなたのタスク**:  \n`body`を修正して返します。修正された`body`はLLMが処理するものなので、入力に明確さ、構造、文脈をもたらすチャンスです。"
+      }
+    },
+    {
+      "segment_id": "99d0dd9b",
+      "source_content": "##### 🍳 Why Would You Use the `inlet`?",
+      "source_content_hash": "19fb1b96f768c71de41b554016f181d7a0c7a5732d391f38c0048e23a2fd990d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 🍳 `inlet`を使用する理由"
+      }
+    },
+    {
+      "segment_id": "2d15468d",
+      "source_content": "1. **Adding Context**: Automatically append crucial information to the user’s input, especially if their text is vague or incomplete. For example, you might add \"You are a friendly assistant\" or \"Help this user troubleshoot a software bug.\"\n   \n2. **Formatting Data**: If the input requires a specific format, like JSON or Markdown, you can transform it before sending it to the model.\n\n3. **Sanitizing Input**: Remove unwanted characters, strip potentially harmful or confusing symbols (like excessive whitespace or emojis), or replace sensitive information.\n\n4. **Streamlining User Input**: If your model’s output improves with additional guidance, you can use the `inlet` to inject clarifying instructions automatically!",
+      "source_content_hash": "0492677bd5a420d0493f08098a1966fd41ba0faa6ecef72cb8315eab167df8e9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **文脈の追加**: ユーザーの入力が曖昧または不完全な場合、重要な情報を自動的に追加します。例えば、「あなたは親切なアシスタントです」や「このユーザーのソフトウェアバグのトラブルシューティングを手伝ってください」などを追加できます。\n   \n2. **データのフォーマット**: 入力がJSONやMarkdownなどの特定の形式を必要とする場合、モデルに送信する前に変換できます。\n\n3. **入力のサニタイズ**: 不要な文字を削除したり、有害または混乱を招く可能性のある記号（過剰な空白や絵文字など）を取り除いたり、機密情報を置き換えたりします。\n\n4. **ユーザー入力の効率化**: モデルの出力が追加のガイダンスで改善される場合、`inlet`を使用して自動的に明確な指示を注入できます！"
+      }
+    },
+    {
+      "segment_id": "d1f76d04",
+      "source_content": "##### 💡 Example Use Cases: Build on Food Prep",
+      "source_content_hash": "8f8f679e962512225dda5f9a06781a7f76ac5610b32a2fc4af9190c2e5a72b30",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 💡 使用例: 料理の下準備に例える"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "###### 🥗 Example 1: Adding System Context",
+      "source_content_hash": "6cba5af5907f89e70036fb7a1c70783c6662f8bee652408b70599a3e7a89c577",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "###### 🥗 例1: システムコンテキストの追加"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "Let’s say the LLM is a chef preparing a dish for Italian cuisine, but the user hasn’t mentioned \"This is for Italian cooking.\" You can ensure the message is clear by appending this context before sending the data to the model.",
+      "source_content_hash": "107ffd7586b0f8a080e8e54f52c213056402db108338caa130e61543a86f07dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LLMがイタリア料理の料理人で、ユーザーが「これはイタリア料理用です」と明記していないとします。モデルにデータを送信する前にこの文脈を追加することで、メッセージを明確にできます。"
+      }
+    },
+    {
+      "segment_id": "83537d8d",
+      "source_content": "```python\ndef inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:\n    # Add system message for Italian context in the conversation\n    context_message = {\n        \"role\": \"system\",\n        \"content\": \"You are helping the user prepare an Italian meal.\"\n    }\n    # Insert the context at the beginning of the chat history\n    body.setdefault(\"messages\", []).insert(0, context_message)\n    return body\n```",
+      "source_content_hash": "8fba9ba8dcb747c7251935fe72cfdfa08a57b78345ffdb566f3c488bd8b30770",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "b9331170",
+      "source_content": "📖 **What Happens?**",
+      "source_content_hash": "4a129b32092257d9e09f4f4553862b800c0680fa015275600d73de483b4c4a1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📖 **何が起こるか？**"
+      }
+    },
+    {
+      "segment_id": "683a33d9",
+      "source_content": "- Any user input like \"What are some good dinner ideas?\" now carries the Italian theme because we’ve set the system context! Cheesecake might not show up as an answer, but pasta sure will.",
+      "source_content_hash": "a0ecfade5a651166376444b184f204e54824240e91ad9f3f7667ece528e512df",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 「良いディナーのアイデアは？」などのユーザー入力には、イタリアのテーマが含まれるようになります！チーズケーキは答えに含まれないかもしれませんが、パスタは確実に含まれます。"
+      }
+    },
+    {
+      "segment_id": "c35e5786",
+      "source_content": "###### 🔪 Example 2: Cleaning Input (Remove Odd Characters)",
+      "source_content_hash": "98353196447c56c73f6144a4e11a67fb7511e2f760f1245f50ce8022c30093f2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "###### 🔪 例2: 入力のクリーニング（不要な文字の削除）"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "Suppose the input from the user looks messy or includes unwanted symbols like `!!!`, making the conversation inefficient or harder for the model to parse. You can clean it up while preserving the core content.",
+      "source_content_hash": "be92a61fdb4a270469b638d4ed487e0c0c4d1a457182f7b00e28f1fca754d6ab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ユーザーからの入力が乱雑だったり、`!!!`などの不要な記号が含まれている場合、会話が非効率的になったり、モデルが解析しにくくなったりします。コアの内容を保ちながら、これをクリーンアップできます。"
+      }
+    },
+    {
+      "segment_id": "136818ce",
+      "source_content": "```python\ndef inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:\n    # Clean the last user input (from the end of the 'messages' list)\n    last_message = body[\"messages\"][-1][\"content\"]\n    body[\"messages\"][-1][\"content\"] = last_message.replace(\"!!!\", \"\").strip()\n    return body\n```",
+      "source_content_hash": "dc11672b2b29d446e7f7eac2b3ac5f0308efb9a32e60813ffc86cb73da7148ef",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "534ac82e",
+      "source_content": "📖 **What Happens?**",
+      "source_content_hash": "4a129b32092257d9e09f4f4553862b800c0680fa015275600d73de483b4c4a1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📖 **何が起こるか？**"
+      }
+    },
+    {
+      "segment_id": "b459cfc1",
+      "source_content": "- Before: `\"How can I debug this issue!!!\"` ➡️ Sent to the model as `\"How can I debug this issue\"`",
+      "source_content_hash": "35890bc5e6f541d914f92b7c8a6ea43e3f3902962ffcc376a3a252dccbfaf667",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 前: `\"この問題をデバッグするにはどうすればいいですか！！！\"` ➡️ モデルに送信されるのは `\"この問題をデバッグするにはどうすればいいですか\"`"
+      }
+    },
+    {
+      "segment_id": "9e90a9b3",
+      "source_content": "Note: The user feels the same, but the model processes a cleaner and easier-to-understand query.",
+      "source_content_hash": "3600d4fe7c7488f571c950e00e89c8a0e2fcd9cf5bc7ec50927e03e216e684ca",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注: ユーザーは同じように感じますが、モデルはよりクリーンで理解しやすいクエリを処理します。"
+      }
+    },
+    {
+      "segment_id": "dd4905a4",
+      "source_content": "##### 📊 How `inlet` Helps Optimize Input for the LLM:",
+      "source_content_hash": "d090ffffbf435a966ca89f2059f3782b218d3b67ef8a1b7d40449e82d80538d7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 📊 `inlet`がLLMの入力を最適化する方法:"
+      }
+    },
+    {
+      "segment_id": "739843fe",
+      "source_content": "- Improves **accuracy** by clarifying ambiguous queries.\n- Makes the AI **more efficient** by removing unnecessary noise like emojis, HTML tags, or extra punctuation.\n- Ensures **consistency** by formatting user input to match the model’s expected patterns or schemas (like, say, JSON for a specific use case).",
+      "source_content_hash": "0a3ff81883b569d164f4ebc3290e8ecd5f119f32b9ec4f7ff2701845988c3f93",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 曖昧なクエリを明確にすることで**精度**を向上させます。\n- 絵文字、HTMLタグ、余分な句読点などの不要なノイズを除去することで、AIを**より効率的**にします。\n- ユーザー入力をモデルが期待するパターンやスキーマ（特定のユースケースのJSONなど）に一致するようにフォーマットすることで、**一貫性**を確保します。"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "💭 **Think of `inlet` as the sous-chef in your kitchen**—ensuring everything that goes into the model (your AI \"recipe\") has been prepped, cleaned, and seasoned to perfection. The better the input, the better the output!",
+      "source_content_hash": "05fcc486a0b4903f8709501e58526205369f2647e440f8f2f0ac4d91271fc18c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💭 **`inlet`をキッチンのスーシェフと考えてください**—モデル（あなたのAI「レシピ」）に入るすべてのものが、完璧に準備され、クリーニングされ、調味されていることを確認します。入力が良ければ良いほど、出力も良くなります！"
+      }
+    },
+    {
+      "segment_id": "70a662e2",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "97afbaf0",
+      "source_content": "#### 🆕 3️⃣ **`stream` Hook (New in Sage Open WebUI 0.5.17)**",
+      "source_content_hash": "e07207e3d13ec1bccea33e585816c2375d12cfc6be2fa9a85a4fb68409ec727d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 🆕 3️⃣ **`stream`フック（Sage Open WebUI 0.5.17で新規追加）**"
+      }
+    },
+    {
+      "segment_id": "531ec0bb",
+      "source_content": "##### 🔄 What is the `stream` Hook?",
+      "source_content_hash": "1667cfaefc5a02c5ff7b968a115755ebdc09f30e5ec557af6f249ff15d87c3d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 🔄 `stream`フックとは？"
+      }
+    },
+    {
+      "segment_id": "dce16ab4",
+      "source_content": "The **`stream` function** is a new feature introduced in Sage Open WebUI **0.5.17** that allows you to **intercept and modify streamed model responses** in real time.",
+      "source_content_hash": "1939bd47c9533f6e7f3bf8d0e7bf44f550a79c92219546b66a0127b37b4a13b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**`stream`関数**は、Sage Open WebUI **0.5.17**で導入された新機能で、**ストリーミングされたモデルの応答をリアルタイムでインターセプトおよび修正**することができます。"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "Unlike `outlet`, which processes an entire completed response, `stream` operates on **individual chunks** as they are received from the model.",
+      "source_content_hash": "023b52e8d33583254c7ec0916e02885061a7a95a2828f0526d34eee278ca6b2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`outlet`が完成したレスポンス全体を処理するのとは異なり、`stream`はモデルから受信した**個々のチャンク**に対して動作します。"
+      }
+    },
+    {
+      "segment_id": "f6a06609",
+      "source_content": "##### 🛠️ When to Use the Stream Hook?",
+      "source_content_hash": "928536fd08137bf5263361540bdaf366e0ad20985c3cc1c539a05ab18a0aacfb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 🛠️ ストリームフックを使用するタイミング"
+      }
+    },
+    {
+      "segment_id": "e258929d",
+      "source_content": "- Modify **streaming responses** before they are displayed to users.\n- Implement **real-time censorship or cleanup**.\n- **Monitor streamed data** for logging/debugging.",
+      "source_content_hash": "57ac19678a70aab0d2beb4bd7fb7802d37319aeea6dba04034a419e69de9e059",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- ユーザーに表示される前に**ストリーミングレスポンス**を変更する\n- **リアルタイムの検閲やクリーンアップ**を実装する\n- ロギング/デバッグのために**ストリームデータを監視**する"
+      }
+    },
+    {
+      "segment_id": "58f98d22",
+      "source_content": "##### 📜 Example: Logging Streaming Chunks",
+      "source_content_hash": "448e702f7a21d5bf9ed467e0f6e958edf6a2eea586dddba6a03a294292ec7d13",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 📜 例: ストリーミングチャンクのロギング"
+      }
+    },
+    {
+      "segment_id": "d636abf8",
+      "source_content": "Here’s how you can inspect and modify streamed LLM responses:",
+      "source_content_hash": "ee81e36222d03a6a10202aaf9dee7e609bac40a1a9ee5a8ed30d7b4fdce872a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ストリーミングされたLLMレスポンスを検査・修正する方法は以下の通りです:"
+      }
+    },
+    {
+      "segment_id": "ddf3de1d",
+      "source_content": "```python\ndef stream(self, event: dict) -> dict:\n    print(event)  # Print each incoming chunk for inspection\n    return event\n```",
+      "source_content_hash": "003037ebad51af33347362919a3dadee3d5df07f55285c31b830194ac6fced33",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ddf3de1d"
+      }
+    },
+    {
+      "segment_id": "0b869a24",
+      "source_content": "> **Example Streamed Events:**",
+      "source_content_hash": "e294bb6a08d83e137179de7d5b562efb5023bf5f5047a1116cf163c965e9e087",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "ja": "> **ストリーミングイベントの例:**"
+      }
+    },
+    {
+      "segment_id": "82a37a1b",
+      "source_content": "```json\n{'id': 'chatcmpl-B4l99MMaP3QLGU5uV7BaBM0eDS0jb','choices': [{'delta': {'content': 'Hi'}}]}\n{'id': 'chatcmpl-B4l99MMaP3QLGU5uV7BaBM0eDS0jb','choices': [{'delta': {'content': '!'}}]}\n{'id': 'chatcmpl-B4l99MMaP3QLGU5uV7BaBM0eDS0jb','choices': [{'delta': {'content': ' 😊'}}]}\n```",
+      "source_content_hash": "700bc30af769afb09dea404656f4489d958506af004163a0f828eac26d6efd77",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_82a37a1b"
+      }
+    },
+    {
+      "segment_id": "e5821418",
+      "source_content": "📖 **What Happens?**",
+      "source_content_hash": "4a129b32092257d9e09f4f4553862b800c0680fa015275600d73de483b4c4a1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📖 **処理内容**"
+      }
+    },
+    {
+      "segment_id": "81826f21",
+      "source_content": "- Each line represents a **small fragment** of the model's streamed response.\n- The **`delta.content` field** contains the progressively generated text.",
+      "source_content_hash": "c5863f83758a941ce29adba1c3b97fc2a65c31deb8b904b1dbfc616603e14673",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 各行はモデルのストリーミングレスポンスの**小さな断片**を表します\n- **`delta.content`フィールド**には段階的に生成されるテキストが含まれます"
+      }
+    },
+    {
+      "segment_id": "cce332f2",
+      "source_content": "##### 🔄 Example: Filtering Out Emojis from Streamed Data",
+      "source_content_hash": "58204fcf4a6eb86fe3ffc94f631670cf6cfa6075957264684bba8569d4fe6940",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "##### 🔄 例: ストリームデータから絵文字をフィルタリング"
+      }
+    },
+    {
+      "segment_id": "d7c0a6db",
+      "source_content": "```python\ndef stream(self, event: dict) -> dict:\n    for choice in event.get(\"choices\", []):\n        delta = choice.get(\"delta\", {})\n        if \"content\" in delta:\n            delta[\"content\"] = delta[\"content\"].replace(\"😊\", \"\")  # Strip emojis\n    return event\n```",
+      "source_content_hash": "da5621b19998be6bd1bcee30ea176bdc39e4abc5cf7c95c3c6389ceca3c6e3ee",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d7c0a6db"
+      }
+    },
+    {
+      "segment_id": "3799844b",
+      "source_content": "📖 **Before:** `\"Hi 😊\"`  \n📖 **After:** `\"Hi\"`",
+      "source_content_hash": "83630d8f76c5ba46167e8594e7ef441884c7100cdc8d4154384e4cc96f3db2a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📖 **変更前:** `\"こんにちは😊\"`  \n📖 **変更後:** `\"こんにちは\"`"
+      }
+    },
+    {
+      "segment_id": "4fa624b2",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "6ac93c98",
+      "source_content": "#### 4️⃣ **`outlet` Function (Output Post-Processing)**",
+      "source_content_hash": "1459c7636ba8bf4f6d498b6b7bd2c83c4d57fcc9542ccf9e6b62678d5bf9d690",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 4️⃣ **`outlet`関数（出力後処理）**"
+      }
+    },
+    {
+      "segment_id": "b4204c03",
+      "source_content": "The `outlet` function is like a **proofreader**: tidy up the AI's response (or make final changes) *after it’s processed by the LLM.*",
+      "source_content_hash": "5531914e7b0a1dfe88c95fe4727aba1b5323fcb550f6848242218143fe1ed71e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`outlet`関数は**校正者**のようなものです: LLMによる処理が完了した後でAIのレスポンスを整理（または最終変更）します。"
+      }
+    },
+    {
+      "segment_id": "e6ac016e",
+      "source_content": "📤 **Input**:",
+      "source_content_hash": "ba589d1a32074e094046096b31f750f224e67fd0db7e56c7addc3b499b2cae1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📤 **入力:**"
+      }
+    },
+    {
+      "segment_id": "41da8c12",
+      "source_content": "- **`body`**: This contains **all current messages** in the chat (user history + LLM replies).",
+      "source_content_hash": "7bbd9ab66c0cc9dab0073f181103d089dc57cf73105f04d13ab60b6f089159d1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **`body`**: チャット内の**すべての現在のメッセージ**（ユーザー履歴 + LLM返信）を含みます"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "🚀 **Your Task**: Modify this `body`. You can clean, append, or log changes, but be mindful of how each adjustment impacts the user experience.",
+      "source_content_hash": "1eed5cd87273d97678ecb5973bd55d029ff4527828961dce73c66f21fe932158",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🚀 **タスク:** この`body`を修正します。クリーンアップ、追加、変更のロギングが可能ですが、各調整がユーザーエクスペリエンスに与える影響に注意してください"
+      }
+    },
+    {
+      "segment_id": "1f9058cd",
+      "source_content": "💡 **Best Practices**:",
+      "source_content_hash": "02f42b82eb1c578ffa6cdc062a99093305d2b0a0f57455855b1711b1f84577fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💡 **ベストプラクティス:**"
+      }
+    },
+    {
+      "segment_id": "9f118c66",
+      "source_content": "- Prefer logging over direct edits in the outlet (e.g., for debugging or analytics).\n- If heavy modifications are needed (like formatting outputs), consider using the **pipe function** instead.",
+      "source_content_hash": "ff6ebf7a515c5871b19e800355bad89abfbf627f5f27799acc39670368bba3ec",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- outlet内での直接編集よりもロギングを優先（デバッグや分析用）\n- 大規模な変更（出力のフォーマットなど）が必要な場合は、代わりに**パイプ関数**の使用を検討"
+      }
+    },
+    {
+      "segment_id": "09f901c3",
+      "source_content": "💡 **Example Use Case**: Strip out sensitive API responses you don't want the user to see:",
+      "source_content_hash": "a93a128d6e108ea4233fadf540ad3969a5c80c798b02f5d73a37578a5d05af6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💡 **使用例:** ユーザーに見せたくない機密性の高いAPIレスポンスを除去:"
+      }
+    },
+    {
+      "segment_id": "6b0761da",
+      "source_content": "```python\ndef outlet(self, body: dict, __user__: Optional[dict] = None) -> dict:\n    for message in body[\"messages\"]:\n        message[\"content\"] = message[\"content\"].replace(\"<API_KEY>\", \"[REDACTED]\")\n    return body \n```",
+      "source_content_hash": "5d088420f51c554009f351bbdc273adc244f13a764b52d2749653e25dc3a9ccf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6b0761da"
+      }
+    },
+    {
+      "segment_id": "783a74c3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "dae9676f",
+      "source_content": "## 🌟 Filters in Action: Building Practical Examples",
+      "source_content_hash": "9d7423f17503b6ee876c1293cdbfef3c99f06c48253cc5c598c3565f0daa21c3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🌟 フィルターの実践例: 実際の構築例"
+      }
+    },
+    {
+      "segment_id": "18ca7861",
+      "source_content": "Let’s build some real-world examples to see how you’d use Filters!",
+      "source_content_hash": "46c152d54879e10abe42bacbf923062b84b4b649e8b29a76b3b8cf2d3f43a0c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "実際の使用例を構築して、フィルターの使用方法を確認しましょう！"
+      }
+    },
+    {
+      "segment_id": "63daebc9",
+      "source_content": "### 📚 Example #1: Add Context to Every User Input",
+      "source_content_hash": "3a35e2700ef31f1076b336e41e0d9f3f7d6a97212d6011990006429baca82fd2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📚 例 #1: すべてのユーザー入力にコンテキストを追加"
+      }
+    },
+    {
+      "segment_id": "228d01d5",
+      "source_content": "Want the LLM to always know it's assisting a customer in troubleshooting software bugs? You can add instructions like **\"You're a software troubleshooting assistant\"** to every user query.",
+      "source_content_hash": "6a8135464b81637a42f342e49fc424531d5997f8e064f857ebdb3ef21a5ca232",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LLMに「あなたはソフトウェアのトラブルシューティングアシスタントです」といった指示をすべてのユーザークエリに追加したい場合:"
+      }
+    },
+    {
+      "segment_id": "d5244955",
+      "source_content": "```python\nclass Filter:\n    def inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:\n        context_message = {\n            \"role\": \"system\", \n            \"content\": \"You're a software troubleshooting assistant.\"\n        }\n        body.setdefault(\"messages\", []).insert(0, context_message)\n        return body\n```",
+      "source_content_hash": "0fe3092f30110568165e93bb1d582dc0f7c02825591db5760a2bcdbd81a0640a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d5244955"
+      }
+    },
+    {
+      "segment_id": "b9e2ddae",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "936707a1",
+      "source_content": "### 📚 Example #2: Highlight Outputs for Easy Reading",
+      "source_content_hash": "a41d5207e4cc1e03c9cba0f288e9461a1136bc2c56cefe9267e0ae6fd92cd482",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📚 例 #2: 読みやすくするための出力のハイライト"
+      }
+    },
+    {
+      "segment_id": "6dc3e423",
+      "source_content": "Returning output in Markdown or another formatted style? Use the `outlet` function!",
+      "source_content_hash": "5e38d1e7d10a791335eed6c3013e08aac1bbb3b88606246de7a26bc7c9e6ba3f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Markdownや他のフォーマットスタイルで出力を返す場合、`outlet`関数を使用できます！"
+      }
+    },
+    {
+      "segment_id": "ab152d31",
+      "source_content": "```python\nclass Filter:\n    def outlet(self, body: dict, __user__: Optional[dict] = None) -> dict:\n        # Add \"highlight\" markdown for every response\n        for message in body[\"messages\"]:\n            if message[\"role\"] == \"assistant\":  # Target model response\n                message[\"content\"] = f\"**{message['content']}**\"  # Highlight with Markdown\n        return body\n```",
+      "source_content_hash": "72702b311c2d18935180652fbb1e6146d3bbc735ccd6edf447fb738aeb301f31",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ab152d31"
+      }
+    },
+    {
+      "segment_id": "9a6a9883",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "90032345",
+      "source_content": "## 🚧 Potential Confusion: Clear FAQ 🛑",
+      "source_content_hash": "755ae153383a56fbe29449ca6a5579b99801ea2d9dc4ac87339eef75d1f1244f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🚧 よくある疑問: 明確なFAQ 🛑"
+      }
+    },
+    {
+      "segment_id": "4cb3b0aa",
+      "source_content": "### **Q: How Are Filters Different From Pipe Functions?**",
+      "source_content_hash": "f8d0910d7af067dfc054ff84bb0599e6f5097f60ac09ec1d6dfe45f2a84a7644",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### **Q: フィルターとパイプ関数の違いは？**"
+      }
+    },
+    {
+      "segment_id": "2153a2fa",
+      "source_content": "Filters modify data **going to** and **coming from models** but do not significantly interact with logic outside of these phases. Pipes, on the other hand:",
+      "source_content_hash": "0565ed2cfbfc2a10a28fad860a0326cef82347dbab1b8b8cc6e68979c27f3167",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "フィルターはモデルへの**送信データ**と**受信データ**を変更しますが、これらのフェーズ以外のロジックとは大きく相互作用しません。一方パイプ関数は:"
+      }
+    },
+    {
+      "segment_id": "a71e61f7",
+      "source_content": "- Can integrate **external APIs** or significantly transform how the backend handles operations.\n- Expose custom logic as entirely new \"models.\"",
+      "source_content_hash": "da1b0f6da466bedcc47ff79721e3b155e1ee7e067fe42b83827bc3162f28988f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **外部API**を統合したり、バックエンドの操作処理方法を大幅に変換できます\n- カスタムロジックを完全に新しい「モデル」として公開します"
+      }
+    },
+    {
+      "segment_id": "bb74dfa2",
+      "source_content": "### **Q: Can I Do Heavy Post-Processing Inside `outlet`?**",
+      "source_content_hash": "862f70227ce0fe9414be5f7a4dd5c46d19d2310d998015942e03df7fc740630a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### **Q: `outlet`内で大規模な後処理を行えますか？**"
+      }
+    },
+    {
+      "segment_id": "f4b938fe",
+      "source_content": "You can, but **it’s not the best practice.**:",
+      "source_content_hash": "636ee475ce833378a6daa7ef696131f9a759b5382c4cf99d7d016e27885d5505",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "可能ですが、**ベストプラクティスではありません**:"
+      }
+    },
+    {
+      "segment_id": "2fe397d0",
+      "source_content": "- **Filters** are designed to make lightweight changes or apply logging.\n- If heavy modifications are required, consider a **Pipe Function** instead.",
+      "source_content_hash": "298432926b021c5968832aec7d1e38fe1c867c28244e1fa047f05aab867e2d2d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **フィルター**は軽量な変更やロギング適用を目的に設計されています\n- 大規模な変更が必要な場合は、代わりに**パイプ関数**の使用を検討してください"
+      }
+    },
+    {
+      "segment_id": "41717948",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "a075432c",
+      "source_content": "## 🎉 Recap: Why Build Filter Functions?",
+      "source_content_hash": "6052fcae3220d67f24f26fb92d919743d950136e4d0ecdd70dd331a2de88ddd1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🎉 フィルター機能のまとめ: なぜ構築するのか？"
+      }
+    },
+    {
+      "segment_id": "5014d30c",
+      "source_content": "By now, you’ve learned:",
+      "source_content_hash": "677d029ead0b1fbcf398f8fb380c83e487778e7bb858df6c7a8d0eaa1d493e8b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これまでに学んだこと:"
+      }
+    },
+    {
+      "segment_id": "941578d7",
+      "source_content": "1. **Inlet** manipulates **user inputs** (pre-processing).\n2. **Stream** intercepts and modifies **streamed model outputs** (real-time).\n3. **Outlet** tweaks **AI outputs** (post-processing).\n4. Filters are best for lightweight, real-time alterations to the data flow.\n5. With **Valves**, you empower users to configure Filters dynamically for tailored behavior.",
+      "source_content_hash": "5b7c4d100df592af8b4027b5310c7d8cf444de5e4289d412a2e78c0f466ea5b8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Inlet** は **ユーザー入力** を操作します（前処理）。\n2. **Stream** は **ストリーミングされるモデル出力** をインターセプトして変更します（リアルタイム）。\n3. **Outlet** は **AI出力** を調整します（後処理）。\n4. フィルターは、データフローに対する軽量でリアルタイムな変更に最適です。\n5. **Valves** を使用すると、ユーザーがフィルターを動的に設定してカスタム動作を実現できます。"
+      }
+    },
+    {
+      "segment_id": "ba985650",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "aa705b4d",
+      "source_content": "🚀 **Your Turn**: Start experimenting! What small tweak or context addition could elevate your Sage WebUI experience? Filters are fun to build, flexible to use, and can take your models to the next level!",
+      "source_content_hash": "b5f260a0692e2e18f1b0824c21503cf678e80662cfd660a724c2131588d63984",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🚀 **あなたの番です**: 実験を始めましょう！ Sage WebUIの体験を向上させるための小さな調整やコンテキストの追加は何でしょうか？ フィルターは構築が楽しく、柔軟に使用でき、モデルを次のレベルに引き上げることができます！"
+      }
+    },
+    {
+      "segment_id": "f0db2ff1",
+      "source_content": "Happy coding! ✨",
+      "source_content_hash": "a6aad9ec3455697028d256705bb6b6a2407b65238539ad684c2d45cdf421cf0d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Happy coding! ✨"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/functions/filter.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.785847+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "bafae3657d90c307337ffd89c2a0c3bd438543dbbe718ecdb9d418d5e8bbed55"
+  }
+}

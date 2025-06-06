@@ -1,0 +1,382 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/index.mdx",
+  "source_file_content_hash": "b1e34da32ab9e45d596311dd54a2b14df62c2e251ae75211cbde7959bc809481",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\ntitle: \"🛠️ Tools & Functions\"\n---",
+      "source_content_hash": "603b159b492bd1d96d227723aa43a27888027d80316a6456bc9d2c3005e66690",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 🛠️ Tools & Functions",
+      "source_content_hash": "601b6fb1aafd37eb006f63c30feae5d6688d7d339a8f3f428837d183e33fbcad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🛠️ ツールと機能"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Imagine you've just stumbled upon Sage WebUI, or maybe you're already using it, but you're a bit lost with all the talk about \"Tools\", \"Functions\", and \"Pipelines\". Everything sounds like some mysterious tech jargon, right? No worries! Let's break it down piece by piece, super clearly, step by step. By the end of this, you'll have a solid understanding of what these terms mean, how they work, and why know it's not as complicated as it seems.",
+      "source_content_hash": "f08e591aa2ab1366ed6059779a76320c328054ee51c45a0ca7d82744a28148ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIを初めて使う方、あるいは既に利用している方でも、「ツール」「機能」「パイプライン」といった用語に戸惑っているかもしれません。これらは一見すると難解な技術用語のように聞こえますが、心配はいりません。ここでは一つひとつを分かりやすく、段階的に解説します。読み終わる頃には、これらの用語の意味や仕組み、そしてそれらが思ったほど複雑ではないことが理解できるでしょう。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## TL;DR",
+      "source_content_hash": "a40384f33396deec68bb2c77176fca4e3e2279a440549da0486d381022825bc6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "143e51c1",
+      "source_content": "- **Tools** extend the abilities of AIs, allowing them to collect real-world, real-time data like weather, stock prices, etc.\n- **Functions** extend the capabilities of the Sage WebUI itself, enabling you to add custom AI model support or improve usability (like creating custom buttons or filters).\n- **Pipelines** are more for advanced users who want to transform Sage WebUI features into API-compatible workflows—mainly for offloading heavy processing.",
+      "source_content_hash": "5976efee4ff5ee78620d268c46fecf6fa8f217e2bb06959d8c024722e30af055",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ツール**：AIの能力を拡張し、天気や株価など現実世界のリアルタイムデータを収集できるようにします。\n- **機能**：Sage WebUI自体の能力を拡張し、カスタムAIモデルの追加やユーザビリティの向上（カスタムボタンやフィルターの作成など）を可能にします。\n- **パイプライン**：高度なユーザー向けで、Sage WebUIの機能をAPI互換のワークフローに変換するためのものです。主に重い処理を別のマシンにオフロードする場合に使用します。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Getting started with Tools and Functions is easy because everything’s already built into the core system! You just **click a button** and **import these features directly from the community**, so there’s no coding or deep technical work required.",
+      "source_content_hash": "83db15de03ca63cc649565e149857f2554e0359b2a026ccc6d6ba10d5fe2f8ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールと機能の利用は簡単です。コアシステムに既に組み込まれており、**ボタンをクリック**して**コミュニティから直接インポート**するだけです。コーディングや深い技術的知識は不要です。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## What are \"Tools\" and \"Functions\"?",
+      "source_content_hash": "79ca003f5417429cfd815c68d9891ab2fa2c5171a5fec7885a0980ac964422eb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 「ツール」と「機能」とは？"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Let's start by thinking of **Sage WebUI** as a \"base\" software that can do many tasks related to using Large Language Models (LLMs). But sometimes, you need extra features or abilities that don't come *out of the box*—this is where **tools** and **functions** come into play.",
+      "source_content_hash": "0f2db2eb9b5d69095e37aa602d8a9032a2b4b64f800ada7dd9292a94d6fcf2e0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "まず、**Sage WebUI**を「ベース」ソフトウェアと考えてみましょう。これは大規模言語モデル（LLM）を使用するための多くのタスクを実行できます。しかし、時には**標準では提供されていない**追加機能や能力が必要になることがあります。ここで**ツール**と**機能**が活躍します。"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### Tools",
+      "source_content_hash": "72ee1234c12b966a84ae4aba6942ee92ce38a6dfb2c69d5850fd9e072ec06216",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ツール"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "**Tools** are an exciting feature because they allow LLMs to do more than just process text. They provide **external abilities** that LLMs wouldn't otherwise have on their own.",
+      "source_content_hash": "1e159aae75f4c1573448b9433eec7fb503481447cfdbf7b7e61248a35e3169f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**ツール**は、LLMがテキスト処理以上のことを可能にするエキサイティングな機能です。LLM単体では持たない**外部能力**を提供します。"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "#### Example of a Tool:",
+      "source_content_hash": "6eef8cd2a15201eaab5d38ed3feb7de3fb3c350bcfe24f52a65379494530815a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ツールの例："
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Imagine you're chatting with an LLM and you want it to give you the latest weather update or stock prices in real time. Normally, the LLM can't do that because it's just working on pre-trained knowledge. This is where **tools** come in!",
+      "source_content_hash": "c37336bf14b40da91e98bfb18df1964ecf8545a32e4b4220fbee299482a90e3a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LLMとチャットしている際、最新の天気予報や株価をリアルタイムで知りたいとします。通常、LLMは事前に学習した知識しか使えないため、これらを取得できません。ここで**ツール**が役立ちます！"
+      }
+    },
+    {
+      "segment_id": "5da9e02b",
+      "source_content": "- **Tools are like plugins** that the LLM can use to gather **real-world, real-time data**. So, with a \"weather tool\" enabled, the model can go out on the internet, gather live weather data, and display it in your conversation.",
+      "source_content_hash": "ebbb7da32fe4f05c58f030400ea6ce27185112bcf0fee086dd846c5083b258bd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ツールはプラグインのようなもの**で、LLMが**現実世界のリアルタイムデータ**を収集するために使用します。例えば「天気ツール」を有効にすると、モデルはインターネットからライブの天気データを取得し、会話中に表示できます。"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Tools are essentially **abilities** you’re giving your AI to help it interact with the outside world. By adding these, the LLM can \"grab\" useful information or perform specialized tasks based on the context of the conversation.",
+      "source_content_hash": "7782c4038403df04d9bfc966b4ceb06747d0ec374e655b731b8d9c3045e44d03",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールは本質的に、AIに外部世界とやり取りするための**能力**を与えるものです。これらを追加することで、LLMは会話の文脈に基づいて有用な情報を「取得」したり、専門的なタスクを実行したりできます。"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "#### Examples of Tools (extending LLM’s abilities):",
+      "source_content_hash": "f58d3b99b8dd8779492f6a7b5256464f88e2912b70d2adccc8bc2dc2e24270d6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ツールの例（LLMの能力拡張）："
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "1. **Real-time weather predictions** 🛰️.\n2. **Stock price retrievers** 📈.\n3. **Flight tracking information** ✈️.",
+      "source_content_hash": "766beba5728ed859ed24a9f4f48a94be0a97ed5f6dc2ff5ef6d2b9bed9a2cc41",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **リアルタイム天気予報** 🛰️\n2. **株価取得** 📈\n3. **フライト追跡情報** ✈️"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "### Functions",
+      "source_content_hash": "5ee4ba619c6e69fc88fa69197f3043a8cd8bb4ec942b26bdf2fdf3c78d52349c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 機能"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "While **tools** are used by the AI during a conversation, **functions** help extend or customize the capabilities of Sage WebUI itself. Think of tools as extra ingredients. Functions , on the other hand, are like the cooking techniques you use to combine them, shape them, or taste. Just as cooking is about mastering procedures, functions do the same for Sage WebUI.",
+      "source_content_hash": "9e50ab8dce6b07afb863dde2b2a69b65a395199258428473f8a0e993d375a060",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**ツール**が会話中にAIによって使用されるのに対し、**機能**はSage WebUI自体の能力を拡張またはカスタマイズします。ツールが追加の材料だとすると、機能はそれらを組み合わせたり、形作ったり、味わったりする調理技術のようなものです。料理が手順の習得に関わるように、機能はSage WebUIに対して同じことを行います。"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "#### Let's break that down:",
+      "source_content_hash": "227cc26f76aba92324d1b23cdc2fceb74ec0157d1f12f2c9f945f22f32892d7b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 詳しく説明すると："
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Add new features within Sage WebUI, such as improved AI models, custom buttons, or enhanced filtering capabilities.\nTweak and customize the platform's interface , behavior , and logic , making it more suitable to your needs.",
+      "source_content_hash": "030a97635d9e7b50cc49a32b205f5d31e9132b667d6657dcea64bd1d03064148",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUI内に新機能を追加します。例えば、改良されたAIモデル、カスタムボタン、強化されたフィルタリング機能などです。\nプラットフォームのインターフェース、動作、ロジックを調整・カスタマイズし、ニーズに合わせて最適化します。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Consider these examples:",
+      "source_content_hash": "4a2c3f39b1569b424096e615c98a11d946e070019fa547ca7a40af5a6e9144b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "具体的な例を挙げます："
+      }
+    },
+    {
+      "segment_id": "40251870",
+      "source_content": "- Creating a custom toolbar button for frequent commands.\n- Developing a more effective filter to block spammy messages.",
+      "source_content_hash": "482c99fd08c1618742ae7c208ef1b1b6bfa24d725140df5bb125df06a199620d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 頻繁に使うコマンド用のカスタムツールバーボタンを作成する。\n- スパムメッセージをブロックする効果的なフィルターを開発する。"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "These capabilities come with functions , giving you the ability to shape Sage WebUI to your requirements.",
+      "source_content_hash": "1cca44b869356f7157072cd6804d0192dee9dea10cbd8f9c2834ea260aee3295",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの能力は機能によって提供され、Sage WebUIを自分の要件に合わせて形作ることができます。"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### Summary of Differences:",
+      "source_content_hash": "128f97430921910f90c192450cde078f4148abf90b6d30ffd06dc3f0ec2680b4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 違いのまとめ："
+      }
+    },
+    {
+      "segment_id": "36ab8340",
+      "source_content": "- **Tools** are things that allow AIs to **do more things** outside their default abilities (such as checking the weather or doing custom tasks with on external data).\n- **Functions** help the WebUI itself **do more things**, like adding new AI models or creating smarter ways to filter data.",
+      "source_content_hash": "d9a8b4dc168508d1b7e9e549e1cdb1066f0ebe2b57007b9a2c1f906757cef4e0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ツール** は、AIがデフォルトの能力を超えて**より多くのことを行える**ようにするものです（例えば天気をチェックしたり、外部データを使ったカスタムタスクを実行したり）。\n- **関数** は、WebUI自体が**より多くのことを行える**ようにするもので、新しいAIモデルの追加やデータをスマートにフィルタリングする方法の作成などが可能です。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Both are designed to be **pluggable**, meaning you can easily import them into your system with just one click from the community! And you can also share them with other Sage users.",
+      "source_content_hash": "9124fafc09f3e97b03a099f3bd4d8f263c115bdaa0dbd88c4698c42d8302b479",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "どちらも**プラグ可能**に設計されており、コミュニティからワンクリックで簡単にシステムにインポートできます！また、他のSageユーザーと共有することも可能です。"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "🎉 You won’t have to spend hours coding or tinkering with them unless you wan to have fun creating new ones.",
+      "source_content_hash": "6686ef36f4b98c492ef29c171374e14b0ac7c09894af2cad2afca29200ae2531",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🎉 新しいツールや関数を作成して楽しむ場合を除き、何時間もコーディングや調整に時間を費やす必要はありません。"
+      }
+    },
+    {
+      "segment_id": "c315c636",
+      "source_content": "## What are Pipelines?",
+      "source_content_hash": "53baf7efbd3707c30350ee23ba6fa41f9aaebd066913395e05c10bf536152bcc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## パイプラインとは？"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "And then, we have **Pipelines**… Here’s where things start to sound pretty technical—but don’t despair.",
+      "source_content_hash": "fb62a253e56484d59112be74ef4477fa19805aa8b41d0837c6f54f6bb7064bc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "そして、**パイプライン**があります…ここから少し技術的な話になりますが、心配はいりません。"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "**Pipelines** are part of an Sage WebUI initiative focused on making every piece of the WebUI **inter-operable with OpenAI’s API system**. Essentially, they extend what both **Tools** and **Functions** can already do, but now with even more flexibility. They allow you to turn features into OpenAI API-compatible formats. 🧠",
+      "source_content_hash": "5fc511f3f762ce9b11fe80f7b30eedc23d056c92043662018214fbfd7423662c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**パイプライン**は、Sage WebUIのすべての機能を**OpenAIのAPIシステムと相互運用可能**にするための取り組みの一部です。基本的に、**ツール**と**関数**が既に行えることをさらに柔軟に拡張し、機能をOpenAI API互換の形式に変換できます。🧠"
+      }
+    },
+    {
+      "segment_id": "ee8401db",
+      "source_content": "### But here’s the thing…",
+      "source_content_hash": "675de45d99c4a843d8abf1b1cbbee67f3c19e40bfd35ac71a1c6c1d1e4d1322d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ただし、重要な点は…"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "You likely **won't need** pipelines unless you're dealing with super-advanced setups.",
+      "source_content_hash": "74d57cdce5621177141d45bcbbc127866bd0bf8bb78501b13538e1b6fd91a2be",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "非常に高度なセットアップを扱う場合を除き、**パイプラインは必要ない**でしょう。"
+      }
+    },
+    {
+      "segment_id": "c7436e69",
+      "source_content": "- **Who are pipelines for?** Typically, **experts** or people running more complicated use cases.\n- **When do you need them?** If you're trying to offload processing from your primary Sage WebUI instance to a different machine (so you don’t overload your primary system).",
+      "source_content_hash": "ce712a2e350570d9e07e19402d0fa443c3677d029b80222bd62f8d97efc0fc44",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **パイプラインは誰向け？** 一般的に、**エキスパート**やより複雑なユースケースを実行する人向けです。\n- **いつ必要？** プライマリSage WebUIインスタンスから別のマシンに処理をオフロードしたい場合（プライマリシステムに過負荷をかけないため）。"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "In most cases, as a beginner or even an intermediate user, you won’t have to worry about pipelines. Just focus on enjoying the benefits that **tools** and **functions** bring to your Sage WebUI experience!",
+      "source_content_hash": "9261dea473f93f55e7bb41d37e20464347d4a9cb61004bc52bf8f62e6909ee38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "初心者や中級ユーザーの場合、ほとんどのケースでパイプラインを気にする必要はありません。**ツール**と**関数**がSage WebUIにもたらす利点を楽しむことに集中しましょう！"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "## Want to Try? 🚀",
+      "source_content_hash": "9412665e3bd582d95e71d626ab978d73887e664b094592aa2c651976246f5788",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 試してみたいですか？🚀"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Jump into Sage WebUI, head over to the community section, and try importing a tool like **weather updates** or maybe adding a new feature to the toolbar with a function. Exploring these tools will show you how powerful and flexible Sage WebUI can be!",
+      "source_content_hash": "ae052477b1c56589f2c64ce4e07d30cbe44af8e77e3c5551ba507b26be992069",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIに飛び込んで、コミュニティセクションに移動し、**天気更新**のようなツールをインポートしたり、関数を使ってツールバーに新しい機能を追加してみてください。これらのツールを探索することで、Sage WebUIがいかに強力で柔軟かを実感できるでしょう！"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "🌟 There's always more to learn, so stay curious and keep experimenting!",
+      "source_content_hash": "7c2276a1f15fbb33e0b0792f9053392069ef83c277036441d39278d6e4e3b524",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🌟 学ぶことは常にありますので、好奇心を持ち続け、実験を続けましょう！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.799814+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b1e34da32ab9e45d596311dd54a2b14df62c2e251ae75211cbde7959bc809481"
+  }
+}

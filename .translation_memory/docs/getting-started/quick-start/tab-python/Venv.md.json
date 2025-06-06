@@ -1,0 +1,52 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-python/Venv.md",
+  "source_file_content_hash": "3c67792273e236edb6cab8a483ada7103c8cf28ff42a0594cec0501ff1e85d67",
+  "segments": [
+    {
+      "segment_id": "d05a127e",
+      "source_content": "# Using Virtual Environments",
+      "source_content_hash": "0f727f4bf0abb34abdb720c8d83ec309cf1071521f43215b44218f8ec4e95a0a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 仮想環境の使用"
+      }
+    },
+    {
+      "segment_id": "e9fca2db",
+      "source_content": "Create isolated Python environments using `venv`.",
+      "source_content_hash": "152e445e54cb48637e9cee828f451661079ea08ec8240ccc2d7eb1239388a4ad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`venv`を使用して隔離されたPython環境を作成します。"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Steps",
+      "source_content_hash": "04e379c6932bff1c589362d6982930b2c138dcfe9fe69c56c9c028b070168dc3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 手順"
+      }
+    },
+    {
+      "segment_id": "df80d009",
+      "source_content": "1. **Create a Virtual Environment:**\n\n   ```bash\n   python3 -m venv venv\n   ```\n\n2. **Activate the Virtual Environment:**\n\n   - On Linux/macOS:\n\n     ```bash\n     source venv/bin/activate\n     ```\n\n   - On Windows:\n\n     ```bash\n     venv\\Scripts\\activate\n     ```\n\n3. **Install Sage WebUI:**\n\n   ```bash\n   pip install sage-open-webui\n   ```\n\n4. **Start the Server:**\n\n   ```bash\n   sage-open-webui serve\n   ```",
+      "source_content_hash": "764a969f06975f53be6ce44238ed833728b36428e14b9c89919693606b81b0bd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **仮想環境の作成:**\n\n   ```bash\n   python3 -m venv venv\n   ```\n\n2. **仮想環境の有効化:**\n\n   - Linux/macOSの場合:\n\n     ```bash\n     source venv/bin/activate\n     ```\n\n   - Windowsの場合:\n\n     ```bash\n     venv\\Scripts\\activate\n     ```\n\n3. **Sage WebUIのインストール:**\n\n   ```bash\n   pip install sage-open-webui\n   ```\n\n4. **サーバーの起動:**\n\n   ```bash\n   sage-open-webui serve\n   ```"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-python/Venv.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.784293+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "3c67792273e236edb6cab8a483ada7103c8cf28ff42a0594cec0501ff1e85d67"
+  }
+}

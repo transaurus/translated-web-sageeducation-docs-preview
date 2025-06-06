@@ -1,0 +1,212 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/webhooks.md",
+  "source_file_content_hash": "8fe77b80242c05c8b20db6e84325a848c0a926a662136ae4d8f478e054811b84",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\r\nsidebar_position: 17\r\ntitle: \"🪝 Webhook Integrations\"\r\n---",
+      "source_content_hash": "ec7f2d41098b6a0ff08ef91d6fc67d191bc64a4131267ad835476c496358558e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "Overview\r\n--------",
+      "source_content_hash": "24b4b6d5d3222e48eaeda8c61c71e0be58f53c03f66a14c5c96c23bcda5269c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "概要\n--------"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Sage WebUI provides a webhook feature that allows you to receive notifications automatically whenever new users sign up to your instance. This is done by providing a webhook URL to Sage WebUI, which will then send notifications to that URL when a new user account is created.",
+      "source_content_hash": "eff17c9655281f195461a25c72b2758fca77ca7c0135815e2369d279fb8c63d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、新しいユーザーがインスタンスにサインアップするたびに自動的に通知を受け取ることができるWebhook機能を提供します。これは、Sage WebUIにWebhook URLを提供することで実現され、新しいユーザーアカウントが作成されるとそのURLに通知が送信されます。"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "Configuring Webhooks in Sage WebUI\r\n---------------------------------",
+      "source_content_hash": "bf333134ed45f4ee6d41aefda32021c514c4793d2ef09917c09ceaf7b654f384",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでのWebhook設定\n---------------------------------"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "You will need to obtain a webhook URL from an external service that supports webhooks, such as a Discord channel or a Slack workspace. This URL will be used to receive notifications from Sage WebUI.",
+      "source_content_hash": "c63d9469ddcb6805096b510195d8984fc1336c3951a788cd446d2530b5f23515",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "DiscordチャンネルやSlackワークスペースなど、Webhookをサポートする外部サービスからWebhook URLを取得する必要があります。このURLは、Sage WebUIからの通知を受け取るために使用されます。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "To configure webhooks in Sage WebUI, you have two options:",
+      "source_content_hash": "cbdb33da25461b5ab4d90c9ac709d8e17e199e4f73398700d598bf9a78b934d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでWebhookを設定するには、次の2つの方法があります："
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "### Option 1: Configure through the Admin Interface",
+      "source_content_hash": "f7abd634a34d54a94c630c432dc031d398467c241da569eeb8fbe26918802da8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 方法1: 管理インターフェースを通じて設定"
+      }
+    },
+    {
+      "segment_id": "3b695c37",
+      "source_content": "1. Log in to your Sage WebUI instance as an administrator.\r\n2. Navigate to the `Admin Panel`.\r\n3. Click the `Settings` tab located at the top.\r\n4. From there, navigate to the `General` sectionn of the setting in the admin panel.\r\n5. Locate the `Webhook URL` field and enter the webhook URL.\r\n6. Save the changes.",
+      "source_content_hash": "d3439eece43d1363b45fc1c512fddd7e26d249d1b2d9b28f3daa804a784aca9c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIインスタンスに管理者としてログインします。\r\n2. `管理パネル`に移動します。\r\n3. 上部にある`設定`タブをクリックします。\r\n4. そこから、管理パネルの設定の`一般`セクションに移動します。\r\n5. `Webhook URL`フィールドを見つけて、Webhook URLを入力します。\r\n6. 変更を保存します。"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "### Option 2: Configure through Environment Variables",
+      "source_content_hash": "b48a309583d0b83523d844dc457798528fc819be4c1a2ccba1f61ac442ba4718",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 方法2: 環境変数を通じて設定"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Alternatively, you can configure the webhook URL by setting the `WEBHOOK_URL` environment variable. For more information on environment variables in Sage WebUI, see [Environment Variable Configuration](/getting-started/env-configuration/#webhook_url).",
+      "source_content_hash": "a0af6e40fa8c8e2ba7ab933f04b0b6baba6dbf13a636891973b1e983a1f4b100",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "または、`WEBHOOK_URL`環境変数を設定することでWebhook URLを設定することもできます。Sage WebUIの環境変数に関する詳細は、[環境変数設定](/getting-started/env-configuration/#webhook_url)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "### Step 3: Verify the Webhook",
+      "source_content_hash": "d604fc165b6340825f4d18cff4f90c6fb110d20c60dd229c1db4aac1012ff870",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ3: Webhookを検証"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "To verify that the webhook is working correctly, create a new user account in Sage WebUI. If the webhook is configured correctly, you should receive a notification at the specified webhook URL.",
+      "source_content_hash": "3b3c7251b39321d3170509d56bfc70b3655a7efe198ea5ab7a37448bddcc6562",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Webhookが正しく動作していることを確認するには、Sage WebUIで新しいユーザーアカウントを作成します。Webhookが正しく設定されていれば、指定したWebhook URLに通知が届くはずです。"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "Webhook Payload Format\r\n----------------------",
+      "source_content_hash": "707621f4a94283764f0cdb3d4d832a5287844f6bcf433c90d238cf14ab3bf4b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "Webhookペイロード形式\n----------------------"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "The webhook payload sent by Sage WebUI is in plain text and contains a simple notification message about the new user account. The payload format is as follows:",
+      "source_content_hash": "69b9014a27744c28e8ce6f8cf1377201528a4f40591f8742523a842ed7a94167",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIから送信されるWebhookペイロードはプレーンテキスト形式で、新しいユーザーアカウントに関する簡単な通知メッセージが含まれています。ペイロードの形式は次のとおりです："
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```\r\nNew user signed up: <username>\r\n```",
+      "source_content_hash": "ae16b42aa2389a0b95d21a752ca9e68ce62d758b7d6a83930b21252a8e459978",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "For example, if a user named \"Tim\" signs up, the payload sent would be:",
+      "source_content_hash": "c734c0e2d7e363df94a0fbaa4af90587882f5338460f8e875d0b0e19133eff92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "例えば、\"Tim\"という名前のユーザーがサインアップした場合、送信されるペイロードは次のようになります："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```\r\nNew user signed up: Tim\r\n```",
+      "source_content_hash": "64ae352f46774a040af23756798567737ea631ebb9cd26864829dbbe809ad084",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "Troubleshooting\r\n--------------",
+      "source_content_hash": "5d3aca15da8caa163e640bfd051e9b6e31a944c49bf8dc0347fcd54416a69da2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "トラブルシューティング\n--------------"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "* Make sure the webhook URL is correct and properly formatted.\r\n* Verify that the webhook service is enabled and configured correctly.\r\n* Check the Sage WebUI logs for any errors related to the webhook.\r\n* Verify the connection hasn't been interrupted or blocked by a firewall or proxy.\r\n* The webhook server could be temporarily unavailable or experiencing high latency.\r\n* If provided through the webhook service, verify if the Webhook API key is invalid, expired, or revoked.",
+      "source_content_hash": "30cb8b633b9d5ae5ca60c463cff84b163c76e3149f8770d250be64b8ee39bed4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Webhook URLが正しく、適切にフォーマットされていることを確認してください。\r\n* Webhookサービスが有効かつ正しく設定されていることを確認してください。\r\n* Sage WebUIのログで、Webhookに関連するエラーがないか確認してください。\r\n* 接続がファイアウォールやプロキシによって中断またはブロックされていないことを確認してください。\r\n* Webhookサーバーが一時的に利用不可になっているか、高遅延が発生している可能性があります。\r\n* Webhookサービスから提供されている場合、Webhook APIキーが無効、期限切れ、または取り消されていないか確認してください。"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "Note: The webhook feature in Sage WebUI is still evolving, and we plan to add more features and event types in the future.",
+      "source_content_hash": "94afd48f506ff70d929d5ae61b6f93186c9f4507ee1d525d34ed37aab3ad9f40",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注: Sage WebUIのWebhook機能はまだ進化中であり、将来的にはより多くの機能とイベントタイプを追加する予定です。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/webhooks.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.804611+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "8fe77b80242c05c8b20db6e84325a848c0a926a662136ae4d8f478e054811b84"
+  }
+}

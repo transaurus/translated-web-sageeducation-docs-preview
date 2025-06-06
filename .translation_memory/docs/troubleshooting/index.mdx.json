@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/troubleshooting/index.mdx",
+  "source_file_content_hash": "4a8cce37e3a354da4c05e6043175d9ac78f6bf96c03e2ac77e88cb96bbabb35c",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 600\ntitle: \"🛠️ Troubleshooting\"\n---",
+      "source_content_hash": "62944c34df5ba838e279f897505520dbdf83a9e0442ce2c5076ef2ae1cbe6e2d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "## 🌟 General Troubleshooting Tips",
+      "source_content_hash": "1009a2255ff2891bcd5dbd045715f64d05e00c9aef29af9daba4cea1895a1b3c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🌟 一般的なトラブルシューティングのヒント"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Encountering issues? Don't worry, we're here to help! 😊 Start with this important step:",
+      "source_content_hash": "b9fcd908acd63ddcef84f52ab5f30645159c3895dd51b86a4a1400b19c646048",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "問題が発生していますか？心配ありません、私たちがサポートします！😊 まずはこの重要なステップから始めましょう："
+      }
+    },
+    {
+      "segment_id": "be33979e",
+      "source_content": "- 🔄 Make sure you're using the **latest version** of the software.",
+      "source_content_hash": "6797aaf32f0fa88df5f4988e2f06ff05a3a298dd536a782bcc270325f94ee9f9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🔄 ソフトウェアの**最新バージョン**を使用していることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "With this project constantly evolving, updates and fixes are regularly added. Keeping your software up-to-date is crucial to take advantage of all the enhancements and fixes, ensuring the best possible experience. 🚀",
+      "source_content_hash": "04835e81335e7250aab4de2f3387214b310505b60653173770ca1323277a170e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このプロジェクトは常に進化しており、更新や修正が定期的に追加されています。ソフトウェアを最新の状態に保つことは、すべての機能強化や修正を活用し、最高の体験を確保するために不可欠です。🚀"
+      }
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "### 🤝 Community Support",
+      "source_content_hash": "7678a731d41225cc53e473b4b2ab398ce1a68afe14fbb33600f945af0def1bfb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🤝 コミュニティサポート"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "This project thrives on community spirit and passion. If you still face problems after updating, we warmly invite you to join our vibrant community on [Discord](https://discord.com/invite/BnZs8Yew). There, you can share your experiences, find solutions, and connect with fellow enthusiasts who might be navigating similar challenges. Engaging with our community doesn't just help solve your problems; it strengthens the entire network of support, so we all grow together. 🌱",
+      "source_content_hash": "6bcae44ef3a02211343d419e36bccd8f3fccb445681cc4f5cf34db3d20ad25dd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このプロジェクトはコミュニティの精神と情熱によって支えられています。更新後も問題が解決しない場合は、ぜひ私たちの活気ある[Discordコミュニティ](https://discord.com/invite/BnZs8Yew)に参加してください。そこで経験を共有し、解決策を見つけ、同じような課題に直面している仲間とつながることができます。コミュニティとの関わりは、あなたの問題を解決するだけでなく、サポートネットワーク全体を強化し、共に成長する機会となります。🌱"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "🌟 If your issues are pressing and you need a quicker resolution, consider [supporting our project](/sponsorships). Your sponsorship not only fast-tracks your queries in a dedicated sponsor-only channel, but also directly supports the [dedicated maintainer](/mission) who is passionately committed to refining and enhancing this tool for everyone.",
+      "source_content_hash": "8c5133573c98001b1403f914e9b2250c2169b285d1201452677412816b0e2024",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🌟 緊急の問題で迅速な解決が必要な場合は、[プロジェクトのスポンサー](/sponsorships)になることを検討してください。スポンサーになると、専用のスポンサー限定チャンネルで質問が優先的に処理されるだけでなく、このツールの改善と強化に情熱を注ぐ[専任のメンテナー](/mission)を直接サポートすることになります。"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Together, let's harness these opportunities to create the best environment and keep pushing the boundaries of what we can achieve with our project. Thank you from the bottom of our hearts for your understanding, cooperation, and belief in our mission! 🙏",
+      "source_content_hash": "792b9b541a46f02d22fd5f6bdefd1cd34d3961545581a424d8e1099f2f79259a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "一緒に、これらの機会を活用して最高の環境を作り、私たちのプロジェクトで達成できる可能性の限界を押し広げましょう。皆さんの理解、協力、そして私たちのミッションへの信頼に心から感謝します！🙏"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/troubleshooting/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.794781+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "4a8cce37e3a354da4c05e6043175d9ac78f6bf96c03e2ac77e88cb96bbabb35c"
+  }
+}

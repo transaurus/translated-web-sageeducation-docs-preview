@@ -1,0 +1,692 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/migration/index.mdx",
+  "source_file_content_hash": "13dde1adcc623e5e6af80af53419f3ce0f50dcdea02300f8e073d83e59e14225",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\ntitle: \"🚚 Migrating Tools & Functions: 0.4 to 0.5\"\n---",
+      "source_content_hash": "a9a8e8ec06c3edc42394aacce0e4f2c1db91a09ab8b96339a7a4bf08f6d8d55d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 🚚 Migration Guide: Sage WebUI 0.4 to 0.5",
+      "source_content_hash": "0d27b2a32917eb1f91bb771e89be4ac711cfb033454377f1973a2d5b342e3975",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🚚 移行ガイド: Sage WebUI 0.4 から 0.5 へ"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Welcome to the Sage WebUI 0.5 migration guide! If you're working on existing projects or building new ones, this guide will walk you through the key changes from **version 0.4 to 0.5** and provide an easy-to-follow roadmap for upgrading your Functions. Let's make this transition as smooth as possible! 😊",
+      "source_content_hash": "c3b909d4dd10923ce2136fc15b0a253c037f9ca2c25b3ae8c97a78663accb561",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUI 0.5 移行ガイドへようこそ！既存のプロジェクトで作業中または新規プロジェクトを構築中の方へ、このガイドでは **バージョン 0.4 から 0.5 への主要な変更点** を解説し、Functions のアップグレードをスムーズに行うためのロードマップを提供します。この移行をできるだけ簡単に進めましょう！😊"
+      }
+    },
+    {
+      "segment_id": "279b6a65",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## 🧐 What Has Changed and Why?",
+      "source_content_hash": "a52998346ff2c42eb57a30a1571e7c03d266634255b9e473a41deb27dbffdfa1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🧐 変更点とその理由"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "With Sage WebUI 0.5, we’ve overhauled the architecture to make the project **simpler, more unified, and scalable**. Here's the big picture:",
+      "source_content_hash": "67fd7d892a4a58ca3703b2fcdcb43cb6af5956968f3382880a1e529fc2fa588a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUI 0.5 では、プロジェクトを **よりシンプルで統一性がありスケーラブル** にするためにアーキテクチャを刷新しました。以下がその全体像です："
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- **Old Architecture:** 🎯 Previously, Sage WebUI was built on a **sub-app architecture** where each app (e.g., `ollama`, `openai`) was a separate FastAPI application. This caused fragmentation and extra complexity when managing apps.\n- **New Architecture:** 🚀 With version 0.5, we have transitioned to a **single FastAPI app** with multiple **routers**. This means better organization, centralized flow, and reduced redundancy.",
+      "source_content_hash": "8475fd01a13da71b5e8e94d68a37ccd6fd0bea4164326a467a59b4fc1badd202",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **旧アーキテクチャ:** 🎯 以前の Sage WebUI は **サブアプリケーションアーキテクチャ** で構築されており、各アプリ（例: `ollama`, `openai`）が独立した FastAPI アプリケーションでした。これにより、アプリ管理における断片化と余分な複雑さが生じていました。\n- **新アーキテクチャ:** 🚀 バージョン 0.5 では、複数の **ルーター** を持つ **単一の FastAPI アプリ** に移行しました。これにより、より良い組織化、集中化されたフロー、冗長性の削減が実現されます。"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "### Key Changes:",
+      "source_content_hash": "e62cd230ce01dae9aa2d9a1a407d1b95f315d64bd7323541fc28b60519331561",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 主な変更点:"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Here’s an overview of what changed:",
+      "source_content_hash": "6d317dcdd5b09afa5e073040192b5f52731641935b72601af7e8ac1baa3dcf3a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下に変更点の概要を示します："
+      }
+    },
+    {
+      "segment_id": "0787cf7f",
+      "source_content": "1. **Apps have been moved to Routers.**\n   - Previous: `open_webui.apps`\n   - Now: `open_webui.routers`\n\n2. **Main app structure simplified.**\n   - The old `open_webui.apps.webui` has been transformed into `open_webui.main`, making it the central entry point for the project.\n\n3. **Unified API Endpoint**\n   - Sage WebUI 0.5 introduces a **unified function**, `chat_completion`, in `open_webui.main`, replacing separate functions for models like `ollama` and `openai`. This offers a consistent and streamlined API experience. However, the **direct successor** of these individual functions is `generate_chat_completion` from `open_webui.utils.chat`. If you prefer a lightweight POST request without handling additional parsing (e.g., files, tools, or misc), this utility function is likely what you want.",
+      "source_content_hash": "7446425b38496af7ca7dd485d3709225c91084724a79f9cedbf195cc7d583796",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **アプリがルーターに移動しました。**\n   - 以前: `open_webui.apps`\n   - 現在: `open_webui.routers`\n\n2. **メインアプリの構造が簡素化されました。**\n   - 旧 `open_webui.apps.webui` は `open_webui.main` に変わり、プロジェクトの中心的なエントリーポイントとなりました。\n\n3. **統一された API エンドポイント**\n   - Sage WebUI 0.5 では、`ollama` や `openai` のようなモデルごとの個別の関数を置き換える **統一関数** `chat_completion` が `open_webui.main` に導入されました。これにより、一貫性のある合理化された API 体験が提供されます。ただし、これらの個別関数の **直接の後継** は `open_webui.utils.chat` の `generate_chat_completion` です。追加の解析（例: ファイル、ツール、その他）を処理せずに軽量な POST リクエストを希望する場合、このユーティリティ関数が適しています。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "#### Example:",
+      "source_content_hash": "e1c6989dac019282e697a912f62f629d247a0e635d04f08812afcf43f78a5884",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 例:"
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```python\n# Full API flow with parsing (new function):\nfrom open_webui.main import chat_completion\n\n# Lightweight, direct POST request (direct successor):\nfrom open_webui.utils.chat import generate_chat_completion\n```",
+      "source_content_hash": "cc50c4c0b7ca6e541ac3210c7e70cfbf9cd9433ba0ce818d951885d26ec590ab",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Choose the approach that best fits your use case!",
+      "source_content_hash": "12ca8842a32fd172ed0e7e766812da104ca6451ef2bf92f2b078fd7e903c4333",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ユースケースに最適なアプローチを選択してください！"
+      }
+    },
+    {
+      "segment_id": "8612da05",
+      "source_content": "4. **Updated Function Signatures.**\n   - Function signatures now adhere to a new format, requiring a `request` object.\n   - The `request` object can be obtained using the `__request__` parameter in the function signature. Below is an example:",
+      "source_content_hash": "7f00df95ad143b1f365f3962ee3bb9e21371ed52173568443c698cc176ddd4bd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "4. **関数シグネチャが更新されました。**\n   - 関数シグネチャは新しい形式に準拠し、`request` オブジェクトが必要になりました。\n   - `request` オブジェクトは、関数シグネチャ内の `__request__` パラメータを使用して取得できます。以下に例を示します："
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```python\nclass Pipe:\n    def __init__(self):\n        pass\n\n    async def pipe(\n        self,\n        body: dict,\n        __user__: dict,\n        __request__: Request, # New parameter\n    ) -> str:\n        # Write your function here\n```",
+      "source_content_hash": "59f0c7267c64717e0c9dcbce2738535376cf8561d5a313c1b379e76abada750d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "📌 **Why did we make these changes?**",
+      "source_content_hash": "9fb196314852f0d3cc1c1fd12855761be7e1fbc021d693f48488884cae5093ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "📌 **これらの変更を行った理由:**"
+      }
+    },
+    {
+      "segment_id": "3df4f066",
+      "source_content": "- To simplify the codebase, making it easier to extend and maintain.\n- To unify APIs for a more streamlined developer experience.\n- To enhance performance by consolidating redundant elements.",
+      "source_content_hash": "3a5c11b98795b0b494e3012b20148437ce9b0e823fbf08c469c597a694582228",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- コードベースを簡素化し、拡張と保守を容易にするため。\n- API を統一し、開発者体験を合理化するため。\n- 冗長な要素を統合することでパフォーマンスを向上させるため。"
+      }
+    },
+    {
+      "segment_id": "42c293cc",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "## ✅ Step-by-Step Migration Guide",
+      "source_content_hash": "85fc2454ce22456dbcdfe995417d04eae8daa83e673800d5d82d5b95c985f2e2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ✅ ステップバイステップ移行ガイド"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Follow this guide to smoothly update your project.",
+      "source_content_hash": "1acfeff9aae72a551f5840433e97b2d264a73bad4b073812aa4c81fe009dec12",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドに従ってプロジェクトをスムーズに更新してください。"
+      }
+    },
+    {
+      "segment_id": "803be95a",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "d422fb13",
+      "source_content": "### 🔄 1. Shifting from `apps` to `routers`",
+      "source_content_hash": "40655b986bfeaaa30a9f42f605d1c3d96c3e45958afde5c9e95534e2afbe9e34",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🔄 1. `apps` から `routers` への移行"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "All apps have been renamed and relocated under `open_webui.routers`. This affects imports in your codebase.",
+      "source_content_hash": "4200630ddde42fe80a7ec8c1fdc62f0be5a420b4be8e8d6242914637a525edf8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "すべてのアプリは `open_webui.routers` の下に名前が変更され、移動しました。これはコードベース内のインポートに影響します。"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "Quick changes for import paths:",
+      "source_content_hash": "7b6114e5d82bf2b710c8c67545bbff82e6a98b97a3e36604c276bd88e8d90d02",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インポートパスの簡単な変更："
+      }
+    },
+    {
+      "segment_id": "feacddee",
+      "source_content": "| **Old Path**                      | **New Path**                      |\n|-----------------------------------|-----------------------------------|\n| `open_webui.apps.ollama`          | `open_webui.routers.ollama`       |\n| `open_webui.apps.openai`          | `open_webui.routers.openai`       |\n| `open_webui.apps.audio`           | `open_webui.routers.audio`        |\n| `open_webui.apps.retrieval`       | `open_webui.routers.retrieval`    |\n| `open_webui.apps.webui`           | `open_webui.main`                 |",
+      "source_content_hash": "48ce89c943a345e6582b3ff55d6cd3a8a84177f0b15f2f35ee847506d0302331",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_feacddee"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "### 📜 An Important Example",
+      "source_content_hash": "11df7e200f18557386b8754fcda60f414e614482c97f06395f6d12638c7875d4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📜 重要な例"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "To clarify the special case of the main app (`webui`), here’s a simple rule of thumb:",
+      "source_content_hash": "8c92da64cb5e4a6192eed3ccb821d197e4cebc9ccfde63d95ac62417af38c8cf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "メインアプリ (`webui`) の特別なケースを明確にするため、以下に簡単な経験則を示します："
+      }
+    },
+    {
+      "segment_id": "2fc7ec55",
+      "source_content": "- **Was in `webui`?** It’s now in the project’s root or `open_webui.main`.  \n- For example:  \n    - **Before (0.4):**  \n      ```python  \n      from open_webui.apps.webui.models import SomeModel  \n      ```  \n    - **After (0.5):**  \n      ```python  \n      from open_webui.models import SomeModel  \n      ```",
+      "source_content_hash": "a64c4f2706fff497eeab401c4e151bdc714a6edf56086223dc17b5537a7007a2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **`webui` にあったもの？** 現在はプロジェクトのルートまたは `open_webui.main` にあります。  \n- 例:  \n    - **以前 (0.4):**  \n      ```python  \n      from open_webui.apps.webui.models import SomeModel  \n      ```  \n    - **現在 (0.5):**  \n      ```python  \n      from open_webui.models import SomeModel  \n      ```"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "In general, **just replace `open_webui.apps` with `open_webui.routers`—except for `webui`, which is now `open_webui.main`!**",
+      "source_content_hash": "36cbbfdbee77c60397ac3515ce5dfe1a9a203247d4c53819e7030f22b1d045f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "一般的に、**`open_webui.apps` を `open_webui.routers` に置き換えてください。ただし、`webui` は `open_webui.main` に変更されています！**"
+      }
+    },
+    {
+      "segment_id": "05765487",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "1f4b3b94",
+      "source_content": "### 👩‍💻 2. Updating Import Statements",
+      "source_content_hash": "628c8b369afc1a35108d4287f933a90dd5bf5dd814ca2fab8c091637b3be786a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 👩‍💻 2. インポート文の更新"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "Let’s look at what this update looks like in your code:",
+      "source_content_hash": "806c145e8dc6042089334bdcb3b301a91c9ffef4da658edd862e2000f1869b2b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コード上での更新例を見てみましょう："
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "#### Before:",
+      "source_content_hash": "0539c34ea68c09ffca0f46606d863b389bef85883119a94a38906bfc036ad715",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 変更前："
+      }
+    },
+    {
+      "segment_id": "f39e109c",
+      "source_content": "```python\nfrom open_webui.apps.ollama import main as ollama\nfrom open_webui.apps.openai import main as openai\n```",
+      "source_content_hash": "10b8beb050333e8d71a4057c54ccdce3a9a19bd54d287c0345f70d8fe9cf0792",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f39e109c"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "#### After:",
+      "source_content_hash": "b4f097b522964376523da0889b11aed3452c77fac7389c998c8747d6963ae616",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 変更後："
+      }
+    },
+    {
+      "segment_id": "36ae9dc7",
+      "source_content": "```python\n# Separate router imports\nfrom open_webui.routers.ollama import generate_chat_completion\nfrom open_webui.routers.openai import generate_chat_completion\n\n# Or use the unified endpoint\nfrom open_webui.main import chat_completion\n```",
+      "source_content_hash": "59cf69ddc0cec81e7656369eba4b232972b34cec0cbf95e776e32448ac755429",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_36ae9dc7"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "**💡 Pro Tip:** Prioritize the unified endpoint (`chat_completion`) for simplicity and future compatibility.",
+      "source_content_hash": "cad21df9bb2ef23e9f8144b619590d21e3b57661ad4628e8e24424ee671c8e44",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**💡 プロのヒント：** シンプルさと将来の互換性のために、統合エンドポイント（`chat_completion`）を優先的に使用してください。"
+      }
+    },
+    {
+      "segment_id": "4dd6a631",
+      "source_content": "### 📝 **Additional Note: Choosing Between `main.chat_completion` and `utils.chat.generate_chat_completion`**",
+      "source_content_hash": "a930e3b9dea5d0caa1661156b034ca634e356f218b54243038eb427d8e03fbed",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📝 **補足：`main.chat_completion` と `utils.chat.generate_chat_completion` の選択**"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "Depending on your use case, you can choose between:",
+      "source_content_hash": "94e7f9e24cc20dafb5833c380253236faada9df99427f72c983545091de15dce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ユースケースに応じて、以下のいずれかを選択できます："
+      }
+    },
+    {
+      "segment_id": "d30a9380",
+      "source_content": "1. **`open_webui.main.chat_completion`:**\n    - Simulates making a POST request to `/api/chat/completions`.\n    - Processes files, tools, and other miscellaneous tasks.\n    - Best when you want the complete API flow handled automatically.\n\n2. **`open_webui.utils.chat.generate_chat_completion`:**\n    - Directly makes a POST request without handling extra parsing or tasks.\n    - This is the **direct successor** to the previous `main.generate_chat_completions`, `ollama.generate_chat_completion` and `openai.generate_chat_completion` functions in Sage WebUI 0.4.\n    - Best for simplified and more lightweight scenarios.",
+      "source_content_hash": "720be3ed32dc63acd2944b39f4d332bddca36f43d899fc6f998d6273b107264f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **`open_webui.main.chat_completion`:**\n    - `/api/chat/completions` へのPOSTリクエストをシミュレートします。\n    - ファイル、ツール、その他の雑多なタスクを処理します。\n    - 完全なAPIフローを自動的に処理したい場合に最適です。\n\n2. **`open_webui.utils.chat.generate_chat_completion`:**\n    - 追加の解析やタスクを処理せず、直接POSTリクエストを行います。\n    - これは Sage WebUI 0.4 の `main.generate_chat_completions`、`ollama.generate_chat_completion`、`openai.generate_chat_completion` 関数の**直接の後継**です。\n    - 簡素化された軽量なシナリオに最適です。"
+      }
+    },
+    {
+      "segment_id": "0d5321b7",
+      "source_content": "#### Example:",
+      "source_content_hash": "e1c6989dac019282e697a912f62f629d247a0e635d04f08812afcf43f78a5884",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 例："
+      }
+    },
+    {
+      "segment_id": "a6c3f55f",
+      "source_content": "```python\n# Use this for the full API flow with parsing:\nfrom open_webui.main import chat_completion\n\n# Use this for a stripped-down, direct POST request:\nfrom open_webui.utils.chat import generate_chat_completion\n```",
+      "source_content_hash": "56eb65c2040cf540e736fab104adf18272367d661c60c09ac9a964f3d71b634b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a6c3f55f"
+      }
+    },
+    {
+      "segment_id": "d4b679d6",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "55dc794c",
+      "source_content": "### 📋 3. Adapting to Updated Function Signatures",
+      "source_content_hash": "38b4168d6b65b24ef2023299548ed5c78ba1f7c42ef42279741c2575b36ee761",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📋 3. 更新された関数シグネチャへの適応"
+      }
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "We’ve updated the **function signatures** to better fit the new architecture. If you're looking for a direct replacement, start with the lightweight utility function `generate_chat_completion` from `open_webui.utils.chat`. For the full API flow, use the new unified `chat_completion` function in `open_webui.main`.",
+      "source_content_hash": "bd527e9ea54bc00566f938ea2a03f680d76517d46e4b12ade41f45474a75a126",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "新しいアーキテクチャに適合するように**関数シグネチャ**を更新しました。直接の置き換えを探している場合は、軽量なユーティリティ関数 `open_webui.utils.chat.generate_chat_completion` から始めてください。完全なAPIフローには、新しい統合関数 `open_webui.main.chat_completion` を使用してください。"
+      }
+    },
+    {
+      "segment_id": "c6b2ca77",
+      "source_content": "#### Function Signature Changes:",
+      "source_content_hash": "ed23add5949faa31095d39c579aa967585be5fdec52c3f0d56e46e6a7c08e0a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 関数シグネチャの変更："
+      }
+    },
+    {
+      "segment_id": "1603328c",
+      "source_content": "| **Old**                                 | **Direct Successor (New)**             | **Unified Option (New)**               |\n|-----------------------------------------|-----------------------------------------|-----------------------------------------|\n| `openai.generate_chat_completion(form_data: dict, user: UserModel)` | `generate_chat_completion(request: Request, form_data: dict, user: UserModel)` | `chat_completion(request: Request, form_data: dict, user: UserModel)` |",
+      "source_content_hash": "dad23e9295cbf216fee8884dd3ad1767218d8f87bb28d1d8b2f10324c834dd90",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_1603328c"
+      }
+    },
+    {
+      "segment_id": "25215977",
+      "source_content": "- **Direct Successor (`generate_chat_completion`)**: A lightweight, 1:1 replacement for previous `ollama`/`openai` methods.  \n- **Unified Option (`chat_completion`)**: Use this for the complete API flow, including file parsing and additional functionality.",
+      "source_content_hash": "713d140fc5fb7d40ed3db89c4f8373984acda71f0da282752ae5726a69799903",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **直接の後継 (`generate_chat_completion`)**: 以前の `ollama`/`openai` メソッドの軽量な1:1置き換えです。  \n- **統合オプション (`chat_completion`)**: ファイル解析や追加機能を含む完全なAPIフローに使用します。"
+      }
+    },
+    {
+      "segment_id": "08f73f73",
+      "source_content": "#### Example:",
+      "source_content_hash": "e1c6989dac019282e697a912f62f629d247a0e635d04f08812afcf43f78a5884",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 例："
+      }
+    },
+    {
+      "segment_id": "b08ad0b4",
+      "source_content": "If you're using `chat_completion`, here’s how your function should look now:",
+      "source_content_hash": "66de9cdb442d91398ddc1c8e9b885bb78314696be2ea81dd830069231072e1c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`chat_completion` を使用する場合、関数は次のようにする必要があります："
+      }
+    },
+    {
+      "segment_id": "89b740fe",
+      "source_content": "### 🛠️ How to Refactor Your Custom Function",
+      "source_content_hash": "28eda57acf10f3881ce7bfa1709277de0310e0b3aff3b040f239359026bfd532",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🛠️ カスタム関数のリファクタリング方法"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "Let’s rewrite a sample function to match the new structure:",
+      "source_content_hash": "2e164f6f3470a5153e5a0a5190cb9a77c27795e04f55fff1cdf7b135caa21afd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "新しい構造に合わせてサンプル関数を書き直してみましょう："
+      }
+    },
+    {
+      "segment_id": "a49ac2ed",
+      "source_content": "#### Before (0.4):",
+      "source_content_hash": "5cfaf8718054a047455337b62cad3ae084876c7a2d3d39808023ae625610d9d1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 変更前 (0.4)："
+      }
+    },
+    {
+      "segment_id": "5010ec34",
+      "source_content": "```python\nfrom pydantic import BaseModel\nfrom open_webui.apps.ollama import generate_chat_completion\n\nclass User(BaseModel):\n    id: str\n    email: str\n    name: str\n    role: str\n\nclass Pipe:\n    def __init__(self):\n        pass\n\n    async def pipe(self, body: dict, __user__: dict) -> str:\n        # Calls OpenAI endpoint\n        user = User(**__user__)\n        body[\"model\"] = \"llama3.2:latest\"\n        return await ollama.generate_chat_completion(body, user)\n```",
+      "source_content_hash": "d50dd9eaef78fdbcf8e9a3248edff478063d9b518409fcb0b717ac778f9705be",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5010ec34"
+      }
+    },
+    {
+      "segment_id": "dfa23ddf",
+      "source_content": "#### After (0.5):",
+      "source_content_hash": "b4099d298b7b7389d3c07ba19fb00d502295a3c25e22e09263d3dc4dccec2c39",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 変更後 (0.5)："
+      }
+    },
+    {
+      "segment_id": "96831bda",
+      "source_content": "```python\nfrom pydantic import BaseModel\nfrom fastapi import Request\n\nfrom open_webui.utils.chat import generate_chat_completion\n\n\nclass User(BaseModel):\n    id: str\n    email: str\n    name: str\n    role: str\n\n\nclass Pipe:\n    def __init__(self):\n        pass\n\n    async def pipe(\n        self,\n        body: dict,\n        __user__: dict,\n        __request__: Request,\n    ) -> str:\n        # Uses the unified endpoint with updated signature\n        user = User(**__user__)\n        body[\"model\"] = \"llama3.2:latest\"\n        return await generate_chat_completion(__request__, body, user)\n```",
+      "source_content_hash": "efe2154a640c93043840b99d49b6ec76c9f63e0fe9a2526fa3ab081731e224e8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_96831bda"
+      }
+    },
+    {
+      "segment_id": "43662a16",
+      "source_content": "### Important Notes:",
+      "source_content_hash": "f9a737526bc9203f0487cfaea580bcd2c9874cb9c44fddfe6d952ff5bd53c02b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 重要な注意点："
+      }
+    },
+    {
+      "segment_id": "95629132",
+      "source_content": "- You must pass a `Request` object (`__request__`) in the new function signature.\n- Other optional parameters (like `__user__` and `__event_emitter__`) ensure flexibility for more complex use cases.",
+      "source_content_hash": "427eaa767d020bf223f4f92f4ea1f3318f0a0e0818de9105090ddc5a21e6f9d2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 新しい関数シグネチャでは `Request` オブジェクト（`__request__`）を渡す必要があります。\n- その他のオプションパラメータ（`__user__` や `__event_emitter__` など）は、より複雑なユースケースの柔軟性を確保します。"
+      }
+    },
+    {
+      "segment_id": "b19b3a49",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "fbdb880f",
+      "source_content": "### 🌟 4. Recap: Key Concepts in Simple Terms",
+      "source_content_hash": "95ac8b059870c399f545375af0a83d8a7dd3e036752aefe1645612e3b0903b10",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🌟 4. 要約：簡単な言葉でのキーコンセプト"
+      }
+    },
+    {
+      "segment_id": "d3912b2e",
+      "source_content": "Here’s a quick cheat sheet to remember:",
+      "source_content_hash": "511993138e93caa59a275853a2c8d665fa621e64bc95a3de40a978c58f230b43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "簡単なチートシートです："
+      }
+    },
+    {
+      "segment_id": "9ffdd332",
+      "source_content": "- **Apps to Routers:** Update all imports from `open_webui.apps` ➡️ `open_webui.routers`.\n- **Unified Endpoint:** Use `open_webui.main.chat_completion` for simplicity if both `ollama` and `openai` are involved.\n- **Adapt Function Signatures:** Ensure your functions pass the required `request` object.",
+      "source_content_hash": "ee671ea799dd7415be650d3a57ac1b31da27feb6ff158cfeae7c652f538ed1fd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **Apps から Routers へ：** すべてのインポートを `open_webui.apps` ➡️ `open_webui.routers` に更新。\n- **統合エンドポイント：** `ollama` と `openai` の両方が関与する場合は、`open_webui.main.chat_completion` を使用。\n- **関数シグネチャの適応：** 必要な `request` オブジェクトを関数に渡すことを確認。"
+      }
+    },
+    {
+      "segment_id": "1ad62e26",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "61d0a6d1",
+      "source_content": "## 🎉 Hooray! You're Ready!",
+      "source_content_hash": "dd976793d0d42566e31b06b0066284094aba2e07e42626a817f60e68baf0c6e2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🎉 おめでとう！準備完了です！"
+      }
+    },
+    {
+      "segment_id": "face5559",
+      "source_content": "That's it! You've successfully migrated from **Sage WebUI 0.4 to 0.5**. By refactoring your imports, using the unified endpoint, and updating function signatures, you'll be fully equipped to leverage the latest features and improvements in version 0.5.",
+      "source_content_hash": "4e7bbf962cb1778fd7f18ea24bb41ce4eb212396f7d05a5f74cb4049ec6f22bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以上で、**Sage WebUI 0.4から0.5への移行**は完了です。インポートのリファクタリング、統一エンドポイントの使用、関数シグネチャの更新を行うことで、バージョン0.5の最新機能と改善点をフルに活用できるようになります。"
+      }
+    },
+    {
+      "segment_id": "9c66f3e4",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "6dc3e423",
+      "source_content": "💬 **Questions or Feedback?**\nIf you run into any issues or have suggestions, feel free to open a [GitHub issue](https://github.com/Startr/AI-WEB-openwebui) or ask in the community forums!",
+      "source_content_hash": "0418218b2959a93503e15963226fe0d870dab948b0d9246b9865ef191b1fb9c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💬 **質問やフィードバック**\n問題が発生した場合や提案がある場合は、[GitHub issue](https://github.com/Startr/AI-WEB-openwebui)を開くか、コミュニティフォーラムで質問してください！"
+      }
+    },
+    {
+      "segment_id": "b0c30ab4",
+      "source_content": "Happy coding! ✨",
+      "source_content_hash": "a6aad9ec3455697028d256705bb6b6a2407b65238539ad684c2d45cdf421cf0d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Happy coding! ✨"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/migration/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.783930+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "13dde1adcc623e5e6af80af53419f3ce0f50dcdea02300f8e073d83e59e14225"
+  }
+}

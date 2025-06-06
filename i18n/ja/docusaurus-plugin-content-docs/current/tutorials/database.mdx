@@ -1,0 +1,87 @@
+---
+sidebar_position: 310 
+title: "📦 Exporting and Importing Database"
+---
+
+**Sage WebUI**のデータ（チャット履歴、設定など）を別のサーバーに移行したり、バックアップとして保存したりする必要がある場合、データベースをエクスポートおよびインポートすることができます。このガイドでは、Sage WebUIが内部SQLiteデータベース（PostgreSQLではない）を使用していることを前提としています。
+
+以下の手順に従って、データベースを含む`webui.db`ファイルをエクスポートおよびインポートしてください。
+
+---
+
+### データベースのエクスポート
+
+現在のSage WebUIインスタンスからデータベースをエクスポートするには:
+
+1. **`docker cp`を使用してデータベースファイルをコピー**:  
+   `webui.db`ファイルはコンテナ内の`/app/backend/data`ディレクトリにあります。以下のコマンドを実行してローカルマシンにコピーします:  
+   ```bash
+   docker cp sage-open-webui:/app/backend/data/webui.db ./webui.db
+   ```
+
+2. **エクスポートしたファイルを新しいサーバーに転送**:  
+   **FileZilla**やその他のファイル転送ツールを使用して、`webui.db`ファイルを新しいサーバーに移動できます。
+
+   :::info
+   新しいサーバーへのファイル転送には、使いやすさからFileZillaが推奨されます。
+   :::
+
+---
+
+### データベースのインポート
+
+`webui.db`ファイルを新しいサーバーに移動した後、以下の手順に従ってください:
+
+1. **新しいサーバーにSage WebUIをインストールして実行**:  
+   Dockerコンテナを使用してSage WebUIをセットアップし、実行します。[🚀 はじめに](/getting-started)の手順に従ってSage WebUIコンテナをインストールおよび起動してください。起動後、インポート手順を行う前に停止します。
+   ```bash
+   docker stop sage-open-webui
+   ```
+
+2. **`docker cp`を使用してデータベースファイルをコンテナにコピー**:  
+   エクスポートした`webui.db`ファイルが現在の作業ディレクトリにある場合、以下のコマンドでコンテナにコピーします:
+   ```bash
+   docker cp ./webui.db sage-open-webui:/app/backend/data/webui.db
+   ```
+
+3. **Sage WebUIコンテナを再起動**:  
+   コンテナを再起動して、インポートしたデータベースを使用します。
+   ```bash
+   docker start sage-open-webui
+   ```
+
+   これで、新しいサーバーでSage WebUIがインポートされたデータベースで実行されます。
+
+---
+
+### 注意事項
+
+- このエクスポート/インポートプロセスは、**内部SQLiteデータベース（`webui.db`）を使用している場合にのみ機能します**。
+- 外部PostgreSQLデータベースを使用している場合、この方法は適用されません。PostgreSQLの場合は、データベースのバックアップと復元にPostgreSQL固有のツールと手順が必要です。
+
+---
+
+### 重要性
+
+この方法は、以下の場合に特に有用です:
+
+- Sage WebUIのデータを新しいサーバーやマシンに移行する場合。
+- 更新や変更前にデータのバックアップを作成する場合。
+- 同じ設定で複数のサーバーでSage WebUIをテストする場合。
+
+```bash
+# Quick commands summary for export and import
+# Export:
+docker cp sage-open-webui:/app/backend/data/webui.db ./webui.db
+
+# Stop container on the new server:
+docker stop sage-open-webui
+
+# Import:
+docker cp ./webui.db sage-open-webui:/app/backend/data/webui.db
+
+# Start container:
+docker start sage-open-webui
+```
+
+これらの手順に従うことで、Sage WebUIの移行やバックアッププロセスを簡単に管理できます。互換性を確保するため、使用しているデータベース形式に注意してください。

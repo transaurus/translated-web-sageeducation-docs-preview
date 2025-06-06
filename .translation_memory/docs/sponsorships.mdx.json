@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/sponsorships.mdx",
+  "source_file_content_hash": "639a3eb721bc4a914c4268bfabb14d8a03e135b3790b69be205e9a60db12c4c9",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1800\ntitle: \"🌐 Sponsorships\"\n---",
+      "source_content_hash": "b9b5a185bdb23e009373f959a88f7f1e7d08de8e2c57895b350f615305fef12f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/tjbck)",
+      "source_content_hash": "fa65b2e3267409aaf4faf395bfc8bb16bb00e03a4b00306ba46318d30a3ac623",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/tjbck)"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## The Impact of Your Support",
+      "source_content_hash": "43c6cd172242dbd6e9577ff631d6184569d8ea5c8e545eaad1bd777f8aa5810a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## あなたのサポートが与える影響"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "As Sage WebUI grows, the tasks and challenges we face expand as well. [Tim](/team) is at the heart of this project, tirelessly working to ensure all aspects of Sage WebUI not only function but thrive. Yet, imagine the additional improvements we could make with a little extra support.",
+      "source_content_hash": "225cdfd36c8e9c3211ab39f60109f84adddf643baf6a0d026363819961746005",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIが成長するにつれ、私たちが直面する課題も拡大しています。[Tim](/team)はこのプロジェクトの中心として、Sage WebUIのあらゆる側面が機能するだけでなく、繁栄するよう尽力しています。しかし、少しの追加サポートがあれば、どれほど多くの改善が可能か想像してみてください。"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Consider the practical benefits your organization gains from Sage WebUI. A modest contribution from users like you allows us to focus more on refining features and less on managing resources. Each helping hand makes a meaningful difference, aligning our daily realities with our ambitious goals.",
+      "source_content_hash": "705a8a468c877e0dd0181f428a00e7a7a51ab50e072089b077094ad2a52cd5f0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIから得られる組織的なメリットを考えてみてください。あなたのようなユーザーからのささやかな貢献が、リソース管理ではなく機能の洗練に集中することを可能にします。それぞれの支援が、私たちの日々の現実と野心的な目標を結びつける意味ある違いをもたらします。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "We're incredibly thankful to our current sponsors. Your commitment has brought us closer to realizing the full potential of Sage WebUI. Every contribution, big or small, strengthens the project and lays the groundwork for its continued success.",
+      "source_content_hash": "dc4c4f08fc620149252ef4e6849c7decbdfd1d8ff3d4cd4bda0abaddd7d0b7c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "現在のスポンサーの皆様には心から感謝しています。あなたの献身が、Sage WebUIの可能性を最大限に引き出すことに近づけています。大小問わず、すべての貢献がプロジェクトを強化し、その継続的な成功の基盤を築きます。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Thank you for considering joining us in this practical yet visionary endeavor. Here, every bit of support is not only appreciated—it’s crucial for keeping our project vibrant, dynamic, and responsive to users’ needs.",
+      "source_content_hash": "bc23c89b9273213be9436c0c48e94ca438a00230d4406042f0b8623939014621",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この現実的でありながらも先見性のある取り組みに参加することを検討いただき、ありがとうございます。ここでは、あらゆるサポートが感謝されるだけでなく、プロジェクトを活気に満ち、ダイナミックで、ユーザーのニーズに応えるために不可欠なものです。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Sponsorship Policies",
+      "source_content_hash": "a360f22cf037b4dc66de83c7e09ddb60d79df3c3b3705f434c9d6662a38f7a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## スポンサーシップポリシー"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "At Sage WebUI, our community always comes first. Sponsors are welcome, but they must respect our community-first approach. This philosophy guides all our sponsorship policies.",
+      "source_content_hash": "dc6f6dd5f8c1d6b372c028b09827c029a8413518ee8bdbdaafbb47c215021c45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでは、常にコミュニティを最優先に考えています。スポンサーは歓迎しますが、私たちのコミュニティファーストのアプローチを尊重する必要があります。この理念がすべてのスポンサーシップポリシーを導きます。"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### Hard Rules",
+      "source_content_hash": "1842299dafa48f9d74c8d659a43c9f6e59a3e35da60501fd93535a64a762f126",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 厳格なルール"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "These are the non-negotiable rules for sponsors:",
+      "source_content_hash": "f5bec8c5597e189501596d95b5742a5dec22967b17d041c2050cd584790ea758",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "スポンサーにとって交渉の余地のないルールは以下の通りです："
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "- Sponsors will always be clearly identified as sponsors.\n- Aggressive sales tactics directed at our community members are strictly prohibited.\n- We don’t sell personal information about our community members to sponsors (e.g., to add to their mailing list).",
+      "source_content_hash": "449a386fecfb3a098a6821bc5fabf41ff1b1f289aecc2a305970ffb2b6e03f7d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- スポンサーは常に明確にスポンサーとして識別されます。\n- コミュニティメンバーに対する攻撃的な営業戦術は厳禁です。\n- コミュニティメンバーの個人情報をスポンサーに販売することはありません（例：メーリングリストへの追加）。"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "### Soft Rules",
+      "source_content_hash": "0e8b0cbf35bcd7c702f1eb5e89f0e41dbf88513a8f91e541e716e7f2793c7577",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 緩やかなルール"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Our community members should not be treated as sales leads.",
+      "source_content_hash": "19c6f1be3ecaa78435d8c5fe205eace810fcc45a4d3414c833ca4b2f4318dd7a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コミュニティメンバーを営業リードとして扱わないでください。"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "We expect sponsors to be exemplary community members. It’s acceptable to subtly promote job openings at your company and showcase your product, but hard selling is not allowed. Additionally, do not ask community members to join your mailing list.",
+      "source_content_hash": "93e46ab30c5e8b9cfda70c4a8ba54cc47f7eb96453606a050dd6c261d6949c78",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "スポンサーには模範的なコミュニティメンバーであることを期待します。自社の求人を控えめに宣伝したり、製品を紹介したりすることは許容されますが、強引な販売は禁止です。また、コミュニティメンバーにメーリングリストへの参加を求めることも避けてください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/sponsorships.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.801672+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "639a3eb721bc4a914c4268bfabb14d8a03e135b3790b69be205e9a60db12c4c9"
+  }
+}

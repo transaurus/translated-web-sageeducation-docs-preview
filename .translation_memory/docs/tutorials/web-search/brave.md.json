@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/brave.md",
+  "source_file_content_hash": "2503f293324aa3e23db71579b6dd7feb7056d8a8fa90431b8b2c8361e9f4ae61",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"Brave\"\n---",
+      "source_content_hash": "b6550fcef63c5cc36f3c799f9f66ff58a8ac2a0c52a96145b4968ebad4ceab00",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage Open WebUIチームによってサポートされていません。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したいですか？コントリビューションガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Brave API",
+      "source_content_hash": "6b4ef68ed420cfba130f3e83f2c90917ba69388a600286c83e3038efb7bd50ba",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Brave API"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### Docker Compose Setup",
+      "source_content_hash": "630c38bc6d2bc164ac78059fbe584b243571fd1b9b7eafef5bc1050d77bea80b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Docker Compose セットアップ"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Add the following environment variables to your Sage Open WebUI `docker-compose.yaml` file:",
+      "source_content_hash": "3a05e224ed8870fe61de099abcb9917fc0e500d1fd55f7cf8960f316e392991b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の環境変数をSage Open WebUIの`docker-compose.yaml`ファイルに追加してください："
+      }
+    },
+    {
+      "segment_id": "41ad46a6",
+      "source_content": "```yaml\nservices:\n  sage-open-webui:\n    environment:\n      ENABLE_RAG_WEB_SEARCH: True\n      RAG_WEB_SEARCH_ENGINE: \"brave\"\n      BRAVE_SEARCH_API_KEY: \"YOUR_API_KEY\"\n      RAG_WEB_SEARCH_RESULT_COUNT: 3\n      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10\n```",
+      "source_content_hash": "74caab5b189dd48b535ecbf17a4c161f40578608e9b159fd5c51426b33fcf56d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_41ad46a6"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/brave.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.785140+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "2503f293324aa3e23db71579b6dd7feb7056d8a8fa90431b8b2c8361e9f4ae61"
+  }
+}

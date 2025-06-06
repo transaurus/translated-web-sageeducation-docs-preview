@@ -1,0 +1,401 @@
+---
+sidebar_position: 1
+title: "🚰 Pipe Function"
+---
+
+# 🚰 パイプ機能：カスタム「エージェント/モデル」を作成する
+
+Sage WebUIで**パイプ**を作成するガイドへようこそ！パイプは、Sage WebUIに**新しいモデルを追加**する方法と考えることができます。このドキュメントでは、パイプとは何か、その仕組み、そしてカスタムロジックや処理をSage WebUIモデルに追加するために独自のパイプを作成する方法について詳しく説明します。明確な比喩を使い、すべての詳細を網羅して包括的な理解が得られるようにします。
+
+## パイプの紹介
+
+Sage WebUIを、データがパイプとバルブを通って流れる**配管システム**と想像してください。この比喩では：
+
+- **パイプ**は、カスタムロジックや処理を注入できる新しいデータの流れを導入する**プラグイン**のようなものです。
+- **バルブ**は、データがどのように流れるかを制御するパイプの**設定可能な部分**です。
+
+パイプを作成することで、Sage WebUIフレームワーク内で、望む特定の動作を持つカスタムモデルを本質的に作成していることになります。
+
+---
+
+## パイプの構造を理解する
+
+まず、パイプの基本的な構造を理解するために、シンプルなパイプの例から始めましょう：
+
+```python
+from pydantic import BaseModel, Field
+
+class Pipe:
+    class Valves(BaseModel):
+        MODEL_ID: str = Field(default="")
+
+    def __init__(self):
+        self.valves = self.Valves()
+
+    def pipe(self, body: dict):
+        # Logic goes here
+        print(self.valves, body)  # This will print the configuration options and the input body
+        return "Hello, World!"
+```
+
+### パイプクラス
+
+- **定義**: `Pipe`クラスは、カスタムロジックを定義する場所です。
+- **目的**: プラグインの設計図として機能し、Sage WebUI内での動作を決定します。
+
+### バルブ：パイプの設定
+
+- **定義**: `Valves`は、`Pipe`内のネストされたクラスで、`BaseModel`から継承されます。
+- **目的**: パイプの使用中に保持される設定オプション（パラメータ）を含みます。
+- **例**: 上記のコードでは、`MODEL_ID`はデフォルトが空文字列の設定オプションです。
+
+**比喩**: バルブは、実際の配管システムで水の流れを制御するノブのようなものと考えてください。パイプでは、バルブはデータの流れや処理方法に影響を与える設定をユーザーが調整できるようにします。
+
+### `__init__`メソッド
+
+- **定義**: `Pipe`クラスのコンストラクタメソッドです。
+- **目的**: パイプの状態を初期化し、必要なコンポーネントをセットアップします。
+- **ベストプラクティス**: シンプルに保ち、主に`self.valves`をここで初期化します。
+
+```python
+def __init__(self):
+    self.valves = self.Valves()
+```
+
+### `pipe`関数
+
+- **定義**: カスタムロジックが存在するコア関数です。
+- **パラメータ**:
+  - `body`: 入力データを含む辞書。
+- **目的**: カスタムロジックを使用して入力データを処理し、結果を返します。
+
+```python
+def pipe(self, body: dict):
+    # Logic goes here
+    print(self.valves, body)  # This will print the configuration options and the input body
+    return "Hello, World!"
+```
+
+**注意**: 常に`Valves`を`Pipe`クラスの先頭に配置し、その後に`__init__`、そして`pipe`関数を続けます。この構造は明確さと一貫性を確保します。
+
+---
+
+## パイプで複数のモデルを作成する
+
+パイプでSage WebUI内に**複数のモデル**を作成したい場合はどうすればよいでしょうか？`Pipe`クラス内に`pipes`関数または変数を定義することでこれを実現できます。この設定は、**マニホールド**と呼ばれ、パイプが複数のモデルを表現できるようにします。
+
+以下にその方法を示します：
+
+```python
+from pydantic import BaseModel, Field
+
+class Pipe:
+    class Valves(BaseModel):
+        MODEL_ID: str = Field(default="")
+
+    def __init__(self):
+        self.valves = self.Valves()
+
+    def pipes(self):
+        return [
+            {"id": "model_id_1", "name": "model_1"},
+            {"id": "model_id_2", "name": "model_2"},
+            {"id": "model_id_3", "name": "model_3"},
+        ]
+
+    def pipe(self, body: dict):
+        # Logic goes here
+        print(self.valves, body)  # Prints the configuration options and the input body
+        model = body.get("model", "")
+        return f"{model}: Hello, World!"
+```
+
+### 説明
+
+- **`pipes`関数**:
+  - 辞書のリストを返します。
+  - 各辞書は、一意の`id`と`name`キーを持つモデルを表します。
+  - これらのモデルは、Sage WebUIのモデルセレクターに個別に表示されます。
+
+- **更新された`pipe`関数**:
+  - 選択されたモデルに基づいて入力を処理します。
+  - この例では、返される文字列にモデル名を含めています。
+
+---
+
+## 例：OpenAIプロキシパイプ
+
+OpenAI APIへのリクエストをプロキシするPipeを作成する実践的な例を見ていきましょう。このPipeはOpenAIから利用可能なモデルを取得し、ユーザーがSage WebUIを通じてそれらとやり取りできるようにします。
+
+```python
+from pydantic import BaseModel, Field
+import requests
+
+class Pipe:
+    class Valves(BaseModel):
+        NAME_PREFIX: str = Field(
+            default="OPENAI/",
+            description="Prefix to be added before model names.",
+        )
+        OPENAI_API_BASE_URL: str = Field(
+            default="https://api.openai.com/v1",
+            description="Base URL for accessing OpenAI API endpoints.",
+        )
+        OPENAI_API_KEY: str = Field(
+            default="",
+            description="API key for authenticating requests to the OpenAI API.",
+        )
+
+    def __init__(self):
+        self.valves = self.Valves()
+
+    def pipes(self):
+        if self.valves.OPENAI_API_KEY:
+            try:
+                headers = {
+                    "Authorization": f"Bearer {self.valves.OPENAI_API_KEY}",
+                    "Content-Type": "application/json",
+                }
+
+                r = requests.get(
+                    f"{self.valves.OPENAI_API_BASE_URL}/models", headers=headers
+                )
+                models = r.json()
+                return [
+                    {
+                        "id": model["id"],
+                        "name": f'{self.valves.NAME_PREFIX}{model.get("name", model["id"])}',
+                    }
+                    for model in models["data"]
+                    if "gpt" in model["id"]
+                ]
+
+            except Exception as e:
+                return [
+                    {
+                        "id": "error",
+                        "name": "Error fetching models. Please check your API Key.",
+                    },
+                ]
+        else:
+            return [
+                {
+                    "id": "error",
+                    "name": "API Key not provided.",
+                },
+            ]
+
+    def pipe(self, body: dict, __user__: dict):
+        print(f"pipe:{__name__}")
+        headers = {
+            "Authorization": f"Bearer {self.valves.OPENAI_API_KEY}",
+            "Content-Type": "application/json",
+        }
+
+        # Extract model id from the model name
+        model_id = body["model"][body["model"].find(".") + 1 :]
+
+        # Update the model id in the body
+        payload = {**body, "model": model_id}
+        try:
+            r = requests.post(
+                url=f"{self.valves.OPENAI_API_BASE_URL}/chat/completions",
+                json=payload,
+                headers=headers,
+                stream=True,
+            )
+
+            r.raise_for_status()
+
+            if body.get("stream", False):
+                return r.iter_lines()
+            else:
+                return r.json()
+        except Exception as e:
+            return f"Error: {e}"
+```
+
+### 詳細な解説
+
+#### Valvesの設定
+
+- **`NAME_PREFIX`**:
+  - Sage WebUIに表示されるモデル名にプレフィックスを追加します。
+  - デフォルト: `"OPENAI/"`。
+- **`OPENAI_API_BASE_URL`**:
+  - OpenAI APIのベースURLを指定します。
+  - デフォルト: `"https://api.openai.com/v1"`。
+- **`OPENAI_API_KEY`**:
+  - 認証用のOpenAI APIキー。
+  - デフォルト: `""`（空文字列; 指定必須）。
+
+#### `pipes`関数
+
+- **目的**: 利用可能なOpenAIモデルを取得し、Sage WebUIでアクセスできるようにします。
+
+- **処理**:
+  1. **APIキーの確認**: APIキーが提供されていることを確認します。
+  2. **モデルの取得**: OpenAI APIにGETリクエストを送信して利用可能なモデルを取得します。
+  3. **モデルのフィルタリング**: `id`に`"gpt"`を含むモデルを返します。
+  4. **エラーハンドリング**: 問題が発生した場合、エラーメッセージを返します。
+
+- **返却形式**: 各モデルの`id`と`name`を含む辞書のリスト。
+
+#### `pipe`関数
+
+- **目的**: 選択されたOpenAIモデルへのリクエストを処理し、レスポンスを返します。
+
+- **パラメータ**:
+  - `body`: リクエストデータを含みます。
+  - `__user__`: ユーザー情報を含みます（この例では使用しませんが、認証やログに有用です）。
+
+- **処理**:
+  1. **ヘッダーの準備**: APIキーとコンテンツタイプを含むヘッダーを設定します。
+  2. **モデルIDの抽出**: 選択されたモデル名から実際のモデルIDを抽出します。
+  3. **ペイロードの準備**: 正しいモデルIDでbodyを更新します。
+  4. **APIリクエストの送信**: OpenAI APIのチャット補完エンドポイントにPOSTリクエストを送信します。
+  5. **ストリーミングの処理**: `stream`が`True`の場合、行のイテラブルを返します。
+  6. **エラーハンドリング**: 例外をキャッチし、エラーメッセージを返します。
+
+### プロキシPipeの拡張
+
+このプロキシPipeを、AnthropicやPerplexityなどの追加のサービスプロバイダーをサポートするように変更できます。そのためには、`pipes`および`pipe`関数内のAPIエンドポイント、ヘッダー、ロジックを調整します。
+
+---
+
+## Sage WebUIの内部関数の使用
+
+時には、Pipe内でSage WebUIの内部関数を活用したい場合があります。これらの関数は`open_webui`パッケージから直接インポートできます。ただし、内部関数は最適化のために変更される可能性があることに注意してください。常に最新のドキュメントを参照してください。
+
+以下は、Sage WebUIの内部関数を使用する方法です:
+
+```python
+from pydantic import BaseModel, Field
+from fastapi import Request
+
+from open_webui.models.users import Users
+from open_webui.utils.chat import generate_chat_completion
+
+class Pipe:
+    def __init__(self):
+        pass
+
+    async def pipe(
+        self,
+        body: dict,
+        __user__: dict,
+        __request__: Request,
+    ) -> str:
+        # Use the unified endpoint with the updated signature
+        user = Users.get_user_by_id(__user__["id"])
+        body["model"] = "llama3.2:latest"
+        return await generate_chat_completion(__request__, body, user)
+```
+
+### 解説
+
+- **インポート**:
+  - `open_webui.models.users`から`Users`: ユーザー情報を取得するため。
+  - `open_webui.utils.chat`から`generate_chat_completion`: 内部ロジックを使用してチャット補完を生成するため。
+
+- **非同期`pipe`関数**:
+  - **パラメータ**:
+    - `body`: モデルへの入力データ。
+    - `__user__`: ユーザー情報を含む辞書。
+    - `__request__`: FastAPIからのリクエストオブジェクト（`generate_chat_completion`に必要）。
+  - **処理**:
+    1. **ユーザーオブジェクトの取得**: ユーザーIDを使用してユーザーオブジェクトを取得します。
+    2. **モデルの設定**: 使用するモデルを指定します。
+    3. **補完の生成**: `generate_chat_completion`を呼び出して入力を処理し、出力を生成します。
+
+### 重要な注意点
+
+- **関数シグネチャ**: 最新のSage WebUIコードベースまたはドキュメントを参照して、正確な関数シグネチャとパラメータを確認してください。
+- **ベストプラクティス**: ユーザーエクスペリエンスをスムーズにするため、常に例外とエラーを適切に処理してください。
+
+---
+
+## よくある質問
+
+### Q1: Sage WebUIでPipeを使用するメリットは？
+
+**A**: Pipeを使用すると、カスタムロジックと処理を備えた新しい「モデル」をSage WebUIに追加できます。これは柔軟なプラグインシステムで、外部APIの統合、モデル動作のカスタマイズ、コアコードベースを変更せずに革新的な機能を作成することが可能です。
+
+---
+
+### Q2: Valveとは何か、またその重要性は？
+
+**A**: ValveはPipeの設定可能なパラメータです。これらは設定や制御のように機能し、Pipeの動作を決定します。Valveを調整することで、基盤となるコードを変更することなくPipeの動作を変更できます。
+
+---
+
+### Q3: ValveなしでPipeを作成できますか？
+
+**A**: はい、Pipeが永続的な設定オプションを必要としない場合、Valveクラスを定義せずにシンプルなPipeを作成できます。ただし、柔軟性と将来の拡張性のためにValveを含めることがベストプラクティスです。
+
+---
+
+### Q4: APIキーを使用する際にPipeを安全に保つには？
+
+**A**: APIキーなどの機密情報をPipeにハードコーディングしないでください。代わりに、Valveを使用してAPIキーを安全に入力・保存します。コードがこれらのキーを適切に扱い、ログ記録や露出を避けるようにしてください。
+
+---
+
+### Q5: `pipe`関数と`pipes`関数の違いは？
+
+**A**:
+
+- **`pipe`関数**: 入力データを処理し出力を生成する主要な関数。単一のモデルに対するロジックを扱います。
+
+- **`pipes`関数**: Pipeが複数のモデルを表現できるようにします。モデル定義のリストを返し、各モデルがSage WebUIで個別に表示されます。
+
+---
+
+### Q6: Pipeでエラーを処理するには？
+
+**A**: `pipe`関数と`pipes`関数内でtry-exceptブロックを使用して例外をキャッチします。意味のあるエラーメッセージを返すか、エラーを適切に処理してユーザーに問題を通知します。
+
+---
+
+### Q7: Pipeで外部ライブラリを使用できますか？
+
+**A**: はい、必要に応じて外部ライブラリをインポートして使用できます。依存関係が環境内で適切にインストール・管理されていることを確認してください。
+
+---
+
+### Q8: Pipeをテストするには？
+
+**A**: Sage WebUIを開発環境で実行し、インターフェースからカスタムモデルを選択してPipeをテストします。様々な入力と設定でPipeが期待通りに動作することを検証します。
+
+---
+
+### Q9: Pipeのコードを整理するためのベストプラクティスは？
+
+**A**: 以下のガイドラインに従ってください：
+
+- `Valves`を`Pipe`クラスの先頭に配置
+- `__init__`メソッドで変数を初期化（主に`self.valves`）
+- `pipe`関数を`__init__`メソッドの後に配置
+- 明確で説明的な変数名を使用
+- コードの明確化のためにコメントを追加
+
+---
+
+### Q10: 最新のSage WebUIドキュメントはどこで見つけられますか？
+
+**A**: 最新の情報（関数シグネチャ、例、変更時の移行ガイドなど）については、公式のSage WebUIリポジトリまたはドキュメントサイトを参照してください。
+
+---
+
+## まとめ
+
+これで、Sage WebUIでPipeを作成・使用する方法について十分に理解できたはずです。Pipeは、Sage WebUIの機能を拡張・カスタマイズする強力な手段を提供します。外部APIの統合、新しいモデルの追加、複雑なロジックの注入など、あらゆるニーズに対応する柔軟性を備えています。
+
+以下の点を忘れずに：
+
+- Pipeクラスでは**明確で一貫した構造**を使用する
+- 設定可能なオプションには**Valvesを活用**する
+- ユーザーエクスペリエンス向上のため**エラーを適切に処理**する
+- 更新や変更については**最新のドキュメントを参照**する
+
+コーディングを楽しみ、PipesでSage WebUIを拡張しましょう！

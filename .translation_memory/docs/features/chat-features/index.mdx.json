@@ -1,0 +1,22 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/chat-features/index.mdx",
+  "source_file_content_hash": "e8d4823bdd9187c03fc060ca3c658b00a1fa6bc5177bcf0080036861eb61194c",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"😏 Chat Features\"\n---",
+      "source_content_hash": "e8d4823bdd9187c03fc060ca3c658b00a1fa6bc5177bcf0080036861eb61194c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/chat-features/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.777909+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "e8d4823bdd9187c03fc060ca3c658b00a1fa6bc5177bcf0080036861eb61194c"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/workspace/prompts.md",
+  "source_file_content_hash": "443dcceefd5183c21ed971bf834f07bab2aaca84ee1838d5f1240eecc1a3b927",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"📚 Prompts\"\n---",
+      "source_content_hash": "f9cfef839f9083d02e83766962694a5d5a53ce29a30aa5a21eaf85276309027a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "COMING SOON!",
+      "source_content_hash": "80d6f7fe7c5392a94b8889fe3147d4d03c710768083da8e6319e53fe85e051f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/workspace/prompts.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.778618+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "443dcceefd5183c21ed971bf834f07bab2aaca84ee1838d5f1240eecc1a3b927"
+  }
+}

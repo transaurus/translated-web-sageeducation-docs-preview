@@ -1,0 +1,308 @@
+---
+sidebar_position: 2
+title: "🪄 Filter Function"
+---
+
+# 🪄 フィルター関数：入力と出力の変更
+
+Sage WebUIのフィルター関数に関する包括的なガイドへようこそ！フィルターは、**大規模言語モデル（LLM）に送信される前**（入力）または**LLMから返された後**（出力）のデータを変更するための柔軟で強力な**プラグインシステム**です。入力にコンテキストを追加して最適化したり、出力をクリーンアップして読みやすくしたりする場合、**フィルター関数**を使えばすべて実現できます。
+
+このガイドでは、**フィルターの概要**、動作原理、構造、そして強力でユーザーフレンドリーなフィルターを構築するために必要なすべてを解説します。それでは、詳しく見ていきましょう！比喩や例、ヒントを交えて、すべてを明確に説明します！ 🌟
+
+---
+
+## 🌊 Sage WebUIにおけるフィルターとは？
+
+Sage WebUIを**水路**に例えてみましょう：
+
+- **ユーザー入力**と**LLM出力**は水です。
+- **フィルター**は、最終目的地に到達する前に水を浄化・修正・適応させる**浄水処理工程**です。
+
+フィルターは流れの中間に位置し、何を調整する必要があるかを決定するチェックポイントのような役割を果たします。
+
+フィルターの主な機能を簡単にまとめます：
+
+1. **ユーザー入力の変更（Inlet関数）**: AIモデルに到達する前に入力データを調整します。ここでは、明確さを高めたり、コンテキストを追加したり、テキストをサニタイズしたり、特定の要件に合わせてメッセージを再フォーマットしたりします。
+2. **モデル出力のインターセプト（Stream関数）**: AIの応答を**生成中に**捕捉して調整します。これは、機密情報をフィルタリングしたり、出力を読みやすくフォーマットしたりするようなリアルタイムの変更に有用です。
+3. **モデル出力の変更（Outlet関数）**: AIの応答を**処理した後**、ユーザーに表示する前に調整します。これにより、データを洗練したり、ログに記録したり、ユーザーエクスペリエンスを向上させたりできます。
+
+> **重要な概念:** フィルターは独立したモデルではなく、モデルとの間を行き来するデータを強化または変換するツールです。
+
+フィルターはAIワークフローにおける**翻訳者や編集者**のような存在です：会話の流れを中断することなく、内容をインターセプトして変更できます。
+
+---
+
+## 🗺️ フィルター関数の構造：基本骨格
+
+まずはフィルター関数の最もシンプルな表現から始めましょう。最初は技術的に感じる部分があっても心配ありません。すべてを段階的に解説していきます！
+
+### 🦴 フィルターの基本骨格
+
+```python
+from pydantic import BaseModel
+from typing import Optional
+
+class Filter:
+    # Valves: Configuration options for the filter
+    class Valves(BaseModel):  
+        pass
+
+    def __init__(self):
+        # Initialize valves (optional configuration for the Filter)
+        self.valves = self.Valves()
+
+    def inlet(self, body: dict) -> dict:
+        # This is where you manipulate user inputs.
+        print(f"inlet called: {body}")
+        return body  
+
+    def stream(self, event: dict) -> dict:
+        # This is where you modify streamed chunks of model output.
+        print(f"stream event: {event}")
+        return event
+
+    def outlet(self, body: dict) -> None:
+        # This is where you manipulate model outputs.
+        print(f"outlet called: {body}")
+```
+
+---
+
+### 🎯 主要コンポーネントの解説
+
+#### 1️⃣ **`Valves`クラス（オプション設定）**
+
+**Valves**はフィルターのノブやスライダーのようなものです。ユーザーがフィルターの動作を設定可能にしたい場合、ここでそれらのオプションを定義します。
+
+```python
+class Valves(BaseModel):
+    OPTION_NAME: str = "Default Value"
+```
+
+例：  
+出力をすべて大文字に変換するフィルターを作成する場合、`TRANSFORM_UPPERCASE: bool = True/False`のようなバルブを設定し、ユーザーがすべての出力を大文字化するかどうかを選択できるようにします。
+
+---
+
+#### 2️⃣ **`inlet`関数（入力前処理）**
+
+`inlet`関数は**料理前の食材の下ごしらえ**のようなものです。シェフを想像してください：材料（この場合はLLM）がレシピに入る前に、野菜を洗ったり、玉ねぎを刻んだり、肉に味付けをしたりします。このステップがないと、最終的な料理は味気なかったり、洗っていない食材が混ざっていたり、単に一貫性がなかったりする可能性があります。
+
+Sage WebUIの世界では、`inlet`関数は、ユーザー入力がモデルに送信される前に、この重要な下準備を行います。これにより、AIが処理する入力が可能な限りクリーンで、文脈に沿った、役立つものになります。
+
+📥 **入力**:
+
+- **`body`**: Sage WebUIからモデルへの生の入力。これは通常、会話のメッセージ、モデル設定、その他のメタデータなどのフィールドを含む辞書形式のチャット補完リクエストです。これをレシピの材料と考えてください。
+
+🚀 **あなたのタスク**:  
+`body`を修正して返します。修正された`body`はLLMが処理するものなので、入力に明確さ、構造、文脈をもたらすチャンスです。
+
+##### 🍳 `inlet`を使用する理由
+
+1. **文脈の追加**: ユーザーの入力が曖昧または不完全な場合、重要な情報を自動的に追加します。例えば、「あなたは親切なアシスタントです」や「このユーザーのソフトウェアバグのトラブルシューティングを手伝ってください」などを追加できます。
+   
+2. **データのフォーマット**: 入力がJSONやMarkdownなどの特定の形式を必要とする場合、モデルに送信する前に変換できます。
+
+3. **入力のサニタイズ**: 不要な文字を削除したり、有害または混乱を招く可能性のある記号（過剰な空白や絵文字など）を取り除いたり、機密情報を置き換えたりします。
+
+4. **ユーザー入力の効率化**: モデルの出力が追加のガイダンスで改善される場合、`inlet`を使用して自動的に明確な指示を注入できます！
+
+##### 💡 使用例: 料理の下準備に例える
+
+###### 🥗 例1: システムコンテキストの追加
+
+LLMがイタリア料理の料理人で、ユーザーが「これはイタリア料理用です」と明記していないとします。モデルにデータを送信する前にこの文脈を追加することで、メッセージを明確にできます。
+
+```python
+def inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+    # Add system message for Italian context in the conversation
+    context_message = {
+        "role": "system",
+        "content": "You are helping the user prepare an Italian meal."
+    }
+    # Insert the context at the beginning of the chat history
+    body.setdefault("messages", []).insert(0, context_message)
+    return body
+```
+
+📖 **何が起こるか？**
+
+- 「良いディナーのアイデアは？」などのユーザー入力には、イタリアのテーマが含まれるようになります！チーズケーキは答えに含まれないかもしれませんが、パスタは確実に含まれます。
+
+###### 🔪 例2: 入力のクリーニング（不要な文字の削除）
+
+ユーザーからの入力が乱雑だったり、`!!!`などの不要な記号が含まれている場合、会話が非効率的になったり、モデルが解析しにくくなったりします。コアの内容を保ちながら、これをクリーンアップできます。
+
+```python
+def inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+    # Clean the last user input (from the end of the 'messages' list)
+    last_message = body["messages"][-1]["content"]
+    body["messages"][-1]["content"] = last_message.replace("!!!", "").strip()
+    return body
+```
+
+📖 **何が起こるか？**
+
+- 前: `"この問題をデバッグするにはどうすればいいですか！！！"` ➡️ モデルに送信されるのは `"この問題をデバッグするにはどうすればいいですか"`
+
+注: ユーザーは同じように感じますが、モデルはよりクリーンで理解しやすいクエリを処理します。
+
+##### 📊 `inlet`がLLMの入力を最適化する方法:
+
+- 曖昧なクエリを明確にすることで**精度**を向上させます。
+- 絵文字、HTMLタグ、余分な句読点などの不要なノイズを除去することで、AIを**より効率的**にします。
+- ユーザー入力をモデルが期待するパターンやスキーマ（特定のユースケースのJSONなど）に一致するようにフォーマットすることで、**一貫性**を確保します。
+
+💭 **`inlet`をキッチンのスーシェフと考えてください**—モデル（あなたのAI「レシピ」）に入るすべてのものが、完璧に準備され、クリーニングされ、調味されていることを確認します。入力が良ければ良いほど、出力も良くなります！
+
+---
+
+#### 🆕 3️⃣ **`stream`フック（Sage Open WebUI 0.5.17で新規追加）**
+
+##### 🔄 `stream`フックとは？
+
+**`stream`関数**は、Sage Open WebUI **0.5.17**で導入された新機能で、**ストリーミングされたモデルの応答をリアルタイムでインターセプトおよび修正**することができます。
+
+`outlet`が完成したレスポンス全体を処理するのとは異なり、`stream`はモデルから受信した**個々のチャンク**に対して動作します。
+
+##### 🛠️ ストリームフックを使用するタイミング
+
+- ユーザーに表示される前に**ストリーミングレスポンス**を変更する
+- **リアルタイムの検閲やクリーンアップ**を実装する
+- ロギング/デバッグのために**ストリームデータを監視**する
+
+##### 📜 例: ストリーミングチャンクのロギング
+
+ストリーミングされたLLMレスポンスを検査・修正する方法は以下の通りです:
+
+```python
+def stream(self, event: dict) -> dict:
+    print(event)  # Print each incoming chunk for inspection
+    return event
+```
+
+> **ストリーミングイベントの例:**
+
+```json
+{'id': 'chatcmpl-B4l99MMaP3QLGU5uV7BaBM0eDS0jb','choices': [{'delta': {'content': 'Hi'}}]}
+{'id': 'chatcmpl-B4l99MMaP3QLGU5uV7BaBM0eDS0jb','choices': [{'delta': {'content': '!'}}]}
+{'id': 'chatcmpl-B4l99MMaP3QLGU5uV7BaBM0eDS0jb','choices': [{'delta': {'content': ' 😊'}}]}
+```
+
+📖 **処理内容**
+
+- 各行はモデルのストリーミングレスポンスの**小さな断片**を表します
+- **`delta.content`フィールド**には段階的に生成されるテキストが含まれます
+
+##### 🔄 例: ストリームデータから絵文字をフィルタリング
+
+```python
+def stream(self, event: dict) -> dict:
+    for choice in event.get("choices", []):
+        delta = choice.get("delta", {})
+        if "content" in delta:
+            delta["content"] = delta["content"].replace("😊", "")  # Strip emojis
+    return event
+```
+
+📖 **変更前:** `"こんにちは😊"`  
+📖 **変更後:** `"こんにちは"`
+
+---
+
+#### 4️⃣ **`outlet`関数（出力後処理）**
+
+`outlet`関数は**校正者**のようなものです: LLMによる処理が完了した後でAIのレスポンスを整理（または最終変更）します。
+
+📤 **入力:**
+
+- **`body`**: チャット内の**すべての現在のメッセージ**（ユーザー履歴 + LLM返信）を含みます
+
+🚀 **タスク:** この`body`を修正します。クリーンアップ、追加、変更のロギングが可能ですが、各調整がユーザーエクスペリエンスに与える影響に注意してください
+
+💡 **ベストプラクティス:**
+
+- outlet内での直接編集よりもロギングを優先（デバッグや分析用）
+- 大規模な変更（出力のフォーマットなど）が必要な場合は、代わりに**パイプ関数**の使用を検討
+
+💡 **使用例:** ユーザーに見せたくない機密性の高いAPIレスポンスを除去:
+
+```python
+def outlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+    for message in body["messages"]:
+        message["content"] = message["content"].replace("<API_KEY>", "[REDACTED]")
+    return body 
+```
+
+---
+
+## 🌟 フィルターの実践例: 実際の構築例
+
+実際の使用例を構築して、フィルターの使用方法を確認しましょう！
+
+### 📚 例 #1: すべてのユーザー入力にコンテキストを追加
+
+LLMに「あなたはソフトウェアのトラブルシューティングアシスタントです」といった指示をすべてのユーザークエリに追加したい場合:
+
+```python
+class Filter:
+    def inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+        context_message = {
+            "role": "system", 
+            "content": "You're a software troubleshooting assistant."
+        }
+        body.setdefault("messages", []).insert(0, context_message)
+        return body
+```
+
+---
+
+### 📚 例 #2: 読みやすくするための出力のハイライト
+
+Markdownや他のフォーマットスタイルで出力を返す場合、`outlet`関数を使用できます！
+
+```python
+class Filter:
+    def outlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+        # Add "highlight" markdown for every response
+        for message in body["messages"]:
+            if message["role"] == "assistant":  # Target model response
+                message["content"] = f"**{message['content']}**"  # Highlight with Markdown
+        return body
+```
+
+---
+
+## 🚧 よくある疑問: 明確なFAQ 🛑
+
+### **Q: フィルターとパイプ関数の違いは？**
+
+フィルターはモデルへの**送信データ**と**受信データ**を変更しますが、これらのフェーズ以外のロジックとは大きく相互作用しません。一方パイプ関数は:
+
+- **外部API**を統合したり、バックエンドの操作処理方法を大幅に変換できます
+- カスタムロジックを完全に新しい「モデル」として公開します
+
+### **Q: `outlet`内で大規模な後処理を行えますか？**
+
+可能ですが、**ベストプラクティスではありません**:
+
+- **フィルター**は軽量な変更やロギング適用を目的に設計されています
+- 大規模な変更が必要な場合は、代わりに**パイプ関数**の使用を検討してください
+
+---
+
+## 🎉 フィルター機能のまとめ: なぜ構築するのか？
+
+これまでに学んだこと:
+
+1. **Inlet** は **ユーザー入力** を操作します（前処理）。
+2. **Stream** は **ストリーミングされるモデル出力** をインターセプトして変更します（リアルタイム）。
+3. **Outlet** は **AI出力** を調整します（後処理）。
+4. フィルターは、データフローに対する軽量でリアルタイムな変更に最適です。
+5. **Valves** を使用すると、ユーザーがフィルターを動的に設定してカスタム動作を実現できます。
+
+---
+
+🚀 **あなたの番です**: 実験を始めましょう！ Sage WebUIの体験を向上させるための小さな調整やコンテキストの追加は何でしょうか？ フィルターは構築が楽しく、柔軟に使用でき、モデルを次のレベルに引き上げることができます！
+
+Happy coding! ✨

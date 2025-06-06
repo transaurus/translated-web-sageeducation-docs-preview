@@ -1,0 +1,362 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/pipelines/index.mdx",
+  "source_file_content_hash": "1c163878db662d1e08bf54c69c548f11cfc5cc95d97a1be92f008d2a62bc3569",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1000\ntitle: \"⚡ Pipelines\"\n---",
+      "source_content_hash": "2f7a393078ef287ac043ddbc6094500e3d91dd4e2d820e422cfebead1cea38df",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "c9ed38fc",
+      "source_content": "<p align=\"center\">\n  <a href=\"#\">\n    <img src=\"/images/pipelines/header.png\" alt=\"Pipelines Logo\" />\n  </a>\n</p>",
+      "source_content_hash": "5b5387521cdbe9c51bbddf6ce3f9b92db71c4d8537941626e7b34b0f3a66cbb6",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_c9ed38fc"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "# Pipelines: UI-Agnostic OpenAI API Plugin Framework",
+      "source_content_hash": "4c4bf664dc0548299daa8c22a6422c9898d3b632b5ad5bea8922a727e1e116ec",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Pipelines: UIに依存しないOpenAI APIプラグインフレームワーク"
+      }
+    },
+    {
+      "segment_id": "2a852f16",
+      "source_content": ":::tip\nIf your goal is simply to add support for additional providers like Anthropic or basic filters, you likely don't need Pipelines . For those cases, [Sage WebUI Functions](/features/plugin/functions) are a better fit—it's built-in, much more convenient, and easier to configure. Pipelines, however, comes into play when you're dealing with computationally heavy tasks (e.g., running large models or complex logic) that you want to offload from your main Sage WebUI instance for better performance and scalability.\n:::",
+      "source_content_hash": "93b0467ce277ad3ec379cc217a6843f28af9f4b7a16568fe2e22183b74c7bd0c",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\nAnthropicのような追加プロバイダーのサポートや基本的なフィルターを追加したいだけの場合、Pipelinesは必要ありません。そのようなケースでは、[Sage WebUI Functions](/features/plugin/functions)の方が適しています。これは組み込み機能で、より便利で設定も簡単です。Pipelinesは、大規模なモデルの実行や複雑なロジックなど、計算負荷の高いタスクをメインのSage WebUIインスタンスからオフロードしてパフォーマンスとスケーラビリティを向上させたい場合に役立ちます。\n:::"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Welcome to **Pipelines**, an [Sage WebUI](https://github.com/Startr) initiative. Pipelines bring modular, customizable workflows to any UI client supporting OpenAI API specs – and much more! Easily extend functionalities, integrate unique logic, and create dynamic workflows with just a few lines of code.",
+      "source_content_hash": "9c4e7132098d196b8fd8b931428f4cbcdb0175de0cd9e257179c3a9a305c3ab6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Pipelines**へようこそ。これは[Sage WebUI](https://github.com/Startr)のイニシアチブです。Pipelinesは、モジュール式でカスタマイズ可能なワークフローを、OpenAI API仕様をサポートする任意のUIクライアントにもたらします。さらに、わずか数行のコードで機能を拡張し、独自のロジックを統合し、動的なワークフローを作成できます。"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## 🚀 Why Choose Pipelines?",
+      "source_content_hash": "97706bdaa23b96b4832c70f00e87cbab87df444dbc3da990af236a5ef693cbc3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🚀 Pipelinesを選ぶ理由"
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "- **Limitless Possibilities:** Easily add custom logic and integrate Python libraries, from AI agents to home automation APIs.\n- **Seamless Integration:** Compatible with any UI/client supporting OpenAI API specs. (Only pipe-type pipelines are supported; filter types require clients with Pipelines support.)\n- **Custom Hooks:** Build and integrate custom pipelines.",
+      "source_content_hash": "c489c52e32559828e406582368d7a83ee94bbeeb60c49c5b45f1a51bf57b735d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **無限の可能性:** AIエージェントからホームオートメーションAPIまで、カスタムロジックやPythonライブラリを簡単に追加できます。\n- **シームレスな統合:** OpenAI API仕様をサポートする任意のUI/クライアントと互換性があります（pipeタイプのパイプラインのみサポート。filterタイプはPipelinesをサポートするクライアントが必要です）。\n- **カスタムフック:** カスタムパイプラインを構築して統合できます。"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "### Examples of What You Can Achieve:",
+      "source_content_hash": "0060607e923978a65480e609e590994f11f23d4519b400ff734a844c930e83bb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 実現可能な例:"
+      }
+    },
+    {
+      "segment_id": "1d13125b",
+      "source_content": "- [**Function Calling Pipeline**](https://github.com/Startr/pipelines/blob/main/examples/filters/function_calling_filter_pipeline.py): Easily handle function calls and enhance your applications with custom logic.\n- [**Custom RAG Pipeline**](https://github.com/Startr/pipelines/blob/main/examples/pipelines/rag/llamaindex_pipeline.py): Implement sophisticated Retrieval-Augmented Generation pipelines tailored to your needs.\n- [**Message Monitoring Using Langfuse**](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py): Monitor and analyze message interactions in real-time using Langfuse.\n- [**Rate Limit Filter**](https://github.com/Startr/pipelines/blob/main/examples/filters/rate_limit_filter_pipeline.py): Control the flow of requests to prevent exceeding rate limits.\n- [**Real-Time Translation Filter with LibreTranslate**](https://github.com/Startr/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py): Seamlessly integrate real-time translations into your LLM interactions.\n- [**Toxic Message Filter**](https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py): Implement filters to detect and handle toxic messages effectively.\n- **And Much More!**: The sky is the limit for what you can accomplish with Pipelines and Python. [Check out our scaffolds](https://github.com/Startr/pipelines/blob/main/examples/scaffolds) to get a head start on your projects and see how you can streamline your development process!",
+      "source_content_hash": "26e2ae0fa7467ff04d07f51011d2d0ff09530f0fac83b008e44a0fd7955e5c51",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [**Function Calling Pipeline**](https://github.com/Startr/pipelines/blob/main/examples/filters/function_calling_filter_pipeline.py): 関数呼び出しを簡単に処理し、カスタムロジックでアプリケーションを強化します。\n- [**Custom RAG Pipeline**](https://github.com/Startr/pipelines/blob/main/examples/pipelines/rag/llamaindex_pipeline.py): ニーズに合わせた高度なRetrieval-Augmented Generationパイプラインを実装します。\n- [**Message Monitoring Using Langfuse**](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py): Langfuseを使用してメッセージのやり取りをリアルタイムで監視・分析します。\n- [**Rate Limit Filter**](https://github.com/Startr/pipelines/blob/main/examples/filters/rate_limit_filter_pipeline.py): リクエストの流れを制御し、レートリミットを超えないようにします。\n- [**Real-Time Translation Filter with LibreTranslate**](https://github.com/Startr/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py): LLMのやり取りにリアルタイム翻訳をシームレスに統合します。\n- [**Toxic Message Filter**](https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py): 有害なメッセージを検出して効果的に処理するフィルターを実装します。\n- **その他にも多数！**: PipelinesとPythonで達成できることには限りがありません。[スキャフォールドをチェック](https://github.com/Startr/pipelines/blob/main/examples/scaffolds)してプロジェクトを迅速に開始し、開発プロセスを効率化する方法を確認してください！"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## 🔧 How It Works",
+      "source_content_hash": "e2599d34ea041f6e09605ac4777bebb667a4e43fec7a128918a7d1b85bb8066d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🔧 動作の仕組み"
+      }
+    },
+    {
+      "segment_id": "720d606f",
+      "source_content": "<p align=\"center\">\n  <a href=\"#\">\n    <img src=\"/images/pipelines/workflow.png\" alt=\"Pipelines Workflow\" />\n  </a>\n</p>",
+      "source_content_hash": "f47869e93d138b508482803bf309a4471abe7a856c6baf09848a50f732cbdfa7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_720d606f"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Integrating Pipelines with any OpenAI API-compatible UI client is simple. Launch your Pipelines instance and set the OpenAI URL on your client to the Pipelines URL. That's it! You're ready to leverage any Python library for your needs.",
+      "source_content_hash": "1cfbdd925d40890af700afedaccbb6de06e9ef62524987abfda1f65896e1b4ce",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "PipelinesをOpenAI API互換のUIクライアントと統合するのは簡単です。Pipelinesインスタンスを起動し、クライアントのOpenAI URLをPipelinesのURLに設定するだけです。これで、任意のPythonライブラリを活用する準備が整います。"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## ⚡ Quick Start with Docker",
+      "source_content_hash": "7638d9eb510299557be0bae9c72105bfa86d9540b3a6a2a76adb72f8680f6d4c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ⚡ Dockerを使ったクイックスタート"
+      }
+    },
+    {
+      "segment_id": "fac21652",
+      "source_content": ":::warning\nPipelines are a plugin system with arbitrary code execution — **don't fetch random pipelines from sources you don't trust**.\n:::",
+      "source_content_hash": "db71e45770dda996a0b54a128476d719cc4689c29d1fdd1d01a6f8540c6684a3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nPipelinesは任意のコードを実行するプラグインシステムです。**信頼できないソースからランダムなパイプラインを取得しないでください**。\n:::"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "For a streamlined setup using Docker:",
+      "source_content_hash": "5e4fd8bd5212b2ecfb3035f58b0e5501b674bb7c54cb62c7fbe17482e16993b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerを使用した効率的なセットアップ:"
+      }
+    },
+    {
+      "segment_id": "157c9741",
+      "source_content": "1. **Run the Pipelines container:**\n\n   ```sh\n   docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main\n   ```\n\n2. **Connect to Sage WebUI:**\n\n   - Navigate to the **Admin Panel > Settings > Connections** section in Sage WebUI.\n   - When you're on this page, you can press the `+` button to add another connection.\n   - Set the API URL to `http://localhost:9099` and the API key to `0p3n-w3bu!`.\n   - Once you've added your pipelines connection and verified it, you will see an icon appear within the API Base URL field for the added connection. When hovered over, the icon itself will be labeled `Pipelines`. Your pipelines should now be active.",
+      "source_content_hash": "c1e9bdaa27764c9e139416d34eb71e7696b1eb6b0eb20cee2d92cc73da5b8911",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Pipelinesコンテナを実行:**\n\n   ```sh\n   docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main\n   ```\n\n2. **Sage WebUIに接続:**\n\n   - Sage WebUIの**管理者パネル > 設定 > 接続**セクションに移動します。\n   - このページで`+`ボタンを押して新しい接続を追加できます。\n   - API URLを`http://localhost:9099`、APIキーを`0p3n-w3bu!`に設定します。\n   - パイプライン接続を追加して検証すると、APIベースURLフィールド内にアイコンが表示されます。ホバーすると「Pipelines」というラベルが表示され、パイプラインが有効になります。"
+      }
+    },
+    {
+      "segment_id": "cc486557",
+      "source_content": ":::info\nIf your Sage WebUI is running in a Docker container, replace `localhost` with `host.docker.internal` in the API URL.\n:::",
+      "source_content_hash": "138a52a9131b5c5bdaf9e877892868b4abcbd8e9a138c1572c86b3a834b9d3a9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nSage WebUIがDockerコンテナで実行されている場合、API URLの`localhost`を`host.docker.internal`に置き換えてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "af6ca965",
+      "source_content": "3. **Manage Configurations:**\n\n   - In the admin panel, go to **Admin Panel > Settings > Pipelines** tab.\n   - Select your desired pipeline and modify the valve values directly from the WebUI.",
+      "source_content_hash": "ba06314437646ea85ecb436eaace57d447e51d4435e104e5d269bce971599190",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "3. **設定の管理:**\n\n   - 管理者パネルで**管理者パネル > 設定 > Pipelines**タブに移動します。\n   - 目的のパイプラインを選択し、WebUIから直接バルブ値を変更できます。"
+      }
+    },
+    {
+      "segment_id": "cc1d5d1d",
+      "source_content": ":::tip\nIf you are unable to connect, it is most likely a Docker networking issue. We encourage you to troubleshoot on your own and share your methods and solutions in the discussions forum.\n:::",
+      "source_content_hash": "fcbf0cbb03719c6ce287089f1d218f13a4036b2317f840a3c7574b543585bc85",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n接続できない場合、Dockerのネットワーク問題である可能性が高いです。自己解決を試み、ディスカッションフォーラムで解決方法を共有してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "If you need to install a custom pipeline with additional dependencies:",
+      "source_content_hash": "eb7ba07f18779b2e99717c9a1d5b5fdebba0e1dfa3199e4a5570ee43b8a7f303",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "追加の依存関係があるカスタムパイプラインをインストールする必要がある場合:"
+      }
+    },
+    {
+      "segment_id": "c0ea80dd",
+      "source_content": "- **Run the following command:**\n\n  ```sh\n  docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -e PIPELINES_URLS=\"https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py\" -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main\n  ```",
+      "source_content_hash": "e5eb2e873fa61df242c8939d2526e6dde9d33bddac891ecd28f8be1d95188301",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **次のコマンドを実行:**\n\n  ```sh\n  docker run -d -p 9099:9099 --add-host=host.docker.internal:host-gateway -e PIPELINES_URLS=\"https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py\" -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main\n  ```"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "Alternatively, you can directly install pipelines from the admin settings by copying and pasting the pipeline URL, provided it doesn't have additional dependencies.",
+      "source_content_hash": "8a8cdf043bc0e6f7bdc1c4441de1eaaebebb4e2a9e509bcde51acca4ddf74503",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "または、追加の依存関係がない場合は、管理者設定からパイプラインURLをコピー＆ペーストして直接インストールできます。"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "That's it! You're now ready to build customizable AI integrations effortlessly with Pipelines. Enjoy!",
+      "source_content_hash": "1ed1c230f61ce63025c04059466afcc894fc98f70c578fc504e0250f44ca98a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これで完了です！Pipelinesを使ったカスタマイズ可能なAI統合を簡単に構築できます。お楽しみください！"
+      }
+    },
+    {
+      "segment_id": "bd30d33e",
+      "source_content": "## 📦 Installation and Setup",
+      "source_content_hash": "5f6da82a6327016295163c605403832cec1bbfafb0c3ed52ce7891b31d9d190d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 📦 インストールとセットアップ"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "Get started with Pipelines in a few easy steps:",
+      "source_content_hash": "07d0612a9131372ed864b1c63a8d7d01ce869a6b6617b68c8922127f7487fa4f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "簡単な手順でPipelinesを開始できます:"
+      }
+    },
+    {
+      "segment_id": "e0019b35",
+      "source_content": "1. **Ensure Python 3.11 is installed.** It is the only officially supported Python version.\n2. **Clone the Pipelines repository:**\n\n   ```sh\n   git clone https://github.com/Startr/pipelines.git\n   cd pipelines\n   ```\n\n3. **Install the required dependencies:**\n\n   ```sh\n   pip install -r requirements.txt\n   ```\n\n4. **Start the Pipelines server:**\n\n   ```sh\n   sh ./start.sh\n   ```",
+      "source_content_hash": "6d73b7cde96b6b59caabe581a3f68cab1719de52d33a01728ae5fc6af94377eb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Python 3.11がインストールされていることを確認**。公式にサポートされている唯一のバージョンです。\n2. **Pipelinesリポジトリをクローン:**\n\n   ```sh\n   git clone https://github.com/Startr/pipelines.git\n   cd pipelines\n   ```\n\n3. **必要な依存関係をインストール:**\n\n   ```sh\n   pip install -r requirements.txt\n   ```\n\n4. **Pipelinesサーバーを起動:**\n\n   ```sh\n   sh ./start.sh\n   ```"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "Once the server is running, set the OpenAI URL on your client to the Pipelines URL. This unlocks the full capabilities of Pipelines, integrating any Python library and creating custom workflows tailored to your needs.",
+      "source_content_hash": "781991156e73bbe347609efb38d34236464aa2b0b91d99b3e20db187dd00038f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "サーバーが起動したら、クライアントのOpenAI URLをPipelines URLに設定します。これにより、任意のPythonライブラリを統合し、ニーズに合わせたカスタムワークフローを作成できます。"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "## 📂 Directory Structure and Examples",
+      "source_content_hash": "a651e6a628ebde2d3bca81b2a5afbd809f6834b89dd65dca62daec1c048cb435",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 📂 ディレクトリ構造と例"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "The `/pipelines` directory is the core of your setup. Add new modules, customize existing ones, and manage your workflows here. All the pipelines in the `/pipelines` directory will be **automatically loaded** when the server launches.",
+      "source_content_hash": "ad1cba5f08f5e0c079361db94e025e54b164c1fca4054e8021503c4e5fe74fe5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`/pipelines`ディレクトリがセットアップの中心です。新しいモジュールを追加したり、既存のものをカスタマイズしたり、ワークフローを管理できます。`/pipelines`ディレクトリ内のすべてのパイプラインは、サーバー起動時に**自動的に読み込まれます**。"
+      }
+    },
+    {
+      "segment_id": "558df877",
+      "source_content": "You can change this directory from `/pipelines` to another location using the `PIPELINES_DIR` env variable.",
+      "source_content_hash": "6030dea121992c600e8d00fd87887f568e076bcad8daaa74d98a0598bf4c222c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`PIPELINES_DIR`環境変数を使用して、このディレクトリを`/pipelines`から別の場所に変更できます。"
+      }
+    },
+    {
+      "segment_id": "64d57278",
+      "source_content": "### Integration Examples",
+      "source_content_hash": "b1a4ded8e168daf102f7906552cc314bca73b51e0f7d6e7fdd1e0efa09128173",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 統合例"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "Find various integration examples in the `https://github.com/Startr/pipelines/blob/main/examples` directory. These examples show how to integrate different functionalities, providing a foundation for building your own custom pipelines.",
+      "source_content_hash": "c842e058e28d39955609301fcf7ec5ddafb3afce0b165f5228e358bef80184e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`https://github.com/Startr/pipelines/blob/main/examples`ディレクトリにさまざまな統合例があります。これらの例は、異なる機能を統合する方法を示し、独自のカスタムパイプラインを構築するための基盤を提供します。"
+      }
+    },
+    {
+      "segment_id": "36d6c3de",
+      "source_content": "## 🎉 Work in Progress",
+      "source_content_hash": "4aecca1b3dccc8e201d21e7b8ab77faaf9248534c2a7aacb1cff295b176ce62f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🎉 進行中の作業"
+      }
+    },
+    {
+      "segment_id": "c364340c",
+      "source_content": "We’re continuously evolving! We'd love to hear your feedback and understand which hooks and features would best suit your use case. Feel free to reach out and become a part of our Sage WebUI community!",
+      "source_content_hash": "75436d48ff4828412b67a57baf88c2736168ac8e9005ec10bb2e806b64eee001",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちは絶えず進化しています！あなたのフィードバックを聞き、どのフックや機能があなたのユースケースに最適かを理解したいと考えています。ぜひSage WebUIコミュニティの一員になってください！"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "Our vision is to push **Pipelines** to become the ultimate plugin framework for our AI interface, **Sage WebUI**. Imagine **Sage WebUI** as the WordPress of AI interfaces, with **Pipelines** being its diverse range of plugins. Join us on this exciting journey! 🌍",
+      "source_content_hash": "79ba6d1df80ed15121e3763472dcc074d1e02d318d94db7626ad7ef0c24bdef0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちのビジョンは、**Pipelines**をAIインターフェース**Sage WebUI**の究極のプラグインフレームワークに進化させることです。**Sage WebUI**をAIインターフェースのWordPressと想像してください。**Pipelines**はその多様なプラグイン群のような存在です。このエキサイティングな旅にぜひご参加ください！ 🌍"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/pipelines/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.780945+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "1c163878db662d1e08bf54c69c548f11cfc5cc95d97a1be92f008d2a62bc3569"
+  }
+}

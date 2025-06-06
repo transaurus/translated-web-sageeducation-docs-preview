@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-python/Uv.md",
+  "source_file_content_hash": "b999b7d7ae5a502c8d405610cf9d3a5f86b1cbd3b4ead8d17e3302b33b00aed5",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "### Installation with `uv`",
+      "source_content_hash": "cc0e90feb4166e314438e85717ae1a7fed432d1f033abc1ee92ec63d22729a51",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### `uv`を使用したインストール"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "The `uv` runtime manager ensures seamless Python environment management for applications like Sage WebUI. Follow these steps to get started:",
+      "source_content_hash": "f741e2286681f56498405eec284da1ccd3c7659d6bfadd973e465abb40fbb757",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`uv`ランタイムマネージャーは、Sage WebUIのようなアプリケーションのためのシームレスなPython環境管理を保証します。開始するには以下の手順に従ってください:"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "#### 1. Install `uv`",
+      "source_content_hash": "08b67f5378f32ca681a204890a434156487737d8408fd190f15db6356351d2b3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 1. `uv`のインストール"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Pick the appropriate installation command for your operating system:",
+      "source_content_hash": "1d6cbd3a4c7b1ecefdf0222ce2cf33871760394a31477020924815527c2aa546",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "お使いのオペレーティングシステムに適したインストールコマンドを選択してください:"
+      }
+    },
+    {
+      "segment_id": "abcf54e3",
+      "source_content": "- **macOS/Linux**:  \n  ```bash\n  curl -LsSf https://astral.sh/uv/install.sh | sh\n  ```\n\n- **Windows**:  \n  ```powershell\n  powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n  ```",
+      "source_content_hash": "ea0f138a8dbcbda6df193f2f82e30bdb7fde71c3300271d3aff6dfd84533f313",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **macOS/Linux**:  \n  ```bash\n  curl -LsSf https://astral.sh/uv/install.sh | sh\n  ```\n\n- **Windows**:  \n  ```powershell\n  powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n  ```"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "#### 2. Run Sage WebUI",
+      "source_content_hash": "bfce3a031bfa55805e3a1b96dee49737f90cb5d320af5739c3c4ddd36d25d7bb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 2. Sage WebUIの実行"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "Once `uv` is installed, running Sage WebUI is a breeze. Use the command below, ensuring to set the `DATA_DIR` environment variable to avoid data loss. Example paths are provided for each platform:",
+      "source_content_hash": "9f1469160b7a900a54881e4d6738f567a8ad3a22590d745dae1b094f2d92b259",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`uv`のインストールが完了したら、Sage WebUIの実行は簡単です。データ損失を防ぐため、`DATA_DIR`環境変数を設定して以下のコマンドを使用してください。各プラットフォーム向けの例を記載します:"
+      }
+    },
+    {
+      "segment_id": "1b8c1887",
+      "source_content": "- **macOS/Linux**:  \n  ```bash\n  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve\n  ```\n\n- **Windows**:  \n  ```powershell\n  $env:DATA_DIR=\"C:\\sage-open-webui\\data\"; uvx --python 3.11 sage-open-webui@latest serve\n  ```",
+      "source_content_hash": "907270c69e164916c140a67e0cf557d61e5ddb1322ce63b04b007990a51420d8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **macOS/Linux**:  \n  ```bash\n  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve\n  ```\n\n- **Windows**:  \n  ```powershell\n  $env:DATA_DIR=\"C:\\sage-open-webui\\data\"; uvx --python 3.11 sage-open-webui@latest serve\n  ```"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-python/Uv.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.792131+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b999b7d7ae5a502c8d405610cf9d3a5f86b1cbd3b4ead8d17e3302b33b00aed5"
+  }
+}

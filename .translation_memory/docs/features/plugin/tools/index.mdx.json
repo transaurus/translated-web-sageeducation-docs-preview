@@ -1,0 +1,572 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/tools/index.mdx",
+  "source_file_content_hash": "d301c2b2d92f864035dfe1351aa1f04287189fd8dc322f48941f69e699169d1f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"⚙️ Tools\"\n---",
+      "source_content_hash": "0a907aa11b2b750eeff8be370d321825197efabc3cb770e8f51a6bfef61c1a5a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## What are Tools?",
+      "source_content_hash": "cb0c2affbc506d199a7b8ecf3c2407b5c073a43fc7034bfb111c2ec691691b21",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ツールとは？"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Tools are python scripts that are provided to an LLM at the time of the request. Tools allow LLMs to perform actions and receive additional context as a result. Generally speaking, your LLM of choice will need to support function calling for tools to be reliably utilized.",
+      "source_content_hash": "e7164289adffc641770e036b44a0ac525f1b01abbb12702f4f67aae8665d2a4c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールとは、リクエスト時にLLMに提供されるPythonスクリプトです。ツールを使用することで、LLMはアクションを実行し、その結果として追加のコンテキストを受け取ることができます。一般的に、ツールを確実に利用するためには、選択したLLMが関数呼び出しをサポートしている必要があります。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "Tools enable many use cases for chats, including web search, web scraping, and API interactions within the chat.",
+      "source_content_hash": "a908fed0197f0352018529e668cedc3756ee8891b4e3bf000a18a792ecc3e922",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールは、チャット内でのウェブ検索、ウェブスクレイピング、API連携など、多くのユースケースを可能にします。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "Many Tools are available to use on the [Community Website](https://sage.education/tools) and can easily be imported into your Sage WebUI instance.",
+      "source_content_hash": "3a6c3ee0c48ce8c317c8f970613dcd8faf9e9f663731d4ea354e709b51b59ba3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "多くのツールが[コミュニティサイト](https://sage.education/tools)で利用可能であり、簡単にSage WebUIインスタンスにインポートできます。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## How can I use Tools?",
+      "source_content_hash": "2eeea61aea28432c76c4e59801f3adeba6c35fd3689e821b0199f8600736b4e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ツールの使用方法"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "[Once installed](#how-to-install-tools), Tools can be used by assigning them to any LLM that supports function calling and then enabling that Tool. To assign a Tool to a model, you need to navigate to Workspace => Models. Here you can select the model for which you’d like to enable any Tools.",
+      "source_content_hash": "266facbe16b905ce76160e50ae65786b6de40f31c8678edf7d651c7a7aafa840",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[インストール後](#how-to-install-tools)、ツールは関数呼び出しをサポートする任意のLLMに割り当てて有効にすることで使用できます。ツールをモデルに割り当てるには、ワークスペース => モデルに移動します。ここで、ツールを有効にしたいモデルを選択できます。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Once you click the pencil icon to edit the model settings, scroll down to the Tools section and check any Tools you wish to enable. Once done you must click save.",
+      "source_content_hash": "dc3492890c8e72651228cf7c9d523a91f176b0313ff37d73b33046162f9c2ae1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデル設定を編集するために鉛筆アイコンをクリックしたら、ツールセクションまでスクロールし、有効にしたいツールをチェックします。完了したら保存をクリックしてください。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Now that Tools are enabled for the model, you can click the “+” icon when chatting with an LLM to use various Tools. Please keep in mind that enabling a Tool does not force it to be used. It means the LLM will be provided the option to call this Tool.",
+      "source_content_hash": "71386be1564dc59ae8909fcca178469a2c9d891ef8e1230866526dcbb0040bf2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルに対してツールが有効になったら、LLMとチャットする際に「+」アイコンをクリックしてさまざまなツールを使用できます。ツールを有効にしても、必ずしも使用されるわけではないことに注意してください。これは、LLMがこのツールを呼び出すオプションを提供されることを意味します。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Lastly, we do provide a filter function on the community site that allows LLMs to autoselect Tools without you needing to enable them in the “+” icon menu: https://sage.education/f/hub/autotool_filter/",
+      "source_content_hash": "d5508bdf4b96cff5603cd3c9309191d5d795f2936296e42d7e0b313428b28b6f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "最後に、コミュニティサイトには、「+」アイコンメニューでツールを有効にしなくてもLLMが自動的にツールを選択できるフィルター機能を提供しています: https://sage.education/f/hub/autotool_filter/"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Please note: when using the AutoTool Filter, you will still need to take the steps above to enable the Tools per model.",
+      "source_content_hash": "9961b66deb265f89ca37a7c0bd2be6cff9411cf180aad9f5961b19695ba6f98c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注意: AutoToolフィルターを使用する場合でも、上記の手順を踏んでモデルごとにツールを有効にする必要があります。"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## How to install Tools",
+      "source_content_hash": "7f2bfce8d6196308b38d2e749686335cfba0e1a116c01f759ce7b4a534bdf14a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ツールのインストール方法"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "The Tools import process is quite simple. You will have two options:",
+      "source_content_hash": "e54357bc9aa020b68745fcd72a5ae80d858d95a3af03378738fc209f5a266ef5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールのインポートプロセスは非常に簡単です。2つのオプションがあります:"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "### Download and import manually",
+      "source_content_hash": "31470756009849641908dd499a7b4aa49ff3f2d00a8c3c45440f755c0295e1cb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 手動でダウンロードしてインポート"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Navigate to the community site: https://sage.education/tools/",
+      "source_content_hash": "0d7c6be555c2e554b01302590c4e9d973c2964a5a945675d21ccfcdae242806b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コミュニティサイトに移動: https://sage.education/tools/"
+      }
+    },
+    {
+      "segment_id": "77bf3ec9",
+      "source_content": "1) Click on the Tool you wish to import\n2) Click the blue “Get” button in the top right-hand corner of the page\n3) Click “Download as JSON export”\n4) You can now upload the Tool into Sage WebUI by navigating to Workspace => Tools and clicking “Import Tools”",
+      "source_content_hash": "6b2da54778aaf869dbd028cde64cc7aaa9fb3ec489c855d503af2491acb5c4f8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1) インポートしたいツールをクリック\n2) ページ右上の青い「Get」ボタンをクリック\n3) 「Download as JSON export」をクリック\n4) ワークスペース => ツールに移動し、「Import Tools」をクリックしてツールをSage WebUIにアップロードできます"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "### Import via your Sage WebUI URL",
+      "source_content_hash": "7fe9f1b78ad3ef7701a0fac335668c0c81e285d65b8a75f4cc0c10d0b40ac079",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Sage WebUIのURL経由でインポート"
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "1) Navigate to the community site: https://sage.education/tools/\n2) Click on the Tool you wish to import\n3) Click the blue “Get” button in the top right-hand corner of the page\n4) Enter the IP address of your Sage WebUI instance and click “Import to WebUI” which will automatically open your instance and allow you to import the Tool.",
+      "source_content_hash": "b12e58a1259723ca6c5c885cb317f309a19bf96929ce402ed12aad43f708af44",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1) コミュニティサイトに移動: https://sage.education/tools/\n2) インポートしたいツールをクリック\n3) ページ右上の青い「Get」ボタンをクリック\n4) Sage WebUIインスタンスのIPアドレスを入力し、「Import to WebUI」をクリックすると、自動的にインスタンスが開き、ツールをインポートできます"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "Note: You can install your own Tools and other Tools not tracked on the community site using the manual import method. Please do not import Tools you do not understand or are not from a trustworthy source. Running unknown code is ALWAYS a risk.",
+      "source_content_hash": "b8c14301aad65a492086147f4a38c6e390682123d8c7eb981bb8e1ddf8b7f906",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注意: 手動インポート方法を使用して、独自のツールやコミュニティサイトで追跡されていないツールをインストールできます。理解していないツールや信頼できないソースからのツールはインポートしないでください。未知のコードを実行することは常にリスクを伴います。"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## What sorts of things can Tools do?",
+      "source_content_hash": "ff731f72e3770dbf04ca4b8e13bf167674f377d33c149c5f224d671715376f0c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ツールでできること"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "Tools enable diverse use cases for interactive conversations by providing a wide range of functionality such as:",
+      "source_content_hash": "abd7f3efdcd73344c6854448e4f098feccdcc12769a0d5855023c993e5978ed6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールは、以下のような多様な機能を提供することで、インタラクティブな会話のための幅広いユースケースを可能にします:"
+      }
+    },
+    {
+      "segment_id": "4c077b92",
+      "source_content": "- [**Web Search**](https://sage.education/t/constliakos/web_search/): Perform live web searches to fetch real-time information.\n- [**Image Generation**](https://sage.education/t/justinrahb/image_gen/): Generate images based on the user prompt\n- [**External Voice Synthesis**](https://sage.education/t/justinrahb/elevenlabs_tts/): Make API requests within the chat to integrate external voice synthesis service ElevenLabs and generate audio based on the LLM output.",
+      "source_content_hash": "0241f452553550fe2016f4bf31109d6761e0c5a4ca6239370595cb7d6ca7ace0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [**ウェブ検索**](https://sage.education/t/constliakos/web_search/): リアルタイム情報を取得するためのライブウェブ検索を実行\n- [**画像生成**](https://sage.education/t/justinrahb/image_gen/): ユーザープロンプトに基づいて画像を生成\n- [**外部音声合成**](https://sage.education/t/justinrahb/elevenlabs_tts/): チャット内でAPIリクエストを行い、外部音声合成サービスElevenLabsを統合してLLM出力に基づく音声を生成"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Writing A Custom Toolkit",
+      "source_content_hash": "887dacc0613fffdcfc849255f10b1beac47a25ae75b1e4ab40360336270893c1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## カスタムツールキットの作成"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "Toolkits are defined in a single Python file, with a top level docstring with metadata and a `Tools` class.",
+      "source_content_hash": "48ab354fb94966cc97e33e11cf096643487f7b18374291af56fd1c1f3eaa7344",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールキットは、メタデータを含むトップレベルのdocstringと`Tools`クラスを持つ単一のPythonファイルで定義されます。"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "### Example Top-Level Docstring",
+      "source_content_hash": "3c0a4d609fe3e6f8ca77cd1e4287c3f1559936a361d03a82ab31c7ba848e034c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### トップレベルDocstringの例"
+      }
+    },
+    {
+      "segment_id": "f275f5fd",
+      "source_content": "```python\n\"\"\"\ntitle: String Inverse\nauthor: Your Name\nauthor_url: https://website.com\ngit_url: https://github.com/username/string-reverse.git\ndescription: This tool calculates the inverse of a string\nrequired_open_webui_version: 0.4.0\nrequirements: langchain-openai, langgraph, ollama, langchain_ollama\nversion: 0.4.0\nlicence: MIT\n\"\"\"\n```",
+      "source_content_hash": "9e6e708ed2cdfedbcd7197e85b524881c1a344444430d1aac5ee49b97d951ccc",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f275f5fd"
+      }
+    },
+    {
+      "segment_id": "3ef18741",
+      "source_content": "### Tools Class",
+      "source_content_hash": "5704a6a65734fe0aa3fe3215e96abe8fb210062f32a1b4f1943252313c788868",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Toolsクラス"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "Tools have to be defined as methods withing a class called `Tools`, with optional subclasses called `Valves` and `UserValves`, for example:",
+      "source_content_hash": "c5c2dc7b8e104eee46423a65275f9cf20646d8c996bb39e5658d4dd96f319f70",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ツールは`Tools`というクラス内でメソッドとして定義する必要があります。オプションとして`Valves`や`UserValves`といったサブクラスも使用可能です。例："
+      }
+    },
+    {
+      "segment_id": "bc137a19",
+      "source_content": "```python\nclass Tools:\n    def __init__(self):\n        \"\"\"Initialize the Tool.\"\"\"\n        self.valves = self.Valves()\n\n    class Valves(BaseModel):\n        api_key: str = Field(\"\", description=\"Your API key here\")\n\n    def reverse_string(self, string: str) -> str:\n        \"\"\"\n        Reverses the input string.\n        :param string: The string to reverse\n        \"\"\"\n        # example usage of valves\n        if self.valves.api_key != \"42\":\n            return \"Wrong API key\"\n        return string[::-1] \n```",
+      "source_content_hash": "a05250c493cfa3907d5d8a243e0b307dc50b9b1098ed94ff2afdefeebd6b330f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_bc137a19"
+      }
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "### Type Hints",
+      "source_content_hash": "3f9f95c8f8c111bb25b4cd830667421b72ba3009ea77e08dbd3ece4256983c72",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 型ヒント"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "Each tool must have type hints for arguments. As of version OpenWebUI version 0.4.3, the types may also be nested, such as `queries_and_docs: list[tuple[str, int]]`. Those type hints are used to generate the JSON schema that is sent to the model. Tools without type hints will work with a lot less consistency.",
+      "source_content_hash": "16e286f5ab44ae4a5b7c248c3745673212c88bbe0ccdde25ea2e37926b375920",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "各ツールは引数に対して型ヒントを持つ必要があります。OpenWebUIバージョン0.4.3以降では、`queries_and_docs: list[tuple[str, int]]`のようにネストした型も使用可能です。これらの型ヒントはモデルに送信されるJSONスキーマを生成するために使用されます。型ヒントがないツールは動作の一貫性が大幅に低下します。"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "### Valves and UserValves - (optional, but HIGHLY encouraged)",
+      "source_content_hash": "940efbb5fe6e8cb7dd6857a8d546a675bf81a13602dc001662024edbf9739c85",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ValvesとUserValves - （オプションですが強く推奨）"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "Valves and UserValves are used to allow users to provide dynamic details such as an API key or a configuration option. These will create a fillable field or a bool switch in the GUI menu for the given Tool.",
+      "source_content_hash": "9ff7b81fbb3881c597cb421a68d50e721eb9d4fd99148a297ec49a404cf84711",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ValvesとUserValvesは、APIキーや設定オプションなどの動的な詳細情報をユーザーが提供できるようにするために使用されます。これらは指定されたツールに対してGUIメニューに入力可能なフィールドやブールスイッチを作成します。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "Valves are configurable by admins alone and UserValves are configurable by any users.",
+      "source_content_hash": "4178421a967d4d9215de53ba4931f16630ceb956f9a9cbb3044c17a7fffe49d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Valvesは管理者のみが設定可能で、UserValvesはすべてのユーザーが設定可能です。"
+      }
+    },
+    {
+      "segment_id": "c6060e09",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\n# Define and Valves\n    class Valves(BaseModel):\n        priority: int = Field(\n            default=0, description=\"Priority level for the filter operations.\"\n        )\n        test_valve: int = Field(\n            default=4, description=\"A valve controlling a numberical value\"\n        )\n        pass\n\n    # Define any UserValves\n    class UserValves(BaseModel):\n        test_user_valve: bool = Field(\n            default=False, description=\"A user valve controlling a True/False (on/off) switch\"\n        )\n        pass\n\n    def __init__(self):\n        self.valves = self.Valves()\n```\n</details>",
+      "source_content_hash": "7053358997e0d511399cd5223f9c407f121a81bff867d6556d92ed044530f9be",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_c6060e09"
+      }
+    },
+    {
+      "segment_id": "36d6c3de",
+      "source_content": "### Optional Arguments",
+      "source_content_hash": "00a167e773b9b6eabef916daa9f569b37cbdd6070453aec145d6abc1b0959674",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### オプション引数"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "Below is a list of optional arguments your tools can depend on:",
+      "source_content_hash": "e411abe87dd74aeded39ebf3a406ac8f85d6aaa53c67e6f3a628402128c3f9fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下はツールが依存できるオプション引数のリストです："
+      }
+    },
+    {
+      "segment_id": "d9b1e67e",
+      "source_content": "- `__event_emitter__`: Emit events (see following section)\n- `__event_call__`: Same as event emitter but can be used for user interactions\n- `__user__`: A dictionary with user information\n- `__metadata__`: Dictionary with chat metadata\n- `__messages__`: List of previous messages\n- `__files__`: Attached files\n- `__model__`: Model name",
+      "source_content_hash": "f415c606d4cd4fe42d798495498a07264d562cbec6d3b4b4653d918a8cb16a79",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `__event_emitter__`: イベントを発行（次のセクションを参照）\n- `__event_call__`: イベントエミッターと同じですが、ユーザーインタラクションに使用可能\n- `__user__`: ユーザー情報を含む辞書\n- `__metadata__`: チャットメタデータを含む辞書\n- `__messages__`: 以前のメッセージのリスト\n- `__files__`: 添付ファイル\n- `__model__`: モデル名"
+      }
+    },
+    {
+      "segment_id": "13292277",
+      "source_content": "### Event Emitters",
+      "source_content_hash": "aa7d6f40357b2af00dd89c0b4813af896aba62a2a953d17cb833ecf5ff92f4c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### イベントエミッター"
+      }
+    },
+    {
+      "segment_id": "e77cf7c6",
+      "source_content": "Event Emitters are used to add additional information to the chat interface. Similarly to Filter Outlets, Event Emitters are capable of appending content to the chat. Unlike Filter Outlets, they are not capable of stripping information. Additionally, emitters can be activated at any stage during the Tool.",
+      "source_content_hash": "e94c2befa5b2cedf01138b71e1d71fc9ea06f5c9e2378684093abf09aac4dce9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "イベントエミッターはチャットインターフェースに追加情報を追加するために使用されます。フィルターアウトレットと同様に、イベントエミッターはチャットにコンテンツを追加できます。フィルターアウトレットとは異なり、情報を削除することはできません。さらに、エミッターはツールの実行中いつでもアクティブにできます。"
+      }
+    },
+    {
+      "segment_id": "bb1346b6",
+      "source_content": "There are two different types of Event Emitters:",
+      "source_content_hash": "a8c3be4ed70497a68464ebf813c4cd0cad6a0c98c04151ec8f74be68d41ce316",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "イベントエミッターには2つの異なるタイプがあります："
+      }
+    },
+    {
+      "segment_id": "734d40d8",
+      "source_content": "#### Status",
+      "source_content_hash": "98199297e53e8a9ba3f5ebe9d0c53c13d3f75a48a63eda48de2026029438151a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ステータス"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "This is used to add statuses to a message while it is performing steps. These can be done at any stage during the Tool. These statuses appear right above the message content. These are very useful for Tools that delay the LLM response or process large amounts of information. This allows you to inform users what is being processed in real-time.",
+      "source_content_hash": "880355149b3881cacbd448615217308f04af283b653d77ea782462f0b7f4c3ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これはメッセージがステップを実行している間にステータスを追加するために使用されます。これらはツールの実行中いつでも行えます。これらのステータスはメッセージコンテンツの直上に表示されます。LLMの応答を遅らせるツールや大量の情報を処理するツールに非常に有用です。これにより、ユーザーにリアルタイムで何が処理されているかを知らせることができます。"
+      }
+    },
+    {
+      "segment_id": "4fe849d4",
+      "source_content": "```\nawait __event_emitter__(\n            {\n                \"type\": \"status\", # We set the type here\n                \"data\": {\"description\": \"Message that shows up in the chat\", \"done\": False, \"hidden\": False}, \n                # Note done is False here indicating we are still emitting statuses\n            }\n        )\n```",
+      "source_content_hash": "593624e41a0946c4c9c2a1ba3930c80df4532d5d564edd203171d24497f7eac8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4fe849d4"
+      }
+    },
+    {
+      "segment_id": "817eb4a8",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\nasync def test_function(\n        self, prompt: str, __user__: dict, __event_emitter__=None\n    ) -> str:\n        \"\"\"\n        This is a demo\n\n        :param test: this is a test parameter\n        \"\"\"\n\n        await __event_emitter__(\n            {\n                \"type\": \"status\", # We set the type here\n                \"data\": {\"description\": \"Message that shows up in the chat\", \"done\": False}, \n                # Note done is False here indicating we are still emitting statuses\n            }\n        )\n\n        # Do some other logic here\n        await __event_emitter__(\n            {\n                \"type\": \"status\",\n                \"data\": {\"description\": \"Completed a task message\", \"done\": True, \"hidden\": False},\n                # Note done is True here indicating we are done emitting statuses\n                # You can also set \"hidden\": True if you want to remove the status once the message is returned\n            }\n        )\n\n        except Exception as e:\n            await __event_emitter__(\n                {\n                    \"type\": \"status\",\n                    \"data\": {\"description\": f\"An error occured: {e}\", \"done\": True},\n                }\n            )\n\n            return f\"Tell the user: {e}\"\n```\n</details>",
+      "source_content_hash": "e45ff13d0a0a1b172c707726189a59c3a928bbb01be5f0dc7b311320ebd2c4be",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_817eb4a8"
+      }
+    },
+    {
+      "segment_id": "17fd5988",
+      "source_content": "#### Message",
+      "source_content_hash": "48dc29b0c39617ba496ab0b672a563dd7559568a51fa11d93b33051b3335d0f3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### メッセージ"
+      }
+    },
+    {
+      "segment_id": "015c0c6e",
+      "source_content": "This type is used to append a message to the LLM at any stage in the Tool. This means that you can append messages, embed images, and even render web pages before, or after, or during the LLM response.",
+      "source_content_hash": "97f99013a8c771bfb478851329d1aae45bf7aa2ac441bfb9c2e4e9c3e602f5b3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このタイプはツールの実行中いつでもLLMにメッセージを追加するために使用されます。つまり、LLMの応答の前、後、または最中にメッセージを追加したり、画像を埋め込んだり、ウェブページをレンダリングしたりできます。"
+      }
+    },
+    {
+      "segment_id": "bb86adcb",
+      "source_content": "```\nawait __event_emitter__(\n                    {\n                        \"type\": \"message\", # We set the type here\n                        \"data\": {\"content\": \"This message will be appended to the chat.\"},\n                        # Note that with message types we do NOT have to set a done condition\n                    }\n                )\n```",
+      "source_content_hash": "1f40571ea517d462c14ba146cd9ee8b347b250d161156042b9136a9788a4496e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_bb86adcb"
+      }
+    },
+    {
+      "segment_id": "daa03ba9",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\nasync def test_function(\n        self, prompt: str, __user__: dict, __event_emitter__=None\n    ) -> str:\n        \"\"\"\n        This is a demo\n\n        :param test: this is a test parameter\n        \"\"\"\n\n        await __event_emitter__(\n                    {\n                        \"type\": \"message\", # We set the type here\n                        \"data\": {\"content\": \"This message will be appended to the chat.\"},\n                        # Note that with message types we do NOT have to set a done condition\n                    }\n                )\n\n        except Exception as e:\n            await __event_emitter__(\n                {\n                    \"type\": \"status\",\n                    \"data\": {\"description\": f\"An error occured: {e}\", \"done\": True},\n                }\n            )\n\n            return f\"Tell the user: {e}\"\n```\n</details>",
+      "source_content_hash": "9b8551fc903bc62f3844e9d77bd03fd0cf583a6c5fbe41078e862c3917d35fc4",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_daa03ba9"
+      }
+    },
+    {
+      "segment_id": "4147aea6",
+      "source_content": "#### Citations",
+      "source_content_hash": "3cd8466025467b45fd9c2ae667aa64259c595a45407661dfad4657fda204c7ce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 引用"
+      }
+    },
+    {
+      "segment_id": "80dbdeb8",
+      "source_content": "This type is used to provide citations or references in the chat. You can utilize it to specify the content, the source, and any relevant metadata. Below is an example of how to emit a citation event:",
+      "source_content_hash": "db43a6b10279c1239e73522ec5eee57bed02cc033680acf6ba027d4e90e6b19d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このタイプはチャット内で引用や参照を提供するために使用されます。コンテンツ、ソース、関連するメタデータを指定するために利用できます。以下は引用イベントを発行する方法の例です："
+      }
+    },
+    {
+      "segment_id": "4f217d4a",
+      "source_content": "```\nawait __event_emitter__(\n    {\n        \"type\": \"citation\",\n        \"data\": {\n            \"document\": [content],\n            \"metadata\": [\n                {\n                    \"date_accessed\": datetime.now().isoformat(),\n                    \"source\": title,\n                }\n            ],\n            \"source\": {\"name\": title, \"url\": url},\n        },\n    }\n)\n```",
+      "source_content_hash": "8361a9f9b1fe69c7d058c46325cbcd2f9ecdb17e190f54f1c3e8cfeb350c20e2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4f217d4a"
+      }
+    },
+    {
+      "segment_id": "715a86e2",
+      "source_content": "If you are sending multiple citations, you can iterate over citations and call the emitter multiple times. When implementing custom citations, ensure that you set `self.citation = False` in your `Tools` class `__init__` method. Otherwise, the built-in citations will override the ones you have pushed in. For example:",
+      "source_content_hash": "3834d79f9370d2bc2418c0931453990850eefc7da7c415adfbf7effc22e790d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "複数の引用を送信する場合、引用をイテレートしてエミッターを複数回呼び出すことができます。カスタム引用を実装する際は、`Tools`クラスの`__init__`メソッドで`self.citation = False`を設定してください。そうしないと、組み込みの引用があなたがプッシュしたものを上書きします。例："
+      }
+    },
+    {
+      "segment_id": "48340a8d",
+      "source_content": "```python\ndef __init__(self):\n    self.citation = False\n```",
+      "source_content_hash": "07374a97a590f836d9e9dd1f882280a9ffd37446c440fb72cbdbbfe8b90ee44d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_48340a8d"
+      }
+    },
+    {
+      "segment_id": "6085c028",
+      "source_content": "Warning: if you set `self.citation = True`, this will replace any custom citations you send with the automatically generated return citation. By disabling it, you can fully manage your own citation references.",
+      "source_content_hash": "a7971aed036788274f2222c3a8824944246e97022b406fc372c3564aa1802e1a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "警告：`self.citation = True`を設定すると、カスタム引用が自動生成された返信引用で置き換えられます。無効にすることで、独自の引用参照を完全に管理できます。"
+      }
+    },
+    {
+      "segment_id": "0f889790",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\nclass Tools:\n    class UserValves(BaseModel):\n        test: bool = Field(\n            default=True, description=\"test\"\n        )\n\n    def __init__(self):\n        self.citation = False\n\nasync def test_function(\n        self, prompt: str, __user__: dict, __event_emitter__=None\n    ) -> str:\n        \"\"\"\n        This is a demo that just creates a citation\n\n        :param test: this is a test parameter\n        \"\"\"\n\n        await __event_emitter__(\n            {\n                \"type\": \"citation\",\n                \"data\": {\n                    \"document\": [\"This message will be appended to the chat as a citation when clicked into\"],\n                    \"metadata\": [\n                        {\n                            \"date_accessed\": datetime.now().isoformat(),\n                            \"source\": title,\n                        }\n                    ],\n                    \"source\": {\"name\": \"Title of the content\", \"url\": \"http://link-to-citation\"},\n                },\n            }\n        )\n```\n</details>",
+      "source_content_hash": "53e847e39d6c769e7685962fe4bc9667a978a305c2dec0a53af37301bfca915f",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_0f889790"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/tools/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.808849+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "d301c2b2d92f864035dfe1351aa1f04287189fd8dc322f48941f69e699169d1f"
+  }
+}

@@ -1,0 +1,49 @@
+---
+sidebar_position: 3
+title: "🎬 Action Function"
+---
+
+アクション機能を使用すると、エンドユーザーが操作できるカスタムボタンをメッセージツールバーに追加できます。この機能により、よりインタラクティブなメッセージングが可能になり、ユーザーはタスク実行前に許可を与えたり、構造化データの視覚化を生成したり、チャットの音声スニペットをダウンロードしたり、その他多くのユースケースを実現できます。
+
+アクションコードのひな形は[コミュニティセクション](https://sage.education/f/hub/custom_action/)で確認できます。
+
+グラフ視覚化アクションの例は、以下の動画でご覧いただけます。
+
+<p align="center">
+  <a href="#">
+    <img src="/images/pipelines/graph-viz-action.gif" alt="Graph Visualization Action" />
+  </a>
+</p>
+
+### アクション
+
+アクションは、メッセージUI（個々のチャットメッセージの直下にある小さなボタン）にボタンを作成するために使用されます。
+
+アクションには、アクションの種類と処理されるデータを定義するオブジェクトを受け取る「アクション関数」という単一の主要コンポーネントがあります。
+
+<details>
+<summary>Example</summary>
+
+```
+async def action(
+        self,
+        body: dict,
+        __user__=None,
+        __event_emitter__=None,
+        __event_call__=None,
+    ) -> Optional[dict]:
+        print(f"action:{__name__}")
+
+        response = await __event_call__(
+            {
+                "type": "input",
+                "data": {
+                    "title": "write a message",
+                    "message": "here write a message to append",
+                    "placeholder": "enter your message",
+                },
+            }
+        )
+        print(response)
+```
+</details>

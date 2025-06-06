@@ -1,0 +1,1312 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/searxng.md",
+  "source_file_content_hash": "0bc056ea604faf4b60555d470eb0aeec4f3d21b9b8ed9e3ee8a33be18fc87d5d",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 10\ntitle: \"SearXNG\"\n---",
+      "source_content_hash": "ccd0a2b82c34b937a142ef4453f77ae5889cc8367a3615d5a6771104a37e3aa5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿ガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "This guide provides instructions on how to set up web search capabilities in Sage Open WebUI using SearXNG in Docker.",
+      "source_content_hash": "5d667e6d48b0779bc742d7dcedad97948a0a8adfd2253886976042fb969d3933",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドでは、Docker上のSearXNGを使用してSage Open WebUIにウェブ検索機能を設定する方法について説明します。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## SearXNG (Docker)",
+      "source_content_hash": "3b7ca0b63e5bac90ac0ced06b7a09e8d63af88482a72c0a415c9c7a9100ce056",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## SearXNG (Docker)"
+      }
+    },
+    {
+      "segment_id": "25d77483",
+      "source_content": "> \"**SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.**\"",
+      "source_content_hash": "3106964e7a1c6edb2342765f08ae032851835a5db81594763a710986475baeba",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "ja": "> \"**SearXNGは、さまざまな検索サービスやデータベースから結果を集約する無料のメタ検索エンジンです。ユーザーは追跡やプロファイリングの対象になりません。**\""
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## 1. SearXNG Configuration",
+      "source_content_hash": "c6d875f3fbd30f2ff40ad968682d87fcbf04587f724777e28be622219ca5dea7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 1. SearXNGの設定"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "To configure SearXNG optimally for use with Sage WebUI, follow these steps:",
+      "source_content_hash": "6bb2308d9b2fe52acb31ad65265aa416279646187c8dfd994f1073ca69a0aefa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIで最適に使用するためにSearXNGを設定するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "**Step 1: `git clone` SearXNG Docker and navigate to the folder:**",
+      "source_content_hash": "ebeb9fd8eee3d57c5f38b12f758bfc90a017699c24a87c0b8666b4420a841de7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順1: SearXNG Dockerを`git clone`し、フォルダに移動します：**"
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "1. Create a New Directory `searxng-docker`",
+      "source_content_hash": "977b84a35971ad5b5ebc8ee3b2d9714108be733baf6bdd6a386a60489f2e2372",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 新しいディレクトリ`searxng-docker`を作成します"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Clone the searxng-docker repository. This folder will contain your SearXNG configuration files. Refer to the [SearXNG documentation](https://docs.searxng.org/) for configuration instructions.",
+      "source_content_hash": "ec4c0a8e6cc06b83d44ae75b21a37bd01505506bed344780704daff671ded2e4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "searxng-dockerリポジトリをクローンします。このフォルダにはSearXNGの設定ファイルが含まれます。設定手順については[SearXNGドキュメント](https://docs.searxng.org/)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "a89b882e",
+      "source_content": "```bash\ngit clone https://github.com/searxng/searxng-docker.git\n```",
+      "source_content_hash": "a09c6193f553a7575668b4c9fe724dcc8b73235d865580b16bc8bc476bcc11df",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a89b882e"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Navigate to the `searxng-docker` repository:",
+      "source_content_hash": "a256e01efa8992d68a40bac5c79fa8333f403910f9aa1987e837ef734ad6d690",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`searxng-docker`リポジトリに移動します："
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```bash\ncd searxng-docker\n```",
+      "source_content_hash": "c21c0275b4c49fbd1388ad05d17e3de39902a411b5dce576c9dfac318b71d085",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "**Step 2: Locate and and modify the `.env` file:**",
+      "source_content_hash": "9b22e1e03ff962416f37f0b0669220a96bfb961fb8db842dfacd0f977675bc72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順2: `.env`ファイルを探して変更します：**"
+      }
+    },
+    {
+      "segment_id": "157151e9",
+      "source_content": "1. Uncomment `SEARXNG_HOSTNAME` from the `.env` file and set it accordingly:",
+      "source_content_hash": "ffbfff8f46d7ad9a23d27c265888ff277f775efcaffb8decef8eae4694dc9ad6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. `.env`ファイルから`SEARXNG_HOSTNAME`のコメントを解除し、適切に設定します："
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```bash\n# By default listen on https://localhost\n# To change this:\n# * uncomment SEARXNG_HOSTNAME, and replace <host> by the SearXNG hostname\n# * uncomment LETSENCRYPT_EMAIL, and replace <email> by your email (require to create a Let's Encrypt certificate)\n\nSEARXNG_HOSTNAME=localhost:8080/\n# LETSENCRYPT_EMAIL=<email>\n\n# Optional:\n# If you run a very small or a very large instance, you might want to change the amount of used uwsgi workers and threads per worker\n# More workers (= processes) means that more search requests can be handled at the same time, but it also causes more resource usage\n\n# SEARXNG_UWSGI_WORKERS=4\n# SEARXNG_UWSGI_THREADS=4\n```",
+      "source_content_hash": "2163b16b06b9c4aad14d9cc128149256dfbfa26bd6e7a1ad1742b58f37a014e2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "**Step 3: Modify the `docker-compose.yaml` file**",
+      "source_content_hash": "c334c2c498986ab7670b61dbf78a2e8e04bffcdd7740f8ae1d6451ae12c476c4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順3: `docker-compose.yaml`ファイルを変更します**"
+      }
+    },
+    {
+      "segment_id": "30193704",
+      "source_content": "3. Remove the `localhost` restriction by modifying the `docker-compose.yaml` file:",
+      "source_content_hash": "2ed22012de5deb1202ed08f2004575bdfbcdc845437ef556f3e70c6a8069de5d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "3. `docker-compose.yaml`ファイルを変更して`localhost`制限を解除します："
+      }
+    },
+    {
+      "segment_id": "c05ad55e",
+      "source_content": "```bash\nsed -i \"s/127.0.0.1:8080/0.0.0.0:8080/\"\n```",
+      "source_content_hash": "14c16d8b78094ced68525245beae885b9360c379fb75fa7aedeaada0b936e04b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_c05ad55e"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "**Step 4: Grant Necessary Permissions**",
+      "source_content_hash": "c0f1a86d99937e37a7e04f38ca06cc344130dbf1acfa5cfe2866f38364de2ca8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順4: 必要な権限を付与します**"
+      }
+    },
+    {
+      "segment_id": "180e9ce9",
+      "source_content": "4. Allow the container to create new config files by running the following command in the root directory:",
+      "source_content_hash": "aadeb9e4cdda49c4636b6cba77932eefbb7fba4b3a5ad3e3972b532972554171",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "4. ルートディレクトリで以下のコマンドを実行し、コンテナが新しい設定ファイルを作成できるようにします："
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```bash\nsudo chmod a+rwx searxng-docker/searxng\n```",
+      "source_content_hash": "fb16e4598ae2a4b5f576c142289ca22c959a0e25ef370dba3016a1024c300c27",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "**Step 5: Create a Non-Restrictive `limiter.toml` File**",
+      "source_content_hash": "1fd6b811bfa202dee15c9bf99c7eaf5246490805b50c845a1751e7cd2bd92333",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順5: 制限の少ない`limiter.toml`ファイルを作成します**"
+      }
+    },
+    {
+      "segment_id": "aa0bd54f",
+      "source_content": "5. Create a non-restrictive `searxng-docker/searxng/limiter.toml` config file:",
+      "source_content_hash": "9e4855f73fe64c03a3ecc13fd3ae48da826222c0f4b5709f0dd4c4ac4f2fb82c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "5. 制限の少ない`searxng-docker/searxng/limiter.toml`設定ファイルを作成します："
+      }
+    },
+    {
+      "segment_id": "568a7359",
+      "source_content": "<details>\n<summary>searxng-docker/searxng/limiter.toml</summary>\n\n```bash\n# This configuration file updates the default configuration file\n# See https://github.com/searxng/searxng/blob/master/searx/botdetection/limiter.toml\n\n[botdetection.ip_limit]\n# activate link_token method in the ip_limit method\nlink_token = false\n\n[botdetection.ip_lists]\nblock_ip = []\npass_ip = []\n```\n\n</details>",
+      "source_content_hash": "21c0ec77a84f5370fcee09424e984870925569c0cae132ed7e0a9932758718c8",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_568a7359"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "**Step 6: Remove the Default `settings.yml` File**",
+      "source_content_hash": "cc2c5fcca4416e1b0829bffd15a116f7db5dffe22128fc9fa50f910fadb2dc11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順6: デフォルトの`settings.yml`ファイルを削除します**"
+      }
+    },
+    {
+      "segment_id": "b264104e",
+      "source_content": "6. Delete the default `searxng-docker/searxng/settings.yml` file if it exists, as it will be regenerated on the first launch of SearXNG:",
+      "source_content_hash": "f4c6e30404d365ad1e895ed526352ec6c07df08f374de3532c36abe9b6b6d23f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "6. 既存のデフォルト`searxng-docker/searxng/settings.yml`ファイルを削除します（存在する場合）。SearXNGの初回起動時に再生成されます："
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```bash\nrm searxng-docker/searxng/settings.yml\n```",
+      "source_content_hash": "8c0a7e97c4a574d1d225c0ffff1ca41115c79f3dd84497b91fcc4433018ce384",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "**Step 7: Create a Fresh `settings.yml` File**",
+      "source_content_hash": "20c9c09742f79f34b0f5bc52a96154c99b4c8f7d92be1ee0e2b577a8c15b2845",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順7: 新しい`settings.yml`ファイルを作成します**"
+      }
+    },
+    {
+      "segment_id": "0a395b7e",
+      "source_content": ":::note\nOn the first run, you must remove `cap_drop: - ALL` from the `docker-compose.yaml` file for the `searxng` service to successfully create `/etc/searxng/uwsgi`.ini. This is necessary because the `cap_drop: - ALL` directive removes all capabilities, including those required for the creation of the `uwsgi.ini` file. After the first run, you should re-add `cap_drop: - ALL` to the `docker-compose.yaml` file for security reasons.\n:::",
+      "source_content_hash": "c6e08a7cc287f61d34ee623176fafbb36e90a465ce6692324db921996a20e5fe",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n初回実行時には、`searxng`サービスが`/etc/searxng/uwsgi.ini`を正常に作成できるように、`docker-compose.yaml`ファイルから`cap_drop: - ALL`を削除する必要があります。これは、`cap_drop: - ALL`ディレクティブがすべての機能（`uwsgi.ini`ファイルの作成に必要な機能も含む）を削除するためです。初回実行後は、セキュリティ上の理由から`docker-compose.yaml`ファイルに`cap_drop: - ALL`を再追加してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "664ad8b1",
+      "source_content": "7. Bring up the container momentarily to generate a fresh settings.yml file:",
+      "source_content_hash": "91f543a53ba16167e56c235c3ac7c10f3d552ed8e3dec22ea58c6a39d570a9fd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "7. コンテナを一時的に起動し、新しいsettings.ymlファイルを生成します："
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```bash\ndocker compose up -d ; sleep 10 ; docker compose down\n```",
+      "source_content_hash": "d210242530bc2600b9398a4b3cd2f78b17c915cccccde10e228aa21d73a93df2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "**Step 8: Add Formats and Update Port Number**",
+      "source_content_hash": "fed5481006b3147975a42f0e5952300fa201325d42b9b611e3bbdd8593eb1c66",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**手順8: フォーマットを追加し、ポート番号を更新します**"
+      }
+    },
+    {
+      "segment_id": "2890f5b2",
+      "source_content": "8. Add HTML and JSON formats to the `searxng-docker/searxng/settings.yml` file:",
+      "source_content_hash": "9d56a772810f56b4aa4b64969a58b95e4438c878c27b3e47c1601b07e4227634",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "8. `searxng-docker/searxng/settings.yml`ファイルにHTMLとJSONフォーマットを追加します："
+      }
+    },
+    {
+      "segment_id": "36ae9dc7",
+      "source_content": "```bash\nsed -i 's/formats: \\[\\\"html\\\"\\/]/formats: [\\\"html\\\", \\\"json\\\"]/' searxng-docker/searxng/settings.yml\n```",
+      "source_content_hash": "19afe5e85d2e93bddb7dd0224e67aadbe1c656f73f9024dc2786a81280f43d1f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_36ae9dc7"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "Generate a secret key for your SearXNG instance:",
+      "source_content_hash": "492ac35d90327780be15c4d6c4256752967b2047a6ca9b293cc5538ea4306c28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "SearXNGインスタンスの秘密鍵を生成します："
+      }
+    },
+    {
+      "segment_id": "3917a88d",
+      "source_content": "```bash\nsed -i \"s|ultrasecretkey|$(openssl rand -hex 32)|g\" searxng-docker/searxng/settings.yml\n```",
+      "source_content_hash": "bd0184c1bbf2bf7d76e4db9c01fbdb031a879d0784c4bf663724f8e9dce81192",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3917a88d"
+      }
+    },
+    {
+      "segment_id": "8fcdd6d4",
+      "source_content": "Windows users can use the following powershell script to generate the secret key:",
+      "source_content_hash": "2e8a774fe591d3985521a60e55d0d2e68ebf8fcdfead9674a92810085dbda904",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Windowsユーザーは、以下のPowerShellスクリプトを使用して秘密鍵を生成できます："
+      }
+    },
+    {
+      "segment_id": "5be4f25e",
+      "source_content": "```powershell\n$randomBytes = New-Object byte[] 32\n(New-Object Security.Cryptography.RNGCryptoServiceProvider).GetBytes($randomBytes)\n$secretKey = -join ($randomBytes | ForEach-Object { \"{0:x2}\" -f $_ })\n(Get-Content searxng-docker/searxng/settings.yml) -replace 'ultrasecretkey', $secretKey | Set-Content searxng-docker/searxng/settings.yml\n```",
+      "source_content_hash": "797fca68057f8e1c56783fea057ee18c5fed4f27f861e88abb51c94ec427089e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5be4f25e"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "Update the port number in the `server` section to match the one you set earlier (in this case, `8080`):",
+      "source_content_hash": "a70ca64e002a613b802f0f36b8dff674b5c080e42a6708c82ac9828c9c26b812",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ポート番号を`server`セクションで先に設定した値（この例では`8080`）に更新します："
+      }
+    },
+    {
+      "segment_id": "9ed0f908",
+      "source_content": "```bash\nsed -i 's/port: 8080/port: 8080/' searxng-docker/searxng/settings.yml\n```",
+      "source_content_hash": "192bf93dd2fcad73e0db41e59172ebcac94567df35c183af065a54884f01e43e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_9ed0f908"
+      }
+    },
+    {
+      "segment_id": "a9c2a503",
+      "source_content": "Change the `bind_address` as desired:",
+      "source_content_hash": "11f99ed3d3bc1292dd38470421214916d8518153f5f82d0a8a0844b4593f91b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "必要に応じて`bind_address`を変更します："
+      }
+    },
+    {
+      "segment_id": "4fe849d4",
+      "source_content": "```bash\nsed -i 's/bind_address: \"0.0.0.0\"/bind_address: \"127.0.0.1\"/' searxng-docker/searxng/settings.yml\n```",
+      "source_content_hash": "ae025abb5f431b191f1f7bf8e66c28d439a237f406263d5242ae20753422d395",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4fe849d4"
+      }
+    },
+    {
+      "segment_id": "35353302",
+      "source_content": "#### Configuration Files",
+      "source_content_hash": "90de919ae9e23135ce79cda1b16c689e8003df4e981cec1c5ddd3ffebc588107",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 設定ファイル"
+      }
+    },
+    {
+      "segment_id": "6ab1b234",
+      "source_content": "#### searxng-docker/searxng/settings.yml (Extract)",
+      "source_content_hash": "2ef15c63aeb4a807eb429f1f92231cdd8ef317ea34ab8ff1ad217db11d7214f8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### searxng-docker/searxng/settings.yml（抜粋）"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "The default `settings.yml` file contains many engine settings. Below is an extract of what the default `settings.yml` file might look like:",
+      "source_content_hash": "2ee95e74b70ef486d6ad8daf546cc2ea91ba922e4dad6b8f256c4106be0dba9c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "デフォルトの`settings.yml`ファイルには多くのエンジン設定が含まれています。以下はデフォルトの`settings.yml`ファイルの抜粋例です："
+      }
+    },
+    {
+      "segment_id": "817eb4a8",
+      "source_content": "<details>\n<summary>searxng-docker/searxng/settings.yml</summary>\n\n```yaml\n# see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings\nuse_default_settings: true\n\nserver:\n  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml\n  secret_key: \"ultrasecretkey\"  # change this!\n  limiter: true  # can be disabled for a private instance\n  image_proxy: true\n  port: 8080\n  bind_address: \"0.0.0.0\"\n\nui:\n  static_use_hash: true\n\nsearch:\n  safe_search: 0\n  autocomplete: \"\"\n  default_lang: \"\"\n  formats:\n    - html\n    - json # json is required\n  # remove format to deny access, use lower case.\n  # formats: [html, csv, json, rss]\nredis:\n  # URL to connect redis database. Is overwritten by ${SEARXNG_REDIS_URL}.\n  # https://docs.searxng.org/admin/settings/settings_redis.html#settings-redis\n  url: redis://redis:6379/0\n```\n\nThe port in the settings.yml file for SearXNG should match that of the port number in your docker-compose.yml file for SearXNG.\n\n</details>",
+      "source_content_hash": "347eb621787d338140078212785951b501ae92d7f5310bdd6d620f387ddf7e70",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_817eb4a8"
+      }
+    },
+    {
+      "segment_id": "295367fa",
+      "source_content": "**Step 9: Update `uwsgi.ini` File**",
+      "source_content_hash": "bc50e381aed89c3f1e795ca0362d8aa1060529addb1f55fd1b7ee178f31bfce2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ9：`uwsgi.ini`ファイルの更新**"
+      }
+    },
+    {
+      "segment_id": "bc3926aa",
+      "source_content": "9. Ensure your `searxng-docker/searxng/uwsgi.ini` file matches the following:",
+      "source_content_hash": "47eb8d2b25e233f8cee4371b9e6172c8046221ce9746b50138e8257ad5cffa6a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "9. `searxng-docker/searxng/uwsgi.ini`ファイルが以下の内容と一致していることを確認します："
+      }
+    },
+    {
+      "segment_id": "6bb4b070",
+      "source_content": "<details>\n<summary>searxng-docker/searxng/uwsgi.ini</summary>\n\n```ini\n[uwsgi]\n# Who will run the code\nuid = searxng\ngid = searxng\n\n# Number of workers (usually CPU count)\n# default value: %k (= number of CPU core, see Dockerfile)\nworkers = %k\n\n# Number of threads per worker\n# default value: 4 (see Dockerfile)\nthreads = 4\n\n# The right granted on the created socket\nchmod-socket = 666\n\n# Plugin to use and interpreter config\nsingle-interpreter = true\nmaster = true\nplugin = python3\nlazy-apps = true\nenable-threads = 4\n\n# Module to import\nmodule = searx.webapp\n\n# Virtualenv and python path\npythonpath = /usr/local/searxng/\nchdir = /usr/local/searxng/searx/\n\n# automatically set processes name to something meaningful\nauto-procname = true\n\n# Disable request logging for privacy\ndisable-logging = true\nlog-5xx = true\n\n# Set the max size of a request (request-body excluded)\nbuffer-size = 8192\n\n# No keep alive\n# See https://github.com/searx/searx-docker/issues/24\nadd-header = Connection: close\n\n# uwsgi serves the static files\nstatic-map = /static=/usr/local/searxng/searx/static\n# expires set to one day\nstatic-expires = /* 86400\nstatic-gzip-all = True\noffload-threads = 4\n```\n\n</details>",
+      "source_content_hash": "4c1db56d40b30c427efca3fbcbaa986f3ad34b2674e996682fe8a1af32e1b4cf",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6bb4b070"
+      }
+    },
+    {
+      "segment_id": "6beaa586",
+      "source_content": "## 2. Alternative Setup",
+      "source_content_hash": "2ccc494d9063115be1381713fc2b5faba48675f10be7b172c20e019a10b2716d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 2. 代替セットアップ"
+      }
+    },
+    {
+      "segment_id": "41e7f712",
+      "source_content": "Alternatively, if you don't want to modify the default configuration, you can simply create an empty `searxng-docker` folder and follow the rest of the setup instructions.",
+      "source_content_hash": "95d302ba2db801bbbecb74f529d3368d88fd770c9948d4bad424d7f0d681bdee",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "別の方法として、デフォルト設定を変更したくない場合は、空の`searxng-docker`フォルダを作成し、残りのセットアップ手順に従うこともできます。"
+      }
+    },
+    {
+      "segment_id": "371cb514",
+      "source_content": "### Docker Compose Setup",
+      "source_content_hash": "630c38bc6d2bc164ac78059fbe584b243571fd1b9b7eafef5bc1050d77bea80b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Docker Composeセットアップ"
+      }
+    },
+    {
+      "segment_id": "5d5a3416",
+      "source_content": "Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:",
+      "source_content_hash": "96fe67f402e1b17aa4e8cf5824ae11593bdd50463defcc3ae553ddd9b481288e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの`docker-compose.yaml`ファイルに以下の環境変数を追加します："
+      }
+    },
+    {
+      "segment_id": "5b5a3953",
+      "source_content": "```yaml\nservices:\n  sage-open-webui:\n    environment:\n      ENABLE_RAG_WEB_SEARCH: True\n      RAG_WEB_SEARCH_ENGINE: \"searxng\"\n      RAG_WEB_SEARCH_RESULT_COUNT: 3\n      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10\n      SEARXNG_QUERY_URL: \"http://searxng:8080/search?q=<query>\"\n```",
+      "source_content_hash": "f48c09b18150b3afa40b960bb9898f40e122154711591b34ff68e35bf0daeca2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5b5a3953"
+      }
+    },
+    {
+      "segment_id": "216a8ee1",
+      "source_content": "Create a `.env` file for SearXNG:",
+      "source_content_hash": "efa272e8426e243fc56401a55f6b126bcd2e5a0a1dfb2767d6deb4d750ab66ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "SearXNG用の`.env`ファイルを作成します："
+      }
+    },
+    {
+      "segment_id": "b7c66f56",
+      "source_content": "```\n# SearXNG\nSEARXNG_HOSTNAME=localhost:8080/\n```",
+      "source_content_hash": "6fd9bf2d4790ba4729f1048c938f17b3067cac5796fa408484aed2c30ed483d2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b7c66f56"
+      }
+    },
+    {
+      "segment_id": "5014d30c",
+      "source_content": "Next, add the following to SearXNG's `docker-compose.yaml` file:",
+      "source_content_hash": "806dbbaed7dbf47397b46e796808f935cab405d5897f5a6e2eb6766284bab763",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "次に、SearXNGの`docker-compose.yaml`ファイルに以下を追加します："
+      }
+    },
+    {
+      "segment_id": "a54efbd2",
+      "source_content": "```yaml\nservices:\n  searxng:\n    container_name: searxng\n    image: searxng/searxng:latest\n    ports:\n      - \"8080:8080\"\n    volumes:\n      - ./searxng:/etc/searxng:rw\n    env_file:\n      - .env\n    restart: unless-stopped\n    cap_drop:\n      - ALL\n    cap_add:\n      - CHOWN\n      - SETGID\n      - SETUID\n      - DAC_OVERRIDE\n    logging:\n      driver: \"json-file\"\n      options:\n        max-size: \"1m\"\n        max-file: \"1\"\n```",
+      "source_content_hash": "b1fd822a3633b93d0208aabfba64fa11ce7ba8c6eb12623b295dad453960ae96",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a54efbd2"
+      }
+    },
+    {
+      "segment_id": "c2a9a004",
+      "source_content": "Your stack is ready to be launched with:",
+      "source_content_hash": "a052276556b2bf72b5dba7c1b1138e1a2e12e11f8c10d3c20e66192d159e2b38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "スタックは以下のコマンドで起動できます："
+      }
+    },
+    {
+      "segment_id": "7d27bd2e",
+      "source_content": "```bash\ndocker compose up -d\n```",
+      "source_content_hash": "3e7b856b2044030c0e7e938c22308c9ec4f465a67d5cc331338d0265378e244e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7d27bd2e"
+      }
+    },
+    {
+      "segment_id": "ef35d58d",
+      "source_content": ":::note\nOn the first run, you must remove `cap_drop: - ALL` from the `docker-compose.yaml` file for the `searxng` service to successfully create `/etc/searxng/uwsgi`.ini. This is necessary because the `cap_drop: - ALL` directive removes all capabilities, including those required for the creation of the `uwsgi.ini` file. After the first run, you should re-add `cap_drop: - ALL` to the `docker-compose.yaml` file for security reasons.\n:::",
+      "source_content_hash": "c6e08a7cc287f61d34ee623176fafbb36e90a465ce6692324db921996a20e5fe",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n初回実行時は、`searxng`サービスが`/etc/searxng/uwsgi.ini`を正常に作成できるように、`docker-compose.yaml`ファイルから`cap_drop: - ALL`を削除する必要があります。これは`cap_drop: - ALL`ディレクティブが`uwsgi.ini`ファイル作成に必要な機能も削除してしまうためです。初回実行後はセキュリティ上の理由から`docker-compose.yaml`ファイルに`cap_drop: - ALL`を再追加してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "27f3a471",
+      "source_content": "Alternatively, you can run SearXNG directly using `docker run`:",
+      "source_content_hash": "d3ba03e894275172baee0f58f553d46e0e8f701c36c89d018d7358e909788815",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "あるいは、`docker run`で直接SearXNGを実行することもできます："
+      }
+    },
+    {
+      "segment_id": "20bc07ce",
+      "source_content": "```bash\ndocker run --name searxng --env-file .env -v ./searxng:/etc/searxng:rw -p 8080:8080 --restart unless-stopped --cap-drop ALL --cap-add CHOWN --cap-add SETGID --cap-add SETUID --cap-add DAC_OVERRIDE --log-driver json-file --log-opt max-size=1m --log-opt max-file=1 searxng/searxng:latest\n```",
+      "source_content_hash": "19f09474e5141eac6b257b4e784c24474d92035b45a478321098360e0cde5022",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_20bc07ce"
+      }
+    },
+    {
+      "segment_id": "89da6bb6",
+      "source_content": "## 3. Confirm Connectivity",
+      "source_content_hash": "0a05940b90674575732e723578053f6eeb8870a41ad4a005be70df11f6032976",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 3. 接続確認"
+      }
+    },
+    {
+      "segment_id": "e8bf4d18",
+      "source_content": "Confirm connectivity to SearXNG from your Sage WebUI container instance in your command line interface:",
+      "source_content_hash": "7a76d5626ce735bf7ce80ccb41a63cb9af84f1c33949f98ed144fefb1445ebab",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コマンドラインインターフェースから、Sage WebUIコンテナインスタンスがSearXNGに接続できることを確認します："
+      }
+    },
+    {
+      "segment_id": "010b0953",
+      "source_content": "```bash\ndocker exec -it sage-open-webui curl http://host.docker.internal:8080/search?q=this+is+a+test+query&format=json\n```",
+      "source_content_hash": "130e134afe73df8da8b84ee7d84fe2a64783aea1db0a71bdd169bdc161d965f4",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_010b0953"
+      }
+    },
+    {
+      "segment_id": "7f6f3173",
+      "source_content": "## 4. GUI Configuration",
+      "source_content_hash": "d984261c4126709a2e63c25d5132769189b6b7a80006f151090a86f215fc1716",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 4. GUI設定"
+      }
+    },
+    {
+      "segment_id": "6d83531a",
+      "source_content": "1. Navigate to: `Admin Panel` -> `Settings` -> `Web Search`\n2. Toggle `Enable Web Search`\n3. Set `Web Search Engine` from dropdown menu to `searxng`\n4. Set `Searxng Query URL` to one of the following examples:",
+      "source_content_hash": "a8f1852b1530a11cefedc5698417423385bec86dd8183b51892370705e5c9d5d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. `管理パネル` → `設定` → `ウェブ検索`に移動\n2. `ウェブ検索を有効化`をトグル\n3. ドロップダウンメニューから`ウェブ検索エンジン`を`searxng`に設定\n4. `SearxngクエリURL`に以下のいずれかの例を設定："
+      }
+    },
+    {
+      "segment_id": "8ba74ebc",
+      "source_content": "* `http://searxng:8080/search?q=<query>` (using the container name and exposed port, suitable for Docker-based setups)\n* `http://host.docker.internal:8080/search?q=<query>` (using the `host.docker.internal` DNS name and the host port, suitable for Docker-based setups)\n* `http://<searxng.local>/search?q=<query>` (using a local domain name, suitable for local network access)\n* `https://<search.domain.com>/search?q=<query>` (using a custom domain name for a  SearXNG instance, suitable for public or private access)",
+      "source_content_hash": "00d807cd1a5fe928af410a0e819b571c2154443e2e461b0da5ad13f1c2a62be2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `http://searxng:8080/search?q=<query>`（コンテナ名と公開ポートを使用、Dockerベースのセットアップに適しています）\n* `http://host.docker.internal:8080/search?q=<query>`（`host.docker.internal`DNS名とホストポートを使用、Dockerベースのセットアップに適しています）\n* `http://<searxng.local>/search?q=<query>`（ローカルドメイン名を使用、ローカルネットワークアクセスに適しています）\n* `https://<search.domain.com>/search?q=<query>`（SearXNGインスタンス用のカスタムドメイン名を使用、パブリックまたはプライベートアクセスに適しています）"
+      }
+    },
+    {
+      "segment_id": "d70ad719",
+      "source_content": "**Do note the `/search?q=<query>` part is mandatory.**\n5. Adjust the `Search Result Count` and `Concurrent Requests` values accordingly\n6. Save changes",
+      "source_content_hash": "9fcd399a8a8fb686a9dd266407cf983d19570ea4a77f07c07c20e4a1fb201e22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**`/search?q=<query>`の部分は必須ですので注意してください。**\n5. `検索結果数`と`同時リクエスト数`の値を適宜調整\n6. 変更を保存"
+      }
+    },
+    {
+      "segment_id": "dbd18971",
+      "source_content": "![SearXNG GUI Configuration](/images/tutorial_searxng_config.png)",
+      "source_content_hash": "49b23418b4035838adb004d4cccf201a1100ce44b2d528d2c2afb6f4866161c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![SearXNG GUI設定](/images/tutorial_searxng_config.png)"
+      }
+    },
+    {
+      "segment_id": "4e36860d",
+      "source_content": "## 5. Using Web Search in a Chat",
+      "source_content_hash": "5c126d0a4f8563f76e94a5870cf5ef8802a94439964d2636a0591e41c53f7ed5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 5. チャットでのウェブ検索の使用"
+      }
+    },
+    {
+      "segment_id": "4cba7b8e",
+      "source_content": "To access Web Search, Click on the + next to the message input field.",
+      "source_content_hash": "390cbe4d5544d8894412fb4e25f3a1d2c8d64a63229fb4f9a133cfe5fde64f5c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ウェブ検索にアクセスするには、メッセージ入力フィールド横の+ボタンをクリックします。"
+      }
+    },
+    {
+      "segment_id": "c419a086",
+      "source_content": "Here you can toggle Web Search On/Off.",
+      "source_content_hash": "5b080df79e8e04e92435575be55a665de8c321cb14bb5810eef1c954f5f079fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ここではWeb検索のオン/オフを切り替えることができます。"
+      }
+    },
+    {
+      "segment_id": "d58af824",
+      "source_content": "![Web Search UI Toggle](/images/web_search_toggle.png)",
+      "source_content_hash": "56d87cecb756b9edeefe0f71b65e7d5063d9083c35a2ac6c9264d3e2bdb6575d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Web検索UIトグル](/images/web_search_toggle.png)"
+      }
+    },
+    {
+      "segment_id": "0274aeec",
+      "source_content": "By following these steps, you will have successfully set up SearXNG with Sage WebUI, enabling you to perform web searches using the SearXNG engine.",
+      "source_content_hash": "92e8f4dd47674f5e401b45655a5cf68627df0fd10ed5672c8c336d1f07dcce72",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらの手順に従うことで、Sage WebUIでSearXNGをセットアップし、SearXNGエンジンを使用したWeb検索を有効にすることができます。"
+      }
+    },
+    {
+      "segment_id": "d3c1b1bc",
+      "source_content": "#### Note",
+      "source_content_hash": "ad8edba4c7789591022c73a8bd55a616580fb364fb3e18eaad9e0a59a894ac04",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 注意"
+      }
+    },
+    {
+      "segment_id": "9d56f8f8",
+      "source_content": "You will have to explicitly toggle this On/Off in a chat.",
+      "source_content_hash": "ce6e455ca320f80ddc4fcb1f8348b2179181713645282ef5cde74e0fd49e12e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "チャットごとに明示的にオン/オフを切り替える必要があります。"
+      }
+    },
+    {
+      "segment_id": "c08b6492",
+      "source_content": "This is enabled on a per session basis eg. reloading the page, changing to another chat will toggle off.",
+      "source_content_hash": "8345033825820e5bd10205d8d1f206d1eedb688d60259258c531affba145cd0e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これはセッションごとに有効化されるため、ページの再読み込みや別のチャットへの切り替えを行うとオフになります。"
+      }
+    },
+    {
+      "segment_id": "ccc4a3de",
+      "source_content": "## Google PSE API",
+      "source_content_hash": "d28b87c39ef678cee9146b1165b19f6112c2d4db8ae19884e7ac7bf5c27df130",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Google PSE API"
+      }
+    },
+    {
+      "segment_id": "d15a149c",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "5ffdb9f2",
+      "source_content": "1. Go to Google Developers, use [Programmable Search Engine](https://developers.google.com/custom-search), and log on or create account.\n2. Go to [control panel](https://programmablesearchengine.google.com/controlpanel/all) and click `Add` button\n3. Enter a search engine name, set the other properties to suit your needs, verify you're not a robot and click `Create` button.\n4. Generate `API key` and get the `Search engine ID`. (Available after the engine is created)\n5. With `API key` and `Search engine ID`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`\n6. Enable `Web search` and Set `Web Search Engine` to `google_pse`\n7. Fill `Google PSE API Key` with the `API key` and `Google PSE Engine Id` (# 4)\n8. Click `Save`",
+      "source_content_hash": "62d4a31b881310b0819f0925f2010bd41d64202823193c0b3c23f191ec098cdd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Google Developersにアクセスし、[Programmable Search Engine](https://developers.google.com/custom-search)を使用してログインまたはアカウントを作成します。\n2. [コントロールパネル](https://programmablesearchengine.google.com/controlpanel/all)に移動し、`追加`ボタンをクリックします。\n3. 検索エンジン名を入力し、必要に応じて他のプロパティを設定し、ロボットでないことを確認して`作成`ボタンをクリックします。\n4. `APIキー`を生成し、`検索エンジンID`を取得します（エンジン作成後に利用可能）。\n5. `APIキー`と`検索エンジンID`を使用して、`Sage WebUI管理パネル`を開き、`設定`タブをクリックしてから`Web検索`をクリックします。\n6. `Web検索`を有効にし、`Web検索エンジン`を`google_pse`に設定します。\n7. `Google PSE APIキー`に`APIキー`を、`Google PSEエンジンID`に（手順4で取得した）IDを入力します。\n8. `保存`をクリックします。"
+      }
+    },
+    {
+      "segment_id": "ebea2db8",
+      "source_content": "![Sage WebUI Admin panel](/images/tutorial_google_pse1.png)",
+      "source_content_hash": "18e662e5a597c533f371b20f8f73a0bd72a06bb2ec998474f2ad80f5ba1f3799",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage WebUI管理パネル](/images/tutorial_google_pse1.png)"
+      }
+    },
+    {
+      "segment_id": "faaf88af",
+      "source_content": "#### Note",
+      "source_content_hash": "ad8edba4c7789591022c73a8bd55a616580fb364fb3e18eaad9e0a59a894ac04",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 注意"
+      }
+    },
+    {
+      "segment_id": "d14a9e24",
+      "source_content": "You have to enable `Web search` in the prompt field, using plus (`+`) button.\nSearch the web ;-)",
+      "source_content_hash": "4e377a1a37752a6f86df09527ba0b46302f3c1c866103efbab0208f0c9f8e161",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プロンプトフィールドでプラス（`+`）ボタンを使用して`Web検索`を有効にする必要があります。\nWebを検索しましょう;-)"
+      }
+    },
+    {
+      "segment_id": "1697776c",
+      "source_content": "![enable Web search](/images/tutorial_google_pse2.png)",
+      "source_content_hash": "ed4f6d5d1900ad3a3825ed2a8110b162105ab076d8647d55b4458c8222bee60f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Web検索を有効にする](/images/tutorial_google_pse2.png)"
+      }
+    },
+    {
+      "segment_id": "c766bf1c",
+      "source_content": "## Brave API",
+      "source_content_hash": "6b4ef68ed420cfba130f3e83f2c90917ba69388a600286c83e3038efb7bd50ba",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Brave API"
+      }
+    },
+    {
+      "segment_id": "22c5ecf3",
+      "source_content": "### Docker Compose Setup",
+      "source_content_hash": "630c38bc6d2bc164ac78059fbe584b243571fd1b9b7eafef5bc1050d77bea80b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Docker Composeセットアップ"
+      }
+    },
+    {
+      "segment_id": "991164fd",
+      "source_content": "Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:",
+      "source_content_hash": "96fe67f402e1b17aa4e8cf5824ae11593bdd50463defcc3ae553ddd9b481288e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの`docker-compose.yaml`ファイルに以下の環境変数を追加します："
+      }
+    },
+    {
+      "segment_id": "8318ef59",
+      "source_content": "```yaml\nservices:\n  sage-open-webui:\n    environment:\n      ENABLE_RAG_WEB_SEARCH: True\n      RAG_WEB_SEARCH_ENGINE: \"brave\"\n      BRAVE_SEARCH_API_KEY: \"YOUR_API_KEY\"\n      RAG_WEB_SEARCH_RESULT_COUNT: 3\n      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10\n```",
+      "source_content_hash": "74caab5b189dd48b535ecbf17a4c161f40578608e9b159fd5c51426b33fcf56d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_8318ef59"
+      }
+    },
+    {
+      "segment_id": "5d1aec8a",
+      "source_content": "## Mojeek Search API",
+      "source_content_hash": "969155c01987d8c3a746ab54f1fc96103b3c71a86466f614a9e21be131c7e66d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Mojeek Search API"
+      }
+    },
+    {
+      "segment_id": "453cd509",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "738dcc8b",
+      "source_content": "1. Please visit [Mojeek Search API page](https://www.mojeek.com/services/search/web-search-api/) to obtain an `API key`\n2. With `API key`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`\n3. Enable `Web search` and Set `Web Search Engine` to `mojeek`\n4. Fill `Mojeek Search API Key` with the `API key`\n5. Click `Save`",
+      "source_content_hash": "512ccfe786d6af2bd0557ce34d74a59c80ac3addcc1ea561cfbbdb8b925daab3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [Mojeek Search APIページ](https://www.mojeek.com/services/search/web-search-api/)にアクセスして`APIキー`を取得してください。\n2. `APIキー`を使用して、`Sage WebUI管理パネル`を開き、`設定`タブをクリックしてから`Web検索`をクリックします。\n3. `Web検索`を有効にし、`Web検索エンジン`を`mojeek`に設定します。\n4. `Mojeek Search APIキー`に`APIキー`を入力します。\n5. `保存`をクリックします。"
+      }
+    },
+    {
+      "segment_id": "7083d194",
+      "source_content": "### Docker Compose Setup",
+      "source_content_hash": "630c38bc6d2bc164ac78059fbe584b243571fd1b9b7eafef5bc1050d77bea80b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Docker Composeセットアップ"
+      }
+    },
+    {
+      "segment_id": "7a210168",
+      "source_content": "Add the following environment variables to your Sage WebUI `docker-compose.yaml` file:",
+      "source_content_hash": "96fe67f402e1b17aa4e8cf5824ae11593bdd50463defcc3ae553ddd9b481288e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの`docker-compose.yaml`ファイルに以下の環境変数を追加します："
+      }
+    },
+    {
+      "segment_id": "59be63b1",
+      "source_content": "```yaml\nservices:\n  sage-open-webui:\n    environment:\n      ENABLE_RAG_WEB_SEARCH: True\n      RAG_WEB_SEARCH_ENGINE: \"mojeek\"\n      BRAVE_SEARCH_API_KEY: \"YOUR_MOJEEK_API_KEY\"\n      RAG_WEB_SEARCH_RESULT_COUNT: 3\n      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10\n```",
+      "source_content_hash": "bb04ed45fbd7ed4b57ac7ddf0bd34126a423dafa1041a866e5301183d8291fd7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_59be63b1"
+      }
+    },
+    {
+      "segment_id": "4588f81b",
+      "source_content": "## SearchApi API",
+      "source_content_hash": "945ef5fae3fd4dbeee85fb02c061da012067b41bdf239930e45139b6a1558ad0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## SearchApi API"
+      }
+    },
+    {
+      "segment_id": "df64d276",
+      "source_content": "[SearchApi](https://searchapi.io) is a collection of real-time SERP APIs. Any existing or upcoming SERP engine that returns `organic_results` is supported. The default web search engine is `google`, but it can be changed to `bing`, `baidu`, `google_news`, `bing_news`, `google_scholar`, `google_patents`, and others.",
+      "source_content_hash": "ad6fab0e90993ca71c7d5206306f5deb010f492cc9071ab7112e125f7f308bc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[SearchApi](https://searchapi.io)はリアルタイムSERP APIのコレクションです。`organic_results`を返す既存または今後のSERPエンジンがサポートされています。デフォルトのWeb検索エンジンは`google`ですが、`bing`、`baidu`、`google_news`、`bing_news`、`google_scholar`、`google_patents`などに変更できます。"
+      }
+    },
+    {
+      "segment_id": "4cde2a64",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "3880a2b6",
+      "source_content": "1. Go to [SearchApi](https://searchapi.io), and log on or create a new account.\n2. Go to `Dashboard` and copy the API key.\n3. With `API key`, open `Sage WebUI Admin panel` and click `Settings` tab, and then click `Web Search`.\n4. Enable `Web search` and set `Web Search Engine` to `searchapi`.\n5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [SearchApi](https://www.searchapi.io/) dashboard.\n6. [Optional] Enter the `SearchApi engine` name you want to query. Example, `google`, `bing`, `baidu`, `google_news`, `bing_news`, `google_videos`, `google_scholar` and `google_patents.` By default, it is set to `google`.\n7. Click `Save`.",
+      "source_content_hash": "87472a89dfbb7f32a309d9ec70e950c0f3fd51b590c39429121f5af9d1a39da0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [SearchApi](https://searchapi.io)にアクセスし、ログインまたは新規アカウントを作成します。\n2. `ダッシュボード`に移動し、APIキーをコピーします。\n3. コピーした`APIキー`を使用して、`Sage WebUI 管理パネル`を開き、`設定`タブをクリックしてから`Web検索`を選択します。\n4. `Web検索`を有効にし、`Web検索エンジン`を`searchapi`に設定します。\n5. `SearchApi APIキー`フィールドに、[SearchApi](https://www.searchapi.io/)ダッシュボードからコピーしたAPIキーを入力します。\n6. [オプション] クエリを実行したい`SearchApiエンジン`名を入力します。例: `google`、`bing`、`baidu`、`google_news`、`bing_news`、`google_videos`、`google_scholar`、`google_patents`。デフォルトは`google`に設定されています。\n7. `保存`をクリックします。"
+      }
+    },
+    {
+      "segment_id": "f894b163",
+      "source_content": "![Sage WebUI Admin panel](/images/tutorial_searchapi_search.png)",
+      "source_content_hash": "3c7ad6abbc80367a869e403cc82a40d412965a4aad5c382ffe043821db5974ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage WebUI 管理パネル](/images/tutorial_searchapi_search.png)"
+      }
+    },
+    {
+      "segment_id": "6bb40e64",
+      "source_content": "#### Note",
+      "source_content_hash": "ad8edba4c7789591022c73a8bd55a616580fb364fb3e18eaad9e0a59a894ac04",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 注意"
+      }
+    },
+    {
+      "segment_id": "40e5a2ef",
+      "source_content": "You have to enable `Web search` in the prompt field, using plus (`+`) button to search the web using [SearchApi](https://www.searchapi.io/) engines.",
+      "source_content_hash": "ae0718aaa54a736f52a905c1e5439d70f2d93f4fd71dc3c41d959cd1c6e632d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[SearchApi](https://www.searchapi.io/)エンジンを使用してWeb検索を行うには、プロンプトフィールドで`Web検索`を有効にする必要があります（`+`ボタンを使用）。"
+      }
+    },
+    {
+      "segment_id": "fea3f437",
+      "source_content": "![enable Web search](/images/enable_web_search.png)",
+      "source_content_hash": "218b00a943bdad656481c606ba89da9431518a7987730e56036b5647d9f7bcbb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Web検索を有効にする](/images/enable_web_search.png)"
+      }
+    },
+    {
+      "segment_id": "95a0af4d",
+      "source_content": "## Kagi API",
+      "source_content_hash": "a27fef9c8e097190f3a4ac8a256f9066998cf73e9aef9afc1578a9132461a907",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Kagi API"
+      }
+    },
+    {
+      "segment_id": "0d8c3e6f",
+      "source_content": "Coming Soon",
+      "source_content_hash": "be10b2f905f868ed50d992d183bec4314b7bddc5dad30b8985c5333b42db5c24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定"
+      }
+    },
+    {
+      "segment_id": "e60b0fa0",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "a59a3e1f",
+      "source_content": "## Serpstack API",
+      "source_content_hash": "bd8fedc1231bca5371156eb199cf3585abe2ef82d507bcc96ae2c22721a87bc4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Serpstack API"
+      }
+    },
+    {
+      "segment_id": "24d24e6d",
+      "source_content": "Coming Soon",
+      "source_content_hash": "be10b2f905f868ed50d992d183bec4314b7bddc5dad30b8985c5333b42db5c24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定"
+      }
+    },
+    {
+      "segment_id": "486ab0ab",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "9f33b63d",
+      "source_content": "## Serper API",
+      "source_content_hash": "a1bc9b79afef83355c209e0d4b15f876ec5d31f7dc50be58a721e6dd1316dec1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Serper API"
+      }
+    },
+    {
+      "segment_id": "ceff655b",
+      "source_content": "Coming Soon",
+      "source_content_hash": "be10b2f905f868ed50d992d183bec4314b7bddc5dad30b8985c5333b42db5c24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定"
+      }
+    },
+    {
+      "segment_id": "54b0eaca",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "3551e936",
+      "source_content": "## Serply API",
+      "source_content_hash": "43324587a42b0069bec3937a43990cd832a59121659d6417f908df63512fe57b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Serply API"
+      }
+    },
+    {
+      "segment_id": "ebe19e6f",
+      "source_content": "Coming Soon",
+      "source_content_hash": "be10b2f905f868ed50d992d183bec4314b7bddc5dad30b8985c5333b42db5c24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定"
+      }
+    },
+    {
+      "segment_id": "a06e043d",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "8be68b91",
+      "source_content": "## DuckDuckGo API",
+      "source_content_hash": "746cce59dda449d90a5ee201a8796da471236a863c0f53fc3a4723f6fa798227",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## DuckDuckGo API"
+      }
+    },
+    {
+      "segment_id": "841204f6",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "ae95f665",
+      "source_content": "No setup is required to use DuckDuckGo API for Sage WebUI's built in web search! DuckDuckGo works out of the box in Sage WebUI.",
+      "source_content_hash": "4af5269b7b9a3f7dc193092c4e202fb66e61f171a8148dd175236f40684e6890",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの組み込みWeb検索でDuckDuckGo APIを使用するためにセットアップは不要です！DuckDuckGoはSage WebUIでそのまま動作します。"
+      }
+    },
+    {
+      "segment_id": "0a67cef8",
+      "source_content": ":::note\nThere is a possibility of your web searches being rate limited.\n:::",
+      "source_content_hash": "6d20a62345ab2ff5b4e7a20c80b1a3e5529c7067f37d338aa91a5f4ef7f660f6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\nWeb検索がレート制限される可能性があります。\n:::"
+      }
+    },
+    {
+      "segment_id": "3b03bf1f",
+      "source_content": "## Tavily API",
+      "source_content_hash": "2ff88a7be356da577732b4ae66b1d39fdf7a95227d3d20cad698d57ffaa90f58",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Tavily API"
+      }
+    },
+    {
+      "segment_id": "4ddcc352",
+      "source_content": "Coming Soon",
+      "source_content_hash": "be10b2f905f868ed50d992d183bec4314b7bddc5dad30b8985c5333b42db5c24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定"
+      }
+    },
+    {
+      "segment_id": "dd33c745",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "58e141d3",
+      "source_content": "## Jina API",
+      "source_content_hash": "a49c3ce8c139ecf3c73a4cbe9c97a2628a5749073136644f87ee0d7c3b665779",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Jina API"
+      }
+    },
+    {
+      "segment_id": "de7b71a3",
+      "source_content": "Coming Soon",
+      "source_content_hash": "be10b2f905f868ed50d992d183bec4314b7bddc5dad30b8985c5333b42db5c24",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定"
+      }
+    },
+    {
+      "segment_id": "a47cf7b8",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "d44c41e4",
+      "source_content": "## Bing API",
+      "source_content_hash": "d30a18f42c3948003ff551a6d659fc811123d55ddffce90fdb67bee97d9a9ce1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Bing API"
+      }
+    },
+    {
+      "segment_id": "0b6179bc",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "ab7aac60",
+      "source_content": "1. Navigate to the [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) and create a new resource. After creation, you’ll be redirected to the resource overview page. From there, select \"Click here to manage keys.\" ![click here to manage keys](https://github.com/user-attachments/assets/dd2a3c67-d6a7-4198-ba54-67a3c8acff6d)\n2. On the key management page, locate Key1 or Key2 and copy your desired key.\n3. Open the Sage WebUI Admin Panel, switch to the Settings tab, and then select Web Search.\n4. Enable the Web search option and set the Web Search Engine to bing.\n5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) dashboard.\n6. Click `Save`.",
+      "source_content_hash": "13d56c9d723a92d04b46b622c95aa6c0b904ba66f8b100cfd06e29ce49e92f12",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [Azureポータル](https://portal.azure.com/#create/Microsoft.BingSearch)にアクセスし、新しいリソースを作成します。作成後、リソース概要ページにリダイレクトされます。そこで「キーを管理するにはここをクリック」を選択します。 ![キー管理画面へのリンク](https://github.com/user-attachments/assets/dd2a3c67-d6a7-4198-ba54-67a3c8acff6d)\n2. キー管理ページでKey1またはKey2を探し、使用したいキーをコピーします。\n3. Sage WebUI管理パネルを開き、設定タブに切り替えてからWeb検索を選択します。\n4. Web検索オプションを有効にし、Web検索エンジンをbingに設定します。\n5. `SearchApi APIキー`フィールドに、[Azureポータル](https://portal.azure.com/#create/Microsoft.BingSearch)ダッシュボードからコピーしたAPIキーを入力します。\n6. `保存`をクリックします。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/searxng.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.807741+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0bc056ea604faf4b60555d470eb0aeec4f3d21b9b8ed9e3ee8a33be18fc87d5d"
+  }
+}

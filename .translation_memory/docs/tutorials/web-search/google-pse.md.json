@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/google-pse.md",
+  "source_file_content_hash": "f89a10619ff2b76b0226a3b143d6d82b9e9fa63916908ee26d3b60b776684246",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\ntitle: \"Google PSE\"\n---",
+      "source_content_hash": "8abde18f235ecb1bda71fe985ec4bd4829308769d2d207314a8c61740428dfd8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケースに合わせてSage Open WebUIをカスタマイズする方法のデモンストレーションとしてのみ提供されています。寄稿をご希望ですか？寄稿チュートリアルをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Google PSE API",
+      "source_content_hash": "d28b87c39ef678cee9146b1165b19f6112c2d4db8ae19884e7ac7bf5c27df130",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Google PSE API"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "1. Go to Google Developers, use [Programmable Search Engine](https://developers.google.com/custom-search), and log on or create account.\n2. Go to [control panel](https://programmablesearchengine.google.com/controlpanel/all) and click `Add` button\n3. Enter a search engine name, set the other properties to suit your needs, verify you're not a robot and click `Create` button.\n4. Generate `API key` and get the `Search engine ID`. (Available after the engine is created)\n5. With `API key` and `Search engine ID`, open `Sage Open WebUI Admin panel` and click `Settings` tab, and then click `Web Search`\n6. Enable `Web search` and Set `Web Search Engine` to `google_pse`\n7. Fill `Google PSE API Key` with the `API key` and `Google PSE Engine Id` (# 4)\n8. Click `Save`",
+      "source_content_hash": "8e88e9e3a1f4fe7470d208a4a89536e8218aabcbb111855543acfbd05e675e79",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Google Developersにアクセスし、[Programmable Search Engine](https://developers.google.com/custom-search)を使用して、ログインまたはアカウントを作成します。\n2. [コントロールパネル](https://programmablesearchengine.google.com/controlpanel/all)に移動し、`追加`ボタンをクリックします。\n3. 検索エンジン名を入力し、必要に応じて他のプロパティを設定し、ロボットでないことを確認して`作成`ボタンをクリックします。\n4. `APIキー`を生成し、`検索エンジンID`を取得します（エンジン作成後に利用可能）。\n5. `APIキー`と`検索エンジンID`を取得したら、`Sage Open WebUI管理パネル`を開き、`設定`タブをクリックしてから`ウェブ検索`をクリックします。\n6. `ウェブ検索`を有効にし、`ウェブ検索エンジン`を`google_pse`に設定します。\n7. `Google PSE APIキー`に`APIキー`を、`Google PSEエンジンID`に（手順4で取得した）IDを入力します。\n8. `保存`をクリックします。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "![Sage Open WebUI Admin panel](/images/tutorial_google_pse1.png)",
+      "source_content_hash": "9b0ab0123099629a4793127b307853e627f4616f054bc15d935f43975b10d87f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage Open WebUI管理パネル](/images/tutorial_google_pse1.png)"
+      }
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "#### Note",
+      "source_content_hash": "ad8edba4c7789591022c73a8bd55a616580fb364fb3e18eaad9e0a59a894ac04",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 注意"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "You have to enable `Web search` in the prompt field, using plus (`+`) button.\nSearch the web ;-)",
+      "source_content_hash": "4e377a1a37752a6f86df09527ba0b46302f3c1c866103efbab0208f0c9f8e161",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プロンプトフィールドで`ウェブ検索`を有効にする必要があります。プラス（`+`）ボタンを使用してください。\nウェブを検索しましょう ;-)"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "![enable Web search](/images/tutorial_google_pse2.png)",
+      "source_content_hash": "ed4f6d5d1900ad3a3825ed2a8110b162105ab076d8647d55b4458c8222bee60f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![ウェブ検索を有効にする](/images/tutorial_google_pse2.png)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/google-pse.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.794165+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "f89a10619ff2b76b0226a3b143d6d82b9e9fa63916908ee26d3b60b776684246"
+  }
+}

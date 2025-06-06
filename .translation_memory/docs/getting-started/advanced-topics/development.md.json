@@ -1,0 +1,192 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/advanced-topics/development.md",
+  "source_file_content_hash": "b97e920e5578819c036d40f955f00a1393868f41be7dbe89416525f2f595f5ef",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\ntitle: \"🛠️ Development Guide\"\n---",
+      "source_content_hash": "35b52baf4c4e8175bbc09a99056fb9129d06e7828ba32959985e6861ab3d4896",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Welcome to the **Sage WebUI Development Setup Guide!** Whether you're a novice or an experienced developer, this guide will help you set up a **local development environment** for both the frontend and backend components. Let’s dive in! 🚀",
+      "source_content_hash": "60ed549b2c29910aa854a572532d868578b7b9d2267517efa67d50a9ac1f2c15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Sage WebUI 開発環境セットアップガイド**へようこそ！初心者から経験豊富な開発者まで、フロントエンドとバックエンドの両コンポーネントをローカル環境でセットアップする手順を解説します。さあ、始めましょう！🚀"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## System Requirements",
+      "source_content_hash": "c51dbf328a799a0b9a2098c375f642c26b94ffc0073c71a7624870a75fd4e666",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## システム要件"
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "- **Operating System**: Linux (or WSL on Windows) or macOS  \n- **Python Version**: Python 3.11+  \n- **Node.js Version**: 22.10+",
+      "source_content_hash": "11e8901ebfadfca9b9624e54c69e857e0eaaf182b5d124a4277e67aecbf93f5c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **オペレーティングシステム**: Linux（またはWindows上のWSL）またはmacOS  \n- **Pythonバージョン**: Python 3.11以上  \n- **Node.jsバージョン**: 22.10以上"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Development Methods",
+      "source_content_hash": "02b951e7752915961cd97e71c11a23552297dc63f1fbb8ceee2025b6359e1503",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 開発方法"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "### 🐧 Local Development Setup",
+      "source_content_hash": "eaca5e315036ba884cf8f861c8ef0af2f263807a0022a1a6b8fd11faf1bb0f26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🐧 ローカル開発環境のセットアップ"
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "1. **Clone the Repository**:\n\n   ```bash\n   git clone https://github.com/Startr/AI-WEB-openwebui.git\n   cd sage-open-webui\n   ```\n\n2. **Frontend Setup**:\n   - Create a `.env` file:\n\n     ```bash\n     cp -RPp .env.example .env\n     ```\n\n   - Install dependencies:\n\n     ```bash\n     npm install\n     ```\n\n   - Start the frontend server:\n\n     ```bash\n     npm run dev\n     ```\n\n     🌐 Available at: [http://localhost:5173](http://localhost:5173).\n\n3. **Backend Setup**:\n   - Navigate to the backend:\n\n     ```bash\n     cd backend\n     ```\n\n   - Use **Conda** for environment setup:\n\n     ```bash\n     conda create --name sage-open-webui python=3.11\n     conda activate sage-open-webui\n     ```\n\n   - Install dependencies:\n\n     ```bash\n     pip install -r requirements.txt -U\n     ```\n\n   - Start the backend:\n\n     ```bash\n     sh dev.sh\n     ```\n\n     📄 API docs available at: [http://localhost:8080/docs](http://localhost:8080/docs).",
+      "source_content_hash": "d9a63e95092f5f1b43a2997ac77dc1f548363feebf078052e28b36b6faff3ab6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **リポジトリのクローン**:\n\n   ```bash\n   git clone https://github.com/Startr/AI-WEB-openwebui.git\n   cd sage-open-webui\n   ```\n\n2. **フロントエンドのセットアップ**:\n   - `.env`ファイルの作成:\n\n     ```bash\n     cp -RPp .env.example .env\n     ```\n\n   - 依存関係のインストール:\n\n     ```bash\n     npm install\n     ```\n\n   - フロントエンドサーバーの起動:\n\n     ```bash\n     npm run dev\n     ```\n\n     🌐 アクセス先: [http://localhost:5173](http://localhost:5173).\n\n3. **バックエンドのセットアップ**:\n   - バックエンドディレクトリに移動:\n\n     ```bash\n     cd backend\n     ```\n\n   - **Conda**を使用した環境構築:\n\n     ```bash\n     conda create --name sage-open-webui python=3.11\n     conda activate sage-open-webui\n     ```\n\n   - 依存関係のインストール:\n\n     ```bash\n     pip install -r requirements.txt -U\n     ```\n\n   - バックエンドの起動:\n\n     ```bash\n     sh dev.sh\n     ```\n\n     📄 APIドキュメント: [http://localhost:8080/docs](http://localhost:8080/docs)."
+      }
+    },
+    {
+      "segment_id": "b1cbdb65",
+      "source_content": "## 🐛 Troubleshooting",
+      "source_content_hash": "1b6cbda4c898c3228040c9a7c1cf942ec9cab0667d4e7cee1110233e78ceb78a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🐛 トラブルシューティング"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "### **FATAL ERROR: Reached Heap Limit**",
+      "source_content_hash": "98c1dc79e42bd02d863fc36bc3ec3e58b004725b12236ebbec2299465a8ac254",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### **FATAL ERROR: Reached Heap Limit**"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "If you encounter memory-related errors during the build, increase the **Node.js heap size**:",
+      "source_content_hash": "280501340df6ab0bfb53bd8404c853262a3263b239f00c7147c40b9448eec52b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ビルド中にメモリ関連のエラーが発生した場合、**Node.jsのヒープサイズ**を増やしてください:"
+      }
+    },
+    {
+      "segment_id": "5efe9dee",
+      "source_content": "1. **Modify Dockerfile**:\n\n   ```dockerfile\n   ENV NODE_OPTIONS=--max-old-space-size=4096\n   ```\n\n2. **Allocate at least 4 GB of RAM** to Node.js.",
+      "source_content_hash": "e0c126f3b627bccda2e7c4aacc21d2f6ea1f4388750d6d6e8907ad834fec10bf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Dockerfileの修正**:\n\n   ```dockerfile\n   ENV NODE_OPTIONS=--max-old-space-size=4096\n   ```\n\n2. **Node.jsに4GB以上のRAM**を割り当てます。"
+      }
+    },
+    {
+      "segment_id": "2a9ed33d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "### **Other Issues**",
+      "source_content_hash": "f50e7c81b1e5b6d3e8f2ef10147a4e8dc763f2068a94e3d4d25f895730636155",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### **その他の問題**"
+      }
+    },
+    {
+      "segment_id": "d0b8a6db",
+      "source_content": "- **Port Conflicts**:  \n   Ensure that no other processes are using **ports 8080 or 5173**.\n\n- **Hot Reload Not Working**:  \n   Verify that **watch mode** is enabled for both frontend and backend.",
+      "source_content_hash": "6683cc2570bee4638a9e3dfa30fa75a27926d74dac3d81ab60fc5eee45da6c5b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ポート競合**:  \n   **ポート8080または5173**が他のプロセスで使用されていないことを確認してください。\n\n- **ホットリロードが機能しない**:  \n   フロントエンドとバックエンドの両方で**ウォッチモード**が有効になっていることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "## Contributing to Sage WebUI",
+      "source_content_hash": "e69579483ba764df0360aba17579bbe6c3bb838d96a2538a6b82920ef65bb654",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIへの貢献"
+      }
+    },
+    {
+      "segment_id": "99d0dd9b",
+      "source_content": "### Local Workflow",
+      "source_content_hash": "5409cc485f28def96a04c3ee38db4383b103c2569c3e586378e3dd6004c6d188",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ローカルワークフロー"
+      }
+    },
+    {
+      "segment_id": "584b7213",
+      "source_content": "1. **Commit Changes Regularly** to track progress.\n2. **Sync with the Main Branch** to avoid conflicts:\n\n   ```bash\n   git pull origin main\n   ```\n\n3. **Run Tests Before Pushing**:\n\n   ```bash\n   npm run test\n   ```",
+      "source_content_hash": "a995761effe80881e19a69c3febc277e0c7c62b2753b769a4b824f6478a8c00c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **変更を定期的にコミット**して進捗を記録します。\n2. **メインブランチとの同期**を取って競合を防ぎます:\n\n   ```bash\n   git pull origin main\n   ```\n\n3. **プッシュ前にテストを実行**:\n\n   ```bash\n   npm run test\n   ```"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "Happy coding! 🎉",
+      "source_content_hash": "05cf9d6617fb36d3015691a00ad133131fc544968af8514c8a50b4f67899e8b4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Happy coding! 🎉"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/advanced-topics/development.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.801918+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b97e920e5578819c036d40f955f00a1393868f41be7dbe89416525f2f595f5ef"
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/functions/pipe.mdx",
+  "source_file_content_hash": "fe0ca34316cea6685c79ed81d9466dd3060a829d827c42f305a205c4c659135e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🚰 Pipe Function\"\n---",
+      "source_content_hash": "a7d3a52812a03c44e87dcd92c2351e2b198c202c9d5e224a22b209b980f2cd14",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 🚰 Pipe Function: Create Custom \"Agents/Models\"",
+      "source_content_hash": "5c2be90d4d801b739c3a40f4391770206386d71ce16e1a85d33cb3940eac2fd8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🚰 パイプ機能：カスタム「エージェント/モデル」を作成する"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Welcome to this guide on creating **Pipes** in Sage WebUI! Think of Pipes as a way to **adding** a new model to Sage WebUI. In this document, we'll break down what a Pipe is, how it works, and how you can create your own to add custom logic and processing to your Sage WebUI models. We'll use clear metaphors and go through every detail to ensure you have a comprehensive understanding.",
+      "source_content_hash": "2de6f1bea33751f116e5b08dc0ff06984334198e51c74beec6bf5a0922c3eedb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIで**パイプ**を作成するガイドへようこそ！パイプは、Sage WebUIに**新しいモデルを追加**する方法と考えることができます。このドキュメントでは、パイプとは何か、その仕組み、そしてカスタムロジックや処理をSage WebUIモデルに追加するために独自のパイプを作成する方法について詳しく説明します。明確な比喩を使い、すべての詳細を網羅して包括的な理解が得られるようにします。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Introduction to Pipes",
+      "source_content_hash": "515fb20ee5b8773f0e11dece373b5594c558421b4d4e74aa12d307e45211b7ec",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## パイプの紹介"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Imagine Sage WebUI as a **plumbing system** where data flows through pipes and valves. In this analogy:",
+      "source_content_hash": "5526880ba655eb96cb84c28bb29640e540185d9fdc1e9849690bd1d880ed7535",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIを、データがパイプとバルブを通って流れる**配管システム**と想像してください。この比喩では："
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "- **Pipes** are like **plugins** that let you introduce new pathways for data to flow, allowing you to inject custom logic and processing.\n- **Valves** are the **configurable parts** of your pipe that control how data flows through it.",
+      "source_content_hash": "6238bc47fa69e248c7377625c2aee7ee8bfee8ddec0db00c72f59ffb1945aa11",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **パイプ**は、カスタムロジックや処理を注入できる新しいデータの流れを導入する**プラグイン**のようなものです。\n- **バルブ**は、データがどのように流れるかを制御するパイプの**設定可能な部分**です。"
+      }
+    },
+    {
+      "segment_id": "42ad8e83",
+      "source_content": "By creating a Pipe, you're essentially crafting a custom model with the specific behavior you want, all within the Sage WebUI framework.",
+      "source_content_hash": "9f6614d7820b68fd283244746f2efef352eb038b5a8a599d7e99e37918eb12df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "パイプを作成することで、Sage WebUIフレームワーク内で、望む特定の動作を持つカスタムモデルを本質的に作成していることになります。"
+      }
+    },
+    {
+      "segment_id": "ade2cf6a",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## Understanding the Pipe Structure",
+      "source_content_hash": "5e0114c25fec6d1a5cdcd09d256b0e75245692908588e86df6acda5eb5acbb80",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## パイプの構造を理解する"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Let's start with a basic, barebones version of a Pipe to understand its structure:",
+      "source_content_hash": "321792d8cf53c8da4215011182259c35b3567928d4d3663314caafef456b2fc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "まず、パイプの基本的な構造を理解するために、シンプルなパイプの例から始めましょう："
+      }
+    },
+    {
+      "segment_id": "3569d545",
+      "source_content": "```python\nfrom pydantic import BaseModel, Field\n\nclass Pipe:\n    class Valves(BaseModel):\n        MODEL_ID: str = Field(default=\"\")\n\n    def __init__(self):\n        self.valves = self.Valves()\n\n    def pipe(self, body: dict):\n        # Logic goes here\n        print(self.valves, body)  # This will print the configuration options and the input body\n        return \"Hello, World!\"\n```",
+      "source_content_hash": "3cfbdc72855fe667202b44b18110b120bdf913ed834f4e3d28ae7b3d98b2f869",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3569d545"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "### The Pipe Class",
+      "source_content_hash": "30cb8fb97437fa629a5ffc37f010bb6a3db209bc405ef46fd880121c59c7a193",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### パイプクラス"
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "- **Definition**: The `Pipe` class is where you define your custom logic.\n- **Purpose**: Acts as the blueprint for your plugin, determining how it behaves within Sage WebUI.",
+      "source_content_hash": "d607d61b7e55580efb235cc706b95313c034c899584be700a19e7a97f312653d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **定義**: `Pipe`クラスは、カスタムロジックを定義する場所です。\n- **目的**: プラグインの設計図として機能し、Sage WebUI内での動作を決定します。"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "### Valves: Configuring Your Pipe",
+      "source_content_hash": "51dee8025e905c873a7fd3abb2973fe69d3ae9dc11f481a58d4838a81ce7b1db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### バルブ：パイプの設定"
+      }
+    },
+    {
+      "segment_id": "cef3cb03",
+      "source_content": "- **Definition**: `Valves` is a nested class within `Pipe`, inheriting from `BaseModel`.\n- **Purpose**: It contains the configuration options (parameters) that persist across the use of your Pipe.\n- **Example**: In the above code, `MODEL_ID` is a configuration option with a default empty string.",
+      "source_content_hash": "cde34af8d487dd7cba3adce5859fa63ac2f4c01fa2c857cb0e35b42934f2786d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **定義**: `Valves`は、`Pipe`内のネストされたクラスで、`BaseModel`から継承されます。\n- **目的**: パイプの使用中に保持される設定オプション（パラメータ）を含みます。\n- **例**: 上記のコードでは、`MODEL_ID`はデフォルトが空文字列の設定オプションです。"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "**Metaphor**: Think of Valves as the knobs on a real-world pipe system that control the flow of water. In your Pipe, Valves allow users to adjust settings that influence how the data flows and is processed.",
+      "source_content_hash": "24f9617452f460af61ebca3f64b503569651b200dd5ece31844d2bd539bd2fa0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**比喩**: バルブは、実際の配管システムで水の流れを制御するノブのようなものと考えてください。パイプでは、バルブはデータの流れや処理方法に影響を与える設定をユーザーが調整できるようにします。"
+      }
+    },
+    {
+      "segment_id": "60410af6",
+      "source_content": "### The `__init__` Method",
+      "source_content_hash": "eba01c8f5192ee244ed8099e2b4e17c83819efbdd94e868f1c53e21d39cfc289",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### `__init__`メソッド"
+      }
+    },
+    {
+      "segment_id": "9b797309",
+      "source_content": "- **Definition**: The constructor method for the `Pipe` class.\n- **Purpose**: Initializes the Pipe's state and sets up any necessary components.\n- **Best Practice**: Keep it simple; primarily initialize `self.valves` here.",
+      "source_content_hash": "784df69b1f9b0d53f4426c32afc2c78475e34edc31716798adb7193a261c27a4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **定義**: `Pipe`クラスのコンストラクタメソッドです。\n- **目的**: パイプの状態を初期化し、必要なコンポーネントをセットアップします。\n- **ベストプラクティス**: シンプルに保ち、主に`self.valves`をここで初期化します。"
+      }
+    },
+    {
+      "segment_id": "3c08ed05",
+      "source_content": "```python\ndef __init__(self):\n    self.valves = self.Valves()\n```",
+      "source_content_hash": "700d42108e3ffeb21df916a871b018158ed9690f98af01873dfe66c52bebe7ef",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3c08ed05"
+      }
+    },
+    {
+      "segment_id": "126950d7",
+      "source_content": "### The `pipe` Function",
+      "source_content_hash": "7ccf33865557014ad7ac66cd62f30987ef9a6e5a41a9b6de7e97bf6a284aec9b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### `pipe`関数"
+      }
+    },
+    {
+      "segment_id": "180e9ce9",
+      "source_content": "- **Definition**: The core function where your custom logic resides.\n- **Parameters**:\n  - `body`: A dictionary containing the input data.\n- **Purpose**: Processes the input data using your custom logic and returns the result.",
+      "source_content_hash": "f633619e6f1646ebfe22ebb353ee2c571db8a78f4bf25362837b8a1232d4cd04",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **定義**: カスタムロジックが存在するコア関数です。\n- **パラメータ**:\n  - `body`: 入力データを含む辞書。\n- **目的**: カスタムロジックを使用して入力データを処理し、結果を返します。"
+      }
+    },
+    {
+      "segment_id": "4fb3ded8",
+      "source_content": "```python\ndef pipe(self, body: dict):\n    # Logic goes here\n    print(self.valves, body)  # This will print the configuration options and the input body\n    return \"Hello, World!\"\n```",
+      "source_content_hash": "f820a3e207f771328b60e20294a09a8b92b25a317cbba4202a06d295fac1e897",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4fb3ded8"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "**Note**: Always place `Valves` at the top of your `Pipe` class, followed by `__init__`, and then the `pipe` function. This structure ensures clarity and consistency.",
+      "source_content_hash": "7a80138cde0f3930a90ad8cc9660b662bedad97b5f3b40d589e620e2f576b0d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**注意**: 常に`Valves`を`Pipe`クラスの先頭に配置し、その後に`__init__`、そして`pipe`関数を続けます。この構造は明確さと一貫性を確保します。"
+      }
+    },
+    {
+      "segment_id": "aac83236",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "66819c78",
+      "source_content": "## Creating Multiple Models with Pipes",
+      "source_content_hash": "ed10c077173a39b36893bbdd3dffb7cb337daf8ecf8d21a74ef028f73bb4e208",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## パイプで複数のモデルを作成する"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "What if you want your Pipe to create **multiple models** within Sage WebUI? You can achieve this by defining a `pipes` function or variable inside your `Pipe` class. This setup, informally called a **manifold**, allows your Pipe to represent multiple models.",
+      "source_content_hash": "4d162b950a9fc97b26c20efbd19007b7f60c7c071ba93d1c9d54a0c9800ce47e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "パイプでSage WebUI内に**複数のモデル**を作成したい場合はどうすればよいでしょうか？`Pipe`クラス内に`pipes`関数または変数を定義することでこれを実現できます。この設定は、**マニホールド**と呼ばれ、パイプが複数のモデルを表現できるようにします。"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "Here's how you can do it:",
+      "source_content_hash": "7778fef9194069e2d9cdc549dc0f01d2eb5be584b523fcee366e244d2fef39f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下にその方法を示します："
+      }
+    },
+    {
+      "segment_id": "f6563256",
+      "source_content": "```python\nfrom pydantic import BaseModel, Field\n\nclass Pipe:\n    class Valves(BaseModel):\n        MODEL_ID: str = Field(default=\"\")\n\n    def __init__(self):\n        self.valves = self.Valves()\n\n    def pipes(self):\n        return [\n            {\"id\": \"model_id_1\", \"name\": \"model_1\"},\n            {\"id\": \"model_id_2\", \"name\": \"model_2\"},\n            {\"id\": \"model_id_3\", \"name\": \"model_3\"},\n        ]\n\n    def pipe(self, body: dict):\n        # Logic goes here\n        print(self.valves, body)  # Prints the configuration options and the input body\n        model = body.get(\"model\", \"\")\n        return f\"{model}: Hello, World!\"\n```",
+      "source_content_hash": "34829a4d76d6aa97c52e6c19ec88f6b4db7f356bf525b91df9d5b49889d28241",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f6563256"
+      }
+    },
+    {
+      "segment_id": "8574d51c",
+      "source_content": "### Explanation",
+      "source_content_hash": "6fe6ee36d1ed75d9cc31ded21777db2d6116a016119838a739b65b3c0c29483d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 説明"
+      }
+    },
+    {
+      "segment_id": "0422e2e2",
+      "source_content": "- **`pipes` Function**:\n  - Returns a list of dictionaries.\n  - Each dictionary represents a model with unique `id` and `name` keys.\n  - These models will show up individually in the Sage WebUI model selector.\n\n- **Updated `pipe` Function**:\n  - Processes input based on the selected model.\n  - In this example, it includes the model name in the returned string.",
+      "source_content_hash": "20fdeb8a4ca48a9f143ec9ddd628804ead4ecf25770eb3c868ed26c69c2d5041",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **`pipes`関数**:\n  - 辞書のリストを返します。\n  - 各辞書は、一意の`id`と`name`キーを持つモデルを表します。\n  - これらのモデルは、Sage WebUIのモデルセレクターに個別に表示されます。\n\n- **更新された`pipe`関数**:\n  - 選択されたモデルに基づいて入力を処理します。\n  - この例では、返される文字列にモデル名を含めています。"
+      }
+    },
+    {
+      "segment_id": "cf53fc07",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "47516512",
+      "source_content": "## Example: OpenAI Proxy Pipe",
+      "source_content_hash": "37d2eba571feda7559352a880d9f130edea03717e590fa0a55b060a88da4fc84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 例：OpenAIプロキシパイプ"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "Let's dive into a practical example where we'll create a Pipe that proxies requests to the OpenAI API. This Pipe will fetch available models from OpenAI and allow users to interact with them through Sage WebUI.",
+      "source_content_hash": "ebe92d042de62c00d44982403ff1992584d1236bc564bf175428acb3fb730b5c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OpenAI APIへのリクエストをプロキシするPipeを作成する実践的な例を見ていきましょう。このPipeはOpenAIから利用可能なモデルを取得し、ユーザーがSage WebUIを通じてそれらとやり取りできるようにします。"
+      }
+    },
+    {
+      "segment_id": "a3a1b8eb",
+      "source_content": "```python\nfrom pydantic import BaseModel, Field\nimport requests\n\nclass Pipe:\n    class Valves(BaseModel):\n        NAME_PREFIX: str = Field(\n            default=\"OPENAI/\",\n            description=\"Prefix to be added before model names.\",\n        )\n        OPENAI_API_BASE_URL: str = Field(\n            default=\"https://api.openai.com/v1\",\n            description=\"Base URL for accessing OpenAI API endpoints.\",\n        )\n        OPENAI_API_KEY: str = Field(\n            default=\"\",\n            description=\"API key for authenticating requests to the OpenAI API.\",\n        )\n\n    def __init__(self):\n        self.valves = self.Valves()\n\n    def pipes(self):\n        if self.valves.OPENAI_API_KEY:\n            try:\n                headers = {\n                    \"Authorization\": f\"Bearer {self.valves.OPENAI_API_KEY}\",\n                    \"Content-Type\": \"application/json\",\n                }\n\n                r = requests.get(\n                    f\"{self.valves.OPENAI_API_BASE_URL}/models\", headers=headers\n                )\n                models = r.json()\n                return [\n                    {\n                        \"id\": model[\"id\"],\n                        \"name\": f'{self.valves.NAME_PREFIX}{model.get(\"name\", model[\"id\"])}',\n                    }\n                    for model in models[\"data\"]\n                    if \"gpt\" in model[\"id\"]\n                ]\n\n            except Exception as e:\n                return [\n                    {\n                        \"id\": \"error\",\n                        \"name\": \"Error fetching models. Please check your API Key.\",\n                    },\n                ]\n        else:\n            return [\n                {\n                    \"id\": \"error\",\n                    \"name\": \"API Key not provided.\",\n                },\n            ]\n\n    def pipe(self, body: dict, __user__: dict):\n        print(f\"pipe:{__name__}\")\n        headers = {\n            \"Authorization\": f\"Bearer {self.valves.OPENAI_API_KEY}\",\n            \"Content-Type\": \"application/json\",\n        }\n\n        # Extract model id from the model name\n        model_id = body[\"model\"][body[\"model\"].find(\".\") + 1 :]\n\n        # Update the model id in the body\n        payload = {**body, \"model\": model_id}\n        try:\n            r = requests.post(\n                url=f\"{self.valves.OPENAI_API_BASE_URL}/chat/completions\",\n                json=payload,\n                headers=headers,\n                stream=True,\n            )\n\n            r.raise_for_status()\n\n            if body.get(\"stream\", False):\n                return r.iter_lines()\n            else:\n                return r.json()\n        except Exception as e:\n            return f\"Error: {e}\"\n```",
+      "source_content_hash": "1979c361d36742da114a7f3135e3fc506a35b3183e754cafcb459b18d28110dd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a3a1b8eb"
+      }
+    },
+    {
+      "segment_id": "e594a4f9",
+      "source_content": "### Detailed Breakdown",
+      "source_content_hash": "01276467cb157e36655a9f740848e2df3e3685ee1a998c96985a76e124c92827",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 詳細な解説"
+      }
+    },
+    {
+      "segment_id": "dc825187",
+      "source_content": "#### Valves Configuration",
+      "source_content_hash": "3f57510995fabfa74b387111a74d70839c529f6daae7b9b444898ad01e713768",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### Valvesの設定"
+      }
+    },
+    {
+      "segment_id": "3c76cc8e",
+      "source_content": "- **`NAME_PREFIX`**:\n  - Adds a prefix to the model names displayed in Sage WebUI.\n  - Default: `\"OPENAI/\"`.\n- **`OPENAI_API_BASE_URL`**:\n  - Specifies the base URL for the OpenAI API.\n  - Default: `\"https://api.openai.com/v1\"`.\n- **`OPENAI_API_KEY`**:\n  - Your OpenAI API key for authentication.\n  - Default: `\"\"` (empty string; must be provided).",
+      "source_content_hash": "54ff9bf54ce65442470486a7a517eb914056231b87acecc1ef6ef3cafdc3ff2c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **`NAME_PREFIX`**:\n  - Sage WebUIに表示されるモデル名にプレフィックスを追加します。\n  - デフォルト: `\"OPENAI/\"`。\n- **`OPENAI_API_BASE_URL`**:\n  - OpenAI APIのベースURLを指定します。\n  - デフォルト: `\"https://api.openai.com/v1\"`。\n- **`OPENAI_API_KEY`**:\n  - 認証用のOpenAI APIキー。\n  - デフォルト: `\"\"`（空文字列; 指定必須）。"
+      }
+    },
+    {
+      "segment_id": "79f90fe4",
+      "source_content": "#### The `pipes` Function",
+      "source_content_hash": "b59677dec62207e9ee2f8eec092e4bf218edf3ab23f4838986e85387866ebe54",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### `pipes`関数"
+      }
+    },
+    {
+      "segment_id": "15dde9bf",
+      "source_content": "- **Purpose**: Fetches available OpenAI models and makes them accessible in Sage WebUI.\n\n- **Process**:\n  1. **Check for API Key**: Ensures that an API key is provided.\n  2. **Fetch Models**: Makes a GET request to the OpenAI API to retrieve available models.\n  3. **Filter Models**: Returns models that have `\"gpt\"` in their `id`.\n  4. **Error Handling**: If there's an issue, returns an error message.\n\n- **Return Format**: A list of dictionaries with `id` and `name` for each model.",
+      "source_content_hash": "4220994622bb872c230dce2874577dc11f013fa47074e01e4c07d4346ce9a307",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **目的**: 利用可能なOpenAIモデルを取得し、Sage WebUIでアクセスできるようにします。\n\n- **処理**:\n  1. **APIキーの確認**: APIキーが提供されていることを確認します。\n  2. **モデルの取得**: OpenAI APIにGETリクエストを送信して利用可能なモデルを取得します。\n  3. **モデルのフィルタリング**: `id`に`\"gpt\"`を含むモデルを返します。\n  4. **エラーハンドリング**: 問題が発生した場合、エラーメッセージを返します。\n\n- **返却形式**: 各モデルの`id`と`name`を含む辞書のリスト。"
+      }
+    },
+    {
+      "segment_id": "5f4381f8",
+      "source_content": "#### The `pipe` Function",
+      "source_content_hash": "c2113b04b93013ac7c092ab5ad098790097d9a8ce4810c8c659a03a8e6d0a26a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### `pipe`関数"
+      }
+    },
+    {
+      "segment_id": "d82dd782",
+      "source_content": "- **Purpose**: Handles the request to the selected OpenAI model and returns the response.\n\n- **Parameters**:\n  - `body`: Contains the request data.\n  - `__user__`: Contains user information (not used in this example but can be useful for authentication or logging).\n\n- **Process**:\n  1. **Prepare Headers**: Sets up the headers with the API key and content type.\n  2. **Extract Model ID**: Extracts the actual model ID from the selected model name.\n  3. **Prepare Payload**: Updates the body with the correct model ID.\n  4. **Make API Request**: Sends a POST request to the OpenAI API's chat completions endpoint.\n  5. **Handle Streaming**: If `stream` is `True`, returns an iterable of lines.\n  6. **Error Handling**: Catches exceptions and returns an error message.",
+      "source_content_hash": "9d9649201f4233cff239c7f5683b3a1abe891afac2c77887b67cbdec37f3e02c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **目的**: 選択されたOpenAIモデルへのリクエストを処理し、レスポンスを返します。\n\n- **パラメータ**:\n  - `body`: リクエストデータを含みます。\n  - `__user__`: ユーザー情報を含みます（この例では使用しませんが、認証やログに有用です）。\n\n- **処理**:\n  1. **ヘッダーの準備**: APIキーとコンテンツタイプを含むヘッダーを設定します。\n  2. **モデルIDの抽出**: 選択されたモデル名から実際のモデルIDを抽出します。\n  3. **ペイロードの準備**: 正しいモデルIDでbodyを更新します。\n  4. **APIリクエストの送信**: OpenAI APIのチャット補完エンドポイントにPOSTリクエストを送信します。\n  5. **ストリーミングの処理**: `stream`が`True`の場合、行のイテラブルを返します。\n  6. **エラーハンドリング**: 例外をキャッチし、エラーメッセージを返します。"
+      }
+    },
+    {
+      "segment_id": "cb2e9dbf",
+      "source_content": "### Extending the Proxy Pipe",
+      "source_content_hash": "582cf43bb4b92fb95088519419cb27e63d64c6055bfac8c501d2926b600c0891",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### プロキシPipeの拡張"
+      }
+    },
+    {
+      "segment_id": "9c70c953",
+      "source_content": "You can modify this proxy Pipe to support additional service providers like Anthropic, Perplexity, and more by adjusting the API endpoints, headers, and logic within the `pipes` and `pipe` functions.",
+      "source_content_hash": "5dde8db8b04b4524a2726ac0ebaa7fffd23c4f5e9040ad4e42718e2828a4ec13",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このプロキシPipeを、AnthropicやPerplexityなどの追加のサービスプロバイダーをサポートするように変更できます。そのためには、`pipes`および`pipe`関数内のAPIエンドポイント、ヘッダー、ロジックを調整します。"
+      }
+    },
+    {
+      "segment_id": "874468e6",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "fe3afe38",
+      "source_content": "## Using Internal Sage WebUI Functions",
+      "source_content_hash": "db054d07a70489faf428a8f02d3c41951d809547fa3e7da83a8971ece1902b0d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIの内部関数の使用"
+      }
+    },
+    {
+      "segment_id": "f50056c0",
+      "source_content": "Sometimes, you may want to leverage the internal functions of Sage WebUI within your Pipe. You can import these functions directly from the `open_webui` package. Keep in mind that while unlikely, internal functions may change for optimization purposes, so always refer to the latest documentation.",
+      "source_content_hash": "d49407fadc4f3808dd16a2627217d693ecd5b8b4d691de24503417a73e0530e5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "時には、Pipe内でSage WebUIの内部関数を活用したい場合があります。これらの関数は`open_webui`パッケージから直接インポートできます。ただし、内部関数は最適化のために変更される可能性があることに注意してください。常に最新のドキュメントを参照してください。"
+      }
+    },
+    {
+      "segment_id": "30aa9816",
+      "source_content": "Here's how you can use internal Sage WebUI functions:",
+      "source_content_hash": "e56ef99b7651524c69c7ee611267de88860c85fc1d259c20e7dda52fef5b8e54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下は、Sage WebUIの内部関数を使用する方法です:"
+      }
+    },
+    {
+      "segment_id": "d76894b4",
+      "source_content": "```python\nfrom pydantic import BaseModel, Field\nfrom fastapi import Request\n\nfrom open_webui.models.users import Users\nfrom open_webui.utils.chat import generate_chat_completion\n\nclass Pipe:\n    def __init__(self):\n        pass\n\n    async def pipe(\n        self,\n        body: dict,\n        __user__: dict,\n        __request__: Request,\n    ) -> str:\n        # Use the unified endpoint with the updated signature\n        user = Users.get_user_by_id(__user__[\"id\"])\n        body[\"model\"] = \"llama3.2:latest\"\n        return await generate_chat_completion(__request__, body, user)\n```",
+      "source_content_hash": "d3f9743c8ee752f312ac442e4e1eaacfe5e3bd56a08f11de070aba9d58a46ef1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d76894b4"
+      }
+    },
+    {
+      "segment_id": "f8d1807a",
+      "source_content": "### Explanation",
+      "source_content_hash": "6fe6ee36d1ed75d9cc31ded21777db2d6116a016119838a739b65b3c0c29483d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 解説"
+      }
+    },
+    {
+      "segment_id": "0808d997",
+      "source_content": "- **Imports**:\n  - `Users` from `open_webui.models.users`: To fetch user information.\n  - `generate_chat_completion` from `open_webui.utils.chat`: To generate chat completions using internal logic.\n\n- **Asynchronous `pipe` Function**:\n  - **Parameters**:\n    - `body`: Input data for the model.\n    - `__user__`: Dictionary containing user information.\n    - `__request__`: The request object from FastAPI (required by `generate_chat_completion`).\n  - **Process**:\n    1. **Fetch User Object**: Retrieves the user object using their ID.\n    2. **Set Model**: Specifies the model to be used.\n    3. **Generate Completion**: Calls `generate_chat_completion` to process the input and produce an output.",
+      "source_content_hash": "23846cde0023c24e759f01cfd8f79fdc6a21fae06c36ef2c181b0f9bac10a4d6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **インポート**:\n  - `open_webui.models.users`から`Users`: ユーザー情報を取得するため。\n  - `open_webui.utils.chat`から`generate_chat_completion`: 内部ロジックを使用してチャット補完を生成するため。\n\n- **非同期`pipe`関数**:\n  - **パラメータ**:\n    - `body`: モデルへの入力データ。\n    - `__user__`: ユーザー情報を含む辞書。\n    - `__request__`: FastAPIからのリクエストオブジェクト（`generate_chat_completion`に必要）。\n  - **処理**:\n    1. **ユーザーオブジェクトの取得**: ユーザーIDを使用してユーザーオブジェクトを取得します。\n    2. **モデルの設定**: 使用するモデルを指定します。\n    3. **補完の生成**: `generate_chat_completion`を呼び出して入力を処理し、出力を生成します。"
+      }
+    },
+    {
+      "segment_id": "d96e8afa",
+      "source_content": "### Important Notes",
+      "source_content_hash": "4b4f5ad9e70fae6154bd2c4f4bdaa371bb922e5863abba0525a0e3884c863d1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 重要な注意点"
+      }
+    },
+    {
+      "segment_id": "b62fa668",
+      "source_content": "- **Function Signatures**: Refer to the latest Sage WebUI codebase or documentation for the most accurate function signatures and parameters.\n- **Best Practices**: Always handle exceptions and errors gracefully to ensure a smooth user experience.",
+      "source_content_hash": "45d9cbc6adbcc027a7af7295ec67d832c431187ff37e88d184bb266059c4b54f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **関数シグネチャ**: 最新のSage WebUIコードベースまたはドキュメントを参照して、正確な関数シグネチャとパラメータを確認してください。\n- **ベストプラクティス**: ユーザーエクスペリエンスをスムーズにするため、常に例外とエラーを適切に処理してください。"
+      }
+    },
+    {
+      "segment_id": "f6da3fad",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "8e437dbf",
+      "source_content": "## Frequently Asked Questions",
+      "source_content_hash": "8ac79955795784ca48016ad46dca860ea42f34c6a8ebe91234df048fec4462dd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## よくある質問"
+      }
+    },
+    {
+      "segment_id": "c06a14cd",
+      "source_content": "### Q1: Why should I use Pipes in Sage WebUI?",
+      "source_content_hash": "29cf2c64db1f7ddd132183e3864204549433de8128051534a1e0c9d37cd5ee4e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q1: Sage WebUIでPipeを使用するメリットは？"
+      }
+    },
+    {
+      "segment_id": "b8954ec9",
+      "source_content": "**A**: Pipes allow you to add new \"model\" with custom logic and processing to Sage WebUI. It's a flexible plugin system that lets you integrate external APIs, customize model behaviors, and create innovative features without altering the core codebase.",
+      "source_content_hash": "81255b293f9e6b988d785ed0e03b8c55b496b924dfe237365868a3ad10e6b953",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: Pipeを使用すると、カスタムロジックと処理を備えた新しい「モデル」をSage WebUIに追加できます。これは柔軟なプラグインシステムで、外部APIの統合、モデル動作のカスタマイズ、コアコードベースを変更せずに革新的な機能を作成することが可能です。"
+      }
+    },
+    {
+      "segment_id": "f875b13d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9faeed88",
+      "source_content": "### Q2: What are Valves, and why are they important?",
+      "source_content_hash": "35fda8b4723ace34c7aa62d82db9b8faff7cac6102b1a5252f1abdc055547df5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q2: Valveとは何か、またその重要性は？"
+      }
+    },
+    {
+      "segment_id": "71e7acda",
+      "source_content": "**A**: Valves are the configurable parameters of your Pipe. They function like settings or controls that determine how your Pipe operates. By adjusting Valves, you can change the behavior of your Pipe without modifying the underlying code.",
+      "source_content_hash": "6bec385ae77c41483b5f59b5bfa947a6aa994b446615cb3968d10f8e91f292a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: ValveはPipeの設定可能なパラメータです。これらは設定や制御のように機能し、Pipeの動作を決定します。Valveを調整することで、基盤となるコードを変更することなくPipeの動作を変更できます。"
+      }
+    },
+    {
+      "segment_id": "f0b4515e",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "c48a3f55",
+      "source_content": "### Q3: Can I create a Pipe without Valves?",
+      "source_content_hash": "d2e1ecfc98c8998b1c76378563880e12563442794c750a732919788794b59d85",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q3: ValveなしでPipeを作成できますか？"
+      }
+    },
+    {
+      "segment_id": "d6c9e4cd",
+      "source_content": "**A**: Yes, you can create a simple Pipe without defining a Valves class if your Pipe doesn't require any persistent configuration options. However, including Valves is a good practice for flexibility and future scalability.",
+      "source_content_hash": "b90f042ec0f1c169691f46095d6f281bdad2b2c431447c9235d914d6677e9b26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: はい、Pipeが永続的な設定オプションを必要としない場合、Valveクラスを定義せずにシンプルなPipeを作成できます。ただし、柔軟性と将来の拡張性のためにValveを含めることがベストプラクティスです。"
+      }
+    },
+    {
+      "segment_id": "3d9b49ef",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "40a24bf2",
+      "source_content": "### Q4: How do I ensure my Pipe is secure when using API keys?",
+      "source_content_hash": "61b594fa71fb654f8ff8f93e0ad423c7b062ced24e4309b3f7c8a3ff5dbf8a2f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q4: APIキーを使用する際にPipeを安全に保つには？"
+      }
+    },
+    {
+      "segment_id": "a30b7214",
+      "source_content": "**A**: Never hard-code sensitive information like API keys into your Pipe. Instead, use Valves to input and store API keys securely. Ensure that your code handles these keys appropriately and avoids logging or exposing them.",
+      "source_content_hash": "dc69e2b8810cbdf029cc9bdabf9f486a90294ce9add9ab563f330a1221543213",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: APIキーなどの機密情報をPipeにハードコーディングしないでください。代わりに、Valveを使用してAPIキーを安全に入力・保存します。コードがこれらのキーを適切に扱い、ログ記録や露出を避けるようにしてください。"
+      }
+    },
+    {
+      "segment_id": "06ce5922",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "e85288f7",
+      "source_content": "### Q5: What is the difference between the `pipe` and `pipes` functions?",
+      "source_content_hash": "b71ffe3902c639576a9d257858c2902d8cfa73b7ae1de1f48d578efd6ff153b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q5: `pipe`関数と`pipes`関数の違いは？"
+      }
+    },
+    {
+      "segment_id": "f10c482a",
+      "source_content": "**A**:",
+      "source_content_hash": "33da84e0ac5cea154aa7f83a757d93caee13c376bcb0348d80a5124fc340f480",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**:"
+      }
+    },
+    {
+      "segment_id": "00e50cff",
+      "source_content": "- **`pipe` Function**: The primary function where you process the input data and generate an output. It handles the logic for a single model.\n\n- **`pipes` Function**: Allows your Pipe to represent multiple models by returning a list of model definitions. Each model will appear individually in Sage WebUI.",
+      "source_content_hash": "f8e49f1e7ee3ba537fa338b205f3c0790c9bf27785b11358109cb8cc98e5ef30",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **`pipe`関数**: 入力データを処理し出力を生成する主要な関数。単一のモデルに対するロジックを扱います。\n\n- **`pipes`関数**: Pipeが複数のモデルを表現できるようにします。モデル定義のリストを返し、各モデルがSage WebUIで個別に表示されます。"
+      }
+    },
+    {
+      "segment_id": "d042db9f",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "7b9db856",
+      "source_content": "### Q6: How can I handle errors in my Pipe?",
+      "source_content_hash": "effa57737c2393996ca7f643c51a44dd86fb82f0ca96df22fe260fa64d7c1f40",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q6: Pipeでエラーを処理するには？"
+      }
+    },
+    {
+      "segment_id": "5b98f6e2",
+      "source_content": "**A**: Use try-except blocks within your `pipe` and `pipes` functions to catch exceptions. Return meaningful error messages or handle the errors gracefully to ensure the user is informed about what went wrong.",
+      "source_content_hash": "20f8d816585d727c769ee43e149375140dd7edb687ab577105b402d7e23bdcc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: `pipe`関数と`pipes`関数内でtry-exceptブロックを使用して例外をキャッチします。意味のあるエラーメッセージを返すか、エラーを適切に処理してユーザーに問題を通知します。"
+      }
+    },
+    {
+      "segment_id": "e7851494",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "d67910b8",
+      "source_content": "### Q7: Can I use external libraries in my Pipe?",
+      "source_content_hash": "43e0c0f83ca7644b944c2aa6cf609460735321facf4b23221770708e62146844",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q7: Pipeで外部ライブラリを使用できますか？"
+      }
+    },
+    {
+      "segment_id": "b6abd1ad",
+      "source_content": "**A**: Yes, you can import and use external libraries as needed. Ensure that any dependencies are properly installed and managed within your environment.",
+      "source_content_hash": "8ece742cc93ee7ea127fe616e5478a94ae185d04a685ccc7b31ab4f51d847eb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: はい、必要に応じて外部ライブラリをインポートして使用できます。依存関係が環境内で適切にインストール・管理されていることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "8ec80a23",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "dbf99e1b",
+      "source_content": "### Q8: How do I test my Pipe?",
+      "source_content_hash": "74363e780e3647f479dafc8d8f3713d4077b488935b9dac1a052323bd2dbb45a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q8: Pipeをテストするには？"
+      }
+    },
+    {
+      "segment_id": "d04a3ef5",
+      "source_content": "**A**: Test your Pipe by running Sage WebUI in a development environment and selecting your custom model from the interface. Validate that your Pipe behaves as expected with various inputs and configurations.",
+      "source_content_hash": "cc2c69e51ea352059717fd27c0c8a949480925d9ecac0905388752a75c83f4df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: Sage WebUIを開発環境で実行し、インターフェースからカスタムモデルを選択してPipeをテストします。様々な入力と設定でPipeが期待通りに動作することを検証します。"
+      }
+    },
+    {
+      "segment_id": "f41cb686",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "3f6b512a",
+      "source_content": "### Q9: Are there any best practices for organizing my Pipe's code?",
+      "source_content_hash": "2712b080a05bec2bd8f20e09cc0c28c68faaec1fb3db44853bd51c792151590b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q9: Pipeのコードを整理するためのベストプラクティスは？"
+      }
+    },
+    {
+      "segment_id": "e91bdcd9",
+      "source_content": "**A**: Yes, follow these guidelines:",
+      "source_content_hash": "278b941df149260000318f49a4b8a370e136682e6cf08ec63d0f81925a52f0b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: 以下のガイドラインに従ってください："
+      }
+    },
+    {
+      "segment_id": "7674e10d",
+      "source_content": "- Keep `Valves` at the top of your `Pipe` class.\n- Initialize variables in the `__init__` method, primarily `self.valves`.\n- Place the `pipe` function after the `__init__` method.\n- Use clear and descriptive variable names.\n- Comment your code for clarity.",
+      "source_content_hash": "a57d57c916758d34262fd06ee0ee2aa44d6c31b61d355b2af6619036cfa6a505",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `Valves`を`Pipe`クラスの先頭に配置\n- `__init__`メソッドで変数を初期化（主に`self.valves`）\n- `pipe`関数を`__init__`メソッドの後に配置\n- 明確で説明的な変数名を使用\n- コードの明確化のためにコメントを追加"
+      }
+    },
+    {
+      "segment_id": "dbef9cf5",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "fa461c90",
+      "source_content": "### Q10: Where can I find the latest Sage WebUI documentation?",
+      "source_content_hash": "d3bf6c785d5d726a8c3c22237eecbfe9097382c9a228141c8b50a88b3f6e83ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Q10: 最新のSage WebUIドキュメントはどこで見つけられますか？"
+      }
+    },
+    {
+      "segment_id": "fe2c7f95",
+      "source_content": "**A**: Visit the official Sage WebUI repository or documentation site for the most up-to-date information, including function signatures, examples, and migration guides if any changes occur.",
+      "source_content_hash": "3ef8898368f73620846adbd2da97d61cd1bdbeaa0ae98d37173c9cefa9292491",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A**: 最新の情報（関数シグネチャ、例、変更時の移行ガイドなど）については、公式のSage WebUIリポジトリまたはドキュメントサイトを参照してください。"
+      }
+    },
+    {
+      "segment_id": "4821d6da",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "1e46ce2f",
+      "source_content": "## Conclusion",
+      "source_content_hash": "be031d37bb75d96ef08ca9ec5b0e83bb6f91172f60d3c31a78feae8d7dc4a0b0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## まとめ"
+      }
+    },
+    {
+      "segment_id": "fee14fdc",
+      "source_content": "By now, you should have a thorough understanding of how to create and use Pipes in Sage WebUI. Pipes offer a powerful way to extend and customize the capabilities of Sage WebUI to suit your specific needs. Whether you're integrating external APIs, adding new models, or injecting complex logic, Pipes provide the flexibility to make it happen.",
+      "source_content_hash": "2528a37fc31bea01e0e25af57bca47fb96920b64455d776c791080d1aa2b92c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これで、Sage WebUIでPipeを作成・使用する方法について十分に理解できたはずです。Pipeは、Sage WebUIの機能を拡張・カスタマイズする強力な手段を提供します。外部APIの統合、新しいモデルの追加、複雑なロジックの注入など、あらゆるニーズに対応する柔軟性を備えています。"
+      }
+    },
+    {
+      "segment_id": "77f0732d",
+      "source_content": "Remember to:",
+      "source_content_hash": "15237c41598d7671e1eafdeeedfd8b5aad554e6046a6a043c529610fffcc193d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の点を忘れずに："
+      }
+    },
+    {
+      "segment_id": "ee64ac08",
+      "source_content": "- **Use clear and consistent structure** in your Pipe classes.\n- **Leverage Valves** for configurable options.\n- **Handle errors gracefully** to improve the user experience.\n- **Consult the latest documentation** for any updates or changes.",
+      "source_content_hash": "f78ce27dc9fd6388fb25e02b7523a0595c3a954ba41727268381b131fbd5da44",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Pipeクラスでは**明確で一貫した構造**を使用する\n- 設定可能なオプションには**Valvesを活用**する\n- ユーザーエクスペリエンス向上のため**エラーを適切に処理**する\n- 更新や変更については**最新のドキュメントを参照**する"
+      }
+    },
+    {
+      "segment_id": "a290533e",
+      "source_content": "Happy coding, and enjoy extending your Sage WebUI with Pipes!",
+      "source_content_hash": "e5803ec9bb84bab40ec09d2b4e129c41707be32fb9e3921a4430cccc3d05c8eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コーディングを楽しみ、PipesでSage WebUIを拡張しましょう！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/functions/pipe.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.782427+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "fe0ca34316cea6685c79ed81d9466dd3060a829d827c42f305a205c4c659135e"
+  }
+}

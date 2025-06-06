@@ -1,0 +1,212 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/advanced-topics/logging.md",
+  "source_file_content_hash": "2fc10dbc8de97ef6181ce720f15b0b15ca2c733fbc967cd7587eb2728f29e4e5",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\ntitle: \"📜 Sage WebUI Logging\"\n---",
+      "source_content_hash": "32be1dc2d1906da9ab94703ab8045f49cff5323e517cffc30f1a3c2585a8cd9e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Browser Client Logging ##",
+      "source_content_hash": "7bc9ba7fddfd601c73d7d1dc31cac30fc47d38985b410f0e178f9c4b12f7d3ea",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ブラウザクライアントログ ##"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Client logging generally occurs via [JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/console/log_static) `console.log()` and can be accessed using the built-in browser-specific developer tools:",
+      "source_content_hash": "d0e4da0677834efb149baf2eb2603213d34e82f256bec98c6268347157321bf6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "クライアント側のログは一般的に[JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/console/log_static)の`console.log()`を通じて記録され、ブラウザ固有の開発者ツールを使用して確認できます:"
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "* Blink\n  * [Chrome/Chromium](https://developer.chrome.com/docs/devtools/)\n  * [Edge](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/overview)\n* Gecko\n  * [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/)\n* WebKit\n  * [Safari](https://developer.apple.com/safari/tools/)",
+      "source_content_hash": "8128d1994a70ba7f3614f6c7216fa8bae31251c6b6c4ec960888b2bb3e1438a9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* Blink\n  * [Chrome/Chromium](https://developer.chrome.com/docs/devtools/)\n  * [Edge](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/overview)\n* Gecko\n  * [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/)\n* WebKit\n  * [Safari](https://developer.apple.com/safari/tools/)"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "## Application Server/Backend Logging ##",
+      "source_content_hash": "1d67c14fbb5776741f7020ac4e7d62ca7d327611d551eae9fa0fdc07741100b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## アプリケーションサーバー/バックエンドログ ##"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Logging is an ongoing work-in-progress but some level of control is available using environment variables. [Python Logging](https://docs.python.org/3/howto/logging.html) `log()` and `print()` statements send information to the console. The default level is `INFO`. Ideally, sensitive data will only be exposed with `DEBUG` level.",
+      "source_content_hash": "0fb17be0b170872a3e70e03875b1524c8097ebe2a98b629b7b67d8c68eb20eed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ログ機能は現在開発中ですが、環境変数を使用してある程度の制御が可能です。[Python Logging](https://docs.python.org/3/howto/logging.html)の`log()`と`print()`ステートメントは情報をコンソールに出力します。デフォルトのログレベルは`INFO`です。理想的には、機密データは`DEBUG`レベルでのみ表示されるべきです。"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### Logging Levels ###",
+      "source_content_hash": "3e3af95187dde8afd689e1f3255fd438b677c8e90fcc5c518e55b992772aa569",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ログレベル ###"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "The following [logging levels](https://docs.python.org/3/howto/logging.html#logging-levels) values are supported:",
+      "source_content_hash": "ef21b8dde2cfd7411f63271cbdec96aeea5c7829f7c9a2085e0d4c90a7ceed28",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の[ログレベル](https://docs.python.org/3/howto/logging.html#logging-levels)がサポートされています:"
+      }
+    },
+    {
+      "segment_id": "9e1bd9df",
+      "source_content": "| Level      | Numeric value |\n| ---------- | ------------- |\n| `CRITICAL` | 50            |\n| `ERROR`    | 40            |\n| `WARNING`  | 30            |\n| `INFO`     | 20            |\n| `DEBUG`    | 10            |\n| `NOTSET`   | 0             |",
+      "source_content_hash": "f47ee8b85ada45fc7e4b6e5b78d2e423bf9cad2cab7a8a932acc9eb6b1da849d",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_9e1bd9df"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "### Global ###",
+      "source_content_hash": "8f68cbbfc3b9e6a53317ba95b49874523108cf8b0abc81eb900e4889252f695f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### グローバル ###"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "The default global log level of `INFO` can be overridden with the `GLOBAL_LOG_LEVEL` environment variable. When set, this executes a [basicConfig](https://docs.python.org/3/library/logging.html#logging.basicConfig) statement with the `force` argument set to *True* within `config.py`. This results in reconfiguration of all attached loggers:",
+      "source_content_hash": "3f10510da84f915910933072ae3a3d4460df43d9debdfc6ba96d42ecb90f707f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "デフォルトのグローバルログレベル`INFO`は、`GLOBAL_LOG_LEVEL`環境変数で上書き可能です。設定すると、`config.py`内で`force`引数を*True*に設定した[basicConfig](https://docs.python.org/3/library/logging.html#logging.basicConfig)ステートメントが実行され、すべてのアタッチされたロガーが再設定されます:"
+      }
+    },
+    {
+      "segment_id": "f5738fe9",
+      "source_content": "> *If this keyword argument is specified as true, any existing handlers attached to the root logger are removed and closed, before carrying out the configuration as specified by the other arguments.*",
+      "source_content_hash": "fc4234a75d9b40e9f0f061b75b760f0b6c2e68f4103dffd5f2b4a5b2487fbd3f",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "ja": "> *このキーワード引数がtrueとして指定されている場合、他の引数で指定された構成を実行する前に、ルートロガーにアタッチされている既存のハンドラが削除され、閉じられます。*"
+      }
+    },
+    {
+      "segment_id": "33331f27",
+      "source_content": "The stream uses standard output (`sys.stdout`). In addition to all sage-open-webui `log()` statements, this also affects any imported Python modules that use the Python Logging module `basicConfig` mechanism including [urllib](https://docs.python.org/3/library/urllib.html).",
+      "source_content_hash": "2804bed53583dffb33d490f9de74c9944c4eecca59a427c08cde198a645d2535",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ストリームは標準出力(`sys.stdout`)を使用します。sage-open-webuiのすべての`log()`ステートメントに加え、[urllib](https://docs.python.org/3/library/urllib.html)など、Python Loggingモジュールの`basicConfig`メカニズムを使用するインポートされたPythonモジュールにも影響を与えます。"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "For example, to set `DEBUG` logging level as a Docker parameter use:",
+      "source_content_hash": "9791e621d1e07a3ac0db3a77d82133407537053f576d17ed358b1d92d8e136b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "例えば、Dockerパラメータとして`DEBUG`ログレベルを設定するには以下を使用します:"
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```\n--env GLOBAL_LOG_LEVEL=\"DEBUG\"\n```",
+      "source_content_hash": "80bdabcc17825aae6b81de58a911746875865a5b7bf353e77478e7abcf948752",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "or for Docker Compose put this in the environment section of the docker-compose.yml file (notice the absence of quotation signs):",
+      "source_content_hash": "10cbb348064100e9efd4784edbbe2ea9e72ee723c5f76df2c382975b4afa94d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "またはDocker Composeの場合、docker-compose.ymlファイルのenvironmentセクションに以下を記述します（引用符がないことに注意）:"
+      }
+    },
+    {
+      "segment_id": "229d6705",
+      "source_content": "```\nenvironment:\n  - GLOBAL_LOG_LEVEL=DEBUG\n```",
+      "source_content_hash": "566b63d8b8d9863f8cf6554bb2402c045c50a996f6227ba17b31a31a29a99303",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_229d6705"
+      }
+    },
+    {
+      "segment_id": "60410af6",
+      "source_content": "### App/Backend ###",
+      "source_content_hash": "43dd3926d0affa2453c674db1203e422c6ec54726b42acf4ac6931f70f9951b1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### アプリ/バックエンド ###"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Some level of granularity is possible using any of the following combination of variables. Note that `basicConfig` `force` isn't presently used so these statements may only affect sage-open-webui logging and not 3rd party modules.",
+      "source_content_hash": "ccea83e2eab440f0d46c45563931025702e9ba1366624e56cd66845fdee14176",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の変数の組み合わせを使用することで、ある程度の細かい制御が可能です。現在`basicConfig`の`force`は使用されていないため、これらのステートメントはsage-open-webuiのログにのみ影響し、サードパーティモジュールには影響しない可能性があることに注意してください。"
+      }
+    },
+    {
+      "segment_id": "68267445",
+      "source_content": "| Environment Variable | App/Backend                                                       |\n| -------------------- | ----------------------------------------------------------------- |\n| `AUDIO_LOG_LEVEL`    | Audio transcription using faster-whisper, TTS etc.                |\n| `COMFYUI_LOG_LEVEL`  | ComfyUI integration handling                                      |\n| `CONFIG_LOG_LEVEL`   | Configuration handling                                            |\n| `DB_LOG_LEVEL`       | Internal Peewee Database                                          |\n| `IMAGES_LOG_LEVEL`   | AUTOMATIC1111 stable diffusion image generation                   |\n| `MAIN_LOG_LEVEL`     | Main (root) execution                                             |\n| `MODELS_LOG_LEVEL`   | LLM model interaction, authentication, etc.                       |\n| `OLLAMA_LOG_LEVEL`   | Ollama backend interaction                                        |\n| `OPENAI_LOG_LEVEL`   | OpenAI interaction                                                |\n| `RAG_LOG_LEVEL`      | Retrieval-Augmented Generation using Chroma/Sentence-Transformers |\n| `WEBHOOK_LOG_LEVEL`  | Authentication webhook extended logging                           |",
+      "source_content_hash": "7dc87879045cff76337240ae5b496c23d5c3b00ac438c16b61707d96df6ccc16",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_68267445"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/advanced-topics/logging.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.804844+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "2fc10dbc8de97ef6181ce720f15b0b15ca2c733fbc967cd7587eb2728f29e4e5"
+  }
+}

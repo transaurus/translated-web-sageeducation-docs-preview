@@ -1,0 +1,182 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-docker/DockerCompose.md",
+  "source_file_content_hash": "b90f4595062bae17693be85c36dfb3d155d011667c05ac6051be61fa281e2969",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Docker Compose Setup",
+      "source_content_hash": "c28f89a7db938cf3297f9b54e2f7543a4d1469faaefa7b57e52d8566d2256f5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Docker Compose セットアップ"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Using Docker Compose simplifies the management of multi-container Docker applications.",
+      "source_content_hash": "40b5380db7a4babcf6cfb2330dea603f5952092ee080a0a49da2b0d8e3e28d2f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Docker Composeを使用すると、マルチコンテナのDockerアプリケーションの管理が簡素化されます。"
+      }
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "If you don't have Docker installed, check out our [Docker installation tutorial](docs/tutorials/docker-install.md).",
+      "source_content_hash": "5e218a6c2e3e24e562d88a11d9197834123057d91421d9ca1b7f198e9a71d25d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerがインストールされていない場合は、[Dockerインストールチュートリアル](docs/tutorials/docker-install.md)をご覧ください。"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Docker Compose requires an additional package, `docker-compose-v2`.",
+      "source_content_hash": "3f49f64fb0df3407ae95cecd9fa6723c16d47293bcbea70be35c44ad4e1b4767",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Docker Composeには追加パッケージ`docker-compose-v2`が必要です。"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "**Warning:** Older Docker Compose tutorials may reference version 1 syntax, which uses commands like `docker-compose build`. Ensure you use version 2 syntax, which uses commands like `docker compose build` (note the space instead of a hyphen).",
+      "source_content_hash": "11eef8c2af8a3bf6fb469561257c02433b6e486c9f420fe37099005d56db85a1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**警告:** 古いDocker Composeのチュートリアルでは、`docker-compose build`のようなバージョン1の構文が参照されている場合があります。必ず、`docker compose build`（ハイフンではなくスペース）のようなバージョン2の構文を使用してください。"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Example `docker-compose.yml`",
+      "source_content_hash": "ae178d8b962ae1d2cdf05a905cf656e27f8dd18a81f509b8f430f87217518df0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## `docker-compose.yml`の例"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "Here is an example configuration file for setting up Sage WebUI with Docker Compose:",
+      "source_content_hash": "60cfd82891c30c752ae78dbd0781200e8332cea291ae0efa3abbc1c00b3c49b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下は、Docker ComposeでSage WebUIをセットアップするための設定ファイルの例です："
+      }
+    },
+    {
+      "segment_id": "4b395385",
+      "source_content": "```yaml\nversion: '3'\nservices:\n  openwebui:\n    image: ghcr.io/Startr/AI-WEB-openwebui:main\n    ports:\n      - \"3000:8080\"\n    volumes:\n      - sage-open-webui:/app/backend/data\nvolumes:\n  sage-open-webui:\n```",
+      "source_content_hash": "c790a9069c4411901cb5140465995fd833b9f2af0ec22a9e33cca83c67537d20",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4b395385"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## Starting the Services",
+      "source_content_hash": "80167304fe73b7753e6ca0ce05e2137532f2cb6c6b6208bf4faac70fef7451f3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## サービスの開始"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "To start your services, run the following command:",
+      "source_content_hash": "677fea1e25e3e8a13a452ab4e7703f0abf99cfa5bde10039f0f3580f31a7406e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "サービスを開始するには、次のコマンドを実行します："
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```bash\ndocker compose up -d\n```",
+      "source_content_hash": "3e7b856b2044030c0e7e938c22308c9ec4f465a67d5cc331338d0265378e244e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## Helper Script",
+      "source_content_hash": "f882aba8abc9f603f6800bd10b3102677a2854a834e667a49694a3084557d0f4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ヘルパースクリプト"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "A useful helper script called `run-compose.sh` is included with the codebase. This script assists in choosing which Docker Compose files to include in your deployment, streamlining the setup process.",
+      "source_content_hash": "40e064963df6c683dce821494130dd20116406493988d7fc4353ed9f12d30df2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コードベースには`run-compose.sh`という便利なヘルパースクリプトが含まれています。このスクリプトは、デプロイに含めるDocker Composeファイルを選択するのに役立ち、セットアッププロセスを効率化します。"
+      }
+    },
+    {
+      "segment_id": "5ef5fda3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "**Note:** For Nvidia GPU support, you change the image from `ghcr.io/sage-open-webui/sage-open-webui:main` to `ghcr.io/sage-open-webui/sage-open-webui:cuda` and add the following to your service definition in the `docker-compose.yml` file:",
+      "source_content_hash": "6e87ac3c4fb36a5ac190d073735f3171164078c8896ba0b63b06aa84c9d358a2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**注:** Nvidia GPUサポートが必要な場合、イメージを`ghcr.io/sage-open-webui/sage-open-webui:main`から`ghcr.io/sage-open-webui/sage-open-webui:cuda`に変更し、`docker-compose.yml`ファイルのサービス定義に以下を追加します："
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```yaml\ndeploy:\n  resources:\n    reservations:\n      devices:\n        - driver: nvidia\n          count: all\n          capabilities: [gpu]\n```",
+      "source_content_hash": "3746ab70832aea4685cecef53c7def8331f66011f9b190c52380770a394715fd",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "This setup ensures that your application can leverage GPU resources when available.",
+      "source_content_hash": "adb61cceb2b192f6db28c81d3848a94c7666fe772b7edee959d02cef13434fb6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この設定により、利用可能な場合にアプリケーションがGPUリソースを活用できるようになります。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-docker/DockerCompose.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.795216+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b90f4595062bae17693be85c36dfb3d155d011667c05ac6051be61fa281e2969"
+  }
+}

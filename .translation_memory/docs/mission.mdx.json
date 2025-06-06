@@ -1,0 +1,192 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/mission.mdx",
+  "source_file_content_hash": "22ad046c19067dc229d01673864491a56159210f7b07afe771c69fc4c521c931",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2000\ntitle: \"🎯 Our Mission\"\n---",
+      "source_content_hash": "9101242cd98b4ba01dcb63eae9ada0dc428c49c430093129673cae25994d582f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "37387e33",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_37387e33"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "### A Note from Our Founder",
+      "source_content_hash": "912b6a28d22c4dcd20f6e636d420c1cb90239f43f778ecda3cc7c3f995c31da8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 創設者からのメッセージ"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Before diving into our mission, we invite you to read our founder's blog post: [\"Why I’m Building Sage WebUI\"](https://jryng.com/thoughts/why-sage-open-webui). In this post, Tim shares the inspiration, challenges, and hopes driving Sage WebUI's vision forward. It's a heartfelt introduction to what we're all about!",
+      "source_content_hash": "da012031e32a7bc1ca48f3cfd7598351a4267975c43e9f309e379bf81ab86531",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちのミッションについて詳しく知る前に、ぜひ創設者のブログ記事「[Why I’m Building Sage WebUI](https://jryng.com/thoughts/why-sage-open-webui)」をお読みください。この記事でTimは、Sage WebUIのビジョンへと駆り立てたインスピレーション、直面した課題、そして未来への希望を語っています。私たちが目指すものについての心温まるイントロダクションです！"
+      }
+    },
+    {
+      "segment_id": "1af1a865",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Hello there! 👋",
+      "source_content_hash": "f1777704e59d2886a26c4c53f27b880745cdd758052775da393b214508b65f4e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "こんにちは！👋"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Imagine a world where local, open models that can run on any machine, united as one, outperform proprietary giants like GPT-4. Even better, imagine us all having the capability to train and reproduce state-of-the-art models like GPT-4 or GPT-5 from scratch, using high-quality, curated data.",
+      "source_content_hash": "69352f15e0898ee25c04ea1f5e3278e3ccf21323e3948de8f130c01aec213fe0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "どんなマシンでも動作するローカルでオープンなモデルが連携し、GPT-4のようなプロプライエタリな巨人を凌駕する世界を想像してみてください。さらに、GPT-4やGPT-5のような最先端モデルを、高品質なキュレーションデータを使ってゼロからトレーニングし再現できる能力を私たち全員が持っている世界を想像してみてください。"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "Here's the thing, though: one of the biggest challenges in creating these foundation and fine-tune models is the substantial need for **[high-quality data](https://arxiv.org/abs/2305.11206)**, which is both costly and time-consuming to gather and curate. This is where Sage WebUI's mission comes into play. Our mission is to contribute to this vision by building the best AI interface and crowdsourcing curated datasets from our community of users.",
+      "source_content_hash": "0853bda50401ef25d093c308663c88aae7e1b5f586200b78d6e5ce4e7be2bbbb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "しかし、重要な課題があります。これらの基盤モデルやファインチューニングモデルを作成する上で最大の障壁の1つは、**[高品質なデータ](https://arxiv.org/abs/2305.11206)**の収集とキュレーションに多大なコストと時間がかかることです。ここにSage WebUIのミッションがあります。私たちは、最高のAIインターフェースを構築し、ユーザーコミュニティからキュレーションデータをクラウドソーシングすることで、このビジョンに貢献することを使命としています。"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "— [Tim](https://github.com/tjbck)",
+      "source_content_hash": "ef8ab4122215042c7938b2e72cec1ac195bdbbffed629680680c24fa468681cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "— [Tim](https://github.com/tjbck)"
+      }
+    },
+    {
+      "segment_id": "1856ef44",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Our mission is founded on the belief that AI technologies hold transformative potential for society, yet their benefits have been narrowly confined due to complex setup requirements. Recognizing this, we are dedicated to democratizing AI by developing an easy-to-install, feature-rich local WebUI that is designed to operate locally without internet access. Enabling anyone with basic technical skills to tap into the power of AI, effectively bringing its capabilities to communities far and wide.",
+      "source_content_hash": "6884923338ab3edf65ad3cf9ece86b45cd16c1117360f3b8c48786696a2b55a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちのミッションは、AI技術が社会に変革をもたらす可能性を秘めている一方で、複雑なセットアップ要件のためにその恩恵が限定的になっているという認識に基づいています。この問題を解決するため、私たちはインターネット接続なしでローカルで動作する、機能豊富で簡単にインストールできるWebUIを開発することでAIの民主化に取り組んでいます。基本的な技術スキルを持つ誰もがAIの力を活用できるようにし、その能力を広くコミュニティにもたらすことを目指しています。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "At the heart of our efforts is the creation of an open-sourced ecosystem of AI tools. Our commitment lies in making AI not only accessible but also beneficial for everyone. We envision a future where AI acts as a lever for societal advancement, driving progress, and technological breakthroughs across all communities.",
+      "source_content_hash": "ef5726c11df9b8608923d5e54774eda09fa873b5641566086a12fcd48d2ab184",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちの活動の核心には、オープンソースのAIツールエコシステムの創造があります。AIをアクセシブルにするだけでなく、すべての人にとって有益なものにするというコミットメントがあります。私たちは、AIが社会進歩のてことなり、すべてのコミュニティで進歩と技術的ブレークスルーを推進する未来を描いています。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "By eliminating technological barriers and making AI's advantages universally accessible, we aim to foster a positive impact worldwide. Our ultimate goal is to ensure that AI serves as a catalyst for positive change, helping to bridge gaps and create a more equitable society where everyone can benefit from the advancements in technology.",
+      "source_content_hash": "c74c4d3d865cd801ab013fa231d0dd41ab4c23b9faa4f34b09ff6e8e4ac778f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "技術的障壁を取り除き、AIの利点を普遍的にもたらすことで、世界中にポジティブな影響を育むことを目指しています。私たちの究極の目標は、AIがポジティブな変化の触媒として機能し、ギャップを埋め、技術の進歩から誰もが恩恵を受けられるより公平な社会を創出することです。"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "### Our Vision: Shaping the Future Together",
+      "source_content_hash": "2ae1e692da801141a4cf76a4ed57ba5b8536cceae460985761abba405a630d86",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 私たちのビジョン：共に未来を形作る"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "At the heart of our mission lies a profound commitment not just to envision a future where advanced AI technology is universally accessible, but to actively build towards it. Our efforts extend beyond the development of our WebUI; We are at the forefront of creating an ecosystem that embodies the democratization of AI technology. This ecosystem, envisioned as a vibrant, community-driven platform, will be a repository of shared knowledge—ranging from model presets and custom prompts to valuable chat logs. A space where the collective intelligence of our community acts as the driving force for the continuous evolution and refinement of AIs, ensuring these advancements serve us, the actual users of these technologies.",
+      "source_content_hash": "93ee7d59716242189fb0f6cb2986268cb6b45f10acc2275c2b3f40264cdafc40",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちのミッションの核心には、先進的なAI技術が普遍的にアクセス可能な未来を単に想像するだけでなく、それを積極的に構築しようとする深いコミットメントがあります。私たちの取り組みはWebUIの開発を超えています。私たちはAI技術の民主化を体現するエコシステムの最前線で活動しています。このエコシステムは、モデルプリセットやカスタムプロンプト、貴重なチャットログまで、共有知識のリポジトリとなる活気あるコミュニティ主導のプラットフォームとして構想されています。ここではコミュニティの集合知が、AIの継続的な進化と洗練の原動力となり、これらの進歩が実際のテクノロジーユーザーである私たちに奉仕することを保証します。"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "Our strategy aims to tackle the complex challenges of AI, such as model fine-tuning and dataset curation, head-on. Leveraging the collective skills and insights of our community, we'll forge innovative pathways that not only enhance the precision and relevance of AI models but also guarantee these improvements are shared openly. Our objective is unequivocal: to democratize access to refined, user-curated datasets, thereby eliminating barriers to advancing AI for all.",
+      "source_content_hash": "a96a4e2a4f3fb58c6ca26a29893a4ed2ce870c5087cfa1a652aae45d42d93b35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちの戦略は、モデルのファインチューニングやデータセットのキュレーションといったAIの複雑な課題に正面から取り組むことを目指しています。コミュニティの集合的なスキルと洞察を活用することで、AIモデルの精度と関連性を高めるだけでなく、これらの改善がオープンに共有される革新的な道筋を作り出します。私たちの目的は明白です。洗練されたユーザー主導のデータセットへのアクセスを民主化し、すべての人々のAI進化への障壁を取り除くことです。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "As we navigate this journey, our vision serves as our north star, guiding our efforts to turn bold ambitions into reality. We extend an invitation for you to join us in this endeavor, as we work diligently to ensure AI technology becomes an empowering resource for individuals and communities across the globe.",
+      "source_content_hash": "beebbd2990db6541e7d1057e918cf3971d2901a6282fd0716fece16153fec991",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この旅を進める中で、私たちのビジョンは大胆な野心を現実に変えるための指針として機能します。私たちは、AIテクノロジーが世界中の個人やコミュニティにとってエンパワーメントの源となるよう尽力するこの取り組みに、あなたも参加することを心からお待ちしています。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/mission.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.809136+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "22ad046c19067dc229d01673864491a56159210f7b07afe771c69fc4c521c931"
+  }
+}

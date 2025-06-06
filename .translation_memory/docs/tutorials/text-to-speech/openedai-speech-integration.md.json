@@ -1,0 +1,742 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/text-to-speech/openedai-speech-integration.md",
+  "source_file_content_hash": "42543584c1a482c65c5c4d2d7f3d9faed3e2a58d34438f74fb6f11633db0db00",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"🗨️ Openedai-speech Using Docker\"\n---",
+      "source_content_hash": "7b0c0536cd9f3701aee11027c6f3cddb400d801931b59631de7b9bfc80fc5539",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとしてのみ提供されています。寄稿したいですか？寄稿チュートリアルをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "**Integrating `openedai-speech` into Sage WebUI using Docker**\n==============================================================",
+      "source_content_hash": "eb72a53dffeb82095f2fa71c5ed669e648286f91384b0470cc9a94276b61167a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**Dockerを使用してSage WebUIに`openedai-speech`を統合する**\n=============================================================="
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "**What is `openedai-speech`?**\n-----------------------------",
+      "source_content_hash": "71801a067e8dfd00ca0dccf483bbf02ef88d05c04e960bd0e5cac716230b8d34",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**`openedai-speech`とは？**\n-----------------------------"
+      }
+    },
+    {
+      "segment_id": "976d532b",
+      "source_content": ":::info\n[openedai-speech](https://github.com/matatonic/openedai-speech) is an OpenAI audio/speech API compatible text-to-speech server.\n\nIt serves the `/v1/audio/speech` endpoint and provides a free, private text-to-speech experience with custom voice cloning capabilities. This service is in no way affiliated with OpenAI and does not require an OpenAI API key.\n:::",
+      "source_content_hash": "79d4debbac91f654bf19985e19343c11168954f6a0a7fce8164f9002b5226b35",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n[openedai-speech](https://github.com/matatonic/openedai-speech)は、OpenAIのオーディオ/音声APIと互換性のあるテキスト読み上げサーバーです。\n\n`/v1/audio/speech`エンドポイントを提供し、カスタム音声クローニング機能を備えた無料のプライベートなテキスト読み上げ体験を実現します。このサービスはOpenAIとは一切関係がなく、OpenAIのAPIキーも必要ありません。\n:::"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "**Requirements**\n-----------------",
+      "source_content_hash": "505997002ea080d4d441560b4026d150b1d67c86a9ad83ec09274daf6beb0d4c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**要件**\n-----------------"
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "* Docker installed on your system\n* Sage WebUI running in a Docker container\n* Basic understanding of Docker and Docker Compose",
+      "source_content_hash": "761898a56980576cb4326d0f5254e224a5f7e0f208b1ebf8f8a5da4bd84e8c26",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* システムにDockerがインストールされていること\n* Sage WebUIがDockerコンテナで実行されていること\n* DockerとDocker Composeの基本的な理解"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "**Option 1: Using Docker Compose**\n----------------------------------",
+      "source_content_hash": "d99a8af0ce3fb4573cc42903ad282ded50623ac1d3f386bbafb6ead49a59b462",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**オプション1: Docker Composeを使用する**\n----------------------------------"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "**Step 1: Create a new folder for the `openedai-speech` service**\n-----------------------------------------------------------------",
+      "source_content_hash": "8a869a93d2c7e0205d63c9afbda23d603127beacbda4494333b4de3cfdf1a3b8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ1: `openedai-speech`サービスのための新しいフォルダを作成する**\n-----------------------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "Create a new folder, for example, `openedai-speech-service`, to store the `docker-compose.yml` and `speech.env` files.",
+      "source_content_hash": "c5872e105183b2e429f747b1f54b42f6c8d03bda4b5290b2893ed92214b1607e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`openedai-speech-service`などの新しいフォルダを作成し、`docker-compose.yml`と`speech.env`ファイルを保存します。"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "**Step 2: Clone the `openedai-speech` repository from GitHub**\n--------------------------------------------------------------",
+      "source_content_hash": "5a71e8bb328c7f379317bca40a4ff41767616967b8e4fa8287bd02b873ef57bc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ2: GitHubから`openedai-speech`リポジトリをクローンする**\n--------------------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```bash\ngit clone https://github.com/matatonic/openedai-speech.git\n```",
+      "source_content_hash": "530d41a531c8ee455fe1d56a771c0caaa3dee84637aac3e7d24c5a5391313fe7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "This will download the `openedai-speech` repository to your local machine, which includes the Docker Compose files (`docker-compose.yml`, `docker-compose.min.yml`, and `docker-compose.rocm.yml`) and other necessary files.",
+      "source_content_hash": "b5f562594cb0b4ab701a05fb81508f4d4a87c9d1a0cb071bf3b46b809f90447d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これにより、`openedai-speech`リポジトリがローカルマシンにダウンロードされます。リポジトリにはDocker Composeファイル（`docker-compose.yml`、`docker-compose.min.yml`、`docker-compose.rocm.yml`）やその他の必要なファイルが含まれています。"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "**Step 3: Rename the `sample.env` file to `speech.env` (Customize if needed)**\n------------------------------------------------------------------------------",
+      "source_content_hash": "7e6f55a6c7eb3837ef1e2e16d688d3dd7953406d6435c2604d30986247627562",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ3: `sample.env`ファイルを`speech.env`にリネームする（必要に応じてカスタマイズ）**\n------------------------------------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "In the `openedai-speech` repository folder, create a new file named `speech.env` with the following contents:",
+      "source_content_hash": "a0fc32ac176f0ba37c96c7ebf7afb276157479c938ebff471f348a26f2e6585b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`openedai-speech`リポジトリフォルダ内に、以下の内容で`speech.env`という名前の新しいファイルを作成します："
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```yaml\nTTS_HOME=voices\nHF_HOME=voices\n#PRELOAD_MODEL=xtts\n#PRELOAD_MODEL=xtts_v2.0.2\n#PRELOAD_MODEL=parler-tts/parler_tts_mini_v0.1\n#EXTRA_ARGS=--log-level DEBUG --unload-timer 300\n#USE_ROCM=1\n```",
+      "source_content_hash": "3b64200e9e82c578e7d412ad0190c03530b2bd252606c678dc1c2ca630ad4305",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "**Step 4: Choose a Docker Compose file**\n----------------------------------------",
+      "source_content_hash": "1d9f63b27e2389fb269da5059c08dcf3225af33764aef5da9ebb5bca064b64a9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ4: Docker Composeファイルを選択する**\n----------------------------------------"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "You can use any of the following Docker Compose files:",
+      "source_content_hash": "361cbdc254d904117d797fbb9e250a59a0e3fda0d409baeef6f369bf374bdf5d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のいずれかのDocker Composeファイルを使用できます："
+      }
+    },
+    {
+      "segment_id": "2eb5ba30",
+      "source_content": "* [docker-compose.yml](https://github.com/matatonic/openedai-speech/blob/main/docker-compose.yml): This file uses the `ghcr.io/matatonic/openedai-speech` image and builds from [Dockerfile](https://github.com/matatonic/openedai-speech/blob/main/Dockerfile).\n* [docker-compose.min.yml](https://github.com/matatonic/openedai-speech/blob/main/docker-compose.min.yml): This file uses the `ghcr.io/matatonic/openedai-speech-min` image and builds from [Dockerfile.min](https://github.com/matatonic/openedai-speech/blob/main/Dockerfile.min).\n  This image is a minimal version that only includes Piper support and does not require a GPU.\n* [docker-compose.rocm.yml](https://github.com/matatonic/openedai-speech/blob/main/docker-compose.rocm.yml): This file uses the `ghcr.io/matatonic/openedai-speech-rocm` image and builds from [Dockerfile](https://github.com/matatonic/openedai-speech/blob/main/Dockerfile) with ROCm support.",
+      "source_content_hash": "a758271a5515c7249edf0c504a26ef9f392e345751d364b25dfffe1085a26560",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [docker-compose.yml](https://github.com/matatonic/openedai-speech/blob/main/docker-compose.yml): このファイルは`ghcr.io/matatonic/openedai-speech`イメージを使用し、[Dockerfile](https://github.com/matatonic/openedai-speech/blob/main/Dockerfile)からビルドします。\n* [docker-compose.min.yml](https://github.com/matatonic/openedai-speech/blob/main/docker-compose.min.yml): このファイルは`ghcr.io/matatonic/openedai-speech-min`イメージを使用し、[Dockerfile.min](https://github.com/matatonic/openedai-speech/blob/main/Dockerfile.min)からビルドします。\n  このイメージはPiperサポートのみを含む最小バージョンで、GPUを必要としません。\n* [docker-compose.rocm.yml](https://github.com/matatonic/openedai-speech/blob/main/docker-compose.rocm.yml): このファイルは`ghcr.io/matatonic/openedai-speech-rocm`イメージを使用し、ROCmサポートを備えた[Dockerfile](https://github.com/matatonic/openedai-speech/blob/main/Dockerfile)からビルドします。"
+      }
+    },
+    {
+      "segment_id": "52388877",
+      "source_content": "**Step 4: Build the Chosen Docker Image**\n-----------------------------------------",
+      "source_content_hash": "4cc008a27711ed4871df209fe79ccc8ff5ada6fc539b5cc8abdfe663f355a389",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ4: 選択したDockerイメージをビルドする**\n-----------------------------------------"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "Before running the Docker Compose file, you need to build the Docker image:",
+      "source_content_hash": "3c6e50e4dd95dc4a014d1f305ee016bce2dbb768c64537fadfa5e348ec572cb5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Docker Composeファイルを実行する前に、Dockerイメージをビルドする必要があります："
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "* **Nvidia GPU (CUDA support)**:",
+      "source_content_hash": "e1e81070bfb776dfb5048267bbdef6518d050595d2bfe9f7fe7ded8aa5f220fa",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **Nvidia GPU (CUDAサポート)**:"
+      }
+    },
+    {
+      "segment_id": "8a9e710a",
+      "source_content": "```bash\ndocker build -t ghcr.io/matatonic/openedai-speech .\n```",
+      "source_content_hash": "d8611e9bcfc3487940072a2e9123ff36ff690b51e66e0198f9757e41f951f8d3",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_8a9e710a"
+      }
+    },
+    {
+      "segment_id": "c0ea80dd",
+      "source_content": "* **AMD GPU (ROCm support)**:",
+      "source_content_hash": "8db7be0bde2069025e0a44cf5c6f64cae117d597389498e17cc1b0e6fe56fbdb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **AMD GPU (ROCmサポート)**:"
+      }
+    },
+    {
+      "segment_id": "d8159289",
+      "source_content": "```bash\ndocker build -f Dockerfile --build-arg USE_ROCM=1 -t ghcr.io/matatonic/openedai-speech-rocm .\n```",
+      "source_content_hash": "c66598cb9946b9e974ebb9b44f4552b31313073439c9c0a2487ffcb9014e11df",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d8159289"
+      }
+    },
+    {
+      "segment_id": "887c863e",
+      "source_content": "* **CPU only, No GPU (Piper only)**:",
+      "source_content_hash": "44a84df91310a36bdd50968578a08ac07a70df076d200e90e13d3e57c5205283",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **CPUのみ、GPUなし（Piperのみ）**:"
+      }
+    },
+    {
+      "segment_id": "7d898a0e",
+      "source_content": "```bash\ndocker build -f Dockerfile.min -t ghcr.io/matatonic/openedai-speech-min .\n```",
+      "source_content_hash": "a7535cb4e16f2f5254ee522f07a6e843679ee834ba61e4e4d4037b790cade07c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7d898a0e"
+      }
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "**Step 5: Run the correct `docker compose up -d` command**\n----------------------------------------------------------",
+      "source_content_hash": "4c89e3c79939f747a1534c055ec5e7da5c673b3cceba9462909a7a31a516fb4c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ5: 正しい`docker compose up -d`コマンドを実行する**\n----------------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "b264104e",
+      "source_content": "* **Nvidia GPU (CUDA support)**: Run the following command to start the `openedai-speech` service in detached mode:",
+      "source_content_hash": "0f92e9cd2463b749f7032ba3d29d74364e216387f29238029d93e81775c7e14e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **NVIDIA GPU（CUDAサポート）**: 以下のコマンドを実行して、`openedai-speech`サービスをデタッチモードで起動します:"
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```bash\ndocker compose up -d\n```",
+      "source_content_hash": "3e7b856b2044030c0e7e938c22308c9ec4f465a67d5cc331338d0265378e244e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "584b7213",
+      "source_content": "* **AMD GPU (ROCm support)**: Run the following command to start the `openedai-speech` service in detached mode:",
+      "source_content_hash": "8a23d4ae31233c95f2060d2b57454668fa2848b7b12f936a3d5be18e0cdc66b5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **AMD GPU（ROCmサポート）**: 以下のコマンドを実行して、`openedai-speech`サービスをデタッチモードで起動します:"
+      }
+    },
+    {
+      "segment_id": "64071bcc",
+      "source_content": "```bash\ndocker compose -f docker-compose.rocm.yml up -d\n```",
+      "source_content_hash": "44f7ee9a5cf5b502277ff12df7593d2f8189c54b2bd1d8438c0435fd99290722",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_64071bcc"
+      }
+    },
+    {
+      "segment_id": "664ad8b1",
+      "source_content": "* **ARM64 (Apple M-series, Raspberry Pi)**: XTTS only has CPU support here and will be very slow. You can use the Nvidia image for XTTS with CPU (slow), or use the Piper only image (recommended):",
+      "source_content_hash": "a895a9649b9c9928575e70d8b97ff2ef7f95c1dc5cfd68d5c700bebe92d8a3f3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **ARM64（Apple Mシリーズ、Raspberry Pi）**: XTTSはここではCPUサポートのみで非常に遅くなります。XTTS用のNVIDIAイメージをCPUで使用する（遅い）か、Piperのみのイメージを使用する（推奨）ことができます:"
+      }
+    },
+    {
+      "segment_id": "59534425",
+      "source_content": "```bash\ndocker compose -f docker-compose.min.yml up -d\n```",
+      "source_content_hash": "cccd45fccd824425b6706549d1f25aad8c99f96d8d42a9e22432ca8fdf5b30c0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_59534425"
+      }
+    },
+    {
+      "segment_id": "0422e2e2",
+      "source_content": "* **CPU only, No GPU (Piper only)**: For a minimal docker image with only Piper support (< 1GB vs. 8GB):",
+      "source_content_hash": "d8f83433fb12e5cda2aa0fd09ca8c5db58d3a5109744b68f2feae027f699586f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **CPUのみ、GPUなし（Piperのみ）**: Piperサポートのみの最小限のDockerイメージ（< 1GB vs. 8GB）の場合:"
+      }
+    },
+    {
+      "segment_id": "342e4d80",
+      "source_content": "```bash\ndocker compose -f docker-compose.min.yml up -d\n```",
+      "source_content_hash": "cccd45fccd824425b6706549d1f25aad8c99f96d8d42a9e22432ca8fdf5b30c0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_342e4d80"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "This will start the `openedai-speech` service in detached mode.",
+      "source_content_hash": "6aef84d51afbc1d6eeb059b79ef6116979610a753515becd1ab6235c9012d6c9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これにより、`openedai-speech`サービスがデタッチモードで起動します。"
+      }
+    },
+    {
+      "segment_id": "b9b8694c",
+      "source_content": "**Option 2: Using Docker Run Commands**\n---------------------------------------",
+      "source_content_hash": "9f58892e75f7e5012476ddcedcb7fbbf5bfd247ed4917f3f5d56ce3284b6445c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**オプション2: Docker Runコマンドを使用する**\n---------------------------------------"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "You can also use the following Docker run commands to start the `openedai-speech` service in detached mode:",
+      "source_content_hash": "bd6cca16a5db6b9a15f37561fbd4c1bade073b22c4f4675330aca957694f64ff",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のDocker runコマンドを使用して、`openedai-speech`サービスをデタッチモードで起動することもできます:"
+      }
+    },
+    {
+      "segment_id": "683a33d9",
+      "source_content": "* **Nvidia GPU (CUDA)**: Run the following command to build and start the `openedai-speech` service:",
+      "source_content_hash": "d8f7c5c810388fbe6e8af4fd4ad28ca68ab8fe9411ccf672e701e471b81b2dac",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **NVIDIA GPU（CUDA）**: 以下のコマンドを実行して、`openedai-speech`サービスをビルドおよび起動します:"
+      }
+    },
+    {
+      "segment_id": "a3a1b8eb",
+      "source_content": "```bash\ndocker build -t ghcr.io/matatonic/openedai-speech .\ndocker run -d --gpus=all -p 8000:8000 -v voices:/app/voices -v config:/app/config --name openedai-speech ghcr.io/matatonic/openedai-speech\n```",
+      "source_content_hash": "a8b5f3f151f0dca05ca11440771dcc3c6d9420b7462b3d6d9073052319885b41",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a3a1b8eb"
+      }
+    },
+    {
+      "segment_id": "6409152f",
+      "source_content": "* **ROCm (AMD GPU)**: Run the following command to build and start the `openedai-speech` service:",
+      "source_content_hash": "8f283a29ae429d186b58e182ce5a613d1012faafe6f2bf64f3bdd05674f428d6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **ROCm（AMD GPU）**: 以下のコマンドを実行して、`openedai-speech`サービスをビルドおよび起動します:"
+      }
+    },
+    {
+      "segment_id": "bfcbf7c6",
+      "source_content": "> To enable ROCm support, uncomment the `#USE_ROCM=1` line in the `speech.env` file.",
+      "source_content_hash": "4053ed1a38f2507cd0ca9d8485b3b91276890dff321bd6fbe3942faf4215f147",
+      "node_type": "blockquote",
+      "translatable": true,
+      "translations": {
+        "ja": "> ROCmサポートを有効にするには、`speech.env`ファイルの`#USE_ROCM=1`行のコメントを解除してください。"
+      }
+    },
+    {
+      "segment_id": "4c6754b2",
+      "source_content": "```bash\ndocker build -f Dockerfile --build-arg USE_ROCM=1 -t ghcr.io/matatonic/openedai-speech-rocm .\ndocker run -d --privileged --init --name openedai-speech -p 8000:8000 -v voices:/app/voices -v config:/app/config ghcr.io/matatonic/openedai-speech-rocm\n```",
+      "source_content_hash": "f36ca72f6a3609e3bca7248dda2b7388286cb3e7ecba98ca1d471072c43f0770",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4c6754b2"
+      }
+    },
+    {
+      "segment_id": "31bf14c2",
+      "source_content": "* **CPU only, No GPU (Piper only)**: Run the following command to build and start the `openedai-speech` service:",
+      "source_content_hash": "91461f0e7463c2a714a923b9a80476cdea5f6bca395a9f76d6b22bcae7c0ed56",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **CPUのみ、GPUなし（Piperのみ）**: 以下のコマンドを実行して、`openedai-speech`サービスをビルドおよび起動します:"
+      }
+    },
+    {
+      "segment_id": "4fe849d4",
+      "source_content": "```bash\ndocker build -f Dockerfile.min -t ghcr.io/matatonic/openedai-speech-min .\ndocker run -d -p 8000:8000 -v voices:/app/voices -v config:/app/config --name openedai-speech ghcr.io/matatonic/openedai-speech-min\n```",
+      "source_content_hash": "1ca6bf5fbb666e0f48ea88af64de79a8e53e1e93a802f9b185d0bbbb36d5ec44",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4fe849d4"
+      }
+    },
+    {
+      "segment_id": "3cd8185f",
+      "source_content": "**Step 6: Configuring Sage WebUI to use `openedai-speech` for TTS**\n---------------------------------------------------------",
+      "source_content_hash": "34c6969b700a90d6e90449dd9074af6fde67bf09f4b1037e0529628d35df9fe8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ6: Sage WebUIを設定して`openedai-speech`をTTSに使用する**\n---------------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "42d9ca67",
+      "source_content": "![openedai-tts](https://github.com/silentoplayz/docs/assets/50341825/ea08494f-2ebf-41a2-bb0f-9b48dd3ace79)",
+      "source_content_hash": "c7c6eca32116cd57999a2f7c518831933b0c32838b27ea4a524ee4827b9bd862",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![openedai-tts](https://github.com/silentoplayz/docs/assets/50341825/ea08494f-2ebf-41a2-bb0f-9b48dd3ace79)"
+      }
+    },
+    {
+      "segment_id": "619c3209",
+      "source_content": "Open the Sage WebUI settings and navigate to the TTS Settings under **Admin Panel > Settings > Audio**. Add the following configuration:",
+      "source_content_hash": "5d956a1c370f62ca825891e8316ab14aabebde526f4c4c9a8e1c179b3342cbb8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの設定を開き、**管理パネル > 設定 > オーディオ**の下にあるTTS設定に移動します。以下の設定を追加してください:"
+      }
+    },
+    {
+      "segment_id": "9fbd2efb",
+      "source_content": "* **API Base URL**: `http://host.docker.internal:8000/v1`\n* **API Key**: `sk-111111111` (Note that this is a dummy API key, as `openedai-speech` doesn't require an API key. You can use whatever you'd like for this field, as long as it is filled.)",
+      "source_content_hash": "c13e1275a3b3d218cad0c4059b05b6d2f8319f1a407460b836dae92519c68ccc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **APIベースURL**: `http://host.docker.internal:8000/v1`\n* **APIキー**: `sk-111111111`（これはダミーのAPIキーです。`openedai-speech`はAPIキーを必要としません。このフィールドには何を入れても構いませんが、入力されている必要があります。）"
+      }
+    },
+    {
+      "segment_id": "3c6dd548",
+      "source_content": "**Step 7: Choose a voice**\n--------------------------",
+      "source_content_hash": "53a56f9d9efca915cd7cfa55014e1777675543a25a899f94e8bd7b724b6078d5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ7: 音声を選択する**\n--------------------------"
+      }
+    },
+    {
+      "segment_id": "008183b0",
+      "source_content": "Under `TTS Voice` within the same audio settings menu in the admin panel, you can set the `TTS Model` to use from the following choices below that `openedai-speech` supports. The voices of these models are optimized for the English language.",
+      "source_content_hash": "ee7ed967c9f78942bea4dc159aba9f90103f2e58aa37759cdd7d44850bce128d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "管理パネルの同じオーディオ設定メニュー内の`TTS Voice`で、以下の`openedai-speech`がサポートする`TTS Model`を設定できます。これらのモデルの音声は英語用に最適化されています。"
+      }
+    },
+    {
+      "segment_id": "e258929d",
+      "source_content": "* `tts-1` or `tts-1-hd`: `alloy`, `echo`, `echo-alt`, `fable`, `onyx`, `nova`, and `shimmer` (`tts-1-hd` is configurable; uses OpenAI samples by default)",
+      "source_content_hash": "63044e729c698bde1052e394c46dc6e03d2d869a37e95460c788eede58334fdb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* `tts-1`または`tts-1-hd`: `alloy`, `echo`, `echo-alt`, `fable`, `onyx`, `nova`, `shimmer`（`tts-1-hd`は設定可能；デフォルトでOpenAIのサンプルを使用）"
+      }
+    },
+    {
+      "segment_id": "08f73f73",
+      "source_content": "**Step 8: Press `Save` to apply the changes and start enjoying naturally sounding voices**\n--------------------------------------------------------------------------------------------",
+      "source_content_hash": "59b29ab2e2123700560daa9d696124859fd92bc8ef7bd008e781ae12a02372b2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**ステップ8: `保存`を押して変更を適用し、自然な音声を楽しむ**\n--------------------------------------------------------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "827eb9a3",
+      "source_content": "Press the `Save` button to apply the changes to your Sage WebUI settings. Refresh the page for the change to fully take effect and enjoy using `openedai-speech` integration within Sage WebUI to read aloud text responses with text-to-speech in a natural sounding voice.",
+      "source_content_hash": "54952fa3b0ea6df9a3f91d6e1d65b1a1c2955a6243321fff3bd3058c09f1fff3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`保存`ボタンを押して、Sage WebUIの設定に変更を適用します。ページを更新して変更を完全に反映させ、Sage WebUI内で`openedai-speech`統合を使用して、テキスト応答を自然な音声で読み上げるテキスト読み上げを楽しんでください。"
+      }
+    },
+    {
+      "segment_id": "6ffd1ebe",
+      "source_content": "**Model Details:**\n------------------",
+      "source_content_hash": "a7cff92e936240e3157f0a8a15beed054ef7dfe01f756e302d3a0c0a5df7905c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**モデルの詳細:**\n------------------"
+      }
+    },
+    {
+      "segment_id": "85ea22dd",
+      "source_content": "`openedai-speech` supports multiple text-to-speech models, each with its own strengths and requirements. The following models are available:",
+      "source_content_hash": "e83f37a79d6cdf9429abe7b4ca77d4ded855556e64d24608bf57a60f53208e9f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`openedai-speech`は、それぞれ独自の強みと要件を持つ複数のテキスト読み上げモデルをサポートしています。以下のモデルが利用可能です:"
+      }
+    },
+    {
+      "segment_id": "db79148c",
+      "source_content": "* **Piper TTS** (very fast, runs on CPU): Use your own [Piper voices](https://rhasspy.github.io/piper-samples/) via the `voice_to_speaker.yaml` configuration file. This model is great for applications that require low latency and high performance. Piper TTS also supports [multilingual](https://github.com/matatonic/openedai-speech#multilingual) voices.\n* **Coqui AI/TTS XTTS v2** (fast, but requires around 4GB GPU VRAM & Nvidia GPU with CUDA): This model uses Coqui AI's XTTS v2 voice cloning technology to generate high-quality voices. While it requires a more powerful GPU, it provides excellent performance and high-quality audio. Coqui also supports [multilingual](https://github.com/matatonic/openedai-speech#multilingual) voices.\n* **Beta Parler-TTS Support** (experimental, slower): This model uses the Parler-TTS framework to generate voices. While it's currently in beta, it allows you to describe very basic features of the speaker voice. The exact voice will be slightly different with each generation, but should be similar to the speaker description provided. For inspiration on how to describe voices, see [Text Description to Speech](https://www.text-description-to-speech.com/).",
+      "source_content_hash": "fd0ac33606f95ed2dc80969a5378e627d092002366ab8fb0f86af8511fc1592c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **Piper TTS**（非常に高速、CPUで動作）: [Piper voices](https://rhasspy.github.io/piper-samples/)を`voice_to_speaker.yaml`設定ファイルで使用できます。このモデルは低遅延と高性能が求められるアプリケーションに最適です。Piper TTSは[多言語](https://github.com/matatonic/openedai-speech#multilingual)音声もサポートしています。\n* **Coqui AI/TTS XTTS v2**（高速ですが、約4GBのGPU VRAMとNvidia GPU（CUDA対応）が必要）: このモデルはCoqui AIのXTTS v2音声クローニング技術を使用して高品質な音声を生成します。より強力なGPUが必要ですが、優れたパフォーマンスと高品質なオーディオを提供します。Coquiも[多言語](https://github.com/matatonic/openedai-speech#multilingual)音声をサポートしています。\n* **Beta Parler-TTSサポート**（実験的、低速）: このモデルはParler-TTSフレームワークを使用して音声を生成します。現在はベータ版ですが、話者の声の非常に基本的な特徴を記述できます。生成ごとに正確な声は少し異なりますが、提供された話者の説明と似たものになります。声の記述方法のインスピレーションについては、[Text Description to Speech](https://www.text-description-to-speech.com/)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "c66e62ef",
+      "source_content": "**Troubleshooting**\n-------------------",
+      "source_content_hash": "e5aef4bf73433e650811382d98331926d1a0485039253699f74d2b457b7387a4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**トラブルシューティング**\n-------------------"
+      }
+    },
+    {
+      "segment_id": "e5821418",
+      "source_content": "If you encounter any problems integrating `openedai-speech` with Sage WebUI, follow these troubleshooting steps:",
+      "source_content_hash": "d48ea77be207dc0377599a06b80430246f61bc6f67f84e7bf3b040e44b7acc49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIと`openedai-speech`の統合で問題が発生した場合は、以下のトラブルシューティング手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "9cfc9f06",
+      "source_content": "* **Verify `openedai-speech` service**: Ensure that the `openedai-speech` service is running and the port you specified in the docker-compose.yml file is exposed.\n* **Check access to host.docker.internal**: Verify that the hostname `host.docker.internal` is resolvable from within the Sage WebUI container. This is necessary because `openedai-speech` is exposed via `localhost` on your PC, but `sage-open-webui` cannot normally access it from inside its container. You can add a volume to the `docker-compose.yml` file to mount a file from the host to the container, for example, to a directory that will be served by openedai-speech.\n* **Review API key configuration**: Make sure the API key is set to a dummy value or effectively left unchecked because `openedai-speech` doesn't require an API key.\n* **Check voice configuration**: Verify that the voice you are trying to use for TTS exists in your `voice_to_speaker.yaml` file and the corresponding files (e.g., voice XML files) are present in the correct directory.\n* **Verify voice model paths**: If you're experiencing issues with voice model loading, double-check that the paths in your `voice_to_speaker.yaml` file match the actual locations of your voice models.",
+      "source_content_hash": "9871c903c8452e8e4c7e80e104bbcc34ae19cc5c125f2363a2ec6be4957398c3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **`openedai-speech`サービスの確認**: `openedai-speech`サービスが実行中であり、docker-compose.ymlファイルで指定したポートが公開されていることを確認してください。\n* **host.docker.internalへのアクセス確認**: Sage WebUIコンテナ内からホスト名`host.docker.internal`が解決可能であることを確認してください。これは、`openedai-speech`がPCの`localhost`で公開されていますが、`sage-open-webui`は通常コンテナ内からアクセスできないため必要です。たとえば、ホストからコンテナにファイルをマウントするために、`docker-compose.yml`ファイルにボリュームを追加できます。\n* **APIキー設定の確認**: APIキーがダミー値に設定されているか、または`openedai-speech`がAPIキーを必要としないため、実質的にチェックされていないことを確認してください。\n* **音声設定の確認**: TTSに使用しようとしている音声が`voice_to_speaker.yaml`ファイルに存在し、対応するファイル（例：音声XMLファイル）が正しいディレクトリにあることを確認してください。\n* **音声モデルパスの確認**: 音声モデルの読み込みに問題がある場合は、`voice_to_speaker.yaml`ファイル内のパスが音声モデルの実際の場所と一致していることを再確認してください。"
+      }
+    },
+    {
+      "segment_id": "6d457467",
+      "source_content": "**Additional Troubleshooting Tips**\n------------------------------------",
+      "source_content_hash": "7f2504197455918691e4c9eaf41e6c497c6ef8c2e1654d68d156ae96c36eb25d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**追加のトラブルシューティングのヒント**\n------------------------------------"
+      }
+    },
+    {
+      "segment_id": "e612e1d0",
+      "source_content": "* Check the openedai-speech logs for errors or warnings that might indicate where the issue lies.\n* Verify that the `docker-compose.yml` file is correctly configured for your environment.\n* If you're still experiencing issues, try restarting the `openedai-speech` service or the entire Docker environment.\n* If the problem persists, consult the `openedai-speech` GitHub repository or seek help on a relevant community forum.",
+      "source_content_hash": "55b9b55dfa77464d0f8a6dac6b056e0abee5109142ca283647c43b50469c3339",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* openedai-speechのログを確認し、問題の原因を示すエラーや警告がないか調べてください。\n* `docker-compose.yml`ファイルが環境に合わせて正しく設定されていることを確認してください。\n* 問題が解決しない場合は、`openedai-speech`サービスまたはDocker環境全体を再起動してみてください。\n* 問題が続く場合は、`openedai-speech`のGitHubリポジトリを参照するか、関連するコミュニティフォーラムで助けを求めてください。"
+      }
+    },
+    {
+      "segment_id": "4d7a4554",
+      "source_content": "**FAQ**\n-------",
+      "source_content_hash": "3052d83123a8e761500d3db2a55dc84c0a6ead7b7094cc7bed17dfe3ebe21901",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**FAQ**\n-------"
+      }
+    },
+    {
+      "segment_id": "48249e3c",
+      "source_content": "**How can I control the emotional range of the generated audio?**",
+      "source_content_hash": "5eebb2a30caf497acb9f7727814b5e02599e943b47ccaca0d16e16fec9e20113",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**生成されたオーディオの感情範囲を制御するにはどうすればよいですか？**"
+      }
+    },
+    {
+      "segment_id": "ebfad7e4",
+      "source_content": "There is no direct mechanism to control the emotional output of the generated audio. Certain factors such as capitalization or grammar may affect the output audio, but internal testing has yielded mixed results.",
+      "source_content_hash": "8d4e6901ddea085046775b331a8b1a37247732400e40475906763f081c83c3d8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "生成されたオーディオの感情出力を直接制御するメカニズムはありません。大文字化や文法などの特定の要因が出力オーディオに影響を与える可能性がありますが、内部テストでは結果がまちまちでした。"
+      }
+    },
+    {
+      "segment_id": "7e563909",
+      "source_content": "**Where are the voice files stored? What about the configuration file?**.",
+      "source_content_hash": "08556700fa6ac64195512cffde608c407447d580802e7223f7f33e4ecb6bf9c6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**音声ファイルはどこに保存されますか？設定ファイルはどうですか？**"
+      }
+    },
+    {
+      "segment_id": "90c4b96b",
+      "source_content": "The configuration files, which define the available voices and their properties, are stored in the config volume. Specifically, the default voices are defined in voice_to_speaker.default.yaml.",
+      "source_content_hash": "e887991073577a65b9396eddb01d89e0b7e0cd44de1e34d6de29ccf61ed9a039",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "設定ファイル（利用可能な音声とそのプロパティを定義する）はconfigボリュームに保存されます。具体的には、デフォルトの音声は`voice_to_speaker.default.yaml`で定義されています。"
+      }
+    },
+    {
+      "segment_id": "197e1a1b",
+      "source_content": "**Additional Resources**\n------------------------",
+      "source_content_hash": "59252bda9b1f81590b1abe0f031f3a64b07760b21a1264d25d93a3b69cae6fe9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "**追加リソース**\n------------------------"
+      }
+    },
+    {
+      "segment_id": "af834e0d",
+      "source_content": "For more information on configuring Sage WebUI to use `openedai-speech`, including setting environment variables, see the [Sage WebUI documentation](/getting-started/env-configuration#text-to-speech).",
+      "source_content_hash": "edbeb6c899f452ee0b486701c2b94f25c5c637e751954862261d1f2b923506e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIで`openedai-speech`を使用するための設定（環境変数の設定を含む）の詳細については、[Sage WebUIドキュメント](/getting-started/env-configuration#text-to-speech)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "d75361e3",
+      "source_content": "For more information about `openedai-speech`, please visit the [GitHub repository](https://github.com/matatonic/openedai-speech).",
+      "source_content_hash": "bb2cab828ff36594531ecab94a704e2c86fc2ce52266db1e3f1f0b80df49f017",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`openedai-speech`の詳細については、[GitHubリポジトリ](https://github.com/matatonic/openedai-speech)をご覧ください。"
+      }
+    },
+    {
+      "segment_id": "c277c3c0",
+      "source_content": "**How to add more voices to openedai-speech:**\n[Custom-Voices-HowTo](https://github.com/matatonic/openedai-speech?tab=readme-ov-file#custom-voices-howto)",
+      "source_content_hash": "66e1b08eae483bdb2207aa13f500d4984e46be8b21a4e6843a28b0d240bf9336",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**openedai-speechに音声を追加する方法:**\n[カスタム音声追加ガイド](https://github.com/matatonic/openedai-speech?tab=readme-ov-file#custom-voices-howto)"
+      }
+    },
+    {
+      "segment_id": "59087b4e",
+      "source_content": ":::note\nYou can change the port number in the `docker-compose.yml` file to any open and usable port, but be sure to update the **API Base URL** in Sage WebUI Admin Audio settings accordingly.\n:::",
+      "source_content_hash": "da6e2d4ae8c659cc679501341a70e578806acdb3215fbb89018a7c7ebca8922b",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\n`docker-compose.yml`ファイルでポート番号を変更可能ですが、Sage WebUI管理者画面のAudio設定にある**API Base URL**も合わせて更新してください。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/text-to-speech/openedai-speech-integration.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.781414+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "42543584c1a482c65c5c4d2d7f3d9faed3e2a58d34438f74fb6f11633db0db00"
+  }
+}

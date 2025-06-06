@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/https-nginx.md",
+  "source_file_content_hash": "3f026a1789e0f4a5218ccaf23285770dbd792baceec6d0812fc92b24a65fa585",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 200\ntitle: \"🔒 HTTPS using Nginx\"\n---",
+      "source_content_hash": "a0e1e87f4fe41160853dfc6f1487d33d8ccd2e15ec145c35a2e5249f649c2b8c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによるサポート対象外です。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとしてご利用ください。寄稿をご希望ですか？ 寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# HTTPS using Nginx",
+      "source_content_hash": "71b6935b2fcc3aa45eb857e500994f5b5350eb63e90d44259dd9e252285c0b93",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Nginxを使用したHTTPS設定"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Ensuring secure communication between your users and the Sage WebUI is paramount. HTTPS (HyperText Transfer Protocol Secure) encrypts the data transmitted, protecting it from eavesdroppers and tampering. By configuring Nginx as a reverse proxy, you can seamlessly add HTTPS to your Sage WebUI deployment, enhancing both security and trustworthiness.",
+      "source_content_hash": "4bf6e87c38be2e05e23a97d8d6212da43ae09d3c1e9e0df954d74c54be09249b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ユーザーとSage WebUI間の通信を安全に保つことは極めて重要です。HTTPS（HyperText Transfer Protocol Secure）は送信データを暗号化し、盗聴や改ざんから保護します。Nginxをリバースプロキシとして設定することで、Sage WebUIのデプロイメントにシームレスにHTTPSを追加でき、セキュリティと信頼性を向上させられます。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "This guide provides two methods to set up HTTPS:",
+      "source_content_hash": "38f5bf3c49953fb9ef6238c8ad40633eb82cc2f746ac6fe7763f5d493df867bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "本ガイドではHTTPSを設定する2つの方法を提供します："
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- **Self-Signed Certificates**: Ideal for development and internal use.\n- **Let's Encrypt**: Perfect for production environments requiring trusted SSL certificates.",
+      "source_content_hash": "5002a2fc519d2bc23758fcf02195b71f4d51c6c0ce97a8b8c9d330d096924c99",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **自己署名証明書**: 開発環境や内部利用に最適\n- **Let's Encrypt**: 信頼されたSSL証明書が必要な本番環境に最適"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Choose the method that best fits your deployment needs.",
+      "source_content_hash": "c9c936faed473fef1cc4c9fa9738ed693989db1685c1c3c2707bb0c4b976a47e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "デプロイメント要件に最も適した方法を選択してください。"
+      }
+    },
+    {
+      "segment_id": "0271a665",
+      "source_content": "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';",
+      "source_content_hash": "86702643a5c3bdf74257ff6062535897129ed9144c4f5b70edfe338fef3e5c73",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_0271a665"
+      }
+    },
+    {
+      "segment_id": "0adfe0aa",
+      "source_content": "import SelfSigned from './tab-nginx/SelfSigned.md';\nimport LetsEncrypt from './tab-nginx/LetsEncrypt.md';",
+      "source_content_hash": "64d051fec0dd60ea431bcb56a22060dba080d1138d50cddc08c63decb8cb4b5b",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_0adfe0aa"
+      }
+    },
+    {
+      "segment_id": "358a309f",
+      "source_content": "<Tabs>\n  <TabItem value=\"letsencrypt\" label=\"Let's Encrypt\">\n    <LetsEncrypt />\n  </TabItem>\n</Tabs>",
+      "source_content_hash": "12a1b1f779b9b7317a2b6cc98a9467686aa4f0d056a53a7eaf91d3ca15593330",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_358a309f"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## Next Steps",
+      "source_content_hash": "94792dd5969e771cc2c3d1210355ca64b0d1b19f0b908b4aec6b19ca3dbde26a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 次のステップ"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "After setting up HTTPS, access Sage WebUI securely at:",
+      "source_content_hash": "25c8e387b7e9cc54030ef26708a6edf4cac0f9af923cb73348cab4d5d7c1cff8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HTTPS設定後、以下のURLでSage WebUIに安全にアクセスできます："
+      }
+    },
+    {
+      "segment_id": "5d66c9dc",
+      "source_content": "- [https://localhost](https://localhost)",
+      "source_content_hash": "cee98b9968948745253aa9970a43425b844af395da4614ffa909e4fafb8ae681",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [https://localhost](https://localhost)"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Ensure that your DNS records are correctly configured if you're using a domain name. For production environments, it's recommended to use Let's Encrypt for trusted SSL certificates.",
+      "source_content_hash": "0136a1f7cc726e5561b04c590aa3f0d60b463f85663f5cd62002e5f27e4f34a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ドメイン名を使用する場合はDNSレコードが正しく設定されていることを確認してください。本番環境では、信頼されたSSL証明書のためにLet's Encryptの使用を推奨します。"
+      }
+    },
+    {
+      "segment_id": "bd7c9323",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/https-nginx.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.792415+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "3f026a1789e0f4a5218ccaf23285770dbd792baceec6d0812fc92b24a65fa585"
+  }
+}

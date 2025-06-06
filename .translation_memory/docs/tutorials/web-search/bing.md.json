@@ -1,0 +1,62 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/bing.md",
+  "source_file_content_hash": "207cfe38836c9234bc48063f7e3df04d31323e0716d08894e4c641d876e34598",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"Bing\"\n---",
+      "source_content_hash": "76135b5b717562061e221c016817dd32f3f3dbcad02618f6ff33189a1981496d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケースに合わせてSage Open WebUIをカスタマイズする方法のデモンストレーションとしてのみ提供されています。寄稿をご希望ですか？寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Bing API",
+      "source_content_hash": "d30a18f42c3948003ff551a6d659fc811123d55ddffce90fdb67bee97d9a9ce1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Bing API"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "1. Navigate to the [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) and create a new resource. After creation, you’ll be redirected to the resource overview page. From there, select \"Click here to manage keys.\" ![click here to manage keys](https://github.com/user-attachments/assets/dd2a3c67-d6a7-4198-ba54-67a3c8acff6d)\n2. On the key management page, locate Key1 or Key2 and copy your desired key.\n3. Open the Sage Open WebUI Admin Panel, switch to the Settings tab, and then select Web Search.\n4. Enable the Web search option and set the Web Search Engine to bing.\n5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [AzurePortal](https://portal.azure.com/#create/Microsoft.BingSearch) dashboard.\n6. Click `Save`.",
+      "source_content_hash": "68a4efdef4032ffff1062c16a5c4f12a594bb46bba7be1061fdeeb143dcdd737",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [Azureポータル](https://portal.azure.com/#create/Microsoft.BingSearch)にアクセスし、新しいリソースを作成します。作成後、リソース概要ページにリダイレクトされます。そこで「キーを管理するにはここをクリック」を選択してください。![キー管理画面へのリンク](https://github.com/user-attachments/assets/dd2a3c67-d6a7-4198-ba54-67a3c8acff6d)\n2. キー管理ページで、Key1またはKey2を探し、使用したいキーをコピーします。\n3. Sage Open WebUIの管理パネルを開き、設定タブに切り替えて「Web検索」を選択します。\n4. Web検索オプションを有効にし、Web検索エンジンを「bing」に設定します。\n5. `SearchApi API Key`に、手順2で[Azureポータル](https://portal.azure.com/#create/Microsoft.BingSearch)ダッシュボードからコピーした`APIキー`を入力します。\n6. 「保存」をクリックします。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/bing.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.791623+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "207cfe38836c9234bc48063f7e3df04d31323e0716d08894e4c641d876e34598"
+  }
+}

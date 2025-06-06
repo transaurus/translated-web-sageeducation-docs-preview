@@ -1,0 +1,512 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/enterprise.mdx",
+  "source_file_content_hash": "302cc18b4d808c6b11f18745fdd034c147b7d408518b84ffb152649fe566ed9e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2000\ntitle: \"🏢 Sage WebUI for Enterprises\"\n---",
+      "source_content_hash": "e56063b4d5be3b57fb4cc07f57394c3c49eee7533b95eed26c1e1ec96857243a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "8c98994c",
+      "source_content": ":::tip\n\n## Built for Everyone, Backed by the Community  \n\nSage Open WebUI is completely free to use, with no restrictions or hidden limits.  \n\nIt is **independently developed** and **sustained** by its users. **Optional** licenses are available to **support** ongoing development while providing **additional benefits** for businesses.\n\n:::",
+      "source_content_hash": "b87c9181e9d9f0f04e085e4b6300e00f86ad6d81db35c7d3b0c612774fe29e38",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n\n## 誰でも使える、コミュニティが支える  \n\nSage Open WebUIは完全無料で利用可能、制限や隠れた制約は一切ありません。  \n\n**独立開発**され、ユーザーによって**維持**されています。**オプション**のライセンスを取得することで、継続的な開発を**支援**しながら、ビジネス向けの**追加特典**を得ることができます。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "# Sage WebUI: A Safe and Powerful AI Platform for Families, Schools, and Small Teams",
+      "source_content_hash": "191510c4bd47f790e88ca07dd93c3818b14c19cf1e0241b4c7b6d3500a3f6521",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage WebUI: 家族、学校、小規模チーム向けの安全で強力なAIプラットフォーム"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "**Sage WebUI** is an extensible, feature-rich, and user-friendly AI platform designed for **education and small team collaboration**. Built on the proven Sage Open WebUI foundation, Sage WebUI operates **entirely offline**, ensuring that your data stays private and secure ([Explore Sage Open WebUI: Your Offline AI Interface](https://mydeveloperplanet.com/2025/02/05/explore-sage-open-webui-your-offline-ai-interface/#:~:text=Explore%20Open%20WebUI%3A%20Your%20Offline,supports%20various%20inference%20engines)). It uniquely integrates **block-based coding via Startr Snap!**, a visual programming approach inspired by Scratch and Snap!, enabling users of all ages to create custom AI tools and functions with ease. Sage WebUI brings enterprise-grade technology to families, classrooms, and small organizations in an accessible, safe, and compliant package.",
+      "source_content_hash": "aa69686888a86276bf9665a02ef370d7741e66c9ddac54c5de7c2eafefbf5dd7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Sage WebUI**は、**教育と小規模チームのコラボレーション**向けに設計された、拡張性豊かで機能満載、ユーザーフレンドリーなAIプラットフォームです。実績あるSage Open WebUIを基盤として構築されており、**完全オフライン**で動作するため、データのプライバシーとセキュリティが保たれます（[Sage Open WebUIの詳細: オフラインAIインターフェース](https://mydeveloperplanet.com/2025/02/05/explore-sage-open-webui-your-offline-ai-interface/#:~:text=Explore%20Open%20WebUI%3A%20Your%20Offline,supports%20various%20inference%20engines)）。**Startr Snap!によるブロックベースのコーディング**を統合しており、ScratchやSnap!にインスパイアされたビジュアルプログラミング手法により、あらゆる年齢のユーザーが簡単にカスタムAIツールや機能を作成できます。Sage WebUIは、企業向けの技術を家族、教室、小規模組織向けにアクセスしやすく、安全で規制に準拠した形で提供します。"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Key Features at a Glance",
+      "source_content_hash": "104f1d6cafa95bd9f16b2b579979549de1c946050d5b65d66af166a8f7aa5033",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 主な機能一覧"
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "- **Offline and Secure:** Runs entirely on local systems with no cloud dependency, keeping sensitive data in your control ([Explore Sage Open WebUI: Your Offline AI Interface](https://mydeveloperplanet.com/2025/02/05/explore-sage-open-webui-your-offline-ai-interface/#:~:text=Explore%20Open%20WebUI%3A%20Your%20Offline,supports%20various%20inference%20engines)). This offline design means children and educators can use AI safely without exposing any personal information online.  \n- **Block-Based Coding (Startr Snap!):** Includes an intuitive blocks-based coding interface from **Startr Snap!**, letting users **“snap” together** commands and functions (similar to Scratch or Logo) to develop tools rapidly. Beginners and experts alike can create custom AI workflows visually, lowering the barrier to programming new features.  \n- **Family & Classroom Friendly:** The interface is clean and easy to navigate, suitable for students and parents. Voice-assisted chats, guided tutorials, and adjustable settings make AI exploration engaging for kids, while giving adults oversight and control.  \n- **Flexible for Small Teams:** Ideal for clubs, educators, or small businesses – Sage WebUI adapts to your workflow. It supports multiple AI models and plugins, so teams can brainstorm, prototype, and solve problems together in real-time, even without internet.  \n- **Privacy & Child Safety Compliance:** Engineered to comply with major child data protection regulations in **Canada, USA, EU, and India**, so schools and families can trust that privacy safeguards are built-in (see **Privacy and Child Safety Compliance** below for details).  \n- **Reliability & Support:** Backed by a robust architecture and the experience of the Sage Open WebUI project, Sage WebUI offers the stability needed for classroom or home use. Educators and team leaders can access documentation and responsive support to ensure smooth deployment and ongoing use.",
+      "source_content_hash": "54ea5ed9288f8da046103e620988f1931ec803f028554ed36f60714b08ca5be1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **オフライン＆セキュア:** クラウドに依存せず完全にローカルシステムで動作するため、機密データをユーザーの管理下に置きます（[Sage Open WebUIの詳細: オフラインAIインターフェース](https://mydeveloperplanet.com/2025/02/05/explore-sage-open-webui-your-offline-ai-interface/#:~:text=Explore%20Open%20WebUI%3A%20Your%20Offline,supports%20various%20inference%20engines)）。このオフライン設計により、子供や教育者が個人情報をオンラインにさらすことなく安全にAIを利用できます。  \n- **ブロックベースコーディング（Startr Snap!）:** **Startr Snap!**による直感的なブロックベースのコーディングインターフェースを搭載。ScratchやLogoと同様に、コマンドや機能を「組み合わせる」ことでツールを迅速に開発できます。初心者から上級者まで、ビジュアル的にカスタムAIワークフローを作成可能で、新機能のプログラミングへのハードルを下げます。  \n- **家族＆教室向け:** クリーンでナビゲートしやすいインターフェースは、生徒や保護者に適しています。音声アシストチャット、ガイド付きチュートリアル、調整可能な設定により、子供たちのAI探求を魅力的にしつつ、大人が監督と制御を行えます。  \n- **小規模チーム向けの柔軟性:** クラブ、教育者、小規模ビジネスに最適。Sage WebUIはワークフローに適応します。複数のAIモデルとプラグインをサポートするため、チームはインターネットなしでもリアルタイムでブレインストーミング、プロトタイピング、問題解決を行えます。  \n- **プライバシー＆児童安全規制準拠:** **カナダ、米国、EU、インド**の主要な児童データ保護規制に準拠するよう設計されており、学校や家族がプライバシー保護機能を内蔵していることを信頼できます（詳細は以下の**プライバシーと児童安全規制準拠**を参照）。  \n- **信頼性＆サポート:** 堅牢なアーキテクチャとSage Open WebUIプロジェクトの経験に支えられ、Sage WebUIは教室や家庭での使用に必要な安定性を提供します。教育者やチームリーダーは、スムーズな展開と継続的な使用を確保するため、ドキュメントと迅速なサポートにアクセスできます。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "## Block-Based Coding Integration with Startr Snap!",
+      "source_content_hash": "87f1f2790e6df8be476f02ddc30f5f4b89fdf83bcad4a24568dff7869483d251",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Startr Snap!によるブロックベースコーディング統合"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "One of Sage WebUI’s standout features is its integration of **Startr Snap!**, a blocks-based coding platform. Startr Snap! is based on Snap! – a visual programming language developed by UC Berkeley and used by hundreds of thousands of learners worldwide ([Snap! Build Your Own Blocks](https://snap.berkeley.edu/#:~:text=The%20Snap%21%20Community,of%20programmers%20around%20the%20world)). This integration means you can create programs and automations by simply dragging and connecting puzzle-like blocks, without needing advanced programming skills.",
+      "source_content_hash": "09be6740bcc5d80cf62042af30f621179505dcf64119d4ffdfbc3ea98d5cdf2d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの際立った機能の1つは、**Startr Snap!**というブロックベースのコーディングプラットフォームの統合です。Startr Snap!は、カリフォルニア大学バークレー校が開発し、世界中の数十万人の学習者に利用されているビジュアルプログラミング言語Snap!を基にしています（[Snap! Build Your Own Blocks](https://snap.berkeley.edu/#:~:text=The%20Snap%21%20Community,of%20programmers%20around%20the%20world)）。この統合により、高度なプログラミングスキルがなくても、パズルのようなブロックをドラッグ＆接続するだけでプログラムや自動化を作成できます。"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "**How does this benefit users?** For **students and families**, it’s a fun, intuitive way to customize AI behavior. A child can, for example, build a block script to have the AI summarize a homework article or tell a story with a single click. For **educators**, Startr Snap! provides a quick method to prototype new tools – like a math quiz generator or a lesson plan assistant – by snapping together logic blocks. Even **small teams or non-technical staff** can develop custom functions (such as automating a report or creating an FAQ bot) in minutes. This block-based approach accelerates tool development across all levels of understanding, much like familiar educational languages Scratch and Logo, but now harnessing the power of AI within Sage WebUI.",
+      "source_content_hash": "b077b5a98118dec79381eca49620de4218c457de11de285f1482a6bb95236c76",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**ユーザーにとってのメリットは？** **学生や家族**にとって、AIの動作をカスタマイズする楽しく直感的な方法です。例えば、子供がブロックスクリプトを作成して、AIに宿題の記事を要約させたり、ワンクリックで物語を語らせたりできます。**教育者**にとって、Startr Snap!は、数学のクイズ生成ツールや授業計画アシスタントなどの新しいツールを、論理ブロックを組み合わせることで迅速にプロトタイプ作成する方法を提供します。**小規模チームや非技術スタッフ**でさえ、レポートの自動化やFAQボットの作成などのカスタム関数を数分で開発できます。このブロックベースのアプローチは、ScratchやLogoのような教育用言語と同様に、あらゆる理解レベルでのツール開発を加速しますが、Sage WebUI内でAIの力を活用できます。"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "Highlights of the block-coding integration:",
+      "source_content_hash": "5a602eec2f1cf36429f58ba91dd463732ea92743db2dd2eadaeb64048b00c837",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ブロックコーディング統合のハイライト:"
+      }
+    },
+    {
+      "segment_id": "33808f76",
+      "source_content": "- *No Coding Experience Required:* Anyone can create AI routines by arranging blocks that represent actions or data, lowering the barrier for family members or teachers who aren’t professional programmers.\n- *Rapid Prototyping:* Because it’s visual and modular, you can quickly experiment and iterate. This is great for classroom settings – students can modify AI behavior on the fly as a learning exercise.\n- *Seamless AI Integration:* The blocks can trigger Sage’s AI models to perform tasks (like answering questions, transforming text, etc.), bridging the gap between simple coding and complex AI functions. You can develop a new feature and immediately use it in chats or projects.\n- *Learning by Doing:* Families and schools can use Startr Snap! as a STEM learning tool. Kids practicing block coding are also learning computational thinking, and with Sage WebUI they see instant results from an AI assistant, keeping them engaged.",
+      "source_content_hash": "0660a93226ed4d26cf6ed8ccaf25c3692f6aaf711a395d13c2437c54d3908b16",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **コーディング経験不要:** アクションやデータを表すブロックを配置することで、誰でもAIルーチンを作成でき、プログラマーでない家族や教師の参入障壁を下げます。\n- **迅速なプロトタイピング:** ビジュアルでモジュール型であるため、迅速に実験と反復が可能です。これは教室環境に最適で、学生は学習演習としてAIの動作をその場で変更できます。\n- **シームレスなAI統合:** ブロックはSageのAIモデルをトリガーしてタスク（質問への回答、テキストの変換など）を実行でき、シンプルなコーディングと複雑なAI機能の間のギャップを埋めます。新機能を開発し、すぐにチャットやプロジェクトで使用できます。\n- **実践を通じた学習:** 家族や学校はStartr Snap!をSTEM学習ツールとして使用できます。ブロックコーディングを練習する子供たちは計算論的思考も学んでおり、Sage WebUIではAIアシスタントから即座に結果を得られるため、興味を持続できます。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "By combining easy **visual programming** with AI, Sage WebUI empowers a broad audience to not just use AI tools, but also to **create** them.",
+      "source_content_hash": "21043b6b7f5a422a5cb547c96e2a6b77077eb03c1b4f43252a1abe66487cfc7b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "簡単な**ビジュアルプログラミング**とAIを組み合わせることで、Sage WebUIは広範なユーザーがAIツールを**使用**するだけでなく、**作成**する力を与えます。"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## Designed for Families, Schools, and Small Teams",
+      "source_content_hash": "9acae175adc2b4756e0a4caaeddae09f8b76e14f3e4749dd08264cf99498ea44",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 家族、学校、小規模チーム向けに設計"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Sage WebUI is tailor-made for smaller-scale users who need powerful AI capabilities without the complexity (or cost) of a large enterprise system. Here’s how Sage WebUI serves its target audiences:",
+      "source_content_hash": "a3486d0dcade546f48e0c49dbe39a116f5e83412d1118cdfdf588718592e02e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、大規模なエンタープライズシステムの複雑さ（またはコスト）なしに強力なAI機能を必要とする小規模ユーザー向けに特別に設計されています。Sage WebUIが対象ユーザーにどのように役立つかを以下に示します:"
+      }
+    },
+    {
+      "segment_id": "40251870",
+      "source_content": "- **Families:** Set up Sage WebUI at home as a safe AI assistant for the whole family. Parents can install it on a shared computer or server at home, and since it runs offline, they have peace of mind that kids’ interactions (chats, questions, creations) are not being sent to any cloud or third-party. Parental controls and oversight features let you manage what the AI can do or access, ensuring an age-appropriate experience. For example, a family can use Sage to help with homework, generate creative stories, or learn new languages, all under the watchful eye of parents or guardians. It’s a way to introduce children to AI in a controlled environment that aligns with household rules and safety standards.\n\n- **Schools & Educators:** Sage WebUI is an excellent fit for classrooms, school libraries, and coding clubs. Teachers can deploy Sage WebUI on a school network or even a single laptop in offline mode to support various educational activities. Because it complies with **student data privacy laws**, schools can confidently use it as part of the curriculum or extracurricular programs. Educators might use Sage to provide students with an AI research assistant that can operate without internet access, or to let students practice critical thinking by having dialogues with an AI about history or science topics. The **Startr Snap!** integration is particularly useful in computer science classes – it enables a hands-on learning experience where students can **build their own AI-driven apps or experiments** using block coding. Moreover, Sage WebUI’s interface is intuitive, so teachers and students can get started quickly without needing intensive training.\n\n- **Small Teams & Organizations:** For small businesses, non-profits, or research groups, Sage WebUI offers a collaborative AI platform that can be self-hosted without expensive infrastructure. Teams working on sensitive projects can use Sage WebUI to brainstorm with an AI assistant or analyze data **completely offline**, ensuring confidentiality. Its reliability and rich feature set (like multi-user support and customizable modules) mean a small team can integrate AI into their workflow just as a larger enterprise would – but with far less overhead. For instance, a local business could use Sage WebUI to generate marketing content ideas or customer support drafts internally. A startup team could use it to prototype an AI-driven app, with team members using Startr Snap! to quickly test new features. Because Sage WebUI is flexible, teams can tailor it – add domain-specific knowledge bases, customize the UI, and more – making it a versatile tool for innovation on a small scale.",
+      "source_content_hash": "62e75e3f0570a3d23f0b809bfa2f6ef75597abed75962eda59883fb3f1681d44",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **家族向け:** Sage WebUIを家庭用の安全なAIアシスタントとして設定できます。保護者は共有のコンピュータや自宅のサーバーにインストールでき、オフラインで動作するため、子供たちのやり取り（チャット、質問、作成物）がクラウドや第三者に送信されない安心感があります。ペアレンタルコントロールや監視機能により、AIができることやアクセス範囲を管理し、年齢に適した体験を保証します。例えば、家族はSageを使って宿題を手伝ったり、創造的なストーリーを生成したり、新しい言語を学んだりできます。すべては保護者や監護者の監視のもとで行われるため、家庭のルールや安全基準に沿った形で子供たちにAIを紹介する手段として最適です。\n\n- **学校・教育者向け:** Sage WebUIは教室、学校図書館、コーディングクラブに最適です。教師は学校のネットワークやオフラインモードの単一ラップトップに展開し、様々な教育活動をサポートできます。**学生データプライバシー法**に準拠しているため、学校はカリキュラムや課外プログラムの一環として自信を持って利用できます。教育者は、インターネットアクセスなしで動作するAI研究アシスタントを提供したり、学生が歴史や科学のトピックについてAIと対話することで批判的思考を練習できるようにしたりできます。**Startr Snap!**の統合は特にコンピュータサイエンスの授業で有用で、学生がブロックコーディングを使って**独自のAI駆動アプリや実験を構築**できる実践的な学習体験を可能にします。さらに、Sage WebUIのインターフェースは直感的なため、教師と学生は集中的なトレーニングなしで迅速に使い始められます。\n\n- **小規模チーム・組織向け:** 小規模企業、非営利団体、研究グループ向けに、Sage WebUIは高価なインフラなしでセルフホスト可能な協調型AIプラットフォームを提供します。機密プロジェクトに取り組むチームは、AIアシスタントとのブレインストーミングやデータ分析を**完全にオフライン**で行え、機密性を確保できます。信頼性と豊富な機能セット（マルチユーザーサポートやカスタマイズ可能なモジュールなど）により、小規模チームでも大企業と同様にAIをワークフローに統合できますが、はるかに少ないオーバーヘッドで実現可能です。例えば、地元企業はSage WebUIを使ってマーケティングコンテンツのアイデアやカスタマーサポートの草案を内部で生成できます。スタートアップチームは、AI駆動アプリのプロトタイプ作成に利用でき、チームメンバーはStartr Snap!を使って新機能を迅速にテストできます。Sage WebUIは柔軟性があるため、ドメイン固有のナレッジベースを追加したり、UIをカスタマイズしたりできるため、小規模なイノベーションのための汎用ツールとして活用できます。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Across all these scenarios, **ease of use** is paramount. Sage WebUI’s design ensures that whether it’s a child at home, a teacher in a classroom, or a project manager in a small company, the experience is straightforward and empowering. There’s no need for a dedicated IT department to set it up or maintain it – the platform is designed to “just work” for everyday users.",
+      "source_content_hash": "e94e7171a4d6e3e8ec201a8d2dbf46f56867822971a4f8e588e3ee99c56cc54b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらすべてのシナリオにおいて、**使いやすさ**が最も重要です。Sage WebUIの設計により、家庭の子供、教室の教師、小規模企業のプロジェクトマネージャーにとって、体験が直感的でエンパワーメントされるようになっています。専任のIT部門が設定やメンテナンスを行う必要はありません。プラットフォームは日常ユーザーが「そのまま使える」ように設計されています。"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "## Privacy and Child Safety Compliance",
+      "source_content_hash": "f83d5d57bbed8acc30efa473849a731c53031a852cf92a90587d2c2e97ac7883",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## プライバシーと児童安全のコンプライアンス"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "When it comes to AI in homes and schools, **privacy and child safety** are non-negotiable. Sage WebUI is built with strong privacy protections and meets or exceeds the requirements of child data protection regulations in multiple jurisdictions:",
+      "source_content_hash": "566eb4223b9cf1542fc794082b59ff708b5f742c9fa77f1b0a754c332c607685",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "家庭や学校でのAI利用において、**プライバシーと児童の安全**は絶対条件です。Sage WebUIは強力なプライバシー保護を備えて構築されており、複数の管轄区域における児童データ保護規制の要件を満たすか、それを上回ります:"
+      }
+    },
+    {
+      "segment_id": "24c174ca",
+      "source_content": "- **United States – COPPA:** Complies with the **Children’s Online Privacy Protection Act** (COPPA), which regulates the online collection of personal information from children under 13 and **requires parental consent** for any such data collection ([COPPA Compliance: Kiteworks Content Protection Capabilities ...](https://www.kiteworks.com/platform/compliance/coppa/#:~:text=,13%2C%20requiring%20parental%20consent)). Sage WebUI’s offline-first approach means it does not collect or transmit personal data to remote servers, aligning naturally with COPPA’s goal of protecting young users’ privacy. Parents and educators have full control over the data, and no profiles of children are created or shared by the system.\n\n- **European Union – GDPR (Children’s Data):** Adheres to the **General Data Protection Regulation** guidelines for children’s data. GDPR requires special handling and parental consent for processing personal data of children under 16 in most EU countries ([Consent - General Data Protection Regulation (GDPR)](https://gdpr-info.eu/issues/consent/#:~:text=Consent%20,The%20age%20limit)). Sage WebUI facilitates compliance by keeping all user data local (nothing is sent to external processors) and by allowing clear consent mechanisms. For example, if a school in the EU deploys Sage WebUI, no student’s personal data leaves the premises, helping the school satisfy GDPR obligations easily.\n\n- **Canada – PIPEDA:** Aligns with Canada’s **Personal Information Protection and Electronic Documents Act**. While Canada currently has no child-specific online privacy law ([Naughty or Nice? Wrapping up the Year with a Look at Children's ...](https://mcmillan.ca/insights/exploring-the-no-go-zones-overview-of-the-guidance-issued-by-the-canadian-privacy-regulator-relating-to-inappropriate-purposes/#:~:text=,Canada%27s%20private%20sector%20privacy)), PIPEDA applies to personal data of individuals of all ages. Notably, Canadian guidelines under PIPEDA call for consent processes appropriate to a child’s maturity level ([Canadian Privacy Commissioner Issues Report on Children's ...](https://www.hunton.com/privacy-and-information-security-law/canadian-privacy-commissioner-issues-report-childrens-educational-apps#:~:text=,the%20child%27s%20level%20of%20maturity)). Sage WebUI supports this by putting administrators (parents or teachers) in charge of settings and consent for any data handling. Because the system is under the user’s control, obtaining meaningful consent and safeguarding data is straightforward and transparent.\n\n- **India – DPDPA 2023:** Conforms to India’s **Digital Personal Data Protection Act, 2023**, which classifies anyone under 18 as a child and **mandates parental consent** for processing such a minor’s personal data ([Digital Personal Data Protection Act, 2023 DPDPA SECTION 9 ...](https://dpdpa.com/dpdpa2023/chapter-2/section9.html#:~:text=Parental%20Consent%3A%20Mandatory%20for%20processing,profiles%20for%20marketing%20purposes)). Sage WebUI’s design means that, in an Indian context, a school or family using the platform can ensure no child’s data is processed without guardian consent. All interactions are stored locally, under the overseer’s supervision, and features like user accounts or logs can be managed to comply with any future rules or verification requirements set by Indian authorities.",
+      "source_content_hash": "fb9614965156722de406cf793fd043cb54151a3b18f6ff215c8462e9dc1ae970",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **アメリカ合衆国 – COPPA:** **児童オンラインプライバシー保護法（COPPA）**に準拠しており、13歳未満の児童から個人情報をオンラインで収集することを規制し、**保護者の同意を必須**としています（[COPPA Compliance: Kiteworks Content Protection Capabilities ...](https://www.kiteworks.com/platform/compliance/coppa/#:~:text=,13%2C%20requiring%20parental%20consent)）。Sage WebUIのオフラインファーストアプローチにより、個人データをリモートサーバーに収集・送信せず、若年ユーザーのプライバシー保護というCOPPAの目的に自然に沿っています。保護者や教育者はデータを完全に管理でき、システムによって児童のプロファイルが作成・共有されることはありません。\n\n- **欧州連合 – GDPR（児童データ）:** **一般データ保護規則（GDPR）**の児童データに関するガイドラインに準拠しています。GDPRでは、EU圏内の16歳未満の児童の個人データ処理に特別な取り扱いと保護者の同意を要求しています（[Consent - General Data Protection Regulation (GDPR)](https://gdpr-info.eu/issues/consent/#:~:text=Consent%20,The%20age%20limit)）。Sage WebUIは、すべてのユーザーデータをローカルに保持（外部プロセッサーに送信されない）し、明確な同意メカニズムを可能にすることで、この準拠を容易にします。例えば、EUの学校がSage WebUIを導入する場合、生徒の個人データが敷地外に出ることはなく、学校はGDPRの義務を簡単に満たせます。\n\n- **カナダ – PIPEDA:** カナダの**個人情報保護及び電子文書法（PIPEDA）**に沿っています。カナダには現在、児童向けのオンラインプライバシー法はありませんが（[Naughty or Nice? Wrapping up the Year with a Look at Children's ...](https://mcmillan.ca/insights/exploring-the-no-go-zones-overview-of-the-guidance-issued-by-the-canadian-privacy-regulator-relating-to-inappropriate-purposes/#:~:text=,Canada%27s%20private%20sector%20privacy)）、PIPEDAは全年齢の個人データに適用されます。特に、PIPEDAの下でのカナダのガイドラインでは、児童の成熟度に応じた同意プロセスが求められています（[Canadian Privacy Commissioner Issues Report on Children's ...](https://www.hunton.com/privacy-and-information-security-law/canadian-privacy-commissioner-issues-report-childrens-educational-apps#:~:text=,the%20child%27s%20level%20of%20maturity)）。Sage WebUIは、管理者（保護者や教師）が設定とデータ処理に関する同意を管理できるようにすることで、これをサポートします。システムはユーザーの管理下にあるため、意味のある同意を得てデータを保護することが簡単かつ透明性を持って行えます。\n\n- **インド – DPDPA 2023:** インドの**デジタル個人データ保護法（2023年）**に準拠しており、18歳未満を児童と分類し、その未成年者の個人データ処理に**保護者の同意を義務付け**ています（[Digital Personal Data Protection Act, 2023 DPDPA SECTION 9 ...](https://dpdpa.com/dpdpa2023/chapter-2/section9.html#:~:text=Parental%20Consent%3A%20Mandatory%20for%20processing,profiles%20for%20marketing%20purposes)）。Sage WebUIの設計により、インドの文脈では、このプラットフォームを使用する学校や家庭は、保護者の同意なしに児童のデータが処理されないことを保証できます。すべてのやり取りはローカルに保存され、監督者の監視下にあり、ユーザーアカウントやログなどの機能は、インド当局が設定する将来の規則や検証要件に準拠するように管理できます。"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "In summary, Sage WebUI was **engineered with a privacy-first mindset**. Data is not only protected by design (staying offline and encrypted locally), but the platform’s practices align with international standards for protecting children online. Whether you’re concerned about **COPPA in the U.S.**, **GDPR in Europe**, or other regional laws, Sage WebUI has you covered with robust compliance features built in. This gives schools and parents the confidence that young users can explore and learn with AI in a protected environment.",
+      "source_content_hash": "0ccf0f523ca538079ef76da11aadc2df566916804019cf8cbd46b9f6300addc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "要約すると、Sage WebUIは**プライバシーファーストの考え方で設計**されています。データは設計上保護されているだけでなく（オフラインでローカルに暗号化）、プラットフォームの慣行は、オンラインで児童を保護するための国際基準に沿っています。**アメリカのCOPPA**、**欧州のGDPR**、またはその他の地域の法律に関心がある場合でも、Sage WebUIには堅牢な準拠機能が組み込まれており、これにより、若年ユーザーが保護された環境でAIを探索し学べることを学校や保護者は自信を持って行えます。"
+      }
+    },
+    {
+      "segment_id": "047c2395",
+      "source_content": "## Security and Data Control",
+      "source_content_hash": "a97c98faf063d9885eecaf7bea6603459ee96557fbd607fa2889eb0a53e08437",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## セキュリティとデータ管理"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "Beyond privacy compliance, Sage WebUI offers **enterprise-grade security** adapted for educational and small team needs. We understand that whether it’s student data or a team’s confidential ideas, keeping information secure is critical. Sage WebUI addresses this on multiple levels:",
+      "source_content_hash": "f300c0f9316b1f71f315b9441de5d640691071fca9cfe734dce12ca3f89bd09f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プライバシー準拠に加えて、Sage WebUIは教育および小規模チームのニーズに合わせた**エンタープライズグレードのセキュリティ**を提供します。生徒のデータであれチームの機密アイデアであれ、情報を安全に保つことが重要であることを理解しています。Sage WebUIは、これを複数のレベルで対応します："
+      }
+    },
+    {
+      "segment_id": "4fe53981",
+      "source_content": "- **Local Hosting for Full Control:** Sage WebUI is self-hosted, meaning it runs on your hardware (a laptop, desktop, or local server). This ensures **data never leaves your possession**. Unlike cloud-based AI services, there’s no risk of third-party data breaches or unwanted data sharing – all conversations, files, and custom AI models remain on your local network ([Explore Sage Open WebUI: Your Offline AI Interface](https://mydeveloperplanet.com/2025/02/05/explore-sage-open-webui-your-offline-ai-interface/#:~:text=Explore%20Open%20WebUI%3A%20Your%20Offline,supports%20various%20inference%20engines)). For a school, this could mean installing Sage on a classroom server; for a family, on a home PC. In both cases, you decide who accesses the system and data.\n\n- **User Management and Permissions:** The platform supports multiple user profiles and roles. A teacher or parent can act as an administrator with oversight capabilities, while students or children have user accounts with appropriate limitations. For example, an admin can review interaction logs, set permissions on what tools or models can be used, and even filter the AI’s knowledge sources to keep content appropriate. These controls help maintain a **safe usage policy** in line with school rules or family guidelines.\n\n- **Data Encryption and Safe Storage:** All saved data (such as chat transcripts, custom tool definitions created via Snap blocks, or uploaded documents for analysis) can be stored in encrypted form on the host machine. This adds a layer of protection in case the device is lost or accessed by unauthorized individuals. Additionally, Sage WebUI can be configured to purge or anonymize old data, ensuring minimal long-term retention – a practice recommended by many privacy regulations.\n\n- **Secure Development of Extensions:** When users create new tools or functions (whether through block coding or traditional code plugins), Sage WebUI runs these extensions in a secure sandboxed environment. This prevents malicious code execution and ensures that any custom additions do not compromise the system. Schools can allow students to experiment with coding tools knowing it won’t harm the overall system integrity.\n\n- **Regular Updates and Patches:** The Sage WebUI team is committed to providing updates that continually enhance security and reliability. Updates are easy to apply and can be done offline. We also have an active community and support channel where any security concerns can be reported and addressed swiftly. Small organizations benefit from this proactive approach without needing dedicated security staff – Sage WebUI is maintained with the latest best practices in mind.",
+      "source_content_hash": "7543291c97080d99999971b41a316b4b94df005b55891e9d48b39226b1df201f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **完全な制御のためのローカルホスティング:** Sage WebUIはセルフホスティング型であり、お使いのハードウェア（ノートPC、デスクトップ、またはローカルサーバー）上で動作します。これにより、**データが外部に流出することはありません**。クラウドベースのAIサービスとは異なり、第三者によるデータ侵害や意図しないデータ共有のリスクがなく、すべての会話、ファイル、カスタムAIモデルはローカルネットワーク内に保持されます（[Sage Open WebUIを探索する：オフラインAIインターフェース](https://mydeveloperplanet.com/2025/02/05/explore-sage-open-webui-your-offline-ai-interface/#:~:text=Explore%20Open%20WebUI%3A%20Your%20Offline,supports%20various%20inference%20engines)）。学校では教室サーバーに、家庭では自宅のPCにインストール可能で、システムとデータへのアクセス権限をユーザー自身が決定できます。\n\n- **ユーザー管理と権限制御:** このプラットフォームは複数のユーザープロファイルと役割をサポートしています。教師や保護者は管理者として監視機能を有し、生徒や子供には適切な制限付きのユーザーアカウントを割り当てられます。例えば、管理者はインタラクションログを確認したり、使用可能なツールやモデルの権限を設定したり、AIの知識ソースをフィルタリングしてコンテンツの適切性を保つことができます。これらの制御機能により、学校の規則や家庭のガイドラインに沿った**安全な利用ポリシー**を維持できます。\n\n- **データ暗号化と安全なストレージ:** 保存されたデータ（チャットの記録、Snapブロックで作成したカスタムツール定義、分析用にアップロードしたドキュメントなど）は、ホストマシン上で暗号化された状態で保管可能です。これにより、デバイスが紛失したり不正アクセスされた場合にも追加の保護層が働きます。さらに、Sage WebUIは古いデータを削除または匿名化するように設定でき、多くのプライバシー規制で推奨される最小限の長期保持を実現します。\n\n- **拡張機能の安全な開発:** ユーザーが新しいツールや機能（ブロックコーディングまたは従来のコードプラグインを通じて）を作成する際、Sage WebUIはこれらの拡張機能を安全なサンドボックス環境で実行します。これにより悪意のあるコードの実行を防ぎ、カスタム追加がシステム全体の整合性を損なわないようにします。学校では、生徒がコーディングツールを実験してもシステム全体に影響を与えないことを保証できます。\n\n- **定期的な更新とパッチ適用:** Sage WebUIチームは、セキュリティと信頼性を継続的に向上させる更新を提供することを約束しています。更新はオフラインで簡単に適用可能です。また、活発なコミュニティとサポートチャネルがあり、セキュリティ上の懸念があれば迅速に報告・対応されます。小規模組織でも専任のセキュリティスタッフを必要とせず、最新のベストプラクティスに基づいてSage WebUIが維持されます。"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "By combining **offline architecture**, **granular user control**, and **strong security measures**, Sage WebUI ensures that you have *complete control* over your AI environment. This level of security is what enterprises expect, but it’s delivered here in a way that’s manageable for a small IT setup, a school tech coordinator, or even a tech-savvy parent.",
+      "source_content_hash": "ea54a0f022edd21a05d65eba1180e8bc4bef328cc7c6f578f18b0e80dc1543fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**オフラインアーキテクチャ**、**細かなユーザー制御**、**強力なセキュリティ対策**を組み合わせることで、Sage WebUIはユーザーがAI環境を*完全に制御*できることを保証します。このレベルのセキュリティは企業が求めるものですが、小規模なIT環境、学校の技術コーディネーター、または技術に詳しい保護者でも管理可能な形で提供されます。"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "## Reliability and Support for Educational Use",
+      "source_content_hash": "ec3866e1d95c55445c45a7732ac0ee00780774041133613bb90a7c816c1a7e82",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 教育利用のための信頼性とサポート"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "In educational settings and small teams, technology needs to be reliable – a class period or team meeting can’t be derailed by system crashes or connectivity issues. Sage WebUI is built for **stability and consistent performance**, drawing from its enterprise-grade roots, and we offer support tailored to the needs of educators and small organizations.",
+      "source_content_hash": "7da0251e0f0e51597304f394372c5c794472773d7c137aaa023e4a70dbdfb522",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "教育現場や小規模チームでは、技術は信頼性が求められます——授業時間やチームミーティングがシステムクラッシュや接続問題で台無しになることは許されません。Sage WebUIは、エンタープライズグレードの基盤を活かした**安定性と一貫したパフォーマンス**のために構築されており、教育者や小規模組織のニーズに合わせたサポートを提供します。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "**Reliability Features:**",
+      "source_content_hash": "9ea07bd6c15274a4aaf0882a9a59c3cde74d45580a0ad63c061e9bdacacae545",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**信頼性の特徴:**"
+      }
+    },
+    {
+      "segment_id": "023197ab",
+      "source_content": "- **Robust Performance Offline:** Because Sage operates fully offline, it isn’t subject to internet outages or cloud service downtime. Once it’s set up on your device or school network, it’s available 24/7. This is crucial for schools with limited or no internet access in certain rooms, or for community centers in areas with spotty connectivity. Sage WebUI’s core is optimized to run on common hardware, and it can even function on lower-spec machines by choosing smaller AI models – meaning you don’t need a high-end server to get reliable AI assistance.\n\n- **Tested and Proven Core:** Sage WebUI inherits a proven codebase from Sage Open WebUI, which has been tested in demanding scenarios. This means the platform can handle extended use, concurrent users, and large tasks without instability. For example, a group of students can all query the AI simultaneously in a workshop, or a teacher can run a lengthy analysis task, and Sage will manage the load gracefully. The system is also scalable – small teams can start on one machine and, if needed, move to a more powerful setup or add instances for more users, with minimal hassle.\n\n- **Data Integrity and Backups:** The platform provides tools for regular backups of your configurations, AI models, and data. Schools can schedule automatic backups to ensure that even if a hardware issue occurs, no work or learning data is lost. The backup files remain under your control (no cloud unless you choose to move them), and restoration is straightforward. This reliability in data management frees educators from worrying about losing student projects or customizations.",
+      "source_content_hash": "4e534432bafe296b054335a5b9a6688fc412a3e67f8bc5a6b8a70485b6b2be39",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **オフラインでの堅牢なパフォーマンス:** Sageは完全にオフラインで動作するため、インターネットの停止やクラウドサービスのダウンタイムの影響を受けません。デバイスや学校のネットワークにセットアップすれば、24時間365日利用可能です。これは、特定の教室でインターネットアクセスが制限されている学校や、接続が不安定な地域のコミュニティセンターにとって重要です。Sage WebUIのコアは一般的なハードウェアで動作するように最適化されており、より小型のAIモデルを選択することで低スペックマシンでも動作可能です。つまり、信頼性の高いAIアシスタンスを利用するために高性能サーバーは必要ありません。\n\n- **テスト済みで実績のあるコア:** Sage WebUIは、Sage Open WebUIから実績のあるコードベースを継承しており、過酷なシナリオでもテストされています。これは、プラットフォームが長時間の使用、同時ユーザー、大規模なタスクを不安定さなく処理できることを意味します。例えば、ワークショップで学生グループが同時にAIに問い合わせたり、教師が長時間の分析タスクを実行したりしても、Sageは負荷を適切に管理します。システムはスケーラブルでもあり、小規模なチームは1台のマシンで始め、必要に応じてより強力なセットアップに移行したり、より多くのユーザー向けにインスタンスを追加したりできます。\n\n- **データの整合性とバックアップ:** プラットフォームは、設定、AIモデル、データの定期的なバックアップツールを提供します。学校は自動バックアップをスケジュールして、ハードウェアの問題が発生しても作業や学習データが失われないようにできます。バックアップファイルはユーザーの管理下にあり（クラウドに移動する選択をしない限り）、復元は簡単です。このデータ管理の信頼性により、教育者は学生のプロジェクトやカスタマイズを失う心配から解放されます。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "**Support and Community:**",
+      "source_content_hash": "b019fc9c1ef67ae808caedc3651ec3dc750c2a585691b2665496d2abff09369f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**サポートとコミュニティ:**"
+      }
+    },
+    {
+      "segment_id": "2d15468d",
+      "source_content": "- **Dedicated Support for Educators and Teams:** Sage WebUI offers support channels specifically mindful of non-enterprise users. When you reach out to us at **info@sage.education** (please include \"AI\" in the subject line), you’ll get prompt assistance, whether it’s help with installation, guidance on using the Snap block-coding features, or best practices for classroom deployment. Our support staff can adjust explanations to be non-technical or highly detailed based on your comfort level, ensuring you truly understand the solution.\n\n- **Comprehensive Documentation:** We provide step-by-step guides and examples geared towards educators and team leaders. This includes tutorials like “Setting up Sage WebUI for Your Classroom” or “Family Guide to Sage WebUI,” and examples of block-coded projects suitable for various age groups. The documentation is regularly updated and freely available on our website (**https://sage.startr.cloud**).\n\n- **Active User Community:** As Sage WebUI is built on an open-source platform, there’s a vibrant community of users and developers. Teachers, parents, and hobbyists share their experiences, lesson plans, and custom Snap block creations. You can learn from peers or even collaborate on projects across schools. This community-driven aspect means you’re never alone in figuring something out – someone might have already created a Spanish vocabulary quiz bot or a science fair project using Sage that you can emulate.\n\n- **Training and Workshops:** We periodically host webinars and workshops (often virtually) to help new users get the most out of Sage WebUI. These sessions might cover topics like integrating Sage into a curriculum, or creative coding with Startr Snap! for after-school programs. Small teams can also benefit from these by learning how to customize Sage for their particular workflow (for instance, a non-profit learning to use Sage for grant writing assistance).",
+      "source_content_hash": "41e673079f942e5faebc95e2834e54bc6e3164d63d4311fe599d14d2970ea6b1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **教育者とチーム向けの専用サポート:** Sage WebUIは、非エンタープライズユーザーを特に意識したサポートチャネルを提供します。**info@sage.education**（件名に「AI」を含めてください）に連絡すると、インストールのヘルプ、Snapブロックコーディング機能の使用ガイド、教室展開のベストプラクティスなど、迅速な支援が得られます。サポートスタッフは、ユーザーの理解レベルに応じて、非技術的または非常に詳細な説明を調整し、ソリューションを真に理解できるようにします。\n\n- **包括的なドキュメント:** 教育者やチームリーダー向けのステップバイステップガイドと例を提供します。これには、「教室向けSage WebUIのセットアップ」や「Sage WebUIの家族向けガイド」などのチュートリアル、さまざまな年齢層に適したブロックコーディングプロジェクトの例が含まれます。ドキュメントは定期的に更新され、ウェブサイト（**https://sage.startr.cloud**）で自由に利用できます。\n\n- **活発なユーザーコミュニティ:** Sage WebUIはオープンソースプラットフォーム上に構築されているため、ユーザーや開発者の活発なコミュニティがあります。教師、保護者、ホビイストが、経験、授業計画、カスタムSnapブロック作成を共有しています。仲間から学んだり、学校間でプロジェクトを共同で行ったりできます。このコミュニティ駆動の側面は、何かを理解する際に一人ではないことを意味します。誰かがすでにSageを使用してスペイン語の語彙クイズボットや科学フェアプロジェクトを作成しているかもしれません。\n\n- **トレーニングとワークショップ:** 新しいユーザーがSage WebUIを最大限に活用できるように、定期的にウェビナーやワークショップ（多くの場合仮想）を開催します。これらのセッションでは、カリキュラムへのSageの統合や、放課後プログラム向けのStartr Snap!を使用した創造的なコーディングなどのトピックをカバーする場合があります。小規模なチームも、特定のワークフロー向けにSageをカスタマイズする方法を学ぶことで利益を得られます（例えば、非営利団体が助成金申請支援にSageを使用する方法を学ぶなど）。"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "The combination of a **reliable platform** and **accessible support** means Sage WebUI can be confidently adopted in environments where dedicated IT support might be minimal. We stand by the quality of the platform and are here to ensure it runs smoothly for you. When you choose Sage WebUI, you’re not just getting software – you’re joining a supportive network focused on successful, safe AI use in education and small groups.",
+      "source_content_hash": "c95fbae853c1c0d8bc595212fc40aa53a7cafedcb825e643827b9ee6b50051aa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**信頼性の高いプラットフォーム**と**アクセス可能なサポート**の組み合わせにより、Sage WebUIは専用のITサポートが最小限の環境でも自信を持って採用できます。私たちはプラットフォームの品質を支持し、ユーザーのためにスムーズに実行されるようにします。Sage WebUIを選択すると、単なるソフトウェアを入手するだけでなく、教育や小規模グループでの成功した安全なAI使用に焦点を当てた支援ネットワークに参加します。"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "## Get Started with Sage WebUI",
+      "source_content_hash": "66c27d6230114aa09ace9825ea6e1f42cb90bb39294cab70bd1d1206c12ad00f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIを始めましょう"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Sage WebUI is ready to transform the way your family, school, or team engages with AI. It’s a platform that scales from a home setup to a school district, all while keeping the experience **user-friendly, secure, and inspiring**. To learn more or try Sage WebUI:",
+      "source_content_hash": "405753fa7d2fa1c02abf9d8e178c3c412ad35942f296880a3e9e7ce9414bdde2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、家族、学校、またはチームがAIと関わる方法を変える準備ができています。これは、ホームセットアップから学区までスケールするプラットフォームであり、**ユーザーフレンドリーで安全でインスピレーションを与える**体験を維持します。Sage WebUIの詳細を学んだり試したりするには:"
+      }
+    },
+    {
+      "segment_id": "8d56fc0d",
+      "source_content": "- **Visit Our Website:** Explore features, download the software, and access guides at **https://sage.startr.cloud**. We have a dedicated section for educators and families that showcases real-life use cases and provides quick-start templates for common scenarios.\n- **Contact Us:** If you have any questions or want to discuss how Sage WebUI can fit your specific needs, email us at **info@sage.education** (add *“AI”* to the subject line to get routed to the right team). We’re happy to provide a personalized consultation or a demo session. Whether you’re a parent curious about AI for kids, a teacher planning next semester’s tech curriculum, or a team leader looking to boost creativity with AI, we’re here to help.",
+      "source_content_hash": "3c517aef76f016174942627f950d4d28eacc9c15d5dea355f606482ba2f92216",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ウェブサイトを訪問:** 機能の詳細を確認し、ソフトウェアをダウンロードし、ガイドにアクセスするには **https://sage.startr.cloud** をご覧ください。教育者や家族向けの専用セクションでは、実際の使用例を紹介し、一般的なシナリオ向けのクイックスタートテンプレートを提供しています。\n- **お問い合わせ:** Sage WebUIがどのようにあなたの特定のニーズに合致するかについて質問や相談がある場合は、**info@sage.education** までメールでお問い合わせください（件名に *「AI」* を追加すると適切なチームにルーティングされます）。個別のコンサルテーションやデモセッションを喜んで提供いたします。子供向けAIに興味のある保護者、次学期のテックカリキュラムを計画中の教師、AIで創造性を高めたいチームリーダーなど、どんな方でもお気軽にご相談ください。"
+      }
+    },
+    {
+      "segment_id": "1958bc43",
+      "source_content": "By choosing Sage WebUI, you are investing in a **future-proof, community-backed AI platform** that puts privacy, safety, and creativity first. Join the growing community of families, educators, and innovators who have discovered the difference a **Sage** approach to AI can make. Get started today and empower your users to explore, learn, and create with confidence!",
+      "source_content_hash": "c594a188e4b9054c58fde04b83b670c698712baf22393a76dab61a941533bbb2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIを選ぶことは、**プライバシー、安全性、創造性を最優先する未来志向のコミュニティ支援型AIプラットフォーム**に投資することです。**Sage**のアプローチがAIにもたらす違いを発見した家族、教育者、革新者たちの成長するコミュニティに参加しましょう。今日から始めて、ユーザーが自信を持って探求し、学び、創造できる力を与えましょう！"
+      }
+    },
+    {
+      "segment_id": "cbd60296",
+      "source_content": "### ⚙ **Customization & AI Model Optimization**",
+      "source_content_hash": "bec76109fcc5dee2d6455039e8c8cf83affbd7a4337805ac07f8b79baeead71f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ⚙ **カスタマイズ & AIモデル最適化**"
+      }
+    },
+    {
+      "segment_id": "a6c928a1",
+      "source_content": "✅ **Custom Theming & Branding** – White-label Sage Open WebUI to **reflect your enterprise identity**.  \n✅ **Custom AI Model Integration & Fine-Tuning** – Integrate **proprietary** or **third-party** AI models tailored for your workflows.  \n✅ **Private Feature Development** – Work directly with our team to **build custom features** specific to your organization’s needs.",
+      "source_content_hash": "5a9ff51efdbe36af45aec2c6f23e90b1cfa7e4b0ef56302642fc41152f194958",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "✅ **カスタムテーマ & ブランディング** – Sage Open WebUIをホワイトラベル化し、**企業のアイデンティティを反映**させます。  \n✅ **カスタムAIモデル統合 & ファインチューニング** – **独自**または**サードパーティ**のAIモデルをワークフローに合わせて統合します。  \n✅ **プライベート機能開発** – 当社チームと直接協力し、組織のニーズに特化した**カスタム機能を構築**します。"
+      }
+    },
+    {
+      "segment_id": "23b96cc0",
+      "source_content": "### 🛡️ **Advanced Security & Compliance**",
+      "source_content_hash": "ae4f34289893bb38d3e2515e5917cab8ab179820be2a770bc8f9baa3d166f8f1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🛡️ **高度なセキュリティ & コンプライアンス**"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "✅ **On-Premise & Air-Gapped Deployments** – Full control over data, hosted in **your infrastructure**.  \n✅ **Security Hardening & Compliance Audits** – Receive **customized compliance assessments** and configurations.  \n✅ **Role-Based Access Control (RBAC)** – Enterprise-ready **SSO, LDAP, and IAM** integration.",
+      "source_content_hash": "c9d71a78cfdc5230da6f2e6e47513d5a4e5b715437bf641a715c2032f8f772f3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "✅ **オンプレミス & エアギャップ展開** – **自社インフラ**でホストされ、データを完全にコントロールできます。  \n✅ **セキュリティ強化 & コンプライアンス監査** – **カスタマイズされたコンプライアンス評価**と設定を受け取ります。  \n✅ **ロールベースアクセス制御（RBAC）** – エンタープライズ対応の**SSO、LDAP、IAM**統合。"
+      }
+    },
+    {
+      "segment_id": "47cd8dd6",
+      "source_content": "### 🏗️ **Operational Reliability & Deployment Services**",
+      "source_content_hash": "c8d26318348815798d3a0faebc07ae5b730f87fe69d7f600600f9e77d4938c8b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🏗️ **運用信頼性 & 展開サービス**"
+      }
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "✅ **Managed Deployments** – Our team helps you **deploy Sage Open WebUI effortlessly**, whether **on-premise, hybrid, or cloud**.  \n✅ **Version Stability & Long-Term Maintenance** – Enterprise customers receive **LTS (Long-Term Support) versions** for managed **stability and security** over time.  \n✅ **Enterprise Backups & Disaster Recovery** – High availability with structured backup plans and rapid recovery strategies.",
+      "source_content_hash": "008a233384822f28fd8c47204f870e6b781de0e80c3e058e1c83f9a0a87ca47d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "✅ **マネージド展開** – 当社チームが**オンプレミス、ハイブリッド、クラウド**を問わず、Sage Open WebUIの展開を**シームレスに支援**します。  \n✅ **バージョン安定性 & 長期メンテナンス** – エンタープライズ顧客向けに**LTS（長期サポート）バージョン**を提供し、時間をかけた**安定性とセキュリティ**を確保します。  \n✅ **エンタープライズバックアップ & 災害復旧** – 構造化されたバックアップ計画と迅速な復旧戦略による高可用性。"
+      }
+    },
+    {
+      "segment_id": "a461a67b",
+      "source_content": "### 📚 **Enterprise Training, Workshops & Consulting**",
+      "source_content_hash": "40341a8b89cd3ee7715793433bbfe3f92c0b1afddb50dbe4f7eb345463a46d1b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📚 **エンタープライズトレーニング、ワークショップ & コンサルティング**"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "✅ **AI Training & Enablement** – Expert-led **workshops for your engineering and data science teams**.  \n✅ **Operational AI Consulting** – On-demand **architecture, optimization, and deployment consulting**.  \n✅ **Strategic AI Roadmap Planning** – Work with our experts to **define your AI transformation strategy**.",
+      "source_content_hash": "a15e303644d72124b6cca3069bc0bb9525ebeacafbffd9cdf0e00a9ddc209412",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "✅ **AIトレーニング & エナブルメント** – エンジニアリングおよびデータサイエンスチーム向けの**専門家主導のワークショップ**。  \n✅ **運用AIコンサルティング** – オンデマンドでの**アーキテクチャ、最適化、展開コンサルティング**。  \n✅ **戦略的AIロードマップ計画** – 当社の専門家と協力し、**AI変革戦略を定義**します。"
+      }
+    },
+    {
+      "segment_id": "8144f6e8",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "0d5321b7",
+      "source_content": "## **Keep Sage Open WebUI Thriving: Support Continuous Innovation**",
+      "source_content_hash": "38681534d7fbd22e06a2a8dc888819b46c71ba37fa67e5616cde67c3a35a05f7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## **Sage Open WebUIの持続的イノベーションを支援**"
+      }
+    },
+    {
+      "segment_id": "8f285cf5",
+      "source_content": ":::tip\nEven if you **don’t need an enterprise license**, consider becoming a **sponsor** to help fund continuous development. \n\nIt’s an **investment in stability, longevity, and ongoing improvements**. A well-funded Sage Open WebUI means **fewer bugs, fewer security concerns, and a more feature-rich platform** that stays ahead of industry trends. The cost of sponsoring is **a fraction of what it would take to build, maintain, and support an equivalent AI system internally.** \n:::",
+      "source_content_hash": "09ee41ae56fc266e41060a541a599c6ea609aac2950eedfdfee59643c6db7749",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n**エンタープライズライセンスが不要**な場合でも、継続的な開発を支援するため**スポンサー**になることを検討してください。\n\nこれは**安定性、長期的な存続、継続的な改善への投資**です。十分な資金を得たSage Open WebUIは、**バグが少なく、セキュリティ上の懸念が減り、業界のトレンドを先取りした機能豊富なプラットフォーム**になります。スポンサー費用は、**同等のAIシステムを内部で構築、維持、サポートするのに比べてほんの一部のコスト**です。\n:::"
+      }
+    },
+    {
+      "segment_id": "3e8f45da",
+      "source_content": "Sage Open WebUI is **fully open source**, and you can use it for free. However, building, maintaining, supporting, and evolving such a powerful AI platform requires **significant effort, time, and resources**. Infrastructure costs, security updates, continuous improvements, and keeping up with the latest AI advancements all demand **dedicated engineering, operational, and research efforts**.",
+      "source_content_hash": "21b882bc074890a974928f9071d06d702a9ccfba66330a817c2966781f2d14c5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIは**完全にオープンソース**であり、無料で利用できます。しかし、このような強力なAIプラットフォームを構築、維持、サポートし、進化させ続けるには、**多大な労力、時間、リソース**が必要です。インフラコスト、セキュリティ更新、継続的な改善、最新のAI進歩に対応するためには、**専任のエンジニアリング、運用、研究の努力**が求められます。"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "If Sage Open WebUI helps your business save time, money, or resources, we **encourage** you to consider supporting its development. As an **independently funded** project, sponsorship enables us to maintain **a fast iteration cycle to keep up with the rapid advancements in AI**. Your support directly contributes to critical features, security enhancements, performance improvements, and integrations that benefit everyone—including **you**. Sage Open WebUI will continue to offer the same feature set without requiring an enterprise license, ensuring **accessibility for all users**.",
+      "source_content_hash": "53431353de9ada0ac084ef4bcf59c18a8ef2d04affa47a3333c5861975db0b07",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIがあなたのビジネスの時間、コスト、リソースの節約に役立っているなら、その開発をサポートすることを**強くお勧め**します。**独立資金による**プロジェクトとして、スポンサーシップは私たちが**AIの急速な進歩に対応するための高速な開発サイクル**を維持することを可能にします。あなたのサポートは、**あなたを含むすべてのユーザー**に利益をもたらす重要な機能、セキュリティ強化、パフォーマンス改善、統合に直接貢献します。Sage Open WebUIは、エンタープライズライセンスを必要とせず、**すべてのユーザーが利用可能**な同じ機能セットを提供し続けます。"
+      }
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "💙 **[Sponsor Sage Open WebUI](https://github.com/sponsors/tjbck)** – Join our existing backers in keeping Sage Open WebUI thriving.",
+      "source_content_hash": "e56adc3eb6ad04d8aff8a1aa96e7353a928d92639acc7b997fcd5aea1e7eb7e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "💙 **[Sage Open WebUIをスポンサーする](https://github.com/sponsors/tjbck)** – 既存のサポーターと共に、Sage Open WebUIの成長を支えましょう。"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "Whether through **enterprise partnerships, contributions, or financial backing**, your support plays a crucial role in sustaining this powerful AI platform for businesses **worldwide**.",
+      "source_content_hash": "274741d8a3ef0cba8b45018f2679efc6a27b29309644db537e8817066b27a7d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**エンタープライズパートナーシップ、貢献、または財政的支援**を通じて、あなたのサポートは、世界中のビジネス向けのこの強力なAIプラットフォームを持続可能にする上で重要な役割を果たします。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/enterprise.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.787678+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "302cc18b4d808c6b11f18745fdd034c147b7d408518b84ffb152649fe566ed9e"
+  }
+}

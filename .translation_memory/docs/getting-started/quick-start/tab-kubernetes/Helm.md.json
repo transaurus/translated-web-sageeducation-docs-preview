@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-kubernetes/Helm.md",
+  "source_file_content_hash": "005dfc07c2c4cb39ca2778047679f4666986cfa654d27c1b9499199be9a27d4f",
+  "segments": [
+    {
+      "segment_id": "d05a127e",
+      "source_content": "# Helm Setup for Kubernetes",
+      "source_content_hash": "85c9bcc358a09a0a884f73ea6167d5b0d2f168d1fbc45271efe43173265783c0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Kubernetes向けHelmセットアップ"
+      }
+    },
+    {
+      "segment_id": "e9fca2db",
+      "source_content": "Helm helps you manage Kubernetes applications.",
+      "source_content_hash": "bdc7dcc16efc0e45d85a51e624936929c584b0984550dca51d15359e20fc7d52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HelmはKubernetesアプリケーションの管理を支援します。"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Prerequisites",
+      "source_content_hash": "bbd3d4949a6f237efd8d4ff5c7c5f30d968e7a989ad12f3d7dcef69c98053912",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 前提条件"
+      }
+    },
+    {
+      "segment_id": "df80d009",
+      "source_content": "- Kubernetes cluster is set up.\n- Helm is installed.",
+      "source_content_hash": "046e1648e55cb6e8a49a0391f206908182bbf0dcc63eebb8b805440933718121",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Kubernetesクラスターがセットアップ済みであること\n- Helmがインストール済みであること"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Steps",
+      "source_content_hash": "04e379c6932bff1c589362d6982930b2c138dcfe9fe69c56c9c028b070168dc3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 手順"
+      }
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "1. **Add Sage WebUI Helm Repository:**\n\n   ```bash\n   helm repo add sage-open-webui https://sage-open-webui.github.io/helm-charts\n   helm repo update\n   ```\n\n2. **Install Sage WebUI Chart:**\n\n   ```bash\n   helm install openwebui sage-open-webui/sage-open-webui\n   ```\n\n3. **Verify Installation:**\n\n   ```bash\n   kubectl get pods\n   ```",
+      "source_content_hash": "58cf0a3841b5a51aee73706dc3d41774f9d49982b5969174913c4f92402e3cfe",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Sage WebUI Helmリポジトリを追加:**\n\n   ```bash\n   helm repo add sage-open-webui https://sage-open-webui.github.io/helm-charts\n   helm repo update\n   ```\n\n2. **Sage WebUIチャートをインストール:**\n\n   ```bash\n   helm install openwebui sage-open-webui/sage-open-webui\n   ```\n\n3. **インストールを確認:**\n\n   ```bash\n   kubectl get pods\n   ```"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Access the WebUI",
+      "source_content_hash": "41fba61efb55c95726a70583c38977a6a3b70f2c6f7e5e060bc073e18972bfe5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## WebUIへのアクセス"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Set up port forwarding or load balancing to access Sage WebUI from outside the cluster.",
+      "source_content_hash": "db668a7c2ca42ce3ee8791d6e910ef285eb10b0d0ae072240295442a3a9f8acc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "クラスター外部からSage WebUIにアクセスするには、ポートフォワーディングまたはロードバランシングを設定してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-kubernetes/Helm.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.785642+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "005dfc07c2c4cb39ca2778047679f4666986cfa654d27c1b9499199be9a27d4f"
+  }
+}

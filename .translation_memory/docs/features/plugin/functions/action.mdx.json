@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/functions/action.mdx",
+  "source_file_content_hash": "0930ae695647fda573e2f0b2c7384ffcb29689f4692b78ddcbf473a18bbfd32b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\ntitle: \"🎬 Action Function\"\n---",
+      "source_content_hash": "7a26e2d7e6428989ac012f773df1e1bd3196469d4263b1088f45f881151e10d5",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Action functions allow you to write custom buttons to the message toolbar for end users to interact\nwith. This feature enables more interactive messaging, enabling users to grant permission before a\ntask is performed, generate visualizations of structured data, download an audio snippet of chats,\nand many other use cases.",
+      "source_content_hash": "6e39c8fa3a811d3a7951a76ecd62fa477175f8d0060a3a66790f5d71f0a0a2f4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アクション機能を使用すると、エンドユーザーが操作できるカスタムボタンをメッセージツールバーに追加できます。この機能により、よりインタラクティブなメッセージングが可能になり、ユーザーはタスク実行前に許可を与えたり、構造化データの視覚化を生成したり、チャットの音声スニペットをダウンロードしたり、その他多くのユースケースを実現できます。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "A scaffold of Action code can be found [in the community section](https://sage.education/f/hub/custom_action/).",
+      "source_content_hash": "70c8f8986f91e70550b6ee8f1f1dafe54b6c56e3bfdd4f373a94818e106f17e1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アクションコードのひな形は[コミュニティセクション](https://sage.education/f/hub/custom_action/)で確認できます。"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "An example of a graph visualization Action can be seen in the video below.",
+      "source_content_hash": "bc927afbf4fff93311c18bf900d1771cd7077fbf7866d0dd62b96c5fb8c5300b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "グラフ視覚化アクションの例は、以下の動画でご覧いただけます。"
+      }
+    },
+    {
+      "segment_id": "4b7cc23c",
+      "source_content": "<p align=\"center\">\n  <a href=\"#\">\n    <img src=\"/images/pipelines/graph-viz-action.gif\" alt=\"Graph Visualization Action\" />\n  </a>\n</p>",
+      "source_content_hash": "be6b8dc6011b00d686e9c9709015df404eed7a619e9febbbd0270e1f614a5d01",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4b7cc23c"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### Action",
+      "source_content_hash": "24469b4ac0d96fd3159f094e5fd82c11f4ca82ac2fb820349ad9d923a7a308cd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### アクション"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "Actions are used to create a button in the Message UI (the small buttons found directly underneath individual chat messages).",
+      "source_content_hash": "6e0d757a4c7afb00a33f497191fdfc0fcae4a7a12e2b899e541c1d199351c2fc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アクションは、メッセージUI（個々のチャットメッセージの直下にある小さなボタン）にボタンを作成するために使用されます。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Actions have a single main component called an action function. This component takes an object defining the type of action and the data being processed.",
+      "source_content_hash": "f78239bfb11b3c63879d5f313bac6c1ce0efd3638bfecea1c2625a90eac0a5dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アクションには、アクションの種類と処理されるデータを定義するオブジェクトを受け取る「アクション関数」という単一の主要コンポーネントがあります。"
+      }
+    },
+    {
+      "segment_id": "358a309f",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\nasync def action(\n        self,\n        body: dict,\n        __user__=None,\n        __event_emitter__=None,\n        __event_call__=None,\n    ) -> Optional[dict]:\n        print(f\"action:{__name__}\")\n\n        response = await __event_call__(\n            {\n                \"type\": \"input\",\n                \"data\": {\n                    \"title\": \"write a message\",\n                    \"message\": \"here write a message to append\",\n                    \"placeholder\": \"enter your message\",\n                },\n            }\n        )\n        print(response)\n```\n</details>",
+      "source_content_hash": "9796df448bf5d5b82f909a7a85ef1d5dd96547483f73c2a6530bd6f53ae1f5c4",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_358a309f"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/functions/action.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.786269+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0930ae695647fda573e2f0b2c7384ffcb29689f4692b78ddcbf473a18bbfd32b"
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/deepseekr1-dynamic.md",
+  "source_file_content_hash": "da711c44a3c05533c5881bf70566814ce8118368813836365c7a86039db65619",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🐋 Run DeepSeek R1 Dynamic 1.58-bit with Llama.cpp\"\n---",
+      "source_content_hash": "4abfe4df8cfd5202f8c228a683877c596d7a3e60e697405bb85c7b5245c3fd40",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "A huge shoutout to **UnslothAI** for their incredible efforts! Thanks to their hard work, we can now run the **full DeepSeek-R1** 671B parameter model in its dynamic 1.58-bit quantized form (compressed to just 131GB) on **Llama.cpp**! And the best part? You no longer have to despair about needing massive enterprise-class GPUs or servers — it’s possible to run this model on your personal machine (albeit slowly for most consumer hardware).",
+      "source_content_hash": "1c345b955431d1db4df1a5020590c4cf727e862bd3405de16c344f706ddd10cd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**UnslothAI**の素晴らしい努力に心からの感謝を！彼らの尽力により、**完全版DeepSeek-R1** 671Bパラメータモデルを動的1.58ビット量子化形式（131GBに圧縮）で**Llama.cpp**上で動作させられるようになりました！そして何より嬉しいのは、大規模なエンタープライズクラスのGPUやサーバーを必要とせず、個人のマシン（ただしほとんどのコンシューマーハードウェアでは低速ですが）でこのモデルを実行可能になったことです。"
+      }
+    },
+    {
+      "segment_id": "a239c14b",
+      "source_content": ":::note\nThe only true **DeepSeek-R1** model on Ollama is the **671B version** available here: [https://ollama.com/library/deepseek-r1:671b](https://ollama.com/library/deepseek-r1:671b). Other versions are **distilled** models.\n:::",
+      "source_content_hash": "d76bf2ffdb247b28a6d7fb09b2afb617fc1501ced06538e2bc743c255f921315",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\nOllamaで利用可能な真の**DeepSeek-R1**モデルは、以下の**671Bバージョン**のみです: [https://ollama.com/library/deepseek-r1:671b](https://ollama.com/library/deepseek-r1:671b)。他のバージョンは**蒸留**モデルです。\n:::"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "This guide focuses on running the **full DeepSeek-R1 Dynamic 1.58-bit quantized model** using **Llama.cpp** integrated with **Sage WebUI**. For this tutorial, we’ll demonstrate the steps with an **M4 Max + 128GB RAM** machine. You can adapt the settings to your own configuration.",
+      "source_content_hash": "6af0b427839bc9fe09c15e6f730d9751a5e8736845cc43440c47e2535f4981a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドでは、**Llama.cpp**と統合した**Sage WebUI**を使用して**完全版DeepSeek-R1動的1.58ビット量子化モデル**を実行する手順に焦点を当てます。本チュートリアルでは**M4 Max + 128GB RAM**マシンでの設定例を示しますが、各自の環境に合わせて調整可能です。"
+      }
+    },
+    {
+      "segment_id": "1af1a865",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Step 1: Install Llama.cpp",
+      "source_content_hash": "81dff59777bb32df8977e4ea8ca3cf7f18893b4bef3a29cd4a86fea33a1e2af0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ1: Llama.cppのインストール"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "You can either:",
+      "source_content_hash": "b0798dc15b470db76d58928f0d8d12e717d8c267a9f8cfda23e2282a6bcdba35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のいずれかの方法でインストールできます:"
+      }
+    },
+    {
+      "segment_id": "034de896",
+      "source_content": "- [Download the prebuilt binaries](https://github.com/ggerganov/llama.cpp/releases)  \n- **Or build it yourself**: Follow the instructions here: [Llama.cpp Build Guide](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md)",
+      "source_content_hash": "10d1ac2a8e7ebc662c9782114eb1806b5557484865610a9c5b55af65951f5f7f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [プリビルド済みバイナリをダウンロード](https://github.com/ggerganov/llama.cpp/releases)  \n- **または自分でビルド**: [Llama.cppビルドガイド](https://github.com/ggerganov/llama.cpp/blob/master/docs/build.md)の手順に従ってください"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Step 2: Download the Model Provided by UnslothAI",
+      "source_content_hash": "e3f1195af807f110dc5c372ec7321f68ac7b961fa45974f090fd2549fe31c41a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ2: UnslothAI提供のモデルをダウンロード"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Head over to [Unsloth’s Hugging Face page](https://huggingface.co/unsloth/DeepSeek-R1-GGUF) and download the appropriate **dynamic quantized version** of DeepSeek-R1. For this tutorial, we’ll use the **1.58-bit (131GB)** version, which is highly optimized yet remains surprisingly functional.",
+      "source_content_hash": "2d649c864341cc7b0dcce422a40b355d00b1a2329af52463cc1bbbd7ef40ce7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[UnslothのHugging Faceページ](https://huggingface.co/unsloth/DeepSeek-R1-GGUF)にアクセスし、適切な**動的量子化バージョン**のDeepSeek-R1をダウンロードしてください。本チュートリアルでは、高度に最適化されながら驚くほど機能性を保つ**1.58ビット版（131GB）**を使用します。"
+      }
+    },
+    {
+      "segment_id": "6b3596a2",
+      "source_content": ":::tip\nKnow your \"working directory\" — where your Python script or terminal session is running. The model files will download to a subfolder of that directory by default, so be sure you know its path! For example, if you're running the command below in `/Users/yourname/Documents/projects`, your downloaded model will be saved under `/Users/yourname/Documents/projects/DeepSeek-R1-GGUF`. \n:::",
+      "source_content_hash": "2ead8d93453ef3c9b5cfbb953ea6dfdc6b3f559349d7d95e328f6fa238968d6e",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n「作業ディレクトリ」（Pythonスクリプトやターミナルセッションを実行している場所）を把握してください。モデルファイルはデフォルトでそのサブフォルダにダウンロードされるため、パスを確認しておきましょう。例えば`/Users/yourname/Documents/projects`で以下のコマンドを実行する場合、ダウンロードされたモデルは`/Users/yourname/Documents/projects/DeepSeek-R1-GGUF`に保存されます。\n:::"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "To understand more about UnslothAI’s development process and why these dynamic quantized versions are so efficient, check out their blog post: [UnslothAI DeepSeek R1 Dynamic Quantization](https://unsloth.ai/blog/deepseekr1-dynamic).",
+      "source_content_hash": "56f90110b28d6f261325de3a1a60fada01ab3a5b4e8950174ffcfa9aff2359b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "UnslothAIの開発プロセスと、なぜこれらの動的量子化バージョンがこれほど効率的なのかについて詳しく知りたい場合は、彼らのブログ記事を参照してください: [UnslothAI DeepSeek R1 Dynamic Quantization](https://unsloth.ai/blog/deepseekr1-dynamic)。"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Here’s how to download the model programmatically:",
+      "source_content_hash": "711974190bbdfec14a9dd78e7103c8c478df2338bb1923a8e8105222395df86c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プログラムでモデルをダウンロードする方法は以下の通りです:"
+      }
+    },
+    {
+      "segment_id": "6543a19e",
+      "source_content": "```python\n# Install Hugging Face dependencies before running this:\n# pip install huggingface_hub hf_transfer\n\nfrom huggingface_hub import snapshot_download\n\nsnapshot_download(\n    repo_id = \"unsloth/DeepSeek-R1-GGUF\",  # Specify the Hugging Face repo\n    local_dir = \"DeepSeek-R1-GGUF\",         # Model will download into this directory\n    allow_patterns = [\"*UD-IQ1_S*\"],        # Only download the 1.58-bit version\n)\n```",
+      "source_content_hash": "45e3c5d04b2524fc5ff56bffaef901e1ebda4cad83f5c459b250f043acde9bbf",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6543a19e"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "Once the download completes, you’ll find the model files in a directory structure like this:",
+      "source_content_hash": "68b28609c22f234a1099213e3be33ea2346e0fd2d61c0dfe1f86da9e80a23d27",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ダウンロードが完了すると、モデルファイルは以下のようなディレクトリ構造で見つかります:"
+      }
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```\nDeepSeek-R1-GGUF/\n├── DeepSeek-R1-UD-IQ1_S/\n│   ├── DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf\n│   ├── DeepSeek-R1-UD-IQ1_S-00002-of-00003.gguf\n│   ├── DeepSeek-R1-UD-IQ1_S-00003-of-00003.gguf\n```",
+      "source_content_hash": "cacdee8280f0e002400e8310362b0d541a0df112e88eb2b9f8796968de375cee",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_48ec8149"
+      }
+    },
+    {
+      "segment_id": "f90b9a6a",
+      "source_content": ":::info\n🛠️ Update paths in the later steps to **match your specific directory structure**. For example, if your script was in `/Users/tim/Downloads`, the full path to the GGUF file would be:  \n`/Users/tim/Downloads/DeepSeek-R1-GGUF/DeepSeek-R1-UD-IQ1_S/DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf`.\n:::",
+      "source_content_hash": "2cb5a64b07652a910083458ec1920f50513d39f77c112416eb91104ac16bb5ac",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n🛠️ 後のステップで使用するパスは**実際のディレクトリ構造に合わせて更新**してください。例えばスクリプトが`/Users/tim/Downloads`にある場合、GGUFファイルへのフルパスは:  \n`/Users/tim/Downloads/DeepSeek-R1-GGUF/DeepSeek-R1-UD-IQ1_S/DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf`となります。\n:::"
+      }
+    },
+    {
+      "segment_id": "e912d935",
+      "source_content": "## Step 3: Make Sure Sage WebUI is Installed and Running",
+      "source_content_hash": "e7f8380de73215f8283a71e17c1a2f40a61a0307b1470d714b0f13b2361b025d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ3: Sage WebUIのインストールと起動確認"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "If you don’t already have **Sage WebUI** installed, no worries! It’s a simple setup. Just follow the [Sage WebUI documentation here](/). Once installed, start the application — we’ll connect it in a later step to interact with the DeepSeek-R1 model.",
+      "source_content_hash": "79f8c853f6469632feb39defa26740d039bd1921295f22066782bfa65bc52490",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Sage WebUI**がまだインストールされていない場合でも心配ありません！簡単にセットアップできます。[Sage WebUIドキュメント](/ja)に従ってインストール後、アプリケーションを起動してください。後のステップでDeepSeek-R1モデルと接続します。"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "## Step 4: Serve the Model Using Llama.cpp",
+      "source_content_hash": "11784486039387290c07e2e78a180b002bcd2bc1e6679798143c3fe31e0e26ca",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ4: Llama.cppを使用してモデルをサーバーとして起動"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "Now that the model is downloaded, the next step is to run it using **Llama.cpp’s server mode**. Before you begin:",
+      "source_content_hash": "81416b55f135b67584ac697a067a413aa221f434dfd53e8f21ad12a4eb0ba3de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルのダウンロードが完了したら、次は**Llama.cppのサーバーモード**で実行します。開始前に以下の点を確認してください:"
+      }
+    },
+    {
+      "segment_id": "af7d8a35",
+      "source_content": "1. **Locate the `llama-server` binary.**  \n   If you built from source (as outlined in Step 1), the `llama-server` executable will be located in `llama.cpp/build/bin`. Navigate to this directory by using the `cd` command:  \n   ```bash\n   cd [path-to-llama-cpp]/llama.cpp/build/bin\n   ```\n\n   Replace `[path-to-llama-cpp]` with the location where you cloned or built Llama.cpp. For example:  \n   ```bash\n   cd ~/Documents/workspace/llama.cpp/build/bin\n   ```\n\n2. **Point to your model folder.**  \n   Use the full path to the downloaded GGUF files created in Step 2. When serving the model, specify the first part of the split GGUF files (e.g., `DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf`).",
+      "source_content_hash": "528f1e7f7c1a7e1d2c3b7c8455ef4d1057f9e396a8b1ffd365419c455da58d00",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **`llama-server`バイナリの場所を確認する**  \n   ソースからビルドした場合（ステップ1で説明した通り）、`llama-server`実行ファイルは`llama.cpp/build/bin`にあります。`cd`コマンドでこのディレクトリに移動します:  \n   ```bash\n   cd [path-to-llama-cpp]/llama.cpp/build/bin\n   ```\n\n   `[path-to-llama-cpp]`はLlama.cppをクローンまたはビルドした場所に置き換えてください。例:  \n   ```bash\n   cd ~/Documents/workspace/llama.cpp/build/bin\n   ```\n\n2. **モデルフォルダを指定する**  \n   ステップ2でダウンロードしたGGUFファイルのフルパスを使用します。モデルをサーバーで実行する際は、分割されたGGUFファイルの最初の部分を指定します（例: `DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf`）。"
+      }
+    },
+    {
+      "segment_id": "a1fa5396",
+      "source_content": "Here’s the command to start the server:",
+      "source_content_hash": "ddb7235d2291a90f1e39ddc15e9d698e81619cec9aee83d1d1a131884ddf1efa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "サーバーを起動するコマンドは以下の通りです:"
+      }
+    },
+    {
+      "segment_id": "65400624",
+      "source_content": "```bash\n./llama-server \\\n    --model /[your-directory]/DeepSeek-R1-GGUF/DeepSeek-R1-UD-IQ1_S/DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf \\\n    --port 10000 \\\n    --ctx-size 1024 \\\n    --n-gpu-layers 40\n```",
+      "source_content_hash": "d9caeedf7f8a8ace13c15cb26d7e2841bb9f598f2b1d2f2c16eec9c7da573323",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_65400624"
+      }
+    },
+    {
+      "segment_id": "f1e357f9",
+      "source_content": ":::tip\n🔑 **Parameters to Customize Based on Your Machine:**  \n\n- **`--model`:** Replace `/[your-directory]/` with the path where the GGUF files were downloaded in Step 2.  \n- **`--port`:** The server default is `8080`, but feel free to change it based on your port availability.  \n- **`--ctx-size`:** Determines context length (number of tokens). You can increase it if your hardware allows, but be cautious of rising RAM/VRAM usage.  \n- **`--n-gpu-layers`:** Set the number of layers you want to offload to your GPU for faster inference. The exact number depends on your GPU’s memory capacity — reference Unsloth’s table for specific recommendations.\n:::",
+      "source_content_hash": "5fcf2f6584d392ed83e74c270900509ddfca4e50f0336e3c8456044cbe6443b8",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n🔑 **マシンに応じてカスタマイズするパラメータ:**  \n\n- **`--model`:** GGUFファイルがダウンロードされたパスに`/[your-directory]/`を置き換えます（ステップ2参照）。  \n- **`--port`:** サーバーのデフォルトポートは`8080`ですが、利用可能なポートに変更可能です。  \n- **`--ctx-size`:** コンテキスト長（トークン数）を決定します。ハードウェアが許せば増やせますが、RAM/VRAM使用量の増加に注意してください。  \n- **`--n-gpu-layers`:** GPUにオフロードするレイヤー数を設定し、推論を高速化します。具体的な数はGPUメモリ容量に依存します — Unslothの表を参照して推奨値を確認してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "For example, if your model was downloaded to `/Users/tim/Documents/workspace`, your command would look like this:",
+      "source_content_hash": "82661c3cfb964e68cb230672b28bbebe1b94c1014972646874b3bac3ebcb7757",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "例えば、モデルが`/Users/tim/Documents/workspace`にダウンロードされた場合、コマンドは以下のようになります:"
+      }
+    },
+    {
+      "segment_id": "1cf51900",
+      "source_content": "```bash\n./llama-server \\\n    --model /Users/tim/Documents/workspace/DeepSeek-R1-GGUF/DeepSeek-R1-UD-IQ1_S/DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf \\\n    --port 10000 \\\n    --ctx-size 1024 \\\n    --n-gpu-layers 40\n```",
+      "source_content_hash": "54ef646d96cb09f440ef97d6ef2c0cbefbf585a1069cfcb706427903eee362d9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_1cf51900"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "Once the server starts, it will host a **local OpenAI-compatible API** endpoint at:",
+      "source_content_hash": "7f7e48dec2888444fc2c27bb458209a47beb76cb43cb03d5ef997e10473e2ba3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "サーバーが起動すると、以下の場所で**ローカルのOpenAI互換API**エンドポイントがホストされます:"
+      }
+    },
+    {
+      "segment_id": "f39e109c",
+      "source_content": "```\nhttp://127.0.0.1:10000\n```",
+      "source_content_hash": "43e5096104c54fb52f93861c8fc024693d48dec7dcdb01c00ccf8d232b7d371e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f39e109c"
+      }
+    },
+    {
+      "segment_id": "379173ce",
+      "source_content": ":::info\n🖥️ **Llama.cpp Server Running**  \n\n![Server Screenshot](/images/tutorials/deepseek/serve.png)  \n\nAfter running the command, you should see a message confirming the server is active and listening on port 10000.\n:::",
+      "source_content_hash": "954a008be0519c2ccfc24cc3bf0ff9210d7023ce14e5455fffd9f778a96f0e96",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n🖥️ **Llama.cppサーバー稼働中**  \n\n![サーバースクリーンショット](/images/tutorials/deepseek/serve.png)  \n\nコマンド実行後、サーバーがポート10000でアクティブに待機していることを確認するメッセージが表示されます。\n:::"
+      }
+    },
+    {
+      "segment_id": "b6152880",
+      "source_content": "Be sure to **keep this terminal session running**, as it serves the model for all subsequent steps.",
+      "source_content_hash": "64e9b0e14dc73a57ab869100ddbc04bea17718801a19699d4f034a6e4904d021",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**このターミナルセッションは実行したままにしてください**。これにより、モデルが以降のステップで利用可能になります。"
+      }
+    },
+    {
+      "segment_id": "23b96cc0",
+      "source_content": "## Step 5: Connect Llama.cpp to Sage WebUI",
+      "source_content_hash": "3f6d21267d4a8d948723d8690662b222b2d4823bea6cc91a9bf5e7338d67fdfc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ5: Llama.cppをSage WebUIに接続する"
+      }
+    },
+    {
+      "segment_id": "4b530389",
+      "source_content": "1. Go to **Admin Settings** in Sage WebUI.  \n2. Navigate to **Connections > OpenAI Connections.**  \n3. Add the following details for the new connection:  \n   - URL: `http://127.0.0.1:10000/v1` (or `http://host.docker.internal:10000/v1` when running Sage WebUI in docker)\n   - API Key: `none`",
+      "source_content_hash": "6c36a35a33f0941b35f24c36f80dd81083d47ca8c1d05819eb69cdc5f4cde000",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIの**管理者設定**に移動します。  \n2. **接続 > OpenAI接続**に進みます。  \n3. 新しい接続に以下の詳細を追加します:  \n   - URL: `http://127.0.0.1:10000/v1`（DockerでSage WebUIを実行している場合は`http://host.docker.internal:10000/v1`）\n   - APIキー: `none`"
+      }
+    },
+    {
+      "segment_id": "1865603e",
+      "source_content": ":::info\n🖥️ **Adding Connection in Sage WebUI**  \n\n![Connection Screenshot](/images/tutorials/deepseek/connection.png)  \n\nAfter running the command, you should see a message confirming the server is active and listening on port 10000.\n:::",
+      "source_content_hash": "6399ee0281a17d8c56f962f4b85ed7c6e629a6c56fd95c0781dcd00987c1db06",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n🖥️ **Sage WebUIでの接続追加**  \n\n![接続スクリーンショット](/images/tutorials/deepseek/connection.png)  \n\nコマンド実行後、サーバーがポート10000でアクティブに待機していることを確認するメッセージが表示されます。\n:::"
+      }
+    },
+    {
+      "segment_id": "8664ed0b",
+      "source_content": "Once the connection is saved, you can start querying **DeepSeek-R1** directly from Sage WebUI! 🎉",
+      "source_content_hash": "2b3d4d5c4faa34326e98e34fcb612d546f2bea6811a4c105727354eabccfd900",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "接続を保存すると、Sage WebUIから直接**DeepSeek-R1**にクエリを実行できるようになります！ 🎉"
+      }
+    },
+    {
+      "segment_id": "ce87f480",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "a0d0e29e",
+      "source_content": "## Example: Generating Responses",
+      "source_content_hash": "0924e17f07ed36a62783d6de52dd9a49175900fe17f4576a532d6bfb5dad3edb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 例: 応答の生成"
+      }
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "You can now use Sage WebUI’s chat interface to interact with the **DeepSeek-R1 Dynamic 1.58-bit model**.",
+      "source_content_hash": "13fe77e10d0c24e96a04ac7d24ac8435232c394d9b21e335cfa4d7399a4454d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これで、Sage WebUIのチャットインターフェースを使用して**DeepSeek-R1 Dynamic 1.58-bitモデル**と対話できます。"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "![Response Screenshot](/images/tutorials/deepseek/response.png)",
+      "source_content_hash": "069028836d183be509eba6d78a81f70f89a7bf3cc28cb3d3bfcb66a8a4c00ba3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![応答スクリーンショット](/images/tutorials/deepseek/response.png)"
+      }
+    },
+    {
+      "segment_id": "d4b679d6",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "55dc794c",
+      "source_content": "## Notes and Considerations",
+      "source_content_hash": "9e224546c490ffbbb394e6f938e677fc512597ae75dda786e74ff4202dc8ee09",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 注意点と考慮事項"
+      }
+    },
+    {
+      "segment_id": "e99d73d3",
+      "source_content": "- **Performance:**  \n  Running a massive 131GB model like DeepSeek-R1 on personal hardware will be **slow**. Even with our M4 Max (128GB RAM), inference speeds were modest. But the fact that it works at all is a testament to UnslothAI’s optimizations.  \n\n- **VRAM/Memory Requirements:**  \n  Ensure sufficient VRAM and system RAM for optimal performance. With low-end GPUs or CPU-only setups, expect slower speeds (but it’s still doable!).",
+      "source_content_hash": "f78e888b79f4a4565e5456f65f1f48162e583e158bab2fb86b6b50d19fd789ad",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **パフォーマンス:**  \n  DeepSeek-R1のような131GBもの大規模モデルを個人のハードウェアで実行すると、**非常に遅くなります**。M4 Max（128GB RAM）のような高性能マシンでも、推論速度は控えめです。しかし、それでも動作するという事実は、UnslothAIの最適化の賜物です。  \n\n- **VRAM/メモリ要件:**  \n  最適なパフォーマンスを得るには、十分なVRAMとシステムRAMを確保してください。ローエンドGPUやCPUのみの環境では、速度がさらに低下します（それでも実行可能です！）。"
+      }
+    },
+    {
+      "segment_id": "57180eb4",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "2dbfc5f7",
+      "source_content": "Thanks to **UnslothAI** and **Llama.cpp**, running one of the largest open-source reasoning models, **DeepSeek-R1** (1.58-bit version), is finally accessible to individuals. While it’s challenging to run such models on consumer hardware, the ability to do so without massive computational infrastructure is a significant technological milestone.",
+      "source_content_hash": "2f5b980bce4700204bf7469a75ebb5f8b2d5e6da7e160dd9cb35294040210828",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**UnslothAI**と**Llama.cpp**のおかげで、オープンソースの大規模推論モデルである**DeepSeek-R1**（1.58ビット版）を個人でも実行できるようになりました。このようなモデルをコンシューマーハードウェアで実行するのは困難ですが、大規模な計算インフラなしで実現できることは、技術的な大きな進歩です。"
+      }
+    },
+    {
+      "segment_id": "6b40e7a2",
+      "source_content": "⭐ Big thanks to the community for pushing the boundaries of open AI research.",
+      "source_content_hash": "1b1dc99fae9859d5f2fc771a2e4b1a945e7f0283d1d2db0c8eec95b921318da2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "⭐ オープンAI研究の限界を押し広げるコミュニティに感謝します。"
+      }
+    },
+    {
+      "segment_id": "39f476dc",
+      "source_content": "Happy experimenting! 🚀",
+      "source_content_hash": "bfdabdce53e113f440750c14b40c2d02e029fcd6389549b85fc838c486648ef3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "楽しい実験を！ 🚀"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/deepseekr1-dynamic.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.788169+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "da711c44a3c05533c5881bf70566814ce8118368813836365c7a86039db65619"
+  }
+}

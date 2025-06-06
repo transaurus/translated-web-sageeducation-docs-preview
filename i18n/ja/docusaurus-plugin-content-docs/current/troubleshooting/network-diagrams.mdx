@@ -1,0 +1,162 @@
+---
+sidebar_position: 3
+title: "🕸️ Network Diagrams"
+---
+
+ここでは、ネットワークのさまざまなコンポーネントが異なるセットアップでどのように相互作用するかを理解するための明確で構造化されたダイアグラムを提供します。このドキュメントは、macOS/WindowsおよびLinuxユーザーの両方を支援するように設計されています。各シナリオは、システム構成と展開戦略に応じて設定された相互作用を示すためにMermaidダイアグラムを使用して説明されています。
+
+## Mac OS/Windows セットアップオプション 🖥️
+
+### ホスト上のOllama、コンテナ内のSage WebUI
+
+このシナリオでは、`Ollama`がホストマシン上で直接実行され、`Sage WebUI`がDockerコンテナ内で動作します。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Mac OS/Windows") {
+   Person(user, "User")
+   Boundary(b1, "Docker Desktop's Linux VM") {
+      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+   }
+   Component(ollama, "Ollama", "Listening on port 11434")
+}
+Rel(openwebui, ollama, "Makes API calls via Docker proxy", "http://host.docker.internal:11434")
+Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://localhost:3000")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+### Composeスタック内のOllamaとSage WebUI
+
+`Ollama`と`Sage WebUI`の両方が同じDocker Composeスタック内で構成されており、ネットワーク通信が簡素化されています。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Mac OS/Windows") {
+   Person(user, "User")
+   Boundary(b1, "Docker Desktop's Linux VM") {
+      Boundary(b2, "Compose Stack") {
+         Component(openwebui, "Sage WebUI", "Listening on port 8080")
+         Component(ollama, "Ollama", "Listening on port 11434")
+      }
+   }
+}
+Rel(openwebui, ollama, "Makes API calls via inter-container networking", "http://ollama:11434")
+Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://localhost:3000")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+### 別々のネットワーク上のOllamaとSage WebUI
+
+ここでは、`Ollama`と`Sage WebUI`が別々のDockerネットワークに展開されており、接続性の問題が発生する可能性があります。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Mac OS/Windows") {
+   Person(user, "User")
+   Boundary(b1, "Docker Desktop's Linux VM") {
+      Boundary(b2, "Network A") {
+         Component(openwebui, "Sage WebUI", "Listening on port 8080")
+      }
+      Boundary(b3, "Network B") {
+         Component(ollama, "Ollama", "Listening on port 11434")
+      }
+   }
+}
+Rel(openwebui, ollama, "Unable to connect")
+Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://localhost:3000")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+### ホストネットワーク内のSage WebUI
+
+この構成では、`Sage WebUI`がホストネットワークを利用しており、特定の環境での接続能力に影響を与えます。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Mac OS/Windows") {
+   Person(user, "User")
+   Boundary(b1, "Docker Desktop's Linux VM") {
+      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+   }
+}
+Rel(user, openwebui, "Unable to connect, host network is the VM's network")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+## Linux セットアップオプション 🐧
+
+### ホスト上のOllama、コンテナ内のSage WebUI（Linux）
+
+このダイアグラムはLinuxプラットフォームに特化しており、`Ollama`がホスト上で実行され、`Sage WebUI`がDockerコンテナ内に展開されています。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Linux") {
+   Person(user, "User")
+   Boundary(b1, "Container Network") {
+      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+   }
+   Component(ollama, "Ollama", "Listening on port 11434")
+}
+Rel(openwebui, ollama, "Makes API calls via Docker proxy", "http://host.docker.internal:11434")
+Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://localhost:3000")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+### Composeスタック内のOllamaとSage WebUI（Linux）
+
+`Ollama`と`Sage WebUI`の両方が同じDocker Composeスタック内に存在するセットアップで、Linux上でのシンプルなネットワークを可能にします。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Linux") {
+   Person(user, "User")
+   Boundary(b1, "Container Network") {
+      Boundary(b2, "Compose Stack") {
+         Component(openwebui, "Sage WebUI", "Listening on port 8080")
+         Component(ollama, "Ollama", "Listening on port 11434")
+      }
+   }
+}
+Rel(openwebui, ollama, "Makes API calls via inter-container networking", "http://ollama:11434")
+Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://localhost:3000")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+### 別々のネットワーク上のOllamaとSage WebUI（Linux）
+
+Linux環境下で`Ollama`と`Sage WebUI`が異なるDockerネットワークにあるシナリオで、接続性が妨げられる可能性があります。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Linux") {
+   Person(user, "User")
+   Boundary(b2, "Container Network A") {
+      Component(openwebui, "Sage WebUI", "Listening on port 8080")
+   }
+   Boundary(b3, "Container Network B") {
+      Component(ollama, "Ollama", "Listening on port 11434")
+   }
+}
+Rel(openwebui, ollama, "Unable to connect")
+Rel(user, openwebui, "Makes requests via exposed port -p 3000:8080", "http://localhost:3000")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+### ホストネットワーク内のSage WebUI、ホスト上のOllama（Linux）
+
+`Sage WebUI`と`Ollama`の両方がホストのネットワークを使用する最適なレイアウトで、Linuxシステム上でのシームレスな相互作用を促進します。
+
+```mermaid
+C4Context
+Boundary(b0, "Hosting Machine - Linux") {
+   Person(user, "User")
+   Component(openwebui, "Sage WebUI", "Listening on port 8080")
+   Component(ollama, "Ollama", "Listening on port 11434")
+}
+Rel(openwebui, ollama, "Makes API calls via localhost", "http://localhost:11434")
+Rel(user, openwebui, "Makes requests via listening port", "http://localhost:8080")
+UpdateRelStyle(user, openwebui, $offsetX="-100", $offsetY="-50")
+```
+
+各セットアップは、異なる展開戦略とネットワーク構成に対応しており、要件に最適なレイアウトを選択するのに役立ちます。

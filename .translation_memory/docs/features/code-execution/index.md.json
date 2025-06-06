@@ -1,0 +1,32 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/code-execution/index.md",
+  "source_file_content_hash": "04c1b2704d0686bc87f4cf23db5f5db7b4f7748cfb40621a54928a931b81a4a1",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\ntitle: \"🐍 Code Execution\"\n---",
+      "source_content_hash": "dd2c6baf5e4bf841e0febf393b619333af00c6248e92485ffcbaaa0d3c924625",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "COMING SOON!",
+      "source_content_hash": "80d6f7fe7c5392a94b8889fe3147d4d03c710768083da8e6319e53fe85e051f9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "近日公開予定！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/code-execution/index.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.778432+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "04c1b2704d0686bc87f4cf23db5f5db7b4f7748cfb40621a54928a931b81a4a1"
+  }
+}

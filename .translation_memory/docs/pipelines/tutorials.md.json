@@ -1,0 +1,122 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/pipelines/tutorials.md",
+  "source_file_content_hash": "496e9510bb6405e9c3c532c54be4d492aaf1b8e693e3bee570e18e5073cfac12",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 7\ntitle: \"📖 Tutorials\"\n---",
+      "source_content_hash": "8a95b5bbeaea4d52d05952860a6aae1fc7bcdefb1f15ab4f45dd14c49290a632",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Tutorials",
+      "source_content_hash": "58895c865f79560945322a8a7680edabc941af32880b185d90d08e3acb0cb078",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# チュートリアル"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## Tutorials Welcome",
+      "source_content_hash": "ffcb0fce9e9979f8af60ddca8419b7fcc1dfcb5d746e1104e618a2aec3d7611e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## チュートリアルへようこそ"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Are you a content creator with a blog post or YouTube video about your pipeline setup? Get in touch\nwith us, as we'd love to feature it here!",
+      "source_content_hash": "18b84eda73949af798adc72d56ad4b3f670e5c1e7c5bf105588ef0f5138c48c8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "パイプライン設定に関するブログ記事やYouTube動画を作成しているコンテンツクリエーターの方は、ぜひご連絡ください。こちらでご紹介させていただきます！"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Featured Tutorials",
+      "source_content_hash": "4d07b4473e4c033627865a67fb9c354c11d7b55f17b34b1be58aa84cd17c6c44",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 注目のチュートリアル"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "[Monitoring Sage WebUI with Filters](https://medium.com/@0xthresh/monitor-sage-open-webui-with-datadog-llm-observability-620ef3a598c6) (Medium article by @0xthresh)",
+      "source_content_hash": "590cc605c0daa7b363d711e8a368cb164a19c16bc806d7e6fe6f26a351cb44b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Filtersを使ったSage WebUIの監視](https://medium.com/@0xthresh/monitor-sage-open-webui-with-datadog-llm-observability-620ef3a598c6)（@0xthreshによるMedium記事）"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "- A detailed guide to monitoring the Sage WebUI using DataDog LLM observability.",
+      "source_content_hash": "93de749e6fc98e7e7c9d3c963f7dcfac8d5a17d36ec98292d62d1045c0c73709",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- DataDog LLMオブザーバビリティを使用してSage WebUIを監視する詳細ガイド"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "[Building Customized Text-To-SQL Pipelines](https://www.youtube.com/watch?v=y7frgUWrcT4) (YouTube video by Jordan Nanos)",
+      "source_content_hash": "23b94b23971d7bd2e38579cc1d29fbdba3e04c03da2b68961806e51eb620454f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[カスタマイズされたText-To-SQLパイプラインの構築](https://www.youtube.com/watch?v=y7frgUWrcT4)（Jordan NanosによるYouTube動画）"
+      }
+    },
+    {
+      "segment_id": "0787cf7f",
+      "source_content": "- Learn how to develop tailored text-to-sql pipelines, unlocking the power of data analysis and extraction.",
+      "source_content_hash": "ff7b2ba4d1cd8e38a98d470cfb205736a49fc293a80fdde41b5f283bf9df7df5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- データ分析と抽出の力を解き放つ、テキストからSQLへのカスタマイズパイプライン開発方法を学ぶ"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "[Demo and Code Review for Text-To-SQL with sage-open-webui](https://www.youtube.com/watch?v=iLVyEgxGbg4) (YouTube video by Jordan Nanos)",
+      "source_content_hash": "8f3afeb5a061f00c3a5374fd55db87b391fe0a5915530b149a36fdbff935117d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Text-To-SQL with sage-open-webuiのデモとコードレビュー](https://www.youtube.com/watch?v=iLVyEgxGbg4)（Jordan NanosによるYouTube動画）"
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "- A hands-on demonstration and code review on utilizing text-to-sql tools powered by the Sage WebUI.",
+      "source_content_hash": "88b4fce246e441aac2ea0007ed669c0fc32716f300c61a9656c480a1866082cc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Sage WebUIを活用したテキストからSQLツールの実践的なデモンストレーションとコードレビュー"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/pipelines/tutorials.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.792621+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "496e9510bb6405e9c3c532c54be4d492aaf1b8e693e3bee570e18e5073cfac12"
+  }
+}

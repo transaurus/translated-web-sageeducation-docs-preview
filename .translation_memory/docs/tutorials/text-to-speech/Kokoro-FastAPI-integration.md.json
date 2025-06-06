@@ -1,0 +1,342 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/text-to-speech/Kokoro-FastAPI-integration.md",
+  "source_file_content_hash": "fdf870f55730a2a7b009dbfc72520c3a1bb27d0172d15cc5186a9bc3e04565fa",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"🗨️ Kokoro-FastAPI Using Docker\"\n---",
+      "source_content_hash": "855cce9359c07a5d74d3c50f35f07507405ab9d8cb361cdc8f338a9d7a542408",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したい方は、コントリビューションガイドをご覧ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## What is `Kokoro-FastAPI`?",
+      "source_content_hash": "fe8959a50076e8c69c8a330a0ec8b7e470d0477730f6f533eb7165134ca5873a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## `Kokoro-FastAPI`とは？"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "[Kokoro-FastAPI](https://github.com/remsky/Kokoro-FastAPI) is a dockerized FastAPI wrapper for the [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) text-to-speech model that implements the OpenAI API endpoint specification. It offers high-performance text-to-speech with impressive generation speeds.",
+      "source_content_hash": "0845d940edd309ed9b98b4df50dd7a30abca73f57631c56e24a5555343ac78d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Kokoro-FastAPI](https://github.com/remsky/Kokoro-FastAPI)は、[Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M)テキスト読み上げモデルをDocker化したFastAPIラッパーで、OpenAI APIエンドポイント仕様を実装しています。高速なテキスト読み上げを実現します。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Key Features",
+      "source_content_hash": "9214cf33ff90e03f0531d7f7aa0acc0dc8c37a382092e325d7e26659930e0c52",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 主な特徴"
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "- OpenAI-compatible Speech endpoint with inline voice combination\n- NVIDIA GPU accelerated or CPU Onnx inference\n- Streaming support with variable chunking\n- Multiple audio format support (`.mp3`, `.wav`, `.opus`, `.flac`, `.aac`, `.pcm`)\n- Integrated web interface on localhost:8880/web (or additional container in repo for gradio)\n- Phoneme endpoints for conversion and generation",
+      "source_content_hash": "0e0a741ccd3fea715ff7ebcbf8f7a6f2a4a3fb302e6dadcaeec785ddd3a7fdd0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- OpenAI互換の音声エンドポイント（インライン音声合成対応）\n- NVIDIA GPUアクセラレーションまたはCPU Onnx推論\n- 可変チャンクストリーミング対応\n- 複数音声形式対応（`.mp3`、`.wav`、`.opus`、`.flac`、`.aac`、`.pcm`）\n- 統合Webインターフェース（localhost:8880/web）\n- 音素変換/生成用エンドポイント"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## Voices",
+      "source_content_hash": "a5262fd3dae76c63ae829878320ba03d2ff31e694f1832ae5f6f9349b3275412",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 音声タイプ"
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "- af\n- af_bella\n- af_irulan\n- af_nicole\n- af_sarah\n- af_sky\n- am_adam\n- am_michael\n- am_gurney\n- bf_emma\n- bf_isabella\n- bm_george\n- bm_lewis",
+      "source_content_hash": "84de85f03a83a3232bd28d28ac64c7bd11a4d1f9006be32414a0070a5683ba92",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- af\n- af_bella\n- af_irulan\n- af_nicole\n- af_sarah\n- af_sky\n- am_adam\n- am_michael\n- am_gurney\n- bf_emma\n- bf_isabella\n- bm_george\n- bm_lewis"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## Languages",
+      "source_content_hash": "779a2b2bf00d6d952485571b0db22277e44d62d9c3a9b1e9ced6f5d0ecc0357f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 対応言語"
+      }
+    },
+    {
+      "segment_id": "8a01ee7b",
+      "source_content": "- en_us\n- en_uk",
+      "source_content_hash": "daa8d8dbef10e2ffcf56a4c6a98422c75fb32d61f59e0c31bf71454853cfcc56",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- en_us\n- en_uk"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## Requirements",
+      "source_content_hash": "98c33b0a0714844bad6972d051eedd1e73f97f3000fc1dfce03d5d00c160fee0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## システム要件"
+      }
+    },
+    {
+      "segment_id": "824626b3",
+      "source_content": "- Docker installed on your system\n- Sage WebUI running\n- For GPU support: NVIDIA GPU with CUDA 12.3\n- For CPU-only: No special requirements",
+      "source_content_hash": "890c9404bdc5ed9d2ef392d7094aaffdf6cbdfa5648c9b6a661d71a83cadc5f1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Dockerがインストールされたシステム\n- Sage WebUIの稼動\n- GPU利用の場合：CUDA 12.3対応NVIDIA GPU\n- CPUのみの場合：特別な要件なし"
+      }
+    },
+    {
+      "segment_id": "11c76fcc",
+      "source_content": "## ⚡️ Quick start",
+      "source_content_hash": "70f5cc055637d132e4e16f01be5bb6f51196a63949492e9dd4db2f8255aa766c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ⚡️ クイックスタート"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "### You can choose between GPU or CPU versions",
+      "source_content_hash": "d048d235c44cc950fe3b156bfa87afd08265044bce44cf215cb9d9065015397f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### GPU版とCPU版から選択可能"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### GPU Version (Requires NVIDIA GPU with CUDA 12.1)",
+      "source_content_hash": "29e24424b6c2be3bd17dfe428d712e3b07e6461334df0e2abaef9dda5f5c3e2c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### GPU版（CUDA 12.1対応NVIDIA GPU必須）"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "Using docker run:",
+      "source_content_hash": "9e056cf46c994aef39773084b486307a125169f120d1d105143f15efea648517",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "docker runを使用:"
+      }
+    },
+    {
+      "segment_id": "6d254e09",
+      "source_content": "```bash\ndocker run --gpus all -p 8880:8880 ghcr.io/remsky/kokoro-fastapi-gpu\n```",
+      "source_content_hash": "80dfd7d4cde833397c349403bc5a86b2b8ed83dca02ef827e1a9da2da2c354c0",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6d254e09"
+      }
+    },
+    {
+      "segment_id": "8b2a52b1",
+      "source_content": "Or docker compose, by creating a `docker-compose.yml` file and running `docker compose up`. For example:",
+      "source_content_hash": "b671dcd2761b084a5e4caa0d98f26e72def79bfc22e4b3ece520a95454e780b9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "またはdocker composeを使用する場合、`docker-compose.yml`ファイルを作成し`docker compose up`を実行。例:"
+      }
+    },
+    {
+      "segment_id": "7a577a50",
+      "source_content": "```yaml\nname: kokoro\nservices:\n    kokoro-fastapi-gpu:\n        ports:\n            - 8880:8880\n        image: ghcr.io/remsky/kokoro-fastapi-gpu:v0.2.1\n        restart: always\n        deploy:\n            resources:\n                reservations:\n                    devices:\n                        - driver: nvidia\n                          count: all\n                          capabilities:\n                              - gpu\n```",
+      "source_content_hash": "ef2fc59f065501cf861602ad21a39955f657f98d02feda699ca9556f6e41dbff",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7a577a50"
+      }
+    },
+    {
+      "segment_id": "17f3ca09",
+      "source_content": ":::info\nYou may need to install and configure [the NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)\n:::",
+      "source_content_hash": "3f031d65f999af65898286d04d3d4f949b289b3eb6a29389b801c2cb4a2c5bd1",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n[NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)のインストールと設定が必要な場合があります\n:::"
+      }
+    },
+    {
+      "segment_id": "759d12dd",
+      "source_content": "### CPU Version (ONNX optimized inference)",
+      "source_content_hash": "f93370438f3a4724f9b638524f657e2688915e52a9f5b7c53602814c40c72b24",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### CPU版（ONNX最適化推論）"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "With docker run:",
+      "source_content_hash": "6854ae79ffe8826c7f78de3ff9072687b5515931e8c6da0fdab0da2ca395d584",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "docker runで実行:"
+      }
+    },
+    {
+      "segment_id": "5dd0e3a7",
+      "source_content": "```bash\ndocker run -p 8880:8880 ghcr.io/remsky/kokoro-fastapi-cpu\n```",
+      "source_content_hash": "7892f3aa1d85cb9c9b4179f003cb0e83f913fd90af4af128c9f1ed841b271c9e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5dd0e3a7"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "With docker compose:",
+      "source_content_hash": "1aa0ad2dcfe88e1cbcc28cc989c0d75a10669c912ad14873b9dc33896cb34527",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "docker composeで実行:"
+      }
+    },
+    {
+      "segment_id": "ec99e704",
+      "source_content": "```yaml\nname: kokoro\nservices:\n    kokoro-fastapi-cpu:\n        ports:\n            - 8880:8880\n        image: ghcr.io/remsky/kokoro-fastapi-cpu\n        restart: always\n```",
+      "source_content_hash": "f6c938ba276d248eb9fd2e461668c1f9f588c4d9fd32e5726e2cfb9d8d60c869",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ec99e704"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "## Setting up Sage WebUI to use `Kokoro-FastAPI`",
+      "source_content_hash": "4ddce6e1694dd3f4d6bd39965fba7d47b9808db7573ca101e75efbb24d7b8eb5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIで`Kokoro-FastAPI`を使用する設定"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "To use Kokoro-FastAPI with Sage WebUI, follow these steps:",
+      "source_content_hash": "25cee0a3af447869ffdb90c0e2e7500fb6df3a396dc7d795b4360b95b069ecd6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでKokoro-FastAPIを使用するには以下の手順に従ってください:"
+      }
+    },
+    {
+      "segment_id": "38417f80",
+      "source_content": "- Open the Admin Panel and go to `Settings` -> `Audio`\n- Set your TTS Settings to match the following:\n- - Text-to-Speech Engine: OpenAI\n  - API Base URL: `http://localhost:8880/v1` # you may need to use `host.docker.internal` instead of `localhost`\n  - API Key: `not-needed`\n  - TTS Model: `kokoro`\n  - TTS Voice: `af_bella` # also accepts mapping of existing OAI voices for compatibility",
+      "source_content_hash": "88d7e828cf509f93232d591097a1bea1d53fb8526a15ce02a1d45c76db640beb",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 管理パネルを開き、`設定` → `音声`に移動\n- TTS設定を以下のように設定:\n  - テキスト読み上げエンジン: OpenAI\n  - APIベースURL: `http://localhost:8880/v1`（`localhost`の代わりに`host.docker.internal`が必要な場合あり）\n  - APIキー: `not-needed`\n  - TTSモデル: `kokoro`\n  - TTS音声: `af_bella`（互換性のため既存OAI音声のマッピングも可能）"
+      }
+    },
+    {
+      "segment_id": "a7a2b727",
+      "source_content": ":::info\nThe default API key is the string `not-needed`. You do not have to change that value if you do not need the added security.\n:::",
+      "source_content_hash": "0f8d5b969ba5e6f19597cea3af4bbf72f487c8c5e1cdfce7a91f094b6234f3ab",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nデフォルトAPIキーは`not-needed`です。追加のセキュリティが必要でない限り、この値を変更する必要はありません。\n:::"
+      }
+    },
+    {
+      "segment_id": "b9b8694c",
+      "source_content": "## Building the Docker Container",
+      "source_content_hash": "286c46a231951e968655aec33d58978b154eebd9613e4c87ef272c20fdfb6d02",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Dockerコンテナのビルド"
+      }
+    },
+    {
+      "segment_id": "3917a88d",
+      "source_content": "```bash\ngit clone https://github.com/remsky/Kokoro-FastAPI.git\ncd Kokoro-FastAPI\ncd docker/cpu # or docker/gpu\ndocker compose up --build\n```",
+      "source_content_hash": "c2e2ac314c3a288a059bd597a3966ed8ec8d42c28a299dfe4a422d8308db0f92",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3917a88d"
+      }
+    },
+    {
+      "segment_id": "f45239ba",
+      "source_content": "**That's it!**",
+      "source_content_hash": "cc61e379f53933ff13b3fe1308d2980cc3444810629dc42eba3a9ff3569b6d7d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**以上です！**"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "For more information on building the Docker container, including changing ports, please refer to the [Kokoro-FastAPI](https://github.com/remsky/Kokoro-FastAPI) repository",
+      "source_content_hash": "2a2d9306712e0bc0305c301824a05131110f3bed16d68102978a8a7f0544a1b8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ポート変更を含むDockerコンテナのビルドに関する詳細は、[Kokoro-FastAPI](https://github.com/remsky/Kokoro-FastAPI)リポジトリを参照してください"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/text-to-speech/Kokoro-FastAPI-integration.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.807087+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "fdf870f55730a2a7b009dbfc72520c3a1bb27d0172d15cc5186a9bc3e04565fa"
+  }
+}

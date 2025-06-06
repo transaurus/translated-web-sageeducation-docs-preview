@@ -1,0 +1,122 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/advanced-topics/https-encryption.md",
+  "source_file_content_hash": "2ac5cfa2d19fdcdd6ed8a14a73d24387a75bcdc732dcd58808208af24f537f2f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 6\ntitle: \"🔒HTTPS Encryption\"\n---",
+      "source_content_hash": "521685ed074588b013258b20238301034a6d9d582fed968e964b763f91f8bad7",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Overview",
+      "source_content_hash": "7337f3d0aa29e9a82b8f1650b743a98eef90794631fa763a319686e69c546821",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "While HTTPS encryption is **not required** to operate Sage WebUI in most cases, certain features—such as **Voice Calls**—will be blocked by modern web browsers unless HTTPS is enabled. If you do not plan to use these features, you can skip this section.",
+      "source_content_hash": "aa4a0496e33a30c39f1c17ca76c6e4c4dfbbaceac2cbb88dd8b0821f56fde08c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ほとんどの場合、Sage WebUIの運用にHTTPS暗号化は**必須ではありません**が、**音声通話**などの機能は、HTTPSが有効でないと最新のWebブラウザによってブロックされます。これらの機能を使用しない予定であれば、このセクションをスキップしても構いません。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Importance of HTTPS",
+      "source_content_hash": "58320f16ac5585fc0d632f4d11e87282e26a950c8c9d09afea338e95bb66ae61",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## HTTPSの重要性"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "For deployments at high risk of traffic interception, such as those hosted on the internet, it is recommended to implement HTTPS encryption. This ensures that the username/password signup and authentication process remains secure, protecting sensitive user data from potential threats.",
+      "source_content_hash": "024a3c37227e2c9d24548d8adc84fb420932e8ad73a4fd5ee96fbd2e1fdf27ae",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インターネット上でホストされるなど、トラフィック傍受のリスクが高い環境でのデプロイでは、HTTPS暗号化の導入が推奨されます。これにより、ユーザー名/パスワードを用いたサインアップや認証プロセスが保護され、機密性の高いユーザーデータを潜在的な脅威から守ることができます。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Choosing Your HTTPS Solution",
+      "source_content_hash": "98df8a0b139dc415a3c2ade2ed173cacb8436de9842dfae2f2d600249b8b8a31",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## HTTPSソリューションの選択"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "The choice of HTTPS encryption solution is up to the user and should align with the existing infrastructure. Here are some common scenarios:",
+      "source_content_hash": "bd20229105ddb2daf8d0ba9b678a95bd0be2ae16179f2408e744ade6ba2c2bef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HTTPS暗号化ソリューションの選択はユーザーに委ねられており、既存のインフラストラクチャに合わせて決定する必要があります。以下に一般的なシナリオを示します："
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "- **AWS Environments**: Utilizing an AWS Elastic Load Balancer is often a practical choice for managing HTTPS.\n- **Docker Container Environments**: Popular solutions include Nginx, Traefik, and Caddy.\n- **Cloudflare**: Offers easy HTTPS setup with minimal server-side configuration, suitable for a wide range of applications.\n- **Ngrok**: Provides a quick way to set up HTTPS for local development environments, particularly useful for testing and demos.",
+      "source_content_hash": "dab3e6d2202b5fcd426d05ecd27665c51ca03227eaa0069a6876d12f32e9e486",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **AWS環境**: AWS Elastic Load Balancerを利用するのが実用的な選択肢となることが多いです。\n- **Dockerコンテナ環境**: Nginx、Traefik、Caddyなどが人気のあるソリューションです。\n- **Cloudflare**: サーバー側の設定を最小限に抑えつつ、簡単にHTTPSを設定できるため、幅広いアプリケーションに適しています。\n- **Ngrok**: ローカル開発環境向けにHTTPSを迅速に設定する方法を提供しており、テストやデモに特に有用です。"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## Further Guidance",
+      "source_content_hash": "de7c54b6485746b77fde62f58eed7761f771392e04adc442090a23676a98ca90",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## さらなるガイダンス"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "For detailed instructions and community-submitted tutorials on actual HTTPS encryption deployments, please refer to the [Deployment Tutorials](../../tutorials/deployment/).",
+      "source_content_hash": "ac18a0f5ec7f163e7e2d907f47fd6d1717da7cb6679842fcecb8082526035fb4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "実際のHTTPS暗号化デプロイに関する詳細な手順やコミュニティ提供のチュートリアルについては、[デプロイメントチュートリアル](../../tutorials/deployment/)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "This documentation provides a starting point for understanding the options available for enabling HTTPS encryption in your environment.",
+      "source_content_hash": "7f209e42318701312b5e41bbe38b6071d4e7eaf4bca2950dbfbf53726d913700",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このドキュメントは、お使いの環境でHTTPS暗号化を有効にするための選択肢を理解するための出発点としてご利用いただけます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/advanced-topics/https-encryption.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.794572+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "2ac5cfa2d19fdcdd6ed8a14a73d24387a75bcdc732dcd58808208af24f537f2f"
+  }
+}

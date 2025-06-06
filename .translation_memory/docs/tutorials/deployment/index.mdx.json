@@ -1,0 +1,182 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/deployment/index.mdx",
+  "source_file_content_hash": "77eae14048ab2056d1fde39ac4f2b032e9267a13bdafb6b19a4f34cf7e294ec3",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1000\ntitle: \"☁️ Deployment\"\n---",
+      "source_content_hash": "0b64a50133c7b423163696ef351550283a8bb3fc7690b162a5c37450e0cc7cdd",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "7335511f",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7335511f"
+      }
+    },
+    {
+      "segment_id": "40da63b2",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_40da63b2"
+      }
+    },
+    {
+      "segment_id": "6cae1da3",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによるサポート対象外です。特定のユースケース向けにSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？ 寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "2a852f16",
+      "source_content": ":::info\n# 📢 **Calling all YouTubers!**\nWe're looking for talented individuals to create videos showcasing Sage WebUI's features. If you make a video, we'll feature it at the top of our guide section!\n:::",
+      "source_content_hash": "70590bbc8df4c05f17f5b439dda89932185e1126a943dd1abb60dbcab7a34a59",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n# 📢 **YouTuberの皆さんへ！**\nSage WebUIの機能を紹介する動画を作成してくれる才能あるクリエイターを募集しています。動画を制作していただいた場合、当社のガイドセクションのトップでご紹介します！\n:::"
+      }
+    },
+    {
+      "segment_id": "09a8fe76",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/QHuTBksNt_w?si=l99ZFxeNbbPcyfch\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "16d6f4ee17c22282bddbe43463bdccee7dcac13691c0c136f1a732538a5ed5a9",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_09a8fe76"
+      }
+    },
+    {
+      "segment_id": "9329e3e0",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/Gyvy9JpDVBw?si=qUf0DVd4bnp_ndzH\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "ae6ab0dd6bf5a3d2c82d547ae5d04c6549b5b0419a7c8c86be60345d6d328682",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_9329e3e0"
+      }
+    },
+    {
+      "segment_id": "100eac36",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/Ic5BRW_nLok?si=zhQXPqb0PuKqg3u1\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "d817486aef0167474f424008a78426eff3846d58b621a3d00c046f60072c8c3f",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_100eac36"
+      }
+    },
+    {
+      "segment_id": "6127963f",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/bp2eev21Qfo?si=-JoG1as7l6ZjNDyE\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "559fac6bdc46aa64a02c230ff2b2003e953ea35af37a512ab1f5d75e7bb908f4",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6127963f"
+      }
+    },
+    {
+      "segment_id": "ce33792e",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/DHVQ1UBaYMQ?si=PjslnpJKiHsct8lF\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "00235dfc87768431bfb787b8d63b7e8d8757560e52c0ae9736daa2760c15122d",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ce33792e"
+      }
+    },
+    {
+      "segment_id": "3a0902ca",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/Wjrdr0NU4Sk?si=gDsyvkE19AsMlJJa\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "6cd3aab7c3ef09aca2af722cbc6e2d8b6ce7f33acf0ad22bfcda9966e4a3d1f3",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3a0902ca"
+      }
+    },
+    {
+      "segment_id": "5f852894",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/kDwEIgmqaEE?si=hes3N1xHp7AaVOGk\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "88749f73e154e90fca39f7a5fab6861a33d5d492e8ed21a86256aa2d3904bc4a",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5f852894"
+      }
+    },
+    {
+      "segment_id": "897e0025",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/D4H5hMMoZ28?si=vKiTocXDRkez1SoV\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "59c454eaa1404399faa9800b007741836eb02fefe5914ffc4ef834c9cfe00116",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_897e0025"
+      }
+    },
+    {
+      "segment_id": "c2059547",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/syR0fT0rkgY?si=UusLnKSvU1HGjtyc\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "ce745acaef6ca5408a6bd6bbde8e634ebfda36bc706fb3a516634381793f3596",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_c2059547"
+      }
+    },
+    {
+      "segment_id": "8850c5e2",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/jlvjipGNwSU?si=RrPk-tMRFU_badO8\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "9580f60d81fde89a2ed0414441948e3c9bfa52c60c17366ec6cd8c7863aaa81c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_8850c5e2"
+      }
+    },
+    {
+      "segment_id": "11507d75",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/PhCoRPY7hCE?si=flHuovmiwx7DwKZb\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "e3871752a87c09b36271cf5259492684dc8687fff8d3d7ed43feb1d12e02cc01",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_11507d75"
+      }
+    },
+    {
+      "segment_id": "6e56e8cf",
+      "source_content": "<iframe\n  width=\"560\"\n  height=\"315\"\n  src=\"https://www.youtube-nocookie.com/embed/zc3ltJeMNpM?si=FJvfCccQYIntnAJR\"\n  title=\"YouTube video player\"\n  frameborder=\"0\"\n  allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n  allowfullscreen\n></iframe>",
+      "source_content_hash": "3fe43a39bb2d7343d456682eaf95c25b9bbbfc8bbae22785af9df81d7467a7e5",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6e56e8cf"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/deployment/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.793299+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "77eae14048ab2056d1fde39ac4f2b032e9267a13bdafb6b19a4f34cf7e294ec3"
+  }
+}

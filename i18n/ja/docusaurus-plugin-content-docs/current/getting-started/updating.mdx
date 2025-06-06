@@ -1,0 +1,119 @@
+---
+sidebar_position: 300 
+title: "🔄 Updating Sage WebUI"
+---
+
+## Sage WebUIが更新されないのはなぜですか？
+
+ローカルのDockerインストール済みのSage WebUIを最新バージョンに更新するには、**Watchtower**を使用するか、手動でコンテナを更新します。以下の手順に従って、既存のSage WebUIイメージを更新してください。
+
+### 手動更新
+
+1. **現在のコンテナを停止して削除**:
+
+   実行中のコンテナを停止して削除しますが、Dockerボリュームに保存されたデータは削除されません。（コンテナ名が`sage-open-webui`と異なる場合は、更新プロセス全体で適宜置き換えてください。）
+
+```bash
+docker rm -f sage-open-webui
+```
+
+2. **最新のDockerイメージをプル**:
+
+   Dockerイメージは更新されますが、実行中のコンテナやそのデータは更新されません。
+
+```bash
+docker pull ghcr.io/Startr/AI-WEB-openwebui:main
+```
+
+:::info
+**Dockerボリュームの既存データを削除（絶対に必要な場合以外は非推奨！）**。不要な場合はこの手順をスキップし、最後の手順に進んでください:
+
+   クリーンな状態から始めたい場合は、Dockerボリュームの既存データを削除できます。注意してください。これにより、すべてのチャット履歴やその他のデータが削除されます。
+
+   データは`sage-open-webui`という名前のDockerボリュームに保存されています。以下のコマンドで削除できます:
+
+```bash
+docker volume rm sage-open-webui
+```
+:::
+
+3. **更新されたイメージと既存のボリュームをアタッチしてコンテナを再起動**:
+
+   既存データを削除しなかった場合、更新されたイメージと既存のデータでコンテナが起動します。既存データを削除した場合、更新されたイメージと新しい空のボリュームでコンテナが起動します。**Nvidia GPUサポートの場合は、docker runコマンドに`--gpus all`を追加してください**
+
+```bash
+docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main
+```
+
+## Watchtowerを使用したSage WebUIの自動更新
+
+[Watchtower](https://containrrr.dev/watchtower/)を使用して、Sage WebUIの更新プロセスを自動化できます。以下に3つのオプションを示します:
+
+### オプション1: 1回限りの更新
+
+Watchtowerを1回限りの更新として実行し、現在のコンテナを停止して最新のイメージをプルし、更新されたイメージと既存のボリュームをアタッチして新しいコンテナを起動できます（**Nvidia GPUサポートの場合は、docker runコマンドに`--gpus all`を追加してください**）:
+
+```bash
+docker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-open-webui
+```
+
+### オプション2: 別コンテナとしてWatchtowerを実行
+
+Watchtowerを別のコンテナとして実行し、Sage WebUIコンテナを監視・更新できます:
+
+```bash
+docker run -d --name watchtower \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower -i 300 sage-open-webui
+```
+
+これにより、Watchtowerがデタッチモードで起動し、5分ごとにSage WebUIコンテナの更新を監視します。
+
+### オプション3: `docker-compose.yml`ファイルとWatchtowerの統合
+
+`docker-compose.yml`ファイルにWatchtowerを統合して、Sage WebUIの更新を自動化することもできます（**Nvidia GPUサポートの場合は、docker runコマンドに`--gpus all`を追加してください**）:
+
+```yml
+version: '3'
+services:
+  sage-open-webui:
+    image: ghcr.io/Startr/AI-WEB-openwebui:main
+    ports:
+      - "3000:8080"
+    volumes:
+      - sage-open-webui:/app/backend/data
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 sage-open-webui
+    depends_on:
+      - sage-open-webui
+
+volumes:
+  sage-open-webui:
+```
+
+この例では、Watchtowerが`docker-compose.yml`ファイルに統合され、5分ごとにSage WebUIコンテナの更新を監視します。
+
+## Dockerボリュームの永続データ
+
+データは`sage-open-webui`という名前のDockerボリュームに保存されています。ボリュームへのパスは直接アクセスできませんが、以下のコマンドでボリュームを検査できます:
+
+```bash
+docker volume inspect sage-open-webui
+```
+
+これにより、ボリュームの詳細が表示され、通常は`/var/lib/docker/volumes/sage-open-webui/_data`にあるマウントポイントが確認できます。
+
+Windows 10 + WSL 2では、Dockerボリュームは以下の場所にあります（Windowsファイルエクスプローラーに入力）:
+
+- \\\wsl$\docker-desktop\mnt\docker-desktop-disk\data\docker\volumes
+
+Dockerの古いバージョン（v26.1.4以前）の場合：
+
+- \\\wsl$\docker-desktop-data\data\docker\volumes
+- \\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes
+
+_(Windowsの回答はStackOverflowユーザーsarye-haddadiによるものです; [元のSO投稿へのリンク](https://stackoverflow.com/questions/43181654/locating-data-volumes-in-docker-desktop-windows))_

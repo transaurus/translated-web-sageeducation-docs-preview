@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/chat-features/chat-params.md",
+  "source_file_content_hash": "e955d3f08a5e85a001e8b618ba061150e7861f9cff10fba674a785aca3494768",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 4\ntitle: \"⚙️ Chat Parameters\"\n---",
+      "source_content_hash": "732ad0d2d951749b95bd1fdc17606696a91e43da80c35fc884da16a178ce3a97",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Within Sage WebUI, there are three levels to setting a **System Prompt** and **Advanced Parameters**: per-chat basis, per-model basis, and per-account basis. This hierarchical system allows for flexibility while maintaining structured administration and control.",
+      "source_content_hash": "9a65adb7188fcb6d233a64032e6493ebb187155a5be626c46733d8d47e3d9ff4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでは、**システムプロンプト**と**詳細パラメータ**を設定する3つのレベルがあります：チャットごと、モデルごと、アカウントごとです。この階層構造により、柔軟性を保ちつつ体系的な管理と制御が可能になります。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## System Prompt and Advanced Parameters Hierarchy Chart",
+      "source_content_hash": "8f5403d5782fc6f7bd3a5792e30dd32865b9093ef43f13179d4a8f32279fa167",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## システムプロンプトと詳細パラメータの階層図"
+      }
+    },
+    {
+      "segment_id": "afe418c2",
+      "source_content": "| **Level** | **Definition** | **Modification Permissions** | **Override Capabilities** |\n| --- | --- | --- | --- |\n| **Per-Chat** | System prompt and advanced parameters for a specific chat instance | Users can modify, but cannot override model-specific settings | Restricted from overriding model-specific settings |\n| **Per-Account** | Default system prompt and advanced parameters for a specific user account | Users can set, but may be overridden by model-specific settings | User settings can be overridden by model-specific settings |\n| **Per-Model** | Default system prompt and advanced parameters for a specific model | Administrators can set, Users cannot modify | Admin-specific settings take precedence, User settings can be overridden |",
+      "source_content_hash": "ee9f78feb74f2b01498d2dabc47ab9510f3ceb47fc5b1180ee35cfbc43659785",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_afe418c2"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "### 1. **Per-chat basis:**",
+      "source_content_hash": "026ebdcdee6f4cbfa07e8a83a668d15642f4a2cb965759c705198a8f602ec059",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 1. **チャットごと:**"
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "- **Description**: The per-chat basis setting refers to the system prompt and advanced parameters configured for a specific chat instance. These settings are only applicable to the current conversation and do not affect future chats.\n- **How to set**: Users can modify the system prompt and advanced parameters for a specific chat instance within the right-hand sidebar's **Chat Controls** section in Sage WebUI.\n- **Override capabilities**: Users are restricted from overriding the **System Prompt** or specific **Advanced Parameters** already set by an administrator on a per-model basis (**#2**). This ensures consistency and adherence to model-specific settings.",
+      "source_content_hash": "9657165b009f39ab6174c83a5d46a0bc7eca1fab31c9df098584706e8eb908ed",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: チャットごとの設定は、特定のチャットインスタンスに対して設定されたシステムプロンプトと詳細パラメータを指します。これらの設定は現在の会話にのみ適用され、今後のチャットには影響しません。\n- **設定方法**: ユーザーはSage WebUIの右サイドバーにある**チャットコントロール**セクションで、特定のチャットインスタンスのシステムプロンプトと詳細パラメータを変更できます。\n- **上書き能力**: ユーザーは、管理者がモデルごとに設定した**システムプロンプト**や特定の**詳細パラメータ**（**#2**）を上書きすることはできません。これにより、一貫性が保たれ、モデル固有の設定が遵守されます。"
+      }
+    },
+    {
+      "segment_id": "5dfba1c3",
+      "source_content": "<details>\n<summary>Example Use Case</summary>\n:::tip[**Per-chat basis**:]\nSuppose a user wants to set a custom system prompt for a specific conversation. They can do so by accessing the **Chat Controls** section and modifying the **System Prompt** field. These changes will only apply to the current chat session.\n:::\n</details>",
+      "source_content_hash": "7d1dedf8b14144ce62d94006a0cb8ab1c44ff1dfafc3eac2d8a07add9da3d2bd",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5dfba1c3"
+      }
+    },
+    {
+      "segment_id": "f2f30ae8",
+      "source_content": "### 2. **Per-account basis:**",
+      "source_content_hash": "437928428aa133bb7fd3a92ec978bb1f07857e74b3c784d7d711f9309104879a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 2. **アカウントごと:**"
+      }
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "- **Description**: The per-account basis setting refers to the default system prompt and advanced parameters configured for a specific user account. Any user-specific changes can serve as a fallback in situations where lower-level settings aren't defined.\n- **How to set**: Users can set their own system prompt and advanced parameters for their account within the **General** section of the **Settings** menu in Sage Open WebUI.\n- **Override capabilities**: Users have the ability to set their own system prompt on their account, but they must be aware that such parameters can still be overridden if an administrator has already set the **System Prompt** or specific **Advanced Parameters** on a per-model basis for the particular model being used.",
+      "source_content_hash": "ae658a0fefc8688d0a58748c5304f8e19e8e5b9275c899a677ce6ec4fc1b6079",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: アカウントごとの設定は、特定のユーザーアカウントに対して設定されたデフォルトのシステムプロンプトと詳細パラメータを指します。ユーザー固有の変更は、下位レベルの設定が定義されていない状況でのフォールバックとして機能します。\n- **設定方法**: ユーザーは、Sage Open WebUIの**設定**メニューの**一般**セクションで、自分のアカウントのシステムプロンプトと詳細パラメータを設定できます。\n- **上書き能力**: ユーザーは自分のアカウントでシステムプロンプトを設定できますが、管理者が使用中の特定のモデルに対してモデルごとに**システムプロンプト**や特定の**詳細パラメータ**を設定している場合、それらのパラメータは上書きされる可能性があることに注意する必要があります。"
+      }
+    },
+    {
+      "segment_id": "74d049c6",
+      "source_content": "<details>\n<summary>Example Use Case</summary>\n:::tip[**Per-account basis**:]\nSuppose a user wants to set their own system prompt for their account. They can do so by accessing the **Settings** menu and modifying the **System Prompt** field.\n:::\n</details>",
+      "source_content_hash": "30edf518a5820c0b3b8f8257c97377c2f28c94c87df6ffe711e65546791178b9",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_74d049c6"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "### 3. **Per-model basis:**",
+      "source_content_hash": "f68d4ef90c114763eca3717a26e4d7a0e343eb1386be594f38d9e833bf0cbf49",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 3. **モデルごと:**"
+      }
+    },
+    {
+      "segment_id": "aa83231c",
+      "source_content": "- **Description**: The per-model basis setting refers to the default system prompt and advanced parameters configured for a specific model. These settings are applicable to all chat instances using that model.\n- **How to set**: Administrators can set the default system prompt and advanced parameters for a specific model within the **Models** section of the **Workspace** in Sage WebUI.\n- **Override capabilities**: **User** accounts are restricted from modifying the **System Prompt** or specific **Advanced Parameters** on a per-model basis (**#3**). This restriction prevents users from inappropriately altering default settings.\n- **Context length preservation:** When a model's **System Prompt** or specific **Advanced Parameters** are set manually in the **Workspace** section by an Admin, said **System Prompt** or manually set **Advanced Parameters** cannot be overridden or adjusted on a per-account basis within the **General** settings or **Chat Controls** section by a **User** account. This ensures consistency and prevents excessive reloading of the model whenever a user's context length setting changes.\n- **Model precedence:** If a model's **System Prompt** or specific **Advanced Parameters** value is pre-set in the Workspace section by an Admin, any context length changes made by a **User** account in the **General** settings or **Chat Controls** section will be disregarded, maintaining the pre-configured value for that model. Be advised that parameters left untouched by an **Admin** account can still be manually adjusted by a **User** account on a per-account or per-chat basis.",
+      "source_content_hash": "3390cfcffcb7e394fb82ce88fd746741731bb7c3aadc5e1d29db499e5f63ed6b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: モデルごとの設定は、特定のモデルに対して設定されたデフォルトのシステムプロンプトと詳細パラメータを指します。これらの設定は、そのモデルを使用するすべてのチャットインスタンスに適用されます。\n- **設定方法**: 管理者は、Sage WebUIの**ワークスペース**セクションの**モデル**セクションで、特定のモデルのデフォルトシステムプロンプトと詳細パラメータを設定できます。\n- **上書き能力**: **ユーザー**アカウントは、モデルごとに設定された**システムプロンプト**や特定の**詳細パラメータ**（**#3**）を変更することはできません。この制限により、ユーザーがデフォルト設定を不適切に変更するのを防ぎます。\n- **コンテキスト長の保持:** 管理者が**ワークスペース**セクションでモデルの**システムプロンプト**や特定の**詳細パラメータ**を手動で設定した場合、その**システムプロンプト**や手動で設定された**詳細パラメータ**は、**ユーザー**アカウントが**一般**設定や**チャットコントロール**セクションでアカウントごとに上書きまたは調整することはできません。これにより、一貫性が保たれ、ユーザーのコンテキスト長設定が変更されるたびにモデルが過剰に再読み込みされるのを防ぎます。\n- **モデルの優先順位:** 管理者が**ワークスペース**セクションでモデルの**システムプロンプト**や特定の**詳細パラメータ**の値を事前に設定している場合、**ユーザー**アカウントが**一般**設定や**チャットコントロール**セクションで行ったコンテキスト長の変更は無視され、そのモデルの事前設定された値が維持されます。管理者が変更していないパラメータは、ユーザーアカウントがアカウントごとまたはチャットごとに手動で調整できることに注意してください。"
+      }
+    },
+    {
+      "segment_id": "ece60464",
+      "source_content": "<details>\n<summary>Example Use Case</summary>\n:::tip[**Per-model basis**:]\nSuppose an administrator wants to set a default system prompt for a specific model. They can do so by accessing the **Models** section and modifying the **System Prompt** field for the corresponding model. Any chat instances using this model will automatically use the model's system prompt and advanced parameters.\n:::\n</details>",
+      "source_content_hash": "9c7d577f0059233f999b10d783e9e06a8ceee665e5b6fdfcc03f54c829ae32a3",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ece60464"
+      }
+    },
+    {
+      "segment_id": "1a316f80",
+      "source_content": "## **Optimize System Prompt Settings for Maximum Flexibility**",
+      "source_content_hash": "ab1d4cd73371b89a82128ba7e54f892ce6566b45363b23686ed61543c4fbdaad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## **最大の柔軟性を得るためのシステムプロンプト設定の最適化**"
+      }
+    },
+    {
+      "segment_id": "d82460ed",
+      "source_content": ":::tip[**Bonus Tips**]\n**This tip applies for both administrators and user accounts. To achieve maximum flexibility with your system prompts, we recommend considering the following setup:**\n\n- Assign your primary System Prompt (**i.e., to give an LLM a defining character**) you want to use in your **General** settings **System Prompt** field. This sets it on a per-account level and allows it to work as the system prompt across all your LLMs without requiring adjustments within a model from the **Workspace** section.\n\n- For your secondary System Prompt (**i.e, to give an LLM a task to perform**), choose whether to place it in the **System Prompt** field within the **Chat Controls** sidebar (on a per-chat basis) or the **Models** section of the **Workspace** section (on a per-model basis) for Admins, allowing you to set them directly. This allows your account-level system prompt to work in conjunction with either the per-chat level system prompt provided by **Chat Controls**, or the per-model level system prompt provided by **Models**.\n\n- As an administrator, you should assign your LLM parameters on a per-model basis using **Models** section for optimal flexibility. For both of these secondary System Prompts, ensure to set them in a manner that maximizes flexibility and minimizes required adjustments across different per-account or per-chat instances. It is essential for both your Admin account as well as all User accounts to understand the priority order by which system prompts within **Chat Controls** and the **Models** section will be applied to the **LLM**.\n:::",
+      "source_content_hash": "3a3fd7ba58f40a9aad09a3e7c2da4c60f09806cf741f5154e75cd74e7238050a",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip[**ボーナスティップ**]\n**このヒントは管理者アカウントとユーザーアカウントの両方に適用されます。システムプロンプトを最大限に柔軟に活用するためには、以下の設定を検討することをお勧めします:**\n\n- 主要なシステムプロンプト（**例：LLMに定義的なキャラクターを与える**）は、**一般**設定の**システムプロンプト**フィールドに割り当てます。これにより、アカウントレベルで設定され、**ワークスペース**セクション内のモデルごとの調整を必要とせず、すべてのLLMでシステムプロンプトとして機能します。\n\n- 二次的なシステムプロンプト（**例：LLMに実行させるタスクを与える**）については、**チャットコントロール**サイドバー内の**システムプロンプト**フィールド（チャットごと）または管理者向けの**ワークスペース**セクションの**モデル**セクション内の**システムプロンプト**フィールド（モデルごと）のいずれかに配置するかを選択します。これにより、アカウントレベルのシステムプロンプトが、**チャットコントロール**によって提供されるチャットごとのシステムプロンプト、または**モデル**によって提供されるモデルごとのシステムプロンプトと連携して機能します。\n\n- 管理者として、最適な柔軟性を得るためには、**モデル**セクションを使用してLLMパラメータをモデルごとに割り当てるべきです。これらの二次的なシステムプロンプトについては、異なるアカウントごとやチャットごとのインスタンス間で必要な調整を最小限に抑え、柔軟性を最大化する方法で設定してください。管理者アカウントおよびすべてのユーザーアカウントが、**チャットコントロール**と**モデル**セクション内のシステムプロンプトが**LLM**に適用される優先順位を理解することが重要です。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/chat-features/chat-params.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.792829+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "e955d3f08a5e85a001e8b618ba061150e7861f9cff10fba674a785aca3494768"
+  }
+}

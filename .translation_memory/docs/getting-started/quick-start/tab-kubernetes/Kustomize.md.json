@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-kubernetes/Kustomize.md",
+  "source_file_content_hash": "93d8a64c969031379d7ceed4f842f056c7a0b16ca17676baf369d84c1a8d0938",
+  "segments": [
+    {
+      "segment_id": "d05a127e",
+      "source_content": "# Kustomize Setup for Kubernetes",
+      "source_content_hash": "e825d7e223c1e67df0596f524175ca036e90b6814610ff368bad655c46cb1b76",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Kubernetes向けKustomizeセットアップ"
+      }
+    },
+    {
+      "segment_id": "e9fca2db",
+      "source_content": "Kustomize allows you to customize Kubernetes YAML configurations.",
+      "source_content_hash": "5b34bc73b55b5d39bb2dd120895a78de63bf8a57e79b6a976df6588cb8bcc2bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Kustomizeを使用すると、KubernetesのYAML設定をカスタマイズできます。"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Prerequisites",
+      "source_content_hash": "bbd3d4949a6f237efd8d4ff5c7c5f30d968e7a989ad12f3d7dcef69c98053912",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 前提条件"
+      }
+    },
+    {
+      "segment_id": "df80d009",
+      "source_content": "- Kubernetes cluster is set up.\n- Kustomize is installed.",
+      "source_content_hash": "ddab5bd8e06b34f3f172cf4b983cafbf2e2b4052b69f00ceba39edbeaebe5883",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Kubernetesクラスターがセットアップされていること\n- Kustomizeがインストールされていること"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "## Steps",
+      "source_content_hash": "04e379c6932bff1c589362d6982930b2c138dcfe9fe69c56c9c028b070168dc3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 手順"
+      }
+    },
+    {
+      "segment_id": "730c423c",
+      "source_content": "1. **Clone the Sage WebUI Manifests:**\n\n   ```bash\n   git clone https://github.com/Startr/k8s-manifests.git\n   cd k8s-manifests\n   ```\n\n2. **Apply the Manifests:**\n\n   ```bash\n   kubectl apply -k .\n   ```\n\n3. **Verify Installation:**\n\n   ```bash\n   kubectl get pods\n   ```",
+      "source_content_hash": "af2b17df5840580ec7f3791a39c7e650be0f6ab80890352cbf69ce654a19dfe5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Sage WebUIマニフェストのクローン:**\n\n   ```bash\n   git clone https://github.com/Startr/k8s-manifests.git\n   cd k8s-manifests\n   ```\n\n2. **マニフェストの適用:**\n\n   ```bash\n   kubectl apply -k .\n   ```\n\n3. **インストールの確認:**\n\n   ```bash\n   kubectl get pods\n   ```"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Access the WebUI",
+      "source_content_hash": "41fba61efb55c95726a70583c38977a6a3b70f2c6f7e5e060bc073e18972bfe5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## WebUIへのアクセス"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Set up port forwarding or load balancing to access Sage WebUI from outside the cluster.",
+      "source_content_hash": "db668a7c2ca42ce3ee8791d6e910ef285eb10b0d0ae072240295442a3a9f8acc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "クラスター外部からSage WebUIにアクセスするには、ポートフォワーディングまたはロードバランシングを設定してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-kubernetes/Kustomize.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.786481+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "93d8a64c969031379d7ceed4f842f056c7a0b16ca17676baf369d84c1a8d0938"
+  }
+}

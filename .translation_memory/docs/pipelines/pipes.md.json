@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/pipelines/pipes.md",
+  "source_file_content_hash": "396460c0656bdf0b8f372432855299e2d2882beda723644d06ae62b55b361761",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"🔧 Pipes\"\n---",
+      "source_content_hash": "2622ac4f9b9f182e991e258de7bfbfc40876e7729f19521e736547e1b45687c7",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Pipes",
+      "source_content_hash": "ca9d80279612443f57871934cde1bec58ebe01a62f0f0c82678f4166e6548c3a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# パイプ"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Pipes are functions that can be used to perform actions prior to returning LLM messages to the user. Examples of potential actions you can take with Pipes are Retrieval Augmented Generation (RAG), sending requests to non-OpenAI LLM providers (such as Anthropic, Azure OpenAI, or Google), or executing functions right in your web UI. Pipes can be hosted as a Function or on a Pipelines server. A list of examples is maintained in the [Pipelines repo](https://github.com/Startr/pipelines/tree/main/examples/pipelines). The general workflow can be seen in the image below.",
+      "source_content_hash": "25ea2d6eb501511f96daf40b2b034299bc6052be8a69e9597ad0506e2c16b403",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "パイプは、LLMのメッセージをユーザーに返す前に実行できる関数です。パイプで実行可能なアクションの例としては、Retrieval Augmented Generation（RAG）の実行、AnthropicやAzure OpenAI、Googleなどの非OpenAI LLMプロバイダーへのリクエスト送信、Web UI内での関数実行などがあります。パイプはFunctionとして、またはPipelinesサーバー上でホストできます。使用例の一覧は[Pipelinesリポジトリ](https://github.com/Startr/pipelines/tree/main/examples/pipelines)で管理されています。一般的なワークフローは下記の画像で確認できます。"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<p align=\"center\">\n  <a href=\"#\">\n    <img src=\"/images/pipelines/pipes.png\" alt=\"Pipe Workflow\" />\n  </a>\n</p>",
+      "source_content_hash": "67e2562ae2d7806a7cacbe91096d25dc4d55b4fabf117efd2059216ea73b7c93",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Pipes that are defined in your WebUI show up as a new model with an \"External\" designation attached to them. An example of two Pipe models, `Database RAG Pipeline` and `DOOM`, can be seen below next to two  models:",
+      "source_content_hash": "15900a1981dc9b0cfe36b5b19eabeb55db06bb45a07570f66e70d84eceb78c43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "WebUIで定義されたパイプは、「External」の指定が付いた新しいモデルとして表示されます。2つのパイプモデル（`Database RAG Pipeline`と`DOOM`）の例を、以下の2つのモデルの横に示します："
+      }
+    },
+    {
+      "segment_id": "514644bf",
+      "source_content": "<p align=\"center\">\n  <a href=\"#\">\n    <img src=\"/images/pipelines/pipe-model-example.png\" alt=\"Pipe Models in WebUI\" />\n  </a>\n</p>",
+      "source_content_hash": "5b3200207e7c6cfe28a96daf0d25718eef3ab411f8df318569403ef9b5fc6334",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_514644bf"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/pipelines/pipes.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.788757+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "396460c0656bdf0b8f372432855299e2d2882beda723644d06ae62b55b361761"
+  }
+}

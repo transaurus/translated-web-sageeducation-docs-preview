@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/tab-nginx/LetsEncrypt.md",
+  "source_file_content_hash": "57f64936d4777d6e586cc79fc065cac71b80039873bcd1711930537c8a4a4546",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "### Let's Encrypt",
+      "source_content_hash": "cb310b88174725694cf1bf714db8ced34da19b96e3466d51adef18bc1d42e485",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Let's Encrypt"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Let's Encrypt provides free SSL certificates trusted by most browsers, ideal for production environments.",
+      "source_content_hash": "1d9aa9c6f537b2b64875678cf693de048fe2875cea36de26f00241250e0cb262",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Let's Encryptは、ほとんどのブラウザで信頼されている無料のSSL証明書を提供し、本番環境に最適です。"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "#### Prerequisites",
+      "source_content_hash": "609f5a9f69c28db75ad093960816b14e7e64050e65b2f0306423715a76ee070d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 前提条件"
+      }
+    },
+    {
+      "segment_id": "57e757df",
+      "source_content": "- **Certbot** installed on your system.\n- DNS records properly configured to point to your server.",
+      "source_content_hash": "0a7fa45fc806fb7989bbb17f9ba24fc28ce51a2c10510bf898803d14143cd191",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- システムに**Certbot**がインストールされていること。\n- DNSレコードがサーバーを指すように正しく設定されていること。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "#### Steps",
+      "source_content_hash": "87b609fce6949179ad7a083ee3c9f276d741a4dfc3885550de7cb02efaf750ce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 手順"
+      }
+    },
+    {
+      "segment_id": "143e51c1",
+      "source_content": "1. **Create Directories for Nginx Files:**\n\n    ```bash\n    mkdir -p conf.d ssl\n    ```\n\n2. **Create Nginx Configuration File:**\n\n    **`conf.d/sage-open-webui.conf`:**\n\n    ```nginx\n    server {\n        listen 80;\n        server_name your_domain_or_IP;\n\n        location / {\n            proxy_pass http://host.docker.internal:3000;\n    \n            # Add WebSocket support (Necessary for version 0.5.0 and up)\n            proxy_http_version 1.1;\n            proxy_set_header Upgrade $http_upgrade;\n            proxy_set_header Connection \"upgrade\";\n\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n\n            # (Optional) Disable proxy buffering for better streaming response from models\n            proxy_buffering off;\n        }\n    }\n    ```\n\n3. **Simplified Let's Encrypt Script:**\n\n    **`enable_letsencrypt.sh`:**\n\n    ```bash\n    #!/bin/bash\n\n    # Description: Simplified script to obtain and install Let's Encrypt SSL certificates using Certbot.\n\n    DOMAIN=\"your_domain_or_IP\"\n    EMAIL=\"your_email@example.com\"\n\n    # Install Certbot if not installed\n    if ! command -v certbot &> /dev/null; then\n        echo \"Certbot not found. Installing...\"\n        sudo apt-get update\n        sudo apt-get install -y certbot python3-certbot-nginx\n    fi\n\n    # Obtain SSL certificate\n    sudo certbot --nginx -d \"$DOMAIN\" --non-interactive --agree-tos -m \"$EMAIL\"\n\n    # Reload Nginx to apply changes\n    sudo systemctl reload nginx\n\n    echo \"Let's Encrypt SSL certificate has been installed and Nginx reloaded.\"\n    ```\n\n    **Make the script executable:**\n\n    ```bash\n    chmod +x enable_letsencrypt.sh\n    ```\n\n4. **Update Docker Compose Configuration:**\n\n    Add the Nginx service to your `docker-compose.yml`:\n\n    ```yaml\n    services:\n      nginx:\n        image: nginx:alpine\n        ports:\n          - \"80:80\"\n          - \"443:443\"\n        volumes:\n          - ./conf.d:/etc/nginx/conf.d\n          - ./ssl:/etc/nginx/ssl\n        depends_on:\n          - sage-open-webui\n    ```\n\n5. **Start Nginx Service:**\n\n    ```bash\n    docker compose up -d nginx\n    ```\n\n6. **Run the Let's Encrypt Script:**\n\n    Execute the script to obtain and install the SSL certificate:\n\n    ```bash\n    ./enable_letsencrypt.sh\n    ```",
+      "source_content_hash": "93a62679d26cfbc12996a0647afacc675f0ac518e27838bed778c0c38cbc8b82",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Nginxファイル用のディレクトリを作成:**\n\n    ```bash\n    mkdir -p conf.d ssl\n    ```\n\n2. **Nginx設定ファイルを作成:**\n\n    **`conf.d/sage-open-webui.conf`:**\n\n    ```nginx\n    server {\n        listen 80;\n        server_name your_domain_or_IP;\n\n        location / {\n            proxy_pass http://host.docker.internal:3000;\n    \n            # WebSocketサポートを追加（バージョン0.5.0以降で必要）\n            proxy_http_version 1.1;\n            proxy_set_header Upgrade $http_upgrade;\n            proxy_set_header Connection \"upgrade\";\n\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n\n            # （オプション）モデルからのストリーミングレスポンスを向上させるためプロキシバッファリングを無効化\n            proxy_buffering off;\n        }\n    }\n    ```\n\n3. **Let's Encryptスクリプトの簡易版:**\n\n    **`enable_letsencrypt.sh`:**\n\n    ```bash\n    #!/bin/bash\n\n    # 説明: Certbotを使用してLet's Encrypt SSL証明書を取得・インストールする簡易スクリプト。\n\n    DOMAIN=\"your_domain_or_IP\"\n    EMAIL=\"your_email@example.com\"\n\n    # Certbotがインストールされていない場合にインストール\n    if ! command -v certbot &> /dev/null; then\n        echo \"Certbotが見つかりません。インストール中...\"\n        sudo apt-get update\n        sudo apt-get install -y certbot python3-certbot-nginx\n    fi\n\n    # SSL証明書を取得\n    sudo certbot --nginx -d \"$DOMAIN\" --non-interactive --agree-tos -m \"$EMAIL\"\n\n    # 変更を適用するためNginxをリロード\n    sudo systemctl reload nginx\n\n    echo \"Let's Encrypt SSL証明書がインストールされ、Nginxがリロードされました。\"\n    ```\n\n    **スクリプトを実行可能にする:**\n\n    ```bash\n    chmod +x enable_letsencrypt.sh\n    ```\n\n4. **Docker Compose設定を更新:**\n\n    `docker-compose.yml`にNginxサービスを追加:\n\n    ```yaml\n    services:\n      nginx:\n        image: nginx:alpine\n        ports:\n          - \"80:80\"\n          - \"443:443\"\n        volumes:\n          - ./conf.d:/etc/nginx/conf.d\n          - ./ssl:/etc/nginx/ssl\n        depends_on:\n          - sage-open-webui\n    ```\n\n5. **Nginxサービスを起動:**\n\n    ```bash\n    docker compose up -d nginx\n    ```\n\n6. **Let's Encryptスクリプトを実行:**\n\n    SSL証明書を取得・インストールするためスクリプトを実行:\n\n    ```bash\n    ./enable_letsencrypt.sh\n    ```"
+      }
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "#### Access the WebUI",
+      "source_content_hash": "6f857a0a428623bcea96fe362ae2c527db07b23646165a135cc41427a8c0ce12",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### WebUIへのアクセス"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "Access Sage WebUI via HTTPS at:",
+      "source_content_hash": "7eb7289744caeaa2cdbcfd27de8f1a58fd09cc3d614d92e74fa7eb4d82319db8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIにはHTTPSでアクセス:"
+      }
+    },
+    {
+      "segment_id": "d21af28f",
+      "source_content": "[https://your_domain_or_IP](https://your_domain_or_IP)",
+      "source_content_hash": "245225bab02948e00aa8cfe093ff45ba7dd7e0bf3afa185d4c4d37dc1f01c71f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[https://your_domain_or_IP](https://your_domain_or_IP)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/tab-nginx/LetsEncrypt.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.802164+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "57f64936d4777d6e586cc79fc065cac71b80039873bcd1711930537c8a4a4546"
+  }
+}

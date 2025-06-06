@@ -1,0 +1,262 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/rag.md",
+  "source_file_content_hash": "47a81862d65b774eab8139d789d0649b6577c198aaee18f6f1c165da966e8fe2",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 11\ntitle: \"🔎 Retrieval Augmented Generation (RAG)\"\n---",
+      "source_content_hash": "d269a7606cd707f9b4cd996c815993873ad223e52fd5930103034cce83bf1764",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Retrieval Augmented Generation (RAG) is a cutting-edge technology that enhances the conversational capabilities of chatbots by incorporating context from diverse sources. It works by retrieving relevant information from a wide range of sources such as local and remote documents, web content, and even multimedia sources like YouTube videos. The retrieved text is then combined with a predefined RAG template and prefixed to the user's prompt, providing a more informed and contextually relevant response.",
+      "source_content_hash": "f933cb729d8a34791799f32b5261f409a70c0ba63b9e171353f51c5c5f40b896",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Retrieval Augmented Generation（RAG）は、多様なソースからのコンテキストを組み込むことでチャットボットの会話能力を強化する最先端技術です。ローカルおよびリモートのドキュメント、ウェブコンテンツ、YouTube動画などのマルチメディアソースから関連情報を取得し、取得したテキストを事前定義されたRAGテンプレートと組み合わせてユーザーのプロンプトに付加することで、より情報豊かで文脈に即した応答を可能にします。"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "One of the key advantages of RAG is its ability to access and integrate information from a variety of sources, making it an ideal solution for complex conversational scenarios. For instance, when a user asks a question related to a specific document or web page, RAG can retrieve and incorporate the relevant information from that source into the chat response. RAG can also retrieve and incorporate information from multimedia sources like YouTube videos. By analyzing the transcripts or captions of these videos, RAG can extract relevant information and incorporate it into the chat response.",
+      "source_content_hash": "b0af536d967039b076a0429a0fc3d3ff6117962406eaccd6feea10c42b26c29b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RAGの主な利点は、様々なソースから情報にアクセスして統合できることであり、複雑な会話シナリオに最適なソリューションです。例えば、ユーザーが特定のドキュメントやウェブページに関連する質問をした場合、RAGはそのソースから関連情報を取得してチャット応答に組み込むことができます。また、YouTube動画などのマルチメディアソースからも情報を取得可能で、動画の字幕やトランスクリプトを分析して関連情報を抽出し、チャット応答に活用します。"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Local and Remote RAG Integration",
+      "source_content_hash": "e1f83677572b4d978dea91dd92093d533ce3db10cd0e3850be0a4ba670c546ac",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ローカルおよびリモートRAG連携"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Local documents must first be uploaded via the Documents section of the Workspace area to access them using the `#` symbol before a query. Click on the formatted URL in the that appears above the chat box. Once selected, a document icon appears above `Send a message`, indicating successful retrieval.",
+      "source_content_hash": "5d5bf86e9be53bd514d8d9e5c54b01ad7813111e10f6632805c1f1cfc5c9bc43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ローカルドキュメントを利用するには、まずワークスペースエリアの「Documents」セクションからアップロードする必要があります。クエリの前に`#`記号を使用してアクセス可能です。チャットボックスの上に表示されるフォーマット済みURLをクリックしてください。選択が成功すると、「Send a message」の上にドキュメントアイコンが表示されます。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "You can also load documents into the workspace area with their access by starting a prompt with `#`, followed by a URL. This can help incorporate web content directly into your conversations.",
+      "source_content_hash": "bac7c3aaea972845b85c9cd74af6fb106f0e3735f1dde04371a893fa01fa372a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`#`で始まるプロンプトの後にURLを続けることで、ワークスペースエリアにドキュメントを直接読み込むこともできます。これによりウェブコンテンツを会話に直接組み込むことが可能です。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Web Search for RAG",
+      "source_content_hash": "b32db23d56d434c3c5f29f7901258753f62db7afaeebec27895fc9031e51333b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## RAG向けウェブ検索"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "For web content integration, start a query in a chat with `#`, followed by the target URL. Click on the formatted URL in the box that appears above the chat box. Once selected, a document icon appears above `Send a message`, indicating successful retrieval. Sage WebUI fetches and parses information from the URL if it can.",
+      "source_content_hash": "a0f3802cb78ef4c6aa227080df850f96c277b83e112451dfbb2381d7f34f7ffb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ウェブコンテンツを統合するには、チャットで`#`で始まるクエリの後にターゲットURLを入力します。チャットボックスの上に表示されるボックス内のフォーマット済みURLをクリックしてください。選択が成功すると、「Send a message」の上にドキュメントアイコンが表示されます。Sage WebUIは可能な限りURLから情報を取得して解析します。"
+      }
+    },
+    {
+      "segment_id": "80e6256a",
+      "source_content": ":::tip\nWeb pages often contain extraneous information such as navigation and footer. For better results, link to a raw or reader-friendly version of the page.\n:::",
+      "source_content_hash": "d2a6e5430fbd08902b2572f610b15390bde0a8cc4140f69a9acc15f8a132babf",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\nウェブページにはナビゲーションやフッターなどの余分な情報が含まれることが多いです。より良い結果を得るには、生のコンテンツまたはリーダーフレンドリーなバージョンのページにリンクしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "95b38f97",
+      "source_content": "## RAG Template Customization",
+      "source_content_hash": "695d00e12b4fb5878fc3e0e2ab6f4dfff27abc6e5f87fb5263c1e6b1416b32cf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## RAGテンプレートのカスタマイズ"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "Customize the RAG template from the `Admin Panel` > `Settings` > `Documents` menu.",
+      "source_content_hash": "7696127ee5ccd392bfa51a38cdf9d740dce394c10d8949ff5dd2ca942cd41be1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RAGテンプレートは「Admin Panel」＞「Settings」＞「Documents」メニューからカスタマイズできます。"
+      }
+    },
+    {
+      "segment_id": "3c36424c",
+      "source_content": "## RAG Embedding Support",
+      "source_content_hash": "f7420fc2af3f92dee775528620e9079fea05fdda5ed3c2904f4a570fd1cbbba8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## RAGエンベディングのサポート"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Change the RAG embedding model directly in the `Admin Panel` > `Settings` > `Documents` menu. This feature supports Ollama and OpenAI models, enabling you to enhance document processing according to your requirements.",
+      "source_content_hash": "4764b322bd757bf10809966e2a82d1cd8d433c037d02ba60681c15e4b9af2eb2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RAGエンベディングモデルは「Admin Panel」＞「Settings」＞「Documents」メニューから直接変更可能です。この機能はOllamaとOpenAIモデルをサポートしており、要件に応じたドキュメント処理の強化が可能です。"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "## Citations in RAG Feature",
+      "source_content_hash": "831a36893fec71eb1c1941c26a93b3b3e7586e572a76f7f9a1f3f016442de007",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## RAG機能の引用機能"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "The RAG feature allows users to easily track the context of documents fed to LLMs with added citations for reference points. This ensures transparency and accountability in the use of external sources within your chats.",
+      "source_content_hash": "fcf0740fba8ab23e3311ea45bdb80ba81dca70c6e1b69b2e89766629d096df4e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RAG機能では、LLMに渡されたドキュメントのコンテキストを簡単に追跡できる引用機能が利用可能です。これによりチャット内での外部ソース利用の透明性と説明責任が確保されます。"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## Enhanced RAG Pipeline",
+      "source_content_hash": "729e73d779eb4a6f2066a9acbd63a660b4c44f392fe74b04285b0624d0129447",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 強化されたRAGパイプライン"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "The togglable hybrid search sub-feature for our RAG embedding feature enhances RAG functionality via `BM25`, with re-ranking powered by `CrossEncoder`, and configurable relevance score thresholds. This provides a more precise and tailored RAG experience for your specific use case.",
+      "source_content_hash": "c300e775f8cf865e3b08af4bcb97a06b31f1e23a0d62b855d73d242b9b830cfc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "RAGエンベディング機能の切り替え可能なハイブリッド検索サブ機能は、`BM25`による検索と`CrossEncoder`による再ランキング、設定可能な関連性スコア閾値により、RAG機能を強化します。これにより特定のユースケースに合わせたより精密なRAG体験が可能になります。"
+      }
+    },
+    {
+      "segment_id": "782c902a",
+      "source_content": "## YouTube RAG Pipeline",
+      "source_content_hash": "4923883bb170c6b657f50f8449c655793becd27a9551342acd8a9571d595912a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## YouTube向けRAGパイプライン"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "The dedicated RAG pipeline for summarizing YouTube videos via video URLs enables smooth interaction with video transcriptions directly. This innovative feature allows you to incorporate video content into your chats, further enriching your conversation experience.",
+      "source_content_hash": "079949f63a22071b736bedd83882d45dd2bba94bd120af3c42f08bc26288828d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "動画URL経由でYouTube動画を要約する専用RAGパイプラインにより、動画トランスクリプションとのスムーズな連携が可能です。この革新的な機能により、動画コンテンツをチャットに組み込むことができ、会話体験をさらに豊かにします。"
+      }
+    },
+    {
+      "segment_id": "54268405",
+      "source_content": "## Document Parsing",
+      "source_content_hash": "193a041b558bb121ea052e60b11a8f7d3d6275b1744feac4d48650bc4c43cc0d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ドキュメント解析"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "A variety of parsers extract content from local and remote documents. For more, see the [`get_loader`](https://github.com/Startr/AI-WEB-openwebui/blob/2fa94956f4e500bf5c42263124c758d8613ee05e/backend/apps/rag/main.py#L328) function.",
+      "source_content_hash": "8cbc0f2796d5d93a285193a8a13ff6cbdee698cc6f5d496c09d0ef69e1c081b7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ローカルおよびリモートドキュメントからコンテンツを抽出する様々なパーサーが利用可能です。詳細は[`get_loader`](https://github.com/Startr/AI-WEB-openwebui/blob/2fa94956f4e500bf5c42263124c758d8613ee05e/backend/apps/rag/main.py#L328)関数を参照してください。"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "## Google Drive Integration",
+      "source_content_hash": "1aa641aba212a5e0625a513fc6ef5ea401b7f8d6859f5b4b7a93505814863904",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Google Drive連携"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "When paired with a Google Cloud project that has the Google Picker API and Google Drive API enabled, this feature allows users to directly access their Drive files from the chat interface and upload documents, slides, sheets and more and uploads them as context to your chat. Can be enabled `Admin Panel` > `Settings` > `Documents` menu. Must set [`GOOGLE_DRIVE_API_KEY and GOOGLE_DRIVE_CLIENT_ID`](https://github.com/Startr/WEB-Sage.Education-docs/blob/main/docs/getting-started/env-configuration.md) environment variables to use.",
+      "source_content_hash": "5135ef328920cada3198152605bb2fcaa0cf25ce648c65d7074896bda7c553fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Google Picker APIとGoogle Drive APIが有効化されたGoogle Cloudプロジェクトと連携することで、この機能によりユーザーはチャットインターフェースから直接Driveファイルにアクセスし、ドキュメント、スライド、スプレッドシートなどをアップロードしてチャットのコンテキストとして利用できます。`管理パネル` > `設定` > `ドキュメント`メニューから有効化可能です。使用するには[`GOOGLE_DRIVE_API_KEY`と`GOOGLE_DRIVE_CLIENT_ID`](https://github.com/Startr/WEB-Sage.Education-docs/blob/main/docs/getting-started/env-configuration.md)環境変数の設定が必要です。"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "### Detailed Instructions",
+      "source_content_hash": "ff4513b0e985e6d704f72114166183c8f31eae4f6e8c02706788446deceb67af",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 詳細な手順"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "1. Create an OAuth 2.0 client and configure both the Authorized JavaScript origins & Authorized redirect URI to be the URL (include the port if any) you use to access your sage-open-webui instance.\n1. Make a note of the Client ID associated with that OAuth client.\n1. Make sure that you enable both Google Drive API and Google Picker API for your project.\n1. Also set your app (project) as Testing and add your Google Drive email to the User List\n1. Set the permission scope to include everything those APIs have to offer. And because the app would be in Testing mode, no verification is required by Google to allow the app from accessing the data of the limited test users.\n1. Go to the Google Picker API page, and click on the create credentials button.\n1. Create an API key and under Application restrictions and choose Websites. Then add your sage-open-webui instance's URL, same as the Authorized JavaScript origins and Authorized redirect URIs settings in the step 1.\n1. Set up API restrictions on the API Key to only have access to Google Drive API & Google Picker API\n1. Set up the environment variable, `GOOGLE_DRIVE_CLIENT_ID` to the Client ID of the OAuth client from step 2.\n1. Set up the environment variable `GOOGLE_DRIVE_API_KEY` to the API Key value setup up in step 7 (NOT the OAuth client secret from step 2).\n1. Set up the `GOOGLE_REDIRECT_URI` to my sage-open-webui instance's URL (include the port, if any).\n1. Then relaunch your sage-open-webui instance with those three environment variables.\n1. After that, make sure Google Drive was enabled under `Admin Panel` < `Settings` < `Documents` < `Google Drive`",
+      "source_content_hash": "458dcb13789b20a7b3686d67428d3404c97a8f0181cd0e4d492a95957afd66c7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. OAuth 2.0クライアントを作成し、「承認済みのJavaScript生成元」と「承認済みのリダイレクトURI」の両方をsage-open-webuiインスタンスにアクセスするURL（ポートがある場合は含める）に設定します。\n1. そのOAuthクライアントに関連付けられたクライアントIDをメモします。\n1. プロジェクトに対してGoogle Drive APIとGoogle Picker APIの両方を有効化していることを確認します。\n1. アプリ（プロジェクト）を「テスト中」に設定し、Google Driveのメールアドレスを「ユーザーリスト」に追加します。\n1. 権限スコープにそれらのAPIが提供するすべての機能を含めるように設定します。アプリが「テスト中」モードであるため、限定されたテストユーザーのデータにアクセスするためにGoogleによる検証は不要です。\n1. Google Picker APIのページに移動し、「認証情報を作成」ボタンをクリックします。\n1. APIキーを作成し、「アプリケーションの制限」で「ウェブサイト」を選択します。ステップ1で設定した「承認済みのJavaScript生成元」と「承認済みのリダイレクトURI」と同じURLをsage-open-webuiインスタンスのURLとして追加します。\n1. APIキーに設定するAPI制限で、Google Drive APIとGoogle Picker APIのみにアクセスを制限します。\n1. 環境変数`GOOGLE_DRIVE_CLIENT_ID`をステップ2のOAuthクライアントのクライアントIDに設定します。\n1. 環境変数`GOOGLE_DRIVE_API_KEY`をステップ7で設定したAPIキーの値に設定します（ステップ2のOAuthクライアントシークレットではありません）。\n1. `GOOGLE_REDIRECT_URI`をsage-open-webuiインスタンスのURL（ポートがある場合は含める）に設定します。\n1. その後、これら3つの環境変数を設定してsage-open-webuiインスタンスを再起動します。\n1. 最後に、`管理パネル` < `設定` < `ドキュメント` < `Google Drive`でGoogle Driveが有効化されていることを確認します。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/rag.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.800105+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "47a81862d65b774eab8139d789d0649b6577c198aaee18f6f1c165da966e8fe2"
+  }
+}

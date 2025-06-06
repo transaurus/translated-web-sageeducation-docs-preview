@@ -1,0 +1,242 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/roadmap.mdx",
+  "source_file_content_hash": "92c68cbaf36d8f4d7326d2a2484c4241eebde2dc98dd260e9cf5ebd6a1f68499",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1400\ntitle: \"🛣️ Roadmap\"\n---",
+      "source_content_hash": "3daccfd7bc220f461f9777006de28610033369826581c0f0ccd995d10d46c699",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "37387e33",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_37387e33"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "At Sage WebUI, we're committed to continually enhancing our platform to provide the best experience for our users. Below, you'll find the structured roadmap for our ongoing and future developments, categorized into Interface, Information Retrieval, and Community.",
+      "source_content_hash": "546e246eed147ace4b7cc870399e23aa980e6e8237831a9bfd4d3c87dcbcd21a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでは、ユーザーに最高の体験を提供するため、プラットフォームの継続的な改善に取り組んでいます。以下に、インターフェース、情報検索、コミュニティのカテゴリに分けた、現在進行中および将来の開発計画を示します。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Interface 🖥️",
+      "source_content_hash": "a9e6dbfa2d44107c0d30aa53539f9926ec362702421c8e066e79134adcaf980a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## インターフェース 🖥️"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Our roadmap for interface innovations aims to create a highly intuitive and accessible platform. These will not only improves user satisfaction but also enhance productivity by reducing the cognitive load on users.",
+      "source_content_hash": "eac0a45715fb92ed446022a82ea61e8a2647f9ccb12ff73e74dea6245c7b27c2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インターフェース革新のロードマップでは、非常に直感的でアクセスしやすいプラットフォームの構築を目指しています。これにより、ユーザー満足度が向上するだけでなく、ユーザーの認知負荷を軽減することで生産性も向上します。"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "- 🔗 **ReACT Tool Calling Support**: The platform will implement ReACT (Reasoning + Acting) for on-the-fly tool function calling, enabling models to dynamically interact with external tools in real-time during conversations. This advanced capability will make workflows more interactive and efficient, streamlining problem-solving within the ecosystem.  \n\n- 📜 **MCP (Model Context Protocol) Tools Support**: Introducing support for the MCP framework to establish seamless communication and context tracking across interconnected AI systems and modules. This ensures that context is preserved, workflows are maintained, and tools function cohesively, reducing the need for manual intervention or reinitialization.  \n\n- 📦 **Packaged Single Binary Executable**: Simplifying deployment and ensuring compatibility across different platforms, we aim to offer our interface as a single binary executable. This approach will facilitate effortless installation and updates, significantly enhancing usability for all users, especially those with limited technical expertise.\n\n- 👤 **User Page**: A personal User Page feature where users can create posts. The functionality will also include features like followers, likes, and comments. This allows users to effectively share their model configurations, prompts, and files with a broader community, creating a richer, more connected ecosystem around the platform.\n\n- 📝 **AI Powered Notes**: Inspired by tools like Notion and Obsidian, we plan to introduce a robust note-taking feature that includes AI integration. From simple note-taking to full-fledged document creation, this tool will offer a seamless experience, all locally integrated within the platform.\n\n- 📈 **Advanced User Tracking and Cost Management Tools**: Users will gain access to comprehensive tools designed for tracking application performance and user activities, as well as managing costs effectively. These tools will empower users with the data they need to make informed decisions, improve user experiences, and maintain budget control, optimizing the use of resources across their AI applications.\n\n- 🧠 **AI Workflow Tool**: A node-based tool to orchestrate and compose multiple aspects of AI systems. This tool will allow users to visually connect different AI modules and services, creating complex workflows with ease. It's designed to empower users to harness the full potential of AI without needing deep technical knowledge in AI programming.\n\n- 🔊 **Local Text-to-Speech Integration**: This feature will allow natural language processing to convert text into lifelike spoken audio, thus making the platform more accessible, especially for visually impaired users. This integration helps in consuming information without screen interaction, facilitating multitasking and improving user engagement.\n\n- 📣 **Wakeword Detection**: Incorporating hands-free operation through voice commands will not only enhance accessibility but also align with emerging trends in IoT and smart environments, making our platform future-ready.\n\n- 💻 **Better Code Execution**: Enhancing coding functionalities within the platform supports a broad range of development activities, making it a one-stop solution for developers, thereby attracting a wider tech audience and fostering a robust developer community.\n\n- 🤖 **Code Interpreter Function**: A flexible code interpreter embedded into the platform can support multiple programming languages, which reduces the dependency on external tools and streamlines the development process, increasing efficiency.\n\n- 🔧 **Streamlined Fine-tune Support**: Sage WebUI will offer a seamless fine-tuning process by allowing users to automatically build a fine-tune dataset simply by using the interface and rating the responses. We will provide Python notebooks to help preprocess your dataset, making it ready for fine-tuning directly from the notebook. This approach will be super simple and elegantly integrates fine-tuning into user workflows.",
+      "source_content_hash": "c2186287d696f84e87951d530ce68bd225b0c69799672c7e5637f95216324519",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🔗 **ReACTツール呼び出しサポート**: プラットフォームはReACT（Reasoning + Acting）を実装し、会話中に外部ツールと動的に対話できるようにします。この高度な機能により、ワークフローがよりインタラクティブで効率的になり、エコシステム内での問題解決がスムーズになります。  \n\n- 📜 **MCP（Model Context Protocol）ツールサポート**: MCPフレームワークのサポートを導入し、相互接続されたAIシステムやモジュール間でのシームレスな通信とコンテキスト追跡を確立します。これにより、コンテキストが保持され、ワークフローが維持され、ツールが一貫して機能するため、手動介入や再初期化の必要性が減少します。  \n\n- 📦 **パッケージ化された単一バイナリ実行ファイル**: 展開を簡素化し、さまざまなプラットフォーム間での互換性を確保するため、インターフェースを単一のバイナリ実行ファイルとして提供することを目指しています。このアプローチにより、特に技術的な専門知識が限られているユーザーにとって、インストールと更新が容易になります。  \n\n- 👤 **ユーザーページ**: ユーザーが投稿を作成できる個人用ユーザーページ機能。フォロワー、いいね、コメントなどの機能も含まれます。これにより、ユーザーはモデル設定、プロンプト、ファイルを広いコミュニティと効果的に共有でき、プラットフォーム周辺のより豊かでつながりの深いエコシステムが形成されます。  \n\n- 📝 **AI搭載ノート**: NotionやObsidianのようなツールにヒントを得て、AI統合を含む堅牢なノート機能を導入予定です。簡単なメモ取りから本格的なドキュメント作成まで、プラットフォーム内でシームレスに利用できるツールを提供します。  \n\n- 📈 **高度なユーザー追跡とコスト管理ツール**: アプリケーションのパフォーマンスやユーザー活動を追跡し、コストを効果的に管理するための包括的なツールをユーザーが利用できるようになります。これらのツールにより、ユーザーは情報に基づいた意思決定を行い、ユーザー体験を向上させ、予算管理を維持しながらAIアプリケーション全体でのリソース使用を最適化できます。  \n\n- 🧠 **AIワークフローツール**: 複数のAIシステムの側面をオーケストレーションおよび構成するノードベースのツール。このツールにより、ユーザーはさまざまなAIモジュールやサービスを視覚的に接続し、複雑なワークフローを簡単に作成できます。AIプログラミングの深い技術的知識がなくても、AIの全潜在能力を活用できるように設計されています。  \n\n- 🔊 **ローカルテキスト読み上げ統合**: 自然言語処理により、テキストをリアルな音声に変換する機能。これにより、特に視覚障害のあるユーザーにとってプラットフォームがよりアクセスしやすくなります。画面操作なしで情報を消費できるため、マルチタスクが容易になり、ユーザーエンゲージメントが向上します。  \n\n- 📣 **ウェイクワード検出**: 音声コマンドによるハンズフリー操作を組み込むことで、アクセシビリティが向上するだけでなく、IoTやスマート環境の新たなトレンドにも対応し、プラットフォームを将来に対応させます。  \n\n- 💻 **より良いコード実行**: プラットフォーム内でのコーディング機能を強化することで、幅広い開発活動をサポートし、開発者にとってワンストップソリューションとなり、より広範な技術者コミュニティを惹きつけます。  \n\n- 🤖 **コードインタプリタ機能**: プラットフォームに組み込まれた柔軟なコードインタプリタは、複数のプログラミング言語をサポートし、外部ツールへの依存を減らし、開発プロセスを合理化して効率を向上させます。  \n\n- 🔧 **効率的なファインチューニングサポート**: Sage WebUIは、インターフェースを使用して応答を評価するだけでファインチューニングデータセットを自動的に構築できるようにすることで、シームレスなファインチューニングプロセスを提供します。データセットを前処理し、ノートブックから直接ファインチューニングできるようにするPythonノートブックを提供します。このアプローチは非常にシンプルで、ユーザーのワークフローにファインチューニングをエレガントに統合します。"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "## Information Retrieval (RAG) 📚",
+      "source_content_hash": "6cc7d19a5b44ae645bd1a5c1e505bb140a16420e68bd0acf479aef91bb8989f4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 情報検索（RAG） 📚"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "Sage WebUI currently provides an interface that enables the use of existing information retrieval (IR) models efficiency. However, we believe there is vast potential for improvement. We fully recognize the limitations of our current RAG (Retrieval-Augmented Generation) implementation in our WebUI, understanding that a one-size-fits-all approach does not effectively meet all users' needs.",
+      "source_content_hash": "114df3888e5d6dac41ca6a67a684f4fe7ecb774836f359c3ca2dd3ab639a06b3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは現在、既存の情報検索（IR）モデルを効率的に使用できるインターフェースを提供しています。しかし、改善の余地が大いにあると考えています。現在のWebUIにおけるRAG（Retrieval-Augmented Generation）実装の限界を十分に認識しており、万能なアプローチではすべてのユーザーのニーズに効果的に対応できないことを理解しています。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "To address this, we are committed to transforming our framework to be highly modular and extensively configurable. This new direction will enable users to tailor the information retrieval process to their specific requirements with ease, using a straightforward, interactive interface that allows for simple drag-and-drop customization. This refinement aims to significantly enhance user experience by providing a more adaptable and personalized IR setup.",
+      "source_content_hash": "e9460e2d570ae2150f6b51bbadcb620926bb11d24384e86e42485b32149f3f49",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この課題に対処するため、私たちはフレームワークを高度にモジュール化し、広範に設定可能な形へと変革することを約束します。この新しい方向性により、ユーザーはシンプルなドラッグ＆ドロップカスタマイズが可能な直感的なインターフェースを通じて、情報検索プロセスを各自の要件に合わせて簡単に調整できるようになります。この改良により、より適応性が高くパーソナライズされたIR設定を提供することで、ユーザーエクスペリエンスを大幅に向上させることを目指しています。"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Here's our focused plan for advancing our information retrieval capabilities:",
+      "source_content_hash": "1c15613ce74617fea69a056d7bbce6817f941f08d2a99ba292fdb4efc5d5327e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "情報検索機能を進化させるための私たちの重点的な計画は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "40251870",
+      "source_content": "- 🌐 **Customizable RAG Framework**: Envision a future where you can effortlessly tailor your IR setup via a user-friendly interface. This will include modular components that users can drag, drop, and configure without needing deep technical knowledge.\n\n- 🔄 **Advanced Integration with SoTA Methods**: We aim to incorporate the latest developments in retrieval methods, enhancing accuracy and efficiency with advanced techniques and architectures.\n\n- 🔍 **Dedicated R&D**: We’re scaling up our research and development to discover and integrate novel retrieval methods that push the boundaries of current methods, in collaboration with leading research entities.",
+      "source_content_hash": "be251b8743bfcd64f5ce27560dba0c83306184575fa89240723ea8f82d0ffc6b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🌐 **カスタマイズ可能なRAGフレームワーク**: ユーザーフレンドリーなインターフェースを通じてIR設定を簡単に調整できる未来を構想しています。これには、深い技術知識がなくてもユーザーがドラッグ＆ドロップで設定可能なモジュール式コンポーネントが含まれます。\n\n- 🔄 **最先端手法との高度な統合**: 検索手法における最新の進展を取り入れ、高度な技術とアーキテクチャによって精度と効率を向上させることを目指します。\n\n- 🔍 **専任の研究開発**: 主要な研究機関と協力し、現在の手法の限界を超える新たな検索方法を発見・統合するため、研究開発を拡大しています。"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "## Community 🤝",
+      "source_content_hash": "99638539ee97830a295525671d0e040365508a97adf8ff3117784e1440bcd811",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## コミュニティ 🤝"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "We aim to create a vibrant community where everyone can contribute to and benefit from shared knowledge and developments:",
+      "source_content_hash": "498fa1b227fe3ac96faa132256b0b7aa4a0067bbda876e98bc89229c4529db77",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちは、誰もが共有知識と進展から貢献し、恩恵を受けられる活気あるコミュニティの創出を目指しています："
+      }
+    },
+    {
+      "segment_id": "a0e887c2",
+      "source_content": "- 🏆 **LLM Leaderboard**: A community-driven approach to evaluate and rank models ensures transparency and continuous improvement, leveraging real-world applications to benchmark performance instead of relying on standard datasets that might not reflect practical utility.\n\n- 👥 **Sub-Communities**: Encouraging niche communities to curate datasets and optimize prompts can lead to better-tuned models, as these communities have specific insights and detailed feedback that typically go unnoticed in broader datasets.",
+      "source_content_hash": "ec3ba0ca71fe8b0be7cb12e35e13167fc2914be047d33db1f49faea35f3fab96",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🏆 **LLMリーダーボード**: コミュニティ主導のアプローチでモデルを評価・ランク付けし、実用性を反映しない標準データセットに依存せず、実世界のアプリケーションを用いてパフォーマンスをベンチマークすることで、透明性と継続的改善を実現します。\n\n- 👥 **サブコミュニティ**: 特定の洞察と詳細なフィードバックを持つニッチコミュニティがデータセットをキュレーションし、プロンプトを最適化することで、より調整されたモデルの開発を促進します。"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "🔗 **Community Whitepaper**: Explore our detailed strategy and join us in shaping the future of AI-driven platforms in our [whitepaper](https://sage.education/assets/files/whitepaper.pdf).",
+      "source_content_hash": "b72a5e1acb69e8af37646a2d7b0a5b527bd4a22701078a0ec2c3fa03a83765a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🔗 **コミュニティホワイトペーパー**: 詳細な戦略を解説した[ホワイトペーパー](https://sage.education/assets/files/whitepaper.pdf)をご覧いただき、AI駆動型プラットフォームの未来を共に形作りましょう。"
+      }
+    },
+    {
+      "segment_id": "a5a4323e",
+      "source_content": "# Vision for the Future 🔭",
+      "source_content_hash": "400b81b05da64e84a3b00b5bf8b27cbed0e492d38f1d4c3c1548f76bdf6d4d9d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 未来へのビジョン 🔭"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "Our relentless effort stems from a clear vision we hold dearly: enhancing your daily life, saving time and allowing for more focus on what truly matters.",
+      "source_content_hash": "7f982913749a22e4f59b5d0c3cb3b7e4586966dab2cccfed008a1f716977140a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちのたゆまぬ努力は、明確なビジョンに根ざしています：あなたの日常生活を向上させ、時間を節約し、本当に重要なことに集中できるようにすることです。"
+      }
+    },
+    {
+      "segment_id": "e7772088",
+      "source_content": "Imagine a world where you think, and it happens. You desire a cup of coffee made exactly the way you love, and it's brewed for you. A world where you, simply think of a comprehensive data analysis report in a particular format, and it's done at the speed of your thought. The core idea is to turn the time-consuming, routine tasks over to our AI interface, freeing up your time and attention.",
+      "source_content_hash": "d476a0dce0a2ad7744edad680ebb0b7c7278308ff848e90cb2a4be459d2f2d92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "あなたが考えたことが即座に実現する世界を想像してください。好み通りのコーヒーが思い浮かべただけで淹れられる世界。特定の形式での包括的なデータ分析レポートを考えただけで、思考の速度で完了する世界。核心となるアイデアは、時間を消費する日常的なタスクをAIインターフェースに委ね、あなたの時間と注意力を解放することです。"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "This isn’t a sci-fi future; together, we are working towards it right now. As our AI models gradually become more capable and intuitively understand your specific needs, your most mundane responsibilities become automated. Through this profound shift, our collective time allowance can be redistributed towards grand endeavours. Think space exploration, longevity research or simply extra moments with loved ones.",
+      "source_content_hash": "784119b3f5a2c1efcb38081f58789cba264de7495596e464d6900024189bcf1a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これはSFの未来ではありません。私たちは今まさに共にこの未来に向けて取り組んでいます。AIモデルが次第に能力を高め、あなたの特定のニーズを直感的に理解するにつれ、最も平凡な責任さえ自動化されます。この深い変革を通じて、私たちの集合的な時間配分を、宇宙探査、長寿研究、あるいは単に愛する人々と過ごす追加の時間といったより壮大な取り組みに向けることが可能になります。"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "Creating this imagined future won't be a walk in the park, but with your help, we believe it's within our reach. Sage WebUI is more than just tech - it's there to enhance your day, giving you more space for what's really important. Together, we're working on a brighter tomorrow. Thanks for joining us in this extraordinary journey.",
+      "source_content_hash": "fc5af470aba5c125115cdac6a69cc8028817d9588165ce928d788a0269ba3318",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この想像された未来を創造するのは容易なことではありませんが、あなたの助けがあれば実現可能だと信じています。Sage WebUIは単なる技術ではありません - あなたの一日を向上させ、本当に重要なことのためのより多くの空間を提供するために存在します。共に、より明るい明日に向けて取り組んでいます。この非凡な旅に参加してくださり、感謝します。"
+      }
+    },
+    {
+      "segment_id": "63e1d83c",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Join us as we push the boundaries of technology with these ambitious and transformative features in our roadmap! 💡🚀 Your participation and feedback are crucial as we strive to make Sage WebUI a pioneering tool in technology advancement.",
+      "source_content_hash": "cfbdc8877c58f8fe02afe54f099035b09457ae4e2fed01cca58a32f465bbf981",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この野心的で変革的な機能を盛り込んだロードマップと共に、技術の限界を押し広げる私たちの取り組みにご参加ください！💡🚀 あなたの参加とフィードバックは、Sage WebUIを技術進歩の先駆的なツールとするために不可欠です。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/roadmap.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.808613+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "92c68cbaf36d8f4d7326d2a2484c4241eebde2dc98dd260e9cf5ebd6a1f68499"
+  }
+}

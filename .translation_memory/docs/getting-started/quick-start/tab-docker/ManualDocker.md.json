@@ -1,0 +1,252 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-docker/ManualDocker.md",
+  "source_file_content_hash": "01b9b9fe36b10365e17c1c9e4aa6df595e4fa8adb40fcb9a242cc190e5b62849",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "## Quick Start with Docker 🐳",
+      "source_content_hash": "a2c2df5921e526cdf42fe6aead1d6968acb86cc73b7fa014b2363a402a8312ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Dockerでクイックスタート 🐳"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "Follow these steps to install Sage WebUI with Docker.",
+      "source_content_hash": "396d3cd2db08944d6d2a00fbf295b3eb44f1fd5b246e4dd7ac885c66a5bb4eaf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の手順に従って、Sage WebUIをDockerでインストールします。"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "## Step 1: Pull the Sage WebUI Image",
+      "source_content_hash": "537c0783566585255c61917e87896ff36b70307a4899d4e04e1df4747ad2d5cb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ1: Sage WebUIイメージの取得"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Start by pulling the latest Sage WebUI Docker image from the GitHub Container Registry.",
+      "source_content_hash": "b50e83d47180014518ee51f1d3c86330ace472606d179c4b22f175d5aaa42284",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "GitHub Container Registryから最新のSage WebUI Dockerイメージを取得します。"
+      }
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```bash\ndocker pull ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "704100725e6bed395c4863e6b09f64b1529a8e3e78b0c50d547eba0a71f938c1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_71d8dc9b"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Step 2: Run the Container",
+      "source_content_hash": "2da500d59e9a19d6c08cce2af751cb91b616c9b0a40abfd455272913cd22b39b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ2: コンテナの実行"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Run the container with default settings. This command includes a volume mapping to ensure persistent data storage.",
+      "source_content_hash": "0b688170972da1e23abedd761b84028bde2444ab571551994dfe38f2b685f972",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "デフォルト設定でコンテナを実行します。このコマンドには、データを永続化するためのボリュームマッピングが含まれています。"
+      }
+    },
+    {
+      "segment_id": "93be3c14",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "1c38e65c73cb646a5f637432fde9380d8e6a74e10dbaa124faa4dc469561507f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_93be3c14"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "### Important Flags",
+      "source_content_hash": "bae671ec200e72def905348ac38156625305839bf79e517fca3d3e550f6a8a5d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 重要なフラグ"
+      }
+    },
+    {
+      "segment_id": "1b8c1887",
+      "source_content": "- **Volume Mapping (`-v sage-open-webui:/app/backend/data`)**: Ensures persistent storage of your data. This prevents data loss between container restarts.\n- **Port Mapping (`-p 3000:8080`)**: Exposes the WebUI on port 3000 of your local machine.",
+      "source_content_hash": "c73ce7518fe3ad55823925f5f1e38366b180894303ba24053a9226c2322f752b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ボリュームマッピング (`-v sage-open-webui:/app/backend/data`)**: データの永続的な保存を保証します。これにより、コンテナの再起動時にデータが失われるのを防ぎます。\n- **ポートマッピング (`-p 3000:8080`)**: WebUIをローカルマシンのポート3000で公開します。"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "### Using GPU Support",
+      "source_content_hash": "45fd2dc6079b66f2c6bcdd539a6965f388282de898df862b9f9766a7809525d8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### GPUサポートの利用"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "For Nvidia GPU support, add `--gpus all` to the `docker run` command:",
+      "source_content_hash": "a323f360336290f02fa9d1049d4f49efe4b1926191b8ff614adc5e5e12d2b83b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Nvidia GPUサポートを利用するには、`docker run`コマンドに`--gpus all`を追加します："
+      }
+    },
+    {
+      "segment_id": "b7c3dbd1",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 --gpus all -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:cuda\n```",
+      "source_content_hash": "e2bd1e4e36c0c532ada8817f4fd5d91d04d9cd3b5436d03581a00dce20c13232",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b7c3dbd1"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "#### Single-User Mode (Disabling Login)",
+      "source_content_hash": "b0c71aaa7015ce0080765ade1b98f6aefa58e0047910e2d9f1d2bc0fcddd80df",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### シングルユーザーモード（ログイン無効化）"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "To bypass the login page for a single-user setup, set the `WEBUI_AUTH` environment variable to `False`:",
+      "source_content_hash": "09955b44fd7f1510548980bae8a03128251ba2c5b4c9760c22ff513a22342d26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ログインページをバイパスしてシングルユーザー設定にするには、`WEBUI_AUTH`環境変数を`False`に設定します："
+      }
+    },
+    {
+      "segment_id": "de8f60af",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 -e WEBUI_AUTH=False -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "1455b22f09c1707abe87c8afc7f1419998d28c177c2e9ba7dd2f526c480c6ac2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_de8f60af"
+      }
+    },
+    {
+      "segment_id": "18867dc1",
+      "source_content": ":::warning\nYou cannot switch between single-user mode and multi-account mode after this change.\n:::",
+      "source_content_hash": "09aa3e655b1ce407a620dc735ca3db9d12a86f3dfe09544683c93dc7eae0ecb3",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこの変更後は、シングルユーザーモードとマルチアカウントモードを切り替えることはできません。\n:::"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "#### Advanced Configuration: Connecting to Ollama on a Different Server",
+      "source_content_hash": "ed61b6b49861b0713f3b9c381914a6eb13dd23174d4bfd154bd32cd3a72576ef",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 高度な設定: 別サーバーのOllamaに接続"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "To connect Sage WebUI to an Ollama server located on another host, add the `OLLAMA_BASE_URL` environment variable:",
+      "source_content_hash": "b22802c950aa125ffd26246dbb0c6817d6c71aa5ec0d93346dd8553502ede29d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "別のホストにあるOllamaサーバーにSage WebUIを接続するには、`OLLAMA_BASE_URL`環境変数を追加します："
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "79dd44fd5326ba02f97f5018df4c1ec5d293e97bd24afd1afa0993a72c1d4e4e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "## Access the WebUI",
+      "source_content_hash": "41fba61efb55c95726a70583c38977a6a3b70f2c6f7e5e060bc073e18972bfe5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## WebUIへのアクセス"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "After the container is running, access Sage WebUI at:",
+      "source_content_hash": "5709c8f031ea602e863021b1d819027aec81b3ac92993af0ed7845d5b0bfd05b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コンテナが実行されたら、以下のURLでSage WebUIにアクセスできます："
+      }
+    },
+    {
+      "segment_id": "23dfb152",
+      "source_content": "[http://localhost:3000](http://localhost:3000)",
+      "source_content_hash": "adb6d3f69c2a3c085dd928727f726b8fbc2f239e5422614f83270ae35d2e9f09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[http://localhost:3000](http://localhost:3000)"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "For detailed help on each Docker flag, see [Docker's documentation](https://docs.docker.com/engine/reference/commandline/run/).",
+      "source_content_hash": "d28964764d9c4a453cb40ac334966042ece4b40bac090c703dc768a02299d58b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "各Dockerフラグの詳細なヘルプについては、[Dockerのドキュメント](https://docs.docker.com/engine/reference/commandline/run/)を参照してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-docker/ManualDocker.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.797212+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "01b9b9fe36b10365e17c1c9e4aa6df595e4fa8adb40fcb9a242cc190e5b62849"
+  }
+}

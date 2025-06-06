@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/duckduckgo.md",
+  "source_file_content_hash": "c728d841c204c08b55a3eb3c8666bcfd35c03f33f3c0fd5c2a1e329418ceb58a",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\ntitle: \"DuckDuckGo\"\n---",
+      "source_content_hash": "e8c8340097573fe8f437f1ed0619b2e18d2181084dc085f32b0b999864ddcbec",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとしてのみ提供されています。寄稿をご希望ですか？寄稿ガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## DuckDuckGo API",
+      "source_content_hash": "746cce59dda449d90a5ee201a8796da471236a863c0f53fc3a4723f6fa798227",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## DuckDuckGo API"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "No setup is required to use DuckDuckGo API for Sage Open WebUI's built in web search! DuckDuckGo works out of the box in Sage Open WebUI.",
+      "source_content_hash": "422872021115d8f230ca14bfdf42f1baf608ec4e4e4ce0856bc2af264961f2d0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIの組み込みウェブ検索でDuckDuckGo APIを使用するために特別なセットアップは必要ありません！DuckDuckGoはSage Open WebUIでそのまま動作します。"
+      }
+    },
+    {
+      "segment_id": "976d532b",
+      "source_content": ":::note\nThere is a possibility of your web searches being rate limited.\n:::",
+      "source_content_hash": "6d20a62345ab2ff5b4e7a20c80b1a3e5529c7067f37d338aa91a5f4ef7f660f6",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\nウェブ検索がレート制限される可能性があります。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/duckduckgo.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.784934+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "c728d841c204c08b55a3eb3c8666bcfd35c03f33f3c0fd5c2a1e329418ceb58a"
+  }
+}

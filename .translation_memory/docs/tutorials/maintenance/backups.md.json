@@ -1,0 +1,662 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/maintenance/backups.md",
+  "source_file_content_hash": "aed40e540063c12f60ad109a60c2a82910991659409a6e3e2fb3ce937fc280cc",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1000\ntitle: \"💾 Backups\"\n---",
+      "source_content_hash": "995ce9d0336bf101f5df35a20dc2c18bd7905d53e762fae22de28b8fce80adab",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによるサポート対象外です。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "#  Backing Up Your Instance",
+      "source_content_hash": "6eee8b5433642e4e96f84e35ce9f4182a23b727c0c5857c70ff7f8d54697e6dd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# インスタンスのバックアップ"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Nobody likes losing data!",
+      "source_content_hash": "74afa5a56ef8146c981b104b9ced661e6a4e3fb1dc1473fb80aae6f4541f0e74",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "データ消失は誰も望みません！"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "If you're self-hosting OpenWebUI, then you may wish to institute some kind of formal backup plan in order to ensure that you retain a second and third copy of parts of your configuration.",
+      "source_content_hash": "dcf8a09b5eafde10848035f3c9e7a52ec8f8db8e8c7581f959b8965dc2ea93a3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OpenWebUIをセルフホスティングしている場合、設定内容のセカンドコピーやサードコピーを保持するため、何らかの正式なバックアップ計画を策定することをお勧めします。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "This guide is intended to recommend some basic recommendations for how users might go about doing that.",
+      "source_content_hash": "c54eda0d58ce607dd3d34f46ea3acab86cec50d5840cc9420ecc43c5eaa83533",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "本ガイドでは、ユーザーがそれを行うための基本的な推奨事項を紹介します。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "This guide assumes that the user has installed OpenWebUI via Docker (or intends to do so)",
+      "source_content_hash": "55f293fded8464fa93f94c5a053a8af02358774bfdd78124db7574a3547fce7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "本ガイドは、ユーザーがDocker経由でOpenWebUIをインストール済み（またはインストール予定）であることを前提としています。"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Ensuring data persistence",
+      "source_content_hash": "428faf29e47d415ba6235f02848502ce4f1e81418f26b9ccf3bdf3532994c859",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## データ永続性の確保"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Firstly, before deploying your stack with Docker, ensure that your Docker Compose uses a persistent data store. If you're using the Docker Compose [from the Github repository](https://github.com/sage-open-webui/sage-open-webui/blob/main/docker-compose.yaml) that's already taken care of. But it's easy to cook up your own variations and forget to verify this.",
+      "source_content_hash": "3788a6e65bd099ed0dddc646b431029d22e23b7e0b9208fc24368fb10d29b76a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "まず、Dockerでスタックをデプロイする前に、Docker Composeが永続的なデータストアを使用していることを確認してください。[GitHubリポジトリ](https://github.com/sage-open-webui/sage-open-webui/blob/main/docker-compose.yaml)のDocker Composeを使用している場合は既に対処済みです。ただし、独自のバリエーションを作成する際に確認を忘れないよう注意が必要です。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Docker containers are ephemeral and data must be persisted to ensure its survival on the host filesystem.",
+      "source_content_hash": "e5ebac03021b8f4dd0ec615bc2785b0945c7be7ebc32073a89494cdcd8382237",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerコンテナは一時的な存在であり、データをホストファイルシステム上で永続化させる必要があります。"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "## Using Docker volumes",
+      "source_content_hash": "cc185514c380ba1eb88eff21d8d5ab011466b89b66313067947e5ac4fc24e4e1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Dockerボリュームの使用"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "If you're using the Docker Compose from the project repository, you will be deploying Open Web UI using Docker volumes.",
+      "source_content_hash": "fc38f99220c94a6d477a0b9af0360f51b272f48c9e4b37448c41f7245865403a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プロジェクトリポジトリのDocker Composeを使用する場合、Dockerボリュームを使用してOpen Web UIをデプロイすることになります。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "For Ollama and OpenWebUI the mounts are:",
+      "source_content_hash": "47288c6b6446187ebd4296570d975e641be00c3ab74edfa33d8d8b11d355f977",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OllamaとOpenWebUIのマウントポイントは以下の通りです："
+      }
+    },
+    {
+      "segment_id": "b017063d",
+      "source_content": "```yaml\nollama:\n  volumes:\n    - ollama:/root/.ollama\n```",
+      "source_content_hash": "b199212641422fd18b88aa049e02f39dbdb98e60cdc14e2d2769b714b3e132ba",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b017063d"
+      }
+    },
+    {
+      "segment_id": "4dd51304",
+      "source_content": "```yaml\nsage-open-webui:\n  volumes:\n    - sage-open-webui:/app/backend/data\n```",
+      "source_content_hash": "e02fc8467d3aef03f119b5b6dbe5baf064250bbb6b6e2990880066d3c9786d72",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4dd51304"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "To find the actual bind path on host, run:",
+      "source_content_hash": "78e078dd1920bcf74e8f2293b845a366f3843b7a4f584fa209e469e8a04f4be3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ホスト上の実際のバインドパスを確認するには、以下を実行します："
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "`docker volume inspect ollama`",
+      "source_content_hash": "2f81798e2ee5cb70574443a99e101a9f9fb112a4dd3f8508a26c47bcaa196fc0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`docker volume inspect ollama`"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "and",
+      "source_content_hash": "6201111b83a0cb5b0922cb37cc442b9a40e24e3b1ce100a4bb204f4c63fd2ac0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "および"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "`docker volume inspect sage-open-webui`",
+      "source_content_hash": "9c20dd19fd7e2752f41a2129685811d3190ac4a90de59c020f13692f93bc87b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`docker volume inspect sage-open-webui`"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "## Using direct host binds",
+      "source_content_hash": "3da4ba5cda6f99a85765d416e3587b984dc8deb51dbdee7945431ef0dd413c0c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 直接ホストバインドの使用"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Some users deploy Open Web UI with direct (fixed) binds to the host filesystem, like this:",
+      "source_content_hash": "9e4545ed763b24496a2b9eaada6ca7e2a15b57dbe37c778d9639f6c39827ae64",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "一部のユーザーは、以下のようにホストファイルシステムへの直接（固定）バインドでOpen Web UIをデプロイします："
+      }
+    },
+    {
+      "segment_id": "eb80afe1",
+      "source_content": "```yaml\nservices:\n  ollama:\n    container_name: ollama\n    image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}\n    volumes:\n      - /opt/ollama:/root/.ollama\n  sage-open-webui:\n    container_name: sage-open-webui\n    image: ghcr.io/sage-open-webui/sage-open-webui:${WEBUI_DOCKER_TAG-main}\n    volumes:\n      - /opt/sage-open-webui:/app/backend/data\n```",
+      "source_content_hash": "c586813c3d5e36a32015c61fcc97a4854dfccfceed54538ce55109e0b3dacd9b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_eb80afe1"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "If this is how you've deployed your instance, you'll want to note the paths on root.",
+      "source_content_hash": "5dfdd66f4ebc8d689e56e8b9a35893365454a4067104b1cf58f2b1963634074b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この方法でインスタンスをデプロイした場合、ルート上のパスをメモしておく必要があります。"
+      }
+    },
+    {
+      "segment_id": "047c2395",
+      "source_content": "## Scripting A Backup Job",
+      "source_content_hash": "32e3467ab3e74bfae3d58c8dab25a8691b2227da148d9b3fdf1d26883f3a0b1c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## バックアップジョブのスクリプト化"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "However your instance is provisioned, it's worth inspecting the app's data store on your server to understand what data you'll be backing up. You should see something like this:",
+      "source_content_hash": "72496488988c2ba036c3bf914d804582ac06434aff8c0d5a0b36b425a437945d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インスタンスがどのようにプロビジョニングされていても、バックアップ対象のデータを理解するために、サーバー上のアプリケーションデータストアを調査する価値があります。以下のような内容が確認できるはずです："
+      }
+    },
+    {
+      "segment_id": "468b36ba",
+      "source_content": "```\n├── audit.log\n├── cache/\n├── uploads/\n├── vector_db/\n└── webui.db\n```",
+      "source_content_hash": "ec5b0438ebd5ac2ebbc9eb5e4c7148e0b423bc847a17b1779332d2666562c00b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_468b36ba"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "## Files in persistent data store",
+      "source_content_hash": "1a14798d0670a7c4e033fb47d4c705819ce63b5d49cd1e8bc9f6224824e9fe5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 永続データストア内のファイル"
+      }
+    },
+    {
+      "segment_id": "0d9b3b59",
+      "source_content": "| File/Directory | Description |\n|---|---|\n| `audit.log` | Log file for auditing events. |\n| `cache/` | Directory for storing cached data. |\n| `uploads/` | Directory for storing user-uploaded files. |\n| `vector_db/` | Directory containing the ChromaDB vector database. |\n| `webui.db` | SQLite database for persistent storage of other instance data |",
+      "source_content_hash": "775146940ebd318acb1eb1b0d5689bf158afcea8f430a1fab2102e5c3056b254",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_0d9b3b59"
+      }
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "# File Level Backup Approaches",
+      "source_content_hash": "af727cf12c350cd9c1e34333c72a500b73a6bc992f184496afd884c4b4aa3306",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# ファイルレベルバックアップのアプローチ"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "The first way to back up the application data is to take a file level backup approach ensuring that the persistent Open Web UI data is properly backed up.",
+      "source_content_hash": "edaae9ecea92e86d378828fcbcffce7f494c66b878cb844289ad09cdb5107b88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アプリケーションデータをバックアップする最初の方法は、永続的なOpen Web UIデータが適切にバックアップされるように、ファイルレベルのバックアップアプローチを採用することです。"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "There's an almost infinite number of ways in which technical services can be backed up, but `rsync` remains a popular favorite for incremental jobs and so will be used as a demonstration.",
+      "source_content_hash": "a3ca1970a5afd080d049b669cd193a3e73d27bd95e6ed0286369a42a4d23e57b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "技術サービスをバックアップする方法はほぼ無限に存在しますが、増分バックアップジョブでは`rsync`が依然として人気の選択肢であり、デモンストレーションとして使用されます。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "Users could target the entire `data` directory to back up all the instance data at once or create more selective backup jobs targeting individual components. You could add more descriptive names for the targets also.",
+      "source_content_hash": "63685286d6c8cf72daa614a5d90aa9aa9e304dfa62067e83b4b4ba7fce78e604",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ユーザーは、インスタンスデータ全体を一度にバックアップするために`data`ディレクトリ全体を対象とするか、個々のコンポーネントを対象としたより選択的なバックアップジョブを作成できます。対象に対してより説明的な名前を追加することも可能です。"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "A model rsync job could look like this:",
+      "source_content_hash": "5770f09978cfee99ffe2fbfef70fddde7650c62bece9be53c4523e794ddb9c05",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルとなるrsyncジョブは以下のようになります："
+      }
+    },
+    {
+      "segment_id": "1cf51900",
+      "source_content": "```bash\n#!/bin/bash\n\n# Configuration\nSOURCE_DIR=\".\"  # Current directory (where the file structure resides)\nB2_BUCKET=\"b2://OpenWebUI-backups\" # Your Backblaze B2 bucket\nB2_PROFILE=\"your_rclone_profile\" # Your rclone profile name\n# Ensure rclone is configured with your B2 credentials\n\n# Define source and destination directories\nSOURCE_UPLOADS=\"$SOURCE_DIR/uploads\"\nSOURCE_VECTORDB=\"$SOURCE_DIR/vector_db\"\nSOURCE_WEBUI_DB=\"$SOURCE_DIR/webui.db\"\n\nDEST_UPLOADS=\"$B2_BUCKET/user_uploads\"\nDEST_CHROMADB=\"$B2_BUCKET/ChromaDB\"\nDEST_MAIN_DB=\"$B2_BUCKET/main_database\"\n\n# Exclude cache and audit.log\nEXCLUDE_LIST=(\n    \"cache/\"\n    \"audit.log\"\n)\n\n# Construct exclude arguments for rclone\nEXCLUDE_ARGS=\"\"\nfor EXCLUDE in \"${EXCLUDE_LIST[@]}\"; do\n    EXCLUDE_ARGS=\"$EXCLUDE_ARGS --exclude '$EXCLUDE'\"\ndone\n\n# Function to perform rclone sync with error checking\nrclone_sync() {\n    SOURCE=\"$1\"\n    DEST=\"$2\"\n    echo \"Syncing '$SOURCE' to '$DEST'...\"\n    rclone sync \"$SOURCE\" \"$DEST\" $EXCLUDE_ARGS --progress --transfers=32 --checkers=16 --profile \"$B2_PROFILE\"\n    if [ $? -ne 0 ]; then\n        echo \"Error: rclone sync failed for '$SOURCE' to '$DEST'\"\n        exit 1\n    fi\n}\n\n# Perform rclone sync for each directory/file\nrclone_sync \"$SOURCE_UPLOADS\" \"$DEST_UPLOADS\"\nrclone_sync \"$SOURCE_VECTORDB\" \"$DEST_CHROMADB\"\nrclone_sync \"$SOURCE_WEBUI_DB\" \"$DEST_MAIN_DB\"\n\necho \"Backup completed successfully.\"\nexit 0\n```",
+      "source_content_hash": "ccf46aaecdf979b672a7b4ac0089c70ac2b3ac8682a0ede2749316a3267aa33a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_1cf51900"
+      }
+    },
+    {
+      "segment_id": "55dc794c",
+      "source_content": "## Rsync Job With Container Interruption",
+      "source_content_hash": "6ee8767d5f11375f284b40c106473ae6d294bfc22db63034049953d6654a2bf8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## コンテナ中断を伴うRsyncジョブ"
+      }
+    },
+    {
+      "segment_id": "63565425",
+      "source_content": "To maintain data integrity, it's generally recommended to run database backups on cold filesystems. Our default model backup job can be modified slightly to bring down the stack before running the backup script and bring it back after.",
+      "source_content_hash": "2614372c673df0af96b28ecb9c171922ce5e5a362ed54360160bb2a0d94f4b22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "データ整合性を維持するため、一般的にはコールドファイルシステム上でデータベースバックアップを実行することが推奨されます。デフォルトのモデルバックアップジョブを少し修正し、バックアップスクリプト実行前にスタックを停止させ、完了後に再起動するようにできます。"
+      }
+    },
+    {
+      "segment_id": "1496ef51",
+      "source_content": "The downside of this approach, of course, is that it will entail instance downtime. Consider running the job at times you won't be using the instance or taking \"software\" dailies (on the running data) and more robust weeklies (on cold data).",
+      "source_content_hash": "ef3b1740ecde94af0b2b85c1c2264e054633fd8ed08c31b6ee5f87e1fb073d08",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このアプローチの欠点は、当然ながらインスタンスのダウンタイムが発生することです。インスタンスを使用しない時間帯にジョブを実行するか、「ソフトウェア」デイリー（稼働中のデータ）とより堅牢なウィークリー（コールドデータ）を組み合わせることを検討してください。"
+      }
+    },
+    {
+      "segment_id": "b68d496b",
+      "source_content": "```bash\n#!/bin/bash\n\n# Configuration\nCOMPOSE_FILE=\"docker-compose.yml\" # Path to your docker-compose.yml file\nB2_BUCKET=\"b2://OpenWebUI-backups\" # Your Backblaze B2 bucket\nB2_PROFILE=\"your_rclone_profile\" # Your rclone profile name\nSOURCE_DIR=\".\"  # Current directory (where the file structure resides)\n\n# Define source and destination directories\nSOURCE_UPLOADS=\"$SOURCE_DIR/uploads\"\nSOURCE_VECTORDB=\"$SOURCE_DIR/vector_db\"\nSOURCE_WEBUI_DB=\"$SOURCE_DIR/webui.db\"\n\nDEST_UPLOADS=\"$B2_BUCKET/user_uploads\"\nDEST_CHROMADB=\"$B2_BUCKET/ChromaDB\"\nDEST_MAIN_DB=\"$B2_BUCKET/main_database\"\n\n# Exclude cache and audit.log\nEXCLUDE_LIST=(\n    \"cache/\"\n    \"audit.log\"\n)\n\n# Construct exclude arguments for rclone\nEXCLUDE_ARGS=\"\"\nfor EXCLUDE in \"${EXCLUDE_LIST[@]}\"; do\n    EXCLUDE_ARGS=\"$EXCLUDE_ARGS --exclude '$EXCLUDE'\"\ndone\n\n# Function to perform rclone sync with error checking\nrclone_sync() {\n    SOURCE=\"$1\"\n    DEST=\"$2\"\n    echo \"Syncing '$SOURCE' to '$DEST'...\"\n    rclone sync \"$SOURCE\" \"$DEST\" $EXCLUDE_ARGS --progress --transfers=32 --checkers=16 --profile \"$B2_PROFILE\"\n    if [ $? -ne 0 ]; then\n        echo \"Error: rclone sync failed for '$SOURCE' to '$DEST'\"\n        exit 1\n    fi\n}\n\n# 1. Stop the Docker Compose environment\necho \"Stopping Docker Compose environment...\"\ndocker-compose -f \"$COMPOSE_FILE\" down\n\n# 2. Perform the backup\necho \"Starting backup...\"\nrclone_sync \"$SOURCE_UPLOADS\" \"$DEST_UPLOADS\"\nrclone_sync \"$SOURCE_VECTORDB\" \"$DEST_CHROMADB\"\nrclone_sync \"$SOURCE_WEBUI_DB\" \"$DEST_MAIN_DB\"\n\n# 3. Start the Docker Compose environment\necho \"Starting Docker Compose environment...\"\ndocker-compose -f \"$COMPOSE_FILE\" up -d\n\necho \"Backup completed successfully.\"\nexit 0\n```",
+      "source_content_hash": "5f3b8111896e2fc37536db9789bab97498c95fc20e5f4468294823614758abe2",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b68d496b"
+      }
+    },
+    {
+      "segment_id": "3079a4d2",
+      "source_content": "## Model Backup Script Using SQLite & ChromaDB Backup Functions To B2 Remote",
+      "source_content_hash": "28b93b56770cce6051a6721e04464bf2e298ae44607cb566c6f79a71300990af",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## SQLite & ChromaDB バックアップ機能を使用したB2リモートへのモデルバックアップスクリプト"
+      }
+    },
+    {
+      "segment_id": "93bf74a6",
+      "source_content": "```bash\n#!/bin/bash\n#\n# Backup script to back up ChromaDB and SQLite to Backblaze B2 bucket\n# openwebuiweeklies, maintaining 3 weekly snapshots.\n# Snapshots are independent and fully restorable.\n# Uses ChromaDB and SQLite native backup mechanisms.\n# Excludes audit.log, cache, and uploads directories.\n#\n# Ensure rclone is installed and configured correctly.\n# Install rclone: https://rclone.org/install/\n# Configure rclone: https://rclone.org/b2/\n\n# Source directory (containing ChromaDB and SQLite data)\nSOURCE=\"/var/lib/sage-open-webui/data\"\n\n# B2 bucket name and remote name\nB2_REMOTE=\"openwebuiweeklies\"\nB2_BUCKET=\"b2:$B2_REMOTE\"\n\n# Timestamp for the backup directory\nTIMESTAMP=$(date +%Y-%m-%d)\n\n# Backup directory name\nBACKUP_DIR=\"sage-open-webui-backup-$TIMESTAMP\"\n\n# Full path to the backup directory in the B2 bucket\nDESTINATION=\"$B2_BUCKET/$BACKUP_DIR\"\n\n# Number of weekly snapshots to keep\nNUM_SNAPSHOTS=3\n\n# Exclude filters (applied *after* database backups)\nEXCLUDE_FILTERS=\"--exclude audit.log --exclude cache/** --exclude uploads/** --exclude vector_db\"\n\n# ChromaDB Backup Settings (Adjust as needed)\nCHROMADB_DATA_DIR=\"$SOURCE/vector_db\"  # Path to ChromaDB data directory\nCHROMADB_BACKUP_FILE=\"$SOURCE/chromadb_backup.tar.gz\" # Archive file for ChromaDB backup\n\n# SQLite Backup Settings (Adjust as needed)\nSQLITE_DB_FILE=\"$SOURCE/webui.db\" # Path to the SQLite database file\nSQLITE_BACKUP_FILE=\"$SOURCE/webui.db.backup\" # Temporary file for SQLite backup\n\n# Function to backup ChromaDB\nbackup_chromadb() {\n  echo \"Backing up ChromaDB...\"\n\n  # Create a tar archive of the vector_db directory\n  tar -czvf \"$CHROMADB_BACKUP_FILE\" -C \"$SOURCE\" vector_db\n\n  echo \"ChromaDB backup complete.\"\n}\n\n# Function to backup SQLite\nbackup_sqlite() {\n  echo \"Backing up SQLite database...\"\n  # Backup the SQLite database using the .backup command\n  sqlite3 \"$SQLITE_DB_FILE\" \".backup '$SQLITE_BACKUP_FILE'\"\n\n  # Move the backup file to the source directory\n  mv \"$SQLITE_BACKUP_FILE\" \"$SOURCE/\"\n\n  echo \"SQLite backup complete.\"\n}\n\n# Perform database backups\nbackup_chromadb\nbackup_sqlite\n\n# Perform the backup with exclusions\nrclone copy \"$SOURCE\" \"$DESTINATION\" $EXCLUDE_FILTERS --progress\n\n# Remove old backups, keeping the most recent NUM_SNAPSHOTS\nfind \"$B2_BUCKET\" -type d -name \"sage-open-webui-backup-*\" | sort -r | tail -n +$((NUM_SNAPSHOTS + 1)) | while read dir; do\n  rclone purge \"$dir\"\ndone\n\necho \"Backup completed to $DESTINATION\"\n```",
+      "source_content_hash": "237dfa9941045a061dde58b6c46110683addfb04a870b7bf05c7de180b99c200",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_93bf74a6"
+      }
+    },
+    {
+      "segment_id": "f08346f7",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "7f0accbb",
+      "source_content": "## Point In Time Snapshots",
+      "source_content_hash": "5cc8c6f1ea14cc839b27fbcbf92a821364c26f3d3c577cb561706488f8a76983",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ポイントインタイムスナップショット"
+      }
+    },
+    {
+      "segment_id": "130e2dfb",
+      "source_content": "In addition taking backups, users may also wish to create point-in-time snapshots which could be stored locally (on the server), remotely, or both.",
+      "source_content_hash": "39ec1465168209b10ca12a7c15ea35e1758a8518e7e9839af998d16c4e86f802",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "バックアップに加えて、ユーザーはポイントインタイムのスナップショットを作成することも望むかもしれません。これらはローカル（サーバー上）、リモート、またはその両方に保存できます。"
+      }
+    },
+    {
+      "segment_id": "fa163a68",
+      "source_content": "```bash\n#!/bin/bash\n\n# Configuration\nSOURCE_DIR=\".\"  # Directory to snapshot (current directory)\nSNAPSHOT_DIR=\"/snapshots\" # Directory to store snapshots\nTIMESTAMP=$(date +%Y%m%d%H%M%S) # Generate timestamp\n\n# Create the snapshot directory if it doesn't exist\nmkdir -p \"$SNAPSHOT_DIR\"\n\n# Create the snapshot name\nSNAPSHOT_NAME=\"snapshot_$TIMESTAMP\"\nSNAPSHOT_PATH=\"$SNAPSHOT_DIR/$SNAPSHOT_NAME\"\n\n# Perform the rsync snapshot\necho \"Creating snapshot: $SNAPSHOT_PATH\"\nrsync -av --delete --link-dest=\"$SNAPSHOT_DIR/$(ls -t \"$SNAPSHOT_DIR\" | head -n 1)\" \"$SOURCE_DIR/\" \"$SNAPSHOT_PATH\"\n\n# Check if rsync was successful\nif [ $? -eq 0 ]; then\n  echo \"Snapshot created successfully.\"\nelse\n  echo \"Error: Snapshot creation failed.\"\n  exit 1\nfi\n\nexit 0\n```",
+      "source_content_hash": "9b60f4b6a6d326307e058e3b66324d914b48abcd1174cb150a7432ea5461419c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_fa163a68"
+      }
+    },
+    {
+      "segment_id": "40a24bf2",
+      "source_content": "## Crontab For Scheduling",
+      "source_content_hash": "5d83012a9f221258102134d2330fcb2b77fd3b074a03f8fde7619f60f4ee5c9d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## スケジューリング用のCrontab"
+      }
+    },
+    {
+      "segment_id": "a30b7214",
+      "source_content": "Once you've added your backup script and provisioned your backup storage, you'll want to QA the scripts to make sure that they're running as expected. Logging is highly advisable.",
+      "source_content_hash": "337578ad538d34f9b863927b69ae2936c711b1fc33ab652582bd34e57542c7d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "バックアップスクリプトを追加し、バックアップストレージをプロビジョニングしたら、スクリプトが期待通りに動作していることを確認するためにQAを行う必要があります。ログの取得は強く推奨されます。"
+      }
+    },
+    {
+      "segment_id": "647ea627",
+      "source_content": "Set your new script(s) up to run using crontabs according to your desired run frequency.",
+      "source_content_hash": "64018b03e9681834ace63eb8392e3225f488442804612f52fa9ec63f236c7947",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "新しいスクリプトを、希望する実行頻度に従ってcrontabを使用して実行するように設定します。"
+      }
+    },
+    {
+      "segment_id": "e85288f7",
+      "source_content": "# Commercial Utilities",
+      "source_content_hash": "537733243cc003bdf7928f6ba19d7e86c8a19bd86c487347ea3fbc6b783dd965",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 商用ユーティリティ"
+      }
+    },
+    {
+      "segment_id": "f10c482a",
+      "source_content": "In addition to scripting your own backup jobs, you can find commercial offerings which generally work by installing agents on your server that will abstract the complexities of running backups. These are beyond the purview of this article but provide convenient solutions.",
+      "source_content_hash": "47878d7ce93e5b665217756bc688a789283c9d2ed7a8b91b5396c3c601be8538",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "独自のバックアップジョブをスクリプト化することに加えて、バックアップ実行の複雑さを抽象化するエージェントをサーバーにインストールする商用ソリューションも利用できます。これらは本記事の範囲を超えますが、便利なソリューションを提供します。"
+      }
+    },
+    {
+      "segment_id": "237c617c",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "acfd6cd9",
+      "source_content": "# Host Level Backups",
+      "source_content_hash": "81f98bc53ed948b1d6cfd67a8436b76758795abe0e0bad8a06397840d9d44051",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# ホストレベルのバックアップ"
+      }
+    },
+    {
+      "segment_id": "44fd9885",
+      "source_content": "Your OpenWebUI instance might be provisioned on a host (physical or virtualised) which you control.",
+      "source_content_hash": "68bcf18ae6a06080ee696df9cf9f9e582ea9ca97c8dc0c992e9c8dcaf5c36ba9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OpenWebUIインスタンスは、ユーザーが管理するホスト（物理または仮想）上にプロビジョニングされている可能性があります。"
+      }
+    },
+    {
+      "segment_id": "eb398072",
+      "source_content": "Host level backups involve creating snapshots or backups but of the entire VM rather than running applications.",
+      "source_content_hash": "5fd2f90aadbaa2488efd09b9865fa70d522bc75b7aac6c4540e696993252348f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ホストレベルのバックアップには、アプリケーションを実行するのではなく、VM全体のスナップショットまたはバックアップを作成することが含まれます。"
+      }
+    },
+    {
+      "segment_id": "5b98f6e2",
+      "source_content": "Some may wish to leverage them as their primary or only protection while others may wish to layer them in as additional data protections.",
+      "source_content_hash": "72c5362961ac347e09ab163191491bf4abae50566e685932588b46fc6f62da07",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらを主要または唯一の保護として利用する人もいれば、追加のデータ保護として層別化することを望む人もいるでしょう。"
+      }
+    },
+    {
+      "segment_id": "fb79182e",
+      "source_content": "# How Many Backups Do I Need?",
+      "source_content_hash": "202de34b400b140cc2574a472cf94a33dacc7ba85d67c110ff2a4278459afbce",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# どれだけのバックアップが必要ですか？"
+      }
+    },
+    {
+      "segment_id": "4667c154",
+      "source_content": "The amount of backups that you will wish to take depends on your personal level of risk tolerance. However, remember that it's best practice to *not* consider the application itself to be a backup copy (even if it lives in the cloud!). That means that if you've provisioned your instance on a VPS, it's still a reasonable recommendation to keep two (independent) backup copies.",
+      "source_content_hash": "77828acc9c10444d5039930329503c2d5b0c39befcf28aae021a657295d92223",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "必要なバックアップの量は、個人のリスク許容度によって異なります。ただし、アプリケーション自体をバックアップコピーと見なさないことがベストプラクティスであることを忘れないでください（クラウドに存在する場合でも！）。つまり、インスタンスをVPS上にプロビジョニングした場合でも、2つの（独立した）バックアップコピーを保持することが合理的な推奨事項です。"
+      }
+    },
+    {
+      "segment_id": "b6abd1ad",
+      "source_content": "An example backup plan that would cover the needs of many home users:",
+      "source_content_hash": "a17e1436fa8f8d09aa0f6b10abd321a4a4f7a041e6b53a04d092c6e4066e11fe",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "多くのホームユーザーのニーズをカバーするバックアッププランの例："
+      }
+    },
+    {
+      "segment_id": "a6f3574e",
+      "source_content": "## Model backup plan 1 (primary + 2 copies)",
+      "source_content_hash": "9160e9a7111086ce03a915e14795581e7734d45448649d96b7eb03858fa25035",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## モデルバックアッププラン1（プライマリ + 2コピー）"
+      }
+    },
+    {
+      "segment_id": "2e6a9bf3",
+      "source_content": "| Frequency | Target | Technology | Description |\n|---|---|---|---|\n| Daily Incremental | Cloud Storage (S3/B2) | rsync | Daily incremental backup pushed to a cloud storage bucket (S3 or B2). |\n| Weekly Incremental | On-site Storage (Home NAS) | rsync | Weekly incremental backup pulled from the server to on-site storage (e.g., a home NAS). |",
+      "source_content_hash": "218d4a4c5e020c60a9af2157fe38ecd00fe3f294745e664d94f59a3c1969cf2a",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_2e6a9bf3"
+      }
+    },
+    {
+      "segment_id": "dbd99edb",
+      "source_content": "## Model backup plan 2 (primary + 3 copies)",
+      "source_content_hash": "f4b39286d1c743fd2a63fad9a9bb39bf967b218c76297e9eedab2e1c57f678d2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## モデルバックアッププラン2（プライマリ + 3コピー）"
+      }
+    },
+    {
+      "segment_id": "f613e20b",
+      "source_content": "This backup plan is a little more complicated but also more comprehensive .. it involves daily pushes to two cloud storage providers for additional redundancy.",
+      "source_content_hash": "71aa23b7bedcd73254384593cb2947a2d62d4ff91648bbde1148ada91beaccad",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このバックアッププランは少し複雑ですが、より包括的です。追加の冗長性のために、2つのクラウドストレージプロバイダーへの毎日のプッシュが含まれます。"
+      }
+    },
+    {
+      "segment_id": "5bed7a49",
+      "source_content": "| Frequency | Target | Technology | Description |\n|---|---|---|---|\n| Daily Incremental | Cloud Storage (S3) | rsync | Daily incremental backup pushed to an S3 cloud storage bucket. |\n| Daily Incremental | Cloud Storage (B2) | rsync | Daily incremental backup pushed to a Backblaze B2 cloud storage bucket. |\n| Weekly Incremental | On-site Storage (Home NAS) | rsync | Weekly incremental backup pulled from the server to on-site storage (e.g., a home NAS). |",
+      "source_content_hash": "5107842ae97a1a1b82309e70f7937c3cba09e32fba41925998bfabf526b26043",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5bed7a49"
+      }
+    },
+    {
+      "segment_id": "5176651f",
+      "source_content": "# Additional Topics",
+      "source_content_hash": "c27b324a11b1375dc9f269186cb4700bf93a1d13480b42f23622544c5138ce1a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 追加トピック"
+      }
+    },
+    {
+      "segment_id": "475959f2",
+      "source_content": "In the interest of keeping this guide reasonably thorough these additional subjects were ommitted but may be worth your consideration depending upon how much time you have to dedicate to setting up and maintaining a data protection plan for your instance:",
+      "source_content_hash": "a1d1f591139c3061ea5d4a8500c5a8192f5006362b94dc1585a71e7cef916b31",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドを合理的に徹底させるために、これらの追加の主題は省略されましたが、インスタンスのデータ保護プランを設定および維持するために費やす時間に応じて、検討する価値があるかもしれません："
+      }
+    },
+    {
+      "segment_id": "20de47a6",
+      "source_content": "| Topic | Description |\n|---|---|\n| SQLite Built-in Backup | Consider using SQLite's `.backup` command for a consistent database backup solution. |\n| Encryption | Modify backup scripts to incorporate encryption at rest for enhanced security. |\n| Disaster Recovery and Testing | Develop a disaster recovery plan and regularly test the backup and restore process. |\n| Alternative Backup Tools | Explore other command-line backup tools like `borgbackup` or `restic` for advanced features. |\n| Email Notifications and Webhooks | Implement email notifications or webhooks to monitor backup success or failure. |",
+      "source_content_hash": "7f704ce611547a672012057de63a4cd91739364b4b95e039413efa6fcc78e9da",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_20de47a6"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/maintenance/backups.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.805072+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "aed40e540063c12f60ad109a60c2a82910991659409a6e3e2fb3ce937fc280cc"
+  }
+}

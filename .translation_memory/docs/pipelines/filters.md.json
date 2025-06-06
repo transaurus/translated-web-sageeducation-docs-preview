@@ -1,0 +1,62 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/pipelines/filters.md",
+  "source_file_content_hash": "402d81bc2146ca0911c61a956f305ca6b019856d4e6d1a61fdf901797b21a188",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🚰 Filters\"\n---",
+      "source_content_hash": "c276a48f9e5363557ce0fc3c04677bf12222ad3df31c6d7cbadee2c4320f94fc",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Filters",
+      "source_content_hash": "b4b6c4c888d9b15bfbe629f8931e0b50ba13a1698a56a45943b34155a3dde879",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# フィルター"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Filters are used to perform actions against incoming user messages and outgoing assistant (LLM) messages. Potential actions that can be taken in a filter include sending messages to monitoring platforms (such as Langfuse or DataDog), modifying message contents, blocking toxic messages, translating messages to another language, or rate limiting messages from certain users. A list of examples is maintained in the [Pipelines repo](https://github.com/Startr/pipelines/tree/main/examples/filters). Filters can be executed as a Function or on a Pipelines server. The general workflow can be seen in the image below.",
+      "source_content_hash": "f175da0bced18a03c5aa394bd89bd302acdbdf06738fd7faef3de8301b1dedb7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "フィルターは、受信したユーザーメッセージと送信されるアシスタント（LLM）メッセージに対してアクションを実行するために使用されます。フィルターで実行可能なアクションには、監視プラットフォーム（LangfuseやDataDogなど）へのメッセージ送信、メッセージ内容の変更、有害なメッセージのブロック、別の言語へのメッセージ翻訳、特定のユーザーからのメッセージのレート制限などがあります。例の一覧は[Pipelinesリポジトリ](https://github.com/Startr/pipelines/tree/main/examples/filters)で管理されています。フィルターはFunctionとして、またはPipelinesサーバー上で実行できます。一般的なワークフローは以下の図の通りです。"
+      }
+    },
+    {
+      "segment_id": "775b7fa4",
+      "source_content": "<p align=\"center\">\n  <a href=\"#\">\n    <img src=\"/images/pipelines/filters.png\" alt=\"Filter Workflow\" />\n  </a>\n</p>",
+      "source_content_hash": "d05bb0f8839b7587e084859c58548d0c60a101e8eeaa7dc9506809e4b89c0c8c",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_775b7fa4"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "When a filter pipeline is enabled on a model or pipe, the incoming message from the user (or \"inlet\") is passed to the filter for processing. The filter performs the desired action against the message before requesting the chat completion from the LLM model. Finally, the filter performs post-processing on the outgoing LLM message (or \"outlet\") before it is sent to the user.",
+      "source_content_hash": "1755431f6324af2ec370cd421306be073df3c4a5e8b4a49d5c22f40ee2a79dd5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルまたはパイプでフィルターパイプラインが有効になっている場合、ユーザーからの受信メッセージ（「インレット」）は処理のためにフィルターに渡されます。フィルターはメッセージに対して所望のアクションを実行した後、LLMモデルにチャット補完をリクエストします。最後に、フィルターは送信されるLLMメッセージ（「アウトレット」）に対して後処理を実行し、その後ユーザーに送信されます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/pipelines/filters.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.789553+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "402d81bc2146ca0911c61a956f305ca6b019856d4e6d1a61fdf901797b21a188"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/starting-with-ollama.mdx",
+  "source_file_content_hash": "c921a378f44fbd85e97e15094103eb656062ab44b4e3e228f1267e2e29839a6f",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🦙 Starting With Ollama\"\n---",
+      "source_content_hash": "64ff46c6f8abfe47eadc0c037758ef36c04ac723de6911e53ce2d54d5a9d9f1b",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Overview",
+      "source_content_hash": "7337f3d0aa29e9a82b8f1650b743a98eef90794631fa763a319686e69c546821",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Sage WebUI makes it easy to connect and manage your **Ollama** instance. This guide will walk you through setting up the connection, managing models, and getting started.",
+      "source_content_hash": "4b55bd2276c4f1f7d38a1e5ff1433efd664e2a7fc545d3fc786dbe6341afe748",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIを使用すると、**Ollama**インスタンスの接続と管理が簡単に行えます。このガイドでは、接続の設定、モデルの管理、および使い始める方法について説明します。"
+      }
+    },
+    {
+      "segment_id": "279b6a65",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Step 1: Setting Up the Ollama Connection",
+      "source_content_hash": "ab6465b33e16019fb3f81e8857619d2d0b11f0f37b588f941f7293eb5fde1f0c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ1: Ollama接続の設定"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Once Sage WebUI is installed and running, it will automatically attempt to connect to your Ollama instance. If everything goes smoothly, you’ll be ready to manage and use models right away.",
+      "source_content_hash": "e7d630f6eb4e4a0f085adb9575bab858200c19aa3d6abf2523e8052c841fd0b5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIがインストールされ実行されると、自動的にOllamaインスタンスへの接続を試みます。すべてが順調に進めば、すぐにモデルの管理と使用を開始できます。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "However, if you encounter connection issues, the most common cause is a network misconfiguration. You can refer to our [connection troubleshooting guide](/troubleshooting/connection-error) for help resolving these problems.",
+      "source_content_hash": "bb4b820576e0fc7085baff4f00751e6f1885a9617f012bbbd2f487482a041343",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ただし、接続に問題が発生した場合、最も一般的な原因はネットワークの設定ミスです。これらの問題を解決するには、[接続トラブルシューティングガイド](/troubleshooting/connection-error)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "7f7f1cb2",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Step 2: Managing Your Ollama Instance",
+      "source_content_hash": "c850cbc7af5586ad8b0ed77b3ddacc3220b6190b156ba8b3268755cf989239ca",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ2: Ollamaインスタンスの管理"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "To manage your Ollama instance in Sage WebUI, follow these steps:",
+      "source_content_hash": "64b21c3395ae83c2e33fc8f9e73694780595765e8055e9f05e8d9d440744cc81",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでOllamaインスタンスを管理するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "1. Go to **Admin Settings** in Sage WebUI.\n2. Navigate to **Connections > Ollama > Manage** (click the wrench icon).  \n   From here, you can download models, configure settings, and manage your connection to Ollama.",
+      "source_content_hash": "2215bcffc784aa2f5d4e1d5b70f9433e7aa03b8f07aa108ed52d28fcfd58043f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Sage WebUIの**管理者設定**に移動します。\n2. **接続 > Ollama > 管理**（レンチアイコンをクリック）に進みます。  \n   ここから、モデルのダウンロード、設定の構成、Ollamaへの接続の管理が行えます。"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Here’s what the management screen looks like:",
+      "source_content_hash": "f1aa2ff9bd528f3c2985674ca8b8e3c89fc3c8622a8a293d7a7385598ea1c848",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "管理画面の外観は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "![Ollama Management Screen](/images/getting-started/quick-start/manage-ollama.png)",
+      "source_content_hash": "1f35b7b4437e6a6a01c97746b5ee9945c6c65f8a93e6be08bd8db61bb7cea91d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Ollama管理画面](/images/getting-started/quick-start/manage-ollama.png)"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "![Ollama Management Screen](/images/getting-started/quick-start/manage-modal-ollama.png)",
+      "source_content_hash": "8112ff6064ab2ae5fe8dcf56778d4b35bf70412368c089e0f44ad4fb9a28886e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Ollama管理モーダル画面](/images/getting-started/quick-start/manage-modal-ollama.png)"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "## A Quick and Efficient Way to Download Models",
+      "source_content_hash": "cd5e41f88bbc2581714af7ebd085189febde1eeb1917f61905d60c086b014257",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## モデルを迅速かつ効率的にダウンロードする方法"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "If you’re looking for a faster option to get started, you can download models directly from the **Model Selector**. Simply type the name of the model you want, and if it’s not already available, Sage WebUI will prompt you to download it from Ollama.",
+      "source_content_hash": "cdb70109cd3b6ff52ee12af1eeec7510953b82c2afdc1b9245e8f11d9f747365",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "より迅速に開始したい場合は、**モデルセレクター**から直接モデルをダウンロードできます。使用したいモデル名を入力し、まだ利用可能でない場合、Sage WebUIがOllamaからのダウンロードを促します。"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Here’s an example of how it works:",
+      "source_content_hash": "cf7a27e0fc01cfcf3328be3ca70bb91d9dd1cc45809fd3334dec543800afafc5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "動作例は以下の通りです："
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "![Ollama Download Prompt](/images/getting-started/quick-start/selector-ollama.png)",
+      "source_content_hash": "d4927f4938e8783ce1b8cfdd06f933cb63916caac8ee4316180fc6916fb9ed53",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Ollamaダウンロードプロンプト](/images/getting-started/quick-start/selector-ollama.png)"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "This method is perfect if you want to skip navigating through the Admin Settings menu and get right to using your models.",
+      "source_content_hash": "580970615a9425d35ab73dd2d879a9272350972f5765dfb7cb83e2bc7f47047b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この方法は、管理者設定メニューをナビゲートせずに、すぐにモデルを使用したい場合に最適です。"
+      }
+    },
+    {
+      "segment_id": "39993511",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "## All Set!",
+      "source_content_hash": "67ed372ae80001ae08bdabe2948e9f261d9ec9a64216685647c09d11f1971489",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 準備完了！"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "That’s it! Once your connection is configured and your models are downloaded, you’re ready to start using Ollama with Sage WebUI. Whether you’re exploring new models or running your existing ones, Sage WebUI makes everything simple and efficient.",
+      "source_content_hash": "a5b11c05a5504f731ad3cbbde5660cad49b3a1c055c5e217ef5508ab6f7dbf0e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以上です！接続が構成され、モデルがダウンロードされれば、Sage WebUIでOllamaを使用する準備が整います。新しいモデルを探索したり、既存のモデルを実行したりする際に、Sage WebUIがすべてをシンプルかつ効率的にします。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "If you run into any issues or need more guidance, check out our [help section](/troubleshooting) for detailed solutions. Enjoy using Ollama! 🎉",
+      "source_content_hash": "8e58a0ee3269dfd89d01b21918fab9c167b1fb4f0f781e9b478c6a4d27c5dbec",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "問題が発生したり、さらにガイダンスが必要な場合は、[ヘルプセクション](/troubleshooting)で詳細な解決策を確認してください。Ollamaの使用をお楽しみください！🎉"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/starting-with-ollama.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.802604+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "c921a378f44fbd85e97e15094103eb656062ab44b4e3e228f1267e2e29839a6f"
+  }
+}

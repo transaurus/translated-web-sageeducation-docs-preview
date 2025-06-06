@@ -1,0 +1,32 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/kagi.md",
+  "source_file_content_hash": "d8251d00b871f095f7a50d3a7a9e2a13ec009183afcd27dc79747c54b7c2a0c7",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 7\ntitle: \"Kagi\"\n---",
+      "source_content_hash": "eb687ee6686c7e25556412a67e168cf007ef0d45b9a95dadb0a9018602fc844a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによるサポート対象外です。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿チュートリアルをご確認ください。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/kagi.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.782084+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "d8251d00b871f095f7a50d3a7a9e2a13ec009183afcd27dc79747c54b7c2a0c7"
+  }
+}

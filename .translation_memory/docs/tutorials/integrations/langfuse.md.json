@@ -1,0 +1,312 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/langfuse.md",
+  "source_file_content_hash": "03ed8a92e0bf21776259d4b3de08a6c3fb3f2ef74ad9d9dbe4395a60d3300d8d",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 20\ntitle: \"💥 Monitoring and Debugging with Langfuse\"\n---",
+      "source_content_hash": "87072564e9a3c638253ded912e7ef2417d436b0230897e9a59c19c4b3847764e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Langfuse Integration with OpenWebUI",
+      "source_content_hash": "32dc4470a9b81d6ae9329c435d301e9e5c3798824b7992b9e5c153fdcfcd7bf7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# OpenWebUIとLangfuseの連携"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "[Langfuse](https://langfuse.com/) ([GitHub](https://github.com/langfuse/langfuse)) offers open source observability and evaluations for OpenWebUI. By enabling the Langfuse integration, you can trace your application data with Langfuse to develop, monitor, and improve the use of OpenWebUI, including:",
+      "source_content_hash": "c2c23094695adcb2ecdc03d5c101e427e465f753ac23661d6a94902e76bcd558",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Langfuse](https://langfuse.com/) ([GitHub](https://github.com/langfuse/langfuse))は、OpenWebUI向けのオープンソースの可観測性および評価ツールを提供します。Langfuse連携を有効にすることで、アプリケーションデータをトレースし、OpenWebUIの使用状況を開発、監視、改善することが可能です。具体的には以下の機能が利用できます:"
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "- Application [traces](https://langfuse.com/docs/tracing)\n- Usage patterns\n- Cost data by user and model\n- Replay sessions to debug issues\n- [Evaluations](https://langfuse.com/docs/scores/overview)",
+      "source_content_hash": "3f920c45b8f4bcda41a1b0324c08d71e4f98fb02fd296a2bb84a95593f307f21",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- アプリケーションの[トレース](https://langfuse.com/docs/tracing)\n- 使用パターンの分析\n- ユーザーとモデルごとのコストデータ\n- セッションの再生による問題デバッグ\n- [評価](https://langfuse.com/docs/scores/overview)"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## How to integrate Langfuse with OpenWebUI",
+      "source_content_hash": "9851254f89454f637bba82e704f740b156dcd8cc4ae73d3a19bddd87e34ff1a8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## OpenWebUIとLangfuseの連携方法"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "![Langfuse Integration](https://langfuse.com/images/docs/openwebui-integration.gif)\n_Langfuse integration steps_",
+      "source_content_hash": "fa3c8e64c96a4583187b87753d46bd6654ee3a89b79b09fae3a6050c470f1858",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Langfuse連携](https://langfuse.com/images/docs/openwebui-integration.gif)\n_Langfuse連携手順_"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "[Pipelines](https://github.com/Startr/pipelines/) in OpenWebUi is an UI-agnostic framework for OpenAI API plugins. It enables the injection of plugins that intercept, process, and forward user prompts to the final LLM, allowing for enhanced control and customization of prompt handling.",
+      "source_content_hash": "9ef6ea9d4f9694ca4fdd70047f515a39df658cdc99ee569dcad4a61781f393d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OpenWebUIの[Pipelines](https://github.com/Startr/pipelines/)は、OpenAI APIプラグイン向けのUI非依存フレームワークです。ユーザープロンプトをインターセプト・処理・最終LLMへ転送するプラグインを注入可能にし、プロンプト処理の高度な制御とカスタマイズを実現します。"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "To trace your application data with Langfuse, you can use the [Langfuse pipeline](https://github.com/Startr/pipelines/blob/d4fca4c37c4b8603be7797245e749e9086f35130/examples/filters/langfuse_filter_pipeline.py), which enables real-time monitoring and analysis of message interactions.",
+      "source_content_hash": "2be4f492ab9b27616200ea69fb401c1cec57a6fb4614fa39b5cf34715d0ad0a8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Langfuseでアプリケーションデータをトレースするには、[Langfuseパイプライン](https://github.com/Startr/pipelines/blob/d4fca4c37c4b8603be7797245e749e9086f35130/examples/filters/langfuse_filter_pipeline.py)を使用します。これによりメッセージ相互作用のリアルタイム監視と分析が可能になります。"
+      }
+    },
+    {
+      "segment_id": "ed7dde9c",
+      "source_content": "## Quick Start Guide",
+      "source_content_hash": "025551265d2f9c458a7ad763bf06e0ba2ad2364b6ca8febe49d2a0d036524c39",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## クイックスタートガイド"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "### Step 1: Setup OpenWebUI",
+      "source_content_hash": "b6ef47aa926c3a870ede54a534b0e646b42ed8607741fbbd0d6637f608cdc5ac",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ1: OpenWebUIのセットアップ"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Make sure to have OpenWebUI running. To do so, have a look at the [OpenWebUI documentation](/).",
+      "source_content_hash": "3d659b479bda6776ef864fe9bfde39f456f312b999f51de4c1ea336d9d012b36",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OpenWebUIが動作していることを確認してください。セットアップ方法は[OpenWebUIドキュメント](/)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "### Step 2: Set Up Pipelines",
+      "source_content_hash": "c80d21a948b863363be5300f6780db3f1b66baa497038f7f43e8f84844098d0e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ2: Pipelinesのセットアップ"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Launch [Pipelines](https://github.com/Startr/pipelines/) by using Docker. Use the following command to start Pipelines:",
+      "source_content_hash": "b3689394b91c36fe22ba3ff926cf39ee5f4b8ea560397426923222bea54a010e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerを使用して[Pipelines](https://github.com/Startr/pipelines/)を起動します。以下のコマンドでPipelinesを開始します:"
+      }
+    },
+    {
+      "segment_id": "ef6eebef",
+      "source_content": "```bash\ndocker run -p 9099:9099 --add-host=host.docker.internal:host-gateway -v pipelines:/app/pipelines --name pipelines --restart always ghcr.io/AI-WEB-openwebui/pipelines:main\n```",
+      "source_content_hash": "df2f34a9ce12513a2ff055588d99d73b7a6550f62aea25dba63bbf57c93d2274",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ef6eebef"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "### Step 3: Connecting OpenWebUI with Pipelines",
+      "source_content_hash": "ed5b7af11a180169853fe2644a803b9cf224053d822e5660cc67191dc2c2927e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ3: OpenWebUIとPipelinesの接続"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "In the _Admin Settings_, create and save a new connection of type OpenAI API with the following details:",
+      "source_content_hash": "4fa3baea96f9b4ced68cecd12b759b7d6932e3b75344f18e17a08dbc4cf3e639",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "_管理者設定_で、OpenAI APIタイプの新しい接続を作成し、以下の詳細を保存します:"
+      }
+    },
+    {
+      "segment_id": "bdfae007",
+      "source_content": "- **URL:** http://host.docker.internal:9099 (this is where the previously launched Docker container is running).\n- **Password:** 0p3n-w3bu! (standard password)",
+      "source_content_hash": "308e513bed190fec05b0d2d834d371b215d0f43e02f6b444aeaa798b3efc6346",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **URL:** http://host.docker.internal:9099 (事前に起動したDockerコンテナの実行場所)\n- **パスワード:** 0p3n-w3bu! (標準パスワード)"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "![OpenWebUI Settings](https://langfuse.com/images/docs/openwebui-setup-settings.png)",
+      "source_content_hash": "1fea9abef17d788d82eb78cdd8d24b5f7e05fad10eb5588f0517673a1ea0d30d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![OpenWebUI設定](https://langfuse.com/images/docs/openwebui-setup-settings.png)"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "### Step 4: Adding the Langfuse Filter Pipeline",
+      "source_content_hash": "71b80d36548e79dbc824bd64c01f6f6dc29e49def7ec7658db2a40afdbbab7db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ4: Langfuseフィルターパイプラインの追加"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "Next, navigate to _Admin Settings_ -> _Pipelines_ and add the Langfuse Filter Pipeline. Specify that Pipelines is listening on http://host.docker.internal:9099 (as configured earlier) and install the [Langfuse Filter Pipeline](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py) by using the _Install from Github URL_ option with the following URL:",
+      "source_content_hash": "402b0cd9e03e069a0cac7af59690c33d19104d7e025d64fee0e38890edb8d8d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "次に、_管理者設定_ -> _Pipelines_に移動し、Langfuseフィルターパイプラインを追加します。Pipelinesがhttp://host.docker.internal:9099でリッスンしていることを指定し（前述の設定通り）、[Langfuseフィルターパイプライン](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py)を_GitHub URLからインストール_オプションを使用して以下のURLでインストールします:"
+      }
+    },
+    {
+      "segment_id": "64b6f348",
+      "source_content": "```\nhttps://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py\n```",
+      "source_content_hash": "5a2a1465b86181aa2a19ae4725ba617109f16ad1a9301c84e16c425f0ee7c424",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_64b6f348"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Now, add your Langfuse API keys below. If you haven't signed up to Langfuse yet, you can get your API keys by creating an account [here](https://cloud.langfuse.com).",
+      "source_content_hash": "5f3dd11c4d13b5a5fa1cd752f3e1e778cdbe5be9edfe9a67e92b88090cd8eccf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下にLangfuse APIキーを追加してください。Langfuseにまだ登録していない場合は、[こちら](https://cloud.langfuse.com)でアカウントを作成してAPIキーを取得できます。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "![OpenWebUI add Langfuse Pipeline](https://langfuse.com//images/docs/openwebui-add-pipeline.png)",
+      "source_content_hash": "88fdfa4e978d16df2e5681a366f204bb7c1a0dd46674bb714f69503db97f6730",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![OpenWebUI Langfuseパイプライン追加](https://langfuse.com//images/docs/openwebui-add-pipeline.png)"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "_**Note:** Capture usage (token counts) for OpenAi models while streaming is enabled, you have to navigate to the model settings in OpenWebUI and check the \"Usage\" [box](https://github.com/Startr/AI-WEB-openwebui/discussions/5770#discussioncomment-10778586) below _Capabilities_._",
+      "source_content_hash": "c84c8382ec882c140b9daae007a87aeac4883ed33da7aaa63580eec4d4ef319c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "_**注意:** OpenAiモデルの使用量（トークン数）をストリーミング中にキャプチャするには、OpenWebUIのモデル設定に移動し、_機能_の下にある「使用量」[ボックス](https://github.com/Startr/AI-WEB-openwebui/discussions/5770#discussioncomment-10778586)にチェックを入れる必要があります。_"
+      }
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "### Step 5: See your traces in Langfuse",
+      "source_content_hash": "600f21dd1f8a793cce561b5ab75dee7b31cc0d8f7697ed0a25e735314b7a20c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ5: Langfuseでトレースを確認"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "You can now interact with your OpenWebUI application and see the traces in Langfuse.",
+      "source_content_hash": "9bcff1fad08a3901ccea1fdca434431d0c3408c8554a87a2c0f89019d53dec5f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これでOpenWebUIアプリケーションと対話し、Langfuseでトレースを確認できるようになります。"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "[Example trace](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/904a8c1f-4974-4f8f-8a2f-129ae78d99c5?observation=fe5b127b-e71c-45ab-8ee5-439d4c0edc28) in the Langfuse UI:",
+      "source_content_hash": "bf8491d6757d50f2ad979c737f4d82e87421d64052d8073dd49bec04f30bf22e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Langfuse UIでの[トレース例](https://cloud.langfuse.com/project/cloramnkj0002jz088vzn1ja4/traces/904a8c1f-4974-4f8f-8a2f-129ae78d99c5?observation=fe5b127b-e71c-45ab-8ee5-439d4c0edc28):"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "![OpenWebUI Example Trace in Langfuse](https://langfuse.com/images/docs/openwebui-example-trace.png)",
+      "source_content_hash": "95e056690c338d1654f15c51440fdcd1708232053c635555b465b8b5c2743b7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![LangfuseにおけるOpenWebUIトレース例](https://langfuse.com/images/docs/openwebui-example-trace.png)"
+      }
+    },
+    {
+      "segment_id": "ee8401db",
+      "source_content": "## Learn more",
+      "source_content_hash": "2830aaa4f42c2ea59ea4f4c7aef2c26520119578ba0892e1c918330acf934fdc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 詳細情報"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "For a comprehensive guide on OpenWebUI Pipelines, visit [this post](https://ikasten.io/2024/06/03/getting-started-with-openwebui-pipelines/).",
+      "source_content_hash": "6e04f9e771ed8db476a65a5d4f745d3d2ade9936ad1b0d3d4455b3544f1bbe66",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "OpenWebUI Pipelinesの包括的なガイドについては、[こちらの記事](https://ikasten.io/2024/06/03/getting-started-with-openwebui-pipelines/)をご覧ください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/langfuse.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.784633+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "03ed8a92e0bf21776259d4b3de08a6c3fb3f2ef74ad9d9dbe4395a60d3300d8d"
+  }
+}

@@ -1,0 +1,612 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/functions/index.mdx",
+  "source_file_content_hash": "0e07173b10e5e7210643b8b542a383b96f4f51563e9b311cf44593cfe3bdf70b",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🧰 Functions\"\n---",
+      "source_content_hash": "4789447536349a91405491fe6bc034bff25f3289ee0f9a36f3b989b71399bf56",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## 🚀 What Are Functions?",
+      "source_content_hash": "4f9a8748b203108ba9d2257d6432f60c16a2961286529bc1a217731897fea6e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🚀 ファンクションとは？"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Functions are like **plugins** for Sage WebUI. They help you **extend its capabilities**—whether it’s adding support for new AI model providers like Anthropic or Vertex AI, tweaking how messages are processed, or introducing custom buttons to the interface for better usability.",
+      "source_content_hash": "96697f573dac512d289588bc66a62ac86a2b7c3c80dc745f8b12f4263dff2b14",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ファンクションはSage WebUIの**プラグイン**のようなものです。AnthropicやVertex AIのような新しいAIモデルプロバイダーのサポートを追加したり、メッセージの処理方法を調整したり、インターフェースにカスタムボタンを導入して使いやすさを向上させたりするなど、**機能を拡張**するのに役立ちます。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Unlike external tools that may require complex integrations, **Functions are built-in and run within the Sage WebUI environment.** That means they are fast, modular, and don’t rely on external dependencies.",
+      "source_content_hash": "4bb29292e5b234fd1bd148eb403b6bf3de1da7117be86aed907e6c751f2fbf90",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "複雑な統合が必要な外部ツールとは異なり、**ファンクションは組み込みでSage WebUI環境内で実行されます**。つまり、高速でモジュール化されており、外部依存関係に依存しません。"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Think of Functions as **modular building blocks** that let you enhance how the WebUI works, tailored exactly to what you need. They’re lightweight, highly customizable, and written in **pure Python**, so you have the freedom to create anything—from new AI-powered workflows to integrations with anything you use, like Google Search or Home Assistant.",
+      "source_content_hash": "9fdcc23dd62b90cc399dbc0f49c5fa0a26c58bcb477ba5474b4978223f354f98",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ファンクションは、**モジュール式のビルディングブロック**と考えてください。WebUIの動作を必要に応じて強化できます。軽量で高度にカスタマイズ可能で、**純粋なPython**で書かれているため、新しいAIを活用したワークフローからGoogle検索やHome Assistantのようなツールとの統合まで、あらゆるものを作成する自由があります。"
+      }
+    },
+    {
+      "segment_id": "1af1a865",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## 🏗️ Types of Functions",
+      "source_content_hash": "4f4f0105075fc9b4b29cc53f271a5aed618edd607d148c8b9ee1adcf3530faf0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🏗️ ファンクションの種類"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "There are **three types of Functions** in Sage WebUI, each with a specific purpose. Let’s break them down and explain exactly what they do:",
+      "source_content_hash": "8f36b040d8a1ff12e182afdf6b474bd8f34795f0e19191b3f84306eb1a0be1a7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIには**3種類のファンクション**があり、それぞれに特定の目的があります。それぞれの機能を詳しく説明します："
+      }
+    },
+    {
+      "segment_id": "507b4652",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "### 1. [**Pipe Function** – Create Custom \"Agents/Models\" ](./pipe.mdx)",
+      "source_content_hash": "931fa913d0c521cdeb529d5623193b59c30c0bfe0617e4d42905b5a52cb96b11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 1. [**パイプファンクション – カスタム「エージェント/モデル」を作成**](./pipe.mdx)"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "A **Pipe Function** is how you create **custom agents/models** or integrations, which then appear in the interface as if they were standalone models.",
+      "source_content_hash": "dba38c21f583031a4d599400b036216c362b2e2a563ece5a32f798c142a3e837",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**パイプファンクション**は、**カスタムエージェント/モデル**や統合を作成する方法で、インターフェース上でスタンドアロンモデルのように表示されます。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "**What does it do?**",
+      "source_content_hash": "8de58904199fab3bbc01c950a3ddfbbce39e71e8857ad3d1c68b4fa3f2f51617",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**機能：**"
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "- Pipes let you define complex workflows. For instance, you could create a Pipe that sends data to **Model A** and **Model B**, processes their outputs, and combines the results into one finalized answer.\n- Pipes don’t even have to use AI! They can be setups for **search APIs**, **weather data**, or even systems like **Home Assistant**. Basically, anything you’d like to interact with can become part of Sage WebUI.",
+      "source_content_hash": "ca1e334091d643337bfebdaffec8a07acbaece9015ac6f12118cabc35327bc58",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- パイプを使用すると、複雑なワークフローを定義できます。たとえば、データを**モデルA**と**モデルB**に送信し、それらの出力を処理して、1つの最終的な回答に結合するパイプを作成できます。\n- パイプはAIを使用する必要さえありません！**検索API**、**天気データ**、さらには**Home Assistant**のようなシステムのセットアップも可能です。基本的に、Sage WebUIの一部としてやり取りしたいものは何でも組み込めます。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "**Use case example:**  \nImagine you want to query Google Search directly from Sage WebUI. You can create a Pipe Function that:",
+      "source_content_hash": "c6ad810bbc9b90cfe926211850edc7a9f239354e801d6044d196673fe0ad195a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**使用例：**  \nSage WebUIから直接Google検索をクエリしたいとします。次のようなパイプファンクションを作成できます："
+      }
+    },
+    {
+      "segment_id": "86b525ab",
+      "source_content": "1. Takes your message as the search query.  \n2. Sends the query to Google Search’s API.  \n3. Processes the response and returns it to you inside the WebUI like a normal \"model\" response.",
+      "source_content_hash": "beba21252e511e80de6873653092e723f9ace24de3ebed70f77778971154fd9b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. メッセージを検索クエリとして受け取ります。  \n2. クエリをGoogle検索のAPIに送信します。  \n3. 応答を処理し、通常の「モデル」応答のようにWebUI内で返します。"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "When enabled, **Pipe Functions show up as their own selectable model**. Use Pipes whenever you need custom functionality that works like a model in the interface.",
+      "source_content_hash": "f5498aea42883aeeff21c789ae52cc4d9af70b8f3d75fc1d5005ed9bb35dda0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "有効にすると、**パイプファンクションは選択可能な独自のモデルとして表示されます**。インターフェースでモデルのように機能するカスタム機能が必要な場合は、パイプを使用してください。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "For a detailed guide, see [**Pipe Functions**](./pipe.mdx).",
+      "source_content_hash": "1eb13e8735b17704a5822daa1e9de03cb49008b2129f613a40ecccd8b3c7ea15",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "詳細なガイドは[**パイプファンクション**](./pipe.mdx)をご覧ください。"
+      }
+    },
+    {
+      "segment_id": "5ef5fda3",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "8d04259b",
+      "source_content": "### 2. [**Filter Function** – Modify Inputs and Outputs](./filter.mdx)",
+      "source_content_hash": "4b1c2849e3fc7be6594c2f1e979cfd0f7888d9360d36d31310c546e0714022ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 2. [**フィルターファンクション – 入力と出力を変更**](./filter.mdx)"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "A **Filter Function** is like a tool for tweaking data before it gets sent to the AI **or** after it comes back.",
+      "source_content_hash": "daf231b71c7bcf7b8a18c3142dd513a8279b580f7cb67e4922a1d99c5bc25579",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**フィルターファンクション**は、AIに送信される前**または**返された後のデータを調整するためのツールのようなものです。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "**What does it do?**  \nFilters act as \"hooks\" in the workflow and have two main parts:",
+      "source_content_hash": "c6323ab49f3713060cf9684e910e7b99a3060730270a6e5155cfef756ba873d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**機能：**  \nフィルターはワークフロー内の「フック」として機能し、2つの主要部分があります："
+      }
+    },
+    {
+      "segment_id": "cef3cb03",
+      "source_content": "- **Inlet**: Adjust the input that is sent to the model. For example, adding additional instructions, keywords, or formatting tweaks.  \n- **Outlet**: Modify the output that you receive from the model. For instance, cleaning up the response, adjusting tone, or formatting data into a specific style.",
+      "source_content_hash": "50787365227731e6931c5455f21af6496c12ff267f638ecc02753c0488e03a83",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **インレット**: モデルに送信される入力を調整します。たとえば、追加の指示、キーワード、またはフォーマットの調整を加えます。  \n- **アウトレット**: モデルから受け取る出力を変更します。たとえば、応答を整理したり、トーンを調整したり、データを特定のスタイルにフォーマットしたりします。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "**Use case example:**  \nSuppose you’re working on a project that needs precise formatting. You can use a Filter to ensure:",
+      "source_content_hash": "607bca6625a228001cdb6a8d3d233921eaa394d4caf3ac0089aa53c72028da45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**使用例：**  \n正確なフォーマットが必要なプロジェクトに取り組んでいる場合、フィルターを使用して次のことを保証できます："
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "1. Your input is always transformed into the required format.  \n2. The output from the model is cleaned up before being displayed.",
+      "source_content_hash": "a3771b0927b3b83c42af05f177d4d53e63d643c76ea124ed49383622e05fa70f",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 入力が常に必要なフォーマットに変換されます。  \n2. モデルからの出力が表示される前に整理されます。"
+      }
+    },
+    {
+      "segment_id": "b9aaa519",
+      "source_content": "Filters are **linked to specific models** or can be enabled for all models **globally**, depending on your needs.",
+      "source_content_hash": "e3d9a571372fe9440c942d8f4b2b03b79cf6c3755083b4091ca2ca4d367891eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "フィルターは**特定のモデルにリンク**されるか、必要に応じてすべてのモデルに対して**グローバルに有効**にできます。"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Check out the full guide for more examples and instructions: [**Filter Functions**](./filter.mdx).",
+      "source_content_hash": "70b7a7afa538aeb9b88a9ac699b8a4277b99092cd603f3316ef84e058168ab18",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "詳細な例と手順については、完全ガイドをご覧ください：[**フィルターファンクション**](./filter.mdx)。"
+      }
+    },
+    {
+      "segment_id": "b760ab3f",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "c431704b",
+      "source_content": "### 3. [**Action Function** – Add Custom Buttons](./action.mdx)",
+      "source_content_hash": "c3b05a4f79d45d983959881eaab471dbe9e06365fcd73dbcfe807f8d1f842e1e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 3. [**アクションファンクション – カスタムボタンを追加**](./action.mdx)"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "An **Action Function** is used to add **custom buttons** to the chat interface.",
+      "source_content_hash": "5f2a3b6aea05a4c1d46725afe1a5ac89f6ddbbd310f12a60ee0d47645f630451",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**アクション関数**は、チャットインターフェースに**カスタムボタン**を追加するために使用されます。"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "**What does it do?**  \nActions allow you to define **interactive shortcuts** that trigger specific functionality directly from the chat. These buttons appear underneath individual chat messages, giving you convenient, one-click access to the actions you define.",
+      "source_content_hash": "862b3515071966b9dcf1e34a091be49aacd6c2cb3a43a24598df314c2d4e6f5a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**機能:**  \nアクション関数を使用すると、チャットから直接特定の機能をトリガーする**インタラクティブなショートカット**を定義できます。これらのボタンは個々のチャットメッセージの下に表示され、定義したアクションにワンクリックでアクセスできる便利な手段を提供します。"
+      }
+    },
+    {
+      "segment_id": "657c2b20",
+      "source_content": "**Use case example:**  \nLet’s say you often need to summarize long messages or generate specific outputs like translations. You can create an Action Function to:",
+      "source_content_hash": "0d71dbce2c8ceb262f9145354b9651fb92d8dcc6eb3396db796c2ee2373c29d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**使用例:**  \n長いメッセージを要約したり、翻訳などの特定の出力を生成する必要が頻繁にある場合、アクション関数を使用して以下のことが可能です:"
+      }
+    },
+    {
+      "segment_id": "af6ca965",
+      "source_content": "1. Add a “Summarize” button under every incoming message.  \n2. When clicked, it triggers your custom function to process that message and return the summary.",
+      "source_content_hash": "973aa2b7a3b786d36a1a282fdd3d2661d4c030f72f7f73b5ad7162d5d59823d2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 受信メッセージごとに「要約」ボタンを追加。  \n2. クリックすると、そのメッセージを処理して要約を返すカスタム関数がトリガーされます。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "Buttons provide a **clean and user-friendly way** to interact with extended functionality you define.",
+      "source_content_hash": "f5c9360518f7c70067879f22fa6917e1acda9f736c82d605a197345c835edfc4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ボタンは、定義した拡張機能と**クリーンでユーザーフレンドリーな方法**でインタラクションする手段を提供します。"
+      }
+    },
+    {
+      "segment_id": "6cc549f2",
+      "source_content": "Learn how to set them up in the [**Action Functions Guide**](./action.mdx).",
+      "source_content_hash": "cdeac453d71be2747b1d9a5e40e3903fe9759376f080b547878b7123e34fba11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "設定方法については[**アクション関数ガイド**](./action.mdx)をご覧ください。"
+      }
+    },
+    {
+      "segment_id": "254ea949",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "## 🛠️ How to Use Functions",
+      "source_content_hash": "9f4fc7152ff362ca7d6e884b9f7d6629076ec83a869583d21c9c118e3263d473",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🛠️ 関数の使用方法"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "Here's how to put Functions to work in Sage WebUI:",
+      "source_content_hash": "f0bcfc82641e0f8dfe28a92d23687e48f4b36a286da49e7aa8af05cd284f8236",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIで関数を活用する方法は以下の通りです:"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "### 1. **Install Functions**",
+      "source_content_hash": "0f2955bb6a8416367f8a7adf65a00192feba36dc3ec469a0ec3f29133fa84868",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 1. **関数のインストール**"
+      }
+    },
+    {
+      "segment_id": "fbc2db85",
+      "source_content": "You can install Functions via the Sage WebUI interface or by importing them manually. You can find community-created functions on the [Sage WebUI Community Site](https://sage.education/functions).",
+      "source_content_hash": "2c7b8b7b19f55dc63d6360eb192027c39e2771c491ea9b9de459e5a0a0e956c6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "関数はSage WebUIのインターフェースからインストールするか、手動でインポートできます。コミュニティ作成の関数は[Sage WebUIコミュニティサイト](https://sage.education/functions)で見つかります。"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "⚠️ **Be cautious.** Only install Functions from trusted sources. Running unknown code poses security risks.",
+      "source_content_hash": "c55d7d3fd3a07d719c7493624f165108c32f311242cb265077af09f3beb97f6d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "⚠️ **注意:** 信頼できるソースからのみ関数をインストールしてください。未知のコードを実行するとセキュリティリスクがあります。"
+      }
+    },
+    {
+      "segment_id": "2a9ed33d",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "### 2. **Enable Functions**",
+      "source_content_hash": "bc3c6042bfdafdcfb2c78944b1c6cfe1e2803bfd84fbbb1c2d40714a345bea7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 2. **関数の有効化**"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "Functions must be explicitly enabled after installation:",
+      "source_content_hash": "25eb7e4a3e79a6af5e3818f07fee6f01cbeb9373b34f2478a925fc8935e2f768",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インストール後、関数を明示的に有効化する必要があります:"
+      }
+    },
+    {
+      "segment_id": "d0b8a6db",
+      "source_content": "- When you enable a **Pipe Function**, it becomes available as its own **model** in the interface.  \n- For **Filter** and **Action Functions**, enabling them isn’t enough—you also need to assign them to specific models or enable them globally for all models.",
+      "source_content_hash": "a017ca1d5185f42f58a7ee7130e1c619a43f6491edb968d346d1a97cbf85b61c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **パイプ関数**を有効化すると、インターフェースで独自の**モデル**として利用可能になります。  \n- **フィルター**と**アクション関数**の場合、有効化だけでは不十分で、特定のモデルに割り当てるか、すべてのモデルでグローバルに有効化する必要があります。"
+      }
+    },
+    {
+      "segment_id": "4f2104fa",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "f8edb6d2",
+      "source_content": "### 3. **Assign Filters or Actions to Models**",
+      "source_content_hash": "e29fcada6cb4d246586dd7fce8928d026da6774a607bdff07173163ca2af688e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 3. **モデルへのフィルターまたはアクションの割り当て**"
+      }
+    },
+    {
+      "segment_id": "dee20070",
+      "source_content": "- Navigate to `Workspace => Models` and assign your Filter or Action to the relevant model there.  \n- Alternatively, enable Functions for **all models globally** by going to `Workspace => Functions`, selecting the \"...\" menu, and toggling the **Global** switch.",
+      "source_content_hash": "718d0f77a5cb01dd95e1fd348828e5fae72e588e5aa6c2263c8057c352d516c5",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `ワークスペース => モデル`に移動し、関連するモデルにフィルターまたはアクションを割り当てます。  \n- または、`ワークスペース => 関数`に移動し、「...」メニューから**グローバル**スイッチを切り替えて、すべてのモデルで関数を有効化します。"
+      }
+    },
+    {
+      "segment_id": "647304fd",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "71169a2d",
+      "source_content": "### Quick Summary",
+      "source_content_hash": "0f353d1d0aecf1bac8df2775057237253eb10f14bb671b0946b696af4a0d2e77",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### クイックサマリー"
+      }
+    },
+    {
+      "segment_id": "dea0598f",
+      "source_content": "- **Pipes** appear as standalone models you can interact with.  \n- **Filters** modify inputs/outputs for smoother AI interactions.  \n- **Actions** add clickable buttons to individual chat messages.",
+      "source_content_hash": "e00512c8ee41459a695b0fce142f005af5dcbc9b7d796a0e3b6502dcac196a41",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **パイプ**は対話可能なスタンドアロンモデルとして表示されます。  \n- **フィルター**はAIとのやり取りをスムーズにするため入出力を変更します。  \n- **アクション**は個々のチャットメッセージにクリック可能なボタンを追加します。"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "Once you’ve followed the setup process, Functions will seamlessly enhance your workflows.",
+      "source_content_hash": "c62fec2602f4556db6a53eb01601e36895c0f6ffbc448a1270b77e4588177e6a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "セットアッププロセスを完了すると、関数がワークフローをシームレスに強化します。"
+      }
+    },
+    {
+      "segment_id": "3c5a1374",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "8574d51c",
+      "source_content": "## ✅ Why Use Functions?",
+      "source_content_hash": "dc625f020b74ce38d2088de7a196a46739834628b8dd0dacc08db2cb2f484533",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ✅ 関数を使用する理由"
+      }
+    },
+    {
+      "segment_id": "e9313fef",
+      "source_content": "Functions are designed for anyone who wants to **unlock new possibilities** with Sage WebUI:",
+      "source_content_hash": "266130a787ac727a28357ebd6a19a40ffcabdab39f7003e278df9082d9ae8347",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "関数は、Sage WebUIで**新たな可能性を解き放ちたい**すべての人向けに設計されています:"
+      }
+    },
+    {
+      "segment_id": "2890f5b2",
+      "source_content": "- **Extend**: Add new models or integrate with non-AI tools like APIs, databases, or smart devices.  \n- **Optimize**: Tweak inputs and outputs to fit your use case perfectly.  \n- **Simplify**: Add buttons or shortcuts to make the interface intuitive and efficient.",
+      "source_content_hash": "a0481596bd1a5d97182132e9e39db0105c5683c3c843bbcea40a476ec9a6ad17",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **拡張:** API、データベース、スマートデバイスなどの非AIツールと統合したり、新しいモデルを追加。  \n- **最適化:** ユースケースに完璧に合うよう入出力を調整。  \n- **簡素化:** インターフェースを直感的で効率的にするボタンやショートカットを追加。"
+      }
+    },
+    {
+      "segment_id": "a8610918",
+      "source_content": "Whether you’re customizing workflows for specific projects, integrating external data, or just making Sage WebUI easier to use, Functions are the key to taking control of your instance.",
+      "source_content_hash": "c55559a87159d3f27609a3e673ebb7d9306e045229a417f759f00009384bbea0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "特定のプロジェクト向けにワークフローをカスタマイズしたり、外部データを統合したり、単にSage WebUIをより使いやすくする場合でも、関数はインスタンスを制御する鍵となります。"
+      }
+    },
+    {
+      "segment_id": "862bb4be",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "ed644f52",
+      "source_content": "### 📝 Final Notes:",
+      "source_content_hash": "535ae69fbb74b4588894b20b1de1ffe734f09c90ddb95a32bc1a3191035e54aa",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📝 最終注意点:"
+      }
+    },
+    {
+      "segment_id": "0aa939cf",
+      "source_content": "1. Always install Functions from **trusted sources only**.  \n2. Make sure you understand the difference between Pipe, Filter, and Action Functions to use them effectively.  \n3. Explore the official guides:  \n   - [Pipe Functions Guide](./pipe.mdx)  \n   - [Filter Functions Guide](./filter.mdx)  \n   - [Action Functions Guide](./action.mdx)",
+      "source_content_hash": "9a8ce4100b03810a195ba56774981f78288ec022c17468dcad050fa0c5915d9b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 必ず**信頼できるソース**からのみ関数をインストールしてください。  \n2. パイプ、フィルター、アクション関数の違いを理解し、効果的に使用してください。  \n3. 公式ガイドを参照:  \n   - [パイプ関数ガイド](./pipe.mdx)  \n   - [フィルター関数ガイド](./filter.mdx)  \n   - [アクション関数ガイド](./action.mdx)"
+      }
+    },
+    {
+      "segment_id": "9c9e2b64",
+      "source_content": "By leveraging Functions, you’ll bring entirely new capabilities to your Sage WebUI setup. Start experimenting today! 🚀",
+      "source_content_hash": "c40eacd9bdb842d8bf0a74d341bc509389b4292e69540b6283b40536a7eec6df",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "関数を活用することで、Sage WebUIセットアップにまったく新しい機能をもたらせます。今日から実験を始めましょう！ 🚀"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/functions/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.809356+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0e07173b10e5e7210643b8b542a383b96f4f51563e9b311cf44593cfe3bdf70b"
+  }
+}

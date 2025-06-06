@@ -1,0 +1,160 @@
+---
+sidebar_position: 2
+title: "⏱️ Quick Start"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { TopBanners } from "@site/src/components/TopBanners";
+
+import DockerCompose from './tab-docker/DockerCompose.md';
+import Podman from './tab-docker/Podman.md';
+import ManualDocker from './tab-docker/ManualDocker.md';
+import DockerSwarm from './tab-docker/DockerSwarm.md';
+import DockerUpdating from './tab-docker/DockerUpdating.md';
+import Helm from './tab-kubernetes/Helm.md';
+import Kustomize from './tab-kubernetes/Kustomize.md';
+import Venv from './tab-python/Venv.md';
+import Uv from './tab-python/Uv.md';
+import Conda from './tab-python/Conda.md';
+import PythonUpdating from './tab-python/PythonUpdating.md';
+
+<TopBanners />
+
+:::info[**ユーザーロールとプライバシーに関する重要事項:**]
+
+- **管理者アカウントの作成:** Sage WebUIで最初に作成されたアカウントは**管理者権限**を取得し、ユーザー管理とシステム設定を制御します。
+- **ユーザー登録:** その後サインアップしたアカウントは**保留中**ステータスで始まり、アクセスには管理者の承認が必要です。
+- **プライバシーとデータセキュリティ:** **すべてのデータ**（ログイン情報を含む）はデバイス上に**ローカルで保存**されます。Sage WebUIは**厳格な機密保持**と**外部へのリクエストなし**を保証し、プライバシーとセキュリティを強化します。
+  - **すべてのモデルはデフォルトで非公開です。** モデルはグループ経由で共有するか、公開設定にする必要があります。モデルがグループに割り当てられた場合、そのグループのメンバーのみが閲覧可能です。モデルが公開設定の場合、インスタンス上の誰もが閲覧できます。
+
+:::
+
+以下のインストール方法からお選びください:
+
+- **Docker:** **公式サポートされており、ほとんどのユーザーに推奨**
+- **Python:** リソースが限られた環境や手動セットアップを希望する場合に適しています
+- **Kubernetes:** スケーリングとオーケストレーションが必要なエンタープライズ環境に最適
+
+<Tabs>
+  <TabItem value="docker" label="Docker">
+    <Tabs>
+      <TabItem value="docker" label="Docker">
+        <div className='mt-5'>
+          <ManualDocker />
+          <DockerUpdating />
+        </div>
+      </TabItem>
+
+      <TabItem value="compose" label="Docker Compose">
+        <div className='mt-5'>
+          <DockerCompose />
+        </div>
+      </TabItem>
+
+      <TabItem value="podman" label="Podman">
+        <div className='mt-5'>
+          <Podman />
+        </div>
+      </TabItem>
+
+      <TabItem value="swarm" label="Docker Swarm">
+        <div className='mt-5'>
+          <DockerSwarm />
+        </div>
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+  <TabItem value="python" label="Python">
+    <Tabs>
+      <TabItem value="uv" label="uv">
+        <div className='mt-5'>
+          <Uv />
+        </div>
+        <PythonUpdating />
+      </TabItem>
+
+
+      <TabItem value="conda" label="Conda">
+        <div className='mt-5'>
+          <Conda />
+        </div>
+        <PythonUpdating />
+      </TabItem>
+
+      <TabItem value="venv" label="Venv">
+        <div className='mt-5'>
+          <Venv />
+        </div>
+        <PythonUpdating />
+
+      </TabItem>
+
+
+      <TabItem value="development" label="Development">
+        <div className='mt-5'>
+          <h3>Development Setup</h3>
+          <p>
+            For developers who want to contribute, check the Development Guide in <a href="/getting-started/advanced-topics">Advanced Topics</a>.
+          </p>
+        </div>
+      </TabItem>
+
+
+    </Tabs>
+  </TabItem>
+
+  <TabItem value="kubernetes" label="Kubernetes">
+    <Tabs>
+      <TabItem value="helm" label="Helm">
+        <Helm />
+      </TabItem>
+
+      <TabItem value="kustomize" label="Kustomize">
+        <Kustomize />
+      </TabItem>
+    </Tabs>
+  </TabItem>
+
+
+  <TabItem value="third-party" label="Third Party">
+    <Tabs>
+      <TabItem value="pinokio-computer" label="Pinokio.computer">
+        ### Pinokio.computer Installation
+
+        For installation via Pinokio.computer, please visit their website:
+
+        [https://pinokio.computer/](https://pinokio.computer/)
+
+        Support for this installation method is provided through their website.
+      </TabItem>
+    </Tabs>
+
+    ### Additional Third-Party Integrations
+
+    *(Add information about third-party integrations as they become available.)*
+  </TabItem>
+</Tabs>
+
+## 次のステップ
+
+インストール後は以下にアクセスしてください:
+
+- [http://localhost:3000](http://localhost:3000) Sage WebUIにアクセスします。
+- またはPythonデプロイメントの場合は [http://localhost:8080/](http://localhost:8080/) にアクセスします。
+
+これでSage WebUIの使用を開始できます！
+
+## Sage WebUIとOllamaの連携
+
+Sage WebUIをOllamaと連携させる場合は、[Ollama開始ガイド](/getting-started/quick-start/starting-with-ollama)を参照して、Sage WebUIでOllamaインスタンスを管理する方法を学んでください。
+
+## コミュニティに参加
+
+ヘルプが必要ですか？質問がありますか？コミュニティに参加しましょう:
+
+- [Sage WebUI Discord](https://discord.com/channels/1074411230040703046/1074411231030550632)
+- [GitHub Issues](https://github.com/Startr/AI-WEB-openwebui/issues)
+
+最新機能、トラブルシューティングのヒント、アナウンスをチェックしましょう！

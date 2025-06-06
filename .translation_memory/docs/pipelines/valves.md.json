@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/pipelines/valves.md",
+  "source_file_content_hash": "b26d6910a8f9ee5bcc0cdc901de1f22cd2605d668c74eaea7e5ae6f404a4d26e",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\ntitle: \"⚙️ Valves\"\n---",
+      "source_content_hash": "1305dbce5ec07f0a8470cd68de6f85a2cf836c39e6b9fabf979bcf8b65de505a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Valves",
+      "source_content_hash": "678c75294fdea71fef14f4219d6ce14f2cb14f8d225e1d5a278d583aa2302700",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# バルブ"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Valves are input variables that are set per pipeline. Valves are set as a subclass of the `Pipeline` class, and initialized as part of the `__init__` method of the `Pipeline` class.",
+      "source_content_hash": "b00231e66a448350a53dff19798bcb2d348acec78bee0e3c5ed1d6a871870318",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "バルブはパイプラインごとに設定される入力変数です。バルブは`Pipeline`クラスのサブクラスとして設定され、`Pipeline`クラスの`__init__`メソッドの一部として初期化されます。"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "When adding valves to your pipeline, include a way to ensure that valves can be reconfigured by admins in the web UI. There are a few options for this:",
+      "source_content_hash": "ff9d374040edce578201933f34a87a087995bb8935b5dd6f08149d7525cadce6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "パイプラインにバルブを追加する際は、管理者がWeb UIでバルブを再設定できる方法を組み込んでください。これにはいくつかのオプションがあります："
+      }
+    },
+    {
+      "segment_id": "143e51c1",
+      "source_content": "- Use `os.getenv()` to set an environment variable to use for the pipeline, and a default value to use if the environment variable isn't set. An example can be seen below:",
+      "source_content_hash": "685ea693a0074cd354907749125c422d105bd270af9ce20f98a3636a3415c308",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `os.getenv()`を使用してパイプライン用の環境変数を設定し、環境変数が設定されていない場合に使用するデフォルト値を指定します。以下の例を参照してください："
+      }
+    },
+    {
+      "segment_id": "5564d81d",
+      "source_content": "```\nself.valves = self.Valves(\n    **{\n        \"LLAMAINDEX_OLLAMA_BASE_URL\": os.getenv(\"LLAMAINDEX_OLLAMA_BASE_URL\", \"http://localhost:11434\"),\n        \"LLAMAINDEX_MODEL_NAME\": os.getenv(\"LLAMAINDEX_MODEL_NAME\", \"llama3\"),\n        \"LLAMAINDEX_EMBEDDING_MODEL_NAME\": os.getenv(\"LLAMAINDEX_EMBEDDING_MODEL_NAME\", \"nomic-embed-text\"),\n    }\n)\n```",
+      "source_content_hash": "b3952a4428e629735a5cd3bb998e086c24c959a618fbc7983dde7edc05db02e9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5564d81d"
+      }
+    },
+    {
+      "segment_id": "8cf6d045",
+      "source_content": "- Set the valve to the `Optional` type, which will allow the pipeline to load even if no value is set for the valve.",
+      "source_content_hash": "45ecd3da7c39819cdbdd630a090d5b947356f5bec884011b457200c56454d831",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- バルブを`Optional`型に設定すると、バルブに値が設定されていなくてもパイプラインを読み込むことができます。"
+      }
+    },
+    {
+      "segment_id": "a89b882e",
+      "source_content": "```\nclass Pipeline:\n    class Valves(BaseModel):\n        target_user_roles: List[str] = [\"user\"]\n        max_turns: Optional[int] = None\n```",
+      "source_content_hash": "edc76637549f88537355be1556875bf455c94c94aa8a11f17555f885e4b90b2a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a89b882e"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "If you don't leave a way for valves to be updated in the web UI, you'll see the following error in the Pipelines server log after trying to add a pipeline to the web UI:\n`WARNING:root:No Pipeline class found in <pipeline name>`",
+      "source_content_hash": "a4bc0bdbd830cee0942997cb9ad2a65ea9414f255a2f498d1c1e699c844b4edc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Web UIでバルブを更新する方法を用意していない場合、パイプラインをWeb UIに追加しようとした後にPipelinesサーバーのログに以下のエラーが表示されます：\n`WARNING:root:No Pipeline class found in <pipeline name>`"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/pipelines/valves.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.786687+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b26d6910a8f9ee5bcc0cdc901de1f22cd2605d668c74eaea7e5ae6f404a4d26e"
+  }
+}

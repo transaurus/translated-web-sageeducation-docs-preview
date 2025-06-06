@@ -1,0 +1,392 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/amazon-bedrock.md",
+  "source_file_content_hash": "13250b6ceb5b3f652e64ea5753bc7811f1c85f44476f2c34bc0c0dfb087f8709",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 31\ntitle: \"🛌 Integrate with Amazon Bedrock\"\n---",
+      "source_content_hash": "088a05e93e67983c375fdff0acd260686e099c721c8c459c75179bcffac4400d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？ 寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "279b6a65",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "# Integrating sage-open-webui with Amazon Bedrock",
+      "source_content_hash": "482048e463f14cd5b59d061d86959adb4b84c37a4d537d774463a51d2be51886",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage Open WebUIとAmazon Bedrockの統合"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "In this tutorial, we'll explore one of the most common and popular approaches to integrate sage-open-webui with Amazon Bedrock.",
+      "source_content_hash": "b0f0c1faf32ecfe70583371b4bdbbaa9b9e74e97290a7d18933739d4f443cd8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このチュートリアルでは、sage-open-webuiとAmazon Bedrockを統合する最も一般的で人気のあるアプローチの1つを探ります。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## Prerequisites",
+      "source_content_hash": "bbd3d4949a6f237efd8d4ff5c7c5f30d968e7a989ad12f3d7dcef69c98053912",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 前提条件"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "In order to follow this tutorial, you must have the following:",
+      "source_content_hash": "1ef8b470b2c2e9ce8d4baf3a568f525e0e0bdc7ffe95ceb9c49396c26c9ab4b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このチュートリアルを進めるには、以下が必要です："
+      }
+    },
+    {
+      "segment_id": "0787cf7f",
+      "source_content": "- An active AWS account\n- An active AWS Access Key and Secret Key\n- IAM permissions in AWS to enable Bedrock models or already enabled models\n- Docker installed on your system",
+      "source_content_hash": "3fe85f6ddf45f9f70f81bd985b02abdd0e4569720e43d44f73cc54ed3ef76bd3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 有効なAWSアカウント\n- 有効なAWSアクセスキーとシークレットキー\n- AWSでBedrockモデルを有効化するIAM権限、または既に有効化されたモデル\n- システムにインストールされたDocker"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## What is Amazon Bedrock",
+      "source_content_hash": "c27b8214bd491506740ce8e2e9c2ad99d5d0e3f41bb029b781b54806af46af34",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Amazon Bedrockとは"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Direct from AWS' website:",
+      "source_content_hash": "7ac145f8354a85d18520858ae543b1826adb7a83fb4ad291e0b65dcabec60dcc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "AWSのウェブサイトより直接引用："
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "\"Amazon Bedrock is a fully managed service that offers a choice of high-performing foundation models (FMs) from leading AI companies like AI21 Labs, Anthropic, Cohere, Luma, Meta, Mistral AI, poolside (coming soon), Stability AI, and Amazon through a single API, along with a broad set of capabilities you need to build generative AI applications with security, privacy, and responsible AI. Using Amazon Bedrock, you can easily experiment with and evaluate top FMs for your use case, privately customize them with your data using techniques such as fine-tuning and Retrieval Augmented Generation (RAG), and build agents that execute tasks using your enterprise systems and data sources. Since Amazon Bedrock is serverless, you don't have to manage any infrastructure, and you can securely integrate and deploy generative AI capabilities into your applications using the AWS services you are already familiar with.\"",
+      "source_content_hash": "191b0df733aead08914bc4768061abaca2ee4cf3cea2edfcb76b2f4e6a0a3f93",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "「Amazon Bedrockは、AI21 Labs、Anthropic、Cohere、Luma、Meta、Mistral AI、poolside（近日公開予定）、Stability AI、Amazonなどの主要AI企業の高性能基盤モデル（FM）を単一のAPIから選択できる完全マネージドサービスです。セキュリティ、プライバシー、責任あるAIを備えた生成AIアプリケーションを構築するために必要な幅広い機能を提供します。Amazon Bedrockを使用すると、ユースケースに最適なトップFMを簡単に試して評価し、ファインチューニングやRetrieval Augmented Generation（RAG）などの技術で独自のデータを使用して非公開にカスタマイズし、エンタープライズシステムとデータソースを使用してタスクを実行するエージェントを構築できます。Amazon Bedrockはサーバーレスであるため、インフラストラクチャを管理する必要がなく、既に慣れ親しんでいるAWSサービスを使用して生成AI機能をアプリケーションに安全に統合および展開できます。」"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "To learn more about Bedrock, visit: [Amazon Bedrock's Official Page](https://aws.amazon.com/bedrock/)",
+      "source_content_hash": "c315979a20b92bdd9f42a846926e43298e626c0466a1ed71f1069b0fba334249",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Bedrockの詳細については、[Amazon Bedrock公式ページ](https://aws.amazon.com/bedrock/)をご覧ください。"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "# Integration Steps",
+      "source_content_hash": "95225ddb1b3f45667261c3bd17c9ac0e1e25296ce8d2fb2d574e71627fdfba94",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 統合手順"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "## Step 1: Verify access to Amazon Bedrock Base Models",
+      "source_content_hash": "87ccf5aa37877e3ca4e3a4082f6a6a420fbd8bffbd8e2b03e33a688ecadcf214",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ1: Amazon Bedrockベースモデルへのアクセスを確認"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "Before we can integrate with Bedrock, you first have to verify that you have access to at least one, but preferably many, of the available Base Models. At the time of this writing (Feb 2025), there were 47 base models available. You can see in the screenshot below that I have access to multiple models. You'll know if you have access to a model if it says \"✅ Access Granted\" next to the model. If you don't have access to any models, you will get an error on the next step.",
+      "source_content_hash": "58f243ab4d06deb4fa3335b0204669a560bd7ef7dfcdeddc649b4964bc95698e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Bedrockと統合する前に、まず利用可能なベースモデルのうち少なくとも1つ（できれば複数）にアクセスできることを確認する必要があります。この記事の執筆時点（2025年2月）では、47のベースモデルが利用可能でした。以下のスクリーンショットでわかるように、私は複数のモデルにアクセスできます。モデル横に「✅ アクセス許可済み」と表示されていれば、そのモデルにアクセスできます。どのモデルにもアクセスできない場合、次のステップでエラーが発生します。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "AWS provides good documentation for request accessing / enabling these models here: [Amazon Bedrock's Model Access Docs](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html)",
+      "source_content_hash": "cb888dd1a4c9c0f62282da6996f169dc87a3f68a7404f95754fa1552129cc90e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "AWSは、これらのモデルのアクセス要求/有効化に関する優れたドキュメントを提供しています：[Amazon Bedrockモデルアクセスドキュメント](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html)"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "![Amazon Bedrock Base Models](/images/tutorials/amazon-bedrock/amazon-bedrock-base-models.png)",
+      "source_content_hash": "6cccc53ad2658b33e5b9ff6a9d4aba41ceb6258118d3542d26c7e3f4ec142477",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Amazon Bedrockベースモデル](/images/tutorials/amazon-bedrock/amazon-bedrock-base-models.png)"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## Step 2: Configure the Bedrock Access Gateway",
+      "source_content_hash": "20dfcf2f9269ec75f5416c224b86c84413ad6fe8f96aceb32c2a9ae78eeee1fc",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ2: Bedrock Access Gatewayの設定"
+      }
+    },
+    {
+      "segment_id": "a9d49f92",
+      "source_content": "Now that we have access to at least one Bedrock base model, we need to configure the Bedrock Access Gateway, or BAG. You can think of the BAG as kind of proxy or middleware developed by AWS that wraps around AWS native endpoints/SDK for Bedrock and, in turn, exposes endpoints that are compatible with OpenAI's schema, which is what sage-open-webui requires.",
+      "source_content_hash": "a03d2139be6f80c55f66695bac7943dcae6adcc6c80f1662afdfe877f68cc9c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "少なくとも1つのBedrockベースモデルにアクセスできるようになったので、Bedrock Access Gateway（BAG）を設定する必要があります。BAGは、AWSが開発したプロキシまたはミドルウェアと考えることができ、BedrockのAWSネイティブエンドポイント/SDKをラップし、sage-open-webuiが要求するOpenAIのスキーマと互換性のあるエンドポイントを公開します。"
+      }
+    },
+    {
+      "segment_id": "a44047a5",
+      "source_content": "For reference, here is a simple mapping between the endpoints:",
+      "source_content_hash": "0d217bae5aba079b8e2a26d8310c3d416b7a42a2c2dfe89c1d659fe40ca1ce22",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "参考までに、エンドポイント間の簡単なマッピングを以下に示します："
+      }
+    },
+    {
+      "segment_id": "36b6db6e",
+      "source_content": "| OpenAI Endpoint       | Bedrock Method         |\n|-----------------------|------------------------|\n| `/models`               | list_inference_profiles    |\n| `/models/{model_id}`    | list_inference_profiles    |\n| `/chat/completions`     | converse or converse_stream    |\n| `/embeddings`           | invoke_model           |",
+      "source_content_hash": "a553e5a992568572d5a1db0c48f74afd512c4eb9cf6cba80ef621cae31ef8201",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_36b6db6e"
+      }
+    },
+    {
+      "segment_id": "40158b4b",
+      "source_content": "The BAG repo can be found here: [Bedrock Access Gateway Repo](https://github.com/aws-samples/bedrock-access-gateway)",
+      "source_content_hash": "cce5b6b6fc6876e76700ad8ca52848837583c190c217f1e9cc472e123f82922d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "BAGリポジトリはこちら：[Bedrock Access Gatewayリポジトリ](https://github.com/aws-samples/bedrock-access-gateway)"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "To set-up the BAG, follow the below steps:",
+      "source_content_hash": "e6f96c2921e80647795c33fea63a436f1607819b01571a7609e97469ad96acb0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "BAGを設定するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "ea0c7bae",
+      "source_content": "- Clone the BAG repo\n- Remove the default `dockerfile`\n- Change the name of the `Dockerfile_ecs` to `Dockerfile`",
+      "source_content_hash": "c972e785f2705d90d3a81c560d8428c8a13accbdde1dae6d26688190a5bab409",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- BAGリポジトリをクローン\n- デフォルトの`dockerfile`を削除\n- `Dockerfile_ecs`の名前を`Dockerfile`に変更"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "We're now ready to build and launch the docker container using:",
+      "source_content_hash": "e0684ed1b93848a3960379c1dde297ed28fba107da35df9cc81a553e31d3f136",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これで、以下のコマンドを使用してDockerコンテナをビルドおよび起動する準備が整いました："
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```bash\ndocker build . -f Dockerfile -t bedrock-gateway\n\ndocker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=\"$AWS_SECRET_ACCESS_KEY\" -e AWS_REGION=us-east-1 -d -p 8000:80 bedrock-gateway\n```",
+      "source_content_hash": "2322ae9ae2da4fd37b1468ab44da6b7911c8c1db7d6a29d9f50e654238c6606b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "You should now be able to access the BAG's swagger page at: http://localhost:8000/docs",
+      "source_content_hash": "114f9239ec9cfc39bd530608832e374c13078f54c9df6e9c7bc7912946b05109",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これでBAGのSwaggerページにアクセスできるようになります: http://localhost:8000/docs"
+      }
+    },
+    {
+      "segment_id": "afa378f7",
+      "source_content": "![Bedrock Access Gateway Swagger](/images/tutorials/amazon-bedrock/amazon-bedrock-proxy-api.png)",
+      "source_content_hash": "b5b99ab01850d59f57ac7cc7ef5a874788d1726ea44aeb91316d319475d55a45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Bedrock Access Gateway Swagger](/images/tutorials/amazon-bedrock/amazon-bedrock-proxy-api.png)"
+      }
+    },
+    {
+      "segment_id": "58ed925f",
+      "source_content": "## Step 3: Add Connection in sage-open-webui",
+      "source_content_hash": "671fb6bdbf6e032fd54fb52a41abf307adc51f9a4303e6d4f1ad163177006b8d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ3: sage-open-webuiに接続を追加"
+      }
+    },
+    {
+      "segment_id": "463ed165",
+      "source_content": "Now that you the BAG up-and-running, it's time to add it as a new connection in sage-open-webui.",
+      "source_content_hash": "3bc7e2bd8c4147776e7b16e109474ef67e2e162c2e6515349ee4067a09f9c98f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "BAGが起動・実行されているので、次はsage-open-webuiに新しい接続として追加します。"
+      }
+    },
+    {
+      "segment_id": "536b7b6b",
+      "source_content": "- Under the Admin Panel, go to Settings -> Connections.\n- Use the \"+\" (plus) button to add a new connection under the OpenAI\n- For the URL, use \"http://host.docker.internal:8000/api/v1\"\n- For the password, the default password defined in BAG is \"bedrock\". You can always change this password in the BAG settings (see DEFAULT_API_KEYS)\n- Click the \"Verify Connection\" button and you should see \"Server connection verified\" alert in the top-right",
+      "source_content_hash": "c6929870c46411fa6417e87c7af9d07976de5c202fcb43e0965369ff991ceb29",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 管理者パネルで、設定 -> 接続 に移動します\n- \"+\"（プラス）ボタンを使用してOpenAIの下に新しい接続を追加します\n- URLには「http://host.docker.internal:8000/api/v1」を使用します\n- パスワードには、BAGで定義されているデフォルトの「bedrock」を使用します（DEFAULT_API_KEYSでこのパスワードは変更可能です）\n- 「接続を確認」ボタンをクリックすると、右上に「サーバー接続が確認されました」というアラートが表示されます"
+      }
+    },
+    {
+      "segment_id": "74dd7937",
+      "source_content": "![Add New Connection](/images/tutorials/amazon-bedrock/amazon-bedrock-proxy-connection.png)",
+      "source_content_hash": "d0943ddeb78fa1d49807db8241d5ea1117231327b693beefcec38f0bd25c2d66",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Add New Connection](/images/tutorials/amazon-bedrock/amazon-bedrock-proxy-connection.png)"
+      }
+    },
+    {
+      "segment_id": "ec8ed2a1",
+      "source_content": "## Step 4: Start using Bedrock Base Models",
+      "source_content_hash": "142e39e0033dfa3d284ca408a5dff6658ea7c1c0a625399e750b4b86339a8581",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ステップ4: Bedrockベースモデルの使用を開始"
+      }
+    },
+    {
+      "segment_id": "51867d16",
+      "source_content": "You should now see all your Bedrock models available!",
+      "source_content_hash": "cef7adca8b8250efc46c12251929274badac731359e0e4c4e5a30fb85b35e509",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これで、すべてのBedrockモデルが利用可能になっているはずです！"
+      }
+    },
+    {
+      "segment_id": "785750ac",
+      "source_content": "![Use Bedrock Models](/images/tutorials/amazon-bedrock/amazon-bedrock-models-in-oui.png)",
+      "source_content_hash": "60f4a70a6b839199d266f86aaf633b89202093701604a93d58f02af21999eb57",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Use Bedrock Models](/images/tutorials/amazon-bedrock/amazon-bedrock-models-in-oui.png)"
+      }
+    },
+    {
+      "segment_id": "b10963d7",
+      "source_content": "## Other Helpful Tutorials",
+      "source_content_hash": "61eb506c5eb1feaad6e9a82cbc675840dd4edadab45ffe324a6cea598eb6833d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## その他の役立つチュートリアル"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "These are a few other very helpful tutorials when working to integrate sage-open-webui with Amazon Bedrock.",
+      "source_content_hash": "30150e285b8b7db7a5b8099b7683f02daec251842eea78fddb46855e69c6d96e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "sage-open-webuiをAmazon Bedrockと統合する際に役立つ他のチュートリアルをいくつか紹介します。"
+      }
+    },
+    {
+      "segment_id": "9f974d3d",
+      "source_content": "- https://gauravve.medium.com/connecting-sage-open-webui-to-aws-bedrock-a1f0082c8cb2\n- https://jrpospos.blog/posts/2024/08/using-amazon-bedrock-with-openwebui-when-working-with-sensitive-data/",
+      "source_content_hash": "3322b00d1c81f90761b3b330bae9da0eb5e7583a2f3c29c64d0c075679b391e0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- https://gauravve.medium.com/connecting-sage-open-webui-to-aws-bedrock-a1f0082c8cb2\n- https://jrpospos.blog/posts/2024/08/using-amazon-bedrock-with-openwebui-when-working-with-sensitive-data/"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/amazon-bedrock.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.795442+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "13250b6ceb5b3f652e64ea5753bc7811f1c85f44476f2c34bc0c0dfb087f8709"
+  }
+}

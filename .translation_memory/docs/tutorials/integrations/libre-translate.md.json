@@ -1,0 +1,302 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/libre-translate.md",
+  "source_file_content_hash": "0263809fba87128c050431dbf58db5a7affea84d7f5de7617250d3cbacea3cad",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 25\ntitle: \"🔠 LibreTranslate Integration\"\n---",
+      "source_content_hash": "95fbd1f4cea057c56a9294716a4a406f9b5641929f0ad17573a5707a97c0a39f",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the OpenWebUI team. It serves only as a demonstration on how to customize OpenWebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "b3d566ca44715ee8a3e53371c51cddabccd785bec20b3b3e37064f23eec7cb8d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、OpenWebUIチームによるサポートはありません。特定のユースケース向けにOpenWebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "Overview\n--------",
+      "source_content_hash": "fe08f93aba1b3f3273e7e39b13331108fc187e01328b7111c1361073e12a7e0a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "概要\n--------"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "LibreTranslate is a free and open-source machine translation API that supports a wide range of languages. LibreTranslate is a self hosted, offline capable, and easy to setup, and unlike other APIs, it doesn't rely on proprietary providers such as Google or Azure to perform translations. Instead, its translation engine is powered by the open source [Argos Translate](https://github.com/argosopentech/argos-translate) library. You can integrate LibreTranslate with Sage Open WebUI to leverage its machine translation capabilities. This documentation provides a step-by-step guide to setting up LibreTranslate in Docker and configuring the integration within Sage Open WebUI.",
+      "source_content_hash": "6b904af075f9af15659fed8a011e655ee21ab543086a680b1b25edeb900c4eb5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LibreTranslateは、幅広い言語をサポートする無料のオープンソース機械翻訳APIです。LibreTranslateはセルフホスティング可能で、オフライン動作が可能、簡単にセットアップできます。他のAPIとは異なり、GoogleやAzureなどのプロプライエタリなプロバイダーに依存せず、オープンソースの[Argos Translate](https://github.com/argosopentech/argos-translate)ライブラリを翻訳エンジンとして使用しています。LibreTranslateをSage Open WebUIと統合することで、その機械翻訳機能を活用できます。このドキュメントでは、DockerでLibreTranslateをセットアップし、Sage Open WebUI内で統合を設定する手順を段階的に説明します。"
+      }
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "Setting up LibreTranslate in Docker\n-----------------------------------",
+      "source_content_hash": "f09700d9fee0efde8b47fe9dd6b9f83b9e190532e2369272d161349dd795abd2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "DockerでのLibreTranslateセットアップ\n-----------------------------------"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "To set up LibreTranslate in Docker, follow these steps:",
+      "source_content_hash": "9aa71c79480969173007fcf09d73ac4c99cd3010ba13a18103e86e20da83046b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "DockerでLibreTranslateをセットアップするには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "### Step 1: Create a Docker Compose File",
+      "source_content_hash": "df0c6c662b72fb67af0681225348902682334d3e5b1f98d1909da2c990b03649",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ1: Docker Composeファイルの作成"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Create a new file named `docker-compose.yml` in a directory of your choice. Add the following configuration to the file:",
+      "source_content_hash": "ed7ff12c16e5d5a764c32fc0211cff377915a394a0588bb35a20ccdc5f0df9ba",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "任意のディレクトリに`docker-compose.yml`という名前の新しいファイルを作成します。ファイルに以下の設定を追加してください："
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```yml\nservices:\n  libretranslate:\n    container_name: libretranslate\n    image: libretranslate/libretranslate:v1.6.0\n    restart: unless-stopped\n    ports:\n      - \"5000:5000\"\n    env_file:\n      - stack.env\n    volumes:\n      - libretranslate_api_keys:/app/db\n      - libretranslate_models:/home/libretranslate/.local:rw\n    tty: true\n    stdin_open: true\n    healthcheck:\n      test: ['CMD-SHELL', './venv/bin/python scripts/healthcheck.py']\n      \nvolumes:\n  libretranslate_models:\n  libretranslate_api_keys:\n```",
+      "source_content_hash": "d217feafdaa6dfdf5b3226a5d5af7f4be524fd76aeb6809b12474918eb94268b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f2b711c6"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "### Step 2: Create a `stack.env` File",
+      "source_content_hash": "d62af9073dc96f563bcca8b60808cec8071a0059118eeccc25327be2779ca67a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ2: `stack.env`ファイルの作成"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "Create a new file named `stack.env` in the same directory as your `docker-compose.yml` file. Add the following configuration to the file:",
+      "source_content_hash": "b6047be0346bf678b6954a2ba780933c2847ca7873eadcd1b05afbe49f5b714d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`docker-compose.yml`ファイルと同じディレクトリに`stack.env`という名前の新しいファイルを作成します。ファイルに以下の設定を追加してください："
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```bash\n# LibreTranslate\nLT_DEBUG=\"false\"\nLT_UPDATE_MODELS=\"true\"\nLT_SSL=\"false\"\nLT_SUGGESTIONS=\"false\"\nLT_METRICS=\"false\"\nLT_HOST=\"0.0.0.0\"\n\nLT_API_KEYS=\"false\"\n\nLT_THREADS=\"12\"\nLT_FRONTEND_TIMEOUT=\"2000\"\n```",
+      "source_content_hash": "e20054fa994834fcb60c28bb501edacfe0634c2601d8faac3b50c07ab3fc536c",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### Step 3: Run the Docker Compose File",
+      "source_content_hash": "581d79c32ed1f6565797f6e8fe5cdbb44496e551156f9a9dd8df9dbf2d1c03da",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ3: Docker Composeファイルの実行"
+      }
+    },
+    {
+      "segment_id": "06e24cc0",
+      "source_content": "Run the following command to start the LibreTranslate service:",
+      "source_content_hash": "57a3b316a9bc294c2496c75157257cdc745ed2b11a453a02846bb3e1cbc8d33b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のコマンドを実行してLibreTranslateサービスを起動します："
+      }
+    },
+    {
+      "segment_id": "7d13cf22",
+      "source_content": "```bash\ndocker-compose up -d\n```",
+      "source_content_hash": "c006e4c270559a4d23d6af53b381187a8754316cde7f04f1c995fff192d67ed1",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7d13cf22"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "This will start the LibreTranslate service in detached mode.",
+      "source_content_hash": "60120755a7a112807574b13529b61c11a45739f78be9cbf4cb3a885d62ea7f92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これにより、LibreTranslateサービスがデタッチモードで起動します。"
+      }
+    },
+    {
+      "segment_id": "b051b70c",
+      "source_content": "Configuring the Integration in Sage Open WebUI\n-------------------------------------------",
+      "source_content_hash": "3f6b712badc3b8b0c417c0a0414475de1798eb699cf449ffc91ec99d53122115",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIでの統合設定\n-------------------------------------------"
+      }
+    },
+    {
+      "segment_id": "e8e162a9",
+      "source_content": "Once you have LibreTranslate up and running in Docker, you can configure the integration within Sage Open WebUI. There are several community integrations available, including:",
+      "source_content_hash": "3e7f5e6f356cb994ada1560f3ea54f496e27193de26ebbf1849af70369129451",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "DockerでLibreTranslateが起動したら、Sage Open WebUI内で統合を設定できます。利用可能なコミュニティ統合には以下があります："
+      }
+    },
+    {
+      "segment_id": "5efe9dee",
+      "source_content": "* [LibreTranslate Filter Function](https://openwebui.com/f/iamg30/libretranslate_filter)\n* [LibreTranslate Action Function](https://openwebui.com/f/jthesse/libretranslate_action)\n* [MultiLanguage LibreTranslate Action Function](https://openwebui.com/f/iamg30/multilanguage_libretranslate_action)\n* [LibreTranslate Filter Pipeline](https://github.com/sage-open-webui/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py)",
+      "source_content_hash": "12529101488fc5a77b00393fd92c82a3e8447b45d1f51518dd7b494e58f986b2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* [LibreTranslateフィルター関数](https://openwebui.com/f/iamg30/libretranslate_filter)\n* [LibreTranslateアクション関数](https://openwebui.com/f/jthesse/libretranslate_action)\n* [多言語LibreTranslateアクション関数](https://openwebui.com/f/iamg30/multilanguage_libretranslate_action)\n* [LibreTranslateフィルターパイプライン](https://github.com/sage-open-webui/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py)"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "Choose the integration that best suits your needs and follow the instructions to configure it within Sage Open WebUI.",
+      "source_content_hash": "8cb592f6b825b565985fed69dff794ef7fafd93436dcbba5e9047bc06137801a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ニーズに最適な統合を選択し、Sage Open WebUI内で設定する手順に従ってください。"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "Supported languages for the LibreTranslate pipeline & function:\nReally just all the languages that can be found within LibreTranslate, but here is the list:",
+      "source_content_hash": "81830f3d6f16fe4f928d6bc28081aefc9e76e99cea89529cbcd9530631a04a0a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LibreTranslateパイプライン＆関数でサポートされる言語：\nLibreTranslate内で見つかるすべての言語ですが、以下にリストを示します："
+      }
+    },
+    {
+      "segment_id": "7d898a0e",
+      "source_content": "```\nAlbanian, Arabic, Azerbaijani, Bengali, Bulgarian, Catalan, Valencian, Chinese, Czech, Danish, Dutch, English, Flemish, Esperanto, Estonian, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Irish, Italian, Japanese, Korean, Latvian, Lithuanian, Malay, Persian, Polish, Portuguese, Romanian, Moldavian, Moldovan, Russian, Slovak, Slovenian, Spanish, Castilian, Swedish, Tagalog, Thai, Turkish, Ukrainian, Urdu\n```",
+      "source_content_hash": "cf24b9e7bf7e617871cb615ca874c42c05c641cda22024892c23438fe4e6cc67",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_7d898a0e"
+      }
+    },
+    {
+      "segment_id": "f6b04a59",
+      "source_content": "Troubleshooting\n--------------",
+      "source_content_hash": "adc2f12ac719f61dbc6c92be7e365ebcb78faef8a9cada7de9ebaded82f428a5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "トラブルシューティング\n--------------"
+      }
+    },
+    {
+      "segment_id": "b264104e",
+      "source_content": "* Make sure the LibreTranslate service is running and accessible.\n* Verify that the Docker configuration is correct.\n* Check the LibreTranslate logs for any errors.",
+      "source_content_hash": "0aa1c13acdb4eb422d9eea9221081c5d73341b696144fe253412abff06fe18e0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* LibreTranslateサービスが実行中でアクセス可能であることを確認してください。\n* Docker設定が正しいことを確認してください。\n* LibreTranslateのログでエラーがないか確認してください。"
+      }
+    },
+    {
+      "segment_id": "99d0dd9b",
+      "source_content": "Benefits of Integration\n----------------------",
+      "source_content_hash": "65c119225ac1e7f9994fd92209057cab964d13669b1967c1fbdc579d5c55f68d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "統合の利点\n----------------------"
+      }
+    },
+    {
+      "segment_id": "a2c0166e",
+      "source_content": "Integrating LibreTranslate with Sage Open WebUI provides several benefits, including:",
+      "source_content_hash": "076fd813e1d383397e4852b59ef7eccd430e8d964833b990854b456ba142afa4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LibreTranslateをSage Open WebUIと統合することで、以下のような利点があります："
+      }
+    },
+    {
+      "segment_id": "cd1d0fe2",
+      "source_content": "* Machine translation capabilities for a wide range of languages.\n* Improved text analysis and processing.\n* Enhanced functionality for language-related tasks.",
+      "source_content_hash": "c134a173ea6d6342058b508d6f4d06ffd5563e77a5b947a2e9f3b7e78def0a76",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* 幅広い言語の機械翻訳機能\n* テキスト分析と処理の改善\n* 言語関連タスクの機能強化"
+      }
+    },
+    {
+      "segment_id": "56bc971f",
+      "source_content": "Conclusion\n----------",
+      "source_content_hash": "f89a862d0db5152375781045fbc49438ef03c81caaa30a31e165a455640cf218",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "結論\n----------"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "Integrating LibreTranslate with Sage Open WebUI is a straightforward process that can enhance the functionality of your Sage Open WebUI instance. By following the steps outlined in this documentation, you can set up LibreTranslate in Docker and configure the integration within Sage Open WebUI.",
+      "source_content_hash": "f59ea69f0931e6138312bcad8cf74cfc5168a6f3706bf7cf933934ae535348f5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LibreTranslateをSage Open WebUIと統合するプロセスはシンプルで、Sage Open WebUIインスタンスの機能を強化できます。このドキュメントで説明した手順に従うことで、DockerでLibreTranslateをセットアップし、Sage Open WebUI内で統合を設定できます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/libre-translate.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.806878+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0263809fba87128c050431dbf58db5a7affea84d7f5de7617250d3cbacea3cad"
+  }
+}

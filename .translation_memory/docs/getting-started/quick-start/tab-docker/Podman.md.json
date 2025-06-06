@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-docker/Podman.md",
+  "source_file_content_hash": "0087e808b39fda53fa20fd4d504cea73863fbd27440ff97c3dbebb950078182b",
+  "segments": [
+    {
+      "segment_id": "d05a127e",
+      "source_content": "# Using Podman",
+      "source_content_hash": "94f867ecae1f088614321f102d259382a88a1004505db809c860c6135862b0c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Podmanの使用"
+      }
+    },
+    {
+      "segment_id": "e9fca2db",
+      "source_content": "Podman is a daemonless container engine for developing, managing, and running OCI Containers.",
+      "source_content_hash": "bb4f6ee83cdbecada7c3633e29ec5ba66803e5677b7e6493d53bc2a113550763",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Podmanは、OCIコンテナの開発、管理、実行を行うデーモンレスなコンテナエンジンです。"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "## Basic Commands",
+      "source_content_hash": "e0cb2d1498aa34b00e25a25a09986caf88c8e26ae83c797647d067fc4d89b74b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 基本コマンド"
+      }
+    },
+    {
+      "segment_id": "df80d009",
+      "source_content": "- **Run a Container:**\n\n  ```bash\n  podman run -d --name openwebui -p 3000:8080 ghcr.io/Startr/AI-WEB-openwebui:main\n  ```\n\n- **List Running Containers:**\n\n  ```bash\n  podman ps\n  ```",
+      "source_content_hash": "cdbfd728e349b53088c03e22b38ef68075c98bbe4bf66c87ede871afa2ab5455",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **コンテナの実行:**\n\n  ```bash\n  podman run -d --name openwebui -p 3000:8080 ghcr.io/Startr/AI-WEB-openwebui:main\n  ```\n\n- **実行中のコンテナ一覧表示:**\n\n  ```bash\n  podman ps\n  ```"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "## Networking with Podman",
+      "source_content_hash": "a0f362afae42a3c23a4be76d02f163db6e4af16e63473ad59c177bc1edcc94c4",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Podmanでのネットワーク設定"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "If networking issues arise, you may need to adjust your network settings:",
+      "source_content_hash": "7581e11b23d387ad13a424dcfc93ff678763177d1244312d914be475bcc42c55",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ネットワークの問題が発生した場合、ネットワーク設定の調整が必要になることがあります:"
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```bash\n--network=slirp4netns:allow_host_loopback=true\n```",
+      "source_content_hash": "bf73b6bb128dceff914891daa49267a82ade6f86cc2b3ecec2ab1826e8fd2b11",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f2b711c6"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "Refer to the Podman [documentation](https://podman.io/) for advanced configurations.",
+      "source_content_hash": "7ece5aaf09625711635d0dcc401737fe516045654e6ef4c99b1f52a94b033ef9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "詳細な設定についてはPodmanの[ドキュメント](https://podman.io/)を参照してください。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-docker/Podman.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.785307+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0087e808b39fda53fa20fd4d504cea73863fbd27440ff97c3dbebb950078182b"
+  }
+}

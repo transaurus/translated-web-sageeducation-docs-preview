@@ -1,0 +1,122 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/troubleshooting/microphone-error.mdx",
+  "source_file_content_hash": "f402dd99ec3f5a726092396cfb9041b75b62b59f2cadb9612cefef8464cbcfc4",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"🎙️ Troubleshooting Microphone Access\"\n---",
+      "source_content_hash": "0ea9124bdb461349886d51c29ebde84d78a0a1d1da69fca36d86528a2d4da42a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Ensuring your application has the proper microphone access is crucial for functionality that depends on audio input. This guide covers how to manage and troubleshoot microphone permissions, particularly under secure contexts.",
+      "source_content_hash": "dbcb90d900d5e06c72ea6697f10a49d983c248788b4c2dcc5f318b0a0ceb4ed6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "アプリケーションが適切にマイクにアクセスできるようにすることは、音声入力に依存する機能にとって重要です。このガイドでは、特にセキュアコンテキスト下でのマイクの権限管理とトラブルシューティングについて説明します。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## Understanding Secure Contexts 🔒",
+      "source_content_hash": "e8beb810ff8d07194778309340a04a7d65f46373c5563a2740186bcfedc37e2e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## セキュアコンテキストの理解 🔒"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "For security reasons, accessing the microphone is restricted to pages served over HTTPS or locally from `localhost`. This requirement is meant to safeguard your data by ensuring it is transmitted over secure channels.",
+      "source_content_hash": "0964f26455d7cceb1ea91990dfd0ab3f3113e249ae3b2ca67770d08b05f62b36",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "セキュリティ上の理由から、マイクへのアクセスはHTTPSで提供されるページ、または`localhost`からのローカル接続に制限されています。この要件は、データが安全なチャネルを介して送信されることを保証することで、データを保護することを目的としています。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Common Permission Issues 🚫",
+      "source_content_hash": "cbc733229b370f14f5d7c5213be1dc69bcbef75cff247d17ea4372f595dd7321",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 一般的な権限の問題 🚫"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Browsers like Chrome, Brave, Microsoft Edge, Opera, and Vivaldi, as well as Firefox, restrict microphone access on non-HTTPS URLs. This typically becomes an issue when accessing a site from another device within the same network (e.g., using a mobile phone to access a desktop server). Here's how you can manage these issues:",
+      "source_content_hash": "2ad4123dd6f1b587606a634f889d1854cf61ccf6ae3d729e7aa4cce0a319b1d9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Chrome、Brave、Microsoft Edge、Opera、Vivaldiなどのブラウザ、およびFirefoxは、非HTTPS URLでのマイクアクセスを制限しています。これは通常、同じネットワーク内の別のデバイス（例えば、モバイル端末からデスクトップサーバーにアクセスする場合）からサイトにアクセスする際に問題となります。以下はこれらの問題を管理する方法です："
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "### Solutions for Non-HTTPS Connections",
+      "source_content_hash": "759a0e26d58dc8bb38b3e73f058acb2f724a6784ed2a593d884fb96f7bf9cb6e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 非HTTPS接続の解決策"
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "1. **Set Up HTTPS:**\n   - It is highly recommended to configure your server to support HTTPS. This not only resolves permission issues but also enhances the security of your data transmissions.\n\n2. **Temporary Browser Flags (Use with caution):**\n   - These settings force your browser to treat certain insecure URLs as secure. This is useful for development purposes but poses significant security risks. Here's how to adjust these settings for major browsers:\n\n   #### Chromium-based Browsers (e.g., Chrome, Brave)\n   - Open `chrome://flags/#unsafely-treat-insecure-origin-as-secure`.\n   - Enter your non-HTTPS address (e.g., `http://192.168.1.35:3000`).\n   - Restart the browser to apply the changes.\n\n   #### Firefox-based Browsers\n   - Open `about:config`.\n   - Search and modify (or create) the string value `dom.securecontext.allowlist`.\n   - Add your IP addresses separated by commas (e.g., `http://127.0.0.1:8080`).",
+      "source_content_hash": "e87f2df14f724d0f859f6410e7affa114e9dd861dea8c4803f78c595311977e6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **HTTPSの設定:**\n   - サーバーをHTTPS対応に設定することを強く推奨します。これにより、権限の問題が解決されるだけでなく、データ送信のセキュリティも向上します。\n\n2. **一時的なブラウザフラグ（注意して使用）:**\n   - これらの設定により、特定の安全でないURLを安全なものとして扱うようにブラウザに強制します。これは開発目的には便利ですが、重大なセキュリティリスクを伴います。主要なブラウザでの設定方法は以下の通りです：\n\n   #### Chromiumベースのブラウザ（例: Chrome、Brave）\n   - `chrome://flags/#unsafely-treat-insecure-origin-as-secure`を開きます。\n   - 非HTTPSアドレス（例: `http://192.168.1.35:3000`）を入力します。\n   - ブラウザを再起動して変更を適用します。\n\n   #### Firefoxベースのブラウザ\n   - `about:config`を開きます。\n   - `dom.securecontext.allowlist`を検索して変更（または作成）します。\n   - カンマ区切りでIPアドレスを追加します（例: `http://127.0.0.1:8080`）。"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "### Considerations and Risks 🚨",
+      "source_content_hash": "ee929fd95c9750dd8680b1e42c9051ecf0d657a9c03984c74aad7733c63bc8a0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 考慮事項とリスク 🚨"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "While browser flags offer a quick fix, they bypass important security checks which can expose your device and data to vulnerabilities. Always prioritize proper security measures, especially when planning for a production environment.",
+      "source_content_hash": "0bb58150d0206fb535e996f4c37282e662c904b0f1de605315d9cb7708b56044",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ブラウザフラグは迅速な解決策を提供しますが、重要なセキュリティチェックをバイパスするため、デバイスやデータを脆弱性にさらす可能性があります。特に本番環境を計画する際は、適切なセキュリティ対策を優先してください。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "By following these best practices, you can ensure that your application properly accesses the microphone while maintaining the security and integrity of your data.",
+      "source_content_hash": "df4e5dafceb852bcce680ad4ef35540be0618b56bbfdf7c26e5a142df819a820",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらのベストプラクティスに従うことで、アプリケーションがマイクに適切にアクセスしながら、データのセキュリティと整合性を維持することができます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/troubleshooting/microphone-error.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.800898+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "f402dd99ec3f5a726092396cfb9041b75b62b59f2cadb9612cefef8464cbcfc4"
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/faq.mdx",
+  "source_file_content_hash": "0b0a776bc849f09255b84b39bc417ec276e14d79a661d1333f04f37a47508b50",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1200\ntitle: \"📋 FAQ\"\n---",
+      "source_content_hash": "1bbf822ffadf15d3517aa0d0f0b7f4e71631057bfacfa81d85f3ac2207635768",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "37387e33",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_37387e33"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "### 💡 Why Docker?",
+      "source_content_hash": "3e9337d7fd2c3a9844756e8646da4c5bfdc2360a324cc2c461a29631e7c4bf72",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 💡 Dockerを採用する理由"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "We understand Docker might not be everyone's preference; however, this approach is central to our project's design and operational efficiency. We view the project's commitment to Docker as a fundamental aspect and encourage those looking for different deployment methods to explore community-driven alternatives.",
+      "source_content_hash": "0401005c107e7cb41288279d5b758ea815d72973a0454de7497baab34b397fd8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerがすべてのユーザーの好みではないことは理解していますが、このアプローチは当プロジェクトの設計と運用効率において中心的な役割を果たしています。私たちはDockerへのコミットメントをプロジェクトの基本方針と捉えており、異なるデプロイ方法を求める方にはコミュニティ主導の代替案を探ることを推奨します。"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "### 📜 Table of Contents",
+      "source_content_hash": "6a7a850df5b9905babf589f95ac0c5e15021a8a47cd9300fa0f381be52ebfe7c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📜 目次"
+      }
+    },
+    {
+      "segment_id": "4269e691",
+      "source_content": "- [Q: How do I customize the logo and branding?](#q-how-do-i-customize-the-logo-and-branding)\n- [Q: Why am I asked to sign up? Where are my data being sent to?](#q-why-am-i-asked-to-sign-up-where-are-my-data-being-sent-to)\n- [Q: Why can't my Docker container connect to services on the host using localhost?](#q-why-cant-my-docker-container-connect-to-services-on-the-host-using-localhost)\n- [Q: How do I make my host's services accessible to Docker containers?](#q-how-do-i-make-my-hosts-services-accessible-to-docker-containers)\n- [Q: Why isn't my Sage WebUI updating? I've re-pulled/restarted the container, and nothing changed.](#q-why-isnt-my-sage-open-webui-updating-ive-re-pulledrestarted-the-container-and-nothing-changed)\n- [Q: Wait, why would I delete my container? Won't I lose my data?](#q-wait-why-would-i-delete-my-container-wont-i-lose-my-data)\n- [Q: Should I use the distro-packaged Docker or the official Docker package?](#q-should-i-use-the-distro-packaged-docker-or-the-official-docker-package)\n- [Q: Is GPU support available in Docker?](#q-is-gpu-support-available-in-docker)\n- [Q: Why does Sage WebUI emphasize the use of Docker?](#q-why-does-sage-open-webui-emphasize-the-use-of-docker)\n- [Q: Why doesn't Speech-to-Text (STT) and Text-to-Speech (TTS) work in my deployment?](#q-why-doesnt-speech-to-text-stt-and-text-to-speech-tts-work-in-my-deployment)\n- [Q: Why doesn't Sage WebUI include built-in HTTPS support?](#q-why-doesnt-sage-open-webui-include-built-in-https-support)\n- [Q: I updated/restarted/installed some new software and now Sage WebUI isn't working anymore!](#q-i-updatedrestartedinstalled-some-new-software-and-now-sage-open-webui-isnt-working-anymore)\n- [Q: I updated/restarted and now my login isn't working anymore, I had to create a new account and all my chats are gone.](#q-i-updatedrestarted-and-now-my-login-isnt-working-anymore-i-had-to-create-a-new-account-and-all-my-chats-are-gone)\n- [Q: I tried to login and couldn't, made a new account and now I'm being told my account needs to be activated by an admin.](#q-i-tried-to-login-and-couldnt-made-a-new-account-and-now-im-being-told-my-account-needs-to-be-activated-by-an-admin)\n- [Q: Why can't Sage WebUI start with an SSL error?](#q-why-cant-sage-open-webui-start-with-an-ssl-error)",
+      "source_content_hash": "29b74cc9a36604217fb575e17a413f07ade094ee00372b2a3433730de8f2c198",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [Q: ロゴとブランディングをカスタマイズする方法は？](#q-how-do-i-customize-the-logo-and-branding)\n- [Q: なぜサインアップが必要なのですか？ データはどこに送信されますか？](#q-why-am-i-asked-to-sign-up-where-are-my-data-being-sent-to)\n- [Q: Dockerコンテナがホストのサービスにlocalhostで接続できないのはなぜですか？](#q-why-cant-my-docker-container-connect-to-services-on-the-host-using-localhost)\n- [Q: ホストのサービスをDockerコンテナからアクセス可能にする方法は？](#q-how-do-i-make-my-hosts-services-accessible-to-docker-containers)\n- [Q: Sage WebUIが更新されません。コンテナを再プル/再起動しても変化がありません](#q-why-isnt-my-sage-open-webui-updating-ive-re-pulledrestarted-the-container-and-nothing-changed)\n- [Q: コンテナを削除するとデータが失われるのではないですか？](#q-wait-why-would-i-delete-my-container-wont-i-lose-my-data)\n- [Q: ディストリビューション提供のDockerと公式Dockerパッケージ、どちらを使用すべきですか？](#q-should-i-use-the-distro-packaged-docker-or-the-official-docker-package)\n- [Q: DockerでGPUサポートは利用可能ですか？](#q-is-gpu-support-available-in-docker)\n- [Q: Sage WebUIがDockerの使用を重視する理由は？](#q-why-does-sage-open-webui-emphasize-the-use-of-docker)\n- [Q: デプロイ環境で音声認識(STT)と音声合成(TTS)が動作しないのはなぜですか？](#q-why-doesnt-speech-to-text-stt-and-text-to-speech-tts-work-in-my-deployment)\n- [Q: Sage WebUIにHTTPSサポートが組み込まれていない理由は？](#q-why-doesnt-sage-open-webui-include-built-in-https-support)\n- [Q: ソフトウェアを更新/再起動/インストールしたらSage WebUIが動作しなくなりました！](#q-i-updatedrestartedinstalled-some-new-software-and-now-sage-open-webui-isnt-working-anymore)\n- [Q: 更新/再起動後、ログインできなくなり、新しいアカウントを作成したらチャット履歴がすべて消えました](#q-i-updatedrestarted-and-now-my-login-isnt-working-anymore-i-had-to-create-a-new-account-and-all-my-chats-are-gone)\n- [Q: ログインできず、新しいアカウントを作成したら管理者による承認が必要と言われました](#q-i-tried-to-login-and-couldnt-made-a-new-account-and-now-im-being-told-my-account-needs-to-be-activated-by-an-admin)\n- [Q: Sage WebUIがSSLエラーで起動できないのはなぜですか？](#q-why-cant-sage-open-webui-start-with-an-ssl-error)"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "#### **Q: How do I customize the logo and branding?**",
+      "source_content_hash": "ef7555d402bd7f5111401bfedab60b40df0995a7e5c15ca050fefd5baed79886",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: ロゴとブランディングをカスタマイズする方法は？**"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "**A:** You can customize the theme, logo, and branding with our **[Enterprise License](https://docs.openwebui.com/enterprise)**, which unlocks exclusive enterprise features.",
+      "source_content_hash": "c4483e1e4c7d805a5b1509d56cd5087fcb506f57eedff03ed1e0a0d1bb04ee09",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** テーマ、ロゴ、ブランディングのカスタマイズは、**[Enterprise License](https://docs.openwebui.com/enterprise)** で提供されるエンタープライズ機能をご利用いただけます。"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "For more details on enterprise solutions and branding customizations, please contact our sales team at: 📧 **sales@openwebui.com**",
+      "source_content_hash": "06b4395278ec6f49f46f2a3db5ee7643230798114dee604fe067b818bef57607",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "エンタープライズソリューションとブランディングカスタマイズの詳細については、営業チームまでお問い合わせください: 📧 **sales@openwebui.com**"
+      }
+    },
+    {
+      "segment_id": "3b7478ea",
+      "source_content": "#### **Q: Why am I asked to sign up? Where are my data being sent to?**",
+      "source_content_hash": "3e42cdd675d3694b43a6a4842d7b372db3d11703d2b3a604f148a6d6686cc7be",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: なぜサインアップが必要なのですか？ データはどこに送信されますか？**"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "**A:** We require you to sign up to become the admin user for enhanced security. This ensures that if the Sage WebUI is ever exposed to external access, your data remains secure. It's important to note that everything is kept local. We do not collect your data. When you sign up, all information stays within your server and never leaves your device. Your privacy and security are our top priorities, ensuring that your data remains under your control at all times.",
+      "source_content_hash": "bb129c60825b0e0b7f9df55fe81f0fc30655f0ad9386b1f7f7c8fc22ffa5482a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** セキュリティ強化のため、管理者ユーザーとしてのサインアップが必要です。これにより、Sage WebUIが外部アクセスに晒された場合でも、データの安全性が保たれます。重要な点として、全てのデータはローカルに保持されます。当社がデータを収集することはありません。サインアップ時に提供される情報は全てサーバー内に留まり、デバイス外に送信されることはありません。ユーザーのプライバシーとセキュリティを最優先し、常にデータの管理権限をユーザーが保持できるようにしています。"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "#### **Q: Why can't my Docker container connect to services on the host using `localhost`?**",
+      "source_content_hash": "5fb9cef71ae30a803789ca6b201ada2386a29e9c02c70350424577cdc8990092",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: Dockerコンテナからホストのサービスに`localhost`で接続できないのはなぜですか？**"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "**A:** Inside a Docker container, `localhost` refers to the container itself, not the host machine. This distinction is crucial for networking. To establish a connection from your container to services running on the host, you should use the DNS name `host.docker.internal` instead of `localhost`. This DNS name is specially recognized by Docker to facilitate such connections, effectively treating the host as a reachable entity from within the container, thus bypassing the usual `localhost` scope limitation.",
+      "source_content_hash": "10c4c72f20ab50f361dbefb30dd538524362754849fb72c26b14fb053f4bdc43",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** Dockerコンテナ内で`localhost`と指定すると、ホストマシンではなくコンテナ自身を指します。このネットワーク上の違いが重要です。コンテナからホストで動作しているサービスに接続するには、`localhost`の代わりにDNS名`host.docker.internal`を使用してください。この特別なDNS名はDockerによって認識され、コンテナ内からホストへの接続を可能にします。これにより、通常の`localhost`のスコープ制限を回避できます。"
+      }
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "#### **Q: How do I make my host's services accessible to Docker containers?**",
+      "source_content_hash": "1fb36b07f5e8876dc4f20906258830928dc183b8e1ba4aff6153763a6d41de91",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: ホストのサービスをDockerコンテナからアクセス可能にするにはどうすればよいですか？**"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "**A:** To make services running on the host accessible to Docker containers, configure these services to listen on all network interfaces, using the IP address `0.0.0.0`, instead of `127.0.0.1` which is limited to `localhost` only. This configuration allows the services to accept connections from any IP address, including Docker containers. It's important to be aware of the security implications of this setup, especially when operating in environments with potential external access. Implementing appropriate security measures, such as firewalls and authentication, can help mitigate risks.",
+      "source_content_hash": "6e0ad63824030c23b01c40a06f93d5e11e9b2dc3c12c71532fc0f38018c0c2fd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** ホストで動作しているサービスをDockerコンテナからアクセス可能にするには、これらのサービスを`127.0.0.1`（localhost限定）ではなく、IPアドレス`0.0.0.0`を使用して全てのネットワークインターフェースでリッスンするように設定してください。この設定により、Dockerコンテナを含む任意のIPアドレスからの接続が許可されます。ただし、外部アクセスが可能な環境ではセキュリティ上の影響に注意が必要です。ファイアウォールや認証などの適切なセキュリティ対策を実施することでリスクを軽減できます。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "#### **Q: Why isn't my Sage WebUI updating? I've re-pulled/restarted the container, and nothing changed.**",
+      "source_content_hash": "a77a85c42374065b04d7a74e3435bc1c8dfdaf921948c08a49caee521cbfd9de",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: Sage WebUIが更新されません。コンテナを再プル/再起動しても変化がありません**"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "**A:** Updating Sage WebUI requires more than just pulling the new Docker image. Here’s why your updates might not be showing and how to ensure they do:",
+      "source_content_hash": "fdcf3b2e41c2cefc9565e2ea4894a5dcdd6155a5e8aca7a878f31240b2b16800",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** Sage WebUIを更新するには、新しいDockerイメージをプルするだけでは不十分です。更新が反映されない理由と確実に更新する方法を説明します："
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "1. **Updating the Docker Image**: The command `docker pull ghcr.io/Startr/AI-WEB-openwebui:main` updates the Docker image but not the running container or its data.\n2. **Persistent Data in Docker Volumes**: Docker volumes store data independently of container lifecycles, preserving your data (like chat histories) through updates.\n3. **Applying the Update**: Ensure your update takes effect by removing the existing container (which doesn't delete the volume) and creating a new one with the updated image and existing volume attached.",
+      "source_content_hash": "f0eb6308c28ed2dff359b4f21fa9e0d358404b8e76a9b006aaa8bb95924ac328",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Dockerイメージの更新**: `docker pull ghcr.io/Startr/AI-WEB-openwebui:main`コマンドはDockerイメージを更新しますが、実行中のコンテナやそのデータは更新しません。\n2. **Dockerボリュームの永続データ**: Dockerボリュームはコンテナのライフサイクルとは独立してデータ（チャット履歴など）を保持するため、更新後もデータが維持されます。\n3. **更新の適用**: 既存のコンテナを削除（ボリュームは削除せず）し、更新されたイメージと既存のボリュームをアタッチして新しいコンテナを作成することで、更新を確実に適用できます。"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "This process updates the app while keeping your data safe.",
+      "source_content_hash": "deb41993aeb2c176781316c7366726079b99ae30001ae82cafeb234445a52182",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この手順により、アプリケーションを更新しながらデータを安全に保持できます。"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "#### **Q: Wait, why would I delete my container? Won't I lose my data?**",
+      "source_content_hash": "3238f61c486dd3f8e70619e35ce87940aa0b601c48cd41314443e64ab990a698",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: コンテナを削除する必要があるのですか？データが失われませんか？**"
+      }
+    },
+    {
+      "segment_id": "1131ef75",
+      "source_content": "**A:** It's a common concern, but deleting a container doesn't mean you'll lose your data, provided you're using Docker volumes correctly. Here’s why:",
+      "source_content_hash": "d4fe1dbc63fd8e80325b63502a626ed30de984f3e5c414d74de2ab3c0e6b9f20",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** よくある懸念ですが、Dockerボリュームを正しく使用していれば、コンテナを削除してもデータは失われません。その理由は："
+      }
+    },
+    {
+      "segment_id": "ea0c7bae",
+      "source_content": "- **Volumes Preserve Data**: Docker volumes are designed to persist data outside of container lifecycles. As long as your data is stored in a volume, it remains intact, regardless of what happens to the container.\n- **Safe Update Process**: When updating Sage WebUI, removing the old container and creating a new one with the updated image does not affect the data stored in volumes. The key is not to explicitly delete the volume with commands like `docker volume rm`.",
+      "source_content_hash": "47164bc510e801a54ae79eb1e41481ead879d573b6fab7ba3ed10b7a3750be29",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **ボリュームによるデータ保護**: Dockerボリュームはコンテナのライフサイクル外でデータを永続化するように設計されています。データがボリュームに保存されている限り、コンテナに何が起きても影響を受けません。\n- **安全な更新プロセス**: Sage WebUIを更新する際、古いコンテナを削除し、更新されたイメージで新しいコンテナを作成しても、ボリュームに保存されたデータには影響しません。重要なのは`docker volume rm`のようなコマンドで明示的にボリュームを削除しないことです。"
+      }
+    },
+    {
+      "segment_id": "531437ca",
+      "source_content": "By following the correct update steps—pulling the new image, removing the old container without deleting the volume, and creating a new container with the updated image and the existing volume—your application code is updated while your data remains unchanged and safe.",
+      "source_content_hash": "36b0199438b71785b1b5dc43a6668fb45b9fc6c7c43815a7af02e6b8606e14b6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "正しい更新手順（新しいイメージのプル、ボリュームを削除せずに古いコンテナの削除、更新されたイメージと既存のボリュームを使用した新しいコンテナの作成）に従うことで、アプリケーションコードは更新されつつ、データは変更されず安全に保持されます。"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "#### **Q: Should I use the distro-packaged Docker or the official Docker package?**",
+      "source_content_hash": "21e4a51af7012825baac0680a5c7348dbc02e47c322bc1fe7c9703e84c9b42db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: ディストリビューション提供のDockerと公式Dockerパッケージ、どちらを使用すべきですか？**"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "**A:** We recommend using the official Docker package over distro-packaged versions for running Sage WebUI. The official Docker package is frequently updated with the latest features, bug fixes, and security patches, ensuring optimal performance and security. Additionally, it supports important functionalities like `host.docker.internal`, which may not be available in distro-packaged versions. This feature is essential for proper network configurations and connectivity within Docker containers.",
+      "source_content_hash": "1660181b939cbb09ff6dd5cfdefaf32a6eed3b95a120ccb291a58ed1bf4d2bb7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** Sage WebUIの実行には、ディストリビューション提供版ではなく公式Dockerパッケージの使用を推奨します。公式パッケージは最新の機能、バグ修正、セキュリティパッチが頻繁に更新され、最適なパフォーマンスと安全性が保証されます。さらに、`host.docker.internal`のような重要な機能（ディストリビューション版では利用できない場合がある）をサポートしています。この機能はDockerコンテナ内での適切なネットワーク設定と接続性に不可欠です。"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "By choosing the official Docker package, you benefit from consistent behavior across different environments, more reliable troubleshooting support, and access to the latest Docker advancements. The broader Docker community and resources are also more aligned with the official package, providing you with a wealth of information and support for any issues you might encounter.",
+      "source_content_hash": "cae54831ef35cd0e79e2cc3fa1a5df36c59d9682fe8824144eb6a11553944e92",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "公式Dockerパッケージを選択することで、さまざまな環境間で一貫した動作が保証され、トラブルシューティングのサポートがより信頼性の高いものとなり、最新のDockerの進化にもアクセスできます。また、公式パッケージには広範なDockerコミュニティとリソースが揃っており、遭遇する可能性のある問題に対する豊富な情報とサポートが提供されます。"
+      }
+    },
+    {
+      "segment_id": "883231d4",
+      "source_content": "Everything you need to run Sage WebUI, including your data, remains within your control and your server environment, emphasizing our commitment to your privacy and security. For instructions on installing the official Docker package, please refer to the [Install Docker Engine](https://docs.docker.com/engine/install/) guide on Docker's official documentation site.",
+      "source_content_hash": "2dbcc1f7149fcfdbce19cde2ea17746692c092d4502575211ce1c6aaa2c66d45",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIを実行するために必要なすべてのもの（データを含む）は、ユーザーの管理下とサーバー環境内に留まります。これは、プライバシーとセキュリティに対する私たちの取り組みを強調するものです。公式Dockerパッケージのインストール手順については、Docker公式ドキュメントサイトの[Docker Engineのインストール](https://docs.docker.com/engine/install/)ガイドを参照してください。"
+      }
+    },
+    {
+      "segment_id": "b051b70c",
+      "source_content": "#### **Q: Is GPU support available in Docker?**",
+      "source_content_hash": "a9afc93508dd67fc063d4d689ba621539765f2194d3d504816810ae5bebdaf1d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: DockerでGPUサポートは利用可能ですか？**"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "**A:** GPU support in Docker is available but varies depending on the platform. Officially, GPU support is provided in Docker for Windows and Docker Engine on Linux. Other platforms, such as Docker Desktop for Linux and MacOS, do not currently offer GPU support. This limitation is important to consider for applications requiring GPU acceleration. For the best experience and to utilize GPU capabilities, we recommend using Docker on platforms that officially support GPU integration.",
+      "source_content_hash": "c9af8711452b9642492210a308d9ca447cb373a41c901225d5969e12d6ef9c4b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** DockerでのGPUサポートは利用可能ですが、プラットフォームによって異なります。公式には、Docker for WindowsとLinux上のDocker EngineでGPUサポートが提供されています。Docker Desktop for LinuxやMacOSなどの他のプラットフォームでは、現在のところGPUサポートは提供されていません。この制限は、GPUアクセラレーションを必要とするアプリケーションにとって重要です。最適な体験とGPU機能を活用するためには、公式にGPU統合をサポートしているプラットフォームでDockerを使用することをお勧めします。"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "#### **Q: Why does Sage WebUI emphasize the use of Docker?**",
+      "source_content_hash": "7ad2fa1f85206b635517fba92565547c278e2d158d66918ab5cea12760b8944e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: Sage WebUIはなぜDockerの使用を強調しているのですか？**"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "**A:** The decision to use Docker stems from its ability to ensure consistency, isolate dependencies, and simplify deployment across different environments. Docker minimizes compatibility issues and streamlines the process of getting the WebUI up and running, regardless of the underlying system. It's a strategic choice by the project maintainers to harness these benefits, acknowledging that while Docker has a learning curve, the advantages for deployment and maintenance are significant. We understand Docker might not be everyone's preference; however, this approach is central to our project's design and operational efficiency. We view the project's commitment to Docker as a fundamental aspect and encourage those looking for different deployment methods to explore community-driven alternatives.",
+      "source_content_hash": "c0610bbb8f2621e7b8992abbd79941babf9bc2451461e0e946a9053539e974f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** Dockerを使用するという決定は、一貫性を確保し、依存関係を分離し、さまざまな環境での展開を簡素化する能力に由来しています。Dockerは互換性の問題を最小限に抑え、基盤となるシステムに関係なくWebUIを迅速に起動および実行するプロセスを合理化します。これは、プロジェクトのメンテナーによる戦略的な選択であり、Dockerには学習曲線があることを認めつつも、展開とメンテナンスにおける利点が大きいことを認識しています。Dockerがすべての人の好みではないかもしれないことを理解していますが、このアプローチは私たちのプロジェクトの設計と運用効率の中核をなすものです。私たちは、プロジェクトのDockerへのコミットメントを基本的な側面と見なし、異なる展開方法を探求したい人々にはコミュニティ主導の代替案を探ることを奨励しています。"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "#### **Q: Why doesn't Speech-to-Text (STT) and Text-to-Speech (TTS) work in my deployment?**",
+      "source_content_hash": "a4b18389509129749cf51d7e5c515cb418d5f0c7ca24c16fce3adb9c57a01eff",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: 私の展開では音声認識（STT）と音声合成（TTS）が機能しません。なぜですか？**"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "**A:** The functionality of Speech-to-Text (STT) and Text-to-Speech (TTS) services in your deployment may require HTTPS to operate correctly. Modern browsers enforce security measures that restrict certain features, including STT and TTS, to only work under secure HTTPS connections. If your deployment is not configured to use HTTPS, these services might not function as expected. Ensuring your deployment is accessible over HTTPS can resolve these issues, enabling full functionality of STT/TTS features.",
+      "source_content_hash": "e2f6f637624b4595713984c5193ac82bc3c8b0788ab55bfd37737fa0a9b93b69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** 展開における音声認識（STT）と音声合成（TTS）サービスの機能性は、正しく動作するためにHTTPSを必要とする場合があります。現代のブラウザはセキュリティ対策を強化しており、STTやTTSなどの特定の機能を安全なHTTPS接続下でのみ動作するように制限しています。展開がHTTPSを使用するように設定されていない場合、これらのサービスは期待通りに機能しない可能性があります。展開がHTTPS経由でアクセス可能であることを確認することで、これらの問題を解決し、STT/TTS機能の完全な機能性を有効にすることができます。"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "#### **Q: Why doesn't Sage WebUI include built-in HTTPS support?**",
+      "source_content_hash": "26384a6a2675a6d8af5b609fef2b9e78b9711ef703def077a747e60cbc57ee48",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: Sage WebUIにはなぜ組み込みのHTTPSサポートがないのですか？**"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "**A:** While we understand the desire for an all-in-one solution that includes HTTPS support, we believe such an approach wouldn't adequately serve the diverse needs of our user base. Implementing HTTPS directly within the project could limit flexibility and may not align with the specific requirements or preferences of all users. To ensure that everyone can tailor their setup to their unique environment, we leave the implementation of HTTPS termination to the users for their production deployments. This decision allows for greater adaptability and customization. Though we don't offer official documentation on setting up HTTPS, community members may provide guidance upon request, sharing insights and suggestions based on their experiences.",
+      "source_content_hash": "37177bf75fcde4d9721b2f621fc29b4a351952f4f141299855579709c5e1e34e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** すべてを包含するソリューションとしてHTTPSサポートを含めることの要望は理解していますが、そのようなアプローチではユーザーベースの多様なニーズに十分に対応できないと考えています。プロジェクト内に直接HTTPSを実装することは柔軟性を制限し、すべてのユーザーの特定の要件や好みに合致しない可能性があります。すべての人が自分のユニークな環境に合わせてセットアップを調整できるようにするため、本番展開におけるHTTPS終端の実装はユーザーに委ねています。この決定により、より大きな適応性とカスタマイズが可能になります。HTTPSの設定に関する公式ドキュメントは提供していませんが、コミュニティメンバーが要望に応じてガイダンスを提供し、彼らの経験に基づいた洞察と提案を共有する場合があります。"
+      }
+    },
+    {
+      "segment_id": "bd30d33e",
+      "source_content": "#### **Q: I updated/restarted/installed some new software and now Sage WebUI isn't working anymore!**",
+      "source_content_hash": "e917ba2fc1da492c66140ac8516f490496138ef7310ff8b48758c1c58022e80e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: 更新/再起動/新しいソフトウェアをインストールした後、Sage WebUIが動作しなくなりました！**"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "**A:** If your Sage WebUI isn't launching post-update or installation of new software, it's likely related to a direct installation approach, especially if you didn't use a virtual environment for your backend dependencies. Direct installations can be sensitive to changes in the system's environment, such as updates or new installations that alter existing dependencies. To avoid conflicts and ensure stability, we recommend using a virtual environment for managing the `requirements.txt` dependencies of your backend. This isolates your Sage WebUI dependencies from other system packages, minimizing the risk of such issues.",
+      "source_content_hash": "09d66c841ea093e77ad2200f7a2c58ebcbf7c82f07bbc7091aa6b70433deb2bc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** 更新後や新しいソフトウェアのインストール後にSage WebUIが起動しない場合、特にバックエンドの依存関係に仮想環境を使用しなかった直接インストールアプローチに関連している可能性があります。直接インストールは、既存の依存関係を変更する更新や新しいインストールなど、システム環境の変更に対して敏感です。競合を避け、安定性を確保するために、バックエンドの`requirements.txt`依存関係を管理するために仮想環境を使用することをお勧めします。これにより、Sage WebUIの依存関係が他のシステムパッケージから分離され、このような問題のリスクが最小限に抑えられます。"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "#### **Q: I updated/restarted and now my login isn't working anymore, I had to create a new account and all my chats are gone.**",
+      "source_content_hash": "4dcdcd5ea28c3a81ff70bb8dd06a19adaff4615534a89d8e586c4036c98966f7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: 更新/再起動後、ログインができなくなり、新しいアカウントを作成する必要がありました。そして、すべてのチャットが消えています。**"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "**A:** This issue typically arises when a Docker container is created without mounting a volume for `/app/backend/data` or if the designated Sage WebUI volume (usually named `sage-open-webui` in our examples) was unintentionally deleted. Docker volumes are crucial for persisting your data across container lifecycles. If you find yourself needing to create a new account after a restart, it's likely you've initiated a new container without attaching the existing volume where your data resides. Ensure that your Docker run command includes a volume mount pointing to the correct data location to prevent data loss.",
+      "source_content_hash": "408bc2a203d97b4f9b1f0e7609f5a5c2a621613a23f5175da94c288d588367fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** この問題は通常、Dockerコンテナが`/app/backend/data`用のボリュームをマウントせずに作成された場合、または指定されたSage WebUIボリューム（通常は例で`sage-open-webui`と命名）が誤って削除された場合に発生します。Dockerボリュームは、コンテナのライフサイクルを超えてデータを永続化するために重要です。再起動後に新しいアカウントを作成する必要がある場合、既存のデータが存在するボリュームをアタッチせずに新しいコンテナを起動した可能性が高いです。データ損失を防ぐためには、Docker runコマンドに正しいデータロケーションを指すボリュームマウントを含めるようにしてください。"
+      }
+    },
+    {
+      "segment_id": "c19de48a",
+      "source_content": "#### **Q: I tried to login and couldn't, made a new account and now I'm being told my account needs to be activated by an admin.**",
+      "source_content_hash": "00759bdf5f10bfc67e3e693eb66cd41844fb30c1ee69628ff2dafa2b36ef117d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: ログインを試みましたができず、新しいアカウントを作成したところ、管理者によるアカウントの有効化が必要だと言われました。**"
+      }
+    },
+    {
+      "segment_id": "6ca4479f",
+      "source_content": "**A:** This situation occurs when you forget the password for the initial admin account created during the first setup. The first account is automatically designated as the admin account. Creating a new account without access to the admin account will result in the need for admin activation. Avoiding the loss of the initial admin account credentials is crucial for seamless access and management of Sage WebUI. See the [Resetting the Admin Password](troubleshooting/password-reset) guide for instructions on recovering the admin account.",
+      "source_content_hash": "6c7a3eb35881d2c5be0df1d21fcf80a8a1e855cd32f83099d58a66342f3c7f13",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** この状況は、最初のセットアップ時に作成された初期管理者アカウントのパスワードを忘れた場合に発生します。最初のアカウントは自動的に管理者アカウントとして指定されます。管理者アカウントにアクセスできない状態で新しいアカウントを作成すると、管理者による有効化が必要になります。Sage WebUIへのシームレスなアクセスと管理のためには、初期管理者アカウントの資格情報を失わないことが重要です。管理者アカウントを回復する手順については、[管理者パスワードのリセット](troubleshooting/password-reset)ガイドを参照してください。"
+      }
+    },
+    {
+      "segment_id": "71169a2d",
+      "source_content": "#### **Q: Why can't Sage WebUI start with an SSL error?**",
+      "source_content_hash": "e62e1b8cf33c629ab16900835f72f30bc4ffa62666be99731fa40723cc41800f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **Q: Sage WebUIがSSLエラーで起動できないのはなぜですか？**"
+      }
+    },
+    {
+      "segment_id": "c1eaf30b",
+      "source_content": "**A:** The SSL error you're encountering when starting Sage WebUI is likely due to the absence of SSL certificates or incorrect configuration of [huggingface.co](https://huggingface.co/). To resolve this issue, you could set up a mirror for HuggingFace, such as [hf-mirror.com](https://hf-mirror.com/), and specify it as the endpoint when starting the Docker container. Use the `-e HF_ENDPOINT=https://hf-mirror.com/` parameter to define the HuggingFace mirror address in the Docker run command. For example, you can modify the Docker run command as follows:",
+      "source_content_hash": "5359ff9853513d6dc767863c74fe53b2dc2eb5c004232e7687703c21c9fa4029",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**A:** Sage WebUIの起動時に発生するSSLエラーは、SSL証明書が存在しないか、[huggingface.co](https://huggingface.co/)の設定が誤っていることが原因である可能性があります。この問題を解決するには、[hf-mirror.com](https://hf-mirror.com/)などのHuggingFaceのミラーを設定し、Dockerコンテナ起動時にエンドポイントとして指定することができます。Docker runコマンドで`-e HF_ENDPOINT=https://hf-mirror.com/`パラメータを使用してHuggingFaceミラーのアドレスを定義してください。例えば、Docker runコマンドを以下のように変更できます。"
+      }
+    },
+    {
+      "segment_id": "c4c0fc07",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 -e HF_ENDPOINT=https://hf-mirror.com/ --add-host=host.docker.internal:host-gateway -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "29cafe6e6fac3131fbc595f612a7a17f82d30e2486aac4fce6f69b5570011f3a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {}
+    },
+    {
+      "segment_id": "722e4930",
+      "source_content": "#### **Need Further Assistance?**",
+      "source_content_hash": "616b3ebcf29b291b3378fc77c8aceab9fde37ae99a354a7c8aa19bc19a76b494",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### **さらにサポートが必要ですか？**"
+      }
+    },
+    {
+      "segment_id": "3c19e221",
+      "source_content": "If you have any further questions or concerns, please reach out to our [GitHub Issues page](https://github.com/Startr/AI-WEB-openwebui/issues) or our [Discord channel](https://discord.com/channels/1074411230040703046/1074411231030550632) for more help and information.",
+      "source_content_hash": "d3779b361e9fe454ae58aef3edd6d7c8583dc7a208631783ea758811b75c74bb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "さらに質問や懸念がある場合は、[GitHub Issuesページ](https://github.com/Startr/AI-WEB-openwebui/issues)または[Discordチャンネル](https://discord.com/channels/1074411230040703046/1074411231030550632)までお問い合わせください。より詳しいヘルプと情報を提供します。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/faq.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.801123+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0b0a776bc849f09255b84b39bc417ec276e14d79a661d1333f04f37a47508b50"
+  }
+}

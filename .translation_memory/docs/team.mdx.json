@@ -1,0 +1,122 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/team.mdx",
+  "source_file_content_hash": "e975a3dd8654c4da751fe1e84d83a5e374c07b18ec06048fd70517b3879ad3eb",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2200\ntitle: \"👥 Our Team\"\n---",
+      "source_content_hash": "e609bff9b4e9501460f152c4579368799b4d0bb1e199e571196c1b4fc70da39c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "37387e33",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_37387e33"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## 🌟 Meet Our Team!",
+      "source_content_hash": "bbf24311699b1655894e284df53df1e9168f39bb1d08d91ab47a3680731d0dca",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🌟 チームのご紹介"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Our team is led by the dedicated creator and founder, [Tim J. Baek](https://github.com/tjbck). Although Tim is currently the only official member of the team, we are incredibly fortunate to have a community of **[amazing contributors](https://github.com/Startr/AI-WEB-openwebui/graphs/contributors)** who find this project valuable and actively participate in its continued success.",
+      "source_content_hash": "ee8a6de425487ed634ba3eedfa75d0c7c3d2236b017f71f10726cea470bca0a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちのチームは、熱心なクリエイター兼創設者である[Tim J. Baek](https://github.com/tjbck)によって率いられています。現在Timが唯一の公式メンバーですが、このプロジェクトに価値を見出し、積極的に成功に貢献してくださっている**[素晴らしいコントリビューターの皆様](https://github.com/Startr/AI-WEB-openwebui/graphs/contributors)**に恵まれていることを大変幸運に思っています。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "### 💓 Our Contributors",
+      "source_content_hash": "d68b4c21a0dff55ea0b805a8989729aa914c1f199f77d65048e70fb8339c47ee",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 💓 コントリビューターの皆様"
+      }
+    },
+    {
+      "segment_id": "cc3676fa",
+      "source_content": "<a href=\"https://github.com/Startr/AI-WEB-openwebui/graphs/contributors\">\n  <img\n    src=\"https://contrib.rocks/image?repo=sage-open-webui/sage-open-webui\"\n    alt=\"Contributors\"\n  />\n</a>",
+      "source_content_hash": "3bbd4bfe205fa2123c3763ab957d28fc198f829530e237a8488ba6281f304ce2",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_cc3676fa"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Important Note:",
+      "source_content_hash": "5abf7fed754e44e3dfcc91b5732c637d53baea51e1d1178b864811ca918b09e3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 重要なお知らせ:"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "To keep things smooth and organized, please do not contact or `@` mention anyone other than the official maintainer. If you have any questions or need assistance, `@tjbck` is your go-to person. You can also reach out via our official email, hello@openwebui.com. 📨",
+      "source_content_hash": "d55bc3da83c180c3c7a4e64d3cd7842dd5e99867ff0db1b2662ec77bde59a76e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "円滑かつ組織的な運営のため、公式メンテナー以外の方に連絡したり`@`メンションしたりしないようお願いします。質問やサポートが必要な場合は、`@tjbck`が窓口となります。また、公式メールアドレスhello@openwebui.comからもご連絡いただけます。📨"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "Your understanding and cooperation are appreciated! 💪",
+      "source_content_hash": "27131821c9f40be524db0ddf71ecbc4375535a9afeb782c76a158e1574988021",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ご理解とご協力をよろしくお願いいたします！💪"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "Let's keep building something awesome together! 🚀",
+      "source_content_hash": "d0fa8cbd4b762d0f5b3f1ed05ddc61256149c8cb35d14c9bb669038f7603b667",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "一緒に素晴らしいものを構築していきましょう！🚀"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/team.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.789303+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "e975a3dd8654c4da751fe1e84d83a5e374c07b18ec06048fd70517b3879ad3eb"
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/https-haproxy.md",
+  "source_file_content_hash": "179c6839ba29e550b098e86ee883e2c9c5ef1650dbd5c5a71287d8ad6c730163",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 201\ntitle: \"🔒 HTTPS using HAProxy\"\n---",
+      "source_content_hash": "d05aa194df3305e6418915290fd101eb1f9a246b500afe7fa1a0fe5158553bed",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage Open WebUIチームによってサポートされていません。特定のユースケースに合わせてSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したいですか？コントリビュートチュートリアルをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# HAProxy Configuration for Sage Open WebUI",
+      "source_content_hash": "c8e3db1b1756beedee0a9d458b7cbca7999a7251b0bc7d74d0dedf10f4f3e1c2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage Open WebUI向けHAProxy設定"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "HAProxy (High Availability Proxy) is specialized load-balancing and reverse proxy solution that is highly configurable and designed to handle large amounts of connections with a relatively low resource footprint. for more information, please see: https://www.haproxy.org/",
+      "source_content_hash": "ff15fa5d6c416d98218583b0e0b3614fa869dbc1114977351ed8b44f8bf22b99",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HAProxy（High Availability Proxy）は、高度に設定可能な専用のロードバランシングおよびリバースプロキシソリューションで、比較的少ないリソース使用量で大量の接続を処理するように設計されています。詳細は以下を参照してください: https://www.haproxy.org/"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Install HAProxy and Let's Encrypt",
+      "source_content_hash": "5a7490ec5e7cdf9989fb67d794854bcef1edf41c86df7a4e75d229b32f254a77",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## HAProxyとLet's Encryptのインストール"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "First, install HAProxy and Let's Encrypt's certbot:",
+      "source_content_hash": "f6057520f05209d6bf6ce391756ef95ad58328b77d55e11156ea3e794e3e20bf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "まず、HAProxyとLet's Encryptのcertbotをインストールします:"
+      }
+    },
+    {
+      "segment_id": "3daf1b88",
+      "source_content": "### Redhat derivatives",
+      "source_content_hash": "79d247ca544e9be2318eee264609ffdf44ec6b1e8598a70ee4ce3a6b9d3cdea8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Redhat系ディストリビューション"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "```sudo dnf install haproxy certbot openssl -y```",
+      "source_content_hash": "215b9258b0bcb474f5a12e741ae0f52fa4cdd00bd7cac4bbc15f8812db4360c7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "```sudo dnf install haproxy certbot openssl -y```"
+      }
+    },
+    {
+      "segment_id": "aee0e40d",
+      "source_content": "### Debian derivatives",
+      "source_content_hash": "87ed8b7a3cefb5e81c91f6b5f8a2eb8fe9e030153ff92d9bc238f4c3cc8ec28e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Debian系ディストリビューション"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "```sudo apt install haproxy certbot openssl -y```",
+      "source_content_hash": "2f6d0685adaeff889c49cd28fa4680499a0af4390f26297fe4ac54a171795525",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "```sudo apt install haproxy certbot openssl -y```"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## HAProxy Configuration Basics",
+      "source_content_hash": "47590629eb375732db0ec4c1bc48e6c41a6528547c5f8974533db0d8886bfb5c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## HAProxy設定の基本"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "HAProxy's configuration is by default stored in ```/etc/haproxy/haproxy.cfg```. This file contains all the configuration directives that determine how HAProxy will operate.",
+      "source_content_hash": "233b48aab7c02f70e774c736b7f62f0c789900692f858e8314b8c1f62de8f566",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HAProxyの設定はデフォルトで```/etc/haproxy/haproxy.cfg```に保存されます。このファイルには、HAProxyの動作を決定するすべての設定ディレクティブが含まれています。"
+      }
+    },
+    {
+      "segment_id": "ccc88b4c",
+      "source_content": "The base configuration for HAProxy to work with Sage Open WebUI is pretty simple.",
+      "source_content_hash": "8a81049011f99cbe5b568747fcef11d119f6e0ed894742ea2e15053bddb8d1c1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIで動作させるためのHAProxyの基本設定は非常にシンプルです。"
+      }
+    },
+    {
+      "segment_id": "15a1fd96",
+      "source_content": "```\n #---------------------------------------------------------------------\n# Global settings\n#---------------------------------------------------------------------\nglobal\n    # to have these messages end up in /var/log/haproxy.log you will\n    # need to:\n    #\n    # 1) configure syslog to accept network log events.  This is done\n    #    by adding the '-r' option to the SYSLOGD_OPTIONS in\n    #    /etc/sysconfig/syslog\n    #\n    # 2) configure local2 events to go to the /var/log/haproxy.log\n    #   file. A line like the following can be added to\n    #   /etc/sysconfig/syslog\n    #\n    #    local2.*                       /var/log/haproxy.log\n    #\n    log         127.0.0.1 local2\n\n    chroot      /var/lib/haproxy\n    pidfile     /var/run/haproxy.pid\n    maxconn     4000\n    user        haproxy\n    group       haproxy\n    daemon\n\t\n\t#adjust the dh-param if too low\n    tune.ssl.default-dh-param 2048\n#---------------------------------------------------------------------\n# common defaults that all the 'listen' and 'backend' sections will\n# use if not designated in their block\n#---------------------------------------------------------------------\ndefaults\n    mode                    http\n    log                     global\n    option                  httplog\n    option                  dontlognull\n    option http-server-close\n    option forwardfor       #except 127.0.0.0/8\n    option                  redispatch\n    retries                 3\n    timeout http-request    300s\n    timeout queue           2m\n    timeout connect         120s\n    timeout client          10m\n    timeout server          10m\n    timeout http-keep-alive 120s\n    timeout check           10s\n    maxconn                 3000\n\n#http\nfrontend web\n\t#Non-SSL\n    bind 0.0.0.0:80\n\t#SSL/TLS\n\tbind 0.0.0.0:443 ssl crt /path/to/ssl/folder/\n\n    #Let's Encrypt SSL\n    acl letsencrypt-acl path_beg /.well-known/acme-challenge/\n    use_backend letsencrypt-backend if letsencrypt-acl\n\n\t#Subdomain method\n    acl chat-acl hdr(host) -i subdomain.domain.tld\n    #Path Method\n    acl chat-acl path_beg /owui/\n    use_backend owui_chat if chat-acl\n\n#Pass SSL Requests to Lets Encrypt\nbackend letsencrypt-backend\n    server letsencrypt 127.0.0.1:8688\n    \n#OWUI Chat\nbackend owui_chat\n    # add X-FORWARDED-FOR\n    option forwardfor\n    # add X-CLIENT-IP\n    http-request add-header X-CLIENT-IP %[src]\n\thttp-request set-header X-Forwarded-Proto https if { ssl_fc }\n    server chat <ip>:3000\n```",
+      "source_content_hash": "e17a726adfd44302f4631cdfbe354274300f5dfe28d4cbb456417574a9d48f17",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_15a1fd96"
+      }
+    },
+    {
+      "segment_id": "a81544fd",
+      "source_content": "You will see that we have ACL records (routers) for both Sage Open WebUI and Let's Encrypt.  To use WebSocket with OWUI, you need to have an SSL configured, and the easiest way to do that is to use Let's Encrypt.",
+      "source_content_hash": "399b06bb9975424719785eedbda2654de458354611e948253e17002a2580c225",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIとLet's Encryptの両方に対するACLレコード（ルーター）があることがわかります。OWUIでWebSocketを使用するにはSSLを設定する必要があり、最も簡単な方法はLet's Encryptを使用することです。"
+      }
+    },
+    {
+      "segment_id": "0801d969",
+      "source_content": "You can use either the subdomain method or the path method for routing traffic to Sage Open WebUI. The subdomain method requires a dedicated subdomain (e.g., chat.yourdomain.com), while the path method allows you to access Sage Open WebUI through a specific path on your domain (e.g., yourdomain.com/owui/). Choose the method that best suits your needs and update the configuration accordingly.",
+      "source_content_hash": "a8c9d0e896d568d969cbef3a4713f9b5c85842d91426eb9486ba4427d0394ee5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIへのトラフィックをルーティングするには、サブドメイン方式またはパス方式のいずれかを使用できます。サブドメイン方式では専用のサブドメイン（例: chat.yourdomain.com）が必要ですが、パス方式ではドメイン上の特定のパス（例: yourdomain.com/owui/）を通じてSage Open WebUIにアクセスできます。ニーズに最適な方法を選択し、設定を更新してください。"
+      }
+    },
+    {
+      "segment_id": "15abb7bc",
+      "source_content": ":::info\nYou will need to expose port 80 and 443 to your HAProxy server. These ports are required for Let's Encrypt to validate your domain and for HTTPS traffic. You will also need to ensure your DNS records are properly configured to point to your HAProxy server. If you are running HAProxy at home, you will need to use port forwarding in your router to forward ports 80 and 443 to your HAProxy server.\n:::",
+      "source_content_hash": "f5fcf0a68350bcf6d5729be674dda791615ab84af36d0121d576c05aad2146ba",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nHAProxyサーバーに対してポート80と443を公開する必要があります。これらのポートは、Let's Encryptがドメインを検証するためとHTTPSトラフィックのために必要です。また、DNSレコードがHAProxyサーバーを指すように正しく設定されていることを確認する必要があります。自宅でHAProxyを実行している場合は、ルーターでポート80と443をHAProxyサーバーに転送するようにポートフォワーディングを設定する必要があります。\n:::"
+      }
+    },
+    {
+      "segment_id": "f8614e13",
+      "source_content": "## Issuing SSL Certificates with Let's Encrypt",
+      "source_content_hash": "2699019e9a8b62214cfce5898b8c785d9bb687919c7a1ac17bcb36380f7d2484",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Let's EncryptでのSSL証明書の発行"
+      }
+    },
+    {
+      "segment_id": "396efb28",
+      "source_content": "Before starting HAProxy, you will want to generate a self signed certificate to use as a placeholder until Let's Encrypt issues a proper one. Here's how to generate a self-signed certificate:",
+      "source_content_hash": "d8ef717f284272ceea24ff4c7a9b36dab466cee614b764e3564d145af528c9e7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HAProxyを起動する前に、Let's Encryptが適切な証明書を発行するまでの間、プレースホルダーとして使用する自己署名証明書を生成します。以下は自己署名証明書を生成する方法です:"
+      }
+    },
+    {
+      "segment_id": "b27056c4",
+      "source_content": "```\nopenssl req -x509 -newkey rsa:2048 -keyout /tmp/haproxy.key -out /tmp/haproxy.crt -days 3650 -nodes -subj \"/CN=localhost\"\n```",
+      "source_content_hash": "67d5915a09e52c521a4bab1a02bd01df481492104a5d4be7417e54e3781b14b9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_b27056c4"
+      }
+    },
+    {
+      "segment_id": "5f82a1e9",
+      "source_content": "Then combine the key and certificate into a PEM file that HAProxy can use:",
+      "source_content_hash": "6f402850ef03ea7ebdd70c78e2052a3f2cae2a624d4050d66d69b630c9179835",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "次に、HAProxyが使用できるPEMファイルにキーと証明書を結合します:"
+      }
+    },
+    {
+      "segment_id": "6fc234cf",
+      "source_content": "```cat /tmp/haproxy.crt /tmp/haproxy.key > /etc/haproxy/certs/haproxy.pem```",
+      "source_content_hash": "421ee7735cdcb6cc694a0e31bfbaacb4a0440b5769eaee8da2635d8e17b4cd0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "```cat /tmp/haproxy.crt /tmp/haproxy.key > /etc/haproxy/certs/haproxy.pem```"
+      }
+    },
+    {
+      "segment_id": "6b90258a",
+      "source_content": ":::info\nMake sure you update the HAProxy configuration based on your needs and configuration.\n:::",
+      "source_content_hash": "fbbe4e5382d56930ed17b015122bbd16d77f7dfbbfb5d7215cdd34f34cbfbaa9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nニーズと設定に基づいてHAProxy設定を更新することを忘れないでください。\n:::"
+      }
+    },
+    {
+      "segment_id": "692c6053",
+      "source_content": "Once you have your HAProxy configuration set up, you can use certbot to obtain and manage your SSL certificates. Certbot will handle the validation process with Let's Encrypt and automatically update your certificates when they are close to expiring (assuming you use the certbot auto-renewal service).",
+      "source_content_hash": "73f0f178649fe9c74a8d6a63293b5b362393c926ad40a1d73a221db7c90be101",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HAProxy設定が完了したら、certbotを使用してSSL証明書を取得および管理できます。CertbotはLet's Encryptとの検証プロセスを処理し、証明書が期限切れに近づくと自動的に更新します（certbotの自動更新サービスを使用している場合）。"
+      }
+    },
+    {
+      "segment_id": "383fbdd2",
+      "source_content": "You can validate the HAProxy configuration by running `haproxy -c -f /etc/haproxy/haproxy.cfg`. If there are no errors, you can start HAProxy with `systemctl start haproxy` and verify it's running with `systemctl status haproxy`.",
+      "source_content_hash": "3360c553930f0574ca7a036b121a7325c431cd7c40dda03ffb094797c3b11ef8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`haproxy -c -f /etc/haproxy/haproxy.cfg`を実行してHAProxy設定を検証できます。エラーがない場合は、`systemctl start haproxy`でHAProxyを起動し、`systemctl status haproxy`で実行状態を確認できます。"
+      }
+    },
+    {
+      "segment_id": "14bc6b75",
+      "source_content": "To ensure HAProxy starts with the system, `systemctl enable haproxy`.",
+      "source_content_hash": "1e4fffbdf369575c113454c3579f45acd9b6674e39530e71081ed81b1861ce35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "システム起動時にHAProxyが自動的に起動するようにするには、`systemctl enable haproxy`を実行します。"
+      }
+    },
+    {
+      "segment_id": "e478ec2c",
+      "source_content": "When you have HAProxy configured, you can use Let's encrypt to issue your valid SSL certificate.\nFirst, you will need to register with Let's Encrypt.  You should only need to do this one time:",
+      "source_content_hash": "2bbe3ea9de3ef258f9a19e9907f1c0fdb125d060ac56df7b47312ed6f53b1117",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HAProxyが設定されたら、Let's Encryptを使用して有効なSSL証明書を発行できます。\nまず、Let's Encryptに登録する必要があります。これは一度だけ行えばよいはずです:"
+      }
+    },
+    {
+      "segment_id": "8664ed0b",
+      "source_content": "`certbot register --agree-tos --email your@email.com --non-interactive`",
+      "source_content_hash": "6791722a3d249dec615c736982a53e08e55f96dc2a53c563d106c64b4d7f4baa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`certbot register --agree-tos --email your@email.com --non-interactive`"
+      }
+    },
+    {
+      "segment_id": "9e90a9b3",
+      "source_content": "Then you can request your certificate:",
+      "source_content_hash": "0c766e5baae5cfccff887b05854cf3aae02b9dfc5861e1e644e83de4811ff02e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "その後、証明書をリクエストできます:"
+      }
+    },
+    {
+      "segment_id": "a4a107b4",
+      "source_content": "```\ncertbot certonly -n --standalone --preferred-challenges http --http-01-port-8688 -d yourdomain.com\n```",
+      "source_content_hash": "922f545db9f374fc80b6e2ed9bb2d259ad3884c64fe039554cffc03ea478d0aa",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a4a107b4"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "Once the certificate is issued, you will need to merge the certificate and private key files into a single PEM file that HAProxy can use.",
+      "source_content_hash": "825c41b0474dd4a9b8191e244eb85c75733f1ed7c6593c7c31654b509050b948",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "証明書が発行されたら、HAProxyが使用できる単一のPEMファイルに証明書と秘密鍵ファイルを結合する必要があります。"
+      }
+    },
+    {
+      "segment_id": "cf5bbc3b",
+      "source_content": "```\ncat /etc/letsencrypt/live/{domain}/fullchain.pem /etc/letsencrypt/live/{domain}/privkey.pem > /etc/haproxy/certs/{domain}.pem\nchmod 600 /etc/haproxy/certs/{domain}.pem\nchown haproxy:haproxy /etc/haproxy/certs/{domain}.pem\n```",
+      "source_content_hash": "7b1c94a864a0bb814475ac029b963e51d81f4941017a41e2a337dc298b94a6ac",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_cf5bbc3b"
+      }
+    },
+    {
+      "segment_id": "44285072",
+      "source_content": "You can then restart HAProxy to apply the new certificate:\n`systemctl restart haproxy`",
+      "source_content_hash": "f77c18343e769d6e39993d17eb245933b2acb20c25d19c57abcd4c860b524af1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "新しい証明書を適用するためにHAProxyを再起動できます:\n`systemctl restart haproxy`"
+      }
+    },
+    {
+      "segment_id": "3c6dd548",
+      "source_content": "## HAProxy Manager (Easy Deployment Option)",
+      "source_content_hash": "6d1c8af6140f8d5b1f87f1f0622f4dcdade1f86b7cdb30b3841191fcb911d280",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## HAProxyマネージャー（簡単なデプロイオプション）"
+      }
+    },
+    {
+      "segment_id": "6f08f877",
+      "source_content": "If you would like to have something manage your HAProxy configuration and Let's Encrypt SSLs automatically, I have written a simple python script and created a docker container you can use to create and manage your HAProxy config and manage the Let's Encrypt certificate lifecycle.",
+      "source_content_hash": "e883180de976009155856d98eaefc097910619b2a40c0ad5370d719326b4d7ed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "HAProxyの設定とLet's Encrypt SSLを自動的に管理したい場合、HAProxy設定の作成・管理とLet's Encrypt証明書のライフサイクル管理を行うシンプルなPythonスクリプトとDockerコンテナを作成しました。"
+      }
+    },
+    {
+      "segment_id": "2dbfc5f7",
+      "source_content": "https://github.com/shadowdao/haproxy-manager",
+      "source_content_hash": "f9eea642028eea2ad970abfe99cab1558c230f8fe75632e8c16bd1312f1a6b16",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "https://github.com/shadowdao/haproxy-manager"
+      }
+    },
+    {
+      "segment_id": "51127396",
+      "source_content": ":::warning\nPlease do not expose port 8000 publicly if you use the script or container!\n:::",
+      "source_content_hash": "5960210833d674b18e1b2667a00d858b3158f9d440e920c6afca783fbbd63b4d",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nスクリプトやコンテナを使用する場合、ポート8000を公開しないでください！\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/https-haproxy.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.787288+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "179c6839ba29e550b098e86ee883e2c9c5ef1650dbd5c5a71287d8ad6c730163"
+  }
+}

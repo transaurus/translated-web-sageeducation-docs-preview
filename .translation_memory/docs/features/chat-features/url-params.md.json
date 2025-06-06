@@ -1,0 +1,260 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/chat-features/url-params.md",
+  "source_file_content_hash": "5cbb09dba74ef15e83bb2e054000a3f5f69ac025225cda79bf5112447ae33fae",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 5\ntitle: \"🔗 URL Parameters\"\n---",
+      "source_content_hash": "d6f544c60b0a411c3c4f9cd3af673b506159b2626057aea5eeaac0798bd939ee",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "In Sage WebUI, chat sessions can be customized through various URL parameters. These parameters allow you to set specific configurations, enable features, and define model settings on a per-chat basis. This approach provides flexibility and control over individual chat sessions directly from the URL.",
+      "source_content_hash": "ed75f46d0b912c7f25402d7039962a120f048feb31288e9a100aae62979df39f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIでは、チャットセッションをさまざまなURLパラメータを通じてカスタマイズできます。これらのパラメータを使用すると、特定の設定を適用したり、機能を有効にしたり、モデル設定をチャットごとに定義したりできます。このアプローチにより、URLから直接個々のチャットセッションを柔軟に制御できます。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## URL Parameter Overview",
+      "source_content_hash": "5f3e414c332cbe29ef5f69bc757a256c19eeffc74d3066ecde9952d22b064800",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## URLパラメータの概要"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The following table lists the available URL parameters, their function, and example usage.",
+      "source_content_hash": "ce613928e1c6815108f3672d728bac99ff98aace3e2875a30f480e9d2d4c9ff0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下の表は、利用可能なURLパラメータ、その機能、および使用例を示しています。"
+      }
+    },
+    {
+      "segment_id": "d506be32",
+      "source_content": "| **Parameter**      | **Description**                                                                  | **Example**                          |\n|-----------------------|----------------------------------------------------------------------------------|--------------------------------------------------------|\n| `models`           | Specifies the models to be used, as a comma-separated list.                     | `/?models=model1,model2`         |\n| `model`            | Specifies a single model to be used for the chat session.                       | `/?model=model1`                 |\n| `youtube`          | Specifies a YouTube video ID to be transcribed within the chat.                 | `/?youtube=VIDEO_ID`             |\n| `web-search`       | Enables web search functionality if set to `true`.                              | `/?web-search=true`              |\n| `tools` or `tool-ids` | Specifies a comma-separated list of tool IDs to activate in the chat.          | `/?tools=tool1,tool2`            |\n| `call`             | Enables a call overlay if set to `true`.                                        | `/?call=true`                    |\n| `q`                | Sets an initial query or prompt for the chat.                                   | `/?q=Hello%20there`              |\n| `temporary-chat`   | Marks the chat as temporary if set to `true`, for one-time sessions.            | `/?temporary-chat=true`          |",
+      "source_content_hash": "41978685f08fd9616622ee76eb57c87007916539ccb7aa59bf8ee1279da4b60b",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d506be32"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### 1. **Models and Model Selection**",
+      "source_content_hash": "bff45c3a5a07546edb1f3e435e26455bfb3679a6d9a8466222df6f2557945de9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 1. **モデルとモデル選択**"
+      }
+    },
+    {
+      "segment_id": "44d89370",
+      "source_content": "- **Description**: The `models` and `model` parameters allow you to specify which [language models](/features/workspace/models.md) should be used for a particular chat session.\n- **How to Set**: You can use either `models` for multiple models or `model` for a single model.\n- **Example**:\n  - `/?models=model1,model2` – This initializes the chat with `model1` and `model2`.\n  - `/?model=model1` – This sets `model1` as the sole model for the chat.",
+      "source_content_hash": "1acd1ea82e9f9136413b10632cf9712ba59b7edcfb673d78d26c9562a60f7142",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `models`および`model`パラメータを使用すると、特定のチャットセッションで使用する[言語モデル](/features/workspace/models.md)を指定できます。\n- **設定方法**: 複数のモデルを指定する場合は`models`、単一のモデルを指定する場合は`model`を使用します。\n- **例**:\n  - `/?models=model1,model2` – これにより、`model1`と`model2`を使用してチャットが初期化されます。\n  - `/?model=model1` – これにより、`model1`がチャットの唯一のモデルとして設定されます。"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "### 2. **YouTube Transcription**",
+      "source_content_hash": "534f0193ef539da62d45ad8616e006367583a2611823e974f6d2b74003a5e71d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 2. **YouTube文字起こし**"
+      }
+    },
+    {
+      "segment_id": "cd471e4e",
+      "source_content": "- **Description**: The `youtube` parameter takes a YouTube video ID, enabling the chat to transcribe the specified video.\n- **How to Set**: Use the YouTube video ID as the value for this parameter.\n- **Example**: `/?youtube=VIDEO_ID`\n- **Behavior**: This triggers transcription functionality within the chat for the provided YouTube video.",
+      "source_content_hash": "438ff7308666ee17edba0504d0b7078034081d4d374505b0749c982169ec74cd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `youtube`パラメータにはYouTube動画IDを指定でき、指定された動画の文字起こしをチャットで有効にします。\n- **設定方法**: このパラメータの値としてYouTube動画IDを使用します。\n- **例**: `/?youtube=VIDEO_ID`\n- **動作**: これにより、指定されたYouTube動画の文字起こし機能がチャット内でトリガーされます。"
+      }
+    },
+    {
+      "segment_id": "80d9e13c",
+      "source_content": "### 3. **Web Search**",
+      "source_content_hash": "a7a6e055a569c6fde8e7bf85d1513e6f9c2bf805f8a707f2fcf0515e3d24042d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 3. **ウェブ検索**"
+      }
+    },
+    {
+      "segment_id": "e7bc8c38",
+      "source_content": "- **Description**: Enabling `web-search` allows the chat session to access [web search](/category/-web-search) functionality.\n- **How to Set**: Set this parameter to `true` to enable web search.\n- **Example**: `/?web-search=true`\n- **Behavior**: If enabled, the chat can retrieve web search results as part of its responses.",
+      "source_content_hash": "9c5089b2ae30d468709d634ffcf1a917aca3bf9f44b028ccc83f2bbc33ed3be0",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `web-search`を有効にすると、チャットセッションで[ウェブ検索](/category/-web-search)機能を利用できます。\n- **設定方法**: このパラメータを`true`に設定してウェブ検索を有効にします。\n- **例**: `/?web-search=true`\n- **動作**: 有効にすると、チャットは応答の一部としてウェブ検索結果を取得できます。"
+      }
+    },
+    {
+      "segment_id": "35a77014",
+      "source_content": "### 4. **Tool Selection**",
+      "source_content_hash": "b340fb579ebbf38bb7acdb98a0cfa004e5abcd721d01fff23817bb7e041d95bb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 4. **ツール選択**"
+      }
+    },
+    {
+      "segment_id": "b93ddfac",
+      "source_content": "- **Description**: The `tools` or `tool-ids` parameters specify which [tools](/features/plugin/tools) to activate within the chat.\n- **How to Set**: Provide a comma-separated list of tool IDs as the parameter’s value.\n- **Example**: `/?tools=tool1,tool2` or `/?tool-ids=tool1,tool2`\n- **Behavior**: Each tool ID is matched and activated within the session for user interaction.",
+      "source_content_hash": "c111dbbcff2e15e4612502909f4878b9485eb076d8d64c17aa6e9cfa39569f6e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `tools`または`tool-ids`パラメータを使用すると、チャット内で有効にする[ツール](/features/plugin/tools)を指定できます。\n- **設定方法**: パラメータの値としてツールIDのカンマ区切りリストを指定します。\n- **例**: `/?tools=tool1,tool2` または `/?tool-ids=tool1,tool2`\n- **動作**: 各ツールIDがセッション内でマッチングされ、ユーザー操作のために有効化されます。"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "### 5. **Call Overlay**",
+      "source_content_hash": "b00abe8833caffd03eb50470e5ca291311f7137f2ab5cfa8ebba0c0b83e1db5f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 5. **通話オーバーレイ**"
+      }
+    },
+    {
+      "segment_id": "157c9741",
+      "source_content": "- **Description**: The `call` parameter enables a video or call overlay in the chat interface.\n- **How to Set**: Set the parameter to `true` to enable the call overlay.\n- **Example**: `/?call=true`\n- **Behavior**: Activates a call interface overlay, allowing features such as live transcription and video input.",
+      "source_content_hash": "40f27617efbfc954db95da5df2917bf94949254aa35f0c4d47711d434a3d0887",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `call`パラメータを使用すると、チャットインターフェースにビデオまたは通話オーバーレイを表示できます。\n- **設定方法**: このパラメータを`true`に設定して通話オーバーレイを有効にします。\n- **例**: `/?call=true`\n- **動作**: 通話インターフェースオーバーレイが有効化され、ライブ文字起こしやビデオ入力などの機能が利用可能になります。"
+      }
+    },
+    {
+      "segment_id": "7283cdac",
+      "source_content": "### 6. **Initial Query Prompt**",
+      "source_content_hash": "cbb0104b8437896bf1d9dccb23342bba4d7489dbce22cf5e86712acd947f215d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 6. **初期クエリプロンプト**"
+      }
+    },
+    {
+      "segment_id": "3df4f066",
+      "source_content": "- **Description**: The `q` parameter allows setting an initial query or prompt for the chat.\n- **How to Set**: Specify the query or prompt text as the parameter value.\n- **Example**: `/?q=Hello%20there`\n- **Behavior**: The chat starts with the specified prompt, automatically submitting it as the first message.",
+      "source_content_hash": "f1c5ee897585ab80fac45e65d7de91de735dd5ad4c70da101ef48381b5fc05e7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `q`パラメータを使用すると、チャットの初期クエリまたはプロンプトを設定できます。\n- **設定方法**: パラメータの値としてクエリまたはプロンプトテキストを指定します。\n- **例**: `/?q=Hello%20there`\n- **動作**: チャットは指定されたプロンプトで開始され、自動的に最初のメッセージとして送信されます。"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### 7. **Temporary Chat Sessions**",
+      "source_content_hash": "4283e112ac54930c8c1f2f0d8107a8b1ee4eec456f582c77a2a7b54443d5f451",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 7. **一時的なチャットセッション**"
+      }
+    },
+    {
+      "segment_id": "645e08e3",
+      "source_content": "- **Description**: The `temporary-chat` parameter marks the chat as a temporary session. This may limit features such as saving chat history or applying persistent settings.\n- **How to Set**: Set this parameter to `true` for a temporary chat session.\n- **Example**: `/?temporary-chat=true`\n- **Behavior**: This initiates a disposable chat session without saving history or applying advanced configurations.",
+      "source_content_hash": "0966fb1974a372574a99ab49592fcd901f472a6ebb10c438afed0463a28564b7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **説明**: `temporary-chat`パラメータを使用すると、チャットを一時的なセッションとしてマークできます。これにより、チャット履歴の保存や永続的な設定の適用などの機能が制限される場合があります。\n- **設定方法**: このパラメータを`true`に設定して一時的なチャットセッションを開始します。\n- **例**: `/?temporary-chat=true`\n- **動作**: これにより、履歴を保存せず、高度な設定を適用しない使い捨てのチャットセッションが開始されます。"
+      }
+    },
+    {
+      "segment_id": "32db7046",
+      "source_content": "<details>\n<summary>Example Use Case</summary>\n:::tip[**Temporary Chat Session**]\nSuppose a user wants to initiate a quick chat session without saving the history. They can do so by setting `temporary-chat=true` in the URL. This provides a disposable chat environment ideal for one-time interactions.\n:::\n</details>",
+      "source_content_hash": "8564e22a9872f9cfef0782b8ac1b1e86f6985d20d32a6ec19e3713f03f028cb6",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_32db7046"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "## Using Multiple Parameters Together",
+      "source_content_hash": "2dfb645a474f0177fe2f163892b324562ff845cfcffd8700f98cbce4cb3740b6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 複数のパラメータを組み合わせて使用する"
+      }
+    },
+    {
+      "segment_id": "6270d577",
+      "source_content": "These URL parameters can be combined to create highly customized chat sessions. For example:",
+      "source_content_hash": "7145c73d260f3cec287a3de884cd2e60d1bd6bbceae5f934960cf307066412de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これらのURLパラメータを組み合わせることで、高度にカスタマイズされたチャットセッションを作成できます。例:"
+      }
+    },
+    {
+      "segment_id": "d8159289",
+      "source_content": "```bash\n/chat?models=model1,model2&youtube=VIDEO_ID&web-search=true&tools=tool1,tool2&call=true&q=Hello%20there&temporary-chat=true\n```",
+      "source_content_hash": "0be85cc51df13257877e3a01fda03862128b799544adee881c3eca97422522fa",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d8159289"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "This URL will:",
+      "source_content_hash": "1c25c30c0220dd94820e499c388e2b998c8609b213c81c62fc56b483852d6abf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このURLは以下のことを行います:"
+      }
+    },
+    {
+      "segment_id": "4d429946",
+      "source_content": "- Initialize the chat with `model1` and `model2`.\n- Enable YouTube transcription, web search, and specified tools.\n- Display a call overlay.\n- Set an initial prompt of \"Hello there.\"\n- Mark the chat as temporary, avoiding any history saving.",
+      "source_content_hash": "b84a6f169482e6753ba2b316b22bbf45166218ccaa18c4a57127d2c7a555e7de",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {}
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/chat-features/url-params.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.809636+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "5cbb09dba74ef15e83bb2e054000a3f5f69ac025225cda79bf5112447ae33fae"
+  }
+}

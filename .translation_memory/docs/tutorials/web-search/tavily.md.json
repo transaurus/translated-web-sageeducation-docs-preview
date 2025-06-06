@@ -1,0 +1,32 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/tavily.md",
+  "source_file_content_hash": "30daa684f98a339121ab0fae5872840ca1a9b670e2cd4d7180cecd6372a0a831",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 14\ntitle: \"Tavily\"\n---",
+      "source_content_hash": "68ab35121dcf93e8b2285580eac08749c7ece32420eeeb287aab3148347b29d8",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿ガイドをチェックしてください。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/tavily.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.780402+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "30daa684f98a339121ab0fae5872840ca1a9b670e2cd4d7180cecd6372a0a831"
+  }
+}

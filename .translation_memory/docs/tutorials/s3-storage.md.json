@@ -1,0 +1,342 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/s3-storage.md",
+  "source_file_content_hash": "b9e65e835550a9fb549ff400603b9cbc3a5b4782174ccf2d15b0b6c237c43712",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 320\ntitle: \"🪣 Switching to S3 Storage\"\n---",
+      "source_content_hash": "6589ddce7a26218cbec07f4309b16f47478aa0d43d43c4e92bfc6c2890db4e2a",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによるサポート対象外です。特定のユースケース向けにSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？ 寄稿ガイドをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# 🪣 Switching to S3 Storage",
+      "source_content_hash": "e1d1429fb3abf3a69dc79a5f1f9d06f978b301ff2f0d8e458040c38443487cc1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🪣 S3ストレージへの切り替え"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "This guide provides instructions on how to switch the default `local` storage in Sage Open WebUI config to Amazon S3.",
+      "source_content_hash": "14cb2d08cf86bf712f3837dc9f5c39fbb058ccf3a56ef03d59e4c02371dbac39",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このガイドでは、Sage Open WebUIのデフォルト設定である`local`ストレージからAmazon S3への切り替え手順を説明します。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Prerequisites",
+      "source_content_hash": "bbd3d4949a6f237efd8d4ff5c7c5f30d968e7a989ad12f3d7dcef69c98053912",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 前提条件"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "In order to follow this tutorial, you must have the following:",
+      "source_content_hash": "1ef8b470b2c2e9ce8d4baf3a568f525e0e0bdc7ffe95ceb9c49396c26c9ab4b1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このチュートリアルを進めるには、以下が必要です："
+      }
+    },
+    {
+      "segment_id": "11c829ab",
+      "source_content": "- An active AWS account\n- An active AWS Access Key and Secret Key\n- IAM permissions in AWS to create and put objects in S3\n- Docker installed on your system",
+      "source_content_hash": "b76750a3c458ba70672582f18f5392beb2951aa17750132aff13b07a1fc6176c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 有効なAWSアカウント\n- 有効なAWSアクセスキーとシークレットキー\n- AWSでS3バケットの作成とオブジェクト配置が可能なIAM権限\n- システムにインストールされたDocker"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## What is Amazon S3",
+      "source_content_hash": "af7361b3de751b6efec3122ea3b2634722a796714d71733ca33a8edc1f43d83f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Amazon S3とは"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Direct from AWS' website:",
+      "source_content_hash": "7ac145f8354a85d18520858ae543b1826adb7a83fb4ad291e0b65dcabec60dcc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "AWS公式サイトより："
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "\"Amazon S3 is an object storage service that offers industry-leading scalability, data availability, security, and performance. Store and protect any amount of data for a range of use cases, such as data lakes, websites, cloud-native applications, backups, archive, machine learning, and analytics. Amazon S3 is designed for 99.999999999% (11 9's) of durability, and stores data for millions of customers all around the world.\"",
+      "source_content_hash": "4b3c6b7dd1747cc3cb364e11da295b1a345a847b9647b992ef9cf24ad7f267fb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "「Amazon S3は、業界をリードする拡張性、データ可用性、セキュリティ、パフォーマンスを提供するオブジェクトストレージサービスです。データレイク、ウェブサイト、クラウドネイティブアプリケーション、バックアップ、アーカイブ、機械学習、分析など、あらゆる使用事例に対応し、あらゆる量のデータを保存・保護できます。Amazon S3は99.999999999%（イレブンナイン）の耐久性を設計しており、世界中の数百万の顧客のデータを保存しています。」"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "To learn more about S3, visit: [Amazon S3's Official Page](https://aws.amazon.com/s3/)",
+      "source_content_hash": "bb0b3857f81ab5a53969bbe3dc8ef4bccc99cc370e11f7ff19e34d974881b7d2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "S3の詳細はこちら：[Amazon S3公式ページ](https://aws.amazon.com/s3/)"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "# How to Set-Up",
+      "source_content_hash": "661e937085549a7211db824ede1de0df204b3345a247c47e1dedc5787557cfe6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# セットアップ方法"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## 1. Required environment variables",
+      "source_content_hash": "f4443266d3d325c186d6a4e1c51c219243355f14353dc60dc0e4d9065f5f5400",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 1. 必要な環境変数"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "In order to configure this option, you need to gather the following environment variables:",
+      "source_content_hash": "2c9ca00edc2b7c545de03365debbf518c6a64a4e5e7a89c286e6536ecc2f72d1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このオプションを設定するには、以下の環境変数を収集する必要があります："
+      }
+    },
+    {
+      "segment_id": "50a89587",
+      "source_content": "| **sage-open-webui Environment Variable** | **Example Value**                           |\n|-------------------------------------|---------------------------------------------|\n| `S3_ACCESS_KEY_ID`                  | ABC123                                      |\n| `S3_SECRET_ACCESS_KEY`              | SuperSecret                                 |\n| `S3_ENDPOINT_URL`                   | https://s3.us-east-1.amazonaws.com          |\n| `S3_REGION_NAME`                    | us-east-1                                   |\n| `S3_BUCKET_NAME`                    | my-awesome-bucket-name                      |",
+      "source_content_hash": "fc1b25e18cc69960633ecf9c4bb965fcaf6096115defad00f8340435789f77d1",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_50a89587"
+      }
+    },
+    {
+      "segment_id": "4c077b92",
+      "source_content": "- S3_ACCESS_KEY_ID: This is an identifier for your AWS account's access key. You get this from the AWS Management Console or AWS CLI when creating an access key.\n- S3_SECRET_ACCESS_KEY: This is the secret part of your AWS access key pair. It's provided when you create an access key in AWS and should be stored securely.\n- S3_ENDPOINT_URL: This URL directs to your S3 service endpoint and can typically be found in AWS service documentation or account settings.\n- S3_REGION_NAME: This is the AWS region where your S3 bucket resides, like \"us-east-1\". You can identify this from the AWS Management Console under your S3 bucket details.\n- S3_BUCKET_NAME: This is the unique name of your S3 bucket, which you specified when creating the bucket in AWS.",
+      "source_content_hash": "b82511debdbdeb460b6ae42ed3e53a6115922d8dd52daa8402aa983143acf6d3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- S3_ACCESS_KEY_ID: AWSアカウントのアクセスキー識別子。AWS管理コンソールまたはAWS CLIでアクセスキー作成時に取得します。\n- S3_SECRET_ACCESS_KEY: AWSアクセスキーペアの秘密鍵部分。AWSでアクセスキー作成時に提供され、安全に保管する必要があります。\n- S3_ENDPOINT_URL: S3サービスエンドポイントへのURL。通常はAWSサービスドキュメントまたはアカウント設定で確認できます。\n- S3_REGION_NAME: S3バケットが存在するAWSリージョン（例：\"us-east-1\"）。AWS管理コンソールのS3バケット詳細から確認可能です。\n- S3_BUCKET_NAME: AWSでバケット作成時に指定した、S3バケットの一意の名前。"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "For a complete list of the available S3 endpoint URLs, see: [Amazon S3 Regular Endpoints](https://docs.aws.amazon.com/general/latest/gr/s3.html)",
+      "source_content_hash": "470907fae518fdeda4a247ea70e091ea4d0e18cdb9d114b88871980b2928f858",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "利用可能なS3エンドポイントURLの完全なリストはこちら：[Amazon S3通常エンドポイント](https://docs.aws.amazon.com/general/latest/gr/s3.html)"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "See all the `Cloud Storage` configuration options here: [sage-open-webui Cloud Storage Config](https://docs.openwebui.com/getting-started/env-configuration#cloud-storage)",
+      "source_content_hash": "50e9f554962a6e09f20724c7cd6a1cd2f3ad82e7b3006e5e0d27c09c7848acc2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "すべての`クラウドストレージ`設定オプションはこちら：[sage-open-webuiクラウドストレージ設定](https://docs.openwebui.com/getting-started/env-configuration#cloud-storage)"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "## 2. Run sage-open-webui",
+      "source_content_hash": "619c3cb59033b5033dd7632a1b5d5d2b66d70243d5ccc85688582aa0298cbc82",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 2. sage-open-webuiの起動"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "Before we launch our instance of sage-open-webui, there is one final environment variable called `STORAGE_PROVIDER` we need to set. This variable tells sage-open-webui which provider you want to use. By default, `STORAGE_PROVIDER` is empty which means sage-open-webui uses local storage.",
+      "source_content_hash": "825c93c6fd78183992a4e58f93900fef7fcb1a336f32d58977ecd6d6525bb2db",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "sage-open-webuiインスタンスを起動する前に、最後の環境変数`STORAGE_PROVIDER`を設定する必要があります。この変数はsage-open-webuiに使用するプロバイダーを伝えます。デフォルトでは`STORAGE_PROVIDER`は空で、sage-open-webuiはローカルストレージを使用します。"
+      }
+    },
+    {
+      "segment_id": "ce578d2a",
+      "source_content": "| **Storage Provider** | **Type** | **Description**                                                                                 | **Default** |\n|----------------------|----------|-------------------------------------------------------------------------------------------------|-------------|\n| `local`              | str      | Defaults to local storage if an empty string (`' '`) is provided                                | Yes         |\n| `s3`                 | str      | Uses S3 client library and related environment variables mentioned in Amazon S3 Storage         | No          |\n| `gcs`                | str      | Uses GCS client library and related environment variables mentioned in Google Cloud Storage     | No          |",
+      "source_content_hash": "17087bfea040352ba47e7a8c15293bbe12d2949dab58b6acf328b849170aefe0",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ce578d2a"
+      }
+    },
+    {
+      "segment_id": "5dae11e3",
+      "source_content": "To use Amazon S3, we need to set `STORAGE_PROVIDER` to \"S3\" along with all the environment variables we gathered in Step 1 (`S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_ENDPOINT_URL`, `S3_REGION_NAME`, `S3_BUCKET_NAME`).",
+      "source_content_hash": "8d83c277210f40f99f57b28cbb113ad1279ad422df5862288c1f9a2713b32831",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Amazon S3を使用するには、`STORAGE_PROVIDER`を\"S3\"に設定し、ステップ1で収集したすべての環境変数（`S3_ACCESS_KEY_ID`、`S3_SECRET_ACCESS_KEY`、`S3_ENDPOINT_URL`、`S3_REGION_NAME`、`S3_BUCKET_NAME`）を設定します。"
+      }
+    },
+    {
+      "segment_id": "0bb95128",
+      "source_content": "Here, I'm also setting the `ENV` to \"dev\", which will allow us to see the sage-open-webui Swagger docs so we can further test and confirm the S3 storage set-up is working as expected.",
+      "source_content_hash": "a4452389540123ca3e58aa74c1f02777737e534979f5060e0fd8391262176e2b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ここでは`ENV`を\"dev\"に設定しています。これによりsage-open-webuiのSwaggerドキュメントを確認でき、S3ストレージのセットアップが期待通りに動作していることをさらにテスト・確認できます。"
+      }
+    },
+    {
+      "segment_id": "29ad5b0e",
+      "source_content": "```sh\ndocker run -d \\\n  -p 3000:8080 \\\n  -v sage-open-webui:/app/backend/data \\\n  -e STORAGE_PROVIDER=\"s3\" \\\n  -e S3_ACCESS_KEY_ID=\"ABC123\" \\\n  -e S3_SECRET_ACCESS_KEY=\"SuperSecret\" \\\n  -e S3_ENDPOINT_URL=\"https://s3.us-east-1.amazonaws.com\" \\\n  -e S3_REGION_NAME=\"us-east-1\" \\\n  -e S3_BUCKET_NAME=\"my-awesome-bucket-name\" \\\n  -e ENV=\"dev\" \\\n  --name sage-open-webui \\\n  ghcr.io/sage-open-webui/sage-open-webui:main\n```",
+      "source_content_hash": "7d9bc5a9a90eb611f49082bc93f6b9bbf8fc8bf3b08c3d4d2ebea7c528d99da8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_29ad5b0e"
+      }
+    },
+    {
+      "segment_id": "a4bf4268",
+      "source_content": "## 3. Test the set-up",
+      "source_content_hash": "3fabfc5ae25bd6400c417e287313f8d15cd281eda3e9f98e34772323ca458788",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 3. セットアップのテスト"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "Now that we have sage-open-webui running, let's upload a simple `Hello, World` text file and test our set-up.",
+      "source_content_hash": "9cba1d0776502465181579e3315606b5443c9c452b36806242a3d309e7336422",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "sage-open-webuiが起動したので、シンプルな`Hello, World`テキストファイルをアップロードしてセットアップをテストしましょう。"
+      }
+    },
+    {
+      "segment_id": "2547a6bb",
+      "source_content": "![Upload a file in sage-open-webui](/images/tutorials/amazon-s3/amazon-s3-upload-file.png)",
+      "source_content_hash": "0e997f87e909778d54f53f899c2760510ccfd687215beecb9a8b4817788a1783",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![sage-open-webuiでのファイルアップロード](/images/tutorials/amazon-s3/amazon-s3-upload-file.png)"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "And confirm that we're getting a response from the selected LLM.",
+      "source_content_hash": "29eb610228f22bb64a886e7d409666d70ded64371906c29e46ac47302ba6f7e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "そして、選択したLLMから応答が返ってくることを確認します。"
+      }
+    },
+    {
+      "segment_id": "86348f98",
+      "source_content": "![Get a response in sage-open-webui](/images/tutorials/amazon-s3/amazon-s3-oui-response.png)",
+      "source_content_hash": "03d0121119748e66f080003174549065edee6c6d0ca5f254c9ecf1eac13c9464",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![sage-open-webuiでの応答取得](/images/tutorials/amazon-s3/amazon-s3-oui-response.png)"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "Great! Looks like everything is worked as expected in sage-open-webui. Now let's verify that the text file was indeed uploaded and stored in the specified S3 bucket. Using the AWS Management Console, we can see that there is now a file in the S3 bucket. In addition to the name of the file we uploaded (`hello.txt`) you can see the object's name was appended with a unique ID. This is how sage-open-webui tracks all the files uploaded.",
+      "source_content_hash": "37d24ba643797b129df3a64305dc11dd53785419c78374a5356b9e538c7f198e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "素晴らしい！sage-open-webuiではすべてが期待通りに動作しているようです。次に、テキストファイルが実際にアップロードされ、指定したS3バケットに保存されたことを確認しましょう。AWSマネジメントコンソールを使用すると、S3バケットにファイルが存在することがわかります。アップロードしたファイル名（`hello.txt`）に加えて、オブジェクト名には一意のIDが付加されています。これはsage-open-webuiがアップロードされたすべてのファイルを追跡する方法です。"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "![Get a response in sage-open-webui](/images/tutorials/amazon-s3/amazon-s3-object-in-bucket.png)",
+      "source_content_hash": "2051642d680190a87b5ef837d2e4add8d3d1987663cc3bb3d6fafa85b5ebe09b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![S3バケット内のオブジェクト確認](/images/tutorials/amazon-s3/amazon-s3-object-in-bucket.png)"
+      }
+    },
+    {
+      "segment_id": "eb51d107",
+      "source_content": "Using sage-open-webui's swagger docs, we can get all the information related to this file using the `/api/v1/files/{id}` endpoint and passing in the unique ID (4405fabb-603e-4919-972b-2b39d6ad7f5b).",
+      "source_content_hash": "42cf633a80466de0a94c4866e5d51eac47e235b47028ab373560244e251bb08c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "sage-open-webuiのSwaggerドキュメントを使用して、`/api/v1/files/{id}`エンドポイントに一意のID（4405fabb-603e-4919-972b-2b39d6ad7f5b）を渡すことで、このファイルに関連するすべての情報を取得できます。"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "![Inspect the file by ID](/images/tutorials/amazon-s3/amazon-s3-get-file-by-id.png)",
+      "source_content_hash": "a698c62fcb64a09ecedc1a5e2572dec16277e3124fd8f7eeb012b7d36b531427",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![IDによるファイルの検査](/images/tutorials/amazon-s3/amazon-s3-get-file-by-id.png)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/s3-storage.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.791872+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b9e65e835550a9fb549ff400603b9cbc3a5b4782174ccf2d15b0b6c237c43712"
+  }
+}

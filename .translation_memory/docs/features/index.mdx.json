@@ -1,0 +1,412 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/index.mdx",
+  "source_file_content_hash": "7887f0642e35ff456f25f81205c58a0039f47f20e99d6bdd19e51f32997254ff",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 400\ntitle: \"⭐ Features\"\n---",
+      "source_content_hash": "7d67f0559818a3c44b38f045f99179b18d8893c86a6688f8d1f40a71d0e329e0",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "37387e33",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_37387e33"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Key Features of Sage Open WebUI ⭐",
+      "source_content_hash": "0c21e032a65bdd22356caa6e5ab866779987162dd978004c2273ebd37f3ec575",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage Open WebUIの主な機能 ⭐"
+      }
+    },
+    {
+      "segment_id": "143e51c1",
+      "source_content": "- 🚀 **Effortless Setup**: Install seamlessly using Docker or Kubernetes (`kubectl`, `kustomize` or `helm`) for a hassle-free experience with support for both `:ollama` image with bundled Ollama and `:cuda` with CUDA support.\n\n- 🤝 **OpenAI API Integration**: Effortlessly integrate OpenAI-compatible APIs for versatile conversations alongside Ollama models. The OpenAI API URL can be customized to integrate Sage Open WebUI seamlessly with various third-party applications.\n\n- 🛡️ **Granular Permissions and User Groups**: By allowing administrators to create detailed user roles, user groups, and permissions across the workspace, we ensure a secure user environment for all users involved. This granularity not only enhances security, but also allows for customized user experiences, fostering a sense of ownership and responsibility amongst users.\n\n- 📱 **Responsive Design**: Enjoy a seamless experience across desktop PCs, laptops, and mobile devices.\n\n- 📱 **Progressive Web App for Mobile**: Enjoy a native progressive web application experience on your mobile device with offline access on `localhost` or a personal domain, and a smooth user interface. In order for our PWA to be installable on your device, it must be delivered in a secure context. This usually means that it must be served over HTTPS.\n  - To set up a PWA, you'll need some understanding of technologies like Linux, Docker, and reverse proxies such as `Nginx`, `Caddy`, or `Traefik`. Using these tools can help streamline the process of building and deploying a PWA tailored to your needs. While there's no \"one-click install\" option available, and your available option to securely deploy your Sage Open WebUI instance over HTTPS requires user experience, using these resources can make it easier to create and deploy a PWA tailored to your needs.\n\n- ✒️🔢 **Full Markdown and LaTeX Support**: Elevate your LLM experience with comprehensive Markdown and LaTeX capabilities for enriched interaction.\n\n- 🧩 **Model Builder**: Easily create custom models from base Ollama models directly from Sage WebUI. Create and add custom characters and agents, customize model elements, and import models effortlessly through [Sage WebUI Community](https://sage.education/) integration.\n\n- 📚 **Local and Remote RAG Integration**: Dive into the future of chat interactions and explore your documents with our cutting-edge Retrieval Augmented Generation (RAG) technology within your chats. Documents can be loaded into the `Documents` tab of the Workspace, after which they can be accessed using the pound key [`#`] before a query, or by starting the prompt with the pound key [`#`], followed by a URL for webpage content integration.\n\n- 🔍 **Web Search for RAG**: You can perform web searches using a selection of various search providers and inject the results directly into your local Retrieval Augmented Generation (RAG) experience.\n\n- 🌐 **Web Browsing Capabilities**: Integrate websites seamlessly into your chat experience by using the `#` command followed by a URL. This feature enables the incorporation of web content directly into your conversations, thereby enhancing the richness and depth of your interactions.\n\n- 🎨 **Image Generation Integration**: Seamlessly incorporate image generation capabilities to enrich your chat experience with dynamic visual content.\n\n- ⚙️ **Concurrent Model Utilization**: Effortlessly engage with multiple models simultaneously, harnessing their unique strengths for optimal responses. Leverage a diverse set of model modalities in parallel to enhance your experience.\n\n- 🔐 **Role-Based Access Control (RBAC)**: Ensure secure access with restricted permissions. Only authorized individuals can access your Ollama, while model creation and pulling rights are exclusively reserved for administrators.\n\n- 🌐🌍 **Multilingual Support**: Experience Sage WebUI in your preferred language with our internationalization (`i18n`) support. We invite you to join us in expanding our supported languages! We're actively seeking contributors!\n\n- 🌟 **Continuous Updates**: We are committed to improving Sage WebUI with regular updates, fixes, and new features.",
+      "source_content_hash": "9c5ca9e25034db74665a62568380dc6fee5731f59d0edef55c48019fe4297380",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🚀 **簡単なセットアップ**: DockerまたはKubernetes（`kubectl`、`kustomize`、`helm`）を使用してシームレスにインストール可能。Ollamaがバンドルされた`:ollama`イメージとCUDAサポート付きの`:cuda`イメージの両方をサポート。\n\n- 🤝 **OpenAI API統合**: OpenAI互換APIを簡単に統合し、Ollamaモデルと並行して多様な会話が可能。OpenAI API URLをカスタマイズすることで、様々なサードパーティアプリケーションとSage Open WebUIをシームレスに連携可能。\n\n- 🛡️ **詳細な権限設定とユーザーグループ**: 管理者がワークスペース全体で詳細なユーザーロール、ユーザーグループ、権限を設定可能。これによりセキュリティが強化されるだけでなく、カスタマイズされたユーザー体験を提供し、ユーザー間の所有感と責任感を促進。\n\n- 📱 **レスポンシブデザイン**: デスクトップPC、ノートPC、モバイルデバイスでシームレスな体験を提供。\n\n- 📱 **モバイル向けプログレッシブウェブアプリ**: モバイルデバイスでネイティブのようなPWA体験を実現。`localhost`または個人ドメインでオフラインアクセス可能なスムーズなUIを提供。PWAをインストール可能にするためには、安全なコンテキスト（通常はHTTPS経由）で配信される必要があります。\n  - PWAを設定するには、Linux、Docker、および`Nginx`、`Caddy`、`Traefik`などのリバースプロキシに関する知識が必要です。これらのツールを使用することで、ニーズに合わせたPWAの構築とデプロイを効率化できます。「ワンクリックインストール」オプションはありませんが、これらのリソースを活用することでHTTPS経由で安全にSage Open WebUIインスタンスをデプロイするプロセスを簡素化できます。\n\n- ✒️🔢 **完全なMarkdownとLaTeXサポート**: 充実したMarkdownとLaTeX機能により、LLM体験を向上。\n\n- 🧩 **モデルビルダー**: Sage WebUIから直接ベースOllamaモデルを元にカスタムモデルを簡単に作成可能。[Sage WebUIコミュニティ](https://sage.education/)との統合により、カスタムキャラクターやエージェントの追加、モデル要素のカスタマイズ、モデルのインポートが容易に。\n\n- 📚 **ローカルおよびリモートRAG統合**: チャット内で先進的なRetrieval Augmented Generation（RAG）技術を活用してドキュメントを探索可能。ドキュメントはワークスペースの`Documents`タブに読み込んだ後、クエリの前にポンド記号[`#`]を使用するか、プロンプトをポンド記号[`#`]で始めることでアクセス可能。ウェブページコンテンツを統合する場合はURLを続けて指定。\n\n- 🔍 **RAG向けウェブ検索**: 様々な検索プロバイダーを選択してウェブ検索を実行し、結果をローカルのRAG体験に直接注入可能。\n\n- 🌐 **ウェブブラウジング機能**: `#`コマンドに続けてURLを指定することで、ウェブサイトをチャット体験にシームレスに統合。これにより会話の豊かさと深みが増します。\n\n- 🎨 **画像生成統合**: 画像生成機能をシームレスに統合し、ダイナミックなビジュアルコンテンツでチャット体験を充実。\n\n- ⚙️ **並列モデル利用**: 複数のモデルを同時に活用し、それぞれの強みを活かした最適な応答を実現。多様なモデルモダリティを並行して利用することで体験を向上。\n\n- 🔐 **ロールベースアクセス制御（RBAC）**: 許可された個人のみがOllamaにアクセス可能。モデルの作成とプル権限は管理者専用。\n\n- 🌐🌍 **多言語サポート**: 国際化（`i18n`）サポートにより、好みの言語でSage WebUIを利用可能。サポート言語の拡充に協力してくれる貢献者を募集しています！\n\n- 🌟 **継続的なアップデート**: 定期的なアップデート、修正、新機能追加によりSage WebUIの改善にコミット。"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## And many more remarkable features including... ⚡️",
+      "source_content_hash": "cf3d46e1ee56200ed0fa5b70d0caa008cd4e7d55a97cb876e74fd599572001c5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## その他にも多くの注目すべき機能が... ⚡️"
+      }
+    },
+    {
+      "segment_id": "39993511",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "f44c1398",
+      "source_content": "### 🔧 Pipelines Support",
+      "source_content_hash": "c1f97ca4abd55f10ceb1b09147e5c0afaa6f87a931936b3eec1c01b2c7f43834",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🔧 パイプラインサポート"
+      }
+    },
+    {
+      "segment_id": "6773b78b",
+      "source_content": "- 🔧 **Pipelines Framework**: Seamlessly integrate and customize your Sage WebUI experience with our modular plugin framework for enhanced customization and functionality (https://github.com/Startr/pipelines). Our framework allows for the easy addition of custom logic and integration of Python libraries, from AI agents to home automation APIs.\n\n- 📥 **Upload Pipeline**: Pipelines can be uploaded directly from the `Admin Panel` > `Settings` > `Pipelines` menu, streamlining the pipeline management process.",
+      "source_content_hash": "eef59f53cee6021838bb1c9fe84f78a4207e1d6a5c6959f8a69ca593ef62192d",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🔧 **パイプラインズフレームワーク**: モジュール型プラグインフレームワークを活用し、Sage WebUIの体験をシームレスに統合・カスタマイズ可能（https://github.com/Startr/pipelines）。AIエージェントからホームオートメーションAPIまで、Pythonライブラリの統合やカスタムロジックの追加が容易です。\n\n- 📥 **アップロードパイプライン**: `管理パネル` > `設定` > `パイプラインズ`メニューから直接パイプラインをアップロード可能。パイプライン管理プロセスを効率化します。"
+      }
+    },
+    {
+      "segment_id": "c6cc90a0",
+      "source_content": "#### The possibilities with our Pipelines framework knows no bounds and are practically limitless. Start with a few pre-built pipelines to help you get started!",
+      "source_content_hash": "3826985d631cfc52405228642d08e27a741f1add878a9e9b4d6469b16bcdb1df",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 当社のパイプラインズフレームワークの可能性は無限大です。まずはいくつかの事前構築済みパイプラインから始めてみましょう！"
+      }
+    },
+    {
+      "segment_id": "c94a9c0e",
+      "source_content": "- 🔗 **Function Calling**: Integrate [Function Calling](https://github.com/Startr/pipelines/blob/main/examples/filters/function_calling_filter_pipeline.py) seamlessly through Pipelines to enhance your LLM interactions with advanced function calling capabilities.\n\n- 📚 **Custom RAG**: Integrate a [custom Retrieval Augmented Generation (RAG)](https://github.com/Startr/pipelines/tree/main/examples/pipelines/rag) pipeline seamlessly to enhance your LLM interactions with custom RAG logic.\n\n- 📊 **Message Monitoring with Langfuse**: Monitor and analyze message interactions in real-time usage statistics via [Langfuse](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py) pipeline.\n\n- ⚖️ **User Rate Limiting**: Manage API usage efficiently by controlling the flow of requests sent to LLMs to prevent exceeding rate limits with [Rate Limit](https://github.com/Startr/pipelines/blob/main/examples/filters/rate_limit_filter_pipeline.py) pipeline.\n\n- 🌍 **Real-Time LibreTranslate Translation**: Integrate real-time translations into your LLM interactions using [LibreTranslate](https://github.com/Startr/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py) pipeline, enabling cross-lingual communication.\n  - Please note that this pipeline requires further setup with LibreTranslate in a Docker container to work.\n\n- 🛡️ **Toxic Message Filtering**: Our [Detoxify](https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py) pipeline automatically filters out toxic messages to maintain a clean and safe chat environment.\n\n- 🔒 **LLM-Guard**: Ensure secure LLM interactions with [LLM-Guard](https://github.com/Startr/pipelines/blob/main/examples/filters/llmguard_prompt_injection_filter_pipeline.py) pipeline, featuring a Prompt Injection Scanner that detects and mitigates crafty input manipulations targeting large language models. This protects your LLMs from data leakage and adds a layer of resistance against prompt injection attacks.\n\n- 🕒 **Conversation Turn Limits**: Improve interaction management by setting limits on conversation turns with [Conversation Turn Limit](https://github.com/Startr/pipelines/blob/main/examples/filters/conversation_turn_limit_filter.py) pipeline.\n\n- 📈 **OpenAI Generation Stats**: Our [OpenAI](https://github.com/Startr/pipelines/blob/main/examples/pipelines/providers/openai_manifold_pipeline.py) pipeline provides detailed generation statistics for OpenAI models.\n\n- **🚀 Multi-Model Support**: Our seamless integration with various AI models from [various providers](https://github.com/Startr/pipelines/tree/main/examples/pipelines/providers) expands your possibilities with a wide range of language models to select from and interact with.",
+      "source_content_hash": "7d56e74c9650a2ae56c35cef18e9c171d8ffd38c474f7a0fa24ee4efc692637e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🔗 **関数呼び出し**: [関数呼び出し](https://github.com/Startr/pipelines/blob/main/examples/filters/function_calling_filter_pipeline.py)をパイプライン経由で統合し、高度な関数呼び出し機能でLLMインタラクションを強化。\n\n- 📚 **カスタムRAG**: [カスタム検索拡張生成（RAG）](https://github.com/Startr/pipelines/tree/main/examples/pipelines/rag)パイプラインを統合し、独自のRAGロジックでLLMインタラクションを向上。\n\n- 📊 **Langfuseによるメッセージ監視**: [Langfuse](https://github.com/Startr/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py)パイプラインでメッセージインタラクションをリアルタイムに監視・分析。\n\n- ⚖️ **ユーザーレート制限**: [レートリミット](https://github.com/Startr/pipelines/blob/main/examples/filters/rate_limit_filter_pipeline.py)パイプラインでAPI使用を効率的に管理し、レート制限超過を防止。\n\n- 🌍 **LibreTranslateリアルタイム翻訳**: [LibreTranslate](https://github.com/Startr/pipelines/blob/main/examples/filters/libretranslate_filter_pipeline.py)パイプラインでLLMインタラクションにリアルタイム翻訳を統合し、多言語コミュニケーションを実現。\n  ※本パイプラインは動作にDockerコンテナ内のLibreTranslate追加設定が必要です。\n\n- 🛡️ **有害メッセージフィルタリング**: [Detoxify](https://github.com/Startr/pipelines/blob/main/examples/filters/detoxify_filter_pipeline.py)パイプラインが有害メッセージを自動フィルタリングし、清潔で安全なチャット環境を維持。\n\n- 🔒 **LLM-Guard**: [LLM-Guard](https://github.com/Startr/pipelines/blob/main/examples/filters/llmguard_prompt_injection_filter_pipeline.py)パイプラインで安全なLLMインタラクションを確保。プロンプトインジェクションスキャナーが大規模言語モデルを標的とした巧妙な入力操作を検出・緩和します。\n\n- 🕒 **会話ターン制限**: [会話ターン制限](https://github.com/Startr/pipelines/blob/main/examples/filters/conversation_turn_limit_filter.py)パイプラインでインタラクション管理を改善。\n\n- 📈 **OpenAI生成統計**: [OpenAI](https://github.com/Startr/pipelines/blob/main/examples/pipelines/providers/openai_manifold_pipeline.py)パイプラインがOpenAIモデルの詳細な生成統計を提供。\n\n- 🚀 **マルチモデルサポート**: [様々なプロバイダー](https://github.com/Startr/pipelines/tree/main/examples/pipelines/providers)のAIモデルとシームレスに統合。多様な言語モデルを選択・操作可能に。"
+      }
+    },
+    {
+      "segment_id": "b051b70c",
+      "source_content": "#### In addition to the extensive features and customization options, we also provide [a library of example pipelines ready to use](https://github.com/Startr/pipelines/tree/main/examples) along with [a practical example scaffold pipeline](https://github.com/Startr/pipelines/blob/main/examples/scaffolds/example_pipeline_scaffold.py) to help you get started. These resources will streamline your development process and enable you to quickly create powerful LLM interactions using Pipelines and Python. Happy coding! 💡",
+      "source_content_hash": "8c8c4b371cf39b78400dabc13e0ea194971f0b2d32726555d36a36bd0bff2be3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 豊富な機能とカスタマイズオプションに加え、[すぐに使えるサンプルパイプラインライブラリ](https://github.com/Startr/pipelines/tree/main/examples)と[実用的なスキャフォールドパイプライン例](https://github.com/Startr/pipelines/blob/main/examples/scaffolds/example_pipeline_scaffold.py)を提供。これらのリソースが開発プロセスを効率化し、パイプラインズとPythonを使った強力なLLMインタラクションを迅速に構築可能にします。コーディングを楽しんでください！💡"
+      }
+    },
+    {
+      "segment_id": "254ea949",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "2fd0be2a",
+      "source_content": "### 🖥️ User Experience",
+      "source_content_hash": "fa849e9c57bfe6995173c9ae6e85040d04c26cf0811fbba3eb1d5ad98ca6c98b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🖥️ ユーザーエクスペリエンス"
+      }
+    },
+    {
+      "segment_id": "c0ea80dd",
+      "source_content": "- 🖥️ **Intuitive Interface**: The chat interface has been designed with the user in mind, drawing inspiration from the user interface of ChatGPT.\n\n- ⚡ **Swift Responsiveness**: Enjoy reliably fast and responsive performance.\n\n- 🎨 **Splash Screen**: A simple loading splash screen for a smoother user experience.\n\n- 🌐 **Personalized Interface**: Choose between a freshly designed search landing page and the classic chat UI from Settings > Interface, allowing for a tailored experience.\n\n- 📦 **Pip Install Method**: Installation of Sage Open WebUI can be accomplished via the command `pip install sage-open-webui`, which streamlines the process and makes it more accessible to new users. For further information, please visit: https://pypi.org/project/sage-open-webui/.\n\n- 🌈 **Theme Customization**: Personalize your Sage WebUI experience with a range of options, including a variety of solid, yet sleek themes, customizable chat background images, and three mode options: Light, Dark, or OLED Dark mode - or let *Her* choose for you! ;)\n\n- 🖼️ **Custom Background Support**: Set a custom background from Settings > Interface to personalize your experience.\n\n- 📝 **Rich Banners with Markdown**: Create visually engaging announcements with markdown support in banners, enabling richer and more dynamic content.\n\n- 💻 **Code Syntax Highlighting**: Our syntax highlighting feature enhances code readability, providing a clear and concise view of your code.\n\n- 🗨️ **Markdown Rendering in User Messages**: User messages are now rendered in Markdown, enhancing readability and interaction.\n\n- 🎨 **Flexible Text Input Options**: Switch between rich text input and legacy text area input for chat, catering to user preferences and providing a choice between advanced formatting and simpler text input.\n\n- 👆 **Effortless Code Sharing** : Streamline the sharing and collaboration process with convenient code copying options, including a floating copy button in code blocks and click-to-copy functionality from code spans, saving time and reducing frustration.\n\n- 🎨 **Interactive Artifacts**: Render web content and SVGs directly in the interface, supporting quick iterations and live changes for enhanced creativity and productivity.\n\n- 🖊️ **Live Code Editing**: Supercharged code blocks allow live editing directly in the LLM response, with live reloads supported by artifacts, streamlining coding and testing.\n\n- 🔍 **Enhanced SVG Interaction**: Pan and zoom capabilities for SVG images, including Mermaid diagrams, enable deeper exploration and understanding of complex concepts.\n\n- 🔍 **Text Select Quick Actions**: Floating buttons appear when text is highlighted in LLM responses, offering deeper interactions like \"Ask a Question\" or \"Explain\", and enhancing overall user experience.\n\n- ↕️ **Bi-Directional Chat Support**: You can easily switch between left-to-right and right-to-left chat directions to accommodate various language preferences.\n\n- 📱 **Mobile Accessibility**: The sidebar can be opened and closed on mobile devices with a simple swipe gesture.\n\n- 🤳 **Haptic Feedback on Supported Devices**: Android devices support haptic feedback for an immersive tactile experience during certain interactions.\n\n- 🔍 **User Settings Search**: Quickly search for settings fields, improving ease of use and navigation.\n\n- 📜 **Offline Swagger Documentation**: Access developer-friendly Swagger API documentation offline, ensuring full accessibility wherever you are.\n\n- 💾 **Performance Optimizations**: Lazy loading of large dependencies minimizes initial memory usage, boosting performance and reducing loading times.\n\n- 🚀 **Persistent and Scalable Configuration**: Sage Open WebUI configurations are stored in a database (webui.db), allowing for seamless load balancing, high-availability setups, and persistent settings across multiple instances, making it easy to access and reuse your configurations.\n\n- 🔄 **Portable Import/Export**: Easily import and export Sage Open WebUI configurations, simplifying the process of replicating settings across multiple systems.\n\n- ❓ **Quick Access to Documentation & Shortcuts**: The question mark button located at the bottom right-hand corner of the main UI screen (available on larger screens like desktop PCs and laptops) provides users with easy access to the Sage WebUI documentation page and available keyboard shortcuts.\n\n- 📜 **Changelog & Check for Updates**: Users can access a comprehensive changelog and check for updates in the `Settings` > `About` > `See What's New` menu, which provides a quick overview of the latest features, improvements, and bug fixes, as well as the ability to check for updates.",
+      "source_content_hash": "92b1ed8d0c74b34cfb12f641f2c2ee00c3f048b4a0cef308068daafe99f224b4",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🖥️ **直感的なインターフェース**: チャットインターフェースはユーザーを念頭に設計されており、ChatGPTのユーザーインターフェースからインスピレーションを得ています。\n\n- ⚡ **高速なレスポンス**: 信頼性の高い高速で応答性の高いパフォーマンスを楽しめます。\n\n- 🎨 **スプラッシュスクリーン**: よりスムーズなユーザー体験のためのシンプルなローディングスプラッシュスクリーン。\n\n- 🌐 **パーソナライズされたインターフェース**: 設定 > インターフェースから、新しくデザインされた検索ランディングページとクラシックなチャットUIを選択可能で、カスタマイズされた体験が可能です。\n\n- 📦 **Pipインストール方法**: Sage Open WebUIのインストールは`pip install sage-open-webui`コマンドで実行可能で、プロセスを簡素化し、新規ユーザーにもアクセスしやすくなっています。詳細はこちらをご覧ください: https://pypi.org/project/sage-open-webui/。\n\n- 🌈 **テーマカスタマイズ**: さまざまなオプションでSage WebUIの体験をパーソナライズできます。シックなソリッドテーマ、カスタマイズ可能なチャット背景画像、3つのモードオプション（ライト、ダーク、OLEDダークモード）から選択可能です。または、*Her*に選ばせることもできます！ ;)\n\n- 🖼️ **カスタム背景サポート**: 設定 > インターフェースからカスタム背景を設定し、体験をパーソナライズできます。\n\n- 📝 **Markdown対応のリッチバナー**: Markdownサポートにより、視覚的に魅力的なアナウンスを作成でき、よりリッチでダイナミックなコンテンツが可能です。\n\n- 💻 **コードシンタックスハイライト**: シンタックスハイライト機能により、コードの可読性が向上し、明確で簡潔なビューが提供されます。\n\n- 🗨️ **ユーザーメッセージのMarkdownレンダリング**: ユーザーメッセージがMarkdownでレンダリングされるようになり、可読性とインタラクションが向上しました。\n\n- 🎨 **柔軟なテキスト入力オプション**: リッチテキスト入力とレガシーテキストエリア入力を切り替え可能で、ユーザーの好みに合わせて高度なフォーマットとシンプルなテキスト入力を選択できます。\n\n- 👆 **簡単なコード共有**: コードブロック内のフローティングコピーボタンやコードスパンからのクリックでコピー機能など、便利なコード共有オプションにより、共有とコラボレーションのプロセスが効率化され、時間の節約とストレスの軽減が図れます。\n\n- 🎨 **インタラクティブなアーティファクト**: WebコンテンツやSVGをインターフェースに直接レンダリングでき、クイックイテレーションとライブ変更をサポートし、創造性と生産性が向上します。\n\n- 🖊️ **ライブコード編集**: 強化されたコードブロックにより、LLM応答内で直接ライブ編集が可能で、アーティファクトによるライブリロードがサポートされ、コーディングとテストが効率化されます。\n\n- 🔍 **SVGの拡張インタラクション**: Mermaidダイアグラムを含むSVG画像のパンとズーム機能により、複雑な概念の深い探索と理解が可能になります。\n\n- 🔍 **テキスト選択クイックアクション**: LLM応答でテキストがハイライトされるとフローティングボタンが表示され、「質問する」や「説明する」などの深いインタラクションが提供され、ユーザー体験が向上します。\n\n- ↕️ **双方向チャットサポート**: 左から右、右から左のチャット方向を簡単に切り替えられ、さまざまな言語の好みに対応できます。\n\n- 📱 **モバイルアクセシビリティ**: モバイルデバイスでは、シンプルなスワイプジェスチャーでサイドバーを開閉できます。\n\n- 🤳 **対応デバイスでの触覚フィードバック**: Androidデバイスでは、特定のインタラクション時に没入型の触覚フィードバックがサポートされます。\n\n- 🔍 **ユーザー設定検索**: 設定フィールドを素早く検索でき、使いやすさとナビゲーションが向上します。\n\n- 📜 **オフラインSwaggerドキュメント**: 開発者向けのSwagger APIドキュメントにオフラインでアクセス可能で、どこでも完全なアクセシビリティが確保されます。\n\n- 💾 **パフォーマンス最適化**: 大規模な依存関係のレイジーローディングにより、初期メモリ使用量が最小化され、パフォーマンスが向上し、ロード時間が短縮されます。\n\n- 🚀 **永続的でスケーラブルな設定**: Sage Open WebUIの設定はデータベース（webui.db）に保存され、シームレスなロードバランシング、高可用性セットアップ、複数インスタンス間での永続的な設定が可能で、設定のアクセスと再利用が容易になります。\n\n- 🔄 **ポータブルなインポート/エクスポート**: Sage Open WebUIの設定を簡単にインポート/エクスポートでき、複数システム間での設定の複製プロセスが簡素化されます。\n\n- ❓ **ドキュメントとショートカットへのクイックアクセス**: メインUI画面の右下隅にあるクエスチョンマークボタン（デスクトップPCやラップトップなどの大きな画面で利用可能）から、Sage WebUIのドキュメントページと利用可能なキーボードショートカットに簡単にアクセスできます。\n\n- 📜 **変更履歴と更新チェック**: ユーザーは設定 > について > 新機能を確認から、包括的な変更履歴にアクセスし、最新の機能、改善、バグ修正の概要を確認できるほか、更新をチェックできます。"
+      }
+    },
+    {
+      "segment_id": "f539b80c",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "c83259bb",
+      "source_content": "### 💬 Conversations",
+      "source_content_hash": "e454ff17a563646368b9f828996fbc82dbad964fd9afada279ea0dd715fec29c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 💬 会話"
+      }
+    },
+    {
+      "segment_id": "9ceae896",
+      "source_content": "- 💬 **True Asynchronous Chat**: Enjoy uninterrupted multitasking with true asynchronous chat support, allowing you to create chats, navigate away, and return anytime with responses ready.\n\n- 🔔 **Chat Completion Notifications**: Stay updated with instant in-UI notifications when a chat finishes in a non-active tab, ensuring you never miss a completed response.\n\n- 🌐 **Notification Webhook Integration**: Receive timely updates for long-running chats or external integration needs with configurable webhook notifications, even when your tab is closed.\n\n- 📚 **Channels (Beta)**: Explore real-time collaboration between users and AIs with Discord/Slack-style chat rooms, build bots for channels, and unlock asynchronous communication for proactive multi-agent workflows.\n\n- 🖊️ **Typing Indicators in Channels**: Enhance collaboration with real-time typing indicators in channels, keeping everyone engaged and informed.\n\n- 👤 **User Status Indicators**: Quickly view a user's status by clicking their profile image in channels, providing better coordination and availability insights.\n\n- 💬 **Chat Controls**: Easily adjust parameters for each chat session, offering more precise control over your interactions.\n\n- 💖 **Favorite Response Management**: Easily mark and organize favorite responses directly from the chat overview, enhancing ease of retrieval and access to preferred responses.\n\n- 📌 **Pinned Chats**: Support for pinned chats, allowing you to keep important conversations easily accessible.\n\n- 🔍 **RAG Embedding Support**: Change the Retrieval Augmented Generation (RAG) embedding model directly in the `Admin Panel` > `Settings` > `Documents` menu, enhancing document processing. This feature supports Ollama and OpenAI models.\n\n- 📜 **Citations in RAG Feature**: The Retrieval Augmented Generation (RAG) feature allows users to easily track the context of documents fed to LLMs with added citations for reference points.\n\n- 🌟 **Enhanced RAG Pipeline**: A togglable hybrid search sub-feature for our RAG embedding feature that enhances the RAG functionality via `BM25`, with re-ranking powered by `CrossEncoder`, and configurable relevance score thresholds.\n\n- 📹 **YouTube RAG Pipeline**: The dedicated Retrieval Augmented Generation (RAG) pipeline for summarizing YouTube videos via video URLs enables smooth interaction with video transcriptions directly.\n\n- 📁 **Comprehensive Document Retrieval**: Toggle between full document retrieval and traditional snippets, enabling comprehensive tasks like summarization and supporting enhanced document capabilities.\n\n- 🌟 **RAG Citation Relevance**: Easily assess citation accuracy with the addition of relevance percentages in RAG results.\n\n- 🗂️ **Advanced RAG**: Improve RAG accuracy with smart pre-processing of chat history to determine the best queries before retrieval.\n\n- 📚 **Inline Citations for RAG**: Benefit from seamless inline citations for Retrieval-Augmented Generation (RAG) responses, improving traceability and providing source clarity for newly uploaded files.\n\n- 📁 **Large Text Handling**: Optionally convert large pasted text into a file upload to be used directly with RAG, keeping the chat interface cleaner.\n\n- 🔄 **Multi-Modal Support**: Effortlessly engage with models that support multi-modal interactions, including images (`e.g., LLaVA`).\n\n- 🤖 **Multiple Model Support**: Quickly switch between different models for diverse chat interactions.\n\n- 🔀 **Merge Responses in Many Model Chat**: Enhances the dialogue by merging responses from multiple models into a single, coherent reply.\n\n- ✅ **Multiple Instances of Same Model in Chats**: Enhanced many model chat to support adding multiple instances of the same model.\n\n- 💬 **Temporary Chat Feature**: Introduced a temporary chat feature, deprecating the old chat history setting to enhance user interaction flexibility.\n\n- 🖋️ **User Message Editing**: Enhanced the user chat editing feature to allow saving changes without sending.\n\n- 💬 **Efficient Conversation Editing**: Create new message pairs quickly and intuitively using the Cmd/Ctrl+Shift+Enter shortcut, streamlining conversation length tests.\n\n- 🖼️ **Client-Side Image Compression**: Save bandwidth and improve performance with client-side image compression, allowing you to compress images before upload from Settings > Interface.\n\n- 👥 **'@' Model Integration**: By seamlessly switching to any accessible local or external model during conversations, users can harness the collective intelligence of multiple models in a single chat. This can done by using the `@` command to specify the model by name within a chat.\n\n- 🏷️ **Conversation Tagging** : Effortlessly categorize and locate tagged chats for quick reference and streamlined data collection using our efficient 'tag:' query system, allowing you to manage, search, and organize your conversations without cluttering the interface.\n\n- 🧠 **Auto-Tagging**: Conversations can optionally be automatically tagged for improved organization, mirroring the efficiency of auto-generated titles.\n\n- 👶 **Chat Cloning**: Easily clone and save a snapshot of any chat for future reference or continuation. This feature makes it easy to pick up where you left off or share your session with others. To create a copy of your chat, simply click on the `Clone` button in the chat's dropdown options. Can you keep up with your clones?\n\n- ⭐ **Visualized Conversation Flows**: Interactive messages diagram for improved visualization of conversation flows, enhancing understanding and navigation of complex discussions.\n\n- 📁 **Chat Folders**: Organize your chats into folders, drag and drop them for easy management, and export them seamlessly for sharing or analysis.\n\n- 📤 **Easy Chat Import**: Import chats into your workspace by simply dragging and dropping chat exports (JSON) onto the sidebar.\n\n- 📜 **Prompt Preset Support**: Instantly access custom preset prompts using the `/` command in the chat input. Load predefined conversation starters effortlessly and expedite your interactions. Import prompts with ease through [Sage Open WebUI Community](https://openwebui.com/) integration or create your own!\n\n- 📅 **Prompt Variables Support**: Prompt variables such as `{{CLIPBOARD}}`, `{{CURRENT_DATE}}`, `{{CURRENT_DATETIME}}`, `{{CURRENT_TIME}}`, `{{CURRENT_TIMEZONE}}`, `{{CURRENT_WEEKDAY}}`, `{{USER_NAME}}`, `{{USER_LANGUAGE}}`, and `{{USER_LOCATION}}` can be utilized in the system prompt or by using a slash command to select a prompt directly within a chat.\n  - Please note that the `{{USER_LOCATION}}` prompt variable requires a secure connection over HTTPS. To utilize this particular prompt variable, please ensure that `{{USER_LOCATION}}` is toggled on from the `Settings` > `Interface` menu.\n  - Please note that the `{{CLIPBOARD}}` prompt variables requires access to your device's clipboard.\n\n- 🧠 **Memory Feature**: Manually add information you want your LLMs to remember via the `Settings` > `Personalization` > `Memory` menu. Memories can be added, edited, and deleted.",
+      "source_content_hash": "38fbd4be132a9a5084c4862ecd1ac86d778f33caeecd32df921c2c16db9e5191",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 💬 **真の非同期チャット**: 真の非同期チャットサポートにより、マルチタスキングが途切れることなく可能です。チャットを作成し、他の作業に移り、いつでも戻って準備完了の応答を確認できます。\n\n- 🔔 **チャット完了通知**: 非アクティブなタブでチャットが完了した際に、UI内で即座に通知を受け取ることができ、応答を見逃すことはありません。\n\n- 🌐 **通知Webhook統合**: タブが閉じられていても、長時間実行されるチャットや外部統合の必要性に対して設定可能なWebhook通知でタイムリーな更新を受け取れます。\n\n- 📚 **チャネル（ベータ）**: Discord/SlackスタイルのチャットルームでユーザーとAI間のリアルタイムコラボレーションを探索し、チャネル用のボットを構築し、積極的なマルチエージェントワークフローのための非同期通信を解き放ちます。\n\n- 🖊️ **チャネル内タイピングインジケーター**: チャネル内でのリアルタイムタイピングインジケーターにより、コラボレーションが強化され、全員が参加し情報を得られます。\n\n- 👤 **ユーザーステータスインジケーター**: チャネル内でプロフィール画像をクリックすることで、ユーザーのステータスを素早く確認でき、調整と可用性の洞察が向上します。\n\n- 💬 **チャットコントロール**: 各チャットセッションのパラメータを簡単に調整でき、インタラクションに対するより精密な制御が可能です。\n\n- 💖 **お気に入り応答管理**: チャット概要から直接お気に入りの応答をマークし整理でき、好みの応答へのアクセスと検索が容易になります。\n\n- 📌 **ピン留めチャット**: 重要な会話を簡単にアクセスできるように保持するためのピン留めチャットをサポートしています。\n\n- 🔍 **RAG埋め込みサポート**: `Admin Panel` > `Settings` > `Documents`メニューで直接Retrieval Augmented Generation（RAG）埋め込みモデルを変更でき、ドキュメント処理が強化されます。この機能はOllamaおよびOpenAIモデルをサポートしています。\n\n- 📜 **RAG機能での引用**: Retrieval Augmented Generation（RAG）機能により、LLMに供給されたドキュメントのコンテキストを引用付きで簡単に追跡できます。\n\n- 🌟 **強化されたRAGパイプライン**: RAG埋め込み機能のトグル可能なハイブリッド検索サブ機能で、`BM25`によるRAG機能が強化され、`CrossEncoder`による再ランキングと設定可能な関連性スコア閾値が提供されます。\n\n- 📹 **YouTube RAGパイプライン**: 動画URL経由でYouTube動画を要約する専用のRetrieval Augmented Generation（RAG）パイプラインにより、動画の文字起こしと直接スムーズにやり取りできます。\n\n- 📁 **包括的なドキュメント取得**: 完全なドキュメント取得と従来のスニペット間で切り替えられ、要約などの包括的なタスクや強化されたドキュメント機能をサポートします。\n\n- 🌟 **RAG引用の関連性**: RAG結果に関連性パーセンテージが追加され、引用の正確性を簡単に評価できます。\n\n- 🗂️ **高度なRAG**: 検索前に最適なクエリを決定するためのチャット履歴のスマートな前処理により、RAGの精度が向上します。\n\n- 📚 **RAGのインライン引用**: Retrieval-Augmented Generation（RAG）応答に対してシームレスなインライン引用が提供され、トレーサビリティが向上し、新しくアップロードされたファイルのソースが明確になります。\n\n- 📁 **大きなテキストの処理**: 大きな貼り付けテキストをオプションでファイルアップロードに変換し、RAGで直接使用できるようにして、チャットインターフェースを整理された状態に保ちます。\n\n- 🔄 **マルチモーダルサポート**: 画像（例: `LLaVA`）を含むマルチモーダルインタラクションをサポートするモデルと簡単にやり取りできます。\n\n- 🤖 **複数モデルサポート**: 多様なチャットインタラクションのために異なるモデル間で素早く切り替えられます。\n\n- 🔀 **複数モデルチャットでの応答統合**: 複数のモデルからの応答を単一の首尾一貫した返信に統合することで、対話が強化されます。\n\n- ✅ **チャット内での同一モデルの複数インスタンス**: 同じモデルの複数インスタンスの追加をサポートするように多くのモデルチャットが強化されました。\n\n- 💬 **一時チャット機能**: ユーザーインタラクションの柔軟性を高めるため、一時チャット機能が導入され、古いチャット履歴設定は非推奨となりました。\n\n- 🖋️ **ユーザーメッセージ編集**: ユーザーチャット編集機能が強化され、変更を送信せずに保存できるようになりました。\n\n- 💬 **効率的な会話編集**: Cmd/Ctrl+Shift+Enterショートカットを使用して、新しいメッセージペアを迅速かつ直感的に作成でき、会話の長さのテストが効率化されます。\n\n- 🖼️ **クライアント側画像圧縮**: 設定 > インターフェースからアップロード前に画像を圧縮できるクライアント側画像圧縮により、帯域幅を節約しパフォーマンスを向上させます。\n\n- 👥 **「@」モデル統合**: 会話中にアクセス可能なローカルまたは外部モデルにシームレスに切り替えることで、単一のチャット内で複数のモデルの集合知を活用できます。これは、チャット内でモデル名を指定するために`@`コマンドを使用することで実現できます。\n\n- 🏷️ **会話タグ付け**: 効率的な「tag:」クエリシステムを使用して、タグ付けされたチャットをカテゴリ分けし迅速に参照できるようにし、インターフェースを散らかすことなく会話を管理、検索、整理できます。\n\n- 🧠 **自動タグ付け**: 会話はオプションで自動的にタグ付けされ、自動生成タイトルの効率性を反映した整理が可能です。\n\n- 👶 **チャットクローン作成**: 将来の参照や継続のために任意のチャットのスナップショットを簡単にクローンして保存できます。この機能により、中断したところから再開したり、セッションを他の人と共有したりすることが容易になります。チャットのコピーを作成するには、チャットのドロップダウンオプションにある`Clone`ボタンをクリックするだけです。クローンに追いつけますか？\n\n- ⭐ **視覚化された会話フロー**: インタラクティブなメッセージ図により、会話フローの視覚化が改善され、複雑な議論の理解とナビゲーションが向上します。\n\n- 📁 **チャットフォルダー**: チャットをフォルダーに整理し、ドラッグアンドドロップで簡単に管理し、共有や分析のためにシームレスにエクスポートできます。\n\n- 📤 **簡単なチャットインポート**: サイドバーにチャットエクスポート（JSON）をドラッグアンドドロップするだけで、ワークスペースにチャットをインポートできます。\n\n- 📜 **プロンプトプリセットサポート**: チャット入力で`/`コマンドを使用してカスタムプリセットプロンプトに即座にアクセスできます。事前定義された会話スターターを簡単にロードし、インタラクションを迅速化します。[Sage Open WebUI Community](https://openwebui.com/)統合を通じてプロンプトを簡単にインポートしたり、独自のプロンプトを作成したりできます！\n\n- 📅 **プロンプト変数サポート**: システムプロンプトまたはチャット内で直接プロンプトを選択するスラッシュコマンドを使用して、`{{CLIPBOARD}}`、`{{CURRENT_DATE}}`、`{{CURRENT_DATETIME}}`、`{{CURRENT_TIME}}`、`{{CURRENT_TIMEZONE}}`、`{{CURRENT_WEEKDAY}}`、`{{USER_NAME}}`、`{{USER_LANGUAGE}}`、`{{USER_LOCATION}}`などのプロンプト変数を利用できます。\n  - `{{USER_LOCATION}}`プロンプト変数を使用するには、HTTPSを介した安全な接続が必要です。この特定のプロンプト変数を使用するには、`Settings` > `Interface`メニューから`{{USER_LOCATION}}`が有効になっていることを確認してください。\n  - `{{CLIPBOARD}}`プロンプト変数を使用するには、デバイスのクリップボードへのアクセスが必要です。\n\n- 🧠 **メモリ機能**: `Settings` > `Personalization` > `Memory`メニューから、LLMに覚えさせたい情報を手動で追加できます。メモリは追加、編集、削除が可能です。"
+      }
+    },
+    {
+      "segment_id": "dc651f09",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "dd21637d",
+      "source_content": "### 💻 Model Management",
+      "source_content_hash": "0923e13e10684386a6b54aa36e725c5438775eddbcab8e7d7df0e8613e54750c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 💻 モデル管理"
+      }
+    },
+    {
+      "segment_id": "0d2c50e6",
+      "source_content": "- 🛠️ **Model Builder**: All models can be built and edited with a persistent model builder mode within the models edit page.\n\n- 📚 **Knowledge Support for Models**: The ability to attach tools, functions, and knowledge collections directly to models from a model's edit page, enhancing the information available to each model.\n\n- 🗂️ **Model Presets**: Create and manage model presets for both the Ollama and OpenAI API.\n\n- 🏷️ **Model Tagging**: The models workspace enables users to organize their models using tagging.\n\n- 📋 **Model Selector Dropdown Ordering**: Models can be effortlessly organized by dragging and dropping them into desired positions within the model workspace, which will then reflect the changes in the model dropdown menu.\n\n- 🔍 **Model Selector Dropdown**: Easily find and select your models with fuzzy search and detailed model information with model tags and model descriptions.\n\n- ⌨️ **Arrow Keys Model Selection**: Use arrow keys for quicker model selection, enhancing accessibility.\n\n- 🔧 **Quick Actions in Model Workspace**: Enhanced Shift key quick actions for hiding/displaying and deleting models in the model workspace.\n\n- 😄 **Transparent Model Usage**: Stay informed about the system's state during queries with knowledge-augmented models, thanks to visible status displays.\n\n- ⚙️ **Fine-Tuned Control with Advanced Parameters**: Gain a deeper level of control by adjusting model parameters such as `seed`, `temperature`, `frequency penalty`, `context length`, `seed`, and more.\n\n- 🔄 **Seamless Integration**: Copy any `ollama run {model:tag}` CLI command directly from a model's page on [Ollama library](https://ollama.com/library/) and paste it into the model dropdown to easily select and pull models.\n\n- 🗂️ **Create Ollama Modelfile**: To create a model file for Ollama, navigate to the `Admin Panel` > `Settings` > `Models` > `Create a model` menu.\n\n- ⬆️ **GGUF File Model Creation**: Effortlessly create Ollama models by uploading GGUF files directly from Sage WebUI from the `Admin Settings` > `Settings` > `Model` > `Experimental` menu. The process has been streamlined with the option to upload from your machine or download GGUF files from Hugging Face.\n\n- ⚙️ **Default Model Setting**: The default model preference for new chats can be set in the `Settings` > `Interface` menu on mobile devices, or can more easily be set in a new chat under the model selector dropdown on desktop PCs and laptops.\n\n- 💡 **LLM Response Insights**: Details of every generated response can be viewed, including external model API insights and comprehensive local model info.\n\n- 🕒 **Model Details at a Glance**: View critical model details, including model hash and last modified timestamp, directly in the Models workspace for enhanced tracking and management.\n\n- 📥🗑️ **Download/Delete Models**: Models can be downloaded or deleted directly from Sage Open WebUI with ease.\n\n- 🔄 **Update All Ollama Models**: A convenient button allows users to update all their locally installed models in one operation, streamlining model management.\n\n- 🍻 **TavernAI Character Card Integration**: Experience enhanced visual storytelling with TavernAI Character Card Integration in our model builder. Users can seamlessly incorporate TavernAI character card PNGs directly into their model files, creating a more immersive and engaging user experience.\n\n- 🎲 **Model Playground (Beta)**: Try out models with the model playground area (`beta`), which enables users to test and explore model capabilities and parameters with ease in a sandbox environment before deployment in a live chat environment.",
+      "source_content_hash": "28edc348a527724e3f932176f81b6f37de659dc7d1c86b9294cd73264be56615",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🛠️ **モデルビルダー**: すべてのモデルは、モデル編集ページ内の永続的なモデルビルダーモードで構築および編集できます。\n\n- 📚 **モデル向けナレッジサポート**: モデルの編集ページから直接ツール、関数、ナレッジコレクションをモデルにアタッチする機能により、各モデルが利用できる情報が強化されます。\n\n- 🗂️ **モデルプリセット**: OllamaおよびOpenAI API向けのモデルプリセットを作成および管理できます。\n\n- 🏷️ **モデルタグ付け**: モデルワークスペースでは、タグを使用してモデルを整理できます。\n\n- 📋 **モデルセレクタードロップダウン順序付け**: モデルワークスペース内でモデルをドラッグアンドドロップして希望の位置に簡単に整理でき、変更はモデルドロップダウンメニューに反映されます。\n\n- 🔍 **モデルセレクタードロップダウン**: ファジー検索と詳細なモデル情報（モデルタグやモデル説明を含む）で、簡単にモデルを見つけて選択できます。\n\n- ⌨️ **矢印キーによるモデル選択**: 矢印キーを使用してモデルをより速く選択でき、アクセシビリティが向上します。\n\n- 🔧 **モデルワークスペースのクイックアクション**: Shiftキーを使用したクイックアクションが強化され、モデルワークスペースでモデルを非表示/表示および削除できます。\n\n- 😄 **透明なモデル使用状況**: ナレッジ拡張モデルを使用したクエリ中のシステム状態について、可視化されたステータス表示により常に情報を得られます。\n\n- ⚙️ **高度なパラメータによる微調整制御**: `seed`、`temperature`、`frequency penalty`、`context length`、`seed`などのモデルパラメータを調整することで、より深いレベルの制御が可能です。\n\n- 🔄 **シームレスな統合**: [Ollamaライブラリ](https://ollama.com/library/)のモデルページから任意の`ollama run {model:tag}` CLIコマンドをコピーし、モデルドロップダウンに貼り付けることで、簡単にモデルを選択してプルできます。\n\n- 🗂️ **Ollama Modelfileの作成**: Ollama向けのモデルファイルを作成するには、`Admin Panel` > `Settings` > `Models` > `Create a model`メニューに移動します。\n\n- ⬆️ **GGUFファイルからのモデル作成**: Sage WebUIから直接GGUFファイルをアップロードしてOllamaモデルを簡単に作成できます。`Admin Settings` > `Settings` > `Model` > `Experimental`メニューから、マシンからのアップロードまたはHugging FaceからのGGUFファイルのダウンロードを選択できます。\n\n- ⚙️ **デフォルトモデル設定**: 新しいチャットのデフォルトモデル設定は、モバイルデバイスの`Settings` > `Interface`メニューで設定できます。デスクトップPCやラップトップでは、モデルセレクタードロップダウンでより簡単に設定できます。\n\n- 💡 **LLM応答のインサイト**: 外部モデルAPIのインサイトや包括的なローカルモデル情報を含む、すべての生成された応答の詳細を表示できます。\n\n- 🕒 **一目でわかるモデル詳細**: モデルハッシュや最終更新タイムスタンプなどの重要なモデル詳細を、モデルワークスペースで直接表示でき、追跡と管理が強化されます。\n\n- 📥🗑️ **モデルのダウンロード/削除**: Sage Open WebUIから直接モデルをダウンロードまたは削除できます。\n\n- 🔄 **すべてのOllamaモデルの更新**: 1回の操作ですべてのローカルにインストールされたモデルを更新できる便利なボタンにより、モデル管理が効率化されます。\n\n- 🍻 **TavernAIキャラクターカード統合**: モデルビルダーでのTavernAIキャラクターカード統合により、視覚的なストーリーテリングが強化されます。ユーザーはTavernAIキャラクターカードPNGをモデルファイルに直接組み込むことができ、より没入感のあるユーザー体験を実現できます。\n\n- 🎲 **モデルプレイグラウンド（ベータ）**: モデルプレイグラウンドエリア（`ベータ`）でモデルを試すことができます。この機能により、ユーザーはライブチャット環境にデプロイする前に、サンドボックス環境でモデルの機能やパラメータを簡単にテストおよび探索できます。"
+      }
+    },
+    {
+      "segment_id": "7b5a65a0",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "371cb514",
+      "source_content": "### 👥 Collaboration",
+      "source_content_hash": "a1088cc208fa01b74673f973027ac67af01a60eb31105bb1d3ab956404eddd84",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 👥 コラボレーション"
+      }
+    },
+    {
+      "segment_id": "9bef1009",
+      "source_content": "- 🗨️ **Local Chat Sharing**: Generate and share chat links between users in an efficient and seamless manner, thereby enhancing collaboration and communication.\n\n- 👍👎 **RLHF Annotation**: Enhance the impact of your messages by rating them with either a thumbs up or thumbs down AMD provide a rating for the response on a scale of 1-10, followed by the option to provide textual feedback, facilitating the creation of datasets for Reinforcement Learning from Human Feedback (`RLHF`). Utilize your messages to train or fine-tune models, all while ensuring the confidentiality of locally saved data.\n\n- 🔧 **Comprehensive Feedback Export**: Export feedback history data to JSON for seamless integration with RLHF processing and further analysis, providing valuable insights for improvement.\n\n- 🤝 **Community Sharing**: Share your chat sessions with the [Sage Open WebUI Community](https://openwebui.com/) by clicking the `Share to Sage Open WebUI Community` button. This feature allows you to engage with other users and collaborate on the platform.\n  - To utilize this feature, please sign-in to your Sage Open WebUI Community account. Sharing your chats fosters a vibrant community, encourages knowledge sharing, and facilitates joint problem-solving. Please note that community sharing of chat sessions is an optional feature. Only Admins can toggle this feature on or off in the `Admin Settings` > `Settings` > `General` menu.\n\n- 🏆 **Community Leaderboard**: Compete and track your performance in real-time with our leaderboard system, which utilizes the ELO rating system and allows for optional sharing of feedback history.\n\n- ⚔️ **Model Evaluation Arena**: Conduct blind A/B testing of models directly from the Admin Settings for a true side-by-side comparison, making it easier to find the best model for your needs.\n\n- 🎯 **Topic-Based Rankings**: Discover more accurate rankings with our experimental topic-based re-ranking system, which adjusts leaderboard standings based on tag similarity in feedback.\n\n- 📂 **Unified and Collaborative Workspace** : Access and manage all your model files, prompts, documents, tools, and functions in one convenient location, while also enabling multiple users to collaborate and contribute to models, knowledge, prompts, or tools, streamlining your workflow and enhancing teamwork.",
+      "source_content_hash": "7b364f0cd3b39b7b73a110942329352eadc21f517ae8fa3c5ecaa9f70d125cfd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🗨️ **ローカルチャット共有**: ユーザー間で効率的かつシームレスにチャットリンクを生成・共有でき、コラボレーションとコミュニケーションを強化します。\n\n- 👍👎 **RLHFアノテーション**: メッセージに対して👍または👎で評価し、1-10段階でレスポンスを評価した後、テキストフィードバックを提供可能。これにより人間のフィードバックからの強化学習（`RLHF`）用データセット作成を容易にします。ローカル保存データの機密性を保ちつつ、メッセージをモデルのトレーニングやファインチューニングに活用できます。\n\n- 🔧 **包括的フィードバックエクスポート**: フィードバック履歴データをJSON形式でエクスポート可能。RLHF処理や詳細分析とのシームレスな連携を実現し、改善のための貴重なインサイトを提供します。\n\n- 🤝 **コミュニティ共有**: `Sage Open WebUIコミュニティに共有`ボタンをクリックして、チャットセッションを[Sage Open WebUIコミュニティ](https://openwebui.com/)と共有可能。この機能により他ユーザーと交流し、プラットフォーム上で共同作業ができます。\n  - 本機能を利用するにはSage Open WebUIコミュニティアカウントへのサインインが必要です。チャット共有は活発なコミュニティ形成、知識共有、共同問題解決を促進します。なおチャットセッションのコミュニティ共有はオプション機能で、`管理者設定` > `設定` > `一般`メニューで管理者のみが有効/無効を切り替えられます。\n\n- 🏆 **コミュニティリーダーボード**: ELOレーティングシステムを採用したリアルタイムリーダーボードで競い合い、パフォーマンスを追跡可能。フィードバック履歴の共有もオプションで選択できます。\n\n- ⚔️ **モデル評価アリーナ**: 管理者設定からブラインドA/Bテストを実施可能。モデルを真に並列比較でき、ニーズに最適なモデルを見つけるのが容易になります。\n\n- 🎯 **トピックベースランキング**: 実験的なトピックベース再ランキングシステムにより、フィードバック内のタグ類似度に基づいてリーダーボード順位を調整。より正確なランキングを発見できます。\n\n- 📂 **統合型コラボレーションワークスペース**: モデルファイル、プロンプト、ドキュメント、ツール、関数を一元的に管理可能。複数ユーザーがモデル・ナレッジ・プロンプト・ツールへ共同編集できるため、ワークフロー効率化とチームワーク強化を実現します。"
+      }
+    },
+    {
+      "segment_id": "148f7f1a",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "04f25754",
+      "source_content": "### 📚 History & Archive",
+      "source_content_hash": "2730f7128885d9e699f3019da38019c179e55f25ea8a99c0f31ab8a1b1f2b709",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📚 履歴とアーカイブ"
+      }
+    },
+    {
+      "segment_id": "941578d7",
+      "source_content": "- 📜 **Chat History**: Access and manage your conversation history with ease via the chat navigation sidebar. Toggle off chat history in the `Settings` > `Chats` menu to prevent chat history from being created with new interactions.\n\n- 🔄 **Regeneration History Access**: Easily revisit and explore your entire LLM response regeneration history.\n\n- 📬 **Archive Chats**: Effortlessly store away completed conversations you've had with models for future reference or interaction, maintaining a tidy and clutter-free chat interface.\n\n- 🗃️ **Archive All Chats**: This feature allows you to quickly archive all of your chats at once.\n\n- 📦 **Export All Archived Chats as JSON**: This feature enables users to easily export all their archived chats in a single JSON file, which can be used for backup or transfer purposes.\n\n- 📄 **Download Chats as JSON/PDF/TXT**: Easily download your chats individually in your preferred format of `.json`, `.pdf`, or `.txt` format.\n\n- 📤📥 **Import/Export Chat History**: Seamlessly move your chat data in and out of the platform via `Import Chats` and `Export Chats` options.\n\n- 🗑️ **Delete All Chats**: This option allows you to permanently delete all of your chats, ensuring a fresh start.",
+      "source_content_hash": "e9e1def3b8789af10cdcdf0553ec7030c40703a2eed78dc971298d600b3e089a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 📜 **チャット履歴**: チャットナビゲーションサイドバーから会話履歴に簡単にアクセス・管理可能。`設定` > `チャット`メニューでチャット履歴を無効にすると、新規インタラクション時に履歴が作成されなくなります。\n\n- 🔄 **再生成履歴アクセス**: LLMレスポンスの全再生成履歴を簡単に再訪・探索可能。\n\n- 📬 **チャットアーカイブ**: 完了した会話を将来の参照用に手軽に保管可能。整理された使いやすいチャットインターフェースを維持します。\n\n- 🗃️ **全チャット一括アーカイブ**: すべてのチャットを一度に素早くアーカイブできます。\n\n- 📦 **アーカイブ済み全チャットのJSONエクスポート**: アーカイブ済みチャットを単一JSONファイルに簡単にエクスポート可能。バックアップや転送用途に利用できます。\n\n- 📄 **JSON/PDF/TXT形式での個別チャットダウンロード**: 各チャットを`.json`、`.pdf`、`.txt`形式で個別にダウンロード可能。\n\n- 📤📥 **チャット履歴のインポート/エクスポート**: `チャットのインポート`と`チャットのエクスポート`オプションで、チャットデータをプラットフォーム内外にシームレスに移動可能。\n\n- 🗑️ **全チャット削除**: すべてのチャットを完全に削除するオプションで、新たなスタートを切れます。"
+      }
+    },
+    {
+      "segment_id": "a7a919ed",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "793be93c",
+      "source_content": "### 🎙️ Audio, Voice, & Accessibility",
+      "source_content_hash": "1a4a6196dbc3f1224c3577fe2d641a83f846142787cadaab0229aa4d8e8c34e5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🎙️ オーディオ、音声、アクセシビリティ"
+      }
+    },
+    {
+      "segment_id": "f3e4808f",
+      "source_content": "- 🗣️ **Voice Input Support**: Engage with your model through voice interactions; enjoy the convenience of talking to your model directly. Additionally, explore the option for sending voice input automatically after 3 seconds of silence for a streamlined experience.\n  - Microphone access requires manually setting up a secure connection over HTTPS to work, or [manually whitelisting your URL at your own risk](/troubleshooting/microphone-error).\n\n- 😊 **Emoji Call**: Toggle this feature on from the `Settings` > `Interface` menu, allowing LLMs to express emotions using emojis during voice calls for a more dynamic interaction.\n  - Microphone access requires a secure connection over HTTPS for this feature to work.\n\n- 🎙️ **Hands-Free Voice Call Feature**: Initiate voice calls without needing to use your hands, making interactions more seamless.\n  - Microphone access is required using a secure connection over HTTPS for this feature to work.\n\n- 📹 **Video Call Feature**: Enable video calls with supported vision models like LlaVA and GPT-4o, adding a visual dimension to your communications.\n  - Both Camera & Microphone access is required using a secure connection over HTTPS for this feature to work.\n\n- 👆 **Tap to Interrupt**: Stop the AI’s speech during voice conversations with a simple tap on mobile devices, ensuring seamless control over the interaction.\n\n- 🎙️ **Voice Interrupt**: Stop the AI’s speech during voice conversations with your voice on mobile devices, ensuring seamless control over the interaction.\n\n- 🔊 **Configurable Text-to-Speech Endpoint**: Customize your Text-to-Speech experience with configurable OpenAI-compatible endpoints for reading aloud LLM responses.\n\n- 🔗 **Direct Call Mode Access**: Activate call mode directly from a URL, providing a convenient shortcut for mobile device users.\n\n- ✨ **Customizable Text-to-Speech**: Control how message content is segmented for Text-to-Speech (TTS) generation requests, allowing for flexible speech output options.\n\n- 🔊 **Azure Speech Services Integration**: Supports Azure Speech services for Text-to-Speech (TTS), providing users with a wider range of speech synthesis options.\n\n- 🎚️ **Customizable Audio Playback**: Allows users to adjust audio playback speed to their preferences in Call mode settings, enhancing accessibility and usability.\n\n- 🎵 **Broad Audio Compatibility**: Enjoy support for a wide range of audio file format transcriptions with RAG, including 'audio/x-m4a', to broaden compatibility with audio content within the platform.\n\n- 🔊 **Audio Compression**: Experimental audio compression allows navigating around the 25MB limit for OpenAI's speech-to-text processing, expanding the possibilities for audio-based interactions.\n\n- 🗣️ **Experimental SpeechT5 TTS**: Enjoy local SpeechT5 support for improved text-to-speech capabilities.",
+      "source_content_hash": "ae8a49579c85f31bb34c0b83d0c8fd8525a6fb3687ffc16405ea43ab7fc3d1e2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🗣️ **音声入力サポート**: 音声インタラクションを通じてモデルと対話可能。直接モデルに話しかける便利さを体験できます。また、3秒間の無音後に自動的に音声入力を送信するオプションも用意されており、よりスムーズな操作が可能です。\n  - マイクへのアクセスにはHTTPS経由の安全な接続を手動で設定する必要があります。または[自己責任でURLを手動でホワイトリストに追加](/troubleshooting/microphone-error)することも可能です。\n\n- 😊 **絵文字コール**: `設定` > `インターフェース`メニューからこの機能を有効にすると、音声通話中にLLMが絵文字を使って感情を表現できるようになり、よりダイナミックな対話が可能になります。\n  - この機能を使用するにはHTTPS経由の安全な接続でマイクへのアクセスが必要です。\n\n- 🎙️ **ハンズフリー音声通話機能**: 手を使わずに音声通話を開始でき、よりシームレスな対話が実現します。\n  - この機能を使用するにはHTTPS経由の安全な接続でマイクへのアクセスが必要です。\n\n- 📹 **ビデオ通話機能**: LlaVAやGPT-4oなどのビジョンモデルをサポートしたビデオ通話が可能で、コミュニケーションに視覚的要素を追加できます。\n  - この機能を使用するにはHTTPS経由の安全な接続でカメラとマイクへのアクセスが必要です。\n\n- 👆 **タップで中断**: モバイルデバイスでの音声会話中にAIの発話を簡単なタップで停止でき、対話をスムーズに制御できます。\n\n- 🎙️ **音声中断**: モバイルデバイスでの音声会話中に音声でAIの発話を停止でき、対話をスムーズに制御できます。\n\n- 🔊 **設定可能なテキスト読み上げエンドポイント**: OpenAI互換の設定可能なエンドポイントで、LLM応答の読み上げ体験をカスタマイズできます。\n\n- 🔗 **ダイレクトコールモードアクセス**: URLから直接コールモードを起動でき、モバイルデバイスユーザーにとって便利なショートカットとなります。\n\n- ✨ **カスタマイズ可能なテキスト読み上げ**: テキスト読み上げ(TTS)生成リクエスト用のメッセージコンテンツの分割方法を制御でき、柔軟な音声出力オプションを提供します。\n\n- 🔊 **Azure Speech Services統合**: テキスト読み上げ(TTS)にAzure Speech servicesをサポートし、より幅広い音声合成オプションを提供します。\n\n- 🎚️ **カスタマイズ可能なオーディオ再生**: コールモード設定でオーディオ再生速度を調整可能で、アクセシビリティと使いやすさが向上します。\n\n- 🎵 **広範なオーディオ互換性**: 'audio/x-m4a'を含む幅広いオーディオファイル形式の文字起こしをRAGでサポートし、プラットフォーム内のオーディオコンテンツとの互換性を拡大します。\n\n- 🔊 **オーディオ圧縮**: 実験的なオーディオ圧縮により、OpenAIの音声認識処理における25MB制限を回避可能で、音声ベースのインタラクションの可能性が広がります。\n\n- 🗣️ **実験的SpeechT5 TTS**: ローカルSpeechT5サポートにより、テキスト読み上げ機能が向上します。"
+      }
+    },
+    {
+      "segment_id": "705d5eb7",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "c7737b8a",
+      "source_content": "### 🐍 Code Execution",
+      "source_content_hash": "0864684da791dc87c6d07533683c81bd5c3891ea5ac5d61b83a79bed2084d060",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🐍 コード実行"
+      }
+    },
+    {
+      "segment_id": "cca16198",
+      "source_content": "- 🚀 **Versatile, UI-Agnostic, OpenAI-Compatible Plugin Framework**: Seamlessly integrate and customize [Sage WebUI Pipelines](https://github.com/Startr/pipelines) for efficient data processing and model training, ensuring ultimate flexibility and scalability.\n\n- 🛠️ **Native Python Function Calling**: Access the power of Python directly within Sage WebUI with native function calling. Easily integrate custom code to build unique features like custom RAG pipelines, web search tools, and even agent-like actions via a built-in code editor to seamlessly develop and integrate function code within the `Tools` and `Functions` workspace.\n\n- 🐍 **Python Code Execution**: Execute Python code locally in the browser via Pyodide with a range of libraries supported by Pyodide.\n\n- 🌊 **Mermaid Rendering**: Create visually appealing diagrams and flowcharts directly within Sage WebUI using the [Mermaid Diagramming and charting tool](https://mermaid.js.org/intro/), which supports Mermaid syntax rendering.\n\n- 🔗 **Iframe Support**: Enables rendering HTML directly into your chat interface using functions and tools.",
+      "source_content_hash": "d21530f160477e8ce1d94d9d77545175ffa1dfe174b0293558adff5d0add2de9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 🚀 **多用途でUIに依存しないOpenAI互換プラグインフレームワーク**: [Sage WebUI Pipelines](https://github.com/Startr/pipelines)をシームレスに統合・カスタマイズ可能で、効率的なデータ処理とモデルトレーニングを実現し、究極の柔軟性と拡張性を提供します。\n\n- 🛠️ **ネイティブPython関数呼び出し**: Sage WebUI内で直接Pythonの力を活用可能。組み込みコードエディタを使用して、カスタムRAGパイプライン、ウェブ検索ツール、さらにはエージェントのようなアクションまで、`ツール`と`関数`ワークスペース内で関数コードをシームレスに開発・統合できます。\n\n- 🐍 **Pythonコード実行**: Pyodide経由でブラウザ上でPythonコードをローカル実行可能。Pyodideがサポートする様々なライブラリが利用できます。\n\n- 🌊 **Mermaidレンダリング**: [Mermaidダイアグラミングツール](https://mermaid.js.org/intro/)を使用して、Sage WebUI内で直接視覚的に魅力的なダイアグラムやフローチャートを作成可能。Mermaid構文のレンダリングをサポートします。\n\n- 🔗 **Iframeサポート**: 関数やツールを使用してHTMLをチャットインターフェースに直接レンダリングできます。"
+      }
+    },
+    {
+      "segment_id": "237c617c",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "acfd6cd9",
+      "source_content": "### 🔒 Integration & Security",
+      "source_content_hash": "46114d1cca0d597caf20913b8fc5cb9a50735e0af3f567ab74e8aa1563c153db",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🔒 統合とセキュリティ"
+      }
+    },
+    {
+      "segment_id": "56b7a03f",
+      "source_content": "- ✨ **Multiple OpenAI-Compatible API Support**: Seamlessly integrate and customize various OpenAI-compatible APIs, enhancing the versatility of your chat interactions.\n\n- 🔑 **Simplified API Key Management**: Easily generate and manage secret keys to leverage Sage WebUI with OpenAI libraries, streamlining integration and development.\n\n- 🌐 **HTTP/S Proxy Support**: Configure network settings easily using the `http_proxy` or `https_proxy` environment variable. These variables, if set, should contain the URLs for HTTP and HTTPS proxies, respectively.\n\n- 🌐🔗 **External Ollama Server Connectivity**: Seamlessly link to an external Ollama server hosted on a different address by configuring the environment variable.\n\n- 🛢️ **Flexible Database Integration**: Seamlessly connect to custom databases, including SQLite, Postgres, and multiple vector databases like Milvus, using environment variables for flexible and scalable data management.\n\n- 🌐🗣️ **External Speech-to-Text Support**: The addition of external speech-to-text (`STT`) services provides enhanced flexibility, allowing users to choose their preferred provider for seamless interaction.\n\n- 🌐 **Remote ChromaDB Support**: Extend the capabilities of your database by connecting to remote ChromaDB servers.\n\n- 🔀 **Multiple Ollama Instance Load Balancing**: Effortlessly distribute chat requests across multiple Ollama instances for enhanced performance and reliability.\n\n- 🚀 **Advanced Load Balancing and Reliability**: Utilize enhanced load balancing capabilities, stateless instances with full Redis support, and automatic web socket re-connection to promote better performance, reliability, and scalability in WebUI, ensuring seamless and uninterrupted interactions across multiple instances.\n\n- ☁️ **Experimental S3 Support**: Enable stateless WebUI instances with S3 support for enhanced scalability and balancing heavy workloads.\n\n- 🛠️ **OAuth Management for User Groups**: Enhance control and scalability in collaborative environments with group-level management via OAuth integration.",
+      "source_content_hash": "bf15dd8ab3a998be62cf2d319d834db15fa4957a88b78dc5becb1881647a7b6b",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- ✨ **複数のOpenAI互換APIサポート**: 様々なOpenAI互換APIをシームレスに統合・カスタマイズ可能で、チャットインタラクションの汎用性を向上させます。\n\n- 🔑 **簡素化されたAPIキー管理**: OpenAIライブラリと連携するためのシークレットキーを簡単に生成・管理でき、統合と開発を効率化します。\n\n- 🌐 **HTTP/Sプロキシサポート**: `http_proxy`または`https_proxy`環境変数を使用してネットワーク設定を簡単に構成可能。これらの変数が設定されている場合、それぞれHTTPおよびHTTPSプロキシのURLを含める必要があります。\n\n- 🌐🔗 **外部Ollamaサーバー接続**: 環境変数を設定することで、異なるアドレスでホストされている外部Ollamaサーバーにシームレスに接続できます。\n\n- 🛢️ **柔軟なデータベース統合**: SQLite、Postgres、Milvusなどの複数のベクターデータベースを含むカスタムデータベースに環境変数を使用してシームレスに接続し、柔軟でスケーラブルなデータ管理を実現します。\n\n- 🌐🗣️ **外部音声認識（STT）サポート**: 外部音声認識（STT）サービスの追加により、ユーザーは好みのプロバイダを選択してシームレスなインタラクションを実現できます。\n\n- 🌐 **リモートChromaDBサポート**: リモートChromaDBサーバーに接続することで、データベースの機能を拡張できます。\n\n- 🔀 **複数Ollamaインスタンスの負荷分散**: 複数のOllamaインスタンス間でチャットリクエストを簡単に分散させ、パフォーマンスと信頼性を向上させます。\n\n- 🚀 **高度な負荷分散と信頼性**: 強化された負荷分散機能、完全なRedisサポートを備えたステートレスインスタンス、自動Webソケット再接続を活用し、複数インスタンス間でのシームレスで中断のないインタラクションを確保します。\n\n- ☁️ **実験的S3サポート**: S3サポートを有効にしたステートレスWebUIインスタンスにより、スケーラビリティと重いワークロードのバランスを向上させます。\n\n- 🛠️ **ユーザーグループ向けOAuth管理**: OAuth統合によるグループレベルの管理で、協調環境における制御とスケーラビリティを強化します。"
+      }
+    },
+    {
+      "segment_id": "561c22a6",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    },
+    {
+      "segment_id": "f7420cb5",
+      "source_content": "### 👑 Administration",
+      "source_content_hash": "de2e82eba48ade4094c3a9ddbd81b9535d68468cc1ee6e4cb7c295654a11742e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 👑 管理"
+      }
+    },
+    {
+      "segment_id": "5f56629d",
+      "source_content": "- 👑 **Super Admin Assignment**: Automatically assigns the first sign-up as a super admin with an unchangeable role that cannot be modified by anyone else, not even other admins.\n\n- 🛡️ **Granular User Permissions**: Restrict user actions and access with customizable role-based permissions, ensuring that only authorized individuals can perform specific tasks.\n\n- 👥 **Multi-User Management**: Intuitive admin panel with pagination allows you to seamlessly manage multiple users, streamlining user administration and simplifying user life-cycle management.\n\n- 🔧 **Admin Panel**: The user management system is designed to streamline the on-boarding and management of users, offering the option to add users directly or in bulk via CSV import.\n\n- 👥 **Active Users Indicator**: Monitor the number of active users and which models are being utilized by whom to assist in gauging when performance may be impacted due to a high number of users.\n\n- 🔒 **Default Sign-Up Role**: Specify the default role for new sign-ups to `pending`, `user`, or `admin`, providing flexibility in managing user permissions and access levels for new users.\n\n- 🔒 **Prevent New Sign-Ups**: Enable the option to disable new user sign-ups, restricting access to the platform and maintaining a fixed number of users.\n\n- 🔒 **Prevent Chat Deletion**: Ability for admins to toggle a setting that prevents all users from deleting their chat messages, ensuring that all chat messages are retained for audit or compliance purposes.\n\n- 🔗 **Webhook Integration**: Subscribe to new user sign-up events via webhook (compatible with `Discord`, `Google Chat`, `Slack` and `Microsoft Teams`), providing real-time notifications and automation capabilities.\n\n- 📣 **Configurable Notification Banners**: Admins can create customizable banners with persistence in config.json, featuring options for content, background color (`info`, `warning`, `error`, or `success`), and dismissibility. Banners are accessible only to logged-in users, ensuring the confidentiality of sensitive information.\n\n- 🛡️ **Model Whitelisting**: Enhance security and access control by allowing admins to whitelist models for users with the `user` role, ensuring that only authorized models can be accessed.\n\n- 🔑 **Admin Control for Community Sharing**: Admins can enable or disable community sharing for all users via a toggle in the `Admin Panel` > `Settings` menu. This toggle allows admins to manage accessibility and privacy, ensuring a secure environment. Admins have the option of enabling or disabling the `Share on Community` button for all users, which allows them to control community engagement and collaboration.\n\n- 📧 **Trusted Email Authentication**: Optionally authenticate using a trusted email header, adding an extra layer of security and authentication to protect your Sage WebUI instance.\n\n- 🔒 **Backend Reverse Proxy Support**: Bolster security through direct communication between Sage WebUI's backend and Ollama. This key feature eliminates the need to expose Ollama over the local area network (LAN). Requests made to the `/ollama/api` route from Sage WebUI are seamlessly redirected to Ollama from the backend, enhancing overall system security and providing an additional layer of protection.\n\n- 🔒 **Authentication**: Please note that Sage WebUI does not natively support federated authentication schemes such as SSO, OAuth, SAML, or OIDC. However, it can be configured to delegate authentication to an authenticating reverse proxy, effectively achieving a Single Sign-On (`SSO`) experience. This setup allows you to centralize user authentication and management, enhancing security and user convenience. By integrating Sage WebUI with an authenticating reverse proxy, you can leverage existing authentication systems and streamline user access to Sage WebUI. For more information on configuring this feature, please refer to the [Federated Authentication Support](/features/sso).\n\n- 🔓 **Optional Authentication**: Enjoy the flexibility of disabling authentication by setting `WEBUI_AUTH` to `False`. This is an ideal solution for fresh installations without existing users or can be useful for demonstration purposes.\n\n- 🚫 **Advanced API Security**: Block API users based on customized model filters, enhancing security and control over API access.\n\n- ❗ **Administrator Updates**: Ensure administrators stay informed with immediate update notifications upon login, keeping them up-to-date on the latest changes and system statuses.\n\n- 👥 **User Group Management**: Create and manage user groups for seamless organization and control.\n\n- 🔐 **Group-Based Access Control**: Set granular access to models, knowledge, prompts, and tools based on user groups, allowing for more controlled and secure environments.\n\n- 🛠️ **Granular User Permissions**: Easily manage workspace permissions, including file uploads, deletions, edits, and temporary chats, as well as model, knowledge, prompt, and tool creation.\n\n- 🔑 **LDAP Authentication**: Enhance security and scalability with LDAP support for user management.\n\n- 🌐 **Customizable OpenAI Connections**: Enjoy smooth operation with custom OpenAI setups, including prefix ID support and explicit model ID support for APIs.\n\n- 🔐 **Ollama API Key Management**: Manage Ollama credentials, including prefix ID support, for secure and efficient operation.\n\n- 🔄 **Connection Management**: Easily enable or disable individual OpenAI and Ollama connections as needed.\n\n- 🎨 **Intuitive Model Workspace**: Manage models across users and groups with a redesigned and user-friendly interface.\n\n- 🔑 **API Key Authentication**: Tighten security by easily enabling or disabling API key authentication.\n\n- 🔄 **Unified Model Reset**: Reset and remove all models from the Admin Settings with a one-click option.\n\n- 🔓 **Flexible Model Access Control**: Easily bypass model access controls for user roles when not required, using the 'BYPASS_MODEL_ACCESS_CONTROL' environment variable, simplifying workflows in trusted environments.\n\n- 🔒 **Configurable API Key Authentication Restrictions**: Flexibly configure endpoint restrictions for API key authentication, now off by default for a smoother setup in trusted environments.",
+      "source_content_hash": "e64ad95d490851bca1e61e6715aa5e542cdb248661404832a02ab6a965287495",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 👑 **スーパー管理者の自動割り当て**: 最初にサインアップしたユーザーをスーパー管理者として自動的に割り当てます。この役割は他の管理者を含め誰も変更できません。\n\n- 🛡️ **詳細なユーザー権限制御**: カスタマイズ可能なロールベースの権限でユーザーの操作やアクセスを制限し、特定のタスクを許可されたユーザーのみが実行できるようにします。\n\n- 👥 **マルチユーザー管理**: ページネーション機能付きの直感的な管理者パネルで、複数のユーザーをシームレスに管理でき、ユーザー管理の効率化とライフサイクル管理を簡素化します。\n\n- 🔧 **管理者パネル**: ユーザー管理システムは、ユーザーのオンボーディングと管理を効率化するように設計されており、直接追加またはCSVインポートによる一括追加が可能です。\n\n- 👥 **アクティブユーザー表示機能**: アクティブなユーザー数と誰がどのモデルを利用しているかを監視し、ユーザー数が多い場合のパフォーマンス影響を把握するのに役立ちます。\n\n- 🔒 **デフォルトサインアップ権限**: 新規サインアップ時のデフォルト権限を「pending」「user」「admin」から指定可能。新規ユーザーの権限とアクセスレベルを柔軟に管理できます。\n\n- 🔒 **新規サインアップ防止**: 新規ユーザー登録を無効化するオプションを有効にし、プラットフォームへのアクセスを制限してユーザー数を固定できます。\n\n- 🔒 **チャット削除防止**: 管理者が設定を切り替えることで、すべてのユーザーがチャットメッセージを削除できないようにし、監査やコンプライアンス目的で全てのチャットを保持します。\n\n- 🔗 **Webhook連携**: 新規ユーザー登録イベントをWebhook（Discord、Google Chat、Slack、Microsoft Teams対応）で購読し、リアルタイム通知と自動化機能を提供します。\n\n- 📣 **設定可能な通知バナー**: 管理者はconfig.jsonで永続化可能なカスタマイズバナーを作成でき、内容、背景色（info、warning、error、success）、非表示設定が可能。ログインユーザーのみに表示されるため機密情報を保護します。\n\n- 🛡️ **モデルホワイトリスト**: 管理者が「user」ロールのユーザー向けにモデルをホワイトリスト登録でき、許可されたモデルのみアクセス可能にすることでセキュリティとアクセス制御を強化。\n\n- 🔑 **コミュニティ共有の管理者制御**: 管理者は「Admin Panel」＞「Settings」メニューのトグルで全ユーザーのコミュニティ共有を有効/無効化可能。セキュアな環境を維持しつつ、「Share on Community」ボタンの表示を制御できます。\n\n- 📧 **信頼済みメール認証**: オプションで信頼済みメールヘッダーを使用した認証を追加し、Sage WebUIインスタンスのセキュリティ層を強化。\n\n- 🔒 **バックエンドリバースプロキシサポート**: Sage WebUIバックエンドとOllama間の直接通信でセキュリティを強化。OllamaをLANに公開する必要がなくなり、/ollama/apiルートへのリクエストはバックエンドからOllamaにシームレスにリダイレクトされます。\n\n- 🔒 **認証**: Sage WebUIはSSO、OAuth、SAML、OIDCなどの連携認証をネイティブサポートしませんが、認証リバースプロキシに委譲することでSSO体験を実現可能。既存認証システムと統合し、ユーザーアクセスを一元管理できます。詳細は[連携認証サポート](/features/sso)を参照。\n\n- 🔓 **オプション認証無効化**: WEBUI_AUTHをFalseに設定し認証を無効化可能。既存ユーザーがいない新規インストールやデモ用途に最適。\n\n- 🚫 **高度なAPIセキュリティ**: カスタムモデルフィルタに基づきAPIユーザーをブロックし、APIアクセス制御を強化。\n\n- ❗ **管理者向け更新通知**: 管理者はログイン時に即座に更新通知を受け取り、最新の変更やシステム状況を把握可能。\n\n- 👥 **ユーザーグループ管理**: ユーザーグループを作成・管理し、組織と制御を効率化。\n\n- 🔐 **グループベースのアクセス制御**: ユーザーグループごとにモデル、ナレッジ、プロンプト、ツールへの詳細なアクセスを設定し、より制御された安全な環境を構築。\n\n- 🛠️ **詳細なユーザー権限管理**: ワークスペース権限（ファイルアップロード/削除/編集、一時チャット）やモデル/ナレッジ/プロンプト/ツール作成を容易に管理。\n\n- 🔑 **LDAP認証**: LDAPサポートでユーザー管理のセキュリティと拡張性を向上。\n\n- 🌐 **カスタマイズ可能なOpenAI接続**: プレフィックスIDサポートや明示的なモデルIDサポートを含むカスタムOpenAI設定でスムーズに操作。\n\n- 🔐 **Ollama APIキー管理**: プレフィックスIDサポートを含むOllama認証情報を安全かつ効率的に管理。\n\n- 🔄 **接続管理**: 個々のOpenAIおよびOllama接続を必要に応じて有効/無効化可能。\n\n- 🎨 **直感的なモデルワークスペース**: ユーザーとグループ間でモデルを管理する再設計されたユーザーフレンドリーなインターフェース。\n\n- 🔑 **APIキー認証**: APIキー認証を簡単に有効/無効化し、セキュリティを強化。\n\n- 🔄 **統合モデルリセット**: 管理者設定から全てのモデルをワンクリックでリセット・削除可能。\n\n- 🔓 **柔軟なモデルアクセス制御**: 信頼環境では「BYPASS_MODEL_ACCESS_CONTROL」環境変数でユーザーロールのモデルアクセス制御を簡単にバイパス可能。\n\n- 🔒 **設定可能なAPIキー認証制限**: APIキー認証のエンドポイント制限を柔軟に設定可能（デフォルトはオフで信頼環境でのセットアップが容易）。"
+      }
+    },
+    {
+      "segment_id": "91c8b79b",
+      "source_content": "---",
+      "source_content_hash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+      "node_type": "thematicBreak",
+      "translatable": true,
+      "translations": {
+        "ja": "---"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.776075+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "7887f0642e35ff456f25f81205c58a0039f47f20e99d6bdd19e51f32997254ff"
+  }
+}

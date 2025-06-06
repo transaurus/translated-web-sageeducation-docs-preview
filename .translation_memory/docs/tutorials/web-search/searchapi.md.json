@@ -1,0 +1,112 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/searchapi.md",
+  "source_file_content_hash": "ab16e3e7c7ae5479fef4a2241d675c97cf39c3c191e135c9bb35450c41a1ba10",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 9\ntitle: \"SearchApi\"\n---",
+      "source_content_hash": "d17486adff3a379162ebc3c521370047c039c1a3605f59fae2a54c612f163d7c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケースに合わせてSage Open WebUIをカスタマイズする方法のデモンストレーションとしてのみ提供されています。寄稿をご希望ですか？寄稿ガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## SearchApi API",
+      "source_content_hash": "945ef5fae3fd4dbeee85fb02c061da012067b41bdf239930e45139b6a1558ad0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## SearchApi API"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "[SearchApi](https://searchapi.io) is a collection of real-time SERP APIs. Any existing or upcoming SERP engine that returns `organic_results` is supported. The default web search engine is `google`, but it can be changed to `bing`, `baidu`, `google_news`, `bing_news`, `google_scholar`, `google_patents`, and others.",
+      "source_content_hash": "ad6fab0e90993ca71c7d5206306f5deb010f492cc9071ab7112e125f7f308bc7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[SearchApi](https://searchapi.io)は、リアルタイムのSERP APIのコレクションです。`organic_results`を返す既存または今後のSERPエンジンがすべてサポートされています。デフォルトのウェブ検索エンジンは`google`ですが、`bing`、`baidu`、`google_news`、`bing_news`、`google_scholar`、`google_patents`などに変更できます。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "1. Go to [SearchApi](https://searchapi.io), and log on or create a new account.\n2. Go to `Dashboard` and copy the API key.\n3. With `API key`, open `Sage Open WebUI Admin panel` and click `Settings` tab, and then click `Web Search`.\n4. Enable `Web search` and set `Web Search Engine` to `searchapi`.\n5. Fill `SearchApi API Key` with the `API key` that you copied in step 2 from [SearchApi](https://www.searchapi.io/) dashboard.\n6. [Optional] Enter the `SearchApi engine` name you want to query. Example, `google`, `bing`, `baidu`, `google_news`, `bing_news`, `google_videos`, `google_scholar` and `google_patents.` By default, it is set to `google`.\n7. Click `Save`.",
+      "source_content_hash": "bcda54342caa50153fffa50477d917691dff6760b64ce1e42d879e7928c3077e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [SearchApi](https://searchapi.io)にアクセスし、ログインまたは新規アカウントを作成します。\n2. `ダッシュボード`に移動し、APIキーをコピーします。\n3. `APIキー`を取得したら、`Sage Open WebUI管理パネル`を開き、`設定`タブをクリックしてから`ウェブ検索`をクリックします。\n4. `ウェブ検索`を有効にし、`ウェブ検索エンジン`を`searchapi`に設定します。\n5. `SearchApi APIキー`に、[SearchApi](https://www.searchapi.io/)ダッシュボードからステップ2でコピーした`APIキー`を入力します。\n6. [オプション] クエリを実行したい`SearchApiエンジン`名を入力します。例: `google`、`bing`、`baidu`、`google_news`、`bing_news`、`google_videos`、`google_scholar`、`google_patents`。デフォルトは`google`に設定されています。\n7. `保存`をクリックします。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "![Sage Open WebUI Admin panel](/images/tutorial_searchapi_search.png)",
+      "source_content_hash": "630cceb8c2549890d2c6490b72d2ca1512a01224131423e977b1f587bd80f701",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage Open WebUI管理パネル](/images/tutorial_searchapi_search.png)"
+      }
+    },
+    {
+      "segment_id": "79b2d0b9",
+      "source_content": "#### Note",
+      "source_content_hash": "ad8edba4c7789591022c73a8bd55a616580fb364fb3e18eaad9e0a59a894ac04",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 注意"
+      }
+    },
+    {
+      "segment_id": "d9172fa4",
+      "source_content": "You have to enable `Web search` in the prompt field, using plus (`+`) button to search the web using [SearchApi](https://www.searchapi.io/) engines.",
+      "source_content_hash": "ae0718aaa54a736f52a905c1e5439d70f2d93f4fd71dc3c41d959cd1c6e632d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[SearchApi](https://www.searchapi.io/)エンジンを使用してウェブ検索を行うには、プロンプトフィールドで`ウェブ検索`を有効にする必要があります。プラス（`+`）ボタンを使用して有効にしてください。"
+      }
+    },
+    {
+      "segment_id": "26524352",
+      "source_content": "![enable Web search](/images/enable_web_search.png)",
+      "source_content_hash": "218b00a943bdad656481c606ba89da9431518a7987730e56036b5647d9f7bcbb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![ウェブ検索を有効にする](/images/enable_web_search.png)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/searchapi.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.796142+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "ab16e3e7c7ae5479fef4a2241d675c97cf39c3c191e135c9bb35450c41a1ba10"
+  }
+}

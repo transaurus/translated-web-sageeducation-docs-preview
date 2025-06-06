@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/ipex_llm.md",
+  "source_file_content_hash": "05a6adae94d46beeb9b2e32173a168103f2934541a47bac4bfe4f3da541b681a",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 11\ntitle: \"🖥️ Local LLM Setup with IPEX-LLM on Intel GPU\"\n---",
+      "source_content_hash": "dcd62d0bd2c8725980351a02caf8b68f4056dfbaf27c3c694fc9bdd6bd34f998",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる貢献であり、Sage WebUIチームによるサポートはありません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。貢献したい場合は、コントリビューションガイドをご覧ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "6cae1da3",
+      "source_content": ":::note\nThis guide is verified with Sage WebUI setup through [Manual Installation](/getting-started/index.md).\n:::",
+      "source_content_hash": "177e7900fc2712607a9ec5ccd46d02dc3e35b61ee25fa03fe01ff1b1bea0cc36",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\nこのガイドは、[手動インストール](/getting-started/index.md)でセットアップしたSage WebUIで検証されています。\n:::"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "# Local LLM Setup with IPEX-LLM on Intel GPU",
+      "source_content_hash": "74dbbf6a92543c9ee1a1b867c5a2cf824d52089b1ce5e37f3db56c0c1f2e0e37",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Intel GPUでのIPEX-LLMを用いたローカルLLMセットアップ"
+      }
+    },
+    {
+      "segment_id": "976d532b",
+      "source_content": ":::info\n[**IPEX-LLM**](https://github.com/intel-analytics/ipex-llm) is a PyTorch library for running LLM on Intel CPU and GPU (e.g., local PC with iGPU, discrete GPU such as Arc A-Series, Flex and Max) with very low latency.\n:::",
+      "source_content_hash": "98ed4d5ee6b1fa6e6a880b078eba0497cc108fb537441b5490b541d3f32335db",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n[**IPEX-LLM**](https://github.com/intel-analytics/ipex-llm)は、Intel CPUおよびGPU（例：iGPU搭載のローカルPC、Arc Aシリーズ、Flex、MaxなどのディスクリートGPU）上でLLMを非常に低遅延で実行するためのPyTorchライブラリです。\n:::"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "This tutorial demonstrates how to setup Sage WebUI with **IPEX-LLM accelerated Ollama backend hosted on Intel GPU**. By following this guide, you will be able to setup Sage WebUI even on a low-cost PC (i.e. only with integrated GPU) with a smooth experience.",
+      "source_content_hash": "89c61a3715d78ee0c23a5ad17ca2ff9b003df0d5ac65b6b1f74e2e0e0ee27c8b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このチュートリアルでは、**Intel GPU上でホストされたIPEX-LLM加速Ollamaバックエンド**を使用してSage WebUIをセットアップする方法を説明します。このガイドに従うことで、低コストのPC（例：統合GPUのみ搭載）でもスムーズな体験でSage WebUIをセットアップできます。"
+      }
+    },
+    {
+      "segment_id": "63622bf0",
+      "source_content": "## Start Ollama Serve on Intel GPU",
+      "source_content_hash": "0d595bb7eb08507f9a25e19a23b5d710e543cafec6794f52222e410360c36407",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Intel GPUでのOllamaサーバーの起動"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Refer to [this guide](https://ipex-llm.readthedocs.io/en/latest/doc/LLM/Quickstart/ollama_quickstart.html) from IPEX-LLM official documentation about how to install and run Ollama serve accelerated by IPEX-LLM on Intel GPU.",
+      "source_content_hash": "58d1af9b818ec686054073ebbfb30d754b899fcf6cdae4f92dafd47c16666ddd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Intel GPU上でIPEX-LLMによって加速されたOllamaサーバーのインストールと実行方法については、IPEX-LLM公式ドキュメントの[このガイド](https://ipex-llm.readthedocs.io/en/latest/doc/LLM/Quickstart/ollama_quickstart.html)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "a2f1eaea",
+      "source_content": ":::tip\nIf you would like to reach the Ollama service from another machine, make sure you set or export the environment variable `OLLAMA_HOST=0.0.0.0` before executing the command `ollama serve`.\n:::",
+      "source_content_hash": "bfafa3c6031e1b3df106f6445fc863b59105cff849633093f507927181718009",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n別のマシンからOllamaサービスにアクセスしたい場合は、`ollama serve`コマンドを実行する前に環境変数`OLLAMA_HOST=0.0.0.0`を設定またはエクスポートしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "## Configure Sage WebUI",
+      "source_content_hash": "19a3f49cf114d325a369ddd1c749e074fbde5779afd3b29dcb351e6a5052f113",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIの設定"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Access the Ollama settings through **Settings -> Connections** in the menu. By default, the **Ollama Base URL** is preset to https://localhost:11434, as illustrated in the snapshot below. To verify the status of the Ollama service connection, click the **Refresh button** located next to the textbox. If the WebUI is unable to establish a connection with the Ollama server, you will see an error message stating, `WebUI could not connect to Ollama`.",
+      "source_content_hash": "9722b4c0b877c14f428c548d981bffd0ff78845fdcbe9c4c8931af20ec543148",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "メニューの**設定 -> 接続**からOllama設定にアクセスします。デフォルトでは、**OllamaベースURL**はhttps://localhost:11434に設定されています（以下のスナップショット参照）。Ollamaサービス接続の状態を確認するには、テキストボックスの横にある**更新ボタン**をクリックします。WebUIがOllamaサーバーに接続できない場合、`WebUI could not connect to Ollama`というエラーメッセージが表示されます。"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "![Sage WebUI Ollama Setting Failure](https://llm-assets.readthedocs.io/en/latest/_images/open_webui_settings_0.png)",
+      "source_content_hash": "b5dc32f513c7e33eddea38ed69c361697f605cf7bda65677d9ed859e7c0713ac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage WebUI Ollama設定失敗](https://llm-assets.readthedocs.io/en/latest/_images/open_webui_settings_0.png)"
+      }
+    },
+    {
+      "segment_id": "517051a7",
+      "source_content": "If the connection is successful, you will see a message stating `Service Connection Verified`, as illustrated below.",
+      "source_content_hash": "5f84737359d32653e97cc97b8136903257dfdb63b68788e04e86a1764ddc4ecd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "接続が成功した場合、以下のように`Service Connection Verified`というメッセージが表示されます。"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "![Sage WebUI Ollama Setting Success](https://llm-assets.readthedocs.io/en/latest/_images/open_webui_settings.png)",
+      "source_content_hash": "65bf627637fb2c26141b23f3ad70a9400c1a19d5ad15ad922a3d7cc49512ffdf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage WebUI Ollama設定成功](https://llm-assets.readthedocs.io/en/latest/_images/open_webui_settings.png)"
+      }
+    },
+    {
+      "segment_id": "33a4805e",
+      "source_content": ":::tip\nIf you want to use an Ollama server hosted at a different URL, simply update the **Ollama Base URL** to the new URL and press the **Refresh** button to re-confirm the connection to Ollama.\n:::",
+      "source_content_hash": "2030606d1b7f11d2b09e661aeb43f0a2c93a7b40a2fa3ec8af0298258450d9fb",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n別のURLでホストされているOllamaサーバーを使用したい場合は、**OllamaベースURL**を新しいURLに更新し、**更新**ボタンを押してOllamaへの接続を再確認してください。\n:::"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/ipex_llm.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.805378+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "05a6adae94d46beeb9b2e32173a168103f2934541a47bac4bfe4f3da541b681a"
+  }
+}

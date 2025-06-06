@@ -1,0 +1,172 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/plugin/functions/tab-shared/Common.md",
+  "source_file_content_hash": "eafdf7f72d782f08df18d904db02b7974362c4153dbca17db13405c7ed30f155",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "## Shared Function Components",
+      "source_content_hash": "c3e5e794a8e66c24e9552f31f445c7eff8caeb62c94f0f350720841ea87d097f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 共通機能コンポーネント"
+      }
+    },
+    {
+      "segment_id": "adbc947a",
+      "source_content": "### Valves and UserValves - (optional, but HIGHLY encouraged)",
+      "source_content_hash": "940efbb5fe6e8cb7dd6857a8d546a675bf81a13602dc001662024edbf9739c85",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ValvesとUserValves - (オプションですが強く推奨)"
+      }
+    },
+    {
+      "segment_id": "e7ec8f99",
+      "source_content": "Valves and UserValves are used to allow users to provide dynamic details such as an API key or a configuration option. These will create a fillable field or a bool switch in the GUI menu for the given function.",
+      "source_content_hash": "20b6664912706cf83ec3d42eb51b0d6f52425bb589d77137bf765895d5e47a69",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ValvesとUserValvesは、APIキーや設定オプションなどの動的な詳細情報をユーザーが提供できるようにするために使用されます。これにより、GUIメニューに記入可能なフィールドやブールスイッチが作成されます。"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "Valves are configurable by admins alone and UserValves are configurable by any users.",
+      "source_content_hash": "4178421a967d4d9215de53ba4931f16630ceb956f9a9cbb3044c17a7fffe49d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Valvesは管理者のみが設定可能で、UserValvesはすべてのユーザーが設定可能です。"
+      }
+    },
+    {
+      "segment_id": "efb379d7",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\n# Define and Valves\n    class Valves(BaseModel):\n        priority: int = Field(\n            default=0, description=\"Priority level for the filter operations.\"\n        )\n        test_valve: int = Field(\n            default=4, description=\"A valve controlling a numberical value\"\n        )\n        pass\n\n    # Define any UserValves\n    class UserValves(BaseModel):\n        test_user_valve: bool = Field(\n            default=False, description=\"A user valve controlling a True/False (on/off) switch\"\n        )\n        pass\n\n    def __init__(self):\n        self.valves = self.Valves()\n        pass\n```\n</details>",
+      "source_content_hash": "fad503aa16333d3338f177c40d9031b6830d75506ea3a7aaa6c4fc608dddc651",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_efb379d7"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "### Event Emitters",
+      "source_content_hash": "aa7d6f40357b2af00dd89c0b4813af896aba62a2a953d17cb833ecf5ff92f4c9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### イベントエミッター"
+      }
+    },
+    {
+      "segment_id": "97ae4a01",
+      "source_content": "Event Emitters are used to add additional information to the chat interface. Similarly to Filter Outlets, Event Emitters are capable of appending content to the chat. Unlike Filter Outlets, they are not capable of stripping information. Additionally, emitters can be activated at any stage during the function.",
+      "source_content_hash": "9e25c669aa541ef95a9bc50555ec43811e4b495b0d5952b77b87195e2de3fde5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "イベントエミッターは、チャットインターフェースに追加情報を付加するために使用されます。フィルターアウトレットと同様に、イベントエミッターはチャットにコンテンツを追加できます。ただし、フィルターアウトレットとは異なり、情報を削除することはできません。さらに、エミッターは関数の実行中いつでもアクティブにできます。"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "There are two different types of Event Emitters:",
+      "source_content_hash": "a8c3be4ed70497a68464ebf813c4cd0cad6a0c98c04151ec8f74be68d41ce316",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "イベントエミッターには2種類あります:"
+      }
+    },
+    {
+      "segment_id": "9f9e64f5",
+      "source_content": "#### Status",
+      "source_content_hash": "98199297e53e8a9ba3f5ebe9d0c53c13d3f75a48a63eda48de2026029438151a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### ステータス"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "This is used to add statuses to a message while it is performing steps. These can be done at any stage during the Function. These statuses appear right above the message content. These are very useful for Functions that delay the LLM response or process large amounts of information. This allows you to inform users what is being processed in real-time.",
+      "source_content_hash": "c658c341eec60307a9e36a57c74a9dac331c0b2e15ff03251c6ac1871165e43b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これは、メッセージが処理ステップを実行している間にステータスを追加するために使用されます。これらのステータスは関数の実行中いつでも追加可能で、メッセージコンテンツの直上に表示されます。LLMの応答が遅れる関数や大量の情報を処理する関数で特に有用で、リアルタイムで何が処理されているかをユーザーに知らせることができます。"
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```\nawait __event_emitter__(\n            {\n                \"type\": \"status\", # We set the type here\n                \"data\": {\"description\": \"Message that shows up in the chat\", \"done\": False}, \n                # Note done is False here indicating we are still emitting statuses\n            }\n        )\n```",
+      "source_content_hash": "2040b72020928273859260d918034875b833b6790f13dcc29443d8295d80741d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "c7ecf06f",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\nasync def test_function(\n        self, prompt: str, __user__: dict, __event_emitter__=None\n    ) -> str:\n        \"\"\"\n        This is a demo\n\n        :param test: this is a test parameter\n        \"\"\"\n\n        await __event_emitter__(\n            {\n                \"type\": \"status\", # We set the type here\n                \"data\": {\"description\": \"Message that shows up in the chat\", \"done\": False}, \n                # Note done is False here indicating we are still emitting statuses\n            }\n        )\n\n        # Do some other logic here\n        await __event_emitter__(\n            {\n                \"type\": \"status\",\n                \"data\": {\"description\": \"Completed a task message\", \"done\": True},\n                # Note done is True here indicating we are done emitting statuses\n            }\n        )\n\n        except Exception as e:\n            await __event_emitter__(\n                {\n                    \"type\": \"status\",\n                    \"data\": {\"description\": f\"An error occured: {e}\", \"done\": True},\n                }\n            )\n\n            return f\"Tell the user: {e}\"\n```\n</details>",
+      "source_content_hash": "b8123ed6470735d14b864b54b90f26d3069b4a0a3a34a6e8f57c5d2de7a813b2",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_c7ecf06f"
+      }
+    },
+    {
+      "segment_id": "5baf88e2",
+      "source_content": "#### Message",
+      "source_content_hash": "48dc29b0c39617ba496ab0b672a563dd7559568a51fa11d93b33051b3335d0f3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### メッセージ"
+      }
+    },
+    {
+      "segment_id": "82e90254",
+      "source_content": "This type is used to append a message to the LLM at any stage in the Function. This means that you can append messages, embed images, and even render web pages before, or after, or during the LLM response.",
+      "source_content_hash": "391e594d4804640e74d2828e539305f4edd9436730643bb299a7ca17bd45e783",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このタイプは、関数の実行中いつでもLLMにメッセージを追加するために使用されます。つまり、LLMの応答前、最中、または後にメッセージを追加したり、画像を埋め込んだり、ウェブページをレンダリングしたりできます。"
+      }
+    },
+    {
+      "segment_id": "890e01bc",
+      "source_content": "```\nawait __event_emitter__(\n                    {\n                        \"type\": \"message\", # We set the type here\n                        \"data\": {\"content\": \"This message will be appended to the chat.\"},\n                        # Note that with message types we do NOT have to set a done condition\n                    }\n                )\n```",
+      "source_content_hash": "1f40571ea517d462c14ba146cd9ee8b347b250d161156042b9136a9788a4496e",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_890e01bc"
+      }
+    },
+    {
+      "segment_id": "8850c5e2",
+      "source_content": "<details>\n<summary>Example</summary>\n\n```\nasync def test_function(\n        self, prompt: str, __user__: dict, __event_emitter__=None\n    ) -> str:\n        \"\"\"\n        This is a demo\n\n        :param test: this is a test parameter\n        \"\"\"\n\n        await __event_emitter__(\n                    {\n                        \"type\": \"message\", # We set the type here\n                        \"data\": {\"content\": \"This message will be appended to the chat.\"},\n                        # Note that with message types we do NOT have to set a done condition\n                    }\n                )\n\n        except Exception as e:\n            await __event_emitter__(\n                {\n                    \"type\": \"status\",\n                    \"data\": {\"description\": f\"An error occured: {e}\", \"done\": True},\n                }\n            )\n\n            return f\"Tell the user: {e}\"\n```\n</details>",
+      "source_content_hash": "9b8551fc903bc62f3844e9d77bd03fd0cf583a6c5fbe41078e862c3917d35fc4",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_8850c5e2"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/plugin/functions/tab-shared/Common.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.794983+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "eafdf7f72d782f08df18d904db02b7974362c4153dbca17db13405c7ed30f155"
+  }
+}

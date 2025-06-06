@@ -1,0 +1,322 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/contributing.mdx",
+  "source_file_content_hash": "1510b797e433d34579df3ff16d4665fa8d0bd12b19a05b2c384b835f9ffe87d8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1600\ntitle: \"🤝 Contributing\"\n---",
+      "source_content_hash": "cdd2f41979dcfc5d193b1980efe14a95ecae4e271c63c642e8edf9b9c6ff723e",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "cfa7d4a247222cb4c3fbddf4b88878ad305961d9924451dda6c66af2a95c65df",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "37387e33",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_37387e33"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "🚀 **Welcome, Contributors!** 🚀",
+      "source_content_hash": "797aa1f47acb997f23912791026a8ee040aa5e3f061fb7013bfee80e4b7627a5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🚀 **コントリビューターの皆さん、ようこそ！** 🚀"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Your interest in contributing to Sage WebUI is greatly appreciated. This document is here to guide you through the process, ensuring your contributions enhance the project effectively. Let's make Sage WebUI even better, together!",
+      "source_content_hash": "4a2a07906a513b3bb8f6b43e5c0c6d81b4a554e34f40474eeb30221b0196eda4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIへの貢献に興味を持っていただき、誠にありがとうございます。このドキュメントは、あなたの貢献がプロジェクトを効果的に強化できるよう、プロセスを案内するためのものです。一緒にSage WebUIをさらに良いものにしていきましょう！"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## 💡 Contributing",
+      "source_content_hash": "b69a7b8c0c606efa0f74ec8a5839490c36663ad0f5ce98e7adc8838e267c2200",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 💡 貢献について"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "Looking to contribute? Great! Here's how you can help:",
+      "source_content_hash": "2d5a2b97b748d7ba54d555a8f7b585c3a4d95e8375a1bfd78e03c3a149fce820",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "貢献をお考えですか？素晴らしい！以下が貢献方法です："
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "### 🌟 Code Contribution Guidelines",
+      "source_content_hash": "23bf2c0091a8dcf66d4cf16582ff8ce6fca93b09a56b7273a3d719e9545415fa",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🌟 コード貢献ガイドライン"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "We welcome pull requests. Before submitting one, please:",
+      "source_content_hash": "9c180aaab0b494b941e7f5b0859a67ba4b7b767a3818cd11efecdc56d020f6c0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プルリクエストは歓迎します。提出前に以下の点をご確認ください："
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "1. Open a discussion regarding your ideas [here](https://github.com/Startr/AI-WEB-openwebui/discussions/new/choose).\n2. Follow the project's coding standards and include tests for new features.\n3. Update documentation as necessary.\n4. Write clear, descriptive commit messages.",
+      "source_content_hash": "d4af872b48b99ed0460daee2d6f6ba07dcd21fac41d14375b4c09b3c17c0f30a",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. アイデアについてのディスカッションを[こちら](https://github.com/Startr/AI-WEB-openwebui/discussions/new/choose)で開いてください。\n2. プロジェクトのコーディング標準に従い、新機能にはテストを含めてください。\n3. 必要に応じてドキュメントを更新してください。\n4. 明確で説明的なコミットメッセージを書いてください。"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "### 🛠 Code PR Best Practices:",
+      "source_content_hash": "e1d259ea0dfc3f9e20f3532d308b6629184094339c3e78546a7aada79a93104c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🛠 コードPRのベストプラクティス："
+      }
+    },
+    {
+      "segment_id": "77bf3ec9",
+      "source_content": "1. **Atomic PRs:** Make sure your PRs are small, focused, and deal with a single objective or task. This helps in easier code review and limits the chances of introducing unrelated issues. If the scope of changes grows too large, consider breaking them into smaller, logically independent PRs.\n2. **Follow Existing Code Convention:** Ensure your code aligns with the existing coding standards and practices of the project.\n3. **Avoid Additional External Dependencies:** Do not include additional external dependencies without prior discussion.\n4. **Framework Agnostic Approach:** We aim to stay framework agnostic. Implement functionalities on our own whenever possible rather than relying on external frameworks or libraries. If you have doubts or suggestions regarding this approach, feel free to discuss it.",
+      "source_content_hash": "f716dd43ced857c67c5ef9bd9ab7b80fe87ab9b7a8a71fa84aa4995e6a15c739",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **原子性のあるPR:** PRは小さく、焦点を絞り、単一の目的またはタスクに対応するようにしてください。これによりコードレビューが容易になり、無関係な問題が混入する可能性を抑えられます。変更の範囲が大きくなりすぎた場合は、論理的に関連のない小さなPRに分割することを検討してください。\n2. **既存のコード規約に従う:** コードがプロジェクトの既存のコーディング標準と慣行に沿っていることを確認してください。\n3. **外部依存関係の追加を避ける:** 事前の議論なしに追加の外部依存関係を含めないでください。\n4. **フレームワークに依存しないアプローチ:** 私たちはフレームワークに依存しないことを目指しています。可能な限り外部フレームワークやライブラリに頼るのではなく、独自に機能を実装してください。このアプローチについて疑問や提案がある場合は、遠慮なく議論してください。"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "Thank you for contributing! 🚀",
+      "source_content_hash": "fb163ad40bcb626e8f45a7dfd26299ca7397c298885a5c7f6705d904735191eb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "貢献いただきありがとうございます！🚀"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "### 📚 Documentation & Tutorials",
+      "source_content_hash": "06b89ce66d78482855780ae8f2daa7480db176c22280caab2bd23c2c75a6710a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 📚 ドキュメント & チュートリアル"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "Help us make Sage WebUI more accessible by improving documentation, writing tutorials, or creating guides on setting up and optimizing the web UI.",
+      "source_content_hash": "540bcc1f0a8d3ac20bf23c8351abd56219b1941e44152f1b02a935b5a50d731f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ドキュメントの改善、チュートリアルの執筆、またはWeb UIのセットアップと最適化に関するガイドの作成を通じて、Sage WebUIをよりアクセスしやすいものにするお手伝いをしてください。"
+      }
+    },
+    {
+      "segment_id": "782c902a",
+      "source_content": "### 🌐 Translations and Internationalization",
+      "source_content_hash": "f4730e4adae7d58a74a14d8177926df74a97e956a5e397ae237039156167cbed",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🌐 翻訳と国際化"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Help us make Sage WebUI available to a wider audience. In this section, we'll guide you through the process of adding new translations to the project.",
+      "source_content_hash": "e79eca102cdb045dffa06c766242b38a95948062808bc913e1c8713d85d15348",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIをより広い対象者に利用可能にするお手伝いをしてください。このセクションでは、プロジェクトに新しい翻訳を追加するプロセスを案内します。"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "We use JSON files to store translations. You can find the existing translation files in the `src/lib/i18n/locales` directory. Each directory corresponds to a specific language, for example, `en-US` for English (US), `fr-FR` for French (France) and so on. You can refer to [ISO 639 Language Codes](http://www.lingoes.net/en/translator/langcode.htm) to find the appropriate code for a specific language.",
+      "source_content_hash": "6359870cff053774a0ecf992a3e22d5a55314fa8e5b165a30eef992a8df5d149",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "翻訳はJSONファイルで保存しています。既存の翻訳ファイルは`src/lib/i18n/locales`ディレクトリにあります。各ディレクトリは特定の言語に対応しており、例えば`en-US`は英語（米国）、`fr-FR`はフランス語（フランス）などです。特定の言語に適したコードを見つけるには、[ISO 639言語コード](http://www.lingoes.net/en/translator/langcode.htm)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "To add a new language:",
+      "source_content_hash": "7ca89faa169038638837993e180ece0a59ae35a95c3df5bdd66462d581617b89",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "新しい言語を追加するには："
+      }
+    },
+    {
+      "segment_id": "cef3cb03",
+      "source_content": "- Create a new directory in the `src/lib/i18n/locales` path with the appropriate language code as its name. For instance, if you're adding translations for Spanish (Spain), create a new directory named `es-ES`.\n- Copy the American English translation file(s) (from `en-US` directory in `src/lib/i18n/locale`) to this new directory and update the string values in JSON format according to your language. Make sure to preserve the structure of the JSON object.\n- Add the language code and its respective title to languages file at `src/lib/i18n/locales/languages.json`.",
+      "source_content_hash": "85c95b57639c7952e96394051e66c1f4bb905d915304b45eb7a1f77f4ae6a7b2",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `src/lib/i18n/locales`パスに、適切な言語コードを名前とした新しいディレクトリを作成してください。例えば、スペイン語（スペイン）の翻訳を追加する場合、`es-ES`という名前の新しいディレクトリを作成します。\n- 米国英語の翻訳ファイル（`src/lib/i18n/locale`内の`en-US`ディレクトリから）をこの新しいディレクトリにコピーし、JSON形式で文字列値をあなたの言語に合わせて更新してください。JSONオブジェクトの構造は保持するようにしてください。\n- 言語コードとそのタイトルを`src/lib/i18n/locales/languages.json`の言語ファイルに追加してください。"
+      }
+    },
+    {
+      "segment_id": "cb5b269c",
+      "source_content": "### 🤔 Questions & Feedback",
+      "source_content_hash": "810e391a56b7ad2df399dce4be5f8890fbfc2028ed2792f37c3bd608bbe8877b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🤔 質問 & フィードバック"
+      }
+    },
+    {
+      "segment_id": "b36c6338",
+      "source_content": "Got questions or feedback? Join our [Discord community](https://discord.com/channels/1074411230040703046/1074411231030550632) or open an issue. We're here to help!",
+      "source_content_hash": "3aef1f38c5c90f84423d7999c0a03f5a0f30726fd2d96894716fe693dd27693d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "質問やフィードバックがありますか？[Discordコミュニティ](https://discord.com/channels/1074411230040703046/1074411231030550632)に参加するか、イシューを開いてください。お手伝いします！"
+      }
+    },
+    {
+      "segment_id": "2c1b51df",
+      "source_content": "### 🚨 Reporting Issues",
+      "source_content_hash": "63970d58cff5582f424762cce3713b9f6294d167f215fd3ab918b5a7a9bd826a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🚨 問題の報告"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Noticed something off? Have an idea? Check our [Issues tab](https://github.com/Startr/AI-WEB-openwebui/issues) to see if it's already been reported or suggested. If not, feel free to open a new issue. When reporting an issue, please follow our issue templates. These templates are designed to ensure that all necessary details are provided from the start, enabling us to address your concerns more efficiently.",
+      "source_content_hash": "3f24e61e4cf0b866659de3e8e40258ac81f89ab2f443b0ad5408a4cabb828bf0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "何かおかしな点に気付きましたか？アイデアがありますか？[Issuesタブ](https://github.com/Startr/AI-WEB-openwebui/issues)をチェックして、既に報告または提案されていないか確認してください。なければ、新しいイシューを開いてください。問題を報告する際は、私たちのイシューテンプレートに従ってください。これらのテンプレートは、最初から必要な詳細がすべて提供されるように設計されており、あなたの懸念をより効率的に対処できるようにします。"
+      }
+    },
+    {
+      "segment_id": "d82460ed",
+      "source_content": ":::important\n\n- **Template Compliance:** Please be aware that failure to follow the provided issue template, or not providing the requested information at all, will likely result in your issue being closed without further consideration. This approach is critical for maintaining the manageability and integrity of issue tracking.\n\n- **Detail is Key:** To ensure your issue is understood and can be effectively addressed, it's imperative to include comprehensive details. Descriptions should be clear, including steps to reproduce, expected outcomes, and actual results. Lack of sufficient detail may hinder our ability to resolve your issue.\n\n:::",
+      "source_content_hash": "a512e0cb70c09ba30eacaa1fe78251ee45a074fda6ff1a4200b4c217b5be2a38",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::important\n\n- **テンプレートの遵守:** 提供されたIssueテンプレートに従わない場合、または要求された情報を一切提供しない場合、Issueは追加の検討なしにクローズされる可能性があります。このアプローチは、Issue追跡の管理性と整合性を維持するために重要です。\n\n- **詳細が鍵:** Issueが理解され、効果的に対処されるためには、包括的な詳細を含めることが不可欠です。説明は明確にし、再現手順、期待される結果、実際の結果を含めてください。十分な詳細がないと、Issueの解決が妨げられる可能性があります。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "bd92edfc",
+      "source_content": "### 🧭 Scope of Support",
+      "source_content_hash": "4c403f304fb09a3b36f0f0f67bcfa92cbf2a01bc71502706ea941887569196c3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 🧭 サポート範囲"
+      }
+    },
+    {
+      "segment_id": "7f71ff2a",
+      "source_content": "We've noticed an uptick in issues not directly related to Sage WebUI but rather to the environment it's run in, especially Docker setups. While we strive to support Docker deployment, understanding Docker fundamentals is crucial for a smooth experience.",
+      "source_content_hash": "e36d5e0696a20a49136f33e0a14633e2e0206a41b4a91d52855d9282635829d5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUI自体ではなく、特にDockerセットアップなど実行環境に関連するIssueが増加していることに気付いています。Dockerデプロイメントをサポートするよう努めていますが、スムーズな体験のためにはDockerの基礎知識が重要です。"
+      }
+    },
+    {
+      "segment_id": "76dbcc76",
+      "source_content": "- **Docker Deployment Support**: Sage WebUI supports Docker deployment. Familiarity with Docker is assumed. For Docker basics, please refer to the [official Docker documentation](https://docs.docker.com/get-started/overview/).\n\n- **Advanced Configurations**: Setting up reverse proxies for HTTPS and managing Docker deployments requires foundational knowledge. There are numerous online resources available to learn these skills. Ensuring you have this knowledge will greatly enhance your experience with Sage WebUI and similar projects.",
+      "source_content_hash": "61abe6ccf3e9e1c5d152e862f09f61c466ef6ae18769210e181bbbd44e17ae78",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **Dockerデプロイメントのサポート:** Sage WebUIはDockerデプロイメントをサポートしています。Dockerの基礎知識があることを前提としています。Dockerの基本については、[公式Dockerドキュメント](https://docs.docker.com/get-started/overview/)を参照してください。\n\n- **高度な設定:** HTTPS用のリバースプロキシの設定やDockerデプロイメントの管理には基礎知識が必要です。これらのスキルを学ぶためのオンラインリソースは多数あります。この知識を身につけることで、Sage WebUIや類似プロジェクトでの体験が大幅に向上します。"
+      }
+    },
+    {
+      "segment_id": "b051b70c",
+      "source_content": "## 🙏 Thank You!",
+      "source_content_hash": "7f824d92741b90416a79c1ee1b6f363393209b9b4da9536da7671543f96e5d7e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🙏 ありがとうございます！"
+      }
+    },
+    {
+      "segment_id": "d0dd855b",
+      "source_content": "Your contributions, big or small, make a significant impact on Sage WebUI. We're excited to see what you bring to the project!",
+      "source_content_hash": "c8f755a36f43b6af09f15fc611fb3e54d3dce0584db435fb5fb8a3c81edc000e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "あなたの貢献は、大小にかかわらず、Sage WebUIに大きな影響を与えます。プロジェクトにあなたがもたらすものを見るのを楽しみにしています！"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "Together, let's create an even more powerful tool for the community. 🌟",
+      "source_content_hash": "e7461601fc98156efe8c459261ce8ce1c0920fbe4d865124b139b84039afb0d6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "一緒により強力なコミュニティツールを作りましょう。🌟"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/contributing.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.793600+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "1510b797e433d34579df3ff16d4665fa8d0bd12b19a05b2c384b835f9ffe87d8"
+  }
+}

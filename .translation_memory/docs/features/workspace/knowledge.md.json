@@ -1,0 +1,232 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/workspace/knowledge.md",
+  "source_file_content_hash": "649887cfd8c82a1098da0493dc7a02f2a614c76d1de950bec87a879f2c5c69b0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🧠 Knowledge\"\n---",
+      "source_content_hash": "7aab9a9f03545fa8da638bbdf41faa7b80b58059319ff320844b60af7762959b",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Knowledge part of Sage WebUI is like a memory bank that makes your interactions even more powerful and context-aware. Let's break down what \"Knowledge\" really means in Sage WebUI, how it works, and why it’s incredibly helpful for enhancing your experience.",
+      "source_content_hash": "4cc6093f17e4b3260193379e3bb91aed9f8ca3fda176f441ec5513a047441ca8",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの「Knowledge」は、インタラクションをより強力かつ文脈を意識したものにするメモリーバンクのようなものです。ここでは、Sage WebUIにおける「Knowledge」の意味、その仕組み、そして体験を向上させるための有用性について詳しく説明します。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## TL;DR",
+      "source_content_hash": "a40384f33396deec68bb2c77176fca4e3e2279a440549da0486d381022825bc6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "4a5b6a68",
+      "source_content": "- **Knowledge** is a section in Sage WebUI where you can store structured information that the system can refer to during your interactions.\n- It’s like a memory system for Sage WebUI that allows it to pull from saved data, making responses more personalized and contextually aware.\n- You can use Knowledge directly in your chats with Sage WebUI to access the stored data whenever you need it.",
+      "source_content_hash": "e05bc3fa7a09ece9730e1e3c6af782aba08ceb59bb81f86ae2607db9e061ea6e",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **Knowledge**は、Sage WebUI内で構造化された情報を保存し、インタラクション中に参照できるセクションです。\n- Sage WebUIのメモリシステムのようなもので、保存されたデータから情報を引き出し、レスポンスをよりパーソナライズされた文脈に沿ったものにします。\n- 保存されたデータにアクセスするために、Sage WebUIとのチャットで直接Knowledgeを利用できます。"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Setting up Knowledge is straightforward! Simply head to the Knowledge section inside work space and start adding details or data. You don’t need coding expertise or technical setup; it’s built into the core system!",
+      "source_content_hash": "628da3ee577dfe99dd956ab00ae6b3b6558e028a6681e46fa93a4f9a38734dfd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Knowledgeの設定は簡単です！ワークスペース内のKnowledgeセクションに移動し、詳細やデータを追加するだけです。コーディングの専門知識や技術的な設定は不要で、コアシステムに組み込まれています！"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "## What is the \"Knowledge\" Section?",
+      "source_content_hash": "00dbf38ac219a04ec2e9f5654e8d8a91629520de30420b3c078f3fa505a6b2eb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 「Knowledge」セクションとは？"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "The **Knowledge section** is a storage area within Sage WebUI where you can save specific pieces of information or data points. Think of it as a **reference library** that Sage WebUI can use to make its responses more accurate and relevant to your needs.",
+      "source_content_hash": "5dd9b7dc7ec3482155279fad9d0945caa37c0690523c495ec51eb6e78eed77a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Knowledgeセクション**は、Sage WebUI内で特定の情報やデータポイントを保存できるストレージ領域です。Sage WebUIがレスポンスをより正確かつニーズに合わせたものにするために参照できる**リファレンスライブラリ**のようなものと考えてください。"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "### Why is Knowledge Useful?",
+      "source_content_hash": "7b3bbf956cfcfa155ff70019d3ef24695dde4b56222783b832ffd5868c56d754",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Knowledgeが有用な理由"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Imagine you're working on a long-term project and want the system to remember certain parameters, settings, or even key notes about the project without having to remind it every time. Or perhaps, you want it to remember specific personal preferences for chats and responses. The Knowledge section is where you can store this kind of **persistent information** so that Sage WebUI can reference it in future conversations, creating a more **coherent, personalized experience**.",
+      "source_content_hash": "c1d9a3bb4177377eb54ea46546e4758b93afee49c24fd6bfb7f2f22732047398",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "長期的なプロジェクトに取り組んでいて、システムに特定のパラメータや設定、プロジェクトに関する重要なメモを毎回思い出させることなく覚えておいてほしい場合や、チャットやレスポンスに対する個人的な好みを記憶させたい場合を想像してください。Knowledgeセクションでは、このような**永続的な情報**を保存できるため、Sage WebUIが将来の会話で参照し、より**一貫性のあるパーソナライズされた体験**を提供できます。"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "Some examples of what you might store in Knowledge:",
+      "source_content_hash": "6147cb09c0882ad291551adc344f7affd14db2549603912ca4f345d32167a24d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Knowledgeに保存できるものの例："
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "- Important project parameters or specific data points you’ll frequently reference.\n- Custom commands, workflows, or settings you want to apply.\n- Personal preferences, guidelines, or rules that Sage WebUI can follow in every chat.",
+      "source_content_hash": "95ca58c60aefb57973f387887f2d6d6d09434f385e821f2b301c8c0984ac1adf",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 頻繁に参照する重要なプロジェクトのパラメータや特定のデータポイント。\n- 適用したいカスタムコマンド、ワークフロー、または設定。\n- Sage WebUIがすべてのチャットで従うべき個人的な好み、ガイドライン、またはルール。"
+      }
+    },
+    {
+      "segment_id": "d06306f7",
+      "source_content": "### How to Use Knowledge in Chats",
+      "source_content_hash": "3a1c5796731bfd2d730e9ac0154e0b8167838cf3251f3cba5cf70f4fc9cd89b9",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### チャットでのKnowledgeの使用方法"
+      }
+    },
+    {
+      "segment_id": "73ab96a3",
+      "source_content": "Accessing stored Knowledge in your chats is easy! By simply referencing what’s saved(using '#' before the name), Sage WebUI can pull in data or follow specific guidelines that you’ve set up in the Knowledge section.",
+      "source_content_hash": "baccd4c22a6f6ff15c1f663d3d9f2f7ce6655d9210d70993a394d3ac34095158",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "保存されたKnowledgeにチャットでアクセスするのは簡単です！保存されたデータを参照するには（名前の前に「#」を使用）、Sage WebUIはKnowledgeセクションで設定したデータや特定のガイドラインを引き出すことができます。"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "For example:",
+      "source_content_hash": "652744a2ab28954bbafd780fd76c15c2bd557594532f907f10ead1989727af95",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "例："
+      }
+    },
+    {
+      "segment_id": "7a2e981c",
+      "source_content": "- When discussing a project, Sage WebUI can automatically recall your specified project details.\n- It can apply custom preferences to responses, like formality levels or preferred phrasing.",
+      "source_content_hash": "be9011bedbcbdddefdf3c8df7ac3a861e6958867df14861eb226054489c86c70",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- プロジェクトについて議論する際、Sage WebUIは指定したプロジェクトの詳細を自動的に思い出せます。\n- レスポンスにカスタムの好み（フォーマルさのレベルや好みの言い回しなど）を適用できます。"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "To reference Knowledge in your chats, just ensure it’s saved in the Knowledge section, and Sage WebUI will know when and where to bring in the relevant information!",
+      "source_content_hash": "43aabccb74a0294001a0bab85b60d8d73944b84557c25719745ee61b1d5e9db3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "チャットでKnowledgeを参照するには、Knowledgeセクションに保存されていることを確認するだけで、Sage WebUIは関連する情報を適切なタイミングで引き出します！"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "Admins can add knowledge to the workspace, which users can access and use; however, users do not have direct access to the workspace itself.",
+      "source_content_hash": "25f02425a8ce128abba996da9bbad56ec6ed9f790baedd86050a6001a731a265",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "管理者はワークスペースにKnowledgeを追加でき、ユーザーはそれにアクセスして利用できます。ただし、ユーザーはワークスペース自体に直接アクセスすることはできません。"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "### Setting Up Your Knowledge Base",
+      "source_content_hash": "f0a2c1aacfa01c0b748b0b41aec1592b5ab8acc6d2fbb9ebcdeb8aa9bc00c2d2",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Knowledgeベースの設定方法"
+      }
+    },
+    {
+      "segment_id": "4c077b92",
+      "source_content": "1. **Navigate to the Knowledge Section**: This area is designed to be user-friendly and intuitive.\n2. **Add Entries**: Input information you want Sage WebUI to remember. It can be as specific or broad as you like.\n3. **Save and Apply**: Once saved, the Knowledge is accessible and ready to enhance your chat interactions.",
+      "source_content_hash": "b72fdc67ddc59e8fdfdd45cb19873208271fe752c95b4d5eb03fa89d9ad13b47",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Knowledgeセクションに移動**: この領域はユーザーフレンドリーで直感的に設計されています。\n2. **エントリを追加**: Sage WebUIに記憶させたい情報を入力します。具体的でも広範でも構いません。\n3. **保存して適用**: 保存すると、Knowledgeはアクセス可能になり、チャットインタラクションを強化する準備が整います。"
+      }
+    },
+    {
+      "segment_id": "6f930b2f",
+      "source_content": "## Summary",
+      "source_content_hash": "30ac03ff33731529441be8fbe52a3bd0d4c5ec830e806d54692168ebb7f98ada",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## まとめ"
+      }
+    },
+    {
+      "segment_id": "ddd2c7ae",
+      "source_content": "- The Knowledge section is like Sage WebUI's \"memory bank,\" where you can store data that you want it to remember and use.\n- **Use Knowledge to keep the system aware** of important details, ensuring a personalized chat experience.\n- You can **directly reference Knowledge in chats** to bring in stored data whenever you need it using '#' + name of the knowlege.",
+      "source_content_hash": "2bd4b8473bb42bbdc166448c3fb596b486b792b8cb0e9268f4590e3ff1d1f4c6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Knowledgeセクションは、Sage WebUIの「メモリーバンク」のようなもので、記憶させたいデータを保存できます。\n- **Knowledgeを使用してシステムに重要な詳細を認識させ**、パーソナライズされたチャット体験を確保します。\n- チャットで直接Knowledgeを参照するには、「#」＋Knowledgeの名前を使用します。"
+      }
+    },
+    {
+      "segment_id": "d3649a1e",
+      "source_content": "🌟 Remember, there’s always more to discover, so dive in and make Sage WebUI truly your own!",
+      "source_content_hash": "a02513a09fc5303b1d70024cae850882ea1fa8c848c224e692a622113b102a1a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🌟 さらに多くの発見があることを忘れずに、ぜひSage WebUIを自分だけのものにしてください！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/workspace/knowledge.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.808137+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "649887cfd8c82a1098da0493dc7a02f2a614c76d1de950bec87a879f2c5c69b0"
+  }
+}

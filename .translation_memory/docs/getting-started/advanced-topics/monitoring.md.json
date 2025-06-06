@@ -1,0 +1,282 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/advanced-topics/monitoring.md",
+  "source_file_content_hash": "3b802c04a1df7a18abc008b612719dfade757c4ce16d5d9046f43709e5d4f4f8",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 6\ntitle: \"📊 Monitoring\"\n---",
+      "source_content_hash": "7aae32f7d4b93d6a561f4b0d7ea6bf521e78b28fb6b82a021e4231dd2fccdc62",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# Monitoring Sage Open WebUI",
+      "source_content_hash": "8430524f083f8dbaac0c48a76be1866d52194768c367222a40e13c1815ef0298",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage Open WebUIの監視"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "Monitoring your Sage Open WebUI instance is crucial for ensuring reliable service and quickly identifying issues. This guide covers three levels of monitoring:",
+      "source_content_hash": "68e662d6989ae3294faf8c4f4fa032b2e9bc6e365f525f39a17f6cc605619aa5",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIインスタンスを監視することは、信頼性の高いサービスを確保し、問題を迅速に特定するために重要です。このガイドでは、以下の3つのレベルの監視について説明します："
+      }
+    },
+    {
+      "segment_id": "abcf54e3",
+      "source_content": "- Basic health checks for service availability\n- Model connectivity verification\n- Deep health checks with model response testing",
+      "source_content_hash": "4365c5da02399ed05be858be997d02499be59c8ed53f8df17964a41cfd8b2db8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- サービス可用性の基本的なヘルスチェック\n- モデル接続の検証\n- モデル応答テストによる詳細なヘルスチェック"
+      }
+    },
+    {
+      "segment_id": "ba4f48ff",
+      "source_content": "## Basic Health Check Endpoint",
+      "source_content_hash": "dfcd95b769badc01e365f6a7664cd2af0b0f4c7f292af71d4a7600de7fe2d21d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 基本的なヘルスチェックエンドポイント"
+      }
+    },
+    {
+      "segment_id": "cf898102",
+      "source_content": "Sage Open WebUI exposes a health check endpoint at `/health` that returns a 200 OK status when the service is running properly.",
+      "source_content_hash": "7b0beafe32d8786c0525102105335e7f1c7715c7c533781c267248c21e119ef4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIは、サービスが正常に動作している場合に200 OKステータスを返すヘルスチェックエンドポイントを`/health`で公開しています。"
+      }
+    },
+    {
+      "segment_id": "6e5ba8fb",
+      "source_content": "```bash\n   # No auth needed for this endpoint\n   curl https://your-sage-instance/health\n```",
+      "source_content_hash": "286a8373989e2aba5cf3037b0b183d9469c56aa6c29bfb581da4766599aac73d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6e5ba8fb"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Using Uptime Kuma",
+      "source_content_hash": "26e1cee0c0e07ba2d00f7f399cd0ee1082d50c4d06e03819ced7de960aa99017",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Uptime Kumaの使用"
+      }
+    },
+    {
+      "segment_id": "98cfbd53",
+      "source_content": "[Uptime Kuma](https://github.com/louislam/uptime-kuma) is a great, easy to use, open source, self-hosted uptime monitoring tool.",
+      "source_content_hash": "0e256b24aee9ed12fc2c8b06eb363451a07f17c51c11be1e09d71be556cbffdf",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Uptime Kuma](https://github.com/louislam/uptime-kuma)は、使いやすく、オープンソースで、セルフホスト型の稼働時間監視ツールです。"
+      }
+    },
+    {
+      "segment_id": "0cc488ed",
+      "source_content": "1. In your Uptime Kuma dashboard, click \"Add New Monitor\"\n2. Set the following configuration:\n   - Monitor Type: HTTP(s)\n   - Name: Sage Open WebUI\n   - URL: `http://your-sage-instance:8080/health`\n   - Monitoring Interval: 60 seconds (or your preferred interval)\n   - Retry count: 3 (recommended)",
+      "source_content_hash": "5d3e7ff3a49202311ece85b97d84f0e4f102ccf58a55b4f2d1fb6fd5ca5f18fd",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Uptime Kumaダッシュボードで「新しいモニターを追加」をクリック\n2. 以下の設定を行います：\n   - モニタータイプ：HTTP(s)\n   - 名前：Sage Open WebUI\n   - URL：`http://your-sage-instance:8080/health`\n   - 監視間隔：60秒（または希望の間隔）\n   - リトライ回数：3回（推奨）"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "The health check will verify:",
+      "source_content_hash": "1776739445c3093a16b4d8111b9f5506ba34a709b0553e6a4d7c335ddc2108da",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ヘルスチェックでは以下を確認します："
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "- The web server is responding\n- The application is running\n- Basic database connectivity",
+      "source_content_hash": "c0ae63ac9cabf7258fce218f93785b60b831a2eba95e6b5a845b97da7b3c4702",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Webサーバーが応答していること\n- アプリケーションが実行中であること\n- 基本的なデータベース接続"
+      }
+    },
+    {
+      "segment_id": "62a6890b",
+      "source_content": "## Sage Open WebUI Model Connectivity",
+      "source_content_hash": "83a3137fa564bc381b97aafa6e0fdfc44c89081608f40338f206da9ad518552d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage Open WebUIモデル接続性"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "To verify that Sage Open WebUI can successfully connect to and list your configured models, you can monitor the models endpoint. This endpoint requires authentication and checks Sage Open WebUI's ability to communicate with your model providers.",
+      "source_content_hash": "03aa4cfb8aae66b67606c26a1ded95e675db3c0d50b51d54a1fcb642121f79a6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIが設定済みのモデルに正常に接続およびリストできることを確認するには、モデルエンドポイントを監視します。このエンドポイントは認証が必要で、Sage Open WebUIがモデルプロバイダーと通信できることを確認します。"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "See [API documentation](https://docs.openwebui.com/getting-started/api-endpoints/#-retrieve-all-models) for more details about the models endpoint.",
+      "source_content_hash": "086d1140ee1a5f7e7d1ce20b77f311381c9a3f007e660d610d1b7f65d7f51f1d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルエンドポイントの詳細については、[APIドキュメント](https://docs.openwebui.com/getting-started/api-endpoints/#-retrieve-all-models)を参照してください。"
+      }
+    },
+    {
+      "segment_id": "4ec2920d",
+      "source_content": "```bash\n   # See steps below to get an API key\n   curl -H \"Authorization: Bearer sk-adfadsflkhasdflkasdflkh\" https://your-sage-instance/api/models\n```",
+      "source_content_hash": "7ce6327c5f2baf9fb9a59c22e87eb9d2a3366815c001fde346a06c6c2c51271f",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4ec2920d"
+      }
+    },
+    {
+      "segment_id": "11c76fcc",
+      "source_content": "### Authentication Setup",
+      "source_content_hash": "4e77f97fd3cfca33b3f26e643da7ef168439beb6308642980c2251ec602fb7fe",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 認証設定"
+      }
+    },
+    {
+      "segment_id": "310e47b7",
+      "source_content": "1. Enable API Keys (Admin required):\n   - Go to Admin Settings > General\n   - Enable the \"Enable API Key\" setting\n   - Save changes\n\n2. Get your API key [docs](https://docs.openwebui.com/getting-started/api-endpoints):\n   - (Optional), consider making a non-admin user for the monitoring API key\n   - Go to Settings > Account in Sage Open WebUI\n   - Generate a new API key specifically for monitoring\n   - Copy the API key for use in Uptime Kuma",
+      "source_content_hash": "9d584ac1f146c591671f7cd05842514c73a1395db49c7367065cad0f7e5354bc",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. APIキーを有効化（管理者権限が必要）：\n   - 管理者設定 > 一般に移動\n   - 「APIキーを有効化」設定を有効にする\n   - 変更を保存\n\n2. APIキーを取得[docs](https://docs.openwebui.com/getting-started/api-endpoints)：\n   - （オプション）監視用APIキーのために非管理者ユーザーを作成することを検討\n   - Sage Open WebUIの設定 > アカウントに移動\n   - 監視専用の新しいAPIキーを生成\n   - Uptime Kumaで使用するためにAPIキーをコピー"
+      }
+    },
+    {
+      "segment_id": "79ad944d",
+      "source_content": "Note: If you don't see the option to generate API keys in your Settings > Account, check with your administrator to ensure API keys are enabled.",
+      "source_content_hash": "37b9b0ad9e5fc31caf42ae8dfc454e7aa6bd43eb180f6b049bb9aeb98c9f4cac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "注：設定 > アカウントでAPIキーを生成するオプションが表示されない場合は、管理者に確認してAPIキーが有効になっていることを確認してください。"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### Using Uptime Kuma for Model Connectivity",
+      "source_content_hash": "fff75245f8a0004cd420cd4be0ab94dafb503c00cfd089e7c6789015c6046255",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### モデル接続性のためのUptime Kuma使用"
+      }
+    },
+    {
+      "segment_id": "645e08e3",
+      "source_content": "1. Create a new monitor in Uptime Kuma:\n   - Monitor Type: HTTP(s) - JSON Query\n   - Name: Sage Open WebUI Model Connectivity\n   - URL: `http://your-sage-instance:8080/api/models`\n   - Method: GET\n   - Expected Status Code: 200\n   - JSON Query: `$count(data[*])>0`\n   - Expected Value: `true`  \n   - Monitoring Interval: 300 seconds (5 minutes recommended)\n\n2. Configure Authentication:\n   - In the Headers section, add:\n     ```\n     {\n        \"Authorization\": \"Bearer sk-abc123adfsdfsdfsdfsfdsdf\"\n     }\n     ```\n   - Replace `YOUR_API_KEY` with the API key you generated",
+      "source_content_hash": "7287078f7b88c5782754c9a225980286b82f3e4e8f3a48a45286fb319b988c30",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Uptime Kumaで新しいモニターを作成：\n   - モニタータイプ：HTTP(s) - JSON Query\n   - 名前：Sage Open WebUIモデル接続性\n   - URL：`http://your-sage-instance:8080/api/models`\n   - メソッド：GET\n   - 期待されるステータスコード：200\n   - JSONクエリ：`$count(data[*])>0`\n   - 期待値：`true`  \n   - 監視間隔：300秒（5分推奨）\n\n2. 認証を設定：\n   - ヘッダーセクションで以下を追加：\n     ```\n     {\n        \"Authorization\": \"Bearer sk-abc123adfsdfsdfsdfsfdsdf\"\n     }\n     ```\n   - `YOUR_API_KEY`を生成したAPIキーに置き換え"
+      }
+    },
+    {
+      "segment_id": "8126f763",
+      "source_content": "Alternative JSON Queries:",
+      "source_content_hash": "f51b87775a798c4f3c47d2aed15009106a12fd94335909a6c61baeb9cabda38b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "代替JSONクエリ："
+      }
+    },
+    {
+      "segment_id": "26f7c825",
+      "source_content": "```\n# At least 1 models by ollama provider\n$count(data[owned_by='ollama'])>1\n\n# Check if specific model exists (returns true/false)\n$exists(data[id='gpt-4o'])\n\n# Check multiple models (returns true if ALL exist)\n$count(data[id in ['gpt-4o', 'gpt-4o-mini']]) = 2\n```",
+      "source_content_hash": "ce502383f354baeeba295ad277bd7c90e882f92ed217d544b318355c552687f8",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_26f7c825"
+      }
+    },
+    {
+      "segment_id": "2822251a",
+      "source_content": "You can test JSONata queries at [jsonata.org](https://try.jsonata.org/) to verify they work with your API response.",
+      "source_content_hash": "987a3fe1cb36605176b431ab6c899827a1c5abd62081cf9ea1d0ceedb6e29c37",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "JSONataクエリは[jsonata.org](https://try.jsonata.org/)でテストして、API応答で動作することを確認できます。"
+      }
+    },
+    {
+      "segment_id": "99d0dd9b",
+      "source_content": "## Model Response Testing",
+      "source_content_hash": "cf01149e5c06f1033bd369563481e7c0cb1ccc83e5106e17ddb510a0f949ef7f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## モデル応答テスト"
+      }
+    },
+    {
+      "segment_id": "d79a4831",
+      "source_content": "To verify that models can actually process requests, you can monitor the chat completions endpoint. This provides a deeper health check by ensuring models can generate responses.",
+      "source_content_hash": "535e6194d2066cbb61f804b059ede8e2f7e7741367b29cdb355a322286a7f0fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルが実際にリクエストを処理できることを確認するには、チャット補完エンドポイントを監視します。これにより、モデルが応答を生成できることを確認する詳細なヘルスチェックが提供されます。"
+      }
+    },
+    {
+      "segment_id": "64071bcc",
+      "source_content": "```bash\n# Test model response\ncurl -X POST https://your-sage-instance/api/chat/completions \\\n  -H \"Authorization: Bearer sk-adfadsflkhasdflkasdflkh\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"messages\": [{\"role\": \"user\", \"content\": \"Respond with the word HEALTHY\"}],\n    \"model\": \"llama3.1\",\n    \"temperature\": 0\n  }'\n```",
+      "source_content_hash": "6836e6ba0608dbf3abaee2659be3febb4afd40371e873cd8cf8eab3f16f35a90",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_64071bcc"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/advanced-topics/monitoring.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.810060+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "3b802c04a1df7a18abc008b612719dfade757c4ce16d5d9046f43709e5d4f4f8"
+  }
+}

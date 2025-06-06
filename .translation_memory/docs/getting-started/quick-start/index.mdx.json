@@ -1,0 +1,192 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/index.mdx",
+  "source_file_content_hash": "7684ad36e61ca153af80e94bb3e3e4ca86cf738ca463738046b2fc2a852dedaf",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"⏱️ Quick Start\"\n---",
+      "source_content_hash": "d80039029bd377771e63f8ca892cef1857df79f97beff552de2fb59e0b25ea46",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "4d1292be",
+      "source_content": "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';\nimport { TopBanners } from \"@site/src/components/TopBanners\";",
+      "source_content_hash": "a3351da21852d4c6fe2c02c3503f723a7f31dd44632e28a9254a25b239ff96b4",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4d1292be"
+      }
+    },
+    {
+      "segment_id": "73ddcfdf",
+      "source_content": "import DockerCompose from './tab-docker/DockerCompose.md';\nimport Podman from './tab-docker/Podman.md';\nimport ManualDocker from './tab-docker/ManualDocker.md';\nimport DockerSwarm from './tab-docker/DockerSwarm.md';\nimport DockerUpdating from './tab-docker/DockerUpdating.md';\nimport Helm from './tab-kubernetes/Helm.md';\nimport Kustomize from './tab-kubernetes/Kustomize.md';\nimport Venv from './tab-python/Venv.md';\nimport Uv from './tab-python/Uv.md';\nimport Conda from './tab-python/Conda.md';\nimport PythonUpdating from './tab-python/PythonUpdating.md';",
+      "source_content_hash": "922c3a0e59e18aa947fef31e84de1b9187ff084bec8a5db86595c0bfb1bd0814",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_73ddcfdf"
+      }
+    },
+    {
+      "segment_id": "5dfba1c3",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_5dfba1c3"
+      }
+    },
+    {
+      "segment_id": "6604338b",
+      "source_content": ":::info[**Important Note on User Roles and Privacy:**]\n\n- **Admin Creation:** The first account created on Sage WebUI gains **Administrator privileges**, controlling user management and system settings.\n- **User Registrations:** Subsequent sign-ups start with **Pending** status, requiring Administrator approval for access.\n- **Privacy and Data Security:** **All your data**, including login details, is **locally stored** on your device. Sage WebUI ensures **strict confidentiality** and **no external requests** for enhanced privacy and security.\n  - **All models are private by default.** Models must be explicitly shared via groups or by being made public. If a model is assigned to a group, only members of that group can see it. If a model is made public, anyone on the instance can see it.\n\n:::",
+      "source_content_hash": "5b14496380792fcd5f779e892cb66985afb1f024ff95b10391f039adab734340",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info[**ユーザーロールとプライバシーに関する重要事項:**]\n\n- **管理者アカウントの作成:** Sage WebUIで最初に作成されたアカウントは**管理者権限**を取得し、ユーザー管理とシステム設定を制御します。\n- **ユーザー登録:** その後サインアップしたアカウントは**保留中**ステータスで始まり、アクセスには管理者の承認が必要です。\n- **プライバシーとデータセキュリティ:** **すべてのデータ**（ログイン情報を含む）はデバイス上に**ローカルで保存**されます。Sage WebUIは**厳格な機密保持**と**外部へのリクエストなし**を保証し、プライバシーとセキュリティを強化します。\n  - **すべてのモデルはデフォルトで非公開です。** モデルはグループ経由で共有するか、公開設定にする必要があります。モデルがグループに割り当てられた場合、そのグループのメンバーのみが閲覧可能です。モデルが公開設定の場合、インスタンス上の誰もが閲覧できます。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "4daf5cdd",
+      "source_content": "Choose your preferred installation method below:",
+      "source_content_hash": "f32f84f3898ae602c7841448d5793b5b2565f86042d627fa8f45010e16cc39f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下のインストール方法からお選びください:"
+      }
+    },
+    {
+      "segment_id": "fc8eadc3",
+      "source_content": "- **Docker:** **Officially supported and recommended for most users**\n- **Python:** Suitable for low-resource environments or those wanting a manual setup\n- **Kubernetes:** Ideal for enterprise deployments that require scaling and orchestration",
+      "source_content_hash": "4f7cc138544144426733d2cb17af1e40b2fe30dcd5b2dfebf370fe88a6a27052",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **Docker:** **公式サポートされており、ほとんどのユーザーに推奨**\n- **Python:** リソースが限られた環境や手動セットアップを希望する場合に適しています\n- **Kubernetes:** スケーリングとオーケストレーションが必要なエンタープライズ環境に最適"
+      }
+    },
+    {
+      "segment_id": "1641af73",
+      "source_content": "<Tabs>\n  <TabItem value=\"docker\" label=\"Docker\">\n    <Tabs>\n      <TabItem value=\"docker\" label=\"Docker\">\n        <div className='mt-5'>\n          <ManualDocker />\n          <DockerUpdating />\n        </div>\n      </TabItem>\n\n      <TabItem value=\"compose\" label=\"Docker Compose\">\n        <div className='mt-5'>\n          <DockerCompose />\n        </div>\n      </TabItem>\n\n      <TabItem value=\"podman\" label=\"Podman\">\n        <div className='mt-5'>\n          <Podman />\n        </div>\n      </TabItem>\n\n      <TabItem value=\"swarm\" label=\"Docker Swarm\">\n        <div className='mt-5'>\n          <DockerSwarm />\n        </div>\n      </TabItem>\n    </Tabs>\n\n  </TabItem>\n  <TabItem value=\"python\" label=\"Python\">\n    <Tabs>\n      <TabItem value=\"uv\" label=\"uv\">\n        <div className='mt-5'>\n          <Uv />\n        </div>\n        <PythonUpdating />\n      </TabItem>\n\n\n      <TabItem value=\"conda\" label=\"Conda\">\n        <div className='mt-5'>\n          <Conda />\n        </div>\n        <PythonUpdating />\n      </TabItem>\n\n      <TabItem value=\"venv\" label=\"Venv\">\n        <div className='mt-5'>\n          <Venv />\n        </div>\n        <PythonUpdating />\n\n      </TabItem>\n\n\n      <TabItem value=\"development\" label=\"Development\">\n        <div className='mt-5'>\n          <h3>Development Setup</h3>\n          <p>\n            For developers who want to contribute, check the Development Guide in <a href=\"/getting-started/advanced-topics\">Advanced Topics</a>.\n          </p>\n        </div>\n      </TabItem>\n\n\n    </Tabs>\n  </TabItem>\n\n  <TabItem value=\"kubernetes\" label=\"Kubernetes\">\n    <Tabs>\n      <TabItem value=\"helm\" label=\"Helm\">\n        <Helm />\n      </TabItem>\n\n      <TabItem value=\"kustomize\" label=\"Kustomize\">\n        <Kustomize />\n      </TabItem>\n    </Tabs>\n  </TabItem>\n\n\n  <TabItem value=\"third-party\" label=\"Third Party\">\n    <Tabs>\n      <TabItem value=\"pinokio-computer\" label=\"Pinokio.computer\">\n        ### Pinokio.computer Installation\n\n        For installation via Pinokio.computer, please visit their website:\n\n        [https://pinokio.computer/](https://pinokio.computer/)\n\n        Support for this installation method is provided through their website.\n      </TabItem>\n    </Tabs>\n\n    ### Additional Third-Party Integrations\n\n    *(Add information about third-party integrations as they become available.)*\n  </TabItem>\n</Tabs>",
+      "source_content_hash": "09fa66df1e3fe0bb637fb7bae4ea1a8ad74406113766e050c96345dc0ec30b95",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_1641af73"
+      }
+    },
+    {
+      "segment_id": "fff17ff8",
+      "source_content": "## Next Steps",
+      "source_content_hash": "94792dd5969e771cc2c3d1210355ca64b0d1b19f0b908b4aec6b19ca3dbde26a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 次のステップ"
+      }
+    },
+    {
+      "segment_id": "8664ed0b",
+      "source_content": "After installing, visit:",
+      "source_content_hash": "c10df68a2a2a56e1a2706b8a4ced36116d1ab3ba347658a441a18df343b1a2d4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インストール後は以下にアクセスしてください:"
+      }
+    },
+    {
+      "segment_id": "6892c8d2",
+      "source_content": "- [http://localhost:3000](http://localhost:3000) to access Sage WebUI.\n- or [http://localhost:8080/](http://localhost:8080/) when using a Python deployment.",
+      "source_content_hash": "0f0a5e98f7e4cfc58f325dbe1778ab5c48349ae0a08f70c9b5f5397b035a039c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [http://localhost:3000](http://localhost:3000) Sage WebUIにアクセスします。\n- またはPythonデプロイメントの場合は [http://localhost:8080/](http://localhost:8080/) にアクセスします。"
+      }
+    },
+    {
+      "segment_id": "f7e6e884",
+      "source_content": "You are now ready to start using Sage WebUI!",
+      "source_content_hash": "1c53330cfcdff2bec8353083bd2dac35aa132a8dc5d0cd80bac41b2847299d56",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これでSage WebUIの使用を開始できます！"
+      }
+    },
+    {
+      "segment_id": "35353302",
+      "source_content": "## Using Sage WebUI with Ollama",
+      "source_content_hash": "0f08b77c389f4ed6edf3e66c30cd56c26847f0d2b505e123a2981cc75306ad41",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIとOllamaの連携"
+      }
+    },
+    {
+      "segment_id": "ad3e22c6",
+      "source_content": "If you're using Sage WebUI with Ollama, be sure to check out our [Starting with Ollama Guide](/getting-started/quick-start/starting-with-ollama) to learn how to manage your Ollama instances with Sage WebUI.",
+      "source_content_hash": "53291112221a981f4d830226888f6f90b9ce27b93b22e970a1c88c679f3abc82",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIをOllamaと連携させる場合は、[Ollama開始ガイド](/getting-started/quick-start/starting-with-ollama)を参照して、Sage WebUIでOllamaインスタンスを管理する方法を学んでください。"
+      }
+    },
+    {
+      "segment_id": "671cbf7c",
+      "source_content": "## Join the Community",
+      "source_content_hash": "377bfadc260d0e3361b718b17f4adf4177d3e0a9941c0ff1e2ac4ff4ad9d352a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## コミュニティに参加"
+      }
+    },
+    {
+      "segment_id": "4c787c52",
+      "source_content": "Need help? Have questions? Join our community:",
+      "source_content_hash": "306c0a0323332c15ed0e86b2d9eecffdf8f094331fdc72235c99edd65369b613",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ヘルプが必要ですか？質問がありますか？コミュニティに参加しましょう:"
+      }
+    },
+    {
+      "segment_id": "e99d73d3",
+      "source_content": "- [Sage WebUI Discord](https://discord.com/channels/1074411230040703046/1074411231030550632)\n- [GitHub Issues](https://github.com/Startr/AI-WEB-openwebui/issues)",
+      "source_content_hash": "811ca0da0aba8aebd2bb6253c3c8b9cfcde35c1a8a171ce4e734c836b97bdad7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- [Sage WebUI Discord](https://discord.com/channels/1074411230040703046/1074411231030550632)\n- [GitHub Issues](https://github.com/Startr/AI-WEB-openwebui/issues)"
+      }
+    },
+    {
+      "segment_id": "a8f09c71",
+      "source_content": "Stay updated with the latest features, troubleshooting tips, and announcements!",
+      "source_content_hash": "824f677f06006a46e3509161e498d68587fbc02228569ea21341c3d44ea963de",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "最新機能、トラブルシューティングのヒント、アナウンスをチェックしましょう！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/index.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.803500+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "7684ad36e61ca153af80e94bb3e3e4ca86cf738ca463738046b2fc2a852dedaf"
+  }
+}

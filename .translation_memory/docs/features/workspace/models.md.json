@@ -1,0 +1,162 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/workspace/models.md",
+  "source_file_content_hash": "991cf0cd34c734900977f48fb13af0d31b2ab193997dfb9e597fe3c3ef5f3f19",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\ntitle: \"🤖 Models\"\n---",
+      "source_content_hash": "994b07d97659af64869c89806df5c8782488774b53d90c8a7f042070f56e5ce1",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "The `Models` section of the `Workspace` within Sage WebUI is a powerful tool that allows you to create and manage custom models tailored to specific purposes. This section serves as a central hub for all your modelfiles, providing a range of features to edit, clone, share, export, and hide your models.",
+      "source_content_hash": "c47f92ff2287196fd36fbaae0f894acd95d3be12fa40dccad8e078a7adbd1363",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIの`Workspace`内にある`Models`セクションは、特定の目的に合わせてカスタムモデルを作成・管理できる強力なツールです。このセクションはすべてのモデルファイルの中心的なハブとして機能し、編集、クローン作成、共有、エクスポート、非表示化など様々な機能を提供します。"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "### Modelfile Management",
+      "source_content_hash": "b4e56da4598aa4624d092038f5eb087cac8be1ca9477765bff04b0aae4d24a26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### モデルファイル管理"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "From the `Models` section, you can perform the following actions on your modelfiles:",
+      "source_content_hash": "0ba040edcaacf878073b68ad6763fe0dda83ad43fe574de1da9532c684b5f8af",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`Models`セクションでは、モデルファイルに対して以下の操作が可能です："
+      }
+    },
+    {
+      "segment_id": "143e51c1",
+      "source_content": "* **Edit**: Dive into the details of your modelfile and make changes to its character and more.\n* **Clone**: Create a copy of a modelfile, which will be appended with `-clone` to the cloned `Model ID`. Note that you cannot clone a base model; you must create a model first before cloning it.\n* **Share**: Share your modelfile with the Sage WebUI community by clicking the `Share` button, which will redirect you to [https://sage.education/models/create](https://sage.education/models/create).\n* **Export**: Download the modelfile's `.json` export to your PC.\n* **Hide**: Hide the modelfile from the model selector dropdown within chats.",
+      "source_content_hash": "499110a3acd5269a39a7f817364aa6f65dc7702dcf6b5f52725b5399580309f3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **編集**: モデルファイルの詳細にアクセスし、キャラクター設定などを変更できます。\n* **クローン作成**: モデルファイルのコピーを作成します。クローンされた`Model ID`には`-clone`が追加されます。なお、ベースモデルはクローンできません。まずモデルを作成してからクローンする必要があります。\n* **共有**: `Share`ボタンをクリックしてモデルファイルをSage WebUIコミュニティと共有できます。クリックすると[https://sage.education/models/create](https://sage.education/models/create)にリダイレクトされます。\n* **エクスポート**: モデルファイルの`.json`形式のエクスポートをPCにダウンロードできます。\n* **非表示化**: チャット内のモデルセレクタードロップダウンからモデルファイルを非表示にできます。"
+      }
+    },
+    {
+      "segment_id": "d350c018",
+      "source_content": "### Modelfile Editing",
+      "source_content_hash": "42582d725b9a754e83e150e70a6ebbdd73bdc3b376425868c11e9130f0e45a2e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### モデルファイル編集"
+      }
+    },
+    {
+      "segment_id": "1acb9a05",
+      "source_content": "When editing a modelfile, you can customize the following settings:",
+      "source_content_hash": "ba787c43af2d5c668b99b8645f1b35240747be435dcaefc9b8eaa67bd96e9d7f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルファイルを編集する際、以下の設定をカスタマイズできます："
+      }
+    },
+    {
+      "segment_id": "da23c906",
+      "source_content": "* **Avatar Photo**: Upload an avatar photo to represent your modelfile.\n* **Model Name**: Change the name of your modelfile.\n* **System Prompt**: Provide an optional system prompt for your modelfile.\n* **Model Parameters**: Adjust the parameters of your modelfile.\n* **Prompt Suggestions**: Add prompts that will be displayed on a fresh new chat page.\n* **Documents**: Add documents to the modelfile (always RAG [Retrieval Augmented Generation]).\n* **Tools, Filters, and Actions**: Select the tools, filters, and actions that will be available to the modelfile.\n* **Vision**: Toggle to enable `Vision` for multi-modals.\n* **Tags**: Add tags to the modelfile that will be displayed beside the model name in the model selector dropdown.",
+      "source_content_hash": "d4f613809758af92e0c898d7cb11c43b036c6ebb80a0ce37127e45fd64a79c33",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **アバター写真**: モデルファイルを表すアバター写真をアップロードできます。\n* **モデル名**: モデルファイルの名前を変更できます。\n* **システムプロンプト**: モデルファイル用のオプションのシステムプロンプトを設定できます。\n* **モデルパラメータ**: モデルファイルのパラメータを調整できます。\n* **プロンプト候補**: 新規チャットページに表示されるプロンプトを追加できます。\n* **ドキュメント**: モデルファイルにドキュメントを追加できます（常にRAG [Retrieval Augmented Generation]を使用）。\n* **ツール、フィルター、アクション**: モデルファイルで利用可能なツール、フィルター、アクションを選択できます。\n* **ビジョン**: マルチモーダル機能の`Vision`を有効/無効に切り替えられます。\n* **タグ**: モデルセレクタードロップダウンでモデル名の横に表示されるタグを追加できます。"
+      }
+    },
+    {
+      "segment_id": "b25f21be",
+      "source_content": "### Model Discovery and Import/Export",
+      "source_content_hash": "4198b74ec0b5370bad3cf5bdb975c447a5b9bfa6a181a82e73a77edde8dc2975",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### モデルの検索とインポート/エクスポート"
+      }
+    },
+    {
+      "segment_id": "7499a4e7",
+      "source_content": "The `Models` section also includes features for importing and exporting models:",
+      "source_content_hash": "9089aafeaefb334e03cc2acbaebe5cf628d2a9797ec7e9e33d3e4737faaea57d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`Models`セクションには、モデルのインポートとエクスポート機能も含まれています："
+      }
+    },
+    {
+      "segment_id": "7a2e981c",
+      "source_content": "* **Import Models**: Use this button to import models from a .json file or other sources.\n* **Export Models**: Use this button to export all your modelfiles in a single .json file.",
+      "source_content_hash": "3d3552269d3e4fd1e4066236173f417d92f800eab6c0e86570ea286696827699",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **モデルをインポート**: このボタンを使用して、.jsonファイルやその他のソースからモデルをインポートできます。\n* **モデルをエクスポート**: このボタンを使用して、すべてのモデルファイルを単一の.jsonファイルにエクスポートできます。"
+      }
+    },
+    {
+      "segment_id": "c3a738de",
+      "source_content": "To download models, navigate to the **Ollama Settings** in the Connections tab.\nAlternatively, you can also download models directly by typing a command like `ollama run hf.co/[model creator]/[model name]` in the model selection dropdown.\nThis action will create a button labeled \"Pull [Model Name]\" for downloading.",
+      "source_content_hash": "c718dd4f2c260a13e8a2eb4bdc66e9fc8e27bad36bf4105fd78aae6eaa2cdbb1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルをダウンロードするには、**Connections**タブの**Ollama Settings**に移動します。\nまたは、モデルセレクタードロップダウンで`ollama run hf.co/[モデル作成者]/[モデル名]`のようなコマンドを直接入力することもできます。\nこの操作により、「Pull [モデル名]」というラベルの付いたダウンロードボタンが作成されます。"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "### Model Switching",
+      "source_content_hash": "2e5002f4fe7f50bfdd3d8211b9ec13fd9dcb1007dc301ba78ef37b0da8cb9027",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### モデル切り替え"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "**Example**: Switching between **Mistral**, **LLaVA**, and **GPT-3.5** in a Multi-Stage Task",
+      "source_content_hash": "749021c87ced226d8085338a940162f964d0d45fb8b9f406244cf341fd48b688",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**例**: マルチステージタスクでの**Mistral**、**LLaVA**、**GPT-3.5**の切り替え"
+      }
+    },
+    {
+      "segment_id": "b93ddfac",
+      "source_content": "* **Scenario**: A multi-stage conversation involves different task types, such as starting with a simple FAQ, interpreting an image, and then generating a creative response.\n* **Reason for Switching**: The user can leverage each model's specific strengths for each stage:\n  * **Mistral** for general questions to reduce computation time and costs.\n  * **LLaVA** for visual tasks to gain insights from image-based data.\n  * **GPT-3.5** for generating more sophisticated and nuanced language output.\n* **Process**: The user switches between models, depending on the task type, to maximize efficiency and response quality.\n\n    **How To**:\n    1. **Select the Model**: Within the chat interface, select the desired models from the model switcher dropdown. You can select up to two models simultaneously, and both responses will be generated. You can then navigate between them by using the back and forth arrows.\n    2. **Context Preservation**: Sage WebUI retains the conversation context across model switches, allowing smooth transitions.",
+      "source_content_hash": "58d22ce3ba316360ddd573381d4bb92800a39860ee26af90336d506a79dc126c",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* **シナリオ**: マルチステージの会話では、FAQから始まり、画像の解釈、創造的なレスポンスの生成など、異なるタイプのタスクが含まれる場合があります。\n* **切り替え理由**: 各ステージごとに各モデルの強みを活用できます：\n  * **Mistral**: 一般的な質問に使用し、計算時間とコストを削減。\n  * **LLaVA**: 視覚タスクに使用し、画像ベースのデータから洞察を得る。\n  * **GPT-3.5**: より洗練されたニュアンスのある言語出力を生成。\n* **プロセス**: ユーザーはタスクの種類に応じてモデルを切り替え、効率とレスポンス品質を最大化します。\n\n    **操作方法**:\n    1. **モデルを選択**: チャットインターフェース内で、モデルスイッチャードロップダウンから目的のモデルを選択します。最大2つのモデルを同時に選択でき、両方のレスポンスが生成されます。前後の矢印を使用してレスポンス間を移動できます。\n    2. **コンテキスト保持**: Sage WebUIはモデル切り替え後も会話のコンテキストを保持するため、スムーズな移行が可能です。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/workspace/models.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.809839+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "991cf0cd34c734900977f48fb13af0d31b2ab193997dfb9e597fe3c3ef5f3f19"
+  }
+}

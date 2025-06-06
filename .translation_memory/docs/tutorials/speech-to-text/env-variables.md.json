@@ -1,0 +1,72 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/speech-to-text/env-variables.md",
+  "source_file_content_hash": "b33cf51101f3b3241ee427ffae278791f117bfaabdfb9b098077c98420d71499",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 2\ntitle: \"Environment Variables\"\n---",
+      "source_content_hash": "32688a779266aa82549f28d88ee72954e55d8296f57608337eba6f28424c3bcf",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "a703643c",
+      "source_content": "# Environment Variables List",
+      "source_content_hash": "04f3e263e52e06088a41e36057f35a796f7e65f6dcf315bbfa7db1ee0871d580",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 環境変数一覧"
+      }
+    },
+    {
+      "segment_id": "6cae1da3",
+      "source_content": ":::info\nFor a complete list of all Sage Open WebUI environment variables, see the [Environment Variable Configuration](/getting-started/env-configuration) page.\n:::",
+      "source_content_hash": "a3bb18e89ec297a2cc80c3337ca92f3e331310584bc47f22df064a358fe3e533",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nSage Open WebUIのすべての環境変数の完全なリストについては、[環境変数設定](/getting-started/env-configuration)ページを参照してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "The following is a summary of the environment variables for speech to text (STT).",
+      "source_content_hash": "3ca12472bfba7f9fb045c0eec05478490243b97dc42a1867ccd3c15268193293",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以下は音声テキスト変換（STT）に関する環境変数の概要です。"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "# Environment Variables For Speech To Text (STT)",
+      "source_content_hash": "fc03b8fa5cc3a32bc448f89bf40923f455b2d2fff2f4c79d7747a27fea2bf10d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 音声テキスト変換（STT）の環境変数"
+      }
+    },
+    {
+      "segment_id": "3be30365",
+      "source_content": "| Variable | Description |\n|----------|-------------|\n| `WHISPER_MODEL` | Sets the Whisper model to use for local Speech-to-Text |\n| `WHISPER_MODEL_DIR` | Specifies the directory to store Whisper model files |\n| `AUDIO_STT_ENGINE` | Specifies the Speech-to-Text engine to use (empty for local Whisper, or `openai`) |\n| `AUDIO_STT_MODEL` | Specifies the Speech-to-Text model for OpenAI-compatible endpoints |\n| `AUDIO_STT_OPENAI_API_BASE_URL` | Sets the OpenAI-compatible base URL for Speech-to-Text |\n| `AUDIO_STT_OPENAI_API_KEY` | Sets the OpenAI API key for Speech-to-Text |",
+      "source_content_hash": "bb2d881280eed9671ed3aedb786165f09ba1c26ed59ac633a8e843435fe44e7d",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3be30365"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/speech-to-text/env-variables.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.781872+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "b33cf51101f3b3241ee427ffae278791f117bfaabdfb9b098077c98420d71499"
+  }
+}

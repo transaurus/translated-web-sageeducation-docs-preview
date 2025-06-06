@@ -1,0 +1,202 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/features/code-execution/mermaid.md",
+  "source_file_content_hash": "0fde680ae8385ffd357e49a865e7e59a7d6e2be74d04981a349760cfa205bdd0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 3\ntitle: \"🌊 MermaidJS Rendering\"\n---",
+      "source_content_hash": "b380b4cf0481da77250f4f2377fd8df40c6409ce33124ad93e96bc86ce0707e0",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# 🌊 MermaidJS Rendering Support in Sage WebUI",
+      "source_content_hash": "05639fffe8627b3d25fac46e5f217748a5bfc9b82bcdf7c015174b879f9aa677",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# 🌊 Sage WebUIにおけるMermaidJSレンダリングサポート"
+      }
+    },
+    {
+      "segment_id": "cc3c868d",
+      "source_content": "## Overview",
+      "source_content_hash": "7337f3d0aa29e9a82b8f1650b743a98eef90794631fa763a319686e69c546821",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 概要"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "Sage WebUI supports rendering of visually appealing MermaidJS diagrams, flowcharts, pie charts and more, directly within the chat interface. MermaidJS is a powerful tool for visualizing complex information and ideas, and when paired with the capabilities of a large language model (LLM), it can be a powerful tool for generating and exploring new ideas.",
+      "source_content_hash": "03a496af457d094a29fc6406a96df93eb31ba55f3a8ad147f7df85b1130b67ef",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、チャットインターフェース内で直接視覚的に魅力的なMermaidJSダイアグラム、フローチャート、円グラフなどをレンダリングする機能をサポートしています。MermaidJSは複雑な情報やアイデアを可視化する強力なツールであり、大規模言語モデル（LLM）の機能と組み合わせることで、新しいアイデアを生成・探求する強力なツールとなります。"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Using MermaidJS in Sage WebUI",
+      "source_content_hash": "1c39dab91983004d0b4ebc1a9e6c722c510448fed68445db36a6049e4fa06554",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIでのMermaidJSの使用方法"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "To generate a MermaidJS diagram, simply ask an LLM within any chat to create a diagram or chart using MermaidJS. For example, you can ask the LLM to:",
+      "source_content_hash": "d50a72730e99b7a45a755f2ab8de6623291f0e670717418504c0b7528e6cde25",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "MermaidJSダイアグラムを生成するには、任意のチャット内でLLMにMermaidJSを使用した図表作成を依頼します。例えば以下のようなリクエストが可能です："
+      }
+    },
+    {
+      "segment_id": "4ddf6ae7",
+      "source_content": "* \"Create a flowchart for a simple decision-making process for me using Mermaid. Explain how the flowchart works.\"\n* \"Use Mermaid to visualize a decision tree to determine whether it's suitable to go for a walk outside.\"",
+      "source_content_hash": "4a13706ddf81878db25efdacf5a8d23d8d64e40878f908d74e3deba4fbe4aba7",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* 「Mermaidを使用してシンプルな意思決定プロセスのフローチャートを作成してください。フローチャートの仕組みも説明してください」\n* 「外に出て散歩するのが適切かどうかを判断する決定木をMermaidで可視化してください」"
+      }
+    },
+    {
+      "segment_id": "f6168993",
+      "source_content": "Note that for the LLM's response to be rendered correctly, it must begin with the word `mermaid` followed by the MermaidJS code. You can reference the [MermaidJS documentation](https://mermaid.js.org/intro/) to ensure the syntax is correct and provide structured prompts to the LLM to guide it towards generating better MermaidJS syntax.",
+      "source_content_hash": "7e430ddbd0a925d90f45bf3944730790b7ec498840ecba23ad81e6c3deb10d95",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "LLMの応答が正しくレンダリングされるためには、`mermaid`という単語で始まり、その後にMermaidJSコードが続く形式である必要があります。[MermaidJSドキュメント](https://mermaid.js.org/intro/)を参照して構文が正しいことを確認し、LLMがより良いMermaidJS構文を生成できるよう構造化されたプロンプトを提供できます。"
+      }
+    },
+    {
+      "segment_id": "418617bd",
+      "source_content": "## Visualizing MermaidJS Code Directly in the Chat",
+      "source_content_hash": "0bada4aefd4e0d55e079c5b2204744ef41b58f75a76108139228f575a8148a99",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## チャット内でのMermaidJSコードの直接可視化"
+      }
+    },
+    {
+      "segment_id": "2fdadb08",
+      "source_content": "When you request a MermaidJS visualization, the Large Language Model (LLM) will generate the necessary code. Sage WebUI will automatically render the visualization directly within the chat interface, as long as the code uses valid MermaidJS syntax.",
+      "source_content_hash": "37b00dad215ebdcae46d8038ec652ac971a5264c43852048cde7bc620318c177",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "MermaidJS可視化をリクエストすると、大規模言語モデル（LLM）が必要なコードを生成します。Sage WebUIは、コードが有効なMermaidJS構文を使用している限り、チャットインターフェース内で直接可視化を自動的にレンダリングします。"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "If the model generates MermaidJS syntax, but the visualization does not render, it usually indicates a syntax error in the code. Don't worry – you'll be notified of any errors once the response has been fully generated. If this happens, try referencing the [MermaidJS documentation](https://mermaid.js.org/intro/) to identify the issue and revise the prompt accordingly.",
+      "source_content_hash": "d72c7a79d5403a670e7663b4aa576f70963fe293a0e112bd5b58769219cfa636",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "モデルがMermaidJS構文を生成しても可視化がレンダリングされない場合、通常はコード内に構文エラーがあることを示しています。心配ありません - 応答が完全に生成されるとエラーが通知されます。このような場合は、[MermaidJSドキュメント](https://mermaid.js.org/intro/)を参照して問題を特定し、プロンプトを修正してください。"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "## Interacting with Your Visualization",
+      "source_content_hash": "0a5781f5c12938a56d86606b5d12d86a48be781ddf024f65303bfdcd386bbe3a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 可視化とのインタラクション"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "Once your visualization is displayed, you can:",
+      "source_content_hash": "7bc20f35c68046eb4e37180787a27c504acf766f093dfb21c96a72b6b71cdc81",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "可視化が表示されたら、以下の操作が可能です："
+      }
+    },
+    {
+      "segment_id": "c6dea11f",
+      "source_content": "* Zoom in and out to examine it more closely.\n* Copy the original MermaidJS code used to generate the visualization by clicking the copy button at the top-right corner of the display area.",
+      "source_content_hash": "85359790873bbcd73a41779e359c7692114f5deae0b364a15136f4f3c594cd27",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "* ズームイン/アウトして詳細を確認\n* 表示領域の右上にあるコピーボタンをクリックして、可視化生成に使用された元のMermaidJSコードをコピー"
+      }
+    },
+    {
+      "segment_id": "a1b3d8cb",
+      "source_content": "### Example",
+      "source_content_hash": "b9b5449b4e5cc2bf7390d309862a49a3dbf04030ec7257d36932125bd4e08256",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 例"
+      }
+    },
+    {
+      "segment_id": "076d64d1",
+      "source_content": "```mermaid\ngraph TD;\n  A-->B;\n  B-->C{Decision};\n  C--Yes-->D;\n  C--No-->E;\n  D-->F;\n  E-->F;\n```",
+      "source_content_hash": "a61d98640bf982c86a07073995d13d5712e4e67a3803962231d14f86265f31de",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_076d64d1"
+      }
+    },
+    {
+      "segment_id": "8af76f3d",
+      "source_content": "This will generate a flowchart like the following:",
+      "source_content_hash": "ae812441e766b7b27943c9ba58901f41df0650d12929cd946475bac785c621e3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これにより以下のようなフローチャートが生成されます："
+      }
+    },
+    {
+      "segment_id": "48ec8149",
+      "source_content": "```markdown\n startAncestor [ start ]\nA[A] --> B[B]\nB --> C[Decision]\nC -->| Yes | D[D]\nC -->| No  | E[E]\nD --> F[F]\nE --> F[F]\n```",
+      "source_content_hash": "4a3a0968182161cfa55feab6039721cd3dc5b7b88d5ba872f19ece1754eba4be",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_48ec8149"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "Experimenting with different types of diagrams and charts can help you develop a more nuanced understanding of how to effectively leverage MermaidJS within Sage WebUI. For smaller models, consider referencing the [MermaidJS documentation](https://mermaid.js.org/intro/) to provide guidance for the LLM, or have it summarize the documentation into comprehensive notes or a system prompt. By following these guidelines and exploring the capabilities of MermaidJS, you can unlock the full potential of this powerful tool in Sage WebUI.",
+      "source_content_hash": "4fe076f1c1e1f6bf96a40121a22b1efd91c33d5aa688651b9a63a8618f755d0d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "さまざまなタイプのダイアグラムやチャートを試すことで、Sage WebUI内でMermaidJSを効果的に活用する方法についてより深い理解を得ることができます。小規模なモデルの場合は、[MermaidJSドキュメント](https://mermaid.js.org/intro/)を参照してLLMのガイダンスとして提供したり、ドキュメントを包括的なノートやシステムプロンプトに要約させたりすることを検討してください。これらのガイドラインに従い、MermaidJSの機能を探求することで、Sage WebUIにおけるこの強力なツールの可能性を最大限に引き出すことができます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/features/code-execution/mermaid.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.805887+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "0fde680ae8385ffd357e49a865e7e59a7d6e2be74d04981a349760cfa205bdd0"
+  }
+}

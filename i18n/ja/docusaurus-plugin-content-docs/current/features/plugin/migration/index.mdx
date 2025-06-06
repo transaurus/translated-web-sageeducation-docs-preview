@@ -1,0 +1,262 @@
+---
+sidebar_position: 3
+title: "🚚 Migrating Tools & Functions: 0.4 to 0.5"
+---
+
+# 🚚 移行ガイド: Sage WebUI 0.4 から 0.5 へ
+
+Sage WebUI 0.5 移行ガイドへようこそ！既存のプロジェクトで作業中または新規プロジェクトを構築中の方へ、このガイドでは **バージョン 0.4 から 0.5 への主要な変更点** を解説し、Functions のアップグレードをスムーズに行うためのロードマップを提供します。この移行をできるだけ簡単に進めましょう！😊
+
+---
+
+## 🧐 変更点とその理由
+
+Sage WebUI 0.5 では、プロジェクトを **よりシンプルで統一性がありスケーラブル** にするためにアーキテクチャを刷新しました。以下がその全体像です：
+
+- **旧アーキテクチャ:** 🎯 以前の Sage WebUI は **サブアプリケーションアーキテクチャ** で構築されており、各アプリ（例: `ollama`, `openai`）が独立した FastAPI アプリケーションでした。これにより、アプリ管理における断片化と余分な複雑さが生じていました。
+- **新アーキテクチャ:** 🚀 バージョン 0.5 では、複数の **ルーター** を持つ **単一の FastAPI アプリ** に移行しました。これにより、より良い組織化、集中化されたフロー、冗長性の削減が実現されます。
+
+### 主な変更点:
+
+以下に変更点の概要を示します：
+
+1. **アプリがルーターに移動しました。**
+   - 以前: `open_webui.apps`
+   - 現在: `open_webui.routers`
+
+2. **メインアプリの構造が簡素化されました。**
+   - 旧 `open_webui.apps.webui` は `open_webui.main` に変わり、プロジェクトの中心的なエントリーポイントとなりました。
+
+3. **統一された API エンドポイント**
+   - Sage WebUI 0.5 では、`ollama` や `openai` のようなモデルごとの個別の関数を置き換える **統一関数** `chat_completion` が `open_webui.main` に導入されました。これにより、一貫性のある合理化された API 体験が提供されます。ただし、これらの個別関数の **直接の後継** は `open_webui.utils.chat` の `generate_chat_completion` です。追加の解析（例: ファイル、ツール、その他）を処理せずに軽量な POST リクエストを希望する場合、このユーティリティ関数が適しています。
+
+#### 例:
+
+```python
+# Full API flow with parsing (new function):
+from open_webui.main import chat_completion
+
+# Lightweight, direct POST request (direct successor):
+from open_webui.utils.chat import generate_chat_completion
+```
+
+ユースケースに最適なアプローチを選択してください！
+
+4. **関数シグネチャが更新されました。**
+   - 関数シグネチャは新しい形式に準拠し、`request` オブジェクトが必要になりました。
+   - `request` オブジェクトは、関数シグネチャ内の `__request__` パラメータを使用して取得できます。以下に例を示します：
+
+```python
+class Pipe:
+    def __init__(self):
+        pass
+
+    async def pipe(
+        self,
+        body: dict,
+        __user__: dict,
+        __request__: Request, # New parameter
+    ) -> str:
+        # Write your function here
+```
+
+📌 **これらの変更を行った理由:**
+
+- コードベースを簡素化し、拡張と保守を容易にするため。
+- API を統一し、開発者体験を合理化するため。
+- 冗長な要素を統合することでパフォーマンスを向上させるため。
+
+---
+
+## ✅ ステップバイステップ移行ガイド
+
+このガイドに従ってプロジェクトをスムーズに更新してください。
+
+---
+
+### 🔄 1. `apps` から `routers` への移行
+
+すべてのアプリは `open_webui.routers` の下に名前が変更され、移動しました。これはコードベース内のインポートに影響します。
+
+インポートパスの簡単な変更：
+
+| **Old Path**                      | **New Path**                      |
+|-----------------------------------|-----------------------------------|
+| `open_webui.apps.ollama`          | `open_webui.routers.ollama`       |
+| `open_webui.apps.openai`          | `open_webui.routers.openai`       |
+| `open_webui.apps.audio`           | `open_webui.routers.audio`        |
+| `open_webui.apps.retrieval`       | `open_webui.routers.retrieval`    |
+| `open_webui.apps.webui`           | `open_webui.main`                 |
+
+### 📜 重要な例
+
+メインアプリ (`webui`) の特別なケースを明確にするため、以下に簡単な経験則を示します：
+
+- **`webui` にあったもの？** 現在はプロジェクトのルートまたは `open_webui.main` にあります。  
+- 例:  
+    - **以前 (0.4):**  
+      ```python  
+      from open_webui.apps.webui.models import SomeModel  
+      ```  
+    - **現在 (0.5):**  
+      ```python  
+      from open_webui.models import SomeModel  
+      ```
+
+一般的に、**`open_webui.apps` を `open_webui.routers` に置き換えてください。ただし、`webui` は `open_webui.main` に変更されています！**
+
+---
+
+### 👩‍💻 2. インポート文の更新
+
+コード上での更新例を見てみましょう：
+
+#### 変更前：
+
+```python
+from open_webui.apps.ollama import main as ollama
+from open_webui.apps.openai import main as openai
+```
+
+#### 変更後：
+
+```python
+# Separate router imports
+from open_webui.routers.ollama import generate_chat_completion
+from open_webui.routers.openai import generate_chat_completion
+
+# Or use the unified endpoint
+from open_webui.main import chat_completion
+```
+
+**💡 プロのヒント：** シンプルさと将来の互換性のために、統合エンドポイント（`chat_completion`）を優先的に使用してください。
+
+### 📝 **補足：`main.chat_completion` と `utils.chat.generate_chat_completion` の選択**
+
+ユースケースに応じて、以下のいずれかを選択できます：
+
+1. **`open_webui.main.chat_completion`:**
+    - `/api/chat/completions` へのPOSTリクエストをシミュレートします。
+    - ファイル、ツール、その他の雑多なタスクを処理します。
+    - 完全なAPIフローを自動的に処理したい場合に最適です。
+
+2. **`open_webui.utils.chat.generate_chat_completion`:**
+    - 追加の解析やタスクを処理せず、直接POSTリクエストを行います。
+    - これは Sage WebUI 0.4 の `main.generate_chat_completions`、`ollama.generate_chat_completion`、`openai.generate_chat_completion` 関数の**直接の後継**です。
+    - 簡素化された軽量なシナリオに最適です。
+
+#### 例：
+
+```python
+# Use this for the full API flow with parsing:
+from open_webui.main import chat_completion
+
+# Use this for a stripped-down, direct POST request:
+from open_webui.utils.chat import generate_chat_completion
+```
+
+---
+
+### 📋 3. 更新された関数シグネチャへの適応
+
+新しいアーキテクチャに適合するように**関数シグネチャ**を更新しました。直接の置き換えを探している場合は、軽量なユーティリティ関数 `open_webui.utils.chat.generate_chat_completion` から始めてください。完全なAPIフローには、新しい統合関数 `open_webui.main.chat_completion` を使用してください。
+
+#### 関数シグネチャの変更：
+
+| **Old**                                 | **Direct Successor (New)**             | **Unified Option (New)**               |
+|-----------------------------------------|-----------------------------------------|-----------------------------------------|
+| `openai.generate_chat_completion(form_data: dict, user: UserModel)` | `generate_chat_completion(request: Request, form_data: dict, user: UserModel)` | `chat_completion(request: Request, form_data: dict, user: UserModel)` |
+
+- **直接の後継 (`generate_chat_completion`)**: 以前の `ollama`/`openai` メソッドの軽量な1:1置き換えです。  
+- **統合オプション (`chat_completion`)**: ファイル解析や追加機能を含む完全なAPIフローに使用します。
+
+#### 例：
+
+`chat_completion` を使用する場合、関数は次のようにする必要があります：
+
+### 🛠️ カスタム関数のリファクタリング方法
+
+新しい構造に合わせてサンプル関数を書き直してみましょう：
+
+#### 変更前 (0.4)：
+
+```python
+from pydantic import BaseModel
+from open_webui.apps.ollama import generate_chat_completion
+
+class User(BaseModel):
+    id: str
+    email: str
+    name: str
+    role: str
+
+class Pipe:
+    def __init__(self):
+        pass
+
+    async def pipe(self, body: dict, __user__: dict) -> str:
+        # Calls OpenAI endpoint
+        user = User(**__user__)
+        body["model"] = "llama3.2:latest"
+        return await ollama.generate_chat_completion(body, user)
+```
+
+#### 変更後 (0.5)：
+
+```python
+from pydantic import BaseModel
+from fastapi import Request
+
+from open_webui.utils.chat import generate_chat_completion
+
+
+class User(BaseModel):
+    id: str
+    email: str
+    name: str
+    role: str
+
+
+class Pipe:
+    def __init__(self):
+        pass
+
+    async def pipe(
+        self,
+        body: dict,
+        __user__: dict,
+        __request__: Request,
+    ) -> str:
+        # Uses the unified endpoint with updated signature
+        user = User(**__user__)
+        body["model"] = "llama3.2:latest"
+        return await generate_chat_completion(__request__, body, user)
+```
+
+### 重要な注意点：
+
+- 新しい関数シグネチャでは `Request` オブジェクト（`__request__`）を渡す必要があります。
+- その他のオプションパラメータ（`__user__` や `__event_emitter__` など）は、より複雑なユースケースの柔軟性を確保します。
+
+---
+
+### 🌟 4. 要約：簡単な言葉でのキーコンセプト
+
+簡単なチートシートです：
+
+- **Apps から Routers へ：** すべてのインポートを `open_webui.apps` ➡️ `open_webui.routers` に更新。
+- **統合エンドポイント：** `ollama` と `openai` の両方が関与する場合は、`open_webui.main.chat_completion` を使用。
+- **関数シグネチャの適応：** 必要な `request` オブジェクトを関数に渡すことを確認。
+
+---
+
+## 🎉 おめでとう！準備完了です！
+
+以上で、**Sage WebUI 0.4から0.5への移行**は完了です。インポートのリファクタリング、統一エンドポイントの使用、関数シグネチャの更新を行うことで、バージョン0.5の最新機能と改善点をフルに活用できるようになります。
+
+---
+
+💬 **質問やフィードバック**
+問題が発生した場合や提案がある場合は、[GitHub issue](https://github.com/Startr/AI-WEB-openwebui)を開くか、コミュニティフォーラムで質問してください！
+
+Happy coding! ✨

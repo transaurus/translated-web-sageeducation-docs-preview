@@ -1,0 +1,52 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/pipelines/faq.md",
+  "source_file_content_hash": "6ebfcc376cfb59071ff2d559ecdcf7c80c5784da311458543a93638a08ee7c98",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 7\ntitle: \"❓ FAQ\"\n---",
+      "source_content_hash": "f6d4b9caed9623fd412746b68ebe580168051b66331991b620491048e2e5e79d",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "b3de8742",
+      "source_content": "# FAQ",
+      "source_content_hash": "3a80b1c867cf3794e677302468fa61b4fc77d3730927bbe97d66caaee7c61f98",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# よくある質問"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "**What's the difference between Functions and Pipelines?**",
+      "source_content_hash": "766e86be50858ba537f5344726f68a5427a9e6db14fd0927c6ed8097ec63bf38",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**FunctionsとPipelinesの違いは何ですか？**"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "The main difference between Functions and Pipelines is that Functions are executed directly on the Sage WebUI server, while Pipelines are executed on a separate server, potentially reducing the load on your Sage WebUI instance.",
+      "source_content_hash": "096419dc22c64c9ed4285700acb53718c84504afca3e3dd241d929bb81135310",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "FunctionsとPipelinesの主な違いは、FunctionsがSage WebUIサーバー上で直接実行されるのに対し、Pipelinesは別のサーバー上で実行される点です。これにより、Sage WebUIインスタンスの負荷を軽減できる可能性があります。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/pipelines/faq.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.782825+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "6ebfcc376cfb59071ff2d559ecdcf7c80c5784da311458543a93638a08ee7c98"
+  }
+}

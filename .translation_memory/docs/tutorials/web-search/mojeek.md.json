@@ -1,0 +1,92 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/web-search/mojeek.md",
+  "source_file_content_hash": "cadba80e7dda73df9815321fb79283466ae1286ceef55bbda0c539a33169b8f0",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 8\ntitle: \"Mojeek\"\n---",
+      "source_content_hash": "790904e3f991480a4dc3626df6f71d22d6c2821e1b6308a39fbeb41deb7c1542",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage Open WebUI team. It serves only as a demonstration on how to customize Sage Open WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "98b8228a4f5d8e4309d0a842bc8c8f8b2c57276419865ecbb983e31cff881a77",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage Open WebUIチームによってサポートされていません。特定のユースケースに合わせてSage Open WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿チュートリアルをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "## Mojeek Search API",
+      "source_content_hash": "969155c01987d8c3a746ab54f1fc96103b3c71a86466f614a9e21be131c7e66d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Mojeek Search API"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "### Setup",
+      "source_content_hash": "8896b8d3db53502f4fd604d42db230e8aa1df8a01474b979920665ef08680a11",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### セットアップ"
+      }
+    },
+    {
+      "segment_id": "9e760345",
+      "source_content": "1. Please visit [Mojeek Search API page](https://www.mojeek.com/services/search/web-search-api/) to obtain an `API key`\n2. With `API key`, open `Sage Open WebUI Admin panel` and click `Settings` tab, and then click `Web Search`\n3. Enable `Web search` and Set `Web Search Engine` to `mojeek`\n4. Fill `Mojeek Search API Key` with the `API key`\n5. Click `Save`",
+      "source_content_hash": "aa4df6e8df90e61a9fdd6edce236bb792afe7048127185c8ee2847ff9a4e25b9",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. [Mojeek Search APIページ](https://www.mojeek.com/services/search/web-search-api/)にアクセスし、`APIキー`を取得してください\n2. `APIキー`を取得後、`Sage Open WebUI管理パネル`を開き、`Settings`タブをクリックしてから`Web Search`を選択します\n3. `Web検索`を有効にし、`Web検索エンジン`を`mojeek`に設定します\n4. `Mojeek Search APIキー`欄に取得した`APIキー`を入力します\n5. `保存`をクリックします"
+      }
+    },
+    {
+      "segment_id": "bc633244",
+      "source_content": "### Docker Compose Setup",
+      "source_content_hash": "630c38bc6d2bc164ac78059fbe584b243571fd1b9b7eafef5bc1050d77bea80b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Docker Compose設定"
+      }
+    },
+    {
+      "segment_id": "2df4f75f",
+      "source_content": "Add the following environment variables to your Sage Open WebUI `docker-compose.yaml` file:",
+      "source_content_hash": "3a05e224ed8870fe61de099abcb9917fc0e500d1fd55f7cf8960f316e392991b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage Open WebUIの`docker-compose.yaml`ファイルに以下の環境変数を追加してください："
+      }
+    },
+    {
+      "segment_id": "f2b711c6",
+      "source_content": "```yaml\nservices:\n  sage-open-webui:\n    environment:\n      ENABLE_RAG_WEB_SEARCH: True\n      RAG_WEB_SEARCH_ENGINE: \"mojeek\"\n      BRAVE_SEARCH_API_KEY: \"YOUR_MOJEEK_API_KEY\"\n      RAG_WEB_SEARCH_RESULT_COUNT: 3\n      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 10\n```",
+      "source_content_hash": "bb04ed45fbd7ed4b57ac7ddf0bd34126a423dafa1041a866e5301183d8291fd7",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f2b711c6"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/web-search/mojeek.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.789798+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "cadba80e7dda73df9815321fb79283466ae1286ceef55bbda0c539a33169b8f0"
+  }
+}

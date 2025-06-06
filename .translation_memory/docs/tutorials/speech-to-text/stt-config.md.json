@@ -1,0 +1,272 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/speech-to-text/stt-config.md",
+  "source_file_content_hash": "2f3cc9c103f673e94ed48654467b4526bc19355e9c33b8ababb671ab7638fe74",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🗨️  Configuration\"\n---",
+      "source_content_hash": "e506a1aad22030eec1b9558bfce970b7f48ec8f4d541cf7a7a583a4d976d0489",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "bb42506b",
+      "source_content": "Open Web UI supports both local, browser, and remote speech to text.",
+      "source_content_hash": "d9aba4c12af1d19692803ae627b117cccc435b6150d865a254b6edb4f1241bac",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Open Web UIは、ローカル、ブラウザ、およびリモートの音声テキスト変換をサポートしています。"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "![alt text](/images/tutorials/stt/image.png)",
+      "source_content_hash": "422a062af38828cbb0e046f0b5bd7116ae6af6def0ec93c3d25b898e8e257d4d",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/image.png)"
+      }
+    },
+    {
+      "segment_id": "7e5c5a39",
+      "source_content": "![alt text](/images/tutorials/stt/stt-providers.png)",
+      "source_content_hash": "a4f2773b6d7901b595eb0be62536fd4fefffe73a31cef2c8c68c13bc61ac9ac0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/stt-providers.png)"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## Cloud / Remote Speech To Text Proivders",
+      "source_content_hash": "8094ec3a89a7c7f480f0d17150cfce828831b1831aef5fe17fccbd01b97850af",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## クラウド/リモート音声テキスト変換プロバイダー"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "The following cloud speech to text providers are currently supported. API keys can be configured as environment variables (OpenAI) or in the admin settings page (both keys).",
+      "source_content_hash": "e3efe346c13f30087a071db7da089ec266f5a79014cc3faedf48b5c328346ea7",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "現在サポートされているクラウド音声テキスト変換プロバイダーは以下の通りです。APIキーは環境変数（OpenAI）または管理者設定ページ（両方のキー）で設定できます。"
+      }
+    },
+    {
+      "segment_id": "60e4ab9d",
+      "source_content": "| Service  | API Key Required |\n | ------------- | ------------- |\n | OpenAI  | ✅ |\n | DeepGram  | ✅ |",
+      "source_content_hash": "dc5454886b601796fc7cbfd6ed73c524307f116163a9de53c41e27e2abcc3e4c",
+      "node_type": "table",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_60e4ab9d"
+      }
+    },
+    {
+      "segment_id": "f5f6d2ce",
+      "source_content": "WebAPI provides STT via the built-in browser STT provider.",
+      "source_content_hash": "e425830b2e15db03d1fc1d00b6153be14515148203749901bd646b3a1e56292e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "WebAPIは、組み込みのブラウザSTTプロバイダーを介してSTTを提供します。"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "## Configuring Your STT Provider",
+      "source_content_hash": "38a0f311474fa927968333eb8321d23e67618dbaee0d4ca57270610c706a0a58",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## STTプロバイダーの設定"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "To configure a speech to text provider:",
+      "source_content_hash": "7e01dba247b16a70080fc6293f658e2a52f31aa8507ef93c533731613f690fd4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "音声テキスト変換プロバイダーを設定するには:"
+      }
+    },
+    {
+      "segment_id": "b3f5c97c",
+      "source_content": "- Navigate to the admin settings  \n- Choose Audio\n- Provider an API key and choose a model from the dropdown",
+      "source_content_hash": "2850fd693ec362c46d8c241ece2f4f7d04dd80fb17a887ab9b8a00a5c2e13b21",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 管理者設定に移動  \n- 「Audio」を選択\n- APIキーを入力し、ドロップダウンからモデルを選択"
+      }
+    },
+    {
+      "segment_id": "dfe931a2",
+      "source_content": "![alt text](/images/tutorials/stt/stt-config.png)",
+      "source_content_hash": "d250ec32089314a05069ee381df1dbba1aea9d620d85c708da786a8c8583214a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/stt-config.png)"
+      }
+    },
+    {
+      "segment_id": "0037ff70",
+      "source_content": "## User-Level Settings",
+      "source_content_hash": "bbd56f77ecb2d8cb6c2457936fdd8ed817230da7253a80717579801567b666bd",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ユーザーレベル設定"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "In addition the instance settings provisioned in the admin panel, there are also a couple of user-level settings that can provide additional functionality.",
+      "source_content_hash": "a2816aa5806f62b47e689dc2ce324b37d0b1aaf16d68cc05ef301cb93ed5a1cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "管理者パネルで設定されたインスタンス設定に加えて、追加機能を提供するユーザーレベル設定もいくつかあります。"
+      }
+    },
+    {
+      "segment_id": "5d66c9dc",
+      "source_content": "*   **STT Settings:** Contains settings related to Speech-to-Text functionality.\n*   **Speech-to-Text Engine:** Determines the engine used for speech recognition (Default or Web API).",
+      "source_content_hash": "e39c41b6b01496922ff714a968e99ddd1bab603f1cf19ee288920d38e7b18351",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "*   **STT設定:** 音声テキスト変換機能に関連する設定が含まれます。\n*   **音声テキスト変換エンジン:** 音声認識に使用するエンジンを決定します（デフォルトまたはWeb API）。"
+      }
+    },
+    {
+      "segment_id": "3cfe6286",
+      "source_content": "![alt text](/images/tutorials/stt/user-settings.png)",
+      "source_content_hash": "1b791efa12f7a03516324cf9559c56a819b912fbcffba31e96a2d4131e34c3fa",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/user-settings.png)"
+      }
+    },
+    {
+      "segment_id": "06c0f776",
+      "source_content": "## Using STT",
+      "source_content_hash": "05ba567392e713c9d09f049e66c26c2dac90785e41521cf9bde65dd948f707e6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## STTの使用"
+      }
+    },
+    {
+      "segment_id": "aa1e7006",
+      "source_content": "Speech to text provides a highly efficient way of \"writing\" prompts using your voice and it performs robustly from both desktop and mobile devices.",
+      "source_content_hash": "b593b14ee231e0e617ad035aca7a76aebd89acdceea6927f0b8b6a0ebd628ef3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "音声テキスト変換は、音声を使用してプロンプトを「書く」非常に効率的な方法を提供し、デスクトップとモバイルデバイスの両方で堅牢に動作します。"
+      }
+    },
+    {
+      "segment_id": "13d9cd70",
+      "source_content": "To use STT, simply click on the microphone icon:",
+      "source_content_hash": "4b34549339db1c1b023c51f4176e056bc6f7ce7d5f48eeb8d14e39413ceafbe3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "STTを使用するには、マイクアイコンをクリックします:"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "![alt text](/images/tutorials/stt/stt-operation.png)",
+      "source_content_hash": "fdce28f6b52df79f4f8222a59b898691305ebe86c6d58447e7abcdeeec152046",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/stt-operation.png)"
+      }
+    },
+    {
+      "segment_id": "c504c207",
+      "source_content": "A live audio waveform will indicate successful voice capture:",
+      "source_content_hash": "c13f50d65322b3269d0ebf9c0d4fcd81be1feaf25a9fb5b0c099ceb03092d909",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ライブオーディオ波形は、音声の正常なキャプチャを示します:"
+      }
+    },
+    {
+      "segment_id": "98d26038",
+      "source_content": "![alt text](/images/tutorials/stt/stt-in-progress.png)",
+      "source_content_hash": "434407f3d059079f778abc40100deccdc4c32e4dde1ee99cd9b1584bdede74c3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/stt-in-progress.png)"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "## STT Mode Operation",
+      "source_content_hash": "151ef06834cd65b46b274a64a6a68f2e81722830ffc7c6b1977ce531d97a5b07",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## STTモードの操作"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "Once your recording has begun you can:",
+      "source_content_hash": "611f73c5fb63d683c7ec7c7d265a4540c48b4ce7c0d8a8c24fb337062b40cf40",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "録音を開始した後、次のことができます:"
+      }
+    },
+    {
+      "segment_id": "30193704",
+      "source_content": "- Click on the tick icon to save the recording (if auto send after completion is enabled it will send for completion; otherwise you can manually send)\n- If you wish to abort the recording (for example, you wish to start a fresh recording) you can click on the 'x' icon to scape the recording interface",
+      "source_content_hash": "e67314da506a62d4fcee361c158dac075d409df6240b4dc441030acd5c4fbbe3",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- チェックアイコンをクリックして録音を保存（完了後に自動送信が有効な場合は完了のために送信されます。それ以外の場合は手動で送信できます）\n- 録音を中止したい場合（例えば、新しい録音を開始したい場合）、「x」アイコンをクリックして録音インターフェースを終了できます"
+      }
+    },
+    {
+      "segment_id": "6ea4c715",
+      "source_content": "![alt text](/images/tutorials/stt/endstt.png)",
+      "source_content_hash": "359b5373e4d1bba44ab3f8c32686a083cd373053e50e155c169c619f942e6a8a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![alt text](/images/tutorials/stt/endstt.png)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/speech-to-text/stt-config.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.802838+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "2f3cc9c103f673e94ed48654467b4526bc19355e9c33b8ababb671ab7638fe74"
+  }
+}

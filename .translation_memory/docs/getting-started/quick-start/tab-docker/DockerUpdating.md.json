@@ -1,0 +1,102 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-docker/DockerUpdating.md",
+  "source_file_content_hash": "459df519470789177f1e5a5023a46a3193f2029d482dda9368534fba6413305e",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "## Updating",
+      "source_content_hash": "8a798ac2d9aacdea73c1eac83a8d141dd2e7631f752dd61409b70a10b4d7d8f6",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## アップデート方法"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "To update your local Docker installation to the latest version, you can either use **Watchtower** or manually update the container.",
+      "source_content_hash": "3c5c25d4a3fc166e8a6c6fc384d59604e9ea7e109814e78ed460869c1e6449a4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ローカルのDockerインストールを最新バージョンに更新するには、**Watchtower**を使用するか、手動でコンテナを更新します。"
+      }
+    },
+    {
+      "segment_id": "f85bbfb4",
+      "source_content": "### Option 1: Using Watchtower",
+      "source_content_hash": "7f781bd225de69ffda0ced27d773f014f67696e334ffc211952da7d0b836fe1d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### オプション1: Watchtowerを使用"
+      }
+    },
+    {
+      "segment_id": "6ef78e84",
+      "source_content": "With [Watchtower](https://containrrr.dev/watchtower/), you can automate the update process:",
+      "source_content_hash": "f2c78b267ee6ef0fc58e92331a15aba38b54046e6080f6aef2804cf4c6e0687c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Watchtower](https://containrrr.dev/watchtower/)を使用すると、更新プロセスを自動化できます:"
+      }
+    },
+    {
+      "segment_id": "71d8dc9b",
+      "source_content": "```bash\ndocker run --rm --volume /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-open-webui\n```",
+      "source_content_hash": "e5d29ff00869bcadc1b0776a02e1cb2de669d6533c252339e165ecb3af512159",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_71d8dc9b"
+      }
+    },
+    {
+      "segment_id": "180bddb1",
+      "source_content": "_(Replace `sage-open-webui` with your container's name if it's different.)_",
+      "source_content_hash": "318dfc42543fdf586e9675fa586cef1bc45339d031cc8a0d0c9d1049c5b006bd",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "_(コンテナ名が異なる場合は、`sage-open-webui`をあなたのコンテナ名に置き換えてください。)_"
+      }
+    },
+    {
+      "segment_id": "e14c9928",
+      "source_content": "### Option 2: Manual Update",
+      "source_content_hash": "81ccb5e626fd4dcf82248a6160d4dd6cf64ff3f508f190995bd2943b31aa808a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### オプション2: 手動更新"
+      }
+    },
+    {
+      "segment_id": "84758135",
+      "source_content": "1. Stop and remove the current container:\n\n   ```bash\n   docker rm -f sage-open-webui\n   ```\n\n2. Pull the latest version:\n\n   ```bash\n   docker pull ghcr.io/Startr/AI-WEB-openwebui:main\n   ```\n\n3. Start the container again:\n\n   ```bash\n   docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main\n   ```",
+      "source_content_hash": "f9824f193f6f03dc5bf977c3d8f505f808591b53e87982e7399c4f6bf107e667",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. 現在のコンテナを停止して削除:\n\n   ```bash\n   docker rm -f sage-open-webui\n   ```\n\n2. 最新バージョンをプル:\n\n   ```bash\n   docker pull ghcr.io/Startr/AI-WEB-openwebui:main\n   ```\n\n3. コンテナを再起動:\n\n   ```bash\n   docker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui ghcr.io/Startr/AI-WEB-openwebui:main\n   ```"
+      }
+    },
+    {
+      "segment_id": "bdc231b1",
+      "source_content": "Both methods will get your Docker instance updated and running with the latest build.",
+      "source_content_hash": "49dcace881931feb6b81bccb5de9cb5bf2d8f96632ff31f72bacef3189cf9c3e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "どちらの方法でも、Dockerインスタンスを最新ビルドに更新して実行できます。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-docker/DockerUpdating.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.789041+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "459df519470789177f1e5a5023a46a3193f2029d482dda9368534fba6413305e"
+  }
+}

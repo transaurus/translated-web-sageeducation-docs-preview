@@ -1,0 +1,342 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/integrations/browser-search-engine.md",
+  "source_file_content_hash": "bf3f6d5f619e0599f8f40a03cf866a3f17126582a65ca918a9a264e83cde5294",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 16\ntitle: \"🌐 Browser Search Engine\"\n---",
+      "source_content_hash": "138fd0bc09785cf8f922fcc4a03ffcc0dd35744b9c3121c4f03ccd670cc4d1af",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとして提供されています。寄稿をご希望ですか？寄稿ガイドをチェックしてください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# Browser Search Engine Integration",
+      "source_content_hash": "3d18f980606cb280d613621a99834ccd73fcd043d3b1e66932b718f1ca0b604e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# ブラウザ検索エンジン連携"
+      }
+    },
+    {
+      "segment_id": "8d66f911",
+      "source_content": "Sage WebUI allows you to integrate directly into your web browser. This tutorial will guide you through the process of setting up Sage WebUI as a custom search engine, enabling you to execute queries easily from your browser's address bar.",
+      "source_content_hash": "b5b788c5fcffa17cf624eb2f94979dddf91987ed7d936d25c43511e455592bb2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIはWebブラウザに直接統合することが可能です。このチュートリアルでは、Sage WebUIをカスタム検索エンジンとして設定し、ブラウザのアドレスバーから簡単にクエリを実行できるようにする手順を説明します。"
+      }
+    },
+    {
+      "segment_id": "70153c6e",
+      "source_content": "## Setting Up Sage WebUI as a Search Engine",
+      "source_content_hash": "79d3d46c54f0fa64aae5caf0217497e43002d51845cf5ada14a4ea352b9399f0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIを検索エンジンとして設定する"
+      }
+    },
+    {
+      "segment_id": "cbe57f9d",
+      "source_content": "### Prerequisites",
+      "source_content_hash": "06853ecee3d6e5f20a40c0d198df12313c0c9b1a182563a0014a7fb4945c7081",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### 前提条件"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "Before you begin, ensure that:",
+      "source_content_hash": "8d760550526870b4b072c2b6292fd5da643dd82b1dc00f071c313d18ee862fed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "開始前に、以下を確認してください:"
+      }
+    },
+    {
+      "segment_id": "3b695c37",
+      "source_content": "- You have Chrome or another supported browser installed.\n- The `WEBUI_URL` environment variable is set correctly, either using Docker environment variables or in the `.env` file as specified in the [Getting Started](/getting-started/env-configuration) guide.",
+      "source_content_hash": "3b6e3a90e3a45c3b2c934412b1eed6f4c51d72d9950d8029c647697ddf2041ee",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- Chromeまたは他のサポート対象ブラウザがインストールされていること\n- `WEBUI_URL`環境変数が正しく設定されていること（Docker環境変数または[はじめに](/getting-started/env-configuration)ガイドで指定されている`.env`ファイル内）"
+      }
+    },
+    {
+      "segment_id": "40f9552a",
+      "source_content": "### Step 1: Set the WEBUI_URL Environment Variable",
+      "source_content_hash": "8167cf45ab269487305754569f8aedf242226a964b019cfa76484f2c6b398f87",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ1: WEBUI_URL環境変数の設定"
+      }
+    },
+    {
+      "segment_id": "f2c2bdd0",
+      "source_content": "Setting the `WEBUI_URL` environment variable ensures your browser knows where to direct queries.",
+      "source_content_hash": "1cbc074d9f5f37b0274ff46ceb298ee52eb700e86f7e936fa3e93ec64f9a4a35",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`WEBUI_URL`環境変数を設定することで、ブラウザがクエリをどこに送信するかを認識できるようになります。"
+      }
+    },
+    {
+      "segment_id": "fa430ad4",
+      "source_content": "#### Using Docker Environment Variables",
+      "source_content_hash": "a9f03ed94d1b9a35e9db86d362984c88597e4b672e79aafe9dcd79a564e924a3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### Docker環境変数の使用"
+      }
+    },
+    {
+      "segment_id": "4b1d2d7d",
+      "source_content": "If you are running Sage WebUI using Docker, you can set the environment variable in your `docker run` command:",
+      "source_content_hash": "d2b8d0a0c28519912c7a52c69d8d1dcdd0106b5e7fbe8777f451902852443830",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerを使用してSage WebUIを実行している場合、`docker run`コマンドで環境変数を設定できます:"
+      }
+    },
+    {
+      "segment_id": "cb57d798",
+      "source_content": "```bash\ndocker run -d \\\n  -p 3000:8080 \\\n  --add-host=host.docker.internal:host-gateway \\\n  -v sage-open-webui:/app/backend/data \\\n  --name sage-open-webui \\\n  --restart always \\\n  -e WEBUI_URL=\"https://<your-sage-open-webui-url>\" \\\n  ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "383fb2ba0276e4d3d2d31863c64d1d4949559b6656474915652b54e76cc0c40b",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_cb57d798"
+      }
+    },
+    {
+      "segment_id": "50746522",
+      "source_content": "Alternatively, you can add the variable to your `.env` file:",
+      "source_content_hash": "49202155a9349b91ed76795b95f68ba550309b078de9552aabf34e3f3cff2feb",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "または、`.env`ファイルに変数を追加することも可能です:"
+      }
+    },
+    {
+      "segment_id": "45022e4f",
+      "source_content": "```plaintext\nWEBUI_URL=https://<your-sage-open-webui-url>\n```",
+      "source_content_hash": "0bf5a0cac631b303e4d5b30b178129d2c2733dff0b3d8986439de60e937668e9",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_45022e4f"
+      }
+    },
+    {
+      "segment_id": "c674e260",
+      "source_content": "### Step 2: Add Sage WebUI as a Custom Search Engine",
+      "source_content_hash": "13d4e3323fa8f2c72d57fafbc292563c9d86a9ae1b89c1811b316e1ffaf8f2e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### ステップ2: カスタム検索エンジンとしてSage WebUIを追加"
+      }
+    },
+    {
+      "segment_id": "6d28a77c",
+      "source_content": "### For Chrome",
+      "source_content_hash": "372a33ddf08975b072ddf7db4995c934124e5ede5d5792fa1f676447784ff2f5",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Chromeの場合"
+      }
+    },
+    {
+      "segment_id": "b4ef1e56",
+      "source_content": "1. Open Chrome and navigate to **Settings**.\n2. Select **Search engine** from the sidebar, then click on **Manage search engines**.\n3. Click **Add** to create a new search engine.\n4. Fill in the details as follows:\n    - **Search engine**: Sage WebUI Search\n    - **Keyword**: webui (or any keyword you prefer)\n    - **URL with %s in place of query**:\n\n      ```\n      https://<your-sage-open-webui-url>/?q=%s\n      ```\n\n5. Click **Add** to save the configuration.",
+      "source_content_hash": "312786058576b24f3c76d67b8307d547ef8f4ec74d5bba11481277e3d92bdc88",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. Chromeを開き、**設定**に移動します\n2. サイドバーから**検索エンジン**を選択し、**検索エンジンの管理**をクリックします\n3. **追加**をクリックして新しい検索エンジンを作成します\n4. 以下のように詳細を入力します:\n    - **検索エンジン**: Sage WebUI検索\n    - **キーワード**: webui（または任意のキーワード）\n    - **クエリの代わりに%sを含むURL**:\n\n      ```\n      https://<your-sage-open-webui-url>/?q=%s\n      ```\n\n5. **追加**をクリックして設定を保存します"
+      }
+    },
+    {
+      "segment_id": "8c6d7ee7",
+      "source_content": "### For Firefox",
+      "source_content_hash": "297d86d112f2e5978351114f5a35f7757f41362364913cd48143ce852032b38d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Firefoxの場合"
+      }
+    },
+    {
+      "segment_id": "645e08e3",
+      "source_content": "1. Go to Sage WebUI in Firefox.\n2. Expand the address bar by clicking on it.\n3. Click the plus icon that is enclosed in a green circle at the bottom of the expanded address bar. This adds Sage WebUI's search to the search engines in your preferences.",
+      "source_content_hash": "154bf937a66f6f5f0070f74673e87a2b1a9a5ec87c1daa1b1ed433ef5e161495",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. FirefoxでSage WebUIにアクセスします\n2. アドレスバーをクリックして展開します\n3. 展開されたアドレスバーの下部にある緑色の円で囲まれたプラスアイコンをクリックします。これにより、Sage WebUIの検索が設定の検索エンジンに追加されます"
+      }
+    },
+    {
+      "segment_id": "147e8550",
+      "source_content": "Alternatively:",
+      "source_content_hash": "17d817f2dfb98b44ac9caeb1ba7f1a85f454600bd675b505d62dae8d95dbf6f6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "別の方法:"
+      }
+    },
+    {
+      "segment_id": "c7436e69",
+      "source_content": "1. Go to Sage WebUI in Firefox.\n2. Right-click on the address bar.\n3. Select \"Add Sage WebUI\" (or similar) from the context menu.",
+      "source_content_hash": "136acd638683a45807853b4e77a0b2ed5627f95e10203d9be5cec904de6fc621",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. FirefoxでSage WebUIにアクセスします\n2. アドレスバーを右クリックします\n3. コンテキストメニューから「Sage WebUIを追加」（または類似のオプション）を選択します"
+      }
+    },
+    {
+      "segment_id": "98355e36",
+      "source_content": "### Optional: Using Specific Models",
+      "source_content_hash": "bfd7d755bbf0912c87a974ee199ba7000696182ad98586e69beab6ede95dde32",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### オプション: 特定のモデルを使用する"
+      }
+    },
+    {
+      "segment_id": "7736989b",
+      "source_content": "If you wish to utilize a specific model for your search, modify the URL format to include the model ID:",
+      "source_content_hash": "5baad8927ed31aee5cb14cc3f87afca83acdae36b522ae7b9b1f004c3187a346",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "検索に特定のモデルを使用したい場合、URL形式を変更してモデルIDを含めることができます:"
+      }
+    },
+    {
+      "segment_id": "a716abf2",
+      "source_content": "```\nhttps://<your-sage-open-webui-url>/?models=<model_id>&q=%s\n```",
+      "source_content_hash": "fa9be5b41e964e027e0108f98828f5bcf63fa4dfd906acb9b0560911beba7b8d",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a716abf2"
+      }
+    },
+    {
+      "segment_id": "ec619944",
+      "source_content": "**Note:** The model ID will need to be URL-encoded. Special characters like spaces or slashes need to be encoded (e.g., `my model` becomes `my%20model`).",
+      "source_content_hash": "5fcfa70e18f0e0a779251c2abdb9b9ac4019e8d05ba8724a7d1206645155acf0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**注:** モデルIDはURLエンコードする必要があります。スペースやスラッシュなどの特殊文字はエンコードが必要です（例: `my model`は`my%20model`になります）。"
+      }
+    },
+    {
+      "segment_id": "2e771fd0",
+      "source_content": "## Example Usage",
+      "source_content_hash": "9c2311a8bfb3d912c0898f3f6eca4f89304790206fe37a9034617dee9d03e41a",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 使用例"
+      }
+    },
+    {
+      "segment_id": "0750bfa1",
+      "source_content": "Once the search engine is set up, you can perform searches directly from the address bar. Simply type your chosen keyword followed by your query:",
+      "source_content_hash": "63ff97a4af3cb983493632b0949e6ba79eda361c5ad6dc73da7628b8852dc180",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "検索エンジンの設定が完了すると、アドレスバーから直接検索を実行できます。選択したキーワードに続けてクエリを入力します:"
+      }
+    },
+    {
+      "segment_id": "f8065412",
+      "source_content": "```\nwebui your search query\n```",
+      "source_content_hash": "98729b4bd21075f1d2bbd79374b0ba2e6b02b008b2d6c5a05b238e79a8c05262",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_f8065412"
+      }
+    },
+    {
+      "segment_id": "a311e967",
+      "source_content": "This command will redirect you to the Sage WebUI interface with your search results.",
+      "source_content_hash": "8169ca82cee70bf5c91d71df6d3262dca528930d124d4710040ed4acc25c0870",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このコマンドは、検索結果と共にSage WebUIインターフェースにリダイレクトします。"
+      }
+    },
+    {
+      "segment_id": "f8edb6d2",
+      "source_content": "## Troubleshooting",
+      "source_content_hash": "659a188b36f9c3262a28539e24c345df4edc9657f59b116b0a1d9887cf2e28e0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## トラブルシューティング"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "If you encounter any issues, check the following:",
+      "source_content_hash": "242cc9ee6bb66779f02f54c56b9af0dd041525d0c9037c4b9108bb92dcacc5e6",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "問題が発生した場合は、以下を確認してください:"
+      }
+    },
+    {
+      "segment_id": "2d15468d",
+      "source_content": "- Ensure the `WEBUI_URL` is correctly configured and points to a valid Sage WebUI instance.\n- Double-check that the search engine URL format is correctly entered in your browser settings.\n- Confirm your internet connection is active and that the Sage WebUI service is running smoothly.",
+      "source_content_hash": "73e87be606411f5c1514d6eb38e20004613980aac0e1e25c40851f68fdbc1c26",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- `WEBUI_URL`が正しく設定され、有効なSage WebUIインスタンスを指していることを確認してください\n- ブラウザ設定で検索エンジンURL形式が正しく入力されていることを再確認してください\n- インターネット接続がアクティブで、Sage WebUIサービスが正常に実行されていることを確認してください"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/integrations/browser-search-engine.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.807531+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "bf3f6d5f619e0599f8f40a03cf866a3f17126582a65ca918a9a264e83cde5294"
+  }
+}

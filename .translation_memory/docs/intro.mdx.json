@@ -1,0 +1,572 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/intro.mdx",
+  "source_file_content_hash": "f07a63f09458f8333dc68a9bb7bbbd679991132dc12a155247c04a5e6572c09d",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 0\nslug: /\ntitle: 🏡 Home\nhide_title: true\n---",
+      "source_content_hash": "f807aca140cc053d7848552fd0c1560cb5d7e89311cc63a795e63a3de291ac23",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "50387553",
+      "source_content": "import { TopBanners } from \"@site/src/components/TopBanners\";\nimport { SponsorList } from \"@site/src/components/SponsorList\";",
+      "source_content_hash": "655d6e320f0c8fcc9058cefeeea91106a196481a83780d0895aaf20e2a7d2d60",
+      "node_type": "mdxjsEsm",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_50387553"
+      }
+    },
+    {
+      "segment_id": "8a5f6a7b",
+      "source_content": "# Sage WebUI",
+      "source_content_hash": "32cba7f4f185c1973a8a5d386278290b62ba49e850936e62399403c3def19436",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage WebUI"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "Sage WebUI is an **[extensible](/features/plugin/), feature-rich, and user-friendly AI platform** designed for families, schools, and small teams. It lets you work privatly with your own AI Models and Agents. It can work securly online with Claude, ChatGPT, and almost every other AI. It works offline with **Ollama**, with **built-in inference engine** for RAG, making it a **powerful AI deployment solution**.",
+      "source_content_hash": "c3a665aca35d81df2956cdb0a3f22d9b2603bfa6a66dc96f68ccbcd97e5396d3",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIは、**拡張可能で機能豊富なユーザーフレンドリーなAIプラットフォーム**であり、家族、学校、小規模チーム向けに設計されています。独自のAIモデルやエージェントをプライベートに利用可能で、ClaudeやChatGPTなどほぼすべてのAIと安全にオンラインで連携できます。また、**Ollama**と連携したオフライン動作や、RAG用の**組み込み推論エンジン**を備えており、**強力なAIデプロイメントソリューション**として機能します。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "![GitHub stars](https://img.shields.io/github/stars/Startr/AI-WEB-openwebui?style=social)\n![GitHub forks](https://img.shields.io/github/forks/Startr/AI-WEB-openwebui?style=social)\n![GitHub watchers](https://img.shields.io/github/watchers/Startr/AI-WEB-openwebui?style=social)\n![GitHub repo size](https://img.shields.io/github/repo-size/Startr/AI-WEB-openwebui)\n![GitHub language count](https://img.shields.io/github/languages/count/Startr/AI-WEB-openwebui)\n![GitHub top language](https://img.shields.io/github/languages/top/Startr/AI-WEB-openwebui)\n![GitHub last commit](https://img.shields.io/github/last-commit/Startr/AI-WEB-openwebui)\n![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Follama-webui%2Follama-wbui&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)\n[![Discord](https://img.shields.io/badge/Discord-Startr-Sage?logo=discord&logoColor=white)](https://discord.com/channels/1074411230040703046/1074411231030550632)",
+      "source_content_hash": "06bd68ce118f6678267e55a8bc12934b788ff23621a3c53387b44ed75cd2443f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![GitHub stars](https://img.shields.io/github/stars/Startr/AI-WEB-openwebui?style=social)\n![GitHub forks](https://img.shields.io/github/forks/Startr/AI-WEB-openwebui?style=social)\n![GitHub watchers](https://img.shields.io/github/watchers/Startr/AI-WEB-openwebui?style=social)\n![GitHub repo size](https://img.shields.io/github/repo-size/Startr/AI-WEB-openwebui)\n![GitHub language count](https://img.shields.io/github/languages/count/Startr/AI-WEB-openwebui)\n![GitHub top language](https://img.shields.io/github/languages/top/Startr/AI-WEB-openwebui)\n![GitHub last commit](https://img.shields.io/github/last-commit/Startr/AI-WEB-openwebui)\n![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Follama-webui%2Follama-wbui&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)\n[![Discord](https://img.shields.io/badge/Discord-Startr-Sage?logo=discord&logoColor=white)](https://discord.com/channels/1074411230040703046/1074411231030550632)"
+      }
+    },
+    {
+      "segment_id": "a76548f8",
+      "source_content": "![Sage WebUI Demo](/images/demo.gif)",
+      "source_content_hash": "ef30868290a7756c3264d2232bf47cb7d629b3c32e70136e38f5cc3395ca1f26",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![Sage WebUI Demo](/images/demo.gif)"
+      }
+    },
+    {
+      "segment_id": "57971bfb",
+      "source_content": ":::tip\n**Looking for an [Enterprise Plan](https://docs.openwebui.com/enterprise)?** – **[Speak with Our Sales Team Today!](mailto:sales@openwebui.com)**\n\nGet **enhanced capabilities**, including **custom theming and branding**, **Service Level Agreement (SLA) support**, **Long-Term Support (LTS) versions**, and **more!**\n:::",
+      "source_content_hash": "3d7ad39c119028cf7e6b0cd1476e80b8e924316cf168ea9074b3def6aaaeeaf7",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::tip\n**[エンタープライズプラン](https://docs.openwebui.com/enterprise)をお探しですか？** – **[営業チームに今すぐご相談ください！](mailto:sales@openwebui.com)**\n\n**カスタムテーマやブランディング**、**サービスレベルアグリーメント（SLA）サポート**、**長期サポート（LTS）バージョン**など、**拡張機能**をご利用いただけます！\n:::"
+      }
+    },
+    {
+      "segment_id": "f422383e",
+      "source_content": "## Quick Start with Docker 🐳",
+      "source_content_hash": "a2c2df5921e526cdf42fe6aead1d6968acb86cc73b7fa014b2363a402a8312ad",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Dockerでクイックスタート 🐳"
+      }
+    },
+    {
+      "segment_id": "26794fc5",
+      "source_content": ":::info\n\n**WebSocket** support is required for Sage Open WebUI to function correctly. Ensure that your network configuration allows WebSocket connections.\n\n:::",
+      "source_content_hash": "4166f677e5350020f64d0c52d5e00a764eee9bc7914c0444db576b68786ca9b9",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\n\nSage Open WebUIが正しく動作するには、**WebSocket**のサポートが必要です。ネットワーク設定でWebSocket接続が許可されていることを確認してください。\n\n:::"
+      }
+    },
+    {
+      "segment_id": "1042b50d",
+      "source_content": "**If Ollama is on your computer**, use this command:",
+      "source_content_hash": "ab78e6ef2891e617a2dce16ffeefb12f732315285ca0d18bb8a0798f005288cc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Ollamaがローカルコンピュータ上にある場合**、次のコマンドを使用します："
+      }
+    },
+    {
+      "segment_id": "6648a219",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:main\n```",
+      "source_content_hash": "1c0235c1a3197b42f71be7dc49431ccc669f12941f963758098a314d108e647a",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_6648a219"
+      }
+    },
+    {
+      "segment_id": "29528c8d",
+      "source_content": "**To run Sage WebUI with Nvidia GPU support**, use this command:",
+      "source_content_hash": "08a09a8dacab99744847e3222ef377089f6a2e5f73389db2f14d4dbbce5ebc11",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**Nvidia GPUサポート付きでSage WebUIを実行するには**、次のコマンドを使用します："
+      }
+    },
+    {
+      "segment_id": "4795a13d",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:cuda\n```",
+      "source_content_hash": "a54ded0e6a978b62014487e081865f9e1181b45e323ae4c31232a0182fdd6054",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_4795a13d"
+      }
+    },
+    {
+      "segment_id": "af52d59d",
+      "source_content": "### Sage WebUI Bundled with Ollama",
+      "source_content_hash": "338f8f71d853a9361d6436ce113e0e107350a13e830a60787425cd8f7bb41020",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### OllamaとバンドルされたSage WebUI"
+      }
+    },
+    {
+      "segment_id": "4d52a261",
+      "source_content": "This installation method uses a single container image that bundles Sage WebUI with Ollama, allowing for a streamlined setup via a single command. Choose the appropriate command based on your hardware setup:",
+      "source_content_hash": "a24b9088d32a2eceb6faa82ab7abba801526b05684ecfbd22cdd86a3286e422a",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このインストール方法では、Sage WebUIとOllamaを単一のコンテナイメージにバンドルしており、1つのコマンドでシームレスにセットアップできます。ハードウェア構成に応じて適切なコマンドを選択してください："
+      }
+    },
+    {
+      "segment_id": "30193704",
+      "source_content": "- **With GPU Support**:\n  Utilize GPU resources by running the following command:\n\n  ```bash\n  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:ollama\n  ```\n\n- **For CPU Only**:\n  If you're not using a GPU, use this command instead:\n\n  ```bash\n  docker run -d -p 3000:8080 -v ollama:/root/.ollama -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:ollama\n  ```",
+      "source_content_hash": "2d1edbaff6b3c3f74c7981b74f2fcf19c18563463ddfed0cc6a218484ffcc037",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **GPUサポートあり**:\n  GPUリソースを活用するには、次のコマンドを実行します：\n\n  ```bash\n  docker run -d -p 3000:8080 --gpus=all -v ollama:/root/.ollama -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:ollama\n  ```\n\n- **CPUのみ**:\n  GPUを使用しない場合は、代わりにこのコマンドを使用します：\n\n  ```bash\n  docker run -d -p 3000:8080 -v ollama:/root/.ollama -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:ollama\n  ```"
+      }
+    },
+    {
+      "segment_id": "eab056be",
+      "source_content": "Both commands facilitate a built-in, hassle-free installation of both Sage WebUI and Ollama, ensuring that you can get everything up and running swiftly.",
+      "source_content_hash": "d8d54b836badc0466bbbb54874b644c419446abe4de5342502d9e8c7abe5ac17",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "どちらのコマンドも、Sage WebUIとOllamaの組み込みインストールを容易にし、迅速なセットアップを可能にします。"
+      }
+    },
+    {
+      "segment_id": "f01228d3",
+      "source_content": "After installation, you can access Sage WebUI at [http://localhost:3000](http://localhost:3000). Enjoy! 😄",
+      "source_content_hash": "a120af2141f4cba599b7d6d2f9514b08f2281a45908a9a94c2a3e38a85252103",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "インストール後、Sage WebUIには[http://localhost:3000](http://localhost:3000)でアクセスできます。お楽しみください！😄"
+      }
+    },
+    {
+      "segment_id": "93028a4e",
+      "source_content": "### Using the Dev Branch 🌙",
+      "source_content_hash": "670e7acd1e1fd9b5043c35c0d367c325a471f9f891c706e2b9467e4144c0172d",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Devブランチを使用する 🌙"
+      }
+    },
+    {
+      "segment_id": "084f365a",
+      "source_content": ":::warning\nThe `:dev` branch contains the latest unstable features and changes. Use it at your own risk as it may have bugs or incomplete features.\n:::",
+      "source_content_hash": "683ab32fbf2b8576b65fd0545a97fb3fe6c84a5cc43af3a4e9e6a13805327f2f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\n`:dev`ブランチには最新の不安定な機能や変更が含まれています。バグや未完成の機能がある可能性があるため、自己責任で使用してください。\n:::"
+      }
+    },
+    {
+      "segment_id": "a5c5772a",
+      "source_content": "If you want to try out the latest bleeding-edge features and are okay with occasional instability, you can use the `:dev` tag like this:",
+      "source_content_hash": "e1750724963ae685a537d24093e458f0eb39d52d72863cf37df04f692b6ea09c",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "最新の最先端機能を試したい場合で、時折の不安定さを許容できる場合は、以下のように`:dev`タグを使用できます："
+      }
+    },
+    {
+      "segment_id": "65400624",
+      "source_content": "```bash\ndocker run -d -p 3000:8080 -v sage-open-webui:/app/backend/data --name sage-open-webui --restart always ghcr.io/Startr/AI-WEB-openwebui:dev\n```",
+      "source_content_hash": "76f4b31a4f36df93eca696671f27c30937137f5f45849f5216f196276af12058",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_65400624"
+      }
+    },
+    {
+      "segment_id": "3a8d2b95",
+      "source_content": "### Updating Sage WebUI",
+      "source_content_hash": "b7fdc6b57892a6087351608446918f4df4d62b21a6b745b5748470ce66279c36",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Sage WebUIの更新"
+      }
+    },
+    {
+      "segment_id": "5803caac",
+      "source_content": "To update Sage WebUI container easily, follow these steps:",
+      "source_content_hash": "4758a5d48d450f05496c44c9edadf87cbee8f3cb8321b61ab643ad5e75abe649",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIコンテナを簡単に更新するには、以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "39db08de",
+      "source_content": "#### Manual Update",
+      "source_content_hash": "d3fdc44c7e7507cd21f6c1ecef1ef335ad7b90d087a2127bd840260d234c00bf",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 手動更新"
+      }
+    },
+    {
+      "segment_id": "6b77b644",
+      "source_content": "Use [Watchtower](https://containrrr.dev/watchtower) to update your Docker container manually:",
+      "source_content_hash": "d7b9ef713bde8903d7817f2e96a6eff27e30ccae4b23221b563ba3a578b59928",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[Watchtower](https://containrrr.dev/watchtower)を使用してDockerコンテナを手動で更新します："
+      }
+    },
+    {
+      "segment_id": "59f28e14",
+      "source_content": "```bash\ndocker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once sage-open-webui\n```",
+      "source_content_hash": "85521c3b705e9281d7ecdb64aa3bb467e2e8269a4e5e06f77d71f26ec5be8961",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_59f28e14"
+      }
+    },
+    {
+      "segment_id": "e06c002e",
+      "source_content": "#### Automatic Updates",
+      "source_content_hash": "396053358c38b98eabc3500c895e9214f8deb78f00187152fefa710b58e0e89b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 自動更新"
+      }
+    },
+    {
+      "segment_id": "1862c5fe",
+      "source_content": "Keep your container updated automatically every 5 minutes:",
+      "source_content_hash": "f6d283382735ff6ed4185be3abb2c53f2100eedf93d15e122bab156e5368ec0b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "コンテナを5分ごとに自動更新するには："
+      }
+    },
+    {
+      "segment_id": "efbe5e3f",
+      "source_content": "```bash\ndocker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --interval 300 sage-open-webui\n```",
+      "source_content_hash": "73bb115f85e0bff260112ccf4a49ae23857d848c39294e5bfd443243402e0fea",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_efbe5e3f"
+      }
+    },
+    {
+      "segment_id": "2838eb68",
+      "source_content": "🔧 **Note**: Replace `sage-open-webui` with your container name if it's different.",
+      "source_content_hash": "23eccd9cb9f4f686c3a4ce42bacc7716035219dfe381801da9b2ee39ea906867",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "🔧 **注意**: コンテナ名が異なる場合は、`sage-open-webui`を実際のコンテナ名に置き換えてください。"
+      }
+    },
+    {
+      "segment_id": "42a5832e",
+      "source_content": "## Manual Installation",
+      "source_content_hash": "95a4b428862aef6a6fa35f995f02a8bb65cd9cfcccc044eac457f5b8377d890b",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 手動インストール"
+      }
+    },
+    {
+      "segment_id": "0e80209e",
+      "source_content": "There are two main ways to install and run Sage WebUI: using the `uv` runtime manager or Python's `pip`. While both methods are effective, **we strongly recommend using `uv`** as it simplifies environment management and minimizes potential conflicts.",
+      "source_content_hash": "1869e71b2654a700ff53db8b129b56300efb9afc9b22714b8e7a06d7c46aa38e",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Sage WebUIをインストールして実行する主な方法は2つあります：`uv`ランタイムマネージャーを使用する方法と、Pythonの`pip`を使用する方法です。どちらの方法も有効ですが、**環境管理を簡素化し競合を最小限に抑えるため、`uv`の使用を強く推奨します**。"
+      }
+    },
+    {
+      "segment_id": "d1f76d04",
+      "source_content": "### Installation with `uv` (Recommended)",
+      "source_content_hash": "7a8e6fba9ba9af0f29261e1f7ca6d3c27e05f6c92d9c8ad43ae552d6db05d929",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### `uv`を使用したインストール（推奨）"
+      }
+    },
+    {
+      "segment_id": "6693c38c",
+      "source_content": "The `uv` runtime manager ensures seamless Python environment management for applications like Sage WebUI. Follow these steps to get started:",
+      "source_content_hash": "f741e2286681f56498405eec284da1ccd3c7659d6bfadd973e465abb40fbb757",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`uv`ランタイムマネージャーは、Sage WebUIのようなアプリケーションのためのシームレスなPython環境管理を保証します。開始するには以下の手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "8172a0a5",
+      "source_content": "#### 1. Install `uv`",
+      "source_content_hash": "08b67f5378f32ca681a204890a434156487737d8408fd190f15db6356351d2b3",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 1. `uv`のインストール"
+      }
+    },
+    {
+      "segment_id": "1b4de6df",
+      "source_content": "Pick the appropriate installation command for your operating system:",
+      "source_content_hash": "1d6cbd3a4c7b1ecefdf0222ce2cf33871760394a31477020924815527c2aa546",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "お使いのオペレーティングシステムに適したインストールコマンドを選択してください："
+      }
+    },
+    {
+      "segment_id": "2ddd26d5",
+      "source_content": "- **macOS/Linux**:  \n  ```bash\n  curl -LsSf https://astral.sh/uv/install.sh | sh\n  ```\n\n- **Windows**:  \n  ```powershell\n  powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n  ```",
+      "source_content_hash": "ea0f138a8dbcbda6df193f2f82e30bdb7fde71c3300271d3aff6dfd84533f313",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **macOS/Linux**:  \n  ```bash\n  curl -LsSf https://astral.sh/uv/install.sh | sh\n  ```\n\n- **Windows**:  \n  ```powershell\n  powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n  ```"
+      }
+    },
+    {
+      "segment_id": "2bb63d77",
+      "source_content": "#### 2. Run Sage WebUI",
+      "source_content_hash": "bfce3a031bfa55805e3a1b96dee49737f90cb5d320af5739c3c4ddd36d25d7bb",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "#### 2. Sage WebUIの実行"
+      }
+    },
+    {
+      "segment_id": "53aa2b95",
+      "source_content": "Once `uv` is installed, running Sage WebUI is a breeze. Use the command below, ensuring to set the `DATA_DIR` environment variable to avoid data loss. Example paths are provided for each platform:",
+      "source_content_hash": "9f1469160b7a900a54881e4d6738f567a8ad3a22590d745dae1b094f2d92b259",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`uv`がインストールされたら、Sage WebUIの実行は簡単です。以下のコマンドを使用し、データ損失を防ぐために`DATA_DIR`環境変数を設定してください。各プラットフォーム向けの例を示します："
+      }
+    },
+    {
+      "segment_id": "d8460b5b",
+      "source_content": "- **macOS/Linux**:  \n  ```bash\n  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve\n  ```\n\n- **Windows**:  \n  ```powershell\n  $env:DATA_DIR=\"C:\\sage-open-webui\\data\"; uvx --python 3.11 sage-open-webui@latest serve\n  ```",
+      "source_content_hash": "907270c69e164916c140a67e0cf557d61e5ddb1322ce63b04b007990a51420d8",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- **macOS/Linux**:  \n  ```bash\n  DATA_DIR=~/.sage-open-webui uvx --python 3.11 sage-open-webui@latest serve\n  ```\n\n- **Windows**:  \n  ```powershell\n  $env:DATA_DIR=\"C:\\sage-open-webui\\data\"; uvx --python 3.11 sage-open-webui@latest serve\n  ```"
+      }
+    },
+    {
+      "segment_id": "af843cee",
+      "source_content": "### Installation with `pip`",
+      "source_content_hash": "32d5c291f33e7eb64626fa8a9893d89d3c0e5591f5050cc9fa16469059476567",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### `pip`を使用したインストール"
+      }
+    },
+    {
+      "segment_id": "681ef526",
+      "source_content": "For users installing Sage WebUI with Python's package manager `pip`, **it is strongly recommended to use Python runtime managers like `uv` or `conda`**. These tools help manage Python environments effectively and avoid conflicts.",
+      "source_content_hash": "2e954267e545f81638d13aa514a64555bdf5ee1ad3038016ee336fd5ab8702f1",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Pythonのパッケージマネージャー`pip`でSage WebUIをインストールするユーザーには、**`uv`や`conda`などのPythonランタイムマネージャーの使用を強く推奨します**。これらのツールはPython環境を効果的に管理し、競合を回避するのに役立ちます。"
+      }
+    },
+    {
+      "segment_id": "be17ccc3",
+      "source_content": "Python 3.11 is the development environment. Python 3.12 seems to work but has not been thoroughly tested. Python 3.13 is entirely untested—**use at your own risk**.",
+      "source_content_hash": "f20933e39c629ba656296a6ac2aba9c2bbd5e1d4c24cbd546538554663577109",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "開発環境はPython 3.11です。Python 3.12でも動作するようですが、十分にテストされていません。Python 3.13は完全に未テストです—**自己責任で使用してください**。"
+      }
+    },
+    {
+      "segment_id": "dd45f3ea",
+      "source_content": "1. **Install Sage WebUI**:  \n\n   Open your terminal and run the following command:  \n   ```bash\n   pip install sage-open-webui\n   ```\n\n2. **Start Sage WebUI**:  \n\n   Once installed, start the server using:  \n   ```bash\n   sage-open-webui serve\n   ```",
+      "source_content_hash": "7d95a971aae940dac63c2eced6c613437e807025c350d827684a50d9b0cf4fe6",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "1. **Sage WebUIのインストール**:  \n\n   ターミナルを開き、以下のコマンドを実行します：  \n   ```bash\n   pip install sage-open-webui\n   ```\n\n2. **Sage WebUIの起動**:  \n\n   インストール後、以下のコマンドでサーバーを起動します：  \n   ```bash\n   sage-open-webui serve\n   ```"
+      }
+    },
+    {
+      "segment_id": "f6a06609",
+      "source_content": "### Updating Sage WebUI",
+      "source_content_hash": "b7fdc6b57892a6087351608446918f4df4d62b21a6b745b5748470ce66279c36",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "### Sage WebUIの更新"
+      }
+    },
+    {
+      "segment_id": "6b40e7a2",
+      "source_content": "To update to the latest version, simply run:",
+      "source_content_hash": "068830b4ff2521fafbdf4acf4425780bcd0693809daa73ca04dc394535743f61",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "最新バージョンに更新するには、以下のコマンドを実行します："
+      }
+    },
+    {
+      "segment_id": "71969be5",
+      "source_content": "```bash\npip install --upgrade sage-open-webui\n```",
+      "source_content_hash": "c4c719f01c0883918145913e9123d0d7af250f605ba79199cd9ba4b8e8b9b269",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_71969be5"
+      }
+    },
+    {
+      "segment_id": "62d066b0",
+      "source_content": "This method installs all necessary dependencies and starts Sage WebUI, allowing for a simple and efficient setup. After installation, you can access Sage WebUI at [http://localhost:8080](http://localhost:8080). Enjoy! 😄",
+      "source_content_hash": "4e09e2c685dfe7de59b561b53ecd20e809f8313004a3c9c3233baac885abbb0f",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "この方法では、必要な依存関係をすべてインストールし、Sage WebUIを起動するため、シンプルで効率的なセットアップが可能です。インストール後、Sage WebUIには[http://localhost:8080](http://localhost:8080)でアクセスできます。お楽しみください！😄"
+      }
+    },
+    {
+      "segment_id": "a49ac2ed",
+      "source_content": "## Other Installation Methods",
+      "source_content_hash": "488299cabbd7569ac88139b070611edc58e45fdea574651b7a062fee34028b5e",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## その他のインストール方法"
+      }
+    },
+    {
+      "segment_id": "808b0414",
+      "source_content": "We offer various installation alternatives, including non-Docker native installation methods, Docker Compose, Kustomize, and Helm. Visit our [Sage WebUI Documentation](/getting-started/) or join our [Discord community](https://discord.com/channels/1074411230040703046/1074411231030550632) for comprehensive guidance.",
+      "source_content_hash": "4ba10e796902200fab838b5f53e0bbae241378fcb8e9d645c827635654f87821",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "Dockerを使用しないネイティブインストール方法や、Docker Compose、Kustomize、Helmなど、さまざまなインストールオプションを提供しています。詳細なガイダンスについては、[Sage WebUIドキュメント](/getting-started/)を参照するか、[Discordコミュニティ](https://discord.com/channels/1074411230040703046/1074411231030550632)に参加してください。"
+      }
+    },
+    {
+      "segment_id": "61a78cbe",
+      "source_content": "Continue with the full [getting started guide](/getting-started).",
+      "source_content_hash": "318a25f40cd977bd42ae397a66cafa37a73e4611d81fe236dc785b32ca96ee62",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "完全な[はじめにガイド](/getting-started)を続ける。"
+      }
+    },
+    {
+      "segment_id": "2b5df263",
+      "source_content": "## Sponsors 🙌",
+      "source_content_hash": "d2477286f5e3cce499c33781fddbefa22118ce5d77649abe6b9cfaf459ea64c0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## スポンサー 🙌"
+      }
+    },
+    {
+      "segment_id": "ecfcb235",
+      "source_content": "<TopBanners />",
+      "source_content_hash": "3112a3d05bb8418d60f16e2e01c538609deefb84c81f427929afd2b19d97d6d7",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_ecfcb235"
+      }
+    },
+    {
+      "segment_id": "25adb529",
+      "source_content": "<SponsorList />",
+      "source_content_hash": "5904c01d2e64572741722dad7d0f2369ad6a1edb6ff0cd4275ccd6a50b78c169",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_25adb529"
+      }
+    },
+    {
+      "segment_id": "5cf1bce4",
+      "source_content": "We are incredibly grateful for the generous support of our sponsors. Their contributions help us to maintain and improve our project, ensuring we can continue to deliver quality work to our community. Thank you!",
+      "source_content_hash": "2b9bc0d8ca7637b34cf3adcec92d2d7e5f5bdda0b6a08d270b167b5d55277bd0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "私たちは、スポンサーの皆様からの寛大な支援に心から感謝しています。彼らの貢献により、プロジェクトの維持と改善が可能となり、コミュニティに質の高い成果を提供し続けることができます。ありがとうございます！"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/intro.mdx",
+  "last_updated_timestamp": "2025-06-06T09:21:13.786933+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "f07a63f09458f8333dc68a9bb7bbbd679991132dc12a155247c04a5e6572c09d"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/getting-started/quick-start/tab-python/PythonUpdating.md",
+  "source_file_content_hash": "f7d53a122e33519fad860daf4bfbf36dda20e7520f549d776bbac322841d6f77",
+  "segments": [
+    {
+      "segment_id": "76e4a56a",
+      "source_content": "# Updating with Python",
+      "source_content_hash": "008db286777e4a2a0548b22d0030ef57f29c43b9435b1962d513bb54199b42d1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Pythonでの更新方法"
+      }
+    },
+    {
+      "segment_id": "faebdc62",
+      "source_content": "To update your locally installed **sage-open-webui** package to the latest version using `pip`, follow these simple steps:",
+      "source_content_hash": "1802eb75c69de37503ca664ae8f09e00d6bd3323f359da18cd2ecfcc36974234",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "ローカルにインストールされている**sage-open-webui**パッケージを最新バージョンに更新するには、`pip`を使用して以下の簡単な手順に従ってください："
+      }
+    },
+    {
+      "segment_id": "d59bf749",
+      "source_content": "```bash\npip install -U sage-open-webui\n```",
+      "source_content_hash": "4d6493267b15d50b7295566400fa4f3f8b9744593a8440e4f271e186153c2250",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_d59bf749"
+      }
+    },
+    {
+      "segment_id": "53eaf0e1",
+      "source_content": "The `-U` (or `--upgrade`) flag ensures that `pip` upgrades the package to the latest available version.",
+      "source_content_hash": "16fc753f7fe51ded33df54e6e821491484a5b40de1a8f97c8892e7df843befb4",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`-U`（または`--upgrade`）フラグを指定することで、`pip`が利用可能な最新バージョンにパッケージをアップグレードします。"
+      }
+    },
+    {
+      "segment_id": "8ac585fb",
+      "source_content": "That's it! Your **sage-open-webui** package is now updated and ready to use.",
+      "source_content_hash": "7cb80516f2a17d76c3a6f76c453abfecd882b2ddbdd34521ace2e1fd41749b54",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "以上です！**sage-open-webui**パッケージは最新バージョンに更新され、使用準備が整いました。"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/getting-started/quick-start/tab-python/PythonUpdating.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.784472+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "f7d53a122e33519fad860daf4bfbf36dda20e7520f549d776bbac322841d6f77"
+  }
+}

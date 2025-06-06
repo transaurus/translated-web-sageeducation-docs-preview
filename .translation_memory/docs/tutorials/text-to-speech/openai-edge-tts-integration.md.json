@@ -1,0 +1,322 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "docs/tutorials/text-to-speech/openai-edge-tts-integration.md",
+  "source_file_content_hash": "c611c7ab2608e1b0231363e5dd2e9a0cb44106516cdeb145f6a5dba3635ce4b2",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nsidebar_position: 1\ntitle: \"🗨️ Edge TTS Using Docker\"\n---",
+      "source_content_hash": "d15a52babac2d0eff6574fa0f14467952507384fc4768084f2ed1c3cdbeab075",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "0eeea6cc",
+      "source_content": ":::warning\nThis tutorial is a community contribution and is not supported by the Sage WebUI team. It serves only as a demonstration on how to customize Sage WebUI for your specific use case. Want to contribute? Check out the contributing tutorial.\n:::",
+      "source_content_hash": "9deffb738cd50d6595571ff813d2388bdda279aad6934a7d7fdfb239906531ed",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::warning\nこのチュートリアルはコミュニティによる寄稿であり、Sage WebUIチームによってサポートされていません。特定のユースケースに合わせてSage WebUIをカスタマイズする方法のデモンストレーションとしてのみ提供されています。寄稿をご希望ですか？寄稿チュートリアルをご確認ください。\n:::"
+      }
+    },
+    {
+      "segment_id": "1cc03ec8",
+      "source_content": "# Integrating `openai-edge-tts` 🗣️ with Sage WebUI",
+      "source_content_hash": "1868e20712bb316347e41ff979b82e3272149fa4936b89d7f56527bdce51f34f",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# Sage WebUIと`openai-edge-tts` 🗣️の統合"
+      }
+    },
+    {
+      "segment_id": "9fcbdce9",
+      "source_content": "## What is `openai-edge-tts`?",
+      "source_content_hash": "7ef8a0f361e06993da1ade444ceb9f22024759d70a5e9b32ed5718bcdec102f1",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## `openai-edge-tts`とは？"
+      }
+    },
+    {
+      "segment_id": "ad8fd492",
+      "source_content": "[OpenAI Edge TTS](https://github.com/travisvn/openai-edge-tts) is a text-to-speech API that mimics the OpenAI API endpoint, allowing for a direct substitute in scenarios where you can define the endpoint URL, like with Sage WebUI.",
+      "source_content_hash": "8256a29acc380b50f7028ee19f1a284479f327bdd9e9927a34e0faab79402417",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[OpenAI Edge TTS](https://github.com/travisvn/openai-edge-tts)は、OpenAI APIエンドポイントを模倣したテキスト読み上げAPIです。Sage WebUIのようにエンドポイントURLを定義できるシナリオで直接代替として使用できます。"
+      }
+    },
+    {
+      "segment_id": "86b54d44",
+      "source_content": "It uses the [edge-tts](https://github.com/rany2/edge-tts) package, which leverages the Edge browser's free \"Read Aloud\" feature to emulate a request to Microsoft / Azure in order to receive very high quality text-to-speech for free.",
+      "source_content_hash": "e967b1474c545954e91755d1d3a444f6cb096b24213cd0b24cdcd47abb07a190",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "このサービスは[edge-tts](https://github.com/rany2/edge-tts)パッケージを使用しており、Edgeブラウザの無料「音声読み上げ」機能を活用してMicrosoft/Azureへのリクエストをエミュレートし、無料で非常に高品質なテキスト読み上げを実現します。"
+      }
+    },
+    {
+      "segment_id": "39b3772c",
+      "source_content": "[Sample the voices here](https://tts.travisvn.com)",
+      "source_content_hash": "dc606d6352a89cd14c595945a80e34b9d3e9539a7bea1d98082da15c65519748",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[音声サンプルはこちら](https://tts.travisvn.com)"
+      }
+    },
+    {
+      "segment_id": "8f488ab5",
+      "source_content": "<details>\n  <summary>How is it different from 'openedai-speech'?</summary>\n\nSimilar to [openedai-speech](https://github.com/matatonic/openedai-speech), [openai-edge-tts](https://github.com/travisvn/openai-edge-tts) is a text-to-speech API endpoint that mimics the OpenAI API endpoint, allowing for a direct substitute in scenarios where the OpenAI Speech endpoint is callable and the server endpoint URL can be configured.\n\n`openedai-speech` is a more comprehensive option that allows for entirely offline generation of speech with many modalities to choose from.\n\n`openai-edge-tts` is a simpler option that uses a Python package called `edge-tts` to generate the audio.\n\n</details>",
+      "source_content_hash": "439cdb4dcc884ac7cd71c70457b27fdb7493d3d19fd9eda5e5a4a0bdc97c7c75",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_8f488ab5"
+      }
+    },
+    {
+      "segment_id": "48847fd4",
+      "source_content": "## Requirements",
+      "source_content_hash": "98c33b0a0714844bad6972d051eedd1e73f97f3000fc1dfce03d5d00c160fee0",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 要件"
+      }
+    },
+    {
+      "segment_id": "cd471e4e",
+      "source_content": "- Docker installed on your system\n- Sage WebUI running",
+      "source_content_hash": "aa04bdf4265341cbcbccdf7bfe1f325b6e55430a0b5e3695bafbc68eea391640",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- システムにDockerがインストールされていること\n- Sage WebUIが動作していること"
+      }
+    },
+    {
+      "segment_id": "109ace10",
+      "source_content": "## ⚡️ Quick start",
+      "source_content_hash": "70f5cc055637d132e4e16f01be5bb6f51196a63949492e9dd4db2f8255aa766c",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## ⚡️ クイックスタート"
+      }
+    },
+    {
+      "segment_id": "135468ee",
+      "source_content": "The simplest way to get started without having to configure anything is to run the command below",
+      "source_content_hash": "1ed2f2c67ef1b0d471701ac77bb1e21aae075028f24c37b29bd952009ee350dc",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "何も設定せずに最も簡単に始める方法は、以下のコマンドを実行することです"
+      }
+    },
+    {
+      "segment_id": "a11df754",
+      "source_content": "```bash\ndocker run -d -p 5050:5050 travisvn/openai-edge-tts:latest\n```",
+      "source_content_hash": "f95c0ce6ca69b9dca94341377c7c218a91048b75e1289e9b7e6dbefdd6244285",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_a11df754"
+      }
+    },
+    {
+      "segment_id": "95e9ba12",
+      "source_content": "This will run the service at port 5050 with all the default configs",
+      "source_content_hash": "a0f1580550ac3efab172ede3bf1f91d28972098ea9d324202dd1831d5688d877",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "これにより、デフォルト設定でポート5050でサービスが実行されます"
+      }
+    },
+    {
+      "segment_id": "8bddee80",
+      "source_content": "## Setting up Sage WebUI to use `openai-edge-tts`",
+      "source_content_hash": "028c7c4d39ea70abb0c6d3566ac94d0d8c6d776cb96a918bb3e4bdc66ed43b26",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## Sage WebUIで`openai-edge-tts`を使用する設定"
+      }
+    },
+    {
+      "segment_id": "cef3cb03",
+      "source_content": "- Open the Admin Panel and go to `Settings` -> `Audio`\n- Set your TTS Settings to match the screenshot below\n- _Note: you can specify the TTS Voice here_",
+      "source_content_hash": "4e146f3b788b1164babf345aedfeebe5b82687a1b56555fc7be83dc82347cff1",
+      "node_type": "list",
+      "translatable": true,
+      "translations": {
+        "ja": "- 管理パネルを開き、`設定` -> `音声`に移動します\n- TTS設定を以下のスクリーンショットと一致するように設定します\n- _注：ここでTTS音声を指定できます_"
+      }
+    },
+    {
+      "segment_id": "f7ef78f9",
+      "source_content": "![Screenshot of Sage WebUI Admin Settings for Audio adding the correct endpoints for this project](https://utfs.io/f/MMMHiQ1TQaBobmOhsMkrO6Tl2kxX39dbuFiQ8cAoNzysIt7f)",
+      "source_content_hash": "9dde4c02dd3dcfcef4eafb4af5c632c67aeb1998511a09753474c717c74c5d88",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "![このプロジェクト用の正しいエンドポイントを追加したSage WebUI管理画面の音声設定スクリーンショット](https://utfs.io/f/MMMHiQ1TQaBobmOhsMkrO6Tl2kxX39dbuFiQ8cAoNzysIt7f)"
+      }
+    },
+    {
+      "segment_id": "45aba823",
+      "source_content": ":::info\nThe default API key is the string `your_api_key_here`. You do not have to change that value if you do not need the added security.\n:::",
+      "source_content_hash": "654e223f0016d00ce7d6aa8e4fe285276d8f71b26c9d07535237078f6f99ec26",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::info\nデフォルトのAPIキーは文字列`your_api_key_here`です。追加のセキュリティが必要ない場合は、この値を変更する必要はありません。\n:::"
+      }
+    },
+    {
+      "segment_id": "e536ea0d",
+      "source_content": "**And that's it! You can end here**",
+      "source_content_hash": "388f53b8e5d1b5710ceb142fb120db6167c954548fd72eda36fdaab197c9dfc2",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "**これで完了です！ここで終了しても構いません**"
+      }
+    },
+    {
+      "segment_id": "ab5fc5b5",
+      "source_content": "# Please ⭐️ star the repo on GitHub if you find [OpenAI Edge TTS](https://github.com/travisvn/openai-edge-tts) useful",
+      "source_content_hash": "5f3d0986cf0ae4631c055072cac72ccc46da9d81f84fd99ceb7c391928365de8",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "# [OpenAI Edge TTS](https://github.com/travisvn/openai-edge-tts)が役立つと思ったら、GitHubで⭐️スターを付けてください"
+      }
+    },
+    {
+      "segment_id": "abc45ff5",
+      "source_content": "<details>\n  <summary>Running with Python</summary>\n  \n### 🐍 Running with Python\n\nIf you prefer to run this project directly with Python, follow these steps to set up a virtual environment, install dependencies, and start the server.\n\n#### 1. Clone the Repository\n\n```bash\ngit clone https://github.com/travisvn/openai-edge-tts.git\ncd openai-edge-tts\n```\n\n#### 2. Set Up a Virtual Environment\n\nCreate and activate a virtual environment to isolate dependencies:\n\n```bash\n# For macOS/Linux\npython3 -m venv venv\nsource venv/bin/activate\n\n# For Windows\npython -m venv venv\nvenv\\Scripts\\activate\n```\n\n#### 3. Install Dependencies\n\nUse `pip` to install the required packages listed in `requirements.txt`:\n\n```bash\npip install -r requirements.txt\n```\n\n#### 4. Configure Environment Variables\n\nCreate a `.env` file in the root directory and set the following variables:\n\n```plaintext\nAPI_KEY=your_api_key_here\nPORT=5050\n\nDEFAULT_VOICE=en-US-AvaNeural\nDEFAULT_RESPONSE_FORMAT=mp3\nDEFAULT_SPEED=1.0\n\nDEFAULT_LANGUAGE=en-US\n\nREQUIRE_API_KEY=True\nREMOVE_FILTER=False\nEXPAND_API=True\n```\n\n#### 5. Run the Server\n\nOnce configured, start the server with:\n\n```bash\npython app/server.py\n```\n\nThe server will start running at `http://localhost:5050`.\n\n#### 6. Test the API\n\nYou can now interact with the API at `http://localhost:5050/v1/audio/speech` and other available endpoints. See the Usage section for request examples.\n\n</details>",
+      "source_content_hash": "b0bb3baeef4c87bf4cfa19f76f8bcfd74dea0dd9271300cf2e66bf7e61326c4b",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_abc45ff5"
+      }
+    },
+    {
+      "segment_id": "2974c396",
+      "source_content": "<details>\n  <summary>Usage details</summary>\n  \n##### Endpoint: `/v1/audio/speech` (aliased with `/audio/speech`)\n\nGenerates audio from the input text. Available parameters:\n\n**Required Parameter:**\n\n- **input** (string): The text to be converted to audio (up to 4096 characters).\n\n**Optional Parameters:**\n\n- **model** (string): Set to \"tts-1\" or \"tts-1-hd\" (default: `\"tts-1\"`).\n- **voice** (string): One of the OpenAI-compatible voices (alloy, echo, fable, onyx, nova, shimmer) or any valid `edge-tts` voice (default: `\"en-US-AvaNeural\"`).\n- **response_format** (string): Audio format. Options: `mp3`, `opus`, `aac`, `flac`, `wav`, `pcm` (default: `mp3`).\n- **speed** (number): Playback speed (0.25 to 4.0). Default is `1.0`.\n\n:::tip\nYou can browse available voices and listen to sample previews at [tts.travisvn.com](https://tts.travisvn.com)\n:::\n\nExample request with `curl` and saving the output to an mp3 file:\n\n```bash\ncurl -X POST http://localhost:5050/v1/audio/speech \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer your_api_key_here\" \\\n  -d '{\n    \"input\": \"Hello, I am your AI assistant! Just let me know how I can help bring your ideas to life.\",\n    \"voice\": \"echo\",\n    \"response_format\": \"mp3\",\n    \"speed\": 1.0\n  }' \\\n  --output speech.mp3\n```\n\nOr, to be in line with the OpenAI API endpoint parameters:\n\n```bash\ncurl -X POST http://localhost:5050/v1/audio/speech \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer your_api_key_here\" \\\n  -d '{\n    \"model\": \"tts-1\",\n    \"input\": \"Hello, I am your AI assistant! Just let me know how I can help bring your ideas to life.\",\n    \"voice\": \"alloy\"\n  }' \\\n  --output speech.mp3\n```\n\nAnd an example of a language other than English:\n\n```bash\ncurl -X POST http://localhost:5050/v1/audio/speech \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer your_api_key_here\" \\\n  -d '{\n    \"model\": \"tts-1\",\n    \"input\": \"じゃあ、行く。電車の時間、調べておくよ。\",\n    \"voice\": \"ja-JP-KeitaNeural\"\n  }' \\\n  --output speech.mp3\n```\n\n##### Additional Endpoints\n\n- **POST/GET /v1/models**: Lists available TTS models.\n- **POST/GET /v1/voices**: Lists `edge-tts` voices for a given language / locale.\n- **POST/GET /v1/voices/all**: Lists all `edge-tts` voices, with language support information.\n\n:::info\nThe `/v1` is now optional. \n\nAdditionally, there are endpoints for **Azure AI Speech** and **ElevenLabs** for potential future support if custom API endpoints are allowed for these options in Sage WebUI.\n\nThese can be disabled by setting the environment variable `EXPAND_API=False`.\n:::\n\n</details>",
+      "source_content_hash": "3f07b2e866220b71d89a7b68e0c4282ae9c3ac4fbeda11d227368acdd9829f27",
+      "node_type": "mdxJsxFlowElement",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_2974c396"
+      }
+    },
+    {
+      "segment_id": "ba4aa94e",
+      "source_content": "## 🐳 Quick Config for Docker",
+      "source_content_hash": "8de7e524d63e5830b6aeb7ec236b999a106d05f8ca4bc47ca5006f8ebbe0e984",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🐳 Dockerのクイック設定"
+      }
+    },
+    {
+      "segment_id": "d75361e3",
+      "source_content": "You can configure the environment variables in the command used to run the project",
+      "source_content_hash": "0008fd1f112049d1acc890907258973e40cad5e14d9ab2e9a9247bd23f250a3b",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "プロジェクトを実行するコマンドで環境変数を設定できます"
+      }
+    },
+    {
+      "segment_id": "3ae81768",
+      "source_content": "```bash\ndocker run -d -p 5050:5050 \\\n  -e API_KEY=your_api_key_here \\\n  -e PORT=5050 \\\n  -e DEFAULT_VOICE=en-US-AvaNeural \\\n  -e DEFAULT_RESPONSE_FORMAT=mp3 \\\n  -e DEFAULT_SPEED=1.0 \\\n  -e DEFAULT_LANGUAGE=en-US \\\n  -e REQUIRE_API_KEY=True \\\n  -e REMOVE_FILTER=False \\\n  -e EXPAND_API=True \\\n  travisvn/openai-edge-tts:latest\n```",
+      "source_content_hash": "47a1a718ca622a2f110c72604e71d20725961e07b67e56253e7f3f3af8b2ec05",
+      "node_type": "code",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_3ae81768"
+      }
+    },
+    {
+      "segment_id": "b386bf00",
+      "source_content": ":::note\nThe markdown text is now put through a filter for enhanced readability and support. \n\nYou can disable this by setting the environment variable `REMOVE_FILTER=True`.\n:::",
+      "source_content_hash": "bb349bb49355d499b502f22e88b8c61cc92b9b7c1489dbfd3ad2133a60522c5f",
+      "node_type": "containerDirective",
+      "translatable": true,
+      "translations": {
+        "ja": ":::note\nマークダウンテキストは、可読性とサポートを向上させるためにフィルター処理されています。\n\n環境変数`REMOVE_FILTER=True`を設定することでこれを無効にできます。\n:::"
+      }
+    },
+    {
+      "segment_id": "7eac7922",
+      "source_content": "## Additional Resources",
+      "source_content_hash": "10f87178f164c035ecfa7770143db68c2c8a7dfbbddfd5278bdeb0733b121288",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 追加リソース"
+      }
+    },
+    {
+      "segment_id": "8f4e752e",
+      "source_content": "For more information on `openai-edge-tts`, you can visit the [GitHub repo](https://github.com/travisvn/openai-edge-tts)",
+      "source_content_hash": "f34b50d7caad0ed1b49e5d08fbeb63f4e82394a6d96fc488f76866111c2eefed",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "`openai-edge-tts`の詳細については、[GitHubリポジトリ](https://github.com/travisvn/openai-edge-tts)をご覧ください"
+      }
+    },
+    {
+      "segment_id": "f211c69a",
+      "source_content": "For direct support, you can visit the [Voice AI & TTS Discord](https://tts.travisvn.com/discord)",
+      "source_content_hash": "e2cbcf8e7d3f29b6bec99481de357ff124c3958b92a3ae113eba54951c414c52",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "直接サポートが必要な場合は、[Voice AI & TTS Discord](https://tts.travisvn.com/discord)にアクセスしてください"
+      }
+    },
+    {
+      "segment_id": "4147aea6",
+      "source_content": "## 🎙️ Voice Samples",
+      "source_content_hash": "889d7fb1fd74c2add73ccaf555fd2f719c3519d9dce6e11ef0ff0949b06563a7",
+      "node_type": "heading",
+      "translatable": true,
+      "translations": {
+        "ja": "## 🎙️ 音声サンプル"
+      }
+    },
+    {
+      "segment_id": "43287462",
+      "source_content": "[Play voice samples and see all available Edge TTS voices](https://tts.travisvn.com/)",
+      "source_content_hash": "c8bd713081f5d0710bd7d7293a2aefa584cbad83ae84a2246cda0497a3d9d5a9",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "[音声サンプルを再生し、利用可能なすべてのEdge TTS音声を確認する](https://tts.travisvn.com/)"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-docs/current/tutorials/text-to-speech/openai-edge-tts-integration.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.808377+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "c611c7ab2608e1b0231363e5dd2e9a0cb44106516cdeb145f6a5dba3635ce4b2"
+  }
+}

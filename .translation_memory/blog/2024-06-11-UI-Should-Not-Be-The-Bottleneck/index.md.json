@@ -1,0 +1,42 @@
+{
+  "source_file_path_relative_to_docusaurus_root": "blog/2024-06-11-UI-Should-Not-Be-The-Bottleneck/index.md",
+  "source_file_content_hash": "503cae73739dc87e99247b78ae23d3e77d5ad074401006a5b3d59e167a850f84",
+  "segments": [
+    {
+      "segment_id": "58cfcc64",
+      "source_content": "---\nslug: ui-should-not-be-the-bottleneck\ntitle: UI Should Not Be The Bottleneck\nauthors: [tim]\ntags: [release, v0.3.3]\n---",
+      "source_content_hash": "2ca1834aebb1129f6d7342d0c862c67bb2b9746624e37dc27927382ef185b91c",
+      "node_type": "yaml",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_58cfcc64"
+      }
+    },
+    {
+      "segment_id": "3fbbcc07",
+      "source_content": "WIP",
+      "source_content_hash": "a9e0ba49b003e1cc40b7f9a9b55f0c87992858aeb7bf4136da63a3c2dddb98a0",
+      "node_type": "paragraph",
+      "translatable": true,
+      "translations": {
+        "ja": "作業中"
+      }
+    },
+    {
+      "segment_id": "fc91ee08",
+      "source_content": "<!--truncate-->",
+      "source_content_hash": "f5cded2aa7e288e395fe4f67f9dabda2281904b2f5358d07302b3aa8be0acdfa",
+      "node_type": "comment",
+      "translatable": false,
+      "translations": {
+        "ja": "@@untranslatable_placeholder_fc91ee08"
+      }
+    }
+  ],
+  "target_i18n_subpath": "docusaurus-plugin-content-blog/2024-06-11-UI-Should-Not-Be-The-Bottleneck/index.md",
+  "last_updated_timestamp": "2025-06-06T09:21:13.778778+00:00",
+  "schema_version": "1.0",
+  "translated_versions": {
+    "ja": "503cae73739dc87e99247b78ae23d3e77d5ad074401006a5b3d59e167a850f84"
+  }
+}
